@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "portplan-v8-lossless-tar-chunks",
+  "kind": "formal",
+  "createdAt": "2026-10-15T08:45:24.487728+00:00",
+  "archiveFormat": "tar.gz",
+  "archiveRoot": "v8-frozen-first",
+  "chunkSizeLimit": 3500000,
+  "fileCount": 2413,
+  "uncompressedFileBytes": 652347302,
+  "archiveBytes": 31011162,
+  "archiveSha256": "921002fa3af31c21a05f50ea5338698fb0f949ead20e5662dcbaa19908a0a1d2",
+  "frozenManifestSha256": "cde6f155769f57b6c5acbb7acafa65709fc41eb6f00d1fc8c122b8c6a6070daf",
+  "entrypoint": "first-run/complete.json",
+  "entrypointSha256": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6",
+  "formalIndexSha256": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6",
+  "protocolHash": "fa886fe62cd2fdb08097bff97e64bc20cd4fe00198c2b4b9caff9d8a7bb3deb5",
+  "scenarioCount": 144,
+  "episodeCount": 2160,
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 3500000,
+      "sha256": "654e5df0e18adfbfec432a164c6b5ef4f01998aa461114acb8581e0e7215117f"
+    },
+    {
+      "file": "part-0002.bin",
+      "bytes": 3500000,
+      "sha256": "987c39dd2957bc2c2092bd144aa56b35ac5fcd9d059a2e56e0e7553a8f092680"
+    },
+    {
+      "file": "part-0003.bin",
+      "bytes": 3500000,
+      "sha256": "5bf607e604b22fb9197b3ee3cdcdc66b206c2c0106e6693f065df724dbf132d7"
+    },
+    {
+      "file": "part-0004.bin",
+      "bytes": 3500000,
+      "sha256": "4032cd1dc0c830cae3b0c6deb90d3280c9f55bc714075997de56d9416ab43c00"
+    },
+    {
+      "file": "part-0005.bin",
+      "bytes": 3500000,
+      "sha256": "776767c6d23ef775e4f1f4f1c0c785b6f0e16c234118e06a29fe98c6d020eb54"
+    },
+    {
+      "file": "part-0006.bin",
+      "bytes": 3500000,
+      "sha256": "12d2699322cb9c6cca47da8fcdf13add7c579475e5bc6bac29e1030a71b7cf1f"
+    },
+    {
+      "file": "part-0007.bin",
+      "bytes": 3500000,
+      "sha256": "d08e80311b376a12b9d0508f766f5db31b76c03304a960655be0adcb9df1c72d"
+    },
+    {
+      "file": "part-0008.bin",
+      "bytes": 3500000,
+      "sha256": "122d3e1f23dd2430bf5c1533e23a9f65d894d7af7b087321b143de7f545c5aeb"
+    },
+    {
+      "file": "part-0009.bin",
+      "bytes": 3011162,
+      "sha256": "b07099e65a030b1591ee7a733f29c9e6e4acbb4a34722d95cc95c0aa1f869483"
+    }
+  ]
+}

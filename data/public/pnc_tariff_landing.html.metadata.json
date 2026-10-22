@@ -1,0 +1,10 @@
+{
+  "url": "https://www.pncport.com/kor/Info/details.do?id=MD040",
+  "final_url": "https://www.pncport.com/kor/Info/details.do?id=MD040",
+  "retrieved_at_utc": "2026-10-12T06:28:26.313524+00:00",
+  "http_status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "sha256": "1ed3838d1b103efb5c3b3058e7f709dda1da0759accd8e009ae90ae55b699357",
+  "bytes": 25361,
+  "path": "data/public/pnc_tariff_landing.html"
+}

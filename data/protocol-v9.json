@@ -1,0 +1,311 @@
+{
+  "schemaVersion": "portplan-protocol-v9",
+  "protocolVersion": "portplan-v9-timely-candidate-delivery-20261016-01",
+  "state": "Prespecified final method and assessment declaration; prospective generation requires a separate source freeze manifest.",
+  "purpose": "Test internal timely incumbent delivery in execution-locked adaptive V9 against unchanged V8/V7/stable-retain and native HiGHS; retain every deadline loss and negative result.",
+  "generator": {
+    "function": "makeScenarioV2",
+    "module": "scripts/benchmark-v2.mjs",
+    "implementationSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "ordersKnownAtStart": true,
+    "independence": "Every business scenario has a new unique base seed across both panels. Three repeated algorithm seeds/timing runs share that one business scenario and are not independent business samples. Do not replace infeasible, duplicate, slow or costly cases."
+  },
+  "matrix": {
+    "mechanisms": [
+      "aged-backlog",
+      "new-arrivals",
+      "batch-release"
+    ],
+    "capacityProfiles": [
+      "balanced",
+      "tight"
+    ],
+    "counts": [
+      24,
+      50,
+      100
+    ],
+    "scenariosPerCell": 4
+  },
+  "panels": [
+    {
+      "id": "same-distribution",
+      "scenarioCount": 72,
+      "baseSeed": 391001,
+      "shockPatterns": [
+        {
+          "name": "truck-early-two-days",
+          "shocks": [
+            {
+              "id": "truck-early",
+              "resource": "truck",
+              "revealDay": 2,
+              "duration": 2,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            }
+          ]
+        },
+        {
+          "name": "warehouse-two-days",
+          "shocks": [
+            {
+              "id": "warehouse-shock",
+              "resource": "warehouse",
+              "revealDay": 3,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "staging-two-days",
+          "shocks": [
+            {
+              "id": "staging-shock",
+              "resource": "staging",
+              "revealDay": 4,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 3
+            }
+          ]
+        },
+        {
+          "name": "truck-late-two-days",
+          "shocks": [
+            {
+              "id": "truck-late",
+              "resource": "truck",
+              "revealDay": 7,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        }
+      ],
+      "interpretation": "Same unchanged generator and four private-duration patterns as prior V7/V8, with new independent generator seeds not used in development."
+    },
+    {
+      "id": "stress",
+      "scenarioCount": 72,
+      "baseSeed": 392001,
+      "shockPatterns": [
+        {
+          "name": "repeated-truck-reductions",
+          "shocks": [
+            {
+              "id": "truck-repeat-first",
+              "resource": "truck",
+              "revealDay": 2,
+              "duration": 2,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "truck-repeat-second",
+              "resource": "truck",
+              "revealDay": 6,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "unannounced-extended-recovery",
+          "shocks": [
+            {
+              "id": "warehouse-unannounced-extended",
+              "resource": "warehouse",
+              "revealDay": 3,
+              "duration": 4,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "sequential-two-resource-reductions",
+          "shocks": [
+            {
+              "id": "truck-sequential",
+              "resource": "truck",
+              "revealDay": 2,
+              "duration": 2,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "warehouse-sequential",
+              "resource": "warehouse",
+              "revealDay": 5,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "unannounced-gradual-recovery",
+          "shocks": [
+            {
+              "id": "truck-gradual-strong",
+              "resource": "truck",
+              "revealDay": 3,
+              "duration": 1,
+              "reductionNumerator": 3,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "truck-gradual-middle",
+              "resource": "truck",
+              "revealDay": 4,
+              "duration": 1,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "truck-gradual-light",
+              "resource": "truck",
+              "revealDay": 5,
+              "duration": 1,
+              "reductionNumerator": 1,
+              "reductionDenominator": 5
+            }
+          ]
+        }
+      ],
+      "interpretation": "New repeated/unannounced-recovery/sequential-resource/gradual-recovery shock patterns; all initial orders remain known. No planner knows a future event or private duration."
+    }
+  ],
+  "shockCapacityRule": "For each event: capacity=max(0, nominal capacity on revealDay-ceil(nominal*reductionNumerator/reductionDenominator)). Only simulator receives duration. No announcedDuration.",
+  "methods": [
+    "stableRetainV5",
+    "costPolishV7",
+    "adaptiveV8",
+    "adaptiveV9",
+    "highsV8"
+  ],
+  "algorithmRepeats": [
+    {
+      "index": 1,
+      "seed": 39011
+    },
+    {
+      "index": 2,
+      "seed": 39023
+    },
+    {
+      "index": 3,
+      "seed": 39039
+    }
+  ],
+  "budget": {
+    "hardWallMs": 5000,
+    "cpuThreads": 1,
+    "execution": "Cold separate POSIX process group per episode; all methods execute serially, cyclic method order changes by scenario and repeat. Python descendants are group-killed on timeout and after worker exit.",
+    "clock": "Parent time starts before fork; includes imports, planner.ready native startup, all decisions, child terminal dual audit, planner.close cleanup, IPC and parent receipt audit. Only receipts fully validated by 5000ms count as complete.",
+    "callBudgetCaveat": "V5 uses legacy solver-internal seconds; V7/V8/V9 and native HiGHS use cooperative whole-call milliseconds. Native startup is charged to parent 5000ms and separately reported. V9 accepts candidates only after synchronous clone, independent reconstruction, lock/physical audit and outer gate time checks; no observer or parent IPC acknowledgement affects formal daily acceptance. Per-call clocks are not claimed identical."
+  },
+  "callBudgets": {
+    "stableRetainV5": {
+      "timeLimitSeconds": 0.2
+    },
+    "costPolishV7": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true,
+      "maxPasses": 2,
+      "maxPairs": 32,
+      "candidateCap": 12,
+      "maxPairChecks": 384,
+      "maxSingleTargets": 16
+    },
+    "adaptiveV8": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true,
+      "maxPasses": 2,
+      "maxPairs": 32,
+      "candidateCap": 12,
+      "maxPairChecks": 384,
+      "maxSingleTargets": 16,
+      "feeToleranceRatio": 0.005,
+      "maxChangedEvents": 6,
+      "lookaheadDays": 2,
+      "pressureGuard": true,
+      "opportunityThresholdKRW": 0
+    },
+    "highsV8": {
+      "timeBudgetMs": 200,
+      "timeLimitSeconds": 0.2,
+      "objectiveMode": "joint",
+      "auditReserveMs": 2,
+      "hardOverrunGraceMs": 250,
+      "initializationTimeoutMs": 10000,
+      "retainCacheFallback": true
+    },
+    "adaptiveV9": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true,
+      "maxPasses": 2,
+      "maxPairs": 32,
+      "candidateCap": 12,
+      "maxPairChecks": 384,
+      "maxSingleTargets": 16,
+      "feeToleranceRatio": 0.005,
+      "maxChangedEvents": 6,
+      "lookaheadDays": 2,
+      "pressureGuard": true,
+      "opportunityThresholdKRW": 0
+    }
+  },
+  "analysis": {
+    "primaryUnit": "scenario",
+    "repeatAggregation": "Equal scenario weighting: within each pair, average matching jointly completed repeats in each scenario, then aggregate scenario means. Also disclose raw paired episode totals and paired-repeat counts.",
+    "bootstrap": {
+      "seed": 700001,
+      "draws": 2000
+    },
+    "panels": "Always separate. Do not pool same-distribution and stress into a ranking."
+  },
+  "freezePolicy": "Before the first prospective generation: finish methods and independent review, fix all budget/parameter/analysis declarations, freeze all source and protocol SHA256 in a new artifacts directory. Verify live and frozen source hashes, then import both generator and workers from the frozen source snapshot. No prospective input generation or trial runs before root-authorized freeze; no replacing negative cases or overwriting a first run.",
+  "analysisRules": [
+    "144 new business scenarios (72 per panel) x 3 retained algorithm/timing repeats x 5 methods = 2160 episodes; not 432 independent scenarios. Previous V8 scenarios are development regression data and cannot become new holdout evidence.",
+    "Keep all failures, deadline losses, audit rejections, unknown histories, zeros, negative fee savings and completion gains/losses.",
+    "Incomplete episode fees are null. Missing terminal history/counters are null or unavailable, never zero.",
+    "Report V9 vs V8/V7/V5/native HiGHS and native HiGHS vs V7. Each pair uses its own matching-repeat jointly completed fee set; never rank methods across different paired denominators.",
+    "Report total and incremental fee numerator/denominator, win/tie/loss, worst losses, revisions and scenario-cluster bootstrap intervals. Bootstrap conditions on the completed pair set and does not remove completion-selection bias.",
+    "A full-path experiment includes differing initial plans. It cannot isolate recovery ability under a shared execution history; that requires a separately declared diagnostic experiment.",
+    "Only synthetic known-order daily atomic truck/warehouse/staging model conclusions are supported. Native HiGHS is a same-model baseline; no guarantee of production savings or first place.",
+    "All full episode histories, observations, date choices, candidateDelivery receipt sequences and endpoint proofs, adaptive explanations and terminal audits are append-only standalone files with hashes; only redundant planner debug/cache pricing metadata may be compacted.",
+    "First-run artifacts are never overwritten. Reproductions require a distinct output directory and preserve every repeat.",
+    "Duplicate generated order-list fingerprints, if any, are disclosed without resampling."
+  ],
+  "deliveryEvidence": {
+    "policy": "Internal synchronous constructor onCandidate -> outer gate; formal observer disabled; no parent candidate stream or enqueue acknowledgement.",
+    "canonicalPath": "result.plannerTrace[day].candidateDelivery",
+    "retention": "Retain complete receipt sequence, dates, independently reconstructed fees, timing fields, accepted and rejected gate outcomes without truncation. Internal constructor firstIncumbentMs is not acceptance evidence.",
+    "unknownHistory": "No timely whole-episode terminal receipt means complete fees, execution counters and history remain null/unavailable; absence of gate evidence is not proof that no candidate physically existed."
+  },
+  "developmentSeparation": {
+    "previousV8": "The original 144-scenario first V8 run and all negative outcomes remain unchanged. Its seeds may be used only as development/regression evidence for V9.",
+    "newSeeds": "391001..391072 and 392001..392072 are prospective input seed commitments, never to be used for tuning before the source freeze.",
+    "budgetSelection": "Retain existing 200ms per-call and 5000ms cold episode limits. No selection of a daily budget from prospective results.",
+    "methodsOmitted": "V6 omitted to keep the same 2160-episode cost; V7, V8, stable-retain and native HiGHS provide the direct historical/availability baselines."
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "portplan-v8-release-status",
+  "researchVersion": "8.0.0",
+  "status": "research_iteration_complete",
+  "baseCommit": "9840fe7e99349d09e861681270e663113801df5a",
+  "formalExperimentComplete": true,
+  "independentReviewComplete": true,
+  "independentBootstrapReviewComplete": true,
+  "fullChampionshipPlanComplete": false,
+  "adaptiveV8RecommendedAsUpgrade": false,
+  "browserInteractionValidation": "not_performed",
+  "minimumPricedResourceIntervention": "not_implemented",
+  "materials": {"koreanSlides": 18, "editablePresentation": true},
+  "externalBusinessValidation": "not_performed",
+  "entrantDefenseValidation": "not_performed",
+  "formalIndexSha256": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6",
+  "notes": "首次144场景×3次×5方法实验及两项独立复核已完成。V8完成数同分布80/216、压力48/216，低于V7的156/216、89/216，保留为实验选项；默认演示比较V7与稳定保留。原生HiGHS完成166/216、116/216，但也存在完成损失和更多改期。完整冲冠计划尚未完成，剩余候选及时交付、资源补救、浏览器与真实业务/个人答辩验收。"
+}

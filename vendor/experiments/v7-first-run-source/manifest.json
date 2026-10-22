@@ -1,0 +1,36 @@
+{
+  "protocolHash": "bb70fa6938ffbb162347142cbb2788f9ece00ac695a8b8ed5a647cd08aedb96f",
+  "implementationHashes": {
+    "scripts/rolling-benchmark-v7.mjs": "6feaee69c7a9b8b104f67517db7a79dfb4e8aede105056553dd39c4cc73fabe3",
+    "scripts/rolling-v7.worker.mjs": "0d5adc5e2e86017dd3c252e06bf692a9e4b7dd4e13d35e0694df6f84fcefdaa7",
+    "scripts/benchmark-v2.mjs": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "src/engine.js": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+    "src/rolling-plan.js": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+    "src/stable-planner-v5.js": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64",
+    "src/recovery-planner-v6.js": "560d3d8a136adbcabfe00373ea549d68f107859764feadff607c08bc4acf12bc",
+    "src/cost-recovery-v7.js": "89d5b2598639e4b08683c93e61d268064d2455c9df435b596016a1ecb947e25f",
+    "src/grasp-planner-v7.js": "7517f0d100b2e2d5442dc89adeee988290416fcd69b06c32c37c5769776c4a4e",
+    "src/solver-glpk.js": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+    "src/solver-presolver.js": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+    "src/execution-constraints.js": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+    "src/fast-constructor-v5.js": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f",
+    "src/event-search-v4.js": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b",
+    "src/strong-baseline.js": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac",
+    "data/protocol-v2.json": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+    "data/protocol-v7.json": "bb70fa6938ffbb162347142cbb2788f9ece00ac695a8b8ed5a647cd08aedb96f",
+    "package.json": "9abcaa91c4dd7ca32656fad18f91d235d788e48cff9e3f2c60b900dd934481fc",
+    "package-lock.json": "6adf7e460d457ed6ef0a6f940c99987ddb569c5e432194de5e4fd4bd2c9f0afe"
+  },
+  "developmentInputBundle": {
+    "path": "data/development-inputs-v7.json",
+    "sha256": "ebbe72679c93fd53e2bb98c9abe49df25c9e3b96232ca44005f53adcd78ace57",
+    "referenceArchives": [
+      {
+        "path": "data/rolling-v6.json",
+        "sha256": "695f7a62aeccd645bbd1374899fc21afe6caad1549bfbc7fa2d25e1ed62552a4"
+      }
+    ],
+    "caseCount": 36
+  },
+  "capturedBeforePrimaryGeneration": true
+}

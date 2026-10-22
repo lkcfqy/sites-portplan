@@ -1,0 +1,12 @@
+{
+  "url": "https://newscon.icpa.or.kr/gate/list.do?menuKey=124",
+  "final_url": "https://newscon.icpa.or.kr/gate/list.do?menuKey=124",
+  "retrieved_at_utc": "2026-10-12T06:27:08.167400+00:00",
+  "http_status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "sha256": "d691000c52c67fa41ef00b93f78854270ead954d994f74474eb8bd77247fadd3",
+  "bytes": 99639,
+  "path": null,
+  "raw_cache_path": "/tmp/portplan-source-cache/icpa_gate_list.html",
+  "deployment_policy": "Raw container identifiers not included in distributed evidence; only bounded identifier-free sample retained."
+}

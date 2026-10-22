@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "portplan-public-anonymous-acceptance-readonly-review",
+  "site": "https://YOUR_SITE.example",
+  "scope": "Combined read-only public-access evidence review, with original failures preserved; independent from earlier private and localhost receipts. No pooled experiment or new formal method result.",
+  "anonymous": true,
+  "cookiesOrAuthorizationOrBypassUsed": false,
+  "productSourceModified": false,
+  "http": {
+    "all461Exact": true,
+    "zipCount": 22,
+    "originalBytes": 244690000
+  },
+  "publicV14ActualDOM": [
+    {
+      "case": "research-v14-natural-d0-1440",
+      "panels": [
+        {
+          "panel": "same-distribution",
+          "gate": true,
+          "candidateCompleted": 171,
+          "all14AdverseEqual": true
+        },
+        {
+          "panel": "stress",
+          "gate": false,
+          "candidateCompleted": 124,
+          "all14AdverseEqual": true
+        }
+      ],
+      "layout": {
+        "width": 1440,
+        "body": 1440,
+        "html": 1440
+      }
+    },
+    {
+      "case": "research-v14-natural-d0-390",
+      "panels": [
+        {
+          "panel": "same-distribution",
+          "gate": true,
+          "candidateCompleted": 171,
+          "all14AdverseEqual": true
+        },
+        {
+          "panel": "stress",
+          "gate": false,
+          "candidateCompleted": 124,
+          "all14AdverseEqual": true
+        }
+      ],
+      "layout": {
+        "width": 390,
+        "body": 390,
+        "html": 390
+      }
+    }
+  ],
+  "anonymousNativeDownloads": [
+    {
+      "href": "/downloads/defense-v14.ko.pdf",
+      "page": "research-v14",
+      "accessMethod": "actual-Chromium-native-anchor-URL-download",
+      "anonymous": true,
+      "downloadEventReceived": true,
+      "actualDownloadURL": "https://YOUR_SITE.example/downloads/defense-v14.ko.pdf",
+      "status": "passed",
+      "bytes": 67186,
+      "sha256": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+      "file": "anonymous-native-material-downloads-1440/defense-v14.ko.pdf",
+      "exactOriginalBytesEqual": true
+    },
+    {
+      "href": "/downloads/defense-v14.ko.pptx",
+      "page": "research-v14",
+      "accessMethod": "actual-Chromium-native-anchor-URL-download",
+      "anonymous": true,
+      "downloadEventReceived": true,
+      "actualDownloadURL": "https://YOUR_SITE.example/downloads/defense-v14.ko.pptx",
+      "status": "passed",
+      "bytes": 71855,
+      "sha256": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+      "file": "anonymous-native-material-downloads-1440/defense-v14.ko.pptx",
+      "exactOriginalBytesEqual": true
+    },
+    {
+      "href": "/downloads/portplan-source.zip",
+      "page": "research-v12",
+      "accessMethod": "actual-Chromium-native-anchor-URL-download",
+      "anonymous": true,
+      "downloadEventReceived": true,
+      "actualDownloadURL": "https://YOUR_SITE.example/downloads/portplan-source.zip",
+      "status": "passed",
+      "bytes": 19762425,
+      "sha256": "b0a94adee0c1756519a28e5215528d96d3bb2f7873926458b1105fdc0a9c1b87",
+      "file": "anonymous-native-material-downloads-1440/portplan-source.zip",
+      "exactOriginalBytesEqual": true
+    },
+    {
+      "href": "/downloads/defense-v14.ko.pdf",
+      "page": "research-v14",
+      "accessMethod": "actual-Chromium-native-anchor-URL-download",
+      "anonymous": true,
+      "downloadEventReceived": true,
+      "actualDownloadURL": "https://YOUR_SITE.example/downloads/defense-v14.ko.pdf",
+      "status": "passed",
+      "bytes": 67186,
+      "sha256": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+      "file": "anonymous-native-material-downloads-390/defense-v14.ko.pdf",
+      "exactOriginalBytesEqual": true
+    },
+    {
+      "href": "/downloads/defense-v14.ko.pptx",
+      "page": "research-v14",
+      "accessMethod": "actual-Chromium-native-anchor-URL-download",
+      "anonymous": true,
+      "downloadEventReceived": true,
+      "actualDownloadURL": "https://YOUR_SITE.example/downloads/defense-v14.ko.pptx",
+      "status": "passed",
+      "bytes": 71855,
+      "sha256": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+      "file": "anonymous-native-material-downloads-390/defense-v14.ko.pptx",
+      "exactOriginalBytesEqual": true
+    },
+    {
+      "href": "/downloads/portplan-source.zip",
+      "page": "research-v12",
+      "accessMethod": "actual-Chromium-native-anchor-URL-download",
+      "anonymous": true,
+      "downloadEventReceived": true,
+      "actualDownloadURL": "https://YOUR_SITE.example/downloads/portplan-source.zip",
+      "status": "passed",
+      "bytes": 19762425,
+      "sha256": "b0a94adee0c1756519a28e5215528d96d3bb2f7873926458b1105fdc0a9c1b87",
+      "file": "anonymous-native-material-downloads-390/portplan-source.zip",
+      "exactOriginalBytesEqual": true
+    }
+  ],
+  "firstBrowserRunValid": false,
+  "firstBrowserRunLimitation": "Worker request metadata omitted User-Agent; standard urllib supplied Python-urllib and upstream returned403. The earlier execution-failure assertion accepted a worker error; do not use it as teaching execution proof.",
+  "correctedWorkerRun": {
+    "valid": true,
+    "caseCount": 7,
+    "correction": "Only restore actual Chromium navigator.userAgent when Playwright worker metadata omits it; original HTTP body, browser policies, worker code and algorithm unchanged.",
+    "strictTeachingFailureReachedD2": true
+  },
+  "oneRunAll13Passed": false,
+  "independentLocal53CountUnchanged": true,
+  "proofBoundaries": [
+    "Real Chromium UI with documented anonymous normal-proxy/TLS byte bridge; not an extension-controlled user browser.",
+    "Anonymous native PDF/PPT/sourceZIP URL downloads succeeded at1440/390; earlier private nativeURL cancellations remain historical facts.",
+    "No native optimizer study, real enterprise record, entrant readiness or competition rank is certified."
+  ],
+  "receipts": [
+    {
+      "path": "/workspace/scratch/portplan-public-all-assets-first.json",
+      "sha256": "3fea17ba7310ca9fbd55752873e8631c56b51a992c5b5c0b4617bb7f0ad6bf7c"
+    },
+    {
+      "path": "/workspace/scratch/portplan-public-browser-first/summary.json",
+      "sha256": "02286aa47eca16e106190a6afc950c27ae29dfb4bfcdfabf137f423759f93e02"
+    },
+    {
+      "path": "/workspace/scratch/portplan-public-worker-header-probe-first.json",
+      "sha256": "03d2f958d534c5b15a0c849057483678c71680839b0138c706d39833fcb9bfbc"
+    },
+    {
+      "path": "/workspace/scratch/portplan-public-worker-header-probe-encoding-first.json",
+      "sha256": "794f8a8fa7051b9a12cd42dc150fa7d31e01701e85e7c9b3872da84a6e59cb03"
+    },
+    {
+      "path": "/workspace/scratch/portplan-public-worker-browser-probe-first/summary.json",
+      "sha256": "4bb5f44b537cea9e9b562c5267f559d8d56ba7930d74bc2ebabdc914a1349163"
+    },
+    {
+      "path": "/workspace/scratch/portplan-public-worker-corrected-browser-first/summary.json",
+      "sha256": "3f1b158ffcfe0934a391bb86895ede9fed604d13583b0db506abfac4e1027e6d"
+    }
+  ],
+  "screenshotsViewed": [
+    "/workspace/scratch/portplan-public-browser-first/research-v14-natural-d0-1440/screen.png",
+    "/workspace/scratch/portplan-public-browser-first/research-v14-natural-d0-390/screen.png",
+    "/workspace/scratch/portplan-public-worker-corrected-browser-first/execution-success/screen.png",
+    "/workspace/scratch/portplan-public-worker-corrected-browser-first/resource-procurement-success/screen.png"
+  ]
+}

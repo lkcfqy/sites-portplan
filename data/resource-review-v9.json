@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "portplan-independent-resource-recovery-v9-review",
+  "valid": true,
+  "readOnly": true,
+  "importsJavaScript": false,
+  "solverRuns": 0,
+  "inputSha256": "32b6e1d89bafaec31914a98661c256aed4ceb2e6257eef2077e20fba1fc44227",
+  "implementationSha256": "fa7ed05ea37a9a358f6763af7d2d6ffe35f8834e915a2c1a79015adbfef3b56d",
+  "ledgerSha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+  "recordCount": 4,
+  "feasibilityAuditedRecordCount": 2,
+  "optimalityAuditedRecordCount": 4,
+  "maxEnumerationLeafStates": 250000,
+  "records": [
+    {
+      "name": "rescue-procurementOnly",
+      "valid": true,
+      "status": "optimal",
+      "objectiveMode": "procurementOnly",
+      "knownContainers": 1,
+      "horizonDays": 4,
+      "currentObservationDay": 1,
+      "eligibleActionCount": 3,
+      "excludedActionCount": 3,
+      "selectedActionIds": [
+        "SYNTHETIC-warehouse-one-day"
+      ],
+      "feasibilityAudited": true,
+      "physicalFeeTotals": {
+        "storageCost": 546000.0,
+        "ddCost": 195000,
+        "totalCost": 741000.0,
+        "sunkCost": 575500.0,
+        "incrementalCost": 165500.0,
+        "objectiveCost": 165500.0
+      },
+      "optimalityAudited": true,
+      "resultMatchesEnumeratedRequestedOptimum": true,
+      "enumeration": {
+        "optimalityAudited": true,
+        "exhaustive": true,
+        "bounds": {
+          "maximumContainers": 3,
+          "maximumHorizonDays": 8,
+          "maximumEligibleActions": 8,
+          "maximumLeafStates": 250000,
+          "dateDomains": "every legal p/u/r in the full horizon, with exact original past locks",
+          "actionDomains": "every binary subset of the complete eligible menu"
+        },
+        "perContainerLegalDateCounts": [
+          2
+        ],
+        "completeDateCombinations": 2,
+        "eligibleMenuSubsets": 8,
+        "leafStateBound": 16,
+        "visitedLeafStates": 16,
+        "feasibleLeafStates": 12,
+        "feasibleWithinMenu": true,
+        "minimumProcurementCostKRW": 30000,
+        "minimumFeesPlusProcurementKRW": 165500.0,
+        "witnesses": {
+          "procurementOnly": {
+            "selectedActionIds": [
+              "SYNTHETIC-warehouse-one-day"
+            ],
+            "dates": [
+              {
+                "id": "TEACHING-01",
+                "pickupDay": 0,
+                "unloadDay": 1,
+                "returnDay": 2
+              }
+            ],
+            "procurementCostKRW": 30000,
+            "incrementalCost": 135500.0,
+            "objectiveCostKRW": 30000
+          },
+          "feesPlusProcurement": {
+            "selectedActionIds": [
+              "SYNTHETIC-warehouse-one-day"
+            ],
+            "dates": [
+              {
+                "id": "TEACHING-01",
+                "pickupDay": 0,
+                "unloadDay": 1,
+                "returnDay": 2
+              }
+            ],
+            "procurementCostKRW": 30000,
+            "incrementalCost": 135500.0,
+            "objectiveCostKRW": 165500.0
+          }
+        },
+        "scope": "Finite explicit eligible menu and supplied current observation only; no future shocks, real quotes, dispatch or realized savings"
+      },
+      "scope": "Current supplied observation, immutable past event locks and explicit authorized finite menu only. Independent minimum/infeasibility verification applies only when optimalityAudited=true. No external price validation, purchase, dispatch, future-event robustness, external clock authentication or realized-savings claim."
+    },
+    {
+      "name": "rescue-feesPlusProcurement",
+      "valid": true,
+      "status": "optimal",
+      "objectiveMode": "feesPlusProcurement",
+      "knownContainers": 1,
+      "horizonDays": 4,
+      "currentObservationDay": 1,
+      "eligibleActionCount": 3,
+      "excludedActionCount": 3,
+      "selectedActionIds": [
+        "SYNTHETIC-warehouse-one-day"
+      ],
+      "feasibilityAudited": true,
+      "physicalFeeTotals": {
+        "storageCost": 546000.0,
+        "ddCost": 165000,
+        "totalCost": 711000.0,
+        "sunkCost": 575500.0,
+        "incrementalCost": 135500.0,
+        "objectiveCost": 135500.0
+      },
+      "optimalityAudited": true,
+      "resultMatchesEnumeratedRequestedOptimum": true,
+      "enumeration": {
+        "optimalityAudited": true,
+        "exhaustive": true,
+        "bounds": {
+          "maximumContainers": 3,
+          "maximumHorizonDays": 8,
+          "maximumEligibleActions": 8,
+          "maximumLeafStates": 250000,
+          "dateDomains": "every legal p/u/r in the full horizon, with exact original past locks",
+          "actionDomains": "every binary subset of the complete eligible menu"
+        },
+        "perContainerLegalDateCounts": [
+          2
+        ],
+        "completeDateCombinations": 2,
+        "eligibleMenuSubsets": 8,
+        "leafStateBound": 16,
+        "visitedLeafStates": 16,
+        "feasibleLeafStates": 12,
+        "feasibleWithinMenu": true,
+        "minimumProcurementCostKRW": 30000,
+        "minimumFeesPlusProcurementKRW": 165500.0,
+        "witnesses": {
+          "procurementOnly": {
+            "selectedActionIds": [
+              "SYNTHETIC-warehouse-one-day"
+            ],
+            "dates": [
+              {
+                "id": "TEACHING-01",
+                "pickupDay": 0,
+                "unloadDay": 1,
+                "returnDay": 2
+              }
+            ],
+            "procurementCostKRW": 30000,
+            "incrementalCost": 135500.0,
+            "objectiveCostKRW": 30000
+          },
+          "feesPlusProcurement": {
+            "selectedActionIds": [
+              "SYNTHETIC-warehouse-one-day"
+            ],
+            "dates": [
+              {
+                "id": "TEACHING-01",
+                "pickupDay": 0,
+                "unloadDay": 1,
+                "returnDay": 2
+              }
+            ],
+            "procurementCostKRW": 30000,
+            "incrementalCost": 135500.0,
+            "objectiveCostKRW": 165500.0
+          }
+        },
+        "scope": "Finite explicit eligible menu and supplied current observation only; no future shocks, real quotes, dispatch or realized savings"
+      },
+      "scope": "Current supplied observation, immutable past event locks and explicit authorized finite menu only. Independent minimum/infeasibility verification applies only when optimalityAudited=true. No external price validation, purchase, dispatch, future-event robustness, external clock authentication or realized-savings claim."
+    },
+    {
+      "name": "impossible-procurementOnly",
+      "valid": true,
+      "status": "infeasible",
+      "objectiveMode": "procurementOnly",
+      "knownContainers": 1,
+      "horizonDays": 4,
+      "currentObservationDay": 1,
+      "eligibleActionCount": 1,
+      "excludedActionCount": 5,
+      "selectedActionIds": [],
+      "feasibilityAudited": false,
+      "physicalFeeTotals": null,
+      "optimalityAudited": true,
+      "resultMatchesEnumeratedRequestedOptimum": true,
+      "enumeration": {
+        "optimalityAudited": true,
+        "exhaustive": true,
+        "bounds": {
+          "maximumContainers": 3,
+          "maximumHorizonDays": 8,
+          "maximumEligibleActions": 8,
+          "maximumLeafStates": 250000,
+          "dateDomains": "every legal p/u/r in the full horizon, with exact original past locks",
+          "actionDomains": "every binary subset of the complete eligible menu"
+        },
+        "perContainerLegalDateCounts": [
+          2
+        ],
+        "completeDateCombinations": 2,
+        "eligibleMenuSubsets": 2,
+        "leafStateBound": 4,
+        "visitedLeafStates": 4,
+        "feasibleLeafStates": 0,
+        "feasibleWithinMenu": false,
+        "minimumProcurementCostKRW": null,
+        "minimumFeesPlusProcurementKRW": null,
+        "witnesses": {
+          "procurementOnly": null,
+          "feesPlusProcurement": null
+        },
+        "scope": "Finite explicit eligible menu and supplied current observation only; no future shocks, real quotes, dispatch or realized savings"
+      },
+      "scope": "Current supplied observation, immutable past event locks and explicit authorized finite menu only. Independent minimum/infeasibility verification applies only when optimalityAudited=true. No external price validation, purchase, dispatch, future-event robustness, external clock authentication or realized-savings claim."
+    },
+    {
+      "name": "impossible-feesPlusProcurement",
+      "valid": true,
+      "status": "infeasible",
+      "objectiveMode": "feesPlusProcurement",
+      "knownContainers": 1,
+      "horizonDays": 4,
+      "currentObservationDay": 1,
+      "eligibleActionCount": 1,
+      "excludedActionCount": 5,
+      "selectedActionIds": [],
+      "feasibilityAudited": false,
+      "physicalFeeTotals": null,
+      "optimalityAudited": true,
+      "resultMatchesEnumeratedRequestedOptimum": true,
+      "enumeration": {
+        "optimalityAudited": true,
+        "exhaustive": true,
+        "bounds": {
+          "maximumContainers": 3,
+          "maximumHorizonDays": 8,
+          "maximumEligibleActions": 8,
+          "maximumLeafStates": 250000,
+          "dateDomains": "every legal p/u/r in the full horizon, with exact original past locks",
+          "actionDomains": "every binary subset of the complete eligible menu"
+        },
+        "perContainerLegalDateCounts": [
+          2
+        ],
+        "completeDateCombinations": 2,
+        "eligibleMenuSubsets": 2,
+        "leafStateBound": 4,
+        "visitedLeafStates": 4,
+        "feasibleLeafStates": 0,
+        "feasibleWithinMenu": false,
+        "minimumProcurementCostKRW": null,
+        "minimumFeesPlusProcurementKRW": null,
+        "witnesses": {
+          "procurementOnly": null,
+          "feesPlusProcurement": null
+        },
+        "scope": "Finite explicit eligible menu and supplied current observation only; no future shocks, real quotes, dispatch or realized savings"
+      },
+      "scope": "Current supplied observation, immutable past event locks and explicit authorized finite menu only. Independent minimum/infeasibility verification applies only when optimalityAudited=true. No external price validation, purchase, dispatch, future-event robustness, external clock authentication or realized-savings claim."
+    }
+  ],
+  "scope": "Independent internal Python physical/tariff/menu reconstruction and bounded exhaustive tiny-instance verification. Solver-supplied minimum claims on larger instances remain unaudited; no JavaScript, solver, external certification, external clock authentication or real-world savings evidence."
+}

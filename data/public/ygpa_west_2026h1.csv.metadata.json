@@ -1,0 +1,12 @@
+{
+  "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+  "final_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+  "retrieved_at_utc": "2026-10-12T06:27:58.085651+00:00",
+  "http_status": 200,
+  "content_type": "application/octet-stream; charset=UTF-8",
+  "sha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+  "bytes": 5401590,
+  "path": null,
+  "raw_cache_path": "/tmp/portplan-source-cache/ygpa_west_2026h1.csv",
+  "deployment_policy": "Only aggregate statistics and 200 identifier-free records are distributed."
+}

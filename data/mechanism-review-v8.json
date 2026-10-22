@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "portplan-independent-python-mechanism-review-v8",
+  "valid": true,
+  "readOnlySources": true,
+  "solverCalls": 0,
+  "importsJavaScript": false,
+  "resultSHA256": "537140a831fb5807bb703b2757b9203c328d3062a6e486006c3780e44c0eaf23",
+  "protocolSHA256": "01571193568db7e11ef7e32aa844f9ca2679b3b625ff99bc1cf3bce83f2737cc",
+  "inputHashes": {
+    "data/rolling-v7.json": "a8b0d67f7ff5fbf3b27fe260ab8d9d17be331a9942df37704d8d8365546000c6",
+    "data/protocol-v7.json": "bb70fa6938ffbb162347142cbb2788f9ece00ac695a8b8ed5a647cd08aedb96f",
+    "data/failure-diagnosis-v8.json": "b17cef73f79c8259cab5d68e194a36e858c4c1adc8613f16c5a18a5b51be99e7"
+  },
+  "implementationHashes": {
+    "scripts/mechanism-v8.mjs": "897bb29706b13133c63451d718ea760a22c904e1b99073e56b0301968b978807",
+    "src/adaptive-planner-v8.js": "130d6dcdf9bf20cacd12130179bf0942a43b8b2708a24c3f558086bb90a9a26b",
+    "src/cost-recovery-v7.js": "89d5b2598639e4b08683c93e61d268064d2455c9df435b596016a1ecb947e25f",
+    "src/recovery-planner-v6.js": "560d3d8a136adbcabfe00373ea549d68f107859764feadff607c08bc4acf12bc",
+    "src/engine.js": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+    "src/rolling-plan.js": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+    "src/solver-glpk.js": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+    "src/execution-constraints.js": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+    "src/solver-presolver.js": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+    "scripts/benchmark-v2.mjs": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "package-lock.json": "6adf7e460d457ed6ef0a6f940c99987ddb569c5e432194de5e4fd4bd2c9f0afe",
+    "vendor/experiments/v7-first-run-source/src/engine.js": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+    "vendor/experiments/v7-first-run-source/src/rolling-plan.js": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+    "vendor/experiments/v7-first-run-source/src/stable-planner-v5.js": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64",
+    "vendor/experiments/v7-first-run-source/src/recovery-planner-v6.js": "560d3d8a136adbcabfe00373ea549d68f107859764feadff607c08bc4acf12bc",
+    "vendor/experiments/v7-first-run-source/src/cost-recovery-v7.js": "89d5b2598639e4b08683c93e61d268064d2455c9df435b596016a1ecb947e25f",
+    "vendor/experiments/v7-first-run-source/src/grasp-planner-v7.js": "7517f0d100b2e2d5442dc89adeee988290416fcd69b06c32c37c5769776c4a4e",
+    "vendor/experiments/v7-first-run-source/src/solver-glpk.js": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+    "vendor/experiments/v7-first-run-source/src/solver-presolver.js": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+    "vendor/experiments/v7-first-run-source/src/execution-constraints.js": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+    "vendor/experiments/v7-first-run-source/src/fast-constructor-v5.js": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f",
+    "vendor/experiments/v7-first-run-source/src/event-search-v4.js": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b",
+    "vendor/experiments/v7-first-run-source/src/strong-baseline.js": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac"
+  },
+  "independentReviewHelpers": {
+    "scripts/diagnose-failures-v6.py": "764aa03c880fb20325d35607de5e2b167d27f444064f4ae4822f8d392059d62c",
+    "scripts/certify-v4.py": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78",
+    "scripts/review-v5.py": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9"
+  },
+  "taskCount": 28,
+  "distinctSnapshotCount": 28,
+  "resultCount": 392,
+  "rawCompleteSchedulesAudited": 274,
+  "timelyCompleteSnapshotCount": 253,
+  "lateCompleteSnapshotCount": 21,
+  "auditRejectedCount": 0,
+  "checks": [
+    "original daily observation SHA and exact historical prefix",
+    "same previous full dates",
+    "all expected jobs and original source seeds",
+    "independent Python fee/resource/lock audit of every returned complete schedule, including late schedules",
+    "deadline and null failure fee handling",
+    "pending event revisions",
+    "panel counts and fee/change paired summaries"
+  ],
+  "scope": "Internal independent Python review of development warm-snapshot results. Not third-party certification, held-out performance, terminal episode execution, or hard timer proof."
+}

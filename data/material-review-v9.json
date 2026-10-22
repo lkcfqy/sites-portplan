@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "portplan-v9-material-review",
+  "valid": true,
+  "reviewedAtKST": "2026-10-16T22:44:33+09:00",
+  "readOnlyFormalEvidence": true,
+  "solverRuns": 0,
+  "newScenarios": 0,
+  "formalIndexSha256": "83d165a965e421af0ebc0b399f426eab3ae48eddc4a564374a6074f9edad7204",
+  "evidenceHashes": {
+    "data/v9-results.json": "fe021614be03707bde070e499f7d626170f48add832bffe1ac38de1987399d1c",
+    "data/evidence-v9/v9-frozen-first/first-run/complete.json": "83d165a965e421af0ebc0b399f426eab3ae48eddc4a564374a6074f9edad7204",
+    "data/protocol-v9.json": "1f8c22e173bba58165d3e641a28a1ce959ec2f9810baac880bc5553b5a6d1273",
+    "data/review-v9.json": "7716e885b7ea673bba6e552b1e6c52f3137cad4157058b8d59696175f10c6c50",
+    "data/bootstrap-review-v9.json": "e8de544d3bd7203c4e044e104f46798d3a7e1ef9cf83a7a7b2af0d3caff87f51",
+    "data/v8-results.json": "e033704ef2e27a6f1b2fc8d55ba94809b8fd8a77c6aa3d50d19a77a3199ed92b",
+    "data/evidence-v8/v8-frozen-first/first-run/complete.json": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6",
+    "data/review-v8.json": "e641527d79883fc467fdf7b1246a257cc5d622f31686c90179c065652f00d3e0",
+    "data/failure-diagnosis-v8.json": "b17cef73f79c8259cab5d68e194a36e858c4c1adc8613f16c5a18a5b51be99e7",
+    "data/resource-validation-v9.json": "32b6e1d89bafaec31914a98661c256aed4ceb2e6257eef2077e20fba1fc44227",
+    "data/resource-review-v9.json": "6befb3ab1211cad8a784fe1a1a8a16d4324f7ec03d369920e0bd2b182a0d1b48"
+  },
+  "generatorSha256": "5d488293c49c8d7aa16130f8de5a4288e28dcba497556014f0ba5a38bfff0a49",
+  "slideObjectSha256": "27ba2991a42bd1cd5c1b1baf2f52694c9384dfbb892be780d5b9a195ab966c2a",
+  "pdfPageCount": 18,
+  "pptxSlideCount": 18,
+  "sameSourceSlideObjects": true,
+  "sourceTextCoverage": true,
+  "pdfImages": 0,
+  "pptxPictures": 0,
+  "pptxEditableTextShapes": 137,
+  "pptxEditableTables": 13,
+  "pages": [
+    {
+      "page": 1,
+      "title": "오늘의 반출·적출·반납을 실행 가능한 날짜로 연결합니다.",
+      "requiredTextItems": 6,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 2,
+      "title": "세 행동의 날짜와 요금을 같은 자원 장부에서 계산합니다.",
+      "requiredTextItems": 15,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 3,
+      "title": "V8의 실제 후퇴를 개선의 출발점으로 남깁니다.",
+      "requiredTextItems": 12,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 4,
+      "title": "V9 가설: 먼저 받은 완전 후보를 외부 검사 뒤 보존합니다.",
+      "requiredTextItems": 6,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 5,
+      "title": "유지·개선·복구의 조건은 전달 방식과 구분합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 6,
+      "title": "자원이 부족하면 명시한 메뉴에서 구매 비용을 계산합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 7,
+      "title": "분모와 예산은 새 입력을 만들기 전에 고정했습니다.",
+      "requiredTextItems": 15,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 8,
+      "title": "동일 생성분포 · 새 주문 시드 완주와 이력 미확보를 먼저 확인합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 9,
+      "title": "동일 생성분포 · 새 주문 시드 공동 완주한 동일 반복만 요금을 비교합니다.",
+      "requiredTextItems": 33,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 10,
+      "title": "스트레스 · 새 주문 시드 완주와 이력 미확보를 먼저 확인합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 11,
+      "title": "스트레스 · 새 주문 시드 공동 완주한 동일 반복만 요금을 비교합니다.",
+      "requiredTextItems": 33,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 12,
+      "title": "완주 손실과 비용 악화를 모든 비교에서 보존합니다.",
+      "requiredTextItems": 58,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 13,
+      "title": "더 많은 완주에도 계산과 날짜 변경의 대가가 있습니다.",
+      "requiredTextItems": 58,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 14,
+      "title": "후보를 찾은 시각과 검사·수락한 시각을 구분합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 15,
+      "title": "물리와 통계는 서로 다른 Python 검산으로 확인합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 16,
+      "title": "화면에서 내 입력과 명시적 보완 자원을 검토합니다.",
+      "requiredTextItems": 6,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 17,
+      "title": "개인 기여와 현실 검증을 대신 완료로 표시하지 않습니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 18,
+      "title": "같은 결정을 다시 계산할 전체 증거를 전달합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    }
+  ],
+  "scope": "Saved-artifact text, exact native table cells, vector/editable objects, page counts, PDF text bounds and PPTX shape bounds; renderer rejects table/note overflow before writing. PDF/PPTX share the same source slide objects and bound evidence. No PowerPoint application rendering, browser interaction, external clock certification, field validation or entrant understanding is certified.",
+  "koreanReportAdverseIdentifierOccurrences": 470,
+  "koreanReportLostCompletionIdentifierOccurrences": 97,
+  "allDeclaredConditionalIntervalsPresent": true,
+  "outputHashes": {
+    "docs/defense-v9.ko.html": "5a0d8858d151bebc4a91997d433fe404eb5ca3e6a3a1484241d4eb2018c74709",
+    "docs/defense-v9.ko.pdf": "fafbb6b84a1b1ba881f336df38b6c0aec4597627907fcdaf611b462d0fd35a99",
+    "docs/submission-v9.ko.md": "2ca4381b18d4245a1630839d1e0f1a1fdc78db366c70a47606bb9ab77a5d0e2c",
+    "docs/defense-v9.en.md": "0434f67bb71a9ccc950af33b7c8bed2311828effb28955a6e033b997c7bfd2e0",
+    "docs/contribution-log-v9.md": "eccdcaabf71e60ddea6d7d3ca56ae1e396a5408ca760c175bb6e2ae004d81a09",
+    "docs/defense-v9.ko.pptx": "2cbb066c67f96e601deb42faf7a0c1fd11081aece2ae12408392814fface0952"
+  },
+  "contactSheet": {
+    "path": "artifacts/v9-materials-contact-sheet.png",
+    "sha256": "ddecc4670b7f1ac5fa56ac4905f6e3e53f825d48cc43b9501c6c67f7f788a172",
+    "scope": "Full 18-page PDF contact sheet for human visual inspection; no PowerPoint application screenshot."
+  }
+}

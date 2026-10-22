@@ -1,0 +1,2881 @@
+{
+  "schemaVersion": "portplan-v9-posthoc-descriptive-interpretation-1",
+  "readOnlyInputs": true,
+  "solverRuns": 0,
+  "scriptSha256": "78f125fa54f438ff57164f0039fc6f2eb9344176625999ce45ae89d4789c5b3b",
+  "inputIndexSha256": "83d165a965e421af0ebc0b399f426eab3ae48eddc4a564374a6074f9edad7204",
+  "protocolSha256": "1f8c22e173bba58165d3e641a28a1ce959ec2f9810baac880bc5553b5a6d1273",
+  "frozenManifestSha256": "ab99f15a026326fdd2039d94b598c5c2c1290a4176ff43367fb8e792b4e3119d",
+  "method": "All 432 bound adaptiveV9 episode artifacts; per-call candidate counts from full gate events, with no optimizer rerun or bootstrap recomputation.",
+  "panels": {
+    "same-distribution": {
+      "episodes": 216,
+      "completeEpisodes": 150,
+      "calls": 2111,
+      "callsWithAcceptedIncumbent": 2045,
+      "timelyIncumbentThenCallOver200Ms": 104,
+      "recoveryTimelyIncumbentThenCallOver200Ms": 104,
+      "timelyIncumbentThenOver200MsCompleteEpisodes": [
+        "v9-same-distribution-aged-backlog-balanced-n24-r1::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n24-r1::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n24-r1::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n50-r1::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n50-r1::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n50-r1::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n50-r2::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n50-r3::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n50-r3::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n50-r3::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n50-r4::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n50-r4::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n50-r4::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n100-r1::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n100-r1::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n100-r1::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n100-r2::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n100-r2::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n100-r2::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+        "v9-same-distribution-aged-backlog-balanced-n100-r4::repeat-1",
+        "v9-same-distribution-aged-backlog-balanced-n100-r4::repeat-2",
+        "v9-same-distribution-aged-backlog-balanced-n100-r4::repeat-3",
+        "v9-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+        "v9-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+        "v9-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+        "v9-same-distribution-new-arrivals-tight-n100-r1::repeat-1",
+        "v9-same-distribution-new-arrivals-tight-n100-r1::repeat-2",
+        "v9-same-distribution-new-arrivals-tight-n100-r1::repeat-3",
+        "v9-same-distribution-new-arrivals-tight-n100-r3::repeat-1",
+        "v9-same-distribution-new-arrivals-tight-n100-r3::repeat-2",
+        "v9-same-distribution-new-arrivals-tight-n100-r3::repeat-3",
+        "v9-same-distribution-batch-release-tight-n24-r2::repeat-1",
+        "v9-same-distribution-batch-release-tight-n24-r2::repeat-2",
+        "v9-same-distribution-batch-release-tight-n50-r1::repeat-1",
+        "v9-same-distribution-batch-release-tight-n50-r1::repeat-2",
+        "v9-same-distribution-batch-release-tight-n50-r1::repeat-3",
+        "v9-same-distribution-batch-release-tight-n50-r2::repeat-1",
+        "v9-same-distribution-batch-release-tight-n50-r2::repeat-2",
+        "v9-same-distribution-batch-release-tight-n50-r2::repeat-3",
+        "v9-same-distribution-batch-release-tight-n50-r3::repeat-1",
+        "v9-same-distribution-batch-release-tight-n50-r3::repeat-2",
+        "v9-same-distribution-batch-release-tight-n50-r3::repeat-3",
+        "v9-same-distribution-batch-release-tight-n100-r1::repeat-1",
+        "v9-same-distribution-batch-release-tight-n100-r1::repeat-2",
+        "v9-same-distribution-batch-release-tight-n100-r1::repeat-3",
+        "v9-same-distribution-batch-release-tight-n100-r2::repeat-1",
+        "v9-same-distribution-batch-release-tight-n100-r2::repeat-2",
+        "v9-same-distribution-batch-release-tight-n100-r2::repeat-3",
+        "v9-same-distribution-batch-release-tight-n100-r3::repeat-1",
+        "v9-same-distribution-batch-release-tight-n100-r3::repeat-2",
+        "v9-same-distribution-batch-release-tight-n100-r3::repeat-3",
+        "v9-same-distribution-batch-release-tight-n100-r4::repeat-1",
+        "v9-same-distribution-batch-release-tight-n100-r4::repeat-2",
+        "v9-same-distribution-batch-release-tight-n100-r4::repeat-3"
+      ],
+      "timelyIncumbentThenOver200MsFailedEpisodes": [
+        "v9-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+        "v9-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+        "v9-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+        "v9-same-distribution-aged-backlog-tight-n50-r2::repeat-1",
+        "v9-same-distribution-aged-backlog-tight-n50-r2::repeat-2",
+        "v9-same-distribution-aged-backlog-tight-n50-r2::repeat-3",
+        "v9-same-distribution-new-arrivals-tight-n100-r4::repeat-1",
+        "v9-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+        "v9-same-distribution-new-arrivals-tight-n100-r4::repeat-3",
+        "v9-same-distribution-batch-release-tight-n24-r4::repeat-1",
+        "v9-same-distribution-batch-release-tight-n24-r4::repeat-2",
+        "v9-same-distribution-batch-release-tight-n24-r4::repeat-3"
+      ],
+      "actionCounts": {
+        "initialize": 183,
+        "retain": 1664,
+        "rebuild": 189,
+        "failed": 66,
+        "polish": 9
+      },
+      "acceptedSourceCounts": {
+        "locked_constructor": 603,
+        "recovery_polish": 242,
+        "locked_milp": 270,
+        "cache": 1673,
+        "adaptive_polish": 9
+      },
+      "selectedSourceCounts": {
+        "locked_milp": 270,
+        "cache": 1664,
+        "recovery_polish": 98,
+        "locked_constructor": 4,
+        "adaptive_polish": 9
+      },
+      "candidateOutcomeCounts": {
+        "accepted": 2797,
+        "not_improved": 418,
+        "rejected_guard": 641,
+        "rejected_invalid": 222,
+        "rejected_late_receipt": 56
+      },
+      "strictReplacementSourceCounts": {
+        "locked_constructor": 273,
+        "recovery_polish": 242,
+        "locked_milp": 143,
+        "adaptive_polish": 9
+      },
+      "adaptivePolishCalls": 650,
+      "adaptivePolishAcceptedCalls": 9,
+      "recoveryPolishInvocations": 330,
+      "recoveryPolishAcceptedCandidates": 242,
+      "polishInternalAcceptedMoves": 3439,
+      "failureKinds": {
+        "no_complete_plan": 66
+      },
+      "failureDayCounts": {
+        "3": 15,
+        "0": 33,
+        "2": 3,
+        "4": 9,
+        "7": 3,
+        "8": 3
+      },
+      "failedCallMILPStatus": {
+        "infeasible": 36,
+        "feasible": 9,
+        "time_limit": 21
+      },
+      "failedCallConstructorDeadlineReached": 0,
+      "failedCallLateValidAuditCandidates": 0,
+      "failedCallLateReceiptCandidates": 9,
+      "failureRecords": [
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r1::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 14.611752999999993,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r1--a1--adaptiveV9.json",
+            "sha256": "235e5ce83527cbb826d09c16cb73a4880c478df97017554aa3cc067d9aa99105"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r1::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 13.814537999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r1--a2--adaptiveV9.json",
+            "sha256": "df91e20a79e06d6a9930e8bf94c564470925a6bc80ff4dbdb300b58cb00c5b24"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r1::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 13.716121000000015,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r1--a3--adaptiveV9.json",
+            "sha256": "9add85b16530a9b87cc91c621c41b802a954baceabb6e9a2f0cbceb2fe9b753b"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r2::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 50.870485,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r2--a1--adaptiveV9.json",
+            "sha256": "800b4b8eee3d87a55d48535d406589d4ba7b6bcfdd60ad5fbb71d56daccd79ea"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r2::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 59.664226,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r2--a2--adaptiveV9.json",
+            "sha256": "8809c812c044338a8bb6d4f2743cbd90fc25520b2bfe6d09ccfd9f9b602fd059"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r2::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 52.12798600000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r2--a3--adaptiveV9.json",
+            "sha256": "d94f2745be50594504357f2ce46a303811a3c85b3a0e378cf4d7c850ec8803a1"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 51.98070700000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r3--a1--adaptiveV9.json",
+            "sha256": "1514dce02dc363ceb2966c8f829f9750baaf3bf0e053c8283c76c2fae795df51"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 52.462092999999996,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r3--a2--adaptiveV9.json",
+            "sha256": "57d3b1fd785f530c2d7fca497c42f16fffead0d13ecddd53a0d298b6f7c31210"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 57.800394000000004,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r3--a3--adaptiveV9.json",
+            "sha256": "aa44a751b56ee0d05083b278921a39d79f91a583ad8aa72dc4a86f5ace5cb0b4"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r4::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 69.464674,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r4--a1--adaptiveV9.json",
+            "sha256": "652bf8b021eabe5008637875423225e9b26e6537b9575de9b6f4381546360582"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r4::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 56.85840999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r4--a2--adaptiveV9.json",
+            "sha256": "84da0a20e93020e6e9062fa71f9a8b15026cb2569413712cdcdac6d3bae02c80"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n24-r4::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 59.347266,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n24-r4--a3--adaptiveV9.json",
+            "sha256": "9a69fa96f7d64506e2e11a949c9b7f7d531c8877b6a09d30d41cd738c3384aab"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 223.26055799999995,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r1--a1--adaptiveV9.json",
+            "sha256": "961ae5d9d635fedd132edc4b8d1cf8e51874895a7ad13f90baf121104529d04c"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 219.52164200000004,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r1--a2--adaptiveV9.json",
+            "sha256": "34123a845a6fa712bb706e1007fb68327281a1bd271a3044f6115e219b56d6bd"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 223.83304500000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r1--a3--adaptiveV9.json",
+            "sha256": "23fa098191316f96adc545946949624025f1f7228e811c2021ad8b87663677cf"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r2::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 212.57203500000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r2--a1--adaptiveV9.json",
+            "sha256": "732226713ee373e9fe2a073e3d30f7b996b8e83a7f33b6a8653ec4d354707e84"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r2::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 209.918367,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r2--a2--adaptiveV9.json",
+            "sha256": "d84df8aaf9711f97f59a10dfac73fea344918eb4aac335f08db190f8d9bacd22"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r2::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 210.59019299999994,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r2--a3--adaptiveV9.json",
+            "sha256": "3bcee06ae8480959d1a9a665873d3bca66ff72ef00d8dce78f76f77b98e859b4"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 272.635603,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r3--a1--adaptiveV9.json",
+            "sha256": "eaf00f7e53693fb458bc7c4c2032c47b15daa92e3c429efe3145402d03d98ce8"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 260.623138,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r3--a2--adaptiveV9.json",
+            "sha256": "194ec722ed16dda94c53672b38299c558a62bae1988493a5e8b4bc9804d39e36"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 262.7083,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r3--a3--adaptiveV9.json",
+            "sha256": "6f1897aac5e1d27e3cf33be9de3368e78c4e55c023c432c2b884eac7b2735cd8"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r4::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 266.018938,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r4--a1--adaptiveV9.json",
+            "sha256": "c8c059b335b68c190409656c50cc171197b424cb3896d65873c204298d879a87"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r4::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 260.6422,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r4--a2--adaptiveV9.json",
+            "sha256": "03e4328412f0b3498ede17f2a43635ca268db2f37078dfa8b16955918ec79ef0"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n50-r4::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 263.87786000000006,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n50-r4--a3--adaptiveV9.json",
+            "sha256": "e77d54690fcb7b4efb7ea9bfef089e9c80f1adf3aef5ba0bb45373e5d3819f2f"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r1::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 224.67091399999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r1--a1--adaptiveV9.json",
+            "sha256": "86402973fd7553122f1bd66e6c6cc21948914c1171a799ae7f1c0b69cc4267ac"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r1::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 222.34175,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r1--a2--adaptiveV9.json",
+            "sha256": "79aaf62cb4d622a92aef6abd1312e760bb9ac5f2228bcb957d8b753d1f703f74"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r1::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 221.005832,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r1--a3--adaptiveV9.json",
+            "sha256": "b1224830a248ea8316039196651e2d525bb0bf47d587888af001085faafc9aa2"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r2::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 222.141686,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r2--a1--adaptiveV9.json",
+            "sha256": "6394221d77d4432742e2da3614540a7fa4e167befea73010c7d82cb7b566df46"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r2::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 221.712317,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r2--a2--adaptiveV9.json",
+            "sha256": "40c54812db7e747cb45a477cbd65369a378868142ea1da268b46e5afe1f0995a"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r2::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 249.83676300000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r2--a3--adaptiveV9.json",
+            "sha256": "d1d522dd9ca934b05ce10e49799fb9473ea1cdf6f6b11b9fd05da19e1b92ea6d"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 158.339296,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r3--a1--adaptiveV9.json",
+            "sha256": "c8b7613da208ce8f6ef460be5f30e1da6438df03ed217c17d3f04d6901a5d657"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 168.022677,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r3--a2--adaptiveV9.json",
+            "sha256": "d3f8c1b90958d75951a9546b0df8e56baf9cbbd33a1ca94a4d131f825a35df1c"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 162.061755,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r3--a3--adaptiveV9.json",
+            "sha256": "2ecd616df3277ff35fe90705a16253d3129c51ee67530b2137f7b04a5d59fd66"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r4::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 218.888879,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r4--a1--adaptiveV9.json",
+            "sha256": "85fff36357fd953725f0ca0da63bd9958a0e10ac192280dab907f56bc7a7bd72"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r4::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 218.73552999999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r4--a2--adaptiveV9.json",
+            "sha256": "1ecb477a5cb33131e237eea80ca7dc483e1c8cd0e5a220ec949aa7dc28ac4d38"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-aged-backlog-tight-n100-r4::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 226.38765400000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-aged-backlog-tight-n100-r4--a3--adaptiveV9.json",
+            "sha256": "a1b3639cd422f936572f897229b574009c2797bc3b0d147cf84b55e78f7eb527"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-balanced-n24-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.86002400000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-balanced-n24-r2--a1--adaptiveV9.json",
+            "sha256": "47a5c41f2713997d7796ea14c0ff90d6960b8f18ad56b0e69ce77ccf396a16d6"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-balanced-n24-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.598473999999996,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-balanced-n24-r2--a2--adaptiveV9.json",
+            "sha256": "f93024205044c7a002fc94db866b1e9c1d09d2fd8d85aae9b80a7df9efa8e671"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-balanced-n24-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.490611999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-balanced-n24-r2--a3--adaptiveV9.json",
+            "sha256": "696660fdc00926c430c60c6dd5c05b59f9fd1b075ebef01cad6c3435c9b4ae6e"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-balanced-n100-r3::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 40.85570999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-balanced-n100-r3--a1--adaptiveV9.json",
+            "sha256": "699a1274d997c81c59a2f10f5e9e3b40ba0ad5906d6e2ab73d71a6ec23d66f63"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-balanced-n100-r3::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 38.17940799999997,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-balanced-n100-r3--a2--adaptiveV9.json",
+            "sha256": "9f7c919658ea8de7c744ae92f31622c1062bd181054ed80fde56ecb2d5beb593"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-balanced-n100-r3::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 38.31144500000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-balanced-n100-r3--a3--adaptiveV9.json",
+            "sha256": "ed569dcfff7e73882b384d270e31efdc6c3068f11fa77858d5ca654c53635ccf"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r1::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 14.489565000000027,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r1--a1--adaptiveV9.json",
+            "sha256": "48cd284a5fb8fd009e5832de3bbb1909ebfb1f7c99b6601d6ea59dcca65686f6"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r1::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 15.073543999999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r1--a2--adaptiveV9.json",
+            "sha256": "1956a6e694ff2b8591cf44369d091a66c89767f49804e2d67292d7c9f8d4a4f0"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r1::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 15.440651000000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r1--a3--adaptiveV9.json",
+            "sha256": "5e4fb41a1762fc71208ac98151d1c01249a0bad04814f5bbfc63e347605856b1"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 10.105163000000005,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r2--a1--adaptiveV9.json",
+            "sha256": "eba284c2adf9af306efa3902ddc13471025c4cedd199cc9728309e98e2adbf50"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 9.747771999999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r2--a2--adaptiveV9.json",
+            "sha256": "e780be69a08903d891ea334b0f0bb5bd21029b79ae9eb72a54b394da3e03fe68"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.493927000000014,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r2--a3--adaptiveV9.json",
+            "sha256": "b70c15154e6e8b525002fe4c6ff3d1b93a120ae6143f494c854163fd400fc971"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 219.66873999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r3--a1--adaptiveV9.json",
+            "sha256": "bf47a477dafac9095e4e751bce40e5cfb8c48141fbab39030b496814b7caf204"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 215.333284,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r3--a2--adaptiveV9.json",
+            "sha256": "377d1e44d36ba6634560a6c57190b006bcdba2d783feddfa17ea75a18638b005"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 216.288285,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n24-r3--a3--adaptiveV9.json",
+            "sha256": "e247175e6cb10894f1f591e6942e586bb822dfe6235d6dea591444ba98c5c1c4"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 25.540857000000017,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n50-r2--a1--adaptiveV9.json",
+            "sha256": "da09beb56e4350105e301a655fb44c73a61ae5fa6f2fc755951e0d5f86e94284"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 23.684793000000013,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n50-r2--a2--adaptiveV9.json",
+            "sha256": "6235432d3f00c1b86fa61e7d1a203e8b54bb8429ef41ba88441c5226a6f86788"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 20.497815000000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n50-r2--a3--adaptiveV9.json",
+            "sha256": "2c1d898f5029913a489e12a77045f8bf0318c5852087599dd370f4bbe96c2acd"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n100-r2::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 41.14513199999996,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n100-r2--a1--adaptiveV9.json",
+            "sha256": "9f80cc5aedb520426686f5fd7f2254b8deb355870ad1572bbf020cf0f5895ce0"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n100-r2::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 38.82746899999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n100-r2--a2--adaptiveV9.json",
+            "sha256": "7a50235b12e4daf5f0ce72328957f8166d725b57f2e21bd1204c9fff6fccc805"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n100-r2::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 36.094318000000015,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n100-r2--a3--adaptiveV9.json",
+            "sha256": "a5c646355d7676ed036754fc54fc50730036d85e0d192b2aa9b05b759f02c84e"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n100-r4::repeat-1",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 206.58677999999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n100-r4--a1--adaptiveV9.json",
+            "sha256": "74e8d8b39ddaed7a173602af0bfea99af4b610b9110becbf3cfc89fac7966f4f"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 207.97261999999995,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n100-r4--a2--adaptiveV9.json",
+            "sha256": "c13b5e426f16c95a91b429982822b05ce882b7c09ca1e797335d99e758d1ae80"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-new-arrivals-tight-n100-r4::repeat-3",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 205.223618,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-new-arrivals-tight-n100-r4--a3--adaptiveV9.json",
+            "sha256": "1e85144b9856f221d9458a57d8a1253056e3ed2532a6e812c44189d8eeea30e4"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-batch-release-tight-n24-r4::repeat-1",
+          "day": 8,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 7.672855000000027,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-batch-release-tight-n24-r4--a1--adaptiveV9.json",
+            "sha256": "506d9c6fc9ba3104107c43e1b89a882331fd5f6c32a39017e327f5ff2531fd5d"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-batch-release-tight-n24-r4::repeat-2",
+          "day": 8,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 6.51326899999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-batch-release-tight-n24-r4--a2--adaptiveV9.json",
+            "sha256": "6b7c8fe27701f34ab9f413ce57751953d3ccdb91604b1450dcff5feae4066d1d"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-batch-release-tight-n24-r4::repeat-3",
+          "day": 8,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 6.636191999999994,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-batch-release-tight-n24-r4--a3--adaptiveV9.json",
+            "sha256": "4b8cccebe6a309dc82b06ed57bcbe33501d8d6fa07a9a61cb8b559e779e108fd"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-batch-release-tight-n50-r4::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 241.195084,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-batch-release-tight-n50-r4--a1--adaptiveV9.json",
+            "sha256": "c7cca7aa2422e86fc0b144a46ae44d7e8e19fc73b32fac18bb988b951bf958c0"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-batch-release-tight-n50-r4::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 247.29930399999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-batch-release-tight-n50-r4--a2--adaptiveV9.json",
+            "sha256": "520bd14a575aeed6d75f9bb19744687c219c45a59db6725793035cc1acbe3377"
+          }
+        },
+        {
+          "episodeId": "v9-same-distribution-batch-release-tight-n50-r4::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 249.89561000000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-same-distribution-batch-release-tight-n50-r4--a3--adaptiveV9.json",
+            "sha256": "401fc14515c6a686754e06996feae42699d1277ba92f13bb05f0e7c9ded4a644"
+          }
+        }
+      ]
+    },
+    "stress": {
+      "episodes": 216,
+      "completeEpisodes": 84,
+      "calls": 1670,
+      "callsWithAcceptedIncumbent": 1538,
+      "timelyIncumbentThenCallOver200Ms": 150,
+      "recoveryTimelyIncumbentThenCallOver200Ms": 150,
+      "timelyIncumbentThenOver200MsCompleteEpisodes": [
+        "v9-stress-aged-backlog-balanced-n24-r3::repeat-1",
+        "v9-stress-aged-backlog-balanced-n24-r3::repeat-2",
+        "v9-stress-aged-backlog-balanced-n24-r3::repeat-3",
+        "v9-stress-aged-backlog-balanced-n50-r1::repeat-1",
+        "v9-stress-aged-backlog-balanced-n50-r1::repeat-2",
+        "v9-stress-aged-backlog-balanced-n50-r1::repeat-3",
+        "v9-stress-aged-backlog-balanced-n50-r2::repeat-1",
+        "v9-stress-aged-backlog-balanced-n50-r2::repeat-2",
+        "v9-stress-aged-backlog-balanced-n50-r2::repeat-3",
+        "v9-stress-aged-backlog-balanced-n50-r3::repeat-1",
+        "v9-stress-aged-backlog-balanced-n50-r3::repeat-2",
+        "v9-stress-aged-backlog-balanced-n50-r3::repeat-3",
+        "v9-stress-aged-backlog-balanced-n50-r4::repeat-1",
+        "v9-stress-aged-backlog-balanced-n50-r4::repeat-2",
+        "v9-stress-aged-backlog-balanced-n50-r4::repeat-3",
+        "v9-stress-aged-backlog-balanced-n100-r1::repeat-1",
+        "v9-stress-aged-backlog-balanced-n100-r1::repeat-2",
+        "v9-stress-aged-backlog-balanced-n100-r1::repeat-3",
+        "v9-stress-aged-backlog-balanced-n100-r4::repeat-1",
+        "v9-stress-aged-backlog-balanced-n100-r4::repeat-2",
+        "v9-stress-aged-backlog-balanced-n100-r4::repeat-3",
+        "v9-stress-new-arrivals-balanced-n100-r1::repeat-2",
+        "v9-stress-new-arrivals-tight-n50-r4::repeat-1",
+        "v9-stress-new-arrivals-tight-n100-r4::repeat-1",
+        "v9-stress-new-arrivals-tight-n100-r4::repeat-2",
+        "v9-stress-new-arrivals-tight-n100-r4::repeat-3",
+        "v9-stress-batch-release-balanced-n100-r1::repeat-1",
+        "v9-stress-batch-release-balanced-n100-r4::repeat-3",
+        "v9-stress-batch-release-tight-n50-r1::repeat-1",
+        "v9-stress-batch-release-tight-n50-r1::repeat-3",
+        "v9-stress-batch-release-tight-n50-r3::repeat-1",
+        "v9-stress-batch-release-tight-n50-r3::repeat-2",
+        "v9-stress-batch-release-tight-n50-r3::repeat-3",
+        "v9-stress-batch-release-tight-n50-r4::repeat-1",
+        "v9-stress-batch-release-tight-n50-r4::repeat-2",
+        "v9-stress-batch-release-tight-n50-r4::repeat-3"
+      ],
+      "timelyIncumbentThenOver200MsFailedEpisodes": [
+        "v9-stress-aged-backlog-balanced-n100-r2::repeat-1",
+        "v9-stress-aged-backlog-balanced-n100-r2::repeat-2",
+        "v9-stress-aged-backlog-balanced-n100-r2::repeat-3",
+        "v9-stress-aged-backlog-balanced-n100-r3::repeat-1",
+        "v9-stress-aged-backlog-balanced-n100-r3::repeat-2",
+        "v9-stress-aged-backlog-balanced-n100-r3::repeat-3",
+        "v9-stress-aged-backlog-tight-n50-r1::repeat-1",
+        "v9-stress-aged-backlog-tight-n50-r1::repeat-2",
+        "v9-stress-aged-backlog-tight-n50-r1::repeat-3",
+        "v9-stress-aged-backlog-tight-n50-r2::repeat-1",
+        "v9-stress-aged-backlog-tight-n50-r2::repeat-2",
+        "v9-stress-aged-backlog-tight-n50-r2::repeat-3",
+        "v9-stress-new-arrivals-tight-n50-r2::repeat-1",
+        "v9-stress-new-arrivals-tight-n50-r4::repeat-2",
+        "v9-stress-new-arrivals-tight-n50-r4::repeat-3",
+        "v9-stress-new-arrivals-tight-n100-r1::repeat-1",
+        "v9-stress-new-arrivals-tight-n100-r1::repeat-2",
+        "v9-stress-new-arrivals-tight-n100-r1::repeat-3",
+        "v9-stress-new-arrivals-tight-n100-r2::repeat-1",
+        "v9-stress-new-arrivals-tight-n100-r2::repeat-2",
+        "v9-stress-new-arrivals-tight-n100-r2::repeat-3",
+        "v9-stress-new-arrivals-tight-n100-r3::repeat-1",
+        "v9-stress-new-arrivals-tight-n100-r3::repeat-2",
+        "v9-stress-new-arrivals-tight-n100-r3::repeat-3",
+        "v9-stress-batch-release-balanced-n100-r2::repeat-1",
+        "v9-stress-batch-release-tight-n50-r1::repeat-2",
+        "v9-stress-batch-release-tight-n50-r2::repeat-1",
+        "v9-stress-batch-release-tight-n50-r2::repeat-2",
+        "v9-stress-batch-release-tight-n50-r2::repeat-3",
+        "v9-stress-batch-release-tight-n100-r1::repeat-1",
+        "v9-stress-batch-release-tight-n100-r1::repeat-2",
+        "v9-stress-batch-release-tight-n100-r1::repeat-3",
+        "v9-stress-batch-release-tight-n100-r2::repeat-1",
+        "v9-stress-batch-release-tight-n100-r2::repeat-2",
+        "v9-stress-batch-release-tight-n100-r2::repeat-3",
+        "v9-stress-batch-release-tight-n100-r3::repeat-1",
+        "v9-stress-batch-release-tight-n100-r3::repeat-2",
+        "v9-stress-batch-release-tight-n100-r3::repeat-3",
+        "v9-stress-batch-release-tight-n100-r4::repeat-1",
+        "v9-stress-batch-release-tight-n100-r4::repeat-2",
+        "v9-stress-batch-release-tight-n100-r4::repeat-3"
+      ],
+      "actionCounts": {
+        "initialize": 186,
+        "retain": 1019,
+        "rebuild": 318,
+        "failed": 132,
+        "polish": 15
+      },
+      "acceptedSourceCounts": {
+        "locked_constructor": 746,
+        "recovery_polish": 356,
+        "locked_milp": 357,
+        "cache": 1034,
+        "adaptive_polish": 15
+      },
+      "selectedSourceCounts": {
+        "locked_milp": 357,
+        "cache": 1019,
+        "recovery_polish": 134,
+        "locked_constructor": 13,
+        "adaptive_polish": 15
+      },
+      "candidateOutcomeCounts": {
+        "accepted": 2508,
+        "not_improved": 539,
+        "rejected_guard": 409,
+        "rejected_invalid": 420,
+        "rejected_late_receipt": 84,
+        "rejected_late_audit": 3,
+        "rejected_late_selection": 1
+      },
+      "strictReplacementSourceCounts": {
+        "recovery_polish": 356,
+        "locked_milp": 225,
+        "locked_constructor": 298,
+        "adaptive_polish": 15
+      },
+      "adaptivePolishCalls": 424,
+      "adaptivePolishAcceptedCalls": 15,
+      "recoveryPolishInvocations": 447,
+      "recoveryPolishAcceptedCandidates": 356,
+      "polishInternalAcceptedMoves": 3703,
+      "failureKinds": {
+        "no_complete_plan": 132
+      },
+      "failureDayCounts": {
+        "5": 24,
+        "6": 22,
+        "0": 30,
+        "4": 21,
+        "3": 22,
+        "2": 6,
+        "7": 7
+      },
+      "failedCallMILPStatus": {
+        "infeasible": 81,
+        "time_limit": 31,
+        "feasible": 20
+      },
+      "failedCallConstructorDeadlineReached": 0,
+      "failedCallLateValidAuditCandidates": 3,
+      "failedCallLateReceiptCandidates": 17,
+      "failureRecords": [
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n24-r2::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 6.382857000000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n24-r2--a1--adaptiveV9.json",
+            "sha256": "dbb319675f439e220a847af9d9e726d5dc9471b84d4d3d61e8f0e7167c0d5558"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n24-r2::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 7.598095000000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n24-r2--a2--adaptiveV9.json",
+            "sha256": "6932aff738a4bd93f51b3777522b78d18c0756609e9d8c51167ce023b1513bff"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n24-r2::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 7.1892480000000205,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n24-r2--a3--adaptiveV9.json",
+            "sha256": "c1f8aa5dd2ae4f41409e362b774edcce77fafe1b6d4bec0a0a9c38063c97d793"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n100-r2::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 22.933370999999966,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n100-r2--a1--adaptiveV9.json",
+            "sha256": "d86824e37957a5ad30487a499b0cd1153b694bcb1819e5be88a6cba994744dbc"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n100-r2::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 24.134887999999933,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n100-r2--a2--adaptiveV9.json",
+            "sha256": "758665d83998c61b136b8e3fe3979418d92f61d6d652cb1f34069237fd2b52b5"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n100-r2::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 22.77352300000007,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n100-r2--a3--adaptiveV9.json",
+            "sha256": "5d60832fcc2a1e698555a03095ca374c9752c305c3b0626d6600b27a5b3e9225"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n100-r3::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 24.75092600000005,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n100-r3--a1--adaptiveV9.json",
+            "sha256": "3a19891dd2178050b92012d5fc350f16e56dc0468d588c8a517cedbe1ae81545"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n100-r3::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 27.072670000000016,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n100-r3--a2--adaptiveV9.json",
+            "sha256": "2da578051bcbd32022ca740aa9e8917369132b720d7af28d1196b0d47c22312b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-balanced-n100-r3::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 23.128190000000018,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-balanced-n100-r3--a3--adaptiveV9.json",
+            "sha256": "36d54a2e7847ac10918e46de0df9e5a446d45db59d169b1f702823009115994b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r1::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 58.957482999999996,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r1--a1--adaptiveV9.json",
+            "sha256": "e6b8ffca97c3acda6f631d25ec8129849ed752bc05d713fb2ca06ecc19e41a4b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r1::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 49.960288,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r1--a2--adaptiveV9.json",
+            "sha256": "be9a5a2e38afcf0e875e80cd07c6650a25c0444f19f45da1094b917a660b1b2f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r1::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 59.387704,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r1--a3--adaptiveV9.json",
+            "sha256": "56219c40051c4bbc54b4e1a02b5ca51255617bd7cc4c5f9c6434f0d60b17071b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 9.312374000000005,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r2--a1--adaptiveV9.json",
+            "sha256": "ee5da43e689b2b72d429da5923c6e1160365fdad060bd6a767e0de418c49a6ee"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 9.569126000000011,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r2--a2--adaptiveV9.json",
+            "sha256": "2ee9a8af529852b62894ec7722e7bd602fd26cbdd772898e5bbdaca161c59ab4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.564091000000019,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r2--a3--adaptiveV9.json",
+            "sha256": "68bc96f5ce85c9581ae614f4fa4b39e2e5a957733d18ae87931556980217313b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 59.422213,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r3--a1--adaptiveV9.json",
+            "sha256": "74e8fc23e65e737e0fc8ce66a4f52ea7b39038934ddcf049e248c96dd0f5c684"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 56.473017000000006,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r3--a2--adaptiveV9.json",
+            "sha256": "ed7b764cc95ed471cd7fb8e164fb743482984633dfaf4c3d3943e8ad216cd0f5"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 46.503554,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r3--a3--adaptiveV9.json",
+            "sha256": "7a5700130af74ee04a4c23560495d4e1ad8d99b7c36baec050a3a9a702ccd0f9"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r4::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 14.857805000000013,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r4--a1--adaptiveV9.json",
+            "sha256": "4bc05218e41f12efab00b1f492fe4117eba6d6b08cbf8ebd4e34427cb6676712"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r4::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 16.386939000000012,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r4--a2--adaptiveV9.json",
+            "sha256": "5827a5fad6607e919d16eb3cceb4aad161603b2af812c00b39e1108c6b89c8ec"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n24-r4::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 15.924740999999983,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n24-r4--a3--adaptiveV9.json",
+            "sha256": "dbac0dc2bc90db3dee8ca680de99b441f5f6a3694961e63732cba6541d640ace"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r1::repeat-1",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 221.79132199999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r1--a1--adaptiveV9.json",
+            "sha256": "6d131cd88e961bfa4fc4be830663086b42e970322a542460b12cf92a952408e4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r1::repeat-2",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 223.54447900000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r1--a2--adaptiveV9.json",
+            "sha256": "fadf224262f2fe60d28f4498a77abe02ce8388a2c919f847f8338c3286b3afc8"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r1::repeat-3",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 220.12796500000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r1--a3--adaptiveV9.json",
+            "sha256": "f255bfff6fbc9db89b2afb301276884cc226a6788460c38e27e9ee16b02e8245"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 207.68423200000007,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r2--a1--adaptiveV9.json",
+            "sha256": "58ec022273964410e4f9659793088c32ff53d0669e3b8aded6748468fec8bfe3"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 207.4465590000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r2--a2--adaptiveV9.json",
+            "sha256": "005dad38a78c469d9b987608c03fa5743dbdb2c099c0755174bbb989ff21961c"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 208.89945,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r2--a3--adaptiveV9.json",
+            "sha256": "d3754252b3acca6d3647958e669161a6c6590444e2c5c7496ab1aaf9f4dc6b5d"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 261.58130700000004,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r3--a1--adaptiveV9.json",
+            "sha256": "3d72e51e8aaae6d6b378b49da46412f237f64743f8eb8c5c57eddb987140d487"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 261.267569,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r3--a2--adaptiveV9.json",
+            "sha256": "f126e17c86cd9819c5f3041c389934dd32f62e8c26e6d890158dee1ef23935bd"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 263.632718,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r3--a3--adaptiveV9.json",
+            "sha256": "3949cb5a4f46eb0355f26e6308b270b018b4b0524ef051a37ef8d9d89a563f49"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r4::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 260.91940999999997,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r4--a1--adaptiveV9.json",
+            "sha256": "9b6272314bf4933989a8f56f84199fe3f61907df511733ab228a54c538ba35f1"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r4::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 269.485589,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r4--a2--adaptiveV9.json",
+            "sha256": "adc80970c2777f6696c42e0496d601f55d35fb365ad6ad6dad79ea721ecd0a7a"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n50-r4::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 263.100891,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n50-r4--a3--adaptiveV9.json",
+            "sha256": "4e9645989e65ac697ad18f06a3b520ecf766be9de4cbd2386be75f9a43f7ba1a"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r1::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 219.95858,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r1--a1--adaptiveV9.json",
+            "sha256": "ea824ef3816bfdd5877fae1a4d3f3fcc01995cae881277ae7b09dd325013e6a4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r1::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 223.407161,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r1--a2--adaptiveV9.json",
+            "sha256": "1565efcb6a34d779bcba9ce7dca5abb4ef03d1f3db53ba65dd9bbe3c909c830f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r1::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 220.477019,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r1--a3--adaptiveV9.json",
+            "sha256": "62a300318722c4cfad5bd02ad086189a18ec10ea5b836b8c1e932b51581707fd"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r2::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 225.21573800000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r2--a1--adaptiveV9.json",
+            "sha256": "89385a85d5f747380c5291398b5e76d35e0e1e81a80181b4c06bb797e291009b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r2::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 219.690163,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r2--a2--adaptiveV9.json",
+            "sha256": "2f5456ec7e2a10b86224b65e43376813f8a4618bafb98bfa6c981355af77ed84"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r2::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 223.51952,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r2--a3--adaptiveV9.json",
+            "sha256": "5c8d80155b2caf45678406ab535e613356b3983222ea5508f54235e8866f617f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 221.203664,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r3--a1--adaptiveV9.json",
+            "sha256": "01c31482f5cf0ea1fa34f516ec98c09913c303e2a2f575996c5f5d4813a1e6e4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 220.427109,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r3--a2--adaptiveV9.json",
+            "sha256": "bc5b47b939833bb5290e4b8f3bf92670ad19b745fd3b7acb1ba0f26e5d58b8fe"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 218.60667199999997,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r3--a3--adaptiveV9.json",
+            "sha256": "86177ff3ef2df0f6986b2fb4db6d5e38ca709c2f87d8d816ad9b35d3c39e8dd2"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r4::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 220.233223,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r4--a1--adaptiveV9.json",
+            "sha256": "bf2466cd143647ec5950a17e386e6728ffed3bc0b215911b002349ae934d3920"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r4::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 220.568494,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r4--a2--adaptiveV9.json",
+            "sha256": "8323cea65668aebdb86e20c8fdbdaedfb60875ea53256adeaa70667cf8d66652"
+          }
+        },
+        {
+          "episodeId": "v9-stress-aged-backlog-tight-n100-r4::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "time_limit",
+          "callWallMs": 221.686057,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-aged-backlog-tight-n100-r4--a3--adaptiveV9.json",
+            "sha256": "7a5be03242e41551a964ab3d49a867003d54dbbbde3868f1c97da9fcadda4249"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n24-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 10.549647000000007,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n24-r2--a1--adaptiveV9.json",
+            "sha256": "0ccf753fa07241a28958fea4c760abd412a76030f06de311787d31ebe96996d9"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n24-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.797603999999993,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n24-r2--a2--adaptiveV9.json",
+            "sha256": "7e271da8e00ccf0ce2728890058c02da6b144d0a9e68c23e37443ba9e843e355"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n24-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 10.381495999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n24-r2--a3--adaptiveV9.json",
+            "sha256": "6ccf49fb80fd3e08fc8e982b6c86eff92eaff50a6c3283a06f7832e7540237a4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n24-r3::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.070337999999992,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n24-r3--a1--adaptiveV9.json",
+            "sha256": "34713ea4384fbb605e94537ff601c939d0107bec6b2353756ce4364562246044"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n24-r3::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.64640399999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n24-r3--a2--adaptiveV9.json",
+            "sha256": "a5d05ab72f3a2cfb32a83ff8208cccc32f4ddc96e042f257efd946bab3c42d67"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n24-r3::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 9.406604999999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n24-r3--a3--adaptiveV9.json",
+            "sha256": "c669b032989b044105ed2412a97e4fc2967f85e90c609fb72d69e6f1db280ce4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n50-r1::repeat-1",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 18.629587000000015,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n50-r1--a1--adaptiveV9.json",
+            "sha256": "e56e47ea7bbae743a9ca5641770a1cbe8ba887747a96e919ad6248899d3f7587"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n50-r1::repeat-2",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 15.780668999999989,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n50-r1--a2--adaptiveV9.json",
+            "sha256": "96e7a09827cfaac1100061fe8cb6a311b19bb50b76c30d89923ee6d86ee1e376"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n50-r1::repeat-3",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 15.380412999999976,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n50-r1--a3--adaptiveV9.json",
+            "sha256": "a569b73352441402738b54244b825db42725010822dc119d4191afbca8f9dc21"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n50-r2::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 19.571208999999982,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n50-r2--a1--adaptiveV9.json",
+            "sha256": "89094474fb0d3a6547c67e5b882222249bd172899242384baf61422546654b28"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n50-r2::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 18.801524,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n50-r2--a2--adaptiveV9.json",
+            "sha256": "2d23efad9309fc866586bbd133d3f96fd8f4acd32140cf5190a84910c7f02742"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n50-r2::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 21.386629,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n50-r2--a3--adaptiveV9.json",
+            "sha256": "6f6552911151bca56c86628f9ab4615e0ba3b65a601cb88ca90bb658c390efaf"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n100-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 39.959383,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n100-r2--a1--adaptiveV9.json",
+            "sha256": "584f60c088603ca42cd913fdc5b7ecfaef6199061290dcfb80eac144303acbb6"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n100-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 33.625516999999974,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n100-r2--a2--adaptiveV9.json",
+            "sha256": "c71751887dd9bb5cb255375aaf403e0a9f48c5f5acca50e585f5ce0e3230bb8d"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n100-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 37.353815,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n100-r2--a3--adaptiveV9.json",
+            "sha256": "c2c4bea00dae6814d3e1bc6d87b2d82079639126f2657eca60297c27dd6458db"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n100-r3::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 45.03231900000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n100-r3--a1--adaptiveV9.json",
+            "sha256": "05911cc8f6f890da5fd0064386cf9439f2a80f9fd2a1a9d32cb0940d767eda6d"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n100-r3::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 34.678968000000026,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n100-r3--a2--adaptiveV9.json",
+            "sha256": "a3e360e993ac093605b693ec1b1b41ff453ccf2784d875076a4b74e283766407"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-balanced-n100-r3::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 34.02621599999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-balanced-n100-r3--a3--adaptiveV9.json",
+            "sha256": "1e4c47d6d21f1dc4f707d64048fe55f3e03c517751c29b918b9ad36449d9459f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r1::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.290516999999994,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r1--a1--adaptiveV9.json",
+            "sha256": "9d0745895dbe94556568ec16b2cb5cc1208dd1264d690335a209833355f5b94d"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r1::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.238729000000006,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r1--a2--adaptiveV9.json",
+            "sha256": "b46b27c3ac255608c13b603fbac2ea1eee13566b77c0cb04cb60fe3f6e5951f5"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r1::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 13.346999000000011,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r1--a3--adaptiveV9.json",
+            "sha256": "38530027807ba423dca81dab6d3f93627acccb2b5b6adca8ab9c2331cbf37e1b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 13.01311100000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r2--a1--adaptiveV9.json",
+            "sha256": "535de053b8e0308e4739292eb969adc013118327df1caa319efdb798024bd500"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.425837000000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r2--a2--adaptiveV9.json",
+            "sha256": "9f66f3fe8b54fb99878a28a09fb4e844049daed10040faff523507e29318492c"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.854027000000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r2--a3--adaptiveV9.json",
+            "sha256": "9ebd9c1a423899ed5e32a6f18309fe4f2d77df6927693c8e6daf2daaa2d1d0a7"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r3::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 37.871385000000004,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r3--a1--adaptiveV9.json",
+            "sha256": "15a4667004db6a3fab002f04c2a12435d71a35f372c08f5171cb031f71b0c5ae"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r3::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 41.176243,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r3--a2--adaptiveV9.json",
+            "sha256": "ab5cc1cc290c4d10e5510daa68caa59be78d287ec20c59cfc40003d6088df811"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r3::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "infeasible",
+          "callWallMs": 49.05078900000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r3--a3--adaptiveV9.json",
+            "sha256": "49b4840a60b34df088d29b7ff7a7bb7f8517f116f58326f2e60d8cdbd2d04a24"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r4::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 15.376547000000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r4--a1--adaptiveV9.json",
+            "sha256": "93ba86efaffee84599a58d7e441f86812c9edb4186a03f3e436c8bc7b8b077a1"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r4::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.525314999999992,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r4--a2--adaptiveV9.json",
+            "sha256": "abbe90e3bdd8ada0d14259ae66b7318a314a536ef9693b1dbad8fc1995660177"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n24-r4::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.803939999999997,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n24-r4--a3--adaptiveV9.json",
+            "sha256": "fa7a68451b32dd0e0b7003fabce399c66e5b02fe4cdeb877a632892d6a62934c"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r1::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 200.70464300000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r1--a1--adaptiveV9.json",
+            "sha256": "7e5e8b89465edab3f431dd47840c341e8c274b9ab4f265d63f7d3f8a7ed080ce"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r1::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 201.26731500000005,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r1--a2--adaptiveV9.json",
+            "sha256": "b1c7173731bf81e9d3faeb638dcf863434cc72185dbb35987c8a8b4dbb0b24b3"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r1::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 200.64331100000004,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r1--a3--adaptiveV9.json",
+            "sha256": "94598dc269696cd183828029e222b80afcabe0052bf97c7068f5503f5d2f1233"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r2::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 14.951435000000004,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r2--a1--adaptiveV9.json",
+            "sha256": "659355302a05eff149e9b9efe48324900914b6db4c89a2c6e85c297f644ec27a"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r2::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 18.972357000000017,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r2--a2--adaptiveV9.json",
+            "sha256": "f2dd51a9cf13a6060ee93960e43b88fc4b7fab05f932a7da08e4c695270340de"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r2::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 18.603868999999975,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r2--a3--adaptiveV9.json",
+            "sha256": "fceea4ea35309c62520e7e71df24c54e20e6ff5aec4269d091a74b90501401bb"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r3::repeat-1",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 210.61108099999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r3--a1--adaptiveV9.json",
+            "sha256": "4a70e16329837484545c00360a47c6797c732a4e9f432ae7a1f008f30073d8a2"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r3::repeat-2",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 212.71191599999997,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r3--a2--adaptiveV9.json",
+            "sha256": "89b14e2cb04109a1ff1cc4dffd01920c20878170afce9e38d511d42de49109de"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r3::repeat-3",
+          "day": 2,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 212.709533,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r3--a3--adaptiveV9.json",
+            "sha256": "ee4ae357d93de8accbba902623209b7b6f07a4ea2174bb2447757c381c788889"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r4::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 204.64265100000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r4--a2--adaptiveV9.json",
+            "sha256": "795edd5ac3565403127180ad82e534d3053b55d982da83a7ed05727a825beb77"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n50-r4::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 204.068059,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n50-r4--a3--adaptiveV9.json",
+            "sha256": "acd1acf527a9fd98bf9c79b110f0a6804ebeadd2f141f66062867729be6293de"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r1::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 219.384095,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r1--a1--adaptiveV9.json",
+            "sha256": "2f54bfd3804507691c92902e4450f85db0435e48eea6eadc9aaa47e810d3121b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r1::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 212.19537100000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r1--a2--adaptiveV9.json",
+            "sha256": "13d27eb90565b735b1d1e20d3d660becaf69b812a09a1b1ed4887b66ae0e7621"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r1::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 213.45916799999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r1--a3--adaptiveV9.json",
+            "sha256": "3d2e3d5a87b37876d566fd5da5fdc101ef1ddfcc081c73635e355095d8d5e80a"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r2::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 219.169332,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r2--a1--adaptiveV9.json",
+            "sha256": "776af731bea42c45647d1bce89e2b398e1717a3c202b4154de2cb334827af1e8"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r2::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 218.756777,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r2--a2--adaptiveV9.json",
+            "sha256": "0abaeb9c4b7c766d928bedebf361dd99ae5206170dd247636c3577054b7a7f62"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r2::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 222.00616200000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r2--a3--adaptiveV9.json",
+            "sha256": "e5cf152208c9a2a625578592c6957dadcfd16279fb5d432adf389753b00c6170"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r3::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 30.307322999999997,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r3--a1--adaptiveV9.json",
+            "sha256": "0be7504f67cdb04ad8a89351c955401931bae39dabb2695f8aa0f3ee29482688"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r3::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 34.05402700000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r3--a2--adaptiveV9.json",
+            "sha256": "65418e44fc9274b4f843d364450aec1c1436c4c2352caa1d15e607c85554ec3c"
+          }
+        },
+        {
+          "episodeId": "v9-stress-new-arrivals-tight-n100-r3::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 35.01923299999993,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-new-arrivals-tight-n100-r3--a3--adaptiveV9.json",
+            "sha256": "b9d1cb5ab88fbfab489dd6d977ea175c273b8a63e93d9504a90cd6e7c3ee32b3"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n24-r2::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.542683000000011,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n24-r2--a1--adaptiveV9.json",
+            "sha256": "ad9a0c3377ed78d08f858cdf733890e5d9265da1b7542952d4e84a9778888853"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n24-r2::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.20788300000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n24-r2--a2--adaptiveV9.json",
+            "sha256": "953ff29f23833434ab574a0cc0555d0933644cc5b7b257d8c912b204e3f457c3"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n24-r2::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.11954200000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n24-r2--a3--adaptiveV9.json",
+            "sha256": "e7d2ec76dae327c05b2dc55e7ab8f96583cdcba3d3958531f6c81ff79a8ade99"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n24-r3::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.583173999999985,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n24-r3--a1--adaptiveV9.json",
+            "sha256": "1928b202cca108088b21fb3b9ef29730653d06b2f517bab8aa0098a876e37cf6"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n24-r3::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 11.51212799999999,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n24-r3--a2--adaptiveV9.json",
+            "sha256": "afedc5022e443d9a0d94b53a90a6af8ccbf6bcd82d147a293012b41ce354a4e2"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n24-r3::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 12.373668999999978,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n24-r3--a3--adaptiveV9.json",
+            "sha256": "493bf707d563a0747433c85c3b3e416f71fd2fc1f19e3d5af38ba6522500c99f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n50-r3::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 17.17477200000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n50-r3--a1--adaptiveV9.json",
+            "sha256": "0ea0d6682b47f0515dac411ed1a647479f4e252b2334e5cbf51a0e110ceb681f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n50-r3::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 20.067826000000025,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n50-r3--a2--adaptiveV9.json",
+            "sha256": "a284371cae1542969da73d9b4991c8596e401d64ede4d59ebbb4ef3478030be6"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n50-r3::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 17.874403,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n50-r3--a3--adaptiveV9.json",
+            "sha256": "fb8518974def77606ecca86a57cd803de196c45007278e8b5346db7687dd1f21"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n100-r2::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 29.69946600000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n100-r2--a1--adaptiveV9.json",
+            "sha256": "8b8fdcb8f82518817023cee49ff6ef1b7a785c349d9bc7a6785f5d5c0cb3f30b"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n100-r2::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 24.276004999999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n100-r2--a2--adaptiveV9.json",
+            "sha256": "813f2061dd89730b505a51488bbe5008b020087842403496fe3965f7ec6b4fbf"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-balanced-n100-r2::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 24.660898999999972,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-balanced-n100-r2--a3--adaptiveV9.json",
+            "sha256": "5cc8c168fa904c692d6a07c33f1f1aa24ccb803323ce6c709ed2b0ac1efb93d2"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r1::repeat-1",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 217.050347,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r1--a1--adaptiveV9.json",
+            "sha256": "e6948d67d7b819e865b29182d28c9623fa0ab3b57bab1b6c05c78dcf41a6530e"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r1::repeat-2",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 213.799205,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r1--a2--adaptiveV9.json",
+            "sha256": "98e1f6cb97624373ea6ca24e8b32dd3290ded91a9914c22f725f0753ced23f03"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r1::repeat-3",
+          "day": 0,
+          "kind": "no_complete_plan",
+          "strategyAction": "initialize",
+          "milpStatus": "feasible",
+          "callWallMs": 215.147291,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r1--a3--adaptiveV9.json",
+            "sha256": "236971f913100854a38dce86b97aa8ccc1fa7c95c4cb0af7d07216254aa83b93"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r2::repeat-1",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 10.667880999999994,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r2--a1--adaptiveV9.json",
+            "sha256": "32271b256278e31904daee48328440e72a527ffca84e13fbce5644fc61ad855e"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r2::repeat-2",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.205799000000013,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r2--a2--adaptiveV9.json",
+            "sha256": "c783bc7aa184135ecd7b7c35b8642e18d331efda38e7c630a0320f3bbce90b46"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r2::repeat-3",
+          "day": 6,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 7.697172000000023,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r2--a3--adaptiveV9.json",
+            "sha256": "c3ecf0f664c25919ed4baa267bc972f6d6950c3bb6b8f57c820195708c33e359"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r3::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.227550999999977,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r3--a1--adaptiveV9.json",
+            "sha256": "42ff6ace3853775f240f9a2828ffd72fff5785d50f500d8d5110fe27834e1248"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r3::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 8.960961999999995,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r3--a2--adaptiveV9.json",
+            "sha256": "3693e5d7a5d98f2bc56548cf1884c455c346e4ac3dbfba2af29325ca27111f64"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n24-r3::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 9.009022999999985,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n24-r3--a3--adaptiveV9.json",
+            "sha256": "ca89e84a04f94eb067c19aeeeae3cd5caa872a2e3f2e232307eb4cd62dac028e"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n50-r1::repeat-2",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 200.68373300000007,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n50-r1--a2--adaptiveV9.json",
+            "sha256": "8e87216eeb9cbc63014133f29d44e9faf2c9afab6b583cff31da66a8d2bbac18"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n50-r2::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 19.902140999999972,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n50-r2--a1--adaptiveV9.json",
+            "sha256": "3282b85264d7dee9191dac0efce8181172a524dd942fae13d52670cb9a3344fa"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n50-r2::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 17.670750999999996,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n50-r2--a2--adaptiveV9.json",
+            "sha256": "b1424cdddd8fefd92c49b5b92eea35fb468c1469f3dbcc1c196e452cde4a857f"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n50-r2::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 19.911163999999985,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n50-r2--a3--adaptiveV9.json",
+            "sha256": "18286aabd961db30788e9730ca53c564a1fff11ccdb2f00b6c65a04e38dd0962"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r1::repeat-1",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 209.12817499999983,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r1--a1--adaptiveV9.json",
+            "sha256": "357fb7b7ffad7e98c3a0d35d015ad442f79b24f18bba80c3629bbece01d3b113"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r1::repeat-2",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 208.6944480000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r1--a2--adaptiveV9.json",
+            "sha256": "584645cefb5a9f80b2307dd64e6ca732f763b5ae7b4eb06bb90caa0a8ca4e200"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r1::repeat-3",
+          "day": 7,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "feasible",
+          "callWallMs": 208.3775159999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r1--a3--adaptiveV9.json",
+            "sha256": "19705fe97779806ae56d1ee83a2f87dc8536026848442d71625a3ecda24db865"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r2::repeat-1",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 31.986910999999964,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r2--a1--adaptiveV9.json",
+            "sha256": "45c9d27280e9c9fb157341f5b3a00b80faea79ee91d72d76514172f12c9c8f28"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r2::repeat-2",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 35.810208999999986,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r2--a2--adaptiveV9.json",
+            "sha256": "e9916c56ce2ff5d2607a548cd11350ad0d7d25bc9504879ac479c5ccdcc0993c"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r2::repeat-3",
+          "day": 5,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "infeasible",
+          "callWallMs": 34.09648900000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r2--a3--adaptiveV9.json",
+            "sha256": "19b614325d9836209957dc89c5d0fbeb57e3795f47a1d878b98fb2bb9d7ea2f4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r3::repeat-1",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 238.04028800000003,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r3--a1--adaptiveV9.json",
+            "sha256": "633927657adb184ef20e609d9f3717f3f1e1855df8740d0ecc29f70d3e835e83"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r3::repeat-2",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 236.9054490000001,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r3--a2--adaptiveV9.json",
+            "sha256": "3da58df1d6425ca56bae542c2ee1f0603e39dd804b8d4422d13b9d4a5fc6c0b9"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r3::repeat-3",
+          "day": 3,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 240.15721700000006,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r3--a3--adaptiveV9.json",
+            "sha256": "ff8f855e8b2474f6cd90090de552b3cca838468dfd5b6bc1e249729d7e0073b0"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r4::repeat-1",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 238.08653700000002,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r4--a1--adaptiveV9.json",
+            "sha256": "e82b04ba586e6b33fad612db825ac408738a00c6516ade937beb6c46d910faf4"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r4::repeat-2",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 236.270714,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r4--a2--adaptiveV9.json",
+            "sha256": "52373f176db0326263409da0a51ac59afbf7d495cbe2c54ec0502276b7674bb5"
+          }
+        },
+        {
+          "episodeId": "v9-stress-batch-release-tight-n100-r4::repeat-3",
+          "day": 4,
+          "kind": "no_complete_plan",
+          "strategyAction": "rebuild",
+          "milpStatus": "time_limit",
+          "callWallMs": 238.87297999999998,
+          "constructorFirstIncumbentMs": null,
+          "artifact": {
+            "path": "episodes/v9-stress-batch-release-tight-n100-r4--a3--adaptiveV9.json",
+            "sha256": "8d40fcec41044de7a22e426a314772f81ce9ce254d19f83a02168643613a9916"
+          }
+        }
+      ]
+    }
+  }
+}

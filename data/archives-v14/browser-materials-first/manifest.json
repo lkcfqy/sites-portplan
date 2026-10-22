@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-17T07:24:04.248774+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v14-browser-materials-first",
+  "fileCount": 8,
+  "uncompressedFileBytes": 289539,
+  "archiveBytes": 259932,
+  "archiveSha256": "0139d86d5497424daca80755c2f163d4d3db063e863db69eda6cacacb504c387",
+  "entrypoint": "artifacts/browser-v14-materials-first/summary.json",
+  "entrypointSha256": "573b49f08206b3c06184500af94f50cf5c0669e5c542df405bdb253c717d169e",
+  "files": [
+    {
+      "path": "artifacts/browser-v14-materials-first/harness-source.py",
+      "bytes": 7161,
+      "sha256": "50b55bb48be5939a4784dfe1c15379c91675cb86550fd67245297a3d493d4ea7"
+    },
+    {
+      "path": "artifacts/browser-v14-materials-first/summary.json",
+      "bytes": 7982,
+      "sha256": "573b49f08206b3c06184500af94f50cf5c0669e5c542df405bdb253c717d169e"
+    },
+    {
+      "path": "artifacts/browser-v14-materials-first/v14-material-downloads-1440/result.json",
+      "bytes": 3045,
+      "sha256": "e09d1035710ab1316745123eb8890a1e93ce09f25b4ecdadec36c6743f0b6671"
+    },
+    {
+      "path": "artifacts/browser-v14-materials-first/v14-material-downloads-1440/screen.png",
+      "bytes": 173758,
+      "sha256": "bca176ce4316f80cdb80ac23d2928d4ff292362e84842965ca7b8d715e04db41"
+    },
+    {
+      "path": "artifacts/browser-v14-materials-first/v14-material-downloads-390/result.json",
+      "bytes": 3035,
+      "sha256": "52250ce31e46b260a0c460046839ef38f4632a8797374da02aa869bf181664c0"
+    },
+    {
+      "path": "artifacts/browser-v14-materials-first/v14-material-downloads-390/screen.png",
+      "bytes": 93012,
+      "sha256": "a784b8ff0bc377817d1c79ca6c484f2d5052fa8f44f7f59e3a330628d0f543c6"
+    },
+    {
+      "path": "artifacts/v14-browser-materials-first-scope.json",
+      "bytes": 1184,
+      "sha256": "eb2582c5f5b0494a27a5fcb7614469d6711ee19d26a54bf3c9cb354af9c120b0"
+    },
+    {
+      "path": "artifacts/v14-browser-materials-first.log",
+      "bytes": 362,
+      "sha256": "d372834025db877590766eae14b80503a1677b66ba4da55a182a02f759d08197"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 259932,
+      "sha256": "0139d86d5497424daca80755c2f163d4d3db063e863db69eda6cacacb504c387"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

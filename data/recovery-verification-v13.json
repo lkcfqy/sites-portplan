@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "portplan-v13-independent-small-archive-recovery",
+  "valid": true,
+  "generatedAt": "2026-10-17T05:57:11.265561+00:00",
+  "scope": "Actual clean restoration of the three declared V13 development/browser archives and an independent frozen Python review from the restored guard run. Same managed Linux. This is not final-package installation, a new build/browser run/native solve, a new formal experiment, or cross-OS/entrant/enterprise validation.",
+  "archiveCount": 3,
+  "restoredFileCount": 521,
+  "archives": [
+    {
+      "manifestPath": "data/archives-v13/browser-first/manifest.json",
+      "bytes": 29137,
+      "sha256": "f1fef73f6c1c44a18b2a598f32997eef08759fee5db0bbed334d4e3822889757",
+      "archiveRoot": "v13-browser-first",
+      "chunks": [
+        {
+          "file": "part-0001.bin",
+          "bytes": 3500000,
+          "sha256": "35238312e56411814ff41008b901f61f8c1813ffbefa83d266cc8165826cca84"
+        },
+        {
+          "file": "part-0002.bin",
+          "bytes": 2802128,
+          "sha256": "5e094a719ffd4a76ce8d0058f7024f9de0ed218966d7c72376690db5b9ced4c1"
+        }
+      ],
+      "archiveBytes": 6302128,
+      "archiveSha256": "e843e23c7ee546757524b1eb4bbf0bde4bf04b37cd27e92ba2b8116ba2b75852",
+      "uncompressedFileBytes": 8527698,
+      "restoredFiles": 133,
+      "entrypoint": "artifacts/browser-v12-first/summary.json",
+      "entrypointSha256": "696212e2e9d3998abdaf5929970c683706dcdd85c80e845b46f7f467f8d71079",
+      "everyFileShaMatchedBeforeAndAfterReview": true
+    },
+    {
+      "manifestPath": "data/archives-v13/guard-development/manifest.json",
+      "bytes": 55844,
+      "sha256": "49e9e04f3b91ce6b24519fdbe2aefcd7d51ce8854d57d9e050a2169e25c3dddf",
+      "archiveRoot": "v13-guard-first",
+      "chunks": [
+        {
+          "file": "part-0001.bin",
+          "bytes": 1680904,
+          "sha256": "689a033fad737c196d08b0deb2bedc109f0c51cce0ee5df0bf45f754628a4b9b"
+        }
+      ],
+      "archiveBytes": 1680904,
+      "archiveSha256": "689a033fad737c196d08b0deb2bedc109f0c51cce0ee5df0bf45f754628a4b9b",
+      "uncompressedFileBytes": 82923633,
+      "restoredFiles": 259,
+      "entrypoint": "artifacts/v13-guard-first-development/complete.json",
+      "entrypointSha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611",
+      "everyFileShaMatchedBeforeAndAfterReview": true
+    },
+    {
+      "manifestPath": "data/archives-v13/browser-final/manifest.json",
+      "bytes": 28262,
+      "sha256": "79afee799eb700b1763a07eb06bd97b7056cea40d10cd630a869f6539c28f1da",
+      "archiveRoot": "v13-browser-final",
+      "chunks": [
+        {
+          "file": "part-0001.bin",
+          "bytes": 3500000,
+          "sha256": "06187ad178714516e083843b5952053d0c6f14664aac9c61be8fa4d828e361ed"
+        },
+        {
+          "file": "part-0002.bin",
+          "bytes": 2575136,
+          "sha256": "885673a83013ee0c42cc0b22a51a4d9b8793924055b1f60fa9d7b4519ebc0678"
+        }
+      ],
+      "archiveBytes": 6075136,
+      "archiveSha256": "3eec63a2b766f5ec477c1522432bed422d2d9f62b3b034581097d0a53f9b272b",
+      "uncompressedFileBytes": 8455385,
+      "restoredFiles": 129,
+      "entrypoint": "artifacts/browser-v12-final/summary.json",
+      "entrypointSha256": "f6ba1f917b5037e22f49b1286bfbf601dc2f655a11fc0beca1500a0d5de9a32c",
+      "everyFileShaMatchedBeforeAndAfterReview": true
+    }
+  ],
+  "independentFrozenReview": {
+    "valid": true,
+    "readOnly": true,
+    "solverRuns": 0,
+    "importsJavaScript": false,
+    "runCount": 12,
+    "uniqueBusinessScenarioCount": 2,
+    "inputIndexSha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611",
+    "reviewerSha256": "4d745e403d2d3edea025b9ed17321a87eb605196fa2eabfc722c24f568a53f55",
+    "reviewSha256": "142cb311d5aa2790889d958f90af810bdaf7fac0f916213f03a544082db6beff",
+    "commandUsesPythonB": true,
+    "allArchivedFilesUnchangedAfterReview": true
+  },
+  "nativeSolverRuns": 0,
+  "newExperiments": 0,
+  "browserRuns": 0,
+  "finalPackageInstallClaim": false,
+  "v12FullRawRestored": false,
+  "originalProjectChanged": false,
+  "firstAttemptCacheObservation": {
+    "preserved": true,
+    "effect": "The first ordinary-Python review rewrote five archived .pyc files and added one .pyc only in its scratch restored copy. Original project, .py source files, source archives and twelve raw run results were unchanged.",
+    "firstAttemptPostReviewAllArchivedBytesPreserved": false,
+    "resolution": "Retained the first observations, then restored fresh second and third directories using python -B and verified every archived file SHA again after the independent review. Third pass covers all three archives.",
+    "firstProofSha256": "2ce33dfdafb090f3a112a27ea3d972971855e0a371e5200b734736182d90aadf",
+    "secondProofSha256": "7248525dcc13386b26291dfb3b8f1fb4d4f1328a64bc66a3963aa84b95150f45"
+  },
+  "actualThirdPass": {
+    "proofSha256": "95d54eb61a04467b2f7e403a22267f1c1f25954711e57eb3e51fd2bc95f12028",
+    "localProofPath": "/workspace/scratch/portplan-v13-archive-recovery-third/recovery-proof.json",
+    "archiveCheckerSha256": "ba43a801666ed8d729418fa616cb31a0288ffcc47fdc28cf2e16e08d1d0ffdb6",
+    "readOnlyOriginalProject": true,
+    "allArchiveFileBytesPreserved": true
+  },
+  "finalPackageHandling": "All-ZIP source coverage, deployment limits, gzip/material preservation and a clean source install/build are separately checked after the final download manifest exists. This archive-only receipt does not certify those later package bytes."
+}

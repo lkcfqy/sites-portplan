@@ -1,0 +1,10 @@
+{
+  "url": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+  "final_url": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+  "retrieved_at_utc": "2026-10-12T06:26:23.902737+00:00",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "sha256": "c2087edc5ba035b76cc794dcb390e4bd5347d254984bc4c2127ca3d0a5bbde4b",
+  "bytes": 165514,
+  "path": "data/public/maersk_korea_import.html"
+}

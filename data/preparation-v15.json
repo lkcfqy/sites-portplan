@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "portplan-v15-pre-freeze-preparation",
+  "valid": true,
+  "nodeFixtureTests": 22,
+  "pythonFixtureTestsIncluded": 15,
+  "nativeOptimizerRuns": 0,
+  "benchmarkRuns": 0,
+  "contract": {
+    "schemaVersion": "portplan-independent-delivery-contract-v15",
+    "readOnly": true,
+    "solverRuns": 0,
+    "importsJavaScript": false,
+    "protocolSha256": "e65a550c749256e04dffa2df20d0d597ee6755914456296cb7264bdf48655b2d",
+    "implementationSha256": "2e24021d415fbda402956971c49a8153bb286c00185a859f24547e727df8dedd",
+    "valid": true,
+    "archivedSources": 18,
+    "uniqueBusinessScenarioCount": 4,
+    "archivedEndpointCount": 12,
+    "plannedRuns": 36,
+    "originalLossEpisodes": 8,
+    "newHeldOutExperiments": 0,
+    "ciComputed": false,
+    "endpoints": [
+      {
+        "endpointId": "v14-stress-aged-backlog-balanced-n50-r2::repeat-1",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-aged-backlog-balanced-n50-r2::repeat-2",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-aged-backlog-balanced-n50-r2::repeat-3",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n100-r3::repeat-1",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n100-r3::repeat-2",
+        "originalComplete": true,
+        "originalLossEpisode": false
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n100-r3::repeat-3",
+        "originalComplete": true,
+        "originalLossEpisode": false
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n100-r4::repeat-1",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n100-r4::repeat-2",
+        "originalComplete": true,
+        "originalLossEpisode": false
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n100-r4::repeat-3",
+        "originalComplete": true,
+        "originalLossEpisode": false
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n50-r1::repeat-1",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n50-r1::repeat-2",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      },
+      {
+        "endpointId": "v14-stress-new-arrivals-tight-n50-r1::repeat-3",
+        "originalComplete": false,
+        "originalLossEpisode": true
+      }
+    ]
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=1",
+        "tests/highs-v15.test.mjs",
+        "tests/replay-delivery-v15.test.mjs",
+        "tests/review-delivery-v15.test.mjs",
+        "tests/recovery-packaging-v15.test.mjs"
+      ],
+      "startedAt": "2026-10-17T08:41:41.016514+00:00",
+      "exitCode": 0,
+      "log": "artifacts/v15-preparation-first/check-01.log",
+      "sha256": "e4e56c4f6b1ebfd72dc0e894d2543ee33c05afb3030f39f5636afc58d4586e4b"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/review-delivery-v15.py",
+        "--protocol",
+        "data/protocol-development-v15.json",
+        "--output",
+        "/workspace/sites/portplan-review/artifacts/v15-preparation-first/independent-contract.json"
+      ],
+      "startedAt": "2026-10-17T08:41:42.234771+00:00",
+      "exitCode": 0,
+      "log": "artifacts/v15-preparation-first/check-02.log",
+      "sha256": "25600c7c63c283ce562c03272a1566e696f418ff9d99d4ef5e8422b9aad6f87e"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "startedAt": "2026-10-17T08:41:42.481710+00:00",
+      "exitCode": 0,
+      "log": "artifacts/v15-preparation-first/check-03.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "implementationHashes": {
+    "scripts/highs-planner-v15.mjs": "f07b1f8f9b66321668c332f5a13a86651587e429ec15ec367418af6a1c42e4a0",
+    "scripts/replay-delivery-v15.mjs": "51f96ed78c8d874e13346475ae1ca32d26e75682e48125541a41e87632cd076b",
+    "scripts/replay-delivery-v15.worker.mjs": "31afd6e6f8143dbef6f9bfb9656c81c03ad23d7b3320c06bc918a1f2226fab04",
+    "scripts/review-delivery-v15.py": "2e24021d415fbda402956971c49a8153bb286c00185a859f24547e727df8dedd",
+    "scripts/prepare-public.mjs": "90a04ab157073ad2ef44f83a0fd51683a1334e246634a258e6bda7a009b413eb",
+    "scripts/restore-evidence-v15.py": "b46726bab266794b5472f2b31ab1455905fb7195a82b2851a18682b9d3f1a277"
+  },
+  "independentStaticReview": {
+    "finding": "No remaining P0/P1 before first native run",
+    "responseEvidenceClosedAndSnapshotted": true,
+    "performanceConclusion": false
+  },
+  "scope": "Final mixed-version pre-freeze mocks, standard-library protocol checks and internal static review only. No native optimizer runs, new business samples, timing claims or rank guarantee."
+}

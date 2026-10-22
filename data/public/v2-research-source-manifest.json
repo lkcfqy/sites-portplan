@@ -1,0 +1,116 @@
+{
+  "created_at": "2026-10-12T07:25:54.152890+00:00",
+  "files": [
+    {
+      "path": "data/public/v2-crossref-itor.13622.json",
+      "bytes": 8535,
+      "sha256": "53007f03e9890c5e24f7e12430cb384d0a69184026abdbc81bfc01796ec8b968",
+      "source_url": "https://api.crossref.org/works/10.1111/itor.13622",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.553205+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-j.cor.2020.105102.json",
+      "bytes": 22264,
+      "sha256": "95768523d5e4168cf3a17281e6a5e460578eb6c8fee4167fceb57293003b7324",
+      "source_url": "https://api.crossref.org/works/10.1016/j.cor.2020.105102",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.573114+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-j.ejor.2023.02.041.json",
+      "bytes": 19471,
+      "sha256": "b313b480c914ed74cede643678453bb0c91d66d9034f7ea47b9477affd4c0d04",
+      "source_url": "https://api.crossref.org/works/10.1016/j.ejor.2023.02.041",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.812855+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-j.trb.2007.02.001.json",
+      "bytes": 6174,
+      "sha256": "c5d9ff54229a42306f12e71ebf114fc97d35038e1435d3609076af04ca525cf6",
+      "source_url": "https://api.crossref.org/works/10.1016/j.trb.2007.02.001",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:22:01.802943+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-j.tre.2020.102055.json",
+      "bytes": 14777,
+      "sha256": "dbf549b59756af9ff80b1bba300d5c468b4394922ae7dce74f7cfc13cff7c97c",
+      "source_url": "https://api.crossref.org/works/10.1016/j.tre.2020.102055",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.729379+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-journal.pone.0318606.json",
+      "bytes": 10989,
+      "sha256": "60e739ea40b26fddea9e5f05dae5ac25aa1eec644fa26f24375fa38f1ed7db6b",
+      "source_url": "https://api.crossref.org/works/10.1371/journal.pone.0318606",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.727437+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-s41072-023-00132-1.json",
+      "bytes": 19134,
+      "sha256": "1071220a27233af00a5b5f5f5bc6059eb1ca38d3ea9df0b88388d18491c56003",
+      "source_url": "https://api.crossref.org/works/10.1186/s41072-023-00132-1",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:22:01.722976+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-su15075638.json",
+      "bytes": 12859,
+      "sha256": "f3f093ea7d30e25ccdface7f44763256b68c6f3e04132fdaa288062de85aad26",
+      "source_url": "https://api.crossref.org/works/10.3390/su15075638",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.502675+00:00"
+    },
+    {
+      "path": "data/public/v2-crossref-su16125090.json",
+      "bytes": 18230,
+      "sha256": "15d5186ae5e4221a432a2a246c1dfcc4f1c4501c2eac28ff57231e3a700808aa",
+      "source_url": "https://api.crossref.org/works/10.3390/su16125090",
+      "retrieval_method": "Direct HTTPS GET; publisher-deposited Crossref metadata",
+      "capture_time_basis": "local file modification timestamp; capture-time field was not recorded by initial fetch",
+      "captured_at": "2026-10-12T07:17:58.806966+00:00"
+    },
+    {
+      "path": "data/public/v2-maersk-korea-calculator-guide.pdf",
+      "bytes": 264781,
+      "sha256": "7999be66da21ef47521022c14a41f7e9357cffdeab16ba4661b468d6aaf8f4e8",
+      "source_url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/freetime-pre-do-check-guideline.pdf",
+      "retrieval_method": "Direct official HTTPS PDF download; guide screenshots visually checked",
+      "captured_at": "2026-10-12T07:22:01.434636+00:00"
+    },
+    {
+      "path": "data/public/v2-research-downloads.json",
+      "bytes": 1470,
+      "sha256": "7d8f3827b34a03c25c72484ab7114bfb90752d7869a93ccaa68167c9f84d9f36",
+      "retrieval_method": "Locally generated research metadata/digest",
+      "generated_at": "2026-10-12T07:25:54.152890+00:00"
+    },
+    {
+      "path": "data/public/v2-sealand-korea-calculator-guide.pdf",
+      "bytes": 1479498,
+      "sha256": "5456d516b974c8e817990950513276fd9effa05a497652d136546aa7539bf3b8",
+      "source_url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/sl/1-guideline-for-import-customers.pdf",
+      "retrieval_method": "Direct official HTTPS PDF download; guide screenshots visually checked",
+      "captured_at": "2026-10-12T07:22:01.697709+00:00"
+    },
+    {
+      "path": "data/public/v2-web-observations.json",
+      "bytes": 9875,
+      "sha256": "615ff02c3de934d76ec2be99e7a55f8e6e7d72f6ab618d45d28d52d67af31ccc",
+      "retrieval_method": "Locally generated research metadata/digest",
+      "generated_at": "2026-10-12T07:25:54.152890+00:00"
+    }
+  ]
+}

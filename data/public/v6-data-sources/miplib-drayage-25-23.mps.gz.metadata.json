@@ -1,0 +1,13 @@
+{
+  "file": "miplib-drayage-25-23.mps.gz",
+  "url": "https://miplib.zib.de/WebData/instances/drayage-25-23.mps.gz",
+  "retrievedAt": "2026-10-13T05:01:39.446955+00:00",
+  "httpStatus": 200,
+  "bytes": 250750,
+  "sha256": "207c00284a4edbe92f1cc11705e47f03156830a804fbaf748e19f7c84103e131",
+  "md5": "7864784bb1941c8b2de57f93caf45521",
+  "contentType": "application/x-gzip",
+  "bundled": false,
+  "localInspectionPath": "/tmp/portplan-v6-forensic-miplib-drayage-25-23.mps.gz",
+  "reuseLicense": "No explicit reuse license located on official instance/download pages; research inspection only, not bundled."
+}

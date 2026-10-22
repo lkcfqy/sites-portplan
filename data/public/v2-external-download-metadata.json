@@ -1,0 +1,69 @@
+[
+  {
+    "path": "data/public/v2-external-plos-code.zip",
+    "source_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0318606.s001&type=supplementary",
+    "final_url_without_temporary_signature": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pone.0318606/1/pone.0318606.s001.zip",
+    "retrieved_at": "2026-10-12T07:27:32.137128+00:00",
+    "bytes": 17819,
+    "sha256": "df567384f3b7390bebf774c6559c9ca369d489df97edb56cec8fb8cb7d054a6c",
+    "status": "downloaded",
+    "members": [
+      {
+        "name": "S1 file/",
+        "bytes": 0
+      },
+      {
+        "name": "S1 file/Code/",
+        "bytes": 0
+      },
+      {
+        "name": "S1 file/Code/demand2",
+        "bytes": 78
+      },
+      {
+        "name": "S1 file/Code/distance",
+        "bytes": 177
+      },
+      {
+        "name": "S1 file/Code/Main.py",
+        "bytes": 42481
+      },
+      {
+        "name": "S1 file/Code/README.docx",
+        "bytes": 11416
+      },
+      {
+        "name": "S1 file/Code/time_list2",
+        "bytes": 135
+      }
+    ]
+  },
+  {
+    "path": "data/public/v2-external-plos-data.zip",
+    "source_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0318606.s002&type=supplementary",
+    "final_url_without_temporary_signature": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pone.0318606/1/pone.0318606.s002.zip",
+    "retrieved_at": "2026-10-12T07:27:33.791247+00:00",
+    "bytes": 141081,
+    "sha256": "2ef18612fc0d3e01ace17b8d16c2f29b916d9b2b711e39b32322c9e765fcfb68",
+    "status": "downloaded",
+    "members": [
+      {
+        "name": "Date/",
+        "bytes": 0
+      },
+      {
+        "name": "Date/Date.xlsx",
+        "bytes": 161231
+      }
+    ]
+  },
+  {
+    "path": "data/public/v2-external-plos-article.xml",
+    "source_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0318606&type=manuscript",
+    "final_url_without_temporary_signature": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pone.0318606/1/pone.0318606.xml",
+    "retrieved_at": "2026-10-12T07:27:32.246923+00:00",
+    "bytes": 139217,
+    "sha256": "084d5c901f26d3c403e15336cdc26aa6009de5073c051d3b8fdfd94229f3ada4",
+    "status": "downloaded"
+  }
+]

@@ -1,0 +1,199 @@
+{
+  "valid": true,
+  "pdfPageCount": 18,
+  "pptxSlideCount": 18,
+  "sourceIndexSha256": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6",
+  "bootstrapReviewSha256": "11acbc4de3c73edff3cd203028d1beca13e9e635415b3cecdf00d77af9bd30f7",
+  "allNegativeAndCompletionIdentifierOccurrencesChecked": 713,
+  "pages": [
+    {
+      "page": 1,
+      "sourceTextChecks": 6,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 18,
+      "nativeTables": 0,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 2,
+      "sourceTextChecks": 18,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 3,
+      "sourceTextChecks": 6,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 18,
+      "nativeTables": 0,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 4,
+      "sourceTextChecks": 23,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 5,
+      "sourceTextChecks": 11,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 6,
+      "sourceTextChecks": 23,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 7,
+      "sourceTextChecks": 6,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 18,
+      "nativeTables": 0,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 8,
+      "sourceTextChecks": 12,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 9,
+      "sourceTextChecks": 13,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 27,
+      "nativeTables": 0,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 10,
+      "sourceTextChecks": 33,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 11,
+      "sourceTextChecks": 13,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 27,
+      "nativeTables": 0,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 12,
+      "sourceTextChecks": 33,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 13,
+      "sourceTextChecks": 58,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 14,
+      "sourceTextChecks": 58,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 15,
+      "sourceTextChecks": 13,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 16,
+      "sourceTextChecks": 6,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 18,
+      "nativeTables": 0,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 17,
+      "sourceTextChecks": 13,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    },
+    {
+      "page": 18,
+      "sourceTextChecks": 13,
+      "pdfTextOutsidePage": 0,
+      "editableShapes": 8,
+      "nativeTables": 1,
+      "rasterPictures": 0,
+      "shapeBoundsValid": true
+    }
+  ],
+  "font": "Embedded Noto Sans CJK KR subset in PDF; editable text uses Noto Sans CJK KR in PPTX",
+  "visualReviewArtifacts": [
+    "artifacts/defense-v8-qa/contactsheet-01-09.png",
+    "artifacts/defense-v8-qa/contactsheet-10-18.png"
+  ],
+  "scope": "Source text/number equivalence, PDF text extents and glyph extraction, native editable PPTX shapes/tables and shape extents; no browser or algorithm rerun.",
+  "originalSeedBudgetProbes": {
+    "verified": true,
+    "callCount": 8,
+    "oldSnapshotCount": 4,
+    "budgetsMs": [
+      200,
+      1000
+    ],
+    "D3LockedEventCount": 17,
+    "D3TotalFeeAt1000ms": 9100,
+    "D0CasesStillIncompleteAtBothBudgets": 3,
+    "scope": "Original-seed frozen-V7 fresh-factory development calls; not private-cache or full-episode replay; not new holdout."
+  },
+  "finalOutputHashes": {
+    "docs/defense-v8.ko.html": "1ba689d78bcd91000e9637cf704fddd587e96ec6b231e7931a35e55bfcbf38c8",
+    "docs/defense-v8.ko.pdf": "7ea77779b45f27cfff677a23ac88f87ecf9584f38ec4156694dfcdf8b259f57f",
+    "docs/defense-v8.ko.pptx": "1ff2cfbb8895082a3aed057e6d568387819ecbaf1d4407618bf0592564c4bd5d",
+    "docs/submission-v8.ko.md": "1ba340e9f8c54020fde0e5f21b61082069619674fee6e6b00a4b57d493166c24",
+    "docs/defense-v8.en.md": "c01fd1b5ec4fc7f857e5ff5e61aa42727851734e36c1bbd27cb9b5e68cc9c408",
+    "docs/contribution-log-v8.md": "f12ea87c616212adc8299acb3e0fcc3ae8065dcc050a7f3dfb5ffa799b473359"
+  }
+}

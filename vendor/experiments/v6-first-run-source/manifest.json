@@ -1,0 +1,26 @@
+{
+  "protocolHash": "6b40337ee36ff9ff10dbd22e4953932aa17900a5d12cbc3a5f75e36518660311",
+  "implementationHashes": {
+    "scripts/rolling-benchmark-v6.mjs": "72151442b62470d689c57483e92b9021d2e1b20281c8b6df6ec4de26ca20fa2f",
+    "scripts/rolling-v6.worker.mjs": "16c294d830aa5a1d71ca31f43ab627f4594f80682c032480c94ba350e951dbf5",
+    "scripts/benchmark-v2.mjs": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "src/engine.js": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+    "src/rolling-plan.js": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+    "src/stable-planner-v5.js": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64",
+    "src/recovery-planner-v6.js": "560d3d8a136adbcabfe00373ea549d68f107859764feadff607c08bc4acf12bc",
+    "src/persistence-planner-v6.js": "e15f8f6b65c281c84111a2e26350db51da5b482e586db096051777b120169212",
+    "src/solver-glpk.js": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+    "src/solver-presolver.js": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+    "src/execution-constraints.js": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+    "src/fast-constructor-v5.js": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f",
+    "src/event-search-v4.js": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b",
+    "src/strong-baseline.js": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac",
+    "data/protocol-v2.json": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+    "data/protocol-v5.json": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+    "data/protocol-v6.json": "6b40337ee36ff9ff10dbd22e4953932aa17900a5d12cbc3a5f75e36518660311",
+    "data/rolling-v5.json": "482f6f8df7f0d46cf7d8b0356961c1aaf787f5e9f1566db7e18ce7c1afa23592",
+    "package.json": "377b34146d6c2acb4ffb8d15cd5b83492477d4e2e74df69ccc994ed610764ebb",
+    "package-lock.json": "c596b27fc7dc90bde2121c8f5a991bb5befc0cf927d9e5a20e33745202259747"
+  },
+  "capturedBeforePrimaryGeneration": true
+}

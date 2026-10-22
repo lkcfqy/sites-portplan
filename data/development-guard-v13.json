@@ -1,0 +1,357 @@
+{
+  "schemaVersion": "portplan-v13-controlled-development",
+  "executionState": "complete",
+  "fixture": false,
+  "generatedAt": "2026-10-17T05:53:18.305626+00:00",
+  "businessCases": 2,
+  "timingRepeats": 3,
+  "plannedRuns": 12,
+  "recordedRuns": 12,
+  "freshHeldOutBusinessCases": 0,
+  "forcedEndpoints": true,
+  "inputIndexSha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611",
+  "defaultRecommendationEligible": false,
+  "fullChampionshipPlanComplete": false,
+  "byBranch": {
+    "seed": {
+      "complete": 6,
+      "failed": 0,
+      "unknown": 0
+    },
+    "native": {
+      "complete": 0,
+      "failed": 6,
+      "unknown": 0
+    }
+  },
+  "byCase": [
+    {
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "seedM": 5,
+      "nativeM": 7,
+      "seed": {
+        "complete": 3,
+        "failed": 0,
+        "unknown": 0,
+        "completionDay": 13
+      },
+      "native": {
+        "complete": 0,
+        "failed": 3,
+        "unknown": 0,
+        "failureDay": 6
+      }
+    },
+    {
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "seedM": 2,
+      "nativeM": 4,
+      "seed": {
+        "complete": 3,
+        "failed": 0,
+        "unknown": 0,
+        "completionDay": 13
+      },
+      "native": {
+        "complete": 0,
+        "failed": 3,
+        "unknown": 0,
+        "failureDay": 6
+      }
+    }
+  ],
+  "dataRole": "seen-v12-fixed-prefix-development-intervention",
+  "sourceCommit": "f1155e67321754b628b87ee2029911a37f9dcd26",
+  "sourceCommitBinding": {
+    "sixCriticalTrackedBlobsMatchDeclaration": true,
+    "paths": [
+      "data/protocol-development-v13.json",
+      "scripts/highs-planner-v13.mjs",
+      "scripts/replay-guard-v13.mjs",
+      "scripts/replay-guard-v13.worker.mjs",
+      "scripts/review-replay-guard-v13.py",
+      "scripts/benchmark-v12.mjs"
+    ]
+  },
+  "rawFirstIndex": {
+    "path": "artifacts/v13-guard-first-development/complete.json",
+    "sha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611"
+  },
+  "rawDeclaration": {
+    "path": "artifacts/v13-guard-first-development/declaration.json",
+    "sha256": "1ece032b5e875ece3a08bcd5f2df05d6ec5c911ccf5d51082818fd61f2af4b11"
+  },
+  "executionAuthorization": {
+    "path": "artifacts/v13-guard-first-development/execution-start.json",
+    "sha256": "b50a4097845da994d5d9dac7bd2b3fd9ae55fb17e6abaa787a91bdf6b245953f"
+  },
+  "protocol": {
+    "path": "data/protocol-development-v13.json",
+    "sha256": "d93461572dfd6c0171f83495ff10d0c4581b3d491bd2681d21d501215c969c67"
+  },
+  "independentReview": {
+    "path": "data/development-guard-review-v13.json",
+    "sha256": "142cb311d5aa2790889d958f90af810bdaf7fac0f916213f03a544082db6beff",
+    "valid": true,
+    "implementationSha256": "4d745e403d2d3edea025b9ed17321a87eb605196fa2eabfc722c24f568a53f55",
+    "scope": "Internal independent Python public-information/physical/fees/guard/lifecycle review; no new solver run or external clock authentication."
+  },
+  "archiveRef": {
+    "path": "data/archives-v13/guard-development/manifest.json",
+    "sha256": "49e9e04f3b91ce6b24519fdbe2aefcd7d51ce8854d57d9e050a2169e25c3dddf",
+    "archiveRoot": "v13-guard-first",
+    "fileCount": 259,
+    "uncompressedFileBytes": 82923633,
+    "archiveBytes": 1680904,
+    "archiveSha256": "689a033fad737c196d08b0deb2bedc109f0c51cce0ee5df0bf45f754628a4b9b",
+    "entrypoint": "artifacts/v13-guard-first-development/complete.json",
+    "entrypointSha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611",
+    "scope": "Lossless first-run raw/source archive including protocol-bound inputs and five additional old raws for portable independent screening; the entire original V12 raw archive is not required for that portable screening."
+  },
+  "sourceConsistency": {
+    "before": true,
+    "after": true
+  },
+  "scope": "Two already-seen V12 cases, archived complete D0-D4 decisions/actions, forced archived D5 endpoint and explicit cache import, then the same natural V13 policy from D6. Three cold timing repetitions are not new business cases. This is not a natural full-D0 V13 rollout, new formal score, average causal effect or ranking claim.",
+  "design": {
+    "originalEquivalentRawReferences": 6,
+    "uniqueArchivedEndpointPairs": 2,
+    "algorithmSeed": 69011,
+    "nativeRandomSeed": 0,
+    "dailyCooperativeBudgetMs": 200,
+    "coldParentHardBudgetMs": 5000,
+    "historicalPrefixDays": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "forcedEndpointDay": 5,
+    "naturalV13FromDay": 6
+  },
+  "outcomeInterpretation": {
+    "d6OriginalImportedCacheInvalidInBothBranches": true,
+    "seedCompletionRequiredNormalReplanning": true,
+    "meaning": "At D6 both original imported caches were invalid. The seed branches completed by normal constructor/native replanning after the new public reveal; they did not automatically execute the original full seed to the horizon. Lower M is not a joint recoverability certificate or future guarantee."
+  },
+  "nativeContinuation": {
+    "actualNativeRequests": 54,
+    "guardSelection": {
+      "calls": 54,
+      "cacheAcceptedCalls": 42,
+      "nativeAcceptedCalls": 6,
+      "retainedCacheCalls": 39,
+      "completeNativeProposals": 48,
+      "strictReplacements": 3,
+      "feeTiesRetained": 24,
+      "commitmentReplacements": 3,
+      "completeCommitmentScores": 48,
+      "incompleteCommitmentScores": 0,
+      "constructorCalls": 12,
+      "constructorEvents": 9,
+      "acceptedConstructorReceipts": 9,
+      "constructorSeededCalls": 6,
+      "retainedConstructorCalls": 3,
+      "strictGuardAttempts": 21,
+      "strictGuardAccepted": 3,
+      "strictGuardBlockedMIncrease": 18,
+      "strictGuardIncompleteOrError": 0,
+      "strictGuardLate": 0
+    },
+    "scope": "D6+ real continuation only; D5 is forced and is not a fresh native discovery or natural policy choice."
+  },
+  "parentLifecycle": {
+    "terminalReceiptWithinBudget": 12,
+    "normalWorkerExit": 12,
+    "processGroupGone": 12,
+    "cleanupWithinBudget": 12,
+    "endToEndWithinBudget": 12,
+    "acceptedHistory": 12,
+    "completeEpisode": 6
+  },
+  "feeAndRevisionComparison": {
+    "jointlyCompletedTimingPairs": 0,
+    "feeSavingsComputed": false,
+    "revisionComparisonComputed": false,
+    "feeSavings": null,
+    "revisionDifference": null,
+    "ciComputed": false,
+    "reason": "No matched timing pair completed on both branches. Failed paths retain completed fees=null; no savings or comparable full-path churn conclusion."
+  },
+  "negativeControls": {
+    "staticControlCount": 4,
+    "optimizerRuns": 0,
+    "source": "data/protocol-development-v13.json#negativeControls",
+    "scope": "No fix is established for the two old D0 losses, remaining eight pressure-certificate episodes or three same-distribution D4 counterexamples."
+  },
+  "newHeldOutExperiments": 0,
+  "newGeneratedSeeds": 0,
+  "ciComputed": false,
+  "rawResults": [
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n100-r2--clock-1--forced_native",
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "timingRepeatIndex": 1,
+      "branch": "native",
+      "status": "rolling_failed",
+      "complete": false,
+      "failureDay": 6,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-01.json",
+        "sha256": "4c7ecfc1d9fd44fe8357b83a3e38542c253458f03b97679358b9b9b313f188cf"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n100-r2--clock-1--forced_seed",
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "timingRepeatIndex": 1,
+      "branch": "seed",
+      "status": "feasible",
+      "complete": true,
+      "failureDay": null,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-02.json",
+        "sha256": "255eaf3a0b99db70147bffed4f6b7eb53d40578319058c7c5dcb33cb202ac318"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n50-r3--clock-1--forced_seed",
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "timingRepeatIndex": 1,
+      "branch": "seed",
+      "status": "feasible",
+      "complete": true,
+      "failureDay": null,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-03.json",
+        "sha256": "4e48b7bbacfdb5ffc339ebe997b563d070c6f1f9d7ccab087ddb64c23c53d809"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n50-r3--clock-1--forced_native",
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "timingRepeatIndex": 1,
+      "branch": "native",
+      "status": "rolling_failed",
+      "complete": false,
+      "failureDay": 6,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-04.json",
+        "sha256": "6053648cec81d88b245f2c628630d9b04171785a5ca06136a5130b38f35fdda0"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n50-r3--clock-2--forced_native",
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "timingRepeatIndex": 2,
+      "branch": "native",
+      "status": "rolling_failed",
+      "complete": false,
+      "failureDay": 6,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-05.json",
+        "sha256": "2e192ae2ea63655481d1ad2702f2e87246e46548b6f75b2237c1bbc78050635a"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n50-r3--clock-2--forced_seed",
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "timingRepeatIndex": 2,
+      "branch": "seed",
+      "status": "feasible",
+      "complete": true,
+      "failureDay": null,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-06.json",
+        "sha256": "ee90a9a4660347c27292bf2ca2a8bfbec6e06c5266014efafb3cce9542dc0f75"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n100-r2--clock-2--forced_seed",
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "timingRepeatIndex": 2,
+      "branch": "seed",
+      "status": "feasible",
+      "complete": true,
+      "failureDay": null,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-07.json",
+        "sha256": "b9033df8a3e3c0f3c615fc670161aee0de3e3f55f2225e964fedd1b8a3e84902"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n100-r2--clock-2--forced_native",
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "timingRepeatIndex": 2,
+      "branch": "native",
+      "status": "rolling_failed",
+      "complete": false,
+      "failureDay": 6,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-08.json",
+        "sha256": "970f717c76302d5e96fea6b68ab8d4948fbd28642637f10468f18e12322f044a"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n100-r2--clock-3--forced_native",
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "timingRepeatIndex": 3,
+      "branch": "native",
+      "status": "rolling_failed",
+      "complete": false,
+      "failureDay": 6,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-09.json",
+        "sha256": "e06dfb8a9f4fcc21a8dc010529797b7603b230371767e662821868c83b084972"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n100-r2--clock-3--forced_seed",
+      "caseId": "v12-stress-batch-release-tight-n100-r2",
+      "timingRepeatIndex": 3,
+      "branch": "seed",
+      "status": "feasible",
+      "complete": true,
+      "failureDay": null,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-10.json",
+        "sha256": "549beb369ed28f049b6e1d083c9b45c18579998266e5819682bbf7ecb830f49c"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n50-r3--clock-3--forced_seed",
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "timingRepeatIndex": 3,
+      "branch": "seed",
+      "status": "feasible",
+      "complete": true,
+      "failureDay": null,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-11.json",
+        "sha256": "0f8cae7edfa95891f84dbdacdb78f2f23ea27253097570886892d97b23af7065"
+      }
+    },
+    {
+      "jobId": "v13-seen-v12-stress-batch-release-tight-n50-r3--clock-3--forced_native",
+      "caseId": "v12-stress-batch-release-tight-n50-r3",
+      "timingRepeatIndex": 3,
+      "branch": "native",
+      "status": "rolling_failed",
+      "complete": false,
+      "failureDay": 6,
+      "artifact": {
+        "path": "artifacts/v13-guard-first-development/episodes/episode-12.json",
+        "sha256": "17aac3501fcffe4836376c45e4706879e2d28412694dab5959837dc41eb7eda1"
+      }
+    }
+  ],
+  "limitations": [
+    "Only two selected seen cases; timing repeats do not add independent business samples.",
+    "D0-D4 are original V12 history and D5 is a forced endpoint/cache import; full-D0 V13 behavior remains unvalidated here.",
+    "Lower mandatory load did not make the D6 imported plan executable; genuine replanning was necessary.",
+    "No jointly completed pair exists, so savings, comparable full-path churn and confidence intervals are not computed.",
+    "Recorded clocks and cleanup receipts are internally checked, not externally authenticated.",
+    "Original V12 scores, losses and default-gate failure remain unchanged; no enterprise savings or contest-rank guarantee."
+  ]
+}

@@ -1,0 +1,612 @@
+{
+  "schema_version": "1.0",
+  "project": "PortPlan",
+  "checked_at_local_date": "2026-10-12",
+  "timezone": "Asia/Seoul",
+  "generated_at_utc": "2026-10-12T06:36:21.912751+00:00",
+  "evidence_summary_zh": "真实官方费率＋模拟排程实验；另取得光阳58,171条有效车辆进出记录和仁川10行闸口事件快照，二者未作为PNC订单或节省验证。",
+  "sources": [
+    {
+      "id": "pnc_2026",
+      "title": "PNC Standard Tariff 2026",
+      "url": "https://www.pncport.com/resources/homepage/kor/data/2026_PNC_Standard_Tariff.pdf",
+      "kind": "official_tariff",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.pncport.com/resources/homepage/kor/data/2026_PNC_Standard_Tariff.pdf",
+        "final_url": "https://www.pncport.com/resources/homepage/kor/data/2026_PNC_Standard_Tariff.pdf",
+        "retrieved_at_utc": "2026-10-12T06:26:23.439820+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf;charset=UTF-8",
+        "sha256": "b607d120c37c9d0eacd0842418e105afd2e6283c0ebe86e4f742e8311b3f696c",
+        "bytes": 347225,
+        "path": "data/public/pnc_2026_standard_tariff.pdf"
+      },
+      "effective_from": "2026-01-01",
+      "used_for": "v1 terminal storage public benchmark",
+      "pages": [
+        3,
+        4
+      ],
+      "claims": [
+        "Import dry free 4 storage calendar days",
+        "Highest reached rate bracket applies to all chargeable storage days",
+        "Before 08:00 discharge starts that day; 08:00 or later starts next day; gate-out day included"
+      ],
+      "limitations": [
+        "Contract applicability and tax treatment not established for a real shipment",
+        "Ordinary dry 20/40ft only in v1"
+      ]
+    },
+    {
+      "id": "pnc_tariff_landing",
+      "title": "PNC dated tariff publication",
+      "url": "https://www.pncport.com/kor/Info/details.do?id=MD040",
+      "kind": "official_tariff_index",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.pncport.com/kor/Info/details.do?id=MD040",
+        "final_url": "https://www.pncport.com/kor/Info/details.do?id=MD040",
+        "retrieved_at_utc": "2026-10-12T06:28:26.313524+00:00",
+        "http_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "sha256": "1ed3838d1b103efb5c3b3058e7f709dda1da0759accd8e009ae90ae55b699357",
+        "bytes": 25361,
+        "path": "data/public/pnc_tariff_landing.html"
+      },
+      "claims": [
+        "2026 tariff effective January 1; announcement describes 3% adjustment"
+      ]
+    },
+    {
+      "id": "pnc_2025",
+      "title": "PNC Standard Tariff 2025",
+      "url": "https://www.pncport.com/resources/homepage/kor/data/2025_PNC_Standard_Tariff.pdf",
+      "kind": "conflict_reconciliation",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.pncport.com/resources/homepage/kor/data/2025_PNC_Standard_Tariff.pdf",
+        "final_url": "https://www.pncport.com/resources/homepage/kor/data/2025_PNC_Standard_Tariff.pdf",
+        "retrieved_at_utc": "2026-10-12T06:30:16.381115+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf;charset=UTF-8",
+        "sha256": "dc4739df5a7fc6770d479c480cfd27f2f626082b579de591ae5f628adb038e6c",
+        "bytes": 506094,
+        "path": "data/public/pnc_2025_standard_tariff.pdf"
+      },
+      "used_for": "show shipper webpage rates match older dated table; not v1 pricing",
+      "limitations": [
+        "Page 4 example 44,500 differs from 44,000 table; do not reuse this example"
+      ]
+    },
+    {
+      "id": "pnc_shipper_web",
+      "title": "PNC cargo owner cost inquiry",
+      "url": "https://svc.pncport.com/info/CMS/Container/CostInquiry.pnc?mCode=MN177",
+      "kind": "conflicting_official_web_table",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "path": "data/public/pnc_cost_inquiry_observation.json",
+        "sha256": "c92e4a5747c43b033bfbe66767dcf6bf00af80af36e6a2681adc881b81139c38",
+        "bytes": 1031,
+        "content_type": "researcher extraction or derived data",
+        "retrieved_at_utc": "2026-10-12T06:36:21.912751+00:00"
+      },
+      "acquisition": "web browsing service; shell HTTP403; researcher factual extraction saved, not original HTML",
+      "claims": [
+        "Dry 20ft displayed rates 8800/17600/30800/44000 match 2025 table",
+        "Displayed total is marked VAT included",
+        "Estimated values may differ from actual settlement"
+      ],
+      "resolution": "Use dated 2026 official PDF for benchmark; applicability to actual cargo owner invoice remains unresolved"
+    },
+    {
+      "id": "maersk_korea_import",
+      "title": "Maersk South Korea import D&D",
+      "url": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+      "kind": "official_carrier_tariff",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+        "final_url": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+        "retrieved_at_utc": "2026-10-12T06:26:23.902737+00:00",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "c2087edc5ba035b76cc794dcb390e4bd5347d254984bc4c2127ca3d0a5bbde4b",
+        "bytes": 165514,
+        "path": "data/public/maersk_korea_import.html"
+      },
+      "used_for": "combined D&D public rates and calendar endpoints",
+      "claims": [
+        "Dry 10 free days",
+        "40/40HC/45H share listed large dry rates",
+        "Discharge date to empty gate-in date inclusive calendar days; inland truck place of delivery exception"
+      ],
+      "limitations": [
+        "Day-slab accumulation is implementation interpretation; no explicit Korea progressive example located",
+        "Contracted/purchased freetime may differ"
+      ]
+    },
+    {
+      "id": "maersk_2024_change",
+      "title": "Maersk Korea D&D rate adjustment notice 10 June 2024",
+      "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/kr-exp-imp-dd-rate-jul-2024.pdf",
+      "kind": "official_carrier_notice",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/kr-exp-imp-dd-rate-jul-2024.pdf",
+        "final_url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/kr-exp-imp-dd-rate-jul-2024.pdf",
+        "retrieved_at_utc": "2026-10-12T06:27:07.055139+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "sha256": "3eed973e7e662dde6fcbb58126dce1cee25ff8b973b9a858afdd2d011771372c",
+        "bytes": 221612,
+        "path": "data/public/maersk_2024_dd_rate_change.pdf"
+      },
+      "effective_from": "2024-07-15",
+      "effective_basis": "Pricing Calculation Date",
+      "claims": [
+        "Spot PCD is booking creation; FMC and other bookings use other specified PCD rules",
+        "Pre-effective special deals retain old rates until validity ends"
+      ]
+    },
+    {
+      "id": "maersk_pnc_storage",
+      "title": "Maersk PNC separate storage settlement notice",
+      "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/busan-port-import-storage-fee-imposition-process-change-information-26dec.pdf",
+      "kind": "official_carrier_notice",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/busan-port-import-storage-fee-imposition-process-change-information-26dec.pdf",
+        "final_url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/busan-port-import-storage-fee-imposition-process-change-information-26dec.pdf",
+        "retrieved_at_utc": "2026-10-12T06:27:07.220093+00:00",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "sha256": "7ce3166a7e37127af2afb3b31707e393fceb36e6af6508a5104cb04467d1ffc3",
+        "bytes": 144694,
+        "path": "data/public/maersk_pnc_storage_2023.pdf"
+      },
+      "effective_from": "2023-01-01",
+      "effective_basis": "vessel arrival date",
+      "claims": [
+        "PNC directly invoices importers storage as public tariff, outside Maersk D&D",
+        "Reefer service later correction leaves payment between terminal and Maersk"
+      ]
+    },
+    {
+      "id": "maersk_terms",
+      "title": "Maersk Terms for Detention and Demurrage",
+      "url": "https://terms.maersk.com/dnd",
+      "kind": "official_terms",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://terms.maersk.com/dnd",
+        "final_url": "https://terms.maersk.com/dnd",
+        "retrieved_at_utc": "2026-10-12T06:27:46.442577+00:00",
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "sha256": "f1f34b7756114d6ec6374e4331bc4e2b5eea1efc6a5fef80f3472b35301ba314",
+        "bytes": 91196,
+        "path": "data/public/maersk_dd_terms.html"
+      },
+      "claims": [
+        "Combined D&D covers inside and outside terminal",
+        "Rates subject to published tariffs unless agreed otherwise"
+      ]
+    },
+    {
+      "id": "ygpa_gate_2026h1",
+      "title": "YGPA Gwangyang West terminal vehicle gate data 2026H1",
+      "url": "https://www.data.go.kr/data/15059682/fileData.do",
+      "kind": "public_observed_vehicle_events",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+        "final_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+        "retrieved_at_utc": "2026-10-12T06:27:58.085651+00:00",
+        "http_status": 200,
+        "content_type": "application/octet-stream; charset=UTF-8",
+        "sha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+        "bytes": 5401590,
+        "path": null,
+        "raw_cache_path": "/tmp/portplan-source-cache/ygpa_west_2026h1.csv",
+        "deployment_policy": "Only aggregate statistics and 200 identifier-free records are distributed."
+      },
+      "catalog_snapshot": {
+        "url": "https://www.data.go.kr/data/15059682/fileData.do",
+        "final_url": "https://www.data.go.kr/data/15059682/fileData.do",
+        "retrieved_at_utc": "2026-10-12T06:27:09.078414+00:00",
+        "http_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "sha256": "c60174ba55a6e0a1a51032a179c58e31de734746e8139e20f782cf156692fcbb",
+        "bytes": 208974,
+        "path": "data/public/ygpa_vehicle_data_catalog.html"
+      },
+      "license": "Catalog: 이용허락범위 제한 없음",
+      "download_without_credentials": true,
+      "grain": "vehicle visit, masked plate, entry/exit gates and minute timestamps; not container shipment",
+      "derived_files": [
+        "data/public/ygpa_gate_statistics.json",
+        "data/public/ygpa_gate_sample_200.csv"
+      ],
+      "reproduce_script": "data/public/profile_ygpa.py",
+      "used_for": "independent public-data availability and duration evidence only",
+      "used_in_optimizer": false,
+      "quality_status": "usable with limitations for observed terminal-visit summaries",
+      "limitations": [
+        "168046 all-blank records removed",
+        "Missing dates not assumed zero traffic",
+        "Masked plate not a stable unique ID",
+        "No PNC transfer validity; no container discharge/empty-return/deadline/capacity fields"
+      ]
+    },
+    {
+      "id": "icpa_public_gate_results",
+      "title": "Incheon iCON public CODECO result snapshot",
+      "url": "https://newscon.icpa.or.kr/containerInfo/list.do?menuKey=125",
+      "kind": "public_observed_gate_events",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://newscon.icpa.or.kr/containerInfo/list.do?menuKey=125",
+        "final_url": "https://newscon.icpa.or.kr/containerInfo/list.do?menuKey=125",
+        "retrieved_at_utc": "2026-10-12T06:28:26.038980+00:00",
+        "http_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "sha256": "f3e9983f2ae5068e4ce28bdeeba5500d6a24ad4e87d85c90a999687466bc26ca",
+        "bytes": 91941,
+        "path": null,
+        "raw_cache_path": "/tmp/portplan-source-cache/icpa_gate_results.html",
+        "deployment_policy": "Raw container identifiers not included in distributed evidence; only bounded identifier-free sample retained."
+      },
+      "download_without_credentials": true,
+      "derived_files": [
+        "data/public/icpa_gate_results_sample.json"
+      ],
+      "used_in_optimizer": false,
+      "limitations": [
+        "Only 10 displayed rows captured; not exhaustive history",
+        "Container and voyage identifiers removed from distributed sample",
+        "Missing discharge, contract, deadline and warehouse fields",
+        "Live HTML differs from cached web retrieval; snapshot metadata governs"
+      ]
+    },
+    {
+      "id": "icpa_planned_gate",
+      "title": "Incheon iCON public COPINO planned gate snapshot",
+      "url": "https://newscon.icpa.or.kr/gate/list.do?menuKey=124",
+      "kind": "public_planned_gate_events",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://newscon.icpa.or.kr/gate/list.do?menuKey=124",
+        "final_url": "https://newscon.icpa.or.kr/gate/list.do?menuKey=124",
+        "retrieved_at_utc": "2026-10-12T06:27:08.167400+00:00",
+        "http_status": 200,
+        "content_type": "text/html;charset=UTF-8",
+        "sha256": "d691000c52c67fa41ef00b93f78854270ead954d994f74474eb8bd77247fadd3",
+        "bytes": 99639,
+        "path": null,
+        "raw_cache_path": "/tmp/portplan-source-cache/icpa_gate_list.html",
+        "deployment_policy": "Raw container identifiers not included in distributed evidence; only bounded identifier-free sample retained."
+      },
+      "used_in_optimizer": false,
+      "limitations": [
+        "Plans/receipts are not realized movements",
+        "Not distributed as an order dataset"
+      ]
+    },
+    {
+      "id": "bscc_dispatch_catalog",
+      "title": "BSCC port terminal logistics dispatch event catalogue",
+      "url": "https://bscc.kr/user/corporate/view.bscc?idx=42&menuCd=DOM_000000103002000000",
+      "kind": "candidate_not_downloaded",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "acquisition": "official catalogue read through web; direct server fetch returned HTTP503 twice",
+      "status": "catalogue_and_sample_only",
+      "advertised_file": "컨테인어스.csv",
+      "advertised_size_kb": 192320.3818359375,
+      "advertised_updated_date": "2023-11-14",
+      "used_in_optimizer": false,
+      "limitations": [
+        "Full original not obtained or analyzed",
+        "Published sample suggests duplicate same-container events across voyage labels; must validate grain if obtained"
+      ]
+    },
+    {
+      "id": "bigdata_sea_gate",
+      "title": "Marine big data container gate list",
+      "url": "https://www.bigdata-sea.kr/datasearch/base/view.do?prodId=PROD_000375",
+      "kind": "candidate_not_downloaded",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "status": "access_failed",
+      "sample_endpoint": "https://www.bigdata-sea.kr/user/productdata/sampleDataFile.do?dataFileType=CSV&prodDataId=PRODDATA_000869&prodId=PROD_000375",
+      "access_result": [
+        "web timeout/502",
+        "executor proxy403"
+      ],
+      "used_in_optimizer": false,
+      "limitations": [
+        "No original obtained; no credentials or access controls bypassed"
+      ]
+    },
+    {
+      "id": "pnc_gate_list",
+      "title": "PNC actual gate movement list",
+      "url": "https://svc.pncport.com/info/CMS/Yard/GateIO.pnc?mCode=MN018",
+      "kind": "restricted_candidate",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "status": "login_required",
+      "used_in_optimizer": false
+    },
+    {
+      "id": "competition_2026",
+      "title": "2nd LogisticSolver 2026 official registration page",
+      "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+      "kind": "competition_rules",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+        "final_url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+        "retrieved_at_utc": "2026-10-12T06:26:25.376869+00:00",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "99203d6e58ac422e64ec06ce2fe7c25f1f7e8b2a4f176c2560ae41ab0f08320e",
+        "bytes": 51043,
+        "path": "data/public/competition_2026.html"
+      },
+      "poster_snapshot": {
+        "url": "https://anchor.changwon.ac.kr/r/VLFMyM5HpDQ7",
+        "final_url": "https://anchor.changwon.ac.kr/r/VLFMyM5HpDQ7",
+        "retrieved_at_utc": "2026-10-12T06:32:06.908421+00:00",
+        "http_status": 200,
+        "content_type": "image/png",
+        "sha256": "377dcf6ee729ae2447fc3c9fc61a30ef9bdc2ecbf962fee54805f1698b8ff464",
+        "bytes": 451103,
+        "path": "data/public/competition_2026_poster.png"
+      },
+      "claims": [
+        "Changwon enrolled students incl graduate; teams up to four",
+        "Deadline Nov6 18:00 KST; initial review Nov13; presentation Nov20",
+        "Report plus data/code; presentation <=20 pages",
+        "First prize: 대상, Gyeongsangnam-do Governor award"
+      ],
+      "not_published": [
+        "scoring weights",
+        "explicit minimum team size",
+        "AI assistance policy",
+        "presentation duration"
+      ]
+    },
+    {
+      "id": "competition_2025_award",
+      "title": "Changwon 2025 awarded logistics optimization project",
+      "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=13934&nttSn=1400175",
+      "kind": "prior_award_context",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=13934&nttSn=1400175",
+        "final_url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=13934&nttSn=1400175",
+        "retrieved_at_utc": "2026-10-12T06:30:17.223420+00:00",
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "sha256": "f75de73de82d95d989d363c5ab83ae9475b21abe32cbd4dac9fc32e4c60ab908",
+        "bytes": 72043,
+        "path": "data/public/competition_2025_award.html"
+      },
+      "claims": [
+        "Most-excellent award project used LRP, VRPPD, MILP and CPLEX"
+      ],
+      "limitations": [
+        "최우수상 is not evidence of 대상 first-prize winner",
+        "No basis for current contestant or winning probability claims"
+      ]
+    },
+    {
+      "id": "portcast_calculator",
+      "title": "Portcast Maersk D&D calculator",
+      "url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+      "kind": "competitor_primary_website",
+      "authority": "primary_official",
+      "checked_at_local_date": "2026-10-12",
+      "timezone": "Asia/Seoul",
+      "snapshot": {
+        "url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+        "final_url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+        "retrieved_at_utc": "2026-10-12T06:28:24.620365+00:00",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "097235004b93f98c848c6c96d0acb63cee6142657156e5ac2cca7b86a528d710",
+        "bytes": 96925,
+        "path": "data/public/portcast_dd_calculator.html"
+      },
+      "claims": [
+        "Public D&D calculator, risk thresholds, alerts and contract-aware audit offerings exist"
+      ],
+      "limitations": [
+        "Vendor marketing outcomes not independently validated",
+        "Absence of a feature on public page does not prove product lacks it"
+      ]
+    }
+  ],
+  "tariffs": {
+    "pnc_2026_import_dry": {
+      "source_id": "pnc_2026",
+      "currency": "KRW",
+      "unit": "per TEU per chargeable day",
+      "free_storage_days": 4,
+      "brackets": [
+        {
+          "total_storage_days_min": 5,
+          "max": 7,
+          "rate": 9100
+        },
+        {
+          "total_storage_days_min": 8,
+          "max": 9,
+          "rate": 18200
+        },
+        {
+          "total_storage_days_min": 10,
+          "max": 14,
+          "rate": 31850
+        },
+        {
+          "total_storage_days_min": 15,
+          "max": null,
+          "rate": 45500
+        }
+      ],
+      "calculation": "max(0,total_storage_days-4)*highest_reached_bracket_rate*TEU",
+      "mode": "retroactive_highest_bracket",
+      "date_count": "inclusive calendar days from qualifying start through gate-out; before08:00 starts same day, otherwise next day",
+      "verified_formula_example": {
+        "size_ft": 20,
+        "storage_days": 15,
+        "expected_krw": 500500
+      },
+      "excluded": [
+        "VAT/tax calculation",
+        "special/DG/reefer cargo",
+        "contract discounts",
+        "other handling and inspection charges"
+      ],
+      "applicability": "public benchmark only; actual cargo owner invoice unresolved"
+    },
+    "maersk_korea_import_combined_dry": {
+      "source_id": "maersk_korea_import",
+      "currency": "KRW",
+      "unit": "per container per day",
+      "free_days": 10,
+      "brackets": [
+        {
+          "day_min": 11,
+          "max": 15,
+          "rate20": 15000,
+          "rate40": 30000
+        },
+        {
+          "day_min": 16,
+          "max": 20,
+          "rate20": 30000,
+          "rate40": 50000
+        },
+        {
+          "day_min": 21,
+          "max": null,
+          "rate20": 50000,
+          "rate40": 90000
+        }
+      ],
+      "mode_used_in_v1": "sum_daily_slab_rates",
+      "mode_evidence_status": "implementation interpretation; explicit Korea progressive example not located",
+      "endpoints": "discharge date and empty gate-in date both included",
+      "day_type": "calendar",
+      "excluded": [
+        "inland-truck place-of-delivery exception",
+        "special contracts",
+        "purchased extra freetime",
+        "reefers/special cargo",
+        "VAT/tax calculation"
+      ],
+      "rate_validity_basis": "PCD on/after 2024-07-15, subject to deal conditions"
+    }
+  },
+  "conflicts": [
+    {
+      "id": "pnc_web_2025_vs_pdf_2026",
+      "severity": "high_for_real_billing",
+      "sources": [
+        "pnc_2026",
+        "pnc_2025",
+        "pnc_shipper_web"
+      ],
+      "resolution": "Use2026 dated PDF for experimental reference; disclose conflict; do not claim actual invoice match."
+    }
+  ],
+  "field_provenance": {
+    "official": [
+      "tariff unit amounts",
+      "standard free days",
+      "PNC08:00 date boundary",
+      "Maersk combined endpoints"
+    ],
+    "derived": [
+      "storage days",
+      "D&D days",
+      "candidate schedule costs",
+      "YGPA gate elapsed minutes"
+    ],
+    "simulated_or_user_input": [
+      "scenario containers",
+      "discharge dates for model scenarios",
+      "release dates",
+      "delivery deadlines",
+      "warehouse dwell",
+      "daily truck capacities",
+      "daily warehouse capacities"
+    ],
+    "missing_real_target_data": [
+      "PNC importer order history",
+      "actual applicable shipping contract",
+      "customs and D/O clearance",
+      "warehouse unloading logs",
+      "fleet availability",
+      "actual invoices"
+    ],
+    "external_observed_not_model_input": [
+      "YGPA vehicle visits",
+      "ICPA gate snapshot"
+    ]
+  },
+  "claim_boundaries": {
+    "allowed": [
+      "exact computation under specified public benchmark and scenario assumptions",
+      "fair simulated benchmark comparisons",
+      "independent public data quality findings"
+    ],
+    "not_supported": [
+      "realized company savings",
+      "PNC shipment historical replay",
+      "global novelty",
+      "contest winning probability",
+      "official tariff endorsement of implementation"
+    ]
+  },
+  "reproduction": {
+    "source_artifacts": "data/public/*.metadata.json",
+    "ygpa_command": "python data/public/profile_ygpa.py /tmp/portplan-source-cache/ygpa_west_2026h1.csv",
+    "raw_download_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+    "raw_file_policy": "Large/raw identifier-bearing event files cached outside deploy; links, hashes, aggregates and bounded deidentified sample retained"
+  }
+}

@@ -1,0 +1,192 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PortPlan V8</title><style>
+body{margin:0;background:#dce8e0;color:#173c40;font-family:"Noto Sans CJK KR","Noto Sans KR",sans-serif}.slide{box-sizing:border-box;width:1280px;min-height:720px;margin:24px auto;padding:44px 62px;background:#f7faf5;position:relative;page-break-after:always}h1{font-size:35px;line-height:1.4;margin:10px 0 22px;white-space:pre-line}.kicker{font-size:13px;letter-spacing:3px;color:#39826d}p{font-size:20px;line-height:1.7}table{width:100%;border-collapse:collapse;font-size:15px;margin:22px 0}th,td{text-align:left;border-bottom:1px solid #d3e0d3;padding:12px 10px;overflow-wrap:anywhere}th{background:#e6f0e4}.note{font-size:14px;background:#e8f2e5;padding:14px 18px;line-height:1.8}.flow{display:flex;gap:24px;align-items:stretch;margin:38px 0}.flow div{flex:1;background:#e0efe0;border-left:5px solid #36836c;padding:24px;font-size:23px;white-space:pre-line}.chart{margin:22px 0}.row{display:grid;grid-template-columns:240px 1fr 250px;align-items:center;gap:16px;margin:19px 0;font-size:17px}.track{height:21px;background:#dfebde}.fill{height:100%;background:#35826d}.footer{font-size:12px;letter-spacing:.5px;margin-top:25px;color:#638176}@media(max-width:1300px){.slide{width:100%;min-height:0;margin:12px auto;padding:30px}h1{font-size:29px}.row{grid-template-columns:180px 1fr 190px}}@media print{@page{size:1280px 720px;margin:0}body{background:white}.slide{width:1280px;height:720px;margin:0;overflow:hidden}}
+</style><body>
+<section class="slide" id="slide-1"><div class="kicker">01 / PORTPLAN V8</div>
+<h1>오늘 어떤 컨테이너를 반출하고,
+언제 적출·반납해야 할까요?</h1><p>사용자: 알려진 수입 컨테이너와 일별 운송·창고를 함께 조정하는 계획 담당자. PortPlan은 요율 조회를 완전한 날짜 계획과 실행 이력으로 연결합니다.</p>
+<div class="flow"><div>반출 결정</div><div>창고 적출</div><div>공컨테이너 반납</div></div>
+<div class="note">V8의 완주 개선 가설은 지지되지 않았습니다. 동일분포 V8 80/216 vs V7 156/216; 스트레스 V8 48/216 vs V7 89/216. 제품 기능 추가를 알고리즘 성능 개선이나 기업 실현 절감으로 바꾸어 주장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 01 / 18</div></section>
+<section class="slide" id="slide-2"><div class="kicker">02 / PORTPLAN V8</div>
+<h1>세 행동은 같은 자원을 공유합니다.</h1><p>반출과 반납은 각각 운송 작업을 사용합니다. 적출은 여러 날 연속 점유할 수 있으며, 반출부터 반납 전까지 체류 공간을 사용합니다.</p>
+<table><thead><tr><th>행동/상태</th><th>공유 자원</th><th>지킬 제약</th></tr></thead><tbody>
+<tr><td>반출 p</td><td>운송 작업</td><td>방출 가능일 이후</td></tr>
+<tr><td>적출 u</td><td>연속 창고 점유</td><td>완료가 납기 이내</td></tr>
+<tr><td>반납 r</td><td>운송 작업</td><td>적출 완료와 반납 지연 이후</td></tr>
+<tr><td>체류 [p,r)</td><td>staging</td><td>계획기간 내 모든 날짜의 용량</td></tr>
+</tbody></table>
+<div class="note">일 단위 원자적 실행 모델입니다. 도로 경로·예약 슬롯·기사 근무시간·신규 주문 도착은 모델링하지 않았습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 02 / 18</div></section>
+<section class="slide" id="slide-3"><div class="kicker">03 / PORTPLAN V8</div>
+<h1>가격을 먼저 정확히 계산하고,
+전체 계획에서 선택합니다.</h1><p>PNC 공개 표준 보관료의 최고 도달 구간 소급 방식과 Maersk 한국 표준 D&amp;D 해석을 함께 계산합니다. 한 상자의 요금 노출은 전체 계획의 지연 비용과 다릅니다.</p>
+<div class="flow"><div>공식 요율·기산일</div><div>완전한 날짜 후보</div><div>비용·자원·잠금 재검사</div></div>
+<div class="note">개별 계약·실제 청구서·세금·운송비·창고 임차료는 확인하지 않았습니다. 목표는 두 요금의 선언된 부분 문제입니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 03 / 18</div></section>
+<section class="slide" id="slide-4"><div class="kicker">04 / PORTPLAN V8</div>
+<h1>G0: 실패를 모두 같은 문제로
+취급하지 않습니다.</h1><p>기존 V7 36개 중 9개 실패를 독립 Python trip 모델로 사후 진단했습니다. D0 실패 7개, 실행 이후 실패 2개입니다.</p>
+<table><thead><tr><th>진단 층</th><th>가능</th><th>불가능</th><th>미결</th></tr></thead><tbody>
+<tr><td>nominalFromStart</td><td>5</td><td>4</td><td>0</td></tr>
+<tr><td>observedExecutedPrefix</td><td>4</td><td>5</td><td>0</td></tr>
+<tr><td>actualHindsightFromStart</td><td>3</td><td>6</td><td>0</td></tr>
+<tr><td>actualHindsightExecutedPrefix</td><td>3</td><td>6</td><td>0</td></tr>
+</tbody></table>
+<div class="note">36개 층 요청 / 중복 제외 22개 모델. 추가 오프라인 진단 예산이며 온라인 성과가 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 04 / 18</div></section>
+<section class="slide" id="slide-5"><div class="kicker">05 / PORTPLAN V8</div>
+<h1>G0는 개선 가능한 대상을
+구체적으로 좁힙니다.</h1><p>실제 미래를 전부 알아도 불가능한 기존 실패는 6개입니다. 원래 자원·납기 모델이 같다면 전체 완주 상한은 30/36 이하입니다.</p>
+<table><thead><tr><th>기존 실패 분류</th><th>사례 수</th></tr></thead><tbody>
+<tr><td>nominal_infeasible_from_start</td><td>4</td></tr>
+<tr><td>actual_hindsight_and_observed_prefix_infeasible</td><td>1</td></tr>
+<tr><td>observed_prefix_feasible_online_search_miss</td><td>4</td></tr>
+</tbody></table>
+<div class="note">G0 사후 진단 자체는 원 알고리즘 가시간 실험이 아닙니다. 이후 원 seed·고정 V7 코드의 추가 예산 탐침은 별도 개발 결과로 보고합니다. 기존 입력은 새 holdout이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 05 / 18</div></section>
+<section class="slide" id="slide-6"><div class="kicker">06 / PORTPLAN V8</div>
+<h1>같은 실행 이력의 개발 검사에서도
+단순 기준과 비교합니다.</h1><p>동일 snapshot 개발 28개, 전체 호출 392개를 별도 검사했습니다. V8과 단순 유지의 적시 공동 63쌍: 더 저렴/동일/더 비쌈 0/63/0.</p>
+<table><thead><tr><th>개발 방법</th><th>적시 완전 / 시도</th><th>늦은 완전 후보</th><th>적시 후보 날짜 변경</th></tr></thead><tbody>
+<tr><td>단순 유지/복구</td><td>63/72</td><td>3</td><td>750</td></tr>
+<tr><td>매번 다듬기/복구</td><td>63/72</td><td>3</td><td>1146</td></tr>
+<tr><td>매번 재구성</td><td>51/72</td><td>15</td><td>2034</td></tr>
+<tr><td>V8 조건부 결정</td><td>63/72</td><td>0</td><td>750</td></tr>
+</tbody></table>
+<div class="note">warm 동일 이력 개발 검사입니다. 이 결과에서 V8이 단순 유지보다 낫다고 주장하지 않습니다. 날짜 변경 감소는 더 비싼 요금과 함께 나타날 수 있으며 냉 전체 episode와 합치지 않습니다. 원 seed 추가 예산 8회: 1,000ms에서만 적시 완전 1개, 양쪽 미완료 3개. 원래 내부 cache의 정확한 재현은 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 06 / 18</div></section>
+<section class="slide" id="slide-7"><div class="kicker">07 / PORTPLAN V8</div>
+<h1>V8: 유효한 계획을 유지하고,
+필요할 때만 개선·복구합니다.</h1><p>현재 계획을 잠금과 자원으로 재검사합니다. 유효하면 비용 기회를 확인하고 날짜 변경·단기 압력 보호를 적용합니다. 무효이면 잠금 복구를 시도합니다.</p>
+<div class="flow"><div>현재 계획 유효?
+예 → 유지/조건부 개선</div><div>무효 → 잠금 복구</div><div>완전 후보만 수락</div></div>
+<div class="note">단기 압력은 현재 명목 예측의 대리 지표입니다. 미래 완주 보장·전체 경로 비용 비증가·전역 최적 증명이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 07 / 18</div></section>
+<section class="slide" id="slide-8"><div class="kicker">08 / PORTPLAN V8</div>
+<h1>분모와 반복을 먼저 고정했습니다.</h1><p>144개 업무 시나리오 × 5개 정책 × 3개 알고리즘/타이밍 반복 = 2,160개 episode. 반복은 새로운 업무 시나리오가 아닙니다.</p>
+<table><thead><tr><th>패널</th><th>시나리오</th><th>범위</th></tr></thead><tbody>
+<tr><td>동일 생성분포 · 새 시드</td><td>72</td><td>기존 생성기와 충격 유형, 새로운 독립 생성 시드</td></tr>
+<tr><td>새 충격 스트레스</td><td>72</td><td>반복 감소·미공지 회복 지연·연속 자원 충격·점진 회복; 모든 초기 주문은 알려짐</td></tr>
+</tbody></table>
+<div class="note">전체 냉 episode 부모 기한 5,000ms. 초기화·실행·IPC·부모 검사를 포함합니다. 호출별 내부 시계는 같지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 08 / 18</div></section>
+<section class="slide" id="slide-9"><div class="kicker">09 / PORTPLAN V8</div>
+<h1>동일 생성분포 · 새 시드
+먼저 완주와 미확보 이력을 확인합니다.</h1><p>완주는 모든 물리 행동과 최종 검사까지 기한 내 수락한 경우입니다. 미확보 이력은 물리적으로 실패했다고 단정하지 않습니다.</p>
+<div class="chart">
+<div class="row"><span>V5 유효 계획 유지</span><div class="track"><div class="fill" style="width:55.5556%"></div></div><span>120/216 · 3/3 40 · 미확보 0</span></div>
+<div class="row"><span>V6 실행 잠금 복구</span><div class="track"><div class="fill" style="width:72.2222%"></div></div><span>156/216 · 3/3 52 · 미확보 0</span></div>
+<div class="row"><span>V7 비용 다듬기</span><div class="track"><div class="fill" style="width:72.2222%"></div></div><span>156/216 · 3/3 52 · 미확보 0</span></div>
+<div class="row"><span>V8 조건부 의사결정</span><div class="track"><div class="fill" style="width:37.0370%"></div></div><span>80/216 · 3/3 25 · 미확보 0</span></div>
+<div class="row"><span>독립 native HiGHS</span><div class="track"><div class="fill" style="width:76.8519%"></div></div><span>166/216 · 3/3 55 · 미확보 0</span></div>
+</div>
+<div class="note">막대는 episode 완주 수입니다. 세 반복 모두 완주한 시나리오 수와 미확보 이력도 함께 표시합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 09 / 18</div></section>
+<section class="slide" id="slide-10"><div class="kicker">10 / PORTPLAN V8</div>
+<h1>동일 생성분포 · 새 시드
+같은 사례의 완주 쌍만 요금을 비교합니다.</h1><p>양수는 후보가 더 저렴합니다. 시나리오별로 일치하는 완주 반복의 평균을 먼저 구하고 시나리오를 동일 가중합니다.</p>
+<table><thead><tr><th>후보 / 기준</th><th>시나리오 / 쌍</th><th>총요금 절감</th><th>추가요금 절감</th><th>낮음/동일/높음</th></tr></thead><tbody>
+<tr><td>V8 조건부 의사결정 / V7 비용 다듬기</td><td>28 / 80</td><td>-0.05%</td><td>-0.09%</td><td>0/26/2</td></tr>
+<tr><td>V8 조건부 의사결정 / V5 유효 계획 유지</td><td>28 / 80</td><td>-0.05%</td><td>-0.08%</td><td>0/27/1</td></tr>
+<tr><td>V8 조건부 의사결정 / V6 실행 잠금 복구</td><td>28 / 80</td><td>0.22%</td><td>0.37%</td><td>1/26/1</td></tr>
+<tr><td>V8 조건부 의사결정 / 독립 native HiGHS</td><td>28 / 80</td><td>-0.35%</td><td>-0.61%</td><td>1/19/8</td></tr>
+<tr><td>독립 native HiGHS / V7 비용 다듬기</td><td>49 / 147</td><td>5.69%</td><td>9.96%</td><td>26/22/1</td></tr>
+</tbody></table>
+<div class="note">비교마다 분모가 다릅니다. 총/추가 요금의 원화 분모·영 비용·모든 악화 ID·구간은 보고서에 공개합니다. 실패 요금은 null입니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 10 / 18</div></section>
+<section class="slide" id="slide-11"><div class="kicker">11 / PORTPLAN V8</div>
+<h1>새 충격 스트레스
+먼저 완주와 미확보 이력을 확인합니다.</h1><p>완주는 모든 물리 행동과 최종 검사까지 기한 내 수락한 경우입니다. 미확보 이력은 물리적으로 실패했다고 단정하지 않습니다.</p>
+<div class="chart">
+<div class="row"><span>V5 유효 계획 유지</span><div class="track"><div class="fill" style="width:30.5556%"></div></div><span>66/216 · 3/3 22 · 미확보 0</span></div>
+<div class="row"><span>V6 실행 잠금 복구</span><div class="track"><div class="fill" style="width:42.5926%"></div></div><span>92/216 · 3/3 30 · 미확보 0</span></div>
+<div class="row"><span>V7 비용 다듬기</span><div class="track"><div class="fill" style="width:41.2037%"></div></div><span>89/216 · 3/3 29 · 미확보 0</span></div>
+<div class="row"><span>V8 조건부 의사결정</span><div class="track"><div class="fill" style="width:22.2222%"></div></div><span>48/216 · 3/3 16 · 미확보 0</span></div>
+<div class="row"><span>독립 native HiGHS</span><div class="track"><div class="fill" style="width:53.7037%"></div></div><span>116/216 · 3/3 38 · 미확보 0</span></div>
+</div>
+<div class="note">막대는 episode 완주 수입니다. 세 반복 모두 완주한 시나리오 수와 미확보 이력도 함께 표시합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 11 / 18</div></section>
+<section class="slide" id="slide-12"><div class="kicker">12 / PORTPLAN V8</div>
+<h1>새 충격 스트레스
+같은 사례의 완주 쌍만 요금을 비교합니다.</h1><p>양수는 후보가 더 저렴합니다. 시나리오별로 일치하는 완주 반복의 평균을 먼저 구하고 시나리오를 동일 가중합니다.</p>
+<table><thead><tr><th>후보 / 기준</th><th>시나리오 / 쌍</th><th>총요금 절감</th><th>추가요금 절감</th><th>낮음/동일/높음</th></tr></thead><tbody>
+<tr><td>V8 조건부 의사결정 / V7 비용 다듬기</td><td>16 / 48</td><td>0.00%</td><td>0.00%</td><td>0/16/0</td></tr>
+<tr><td>V8 조건부 의사결정 / V5 유효 계획 유지</td><td>16 / 48</td><td>0.00%</td><td>0.00%</td><td>0/16/0</td></tr>
+<tr><td>V8 조건부 의사결정 / V6 실행 잠금 복구</td><td>16 / 48</td><td>0.00%</td><td>0.00%</td><td>0/16/0</td></tr>
+<tr><td>V8 조건부 의사결정 / 독립 native HiGHS</td><td>16 / 48</td><td>0.57%</td><td>0.90%</td><td>2/9/5</td></tr>
+<tr><td>독립 native HiGHS / V7 비용 다듬기</td><td>28 / 82</td><td>6.43%</td><td>10.65%</td><td>16/10/2</td></tr>
+</tbody></table>
+<div class="note">비교마다 분모가 다릅니다. 총/추가 요금의 원화 분모·영 비용·모든 악화 ID·구간은 보고서에 공개합니다. 실패 요금은 null입니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 12 / 18</div></section>
+<section class="slide" id="slide-13"><div class="kicker">13 / PORTPLAN V8</div>
+<h1>불리한 결과도 같은 화면에 남깁니다.</h1><p>표의 완주 증감은 episode 기준입니다. 최악 요금 악화는 비교 가능한 시나리오 평균 기준입니다. 단위와 분모를 바꿔 섞지 않습니다.</p>
+<table><thead><tr><th>패널</th><th>비교</th><th>총요금 악화 시나리오</th><th>최악 증가 ₩</th><th>완주 얻음/잃음</th></tr></thead><tbody>
+<tr><td>same-distribution</td><td>adaptiveVsV7</td><td>2</td><td>53,350</td><td>0 / 76</td></tr>
+<tr><td>same-distribution</td><td>adaptiveVsV5</td><td>1</td><td>53,350</td><td>0 / 40</td></tr>
+<tr><td>same-distribution</td><td>adaptiveVsV6</td><td>1</td><td>53,350</td><td>0 / 76</td></tr>
+<tr><td>same-distribution</td><td>adaptiveVsHiGHS</td><td>8</td><td>153,350</td><td>0 / 86</td></tr>
+<tr><td>same-distribution</td><td>highsVsV7</td><td>1</td><td>7,300</td><td>19 / 9</td></tr>
+<tr><td>stress</td><td>adaptiveVsV7</td><td>0</td><td>0</td><td>0 / 41</td></tr>
+<tr><td>stress</td><td>adaptiveVsV5</td><td>0</td><td>0</td><td>0 / 18</td></tr>
+<tr><td>stress</td><td>adaptiveVsV6</td><td>0</td><td>0</td><td>0 / 44</td></tr>
+<tr><td>stress</td><td>adaptiveVsHiGHS</td><td>5</td><td>40,000</td><td>0 / 68</td></tr>
+<tr><td>stress</td><td>highsVsV7</td><td>2</td><td>235,000</td><td>34 / 7</td></tr>
+</tbody></table>
+<div class="note">전체 악화·완주 손실 ID는 보고서에 보존합니다. HiGHS/V7 공통 완주 쌍의 날짜 변경: 동일 생성분포 · 새 시드 6,300→49,350 (147쌍); 새 충격 스트레스 9,394→29,876 (82쌍). 더 많은 완주·조건부 요금 개선과 변경 대가를 함께 봅니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 13 / 18</div></section>
+<section class="slide" id="slide-14"><div class="kicker">14 / PORTPLAN V8</div>
+<h1>계산 기한과 날짜 변경의
+대가도 공개합니다.</h1><p>날짜 변경은 미실행 사건 날짜의 변경 횟수입니다. 작업자 시간·재배차 비용·서로 다른 컨테이너 수로 해석하지 않습니다.</p>
+<table><thead><tr><th>패널</th><th>정책</th><th>평균 부모 ms</th><th>강제 기한</th><th>관측 변경 / 미확보 episode</th></tr></thead><tbody>
+<tr><td>same-distribution</td><td>V5 유효 계획 유지</td><td>286.6</td><td>0</td><td>3674 / 0</td></tr>
+<tr><td>same-distribution</td><td>V6 실행 잠금 복구</td><td>299.5</td><td>0</td><td>7590 / 0</td></tr>
+<tr><td>same-distribution</td><td>V7 비용 다듬기</td><td>310.1</td><td>0</td><td>7335 / 0</td></tr>
+<tr><td>same-distribution</td><td>V8 조건부 의사결정</td><td>246.5</td><td>0</td><td>1563 / 0</td></tr>
+<tr><td>same-distribution</td><td>독립 native HiGHS</td><td>587.2</td><td>0</td><td>55792 / 0</td></tr>
+<tr><td>stress</td><td>V5 유효 계획 유지</td><td>308.5</td><td>0</td><td>5740 / 0</td></tr>
+<tr><td>stress</td><td>V6 실행 잠금 복구</td><td>373.1</td><td>0</td><td>15175 / 0</td></tr>
+<tr><td>stress</td><td>V7 비용 다듬기</td><td>378.4</td><td>0</td><td>14034 / 0</td></tr>
+<tr><td>stress</td><td>V8 조건부 의사결정</td><td>253.8</td><td>0</td><td>2659 / 0</td></tr>
+<tr><td>stress</td><td>독립 native HiGHS</td><td>560.6</td><td>0</td><td>53715 / 0</td></tr>
+</tbody></table>
+<div class="note">HiGHS native 시작도 전체 부모 기한에 포함됩니다. 중간 호출은 협력식 예산이며, 동일 CPU 또는 절대 실시간 보장은 주장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 14 / 18</div></section>
+<section class="slide" id="slide-15"><div class="kicker">15 / PORTPLAN V8</div>
+<h1>독립 구현은 무엇을 확인했을까요?</h1><p>Python 장부가 2,160개 episode, 수락 계획 16,400개, 기록된 물리 행동 211,673개를 재구성했습니다. 완주 1,089개와 이력 미확보 0개를 구분했습니다.</p>
+<table><thead><tr><th>확인한 범위</th><th>경계</th></tr></thead><tbody>
+<tr><td>요율·일별 자원·실행 잠금</td><td>JS 행렬을 재사용하지 않는 내부 독립 구현</td></tr>
+<tr><td>V8 후보 수락 및 점추정</td><td>공식 결과의 독립 재계산</td></tr>
+<tr><td>scenario-cluster bootstrap 구간</td><td>별도 Python 통계 검산에서 동일 원본의 구간을 재계산함</td></tr>
+<tr><td>현장 효과·전역 최적·제3자 인증</td><td>확인하지 않음</td></tr>
+</tbody></table>
+<div class="note">구간은 완주 쌍에 조건부인 시나리오 cluster bootstrap입니다. 완주 선택 편향을 제거하지 않으며 관측 밖 운영 집단에 외삽하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 15 / 18</div></section>
+<section class="slide" id="slide-16"><div class="kicker">16 / PORTPLAN V8</div>
+<h1>내 입력으로 성공과 중단을
+직접 확인할 수 있습니다.</h1><p>작업대 주문 가져오기 → 모의 용량 사건 설정 → 두 정책 순차 실행 → 날짜별 관측·잠금·권고·실패 검사 → 정확한 입력/결과 내보내기.</p>
+<div class="flow"><div>주문 + 명시적 가정</div><div>당일 정보·실행 잠금</div><div>권고 + 실패 + 내보내기</div></div>
+<div class="note">화면의 10개 주문 완주/중단 예시는 합성 학습용입니다. 공식 연구 시나리오나 실제 현장 실적이 아닙니다. 변경한 용량 가정은 이전 입력과 비교 표시합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 16 / 18</div></section>
+<section class="slide" id="slide-17"><div class="kicker">17 / PORTPLAN V8</div>
+<h1>증거와 기여의 경계를
+끝까지 유지합니다.</h1><p>핵심은 알려진 합성 주문의 일별 비용·완주·안정성입니다. 공개 PSPLIB 자원 모델과 벌크항만 로그는 별도의 부분 검증이며 실제 컨테이너 절감으로 합치지 않습니다.</p>
+<table><thead><tr><th>주체/주장</th><th>현재 상태</th></tr></thead><tbody>
+<tr><td>설계·구현·실험·자료 작성</td><td>AI 수행; 원 연구·공개 코드·라이선스 귀속 유지</td></tr>
+<tr><td>사용자 본인 개발·검증·답변 숙련</td><td>pending · 대신 인정하지 않음</td></tr>
+<tr><td>전문가·기업 검증, 현장 비용 절감</td><td>미수행</td></tr>
+<tr><td>개인 참가·AI 해석·등록/서약</td><td>본 자료로 확인하지 않음</td></tr>
+</tbody></table>
+<div class="note">알고리즘 최초·SOTA·모든 경우 우월·현실 ROI·우승 확률을 주장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 17 / 18</div></section>
+<section class="slide" id="slide-18"><div class="kicker">18 / PORTPLAN V8</div>
+<h1>심사위원이 같은 결정을
+다시 계산할 수 있게 전달합니다.</h1><p>전체 입력·모든 반복·실패·실행 장부·고정 source·독립 검산·모든 악화 ID를 연결합니다. 새 재현은 새 출력 경로에 기록하며 최초 결과를 덮어쓰지 않습니다.</p>
+<table><thead><tr><th>자료</th><th>찾을 내용</th></tr></thead><tbody>
+<tr><td>한국어 보고서</td><td>정확한 분모·원화·구간·모든 불리한 ID</td></tr>
+<tr><td>영어 이해 노트</td><td>발표 주제별 가정·결과·한계</td></tr>
+<tr><td>기여 기록</td><td>AI와 사용자 미확인 상태</td></tr>
+<tr><td>V8 formal archive + review</td><td>해시로 연결된 원 입력·모든 episode·독립 검사</td></tr>
+</tbody></table>
+<div class="note">발표는 오늘의 결정 → 세 행동 → 실제 진단 → 고정 실험 → 손실·한계 → 직접 재현 순서로 진행합니다. 이 자료는 제출이나 서명이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 18 / 18</div></section>
+</body></html>

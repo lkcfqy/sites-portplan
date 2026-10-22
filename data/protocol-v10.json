@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "portplan-protocol-v10",
+  "protocolVersion": "portplan-v10-native-stable-fee-ties-20261016-01",
+  "state": "Prespecified final method and assessment declaration; prospective generation requires a separate source freeze manifest.",
+  "purpose": "Test one native cached-plan selection rule: replace an audited valid cache only for strict same-snapshot joint-fee reduction; retain fee ties/costlier proposals. Keep original native HiGHS, adaptive V9, V7 and stable V5 unchanged. Retain every negative result.",
+  "generator": {
+    "function": "makeScenarioV2",
+    "module": "scripts/benchmark-v2.mjs",
+    "implementationSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "ordersKnownAtStart": true,
+    "independence": "Every business scenario has a new unique base seed across both panels. Three repeated algorithm seeds/timing runs share that one business scenario and are not independent business samples. Do not replace infeasible, duplicate, slow or costly cases."
+  },
+  "matrix": {
+    "mechanisms": [
+      "aged-backlog",
+      "new-arrivals",
+      "batch-release"
+    ],
+    "capacityProfiles": [
+      "balanced",
+      "tight"
+    ],
+    "counts": [
+      24,
+      50,
+      100
+    ],
+    "scenariosPerCell": 4
+  },
+  "panels": [
+    {
+      "id": "same-distribution",
+      "scenarioCount": 72,
+      "baseSeed": 491001,
+      "shockPatterns": [
+        {
+          "name": "truck-early-two-days",
+          "shocks": [
+            {
+              "id": "truck-early",
+              "resource": "truck",
+              "revealDay": 2,
+              "duration": 2,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            }
+          ]
+        },
+        {
+          "name": "warehouse-two-days",
+          "shocks": [
+            {
+              "id": "warehouse-shock",
+              "resource": "warehouse",
+              "revealDay": 3,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "staging-two-days",
+          "shocks": [
+            {
+              "id": "staging-shock",
+              "resource": "staging",
+              "revealDay": 4,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 3
+            }
+          ]
+        },
+        {
+          "name": "truck-late-two-days",
+          "shocks": [
+            {
+              "id": "truck-late",
+              "resource": "truck",
+              "revealDay": 7,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        }
+      ],
+      "interpretation": "Unchanged V9 generator and same four shock patterns; new independent business seeds not generated or inspected in development."
+    },
+    {
+      "id": "stress",
+      "scenarioCount": 72,
+      "baseSeed": 492001,
+      "shockPatterns": [
+        {
+          "name": "repeated-truck-reductions",
+          "shocks": [
+            {
+              "id": "truck-repeat-first",
+              "resource": "truck",
+              "revealDay": 2,
+              "duration": 2,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "truck-repeat-second",
+              "resource": "truck",
+              "revealDay": 6,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "unannounced-extended-recovery",
+          "shocks": [
+            {
+              "id": "warehouse-unannounced-extended",
+              "resource": "warehouse",
+              "revealDay": 3,
+              "duration": 4,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "sequential-two-resource-reductions",
+          "shocks": [
+            {
+              "id": "truck-sequential",
+              "resource": "truck",
+              "revealDay": 2,
+              "duration": 2,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "warehouse-sequential",
+              "resource": "warehouse",
+              "revealDay": 5,
+              "duration": 2,
+              "reductionNumerator": 1,
+              "reductionDenominator": 2
+            }
+          ]
+        },
+        {
+          "name": "unannounced-gradual-recovery",
+          "shocks": [
+            {
+              "id": "truck-gradual-strong",
+              "resource": "truck",
+              "revealDay": 3,
+              "duration": 1,
+              "reductionNumerator": 3,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "truck-gradual-middle",
+              "resource": "truck",
+              "revealDay": 4,
+              "duration": 1,
+              "reductionNumerator": 2,
+              "reductionDenominator": 5
+            },
+            {
+              "id": "truck-gradual-light",
+              "resource": "truck",
+              "revealDay": 5,
+              "duration": 1,
+              "reductionNumerator": 1,
+              "reductionDenominator": 5
+            }
+          ]
+        }
+      ],
+      "interpretation": "Unchanged V9 stress patterns: repeated/unannounced-recovery/sequential-resource/gradual-recovery. All initial orders known; no planner sees future events or private durations."
+    }
+  ],
+  "shockCapacityRule": "For each event: capacity=max(0, nominal capacity on revealDay-ceil(nominal*reductionNumerator/reductionDenominator)). Only simulator receives duration. No announcedDuration.",
+  "methods": [
+    "stableRetainV5",
+    "costPolishV7",
+    "adaptiveV9",
+    "highsV8",
+    "stableHiGHSV10"
+  ],
+  "algorithmRepeats": [
+    {
+      "index": 1,
+      "seed": 49011
+    },
+    {
+      "index": 2,
+      "seed": 49023
+    },
+    {
+      "index": 3,
+      "seed": 49039
+    }
+  ],
+  "budget": {
+    "hardWallMs": 5000,
+    "cpuThreads": 1,
+    "execution": "Cold separate POSIX process group per episode; all methods execute serially, cyclic method order changes by scenario and repeat. Python descendants are group-killed on timeout and after worker exit.",
+    "clock": "Parent time starts before fork; includes imports, planner.ready native startup, all decisions, child terminal dual audit, planner.close cleanup, IPC and parent receipt audit. Only receipts fully validated by 5000ms count as complete.",
+    "callBudgetCaveat": "V5 uses legacy solver-internal seconds; V7/adaptiveV9/original native HiGHS/stable native V10 use cooperative whole-call milliseconds. Native startup is charged to parent 5000ms and separately reported. All old baseline call configurations are unchanged; stable native V10 has identical configuration to original native HiGHS. No observer or parent candidate acknowledgement affects formal daily acceptance."
+  },
+  "callBudgets": {
+    "stableRetainV5": {
+      "timeLimitSeconds": 0.2
+    },
+    "costPolishV7": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true,
+      "maxPasses": 2,
+      "maxPairs": 32,
+      "candidateCap": 12,
+      "maxPairChecks": 384,
+      "maxSingleTargets": 16
+    },
+    "highsV8": {
+      "timeBudgetMs": 200,
+      "timeLimitSeconds": 0.2,
+      "objectiveMode": "joint",
+      "auditReserveMs": 2,
+      "hardOverrunGraceMs": 250,
+      "initializationTimeoutMs": 10000,
+      "retainCacheFallback": true
+    },
+    "adaptiveV9": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true,
+      "maxPasses": 2,
+      "maxPairs": 32,
+      "candidateCap": 12,
+      "maxPairChecks": 384,
+      "maxSingleTargets": 16,
+      "feeToleranceRatio": 0.005,
+      "maxChangedEvents": 6,
+      "lookaheadDays": 2,
+      "pressureGuard": true,
+      "opportunityThresholdKRW": 0
+    },
+    "stableHiGHSV10": {
+      "timeBudgetMs": 200,
+      "timeLimitSeconds": 0.2,
+      "objectiveMode": "joint",
+      "auditReserveMs": 2,
+      "hardOverrunGraceMs": 250,
+      "initializationTimeoutMs": 10000,
+      "retainCacheFallback": true
+    }
+  },
+  "analysis": {
+    "primaryUnit": "scenario",
+    "repeatAggregation": "Equal scenario weighting: within each pair, average matching jointly completed repeats in each scenario, then aggregate scenario means. Also disclose raw paired episode totals and paired-repeat counts.",
+    "bootstrap": {
+      "seed": 700001,
+      "draws": 2000
+    },
+    "panels": "Always separate. Do not pool same-distribution and stress into a ranking.",
+    "comparisons": {
+      "v10VsHiGHS": [
+        "highsV8",
+        "stableHiGHSV10"
+      ],
+      "v10VsV9": [
+        "adaptiveV9",
+        "stableHiGHSV10"
+      ],
+      "v10VsV7": [
+        "costPolishV7",
+        "stableHiGHSV10"
+      ],
+      "v10VsV5": [
+        "stableRetainV5",
+        "stableHiGHSV10"
+      ],
+      "highsVsV7": [
+        "costPolishV7",
+        "highsV8"
+      ]
+    },
+    "defaultGate": "All recorded scenario-repeat completion pairs count. Any completion loss against any old baseline prevents default recommendation eligibility; finite-sample zero loss is not a production recommendation or a universal guarantee.",
+    "nativeStabilityClaim": "Claim conditional stability improvement only for zero native completion losses, strictly fewer pending-event-date revisions on exactly native jointly completed repeats, and neither total nor incremental fee 95% savings interval wholly negative. Both intervals required. Fee CI containing zero means no stable fee advantage; zero is not removed with a sign tolerance.",
+    "revisionUnit": "One changed pending pickup/unloadStart/return date; count events, never convert revisions to KRW with invented weights.",
+    "jointCompletePareto": "Additional all-five-method jointly complete matching-repeat subset. Average matching repeats within each eligible scenario, then sum equal-weight scenario means for total/incremental KRW and revision events separately. Show all denominators and full-sample completion. Dominance requires fee/revisions both no worse and one strictly better (EPS 1e-6). Unknown revisions produce null, never zero. No weighted score or pooled ranking."
+  },
+  "freezePolicy": "Before the first prospective generation: finish methods and independent review, fix all budget/parameter/analysis declarations, freeze all source and protocol SHA256 in a new artifacts directory. Verify live and frozen source hashes, then import both generator and workers from the frozen source snapshot. No prospective input generation or trial runs before root-authorized freeze; no replacing negative cases or overwriting a first run.",
+  "analysisRules": [
+    "144 new scenarios (72 per panel) x 3 retained algorithm/timing repeats x 5 methods = 2160 episodes, not 432 independent business scenarios. Preserve previous V8/V9 first runs/negative outcomes; old inputs are development only.",
+    "Keep all failures, parent deadline losses, late first receipts, audit rejections, unknown histories, zeros, negative savings and completion gains/losses. No seed selection or case replacement.",
+    "Incomplete episode fees are null. Missing history, revisions and counters are null/unavailable, never zero.",
+    "Report V10 vs original native HiGHS/adaptive V9/V7/stable V5 and original native HiGHS vs V7. Each pair uses its own matching jointly completed repeats for fees/revisions; never rank across different conditional denominators.",
+    "Default eligibility requires zero completion losses against every old baseline across all full-sample matching repeats. Any loss prevents default recommendation; zero observed losses is not universal non-regression.",
+    "Report total/incremental fee numerator/denominator, win/tie/loss, worst losses, event-date revisions and scenario-cluster bootstrap intervals. A native fee CI containing zero permits only no stable fee advantage.",
+    "Conditional stability improvement vs original native HiGHS requires zero native completion losses, strictly fewer revisions on that same jointly completed set, and no robust fee deterioration: both fee CIs available and neither savings CI wholly below zero. Do not invent KRW revision weights.",
+    "Also report an all-five jointly completed set with explicit scenario/episode denominators and separate fee/revision Pareto tables. Conditional Pareto position never overrides full-sample completion losses.",
+    "Full-path tests use different initial plans and do not isolate recovery after a shared physical prefix.",
+    "Only synthetic known-order daily atomic truck/warehouse/staging conclusions supported. Native HiGHS is a same-model reference; no enterprise ROI, production suitability, universal non-regression or first-place guarantee.",
+    "Retain full histories, observations, decisions, adaptiveV9 candidateDelivery, stable-native stabilitySelection proofs, all rejected candidates and terminal audits with hashes; compact only redundant debug/cache pricing.",
+    "First-run artifacts/repeats never overwritten. Reproduction requires a new output. Disclose duplicate order-list fingerprints without resampling."
+  ],
+  "deliveryEvidence": {
+    "policy": "Unchanged adaptiveV9 synchronous gate; V10 native selection proof retained without an IPC acceptance stream.",
+    "canonicalPath": "result.plannerTrace[day].candidateDelivery (adaptiveV9); result.plannerTrace[day].stabilitySelection (stableHiGHSV10)",
+    "retention": "Retain complete receipt sequence, dates, independently reconstructed fees, timing fields, accepted and rejected gate outcomes without truncation. Internal constructor firstIncumbentMs is not acceptance evidence.",
+    "unknownHistory": "No timely whole-episode terminal receipt means complete fees, execution counters and history remain null/unavailable; absence of gate evidence is not proof that no candidate physically existed.",
+    "nativeSelection": "Keep complete pristine same-snapshot before/proposal/after dates, repriced fees, physical/lock audits, actual outer timestamps and selection. Internal fees/times do not establish acceptance."
+  },
+  "developmentSeparation": {
+    "previousRuns": "All V8/V9 original first runs and negative outcomes unchanged; already seen inputs are development only.",
+    "newSeeds": "491001..491072 and 492001..492072 are prospective commitments; no generation, inspection, tuning or trial before root-authorized source freeze.",
+    "budgetSelection": "Original 200ms daily and 5000ms cold episode limits; no budget selection from prospective results.",
+    "methodsOmitted": "V8/V6 omitted to preserve five methods/2160 episodes; unchanged adaptiveV9, V7, V5 and original native HiGHS retained."
+  },
+  "nativeSelectionRule": {
+    "candidateMethod": "stableHiGHSV10",
+    "baselineMethod": "highsV8",
+    "change": "Replace a valid independently audited cache only when canonical native joint fee < canonical cache joint fee - 1e-6. Retain ties/costlier proposals. Invalid/absent cache uses original recovery. No extra solve, lexicographic solve, KRW revision weight or tuned threshold.",
+    "fixedNumericalEpsilon": 0.000001,
+    "configEquality": "callBudgets.stableHiGHSV10 equals callBudgets.highsV8 exactly."
+  }
+}
+

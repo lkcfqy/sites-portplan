@@ -1,0 +1,3907 @@
+{
+  "schemaVersion": "portplan-independent-v12-bootstrap-review",
+  "valid": true,
+  "readOnly": true,
+  "importsJavaScript": false,
+  "solverRuns": 0,
+  "inputIndexSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+  "frozenManifestSha256": "a1266ca661fa1927e65182aff54755f3a8a15bb28096d3e1227c35a54a6e9165",
+  "implementationSha256": "18ab836223f2844e9e061814572d41fc642e7486a1f8e1d50799c3bfdba075a1",
+  "episodeCount": 2592,
+  "businessScenarioCount": 144,
+  "historicalSeedExclusions": {
+    "metadataSourceCount": 16,
+    "excludedSeedCount": 1161,
+    "overlappingV12Seeds": 0
+  },
+  "panels": {
+    "same-distribution": {
+      "scenarioCount": 72,
+      "byMethod": {
+        "costPolishV7": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 166,
+          "fullyCompletedScenarioCount": 55,
+          "anyCompletedScenarioCount": 56,
+          "meanScenarioCompletionRate": 0.7685185185185186,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 183,
+            "knownInitialFailureCount": 33,
+            "knownLaterFailureCount": 17,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "adaptiveV9": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 165,
+          "fullyCompletedScenarioCount": 55,
+          "anyCompletedScenarioCount": 55,
+          "meanScenarioCompletionRate": 0.7638888888888888,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 183,
+            "knownInitialFailureCount": 33,
+            "knownLaterFailureCount": 18,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "highsV8": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 166,
+          "fullyCompletedScenarioCount": 55,
+          "anyCompletedScenarioCount": 56,
+          "meanScenarioCompletionRate": 0.7685185185185186,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 175,
+            "knownInitialFailureCount": 41,
+            "knownLaterFailureCount": 9,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "stableHiGHSV10": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 169,
+          "fullyCompletedScenarioCount": 56,
+          "anyCompletedScenarioCount": 57,
+          "meanScenarioCompletionRate": 0.7824074074074074,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 175,
+            "knownInitialFailureCount": 41,
+            "knownLaterFailureCount": 6,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "commitmentHiGHSV11": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 169,
+          "fullyCompletedScenarioCount": 56,
+          "anyCompletedScenarioCount": 57,
+          "meanScenarioCompletionRate": 0.7824074074074074,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 175,
+            "knownInitialFailureCount": 41,
+            "knownLaterFailureCount": 6,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "seededHiGHSV12": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 181,
+          "fullyCompletedScenarioCount": 59,
+          "anyCompletedScenarioCount": 61,
+          "meanScenarioCompletionRate": 0.8379629629629629,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 187,
+            "knownInitialFailureCount": 29,
+            "knownLaterFailureCount": 6,
+            "unknownDayZeroCount": 0
+          }
+        }
+      },
+      "comparisons": {
+        "v12VsV11": {
+          "completionRateGain95CI": [
+            0.00925925925925926,
+            0.1111111111111111
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 57,
+              "pairedEpisodeCount": 168,
+              "scenarioCount": 57,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -478.94736842105266,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.01006269806817791,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 57,
+              "pairedEpisodeCount": 168,
+              "scenarioCount": 57,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -478.94736842105266,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.01812661245052329,
+                0.0
+              ]
+            }
+          }
+        },
+        "v12VsV10": {
+          "completionRateGain95CI": [
+            0.00925925925925926,
+            0.1111111111111111
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 57,
+              "pairedEpisodeCount": 168,
+              "scenarioCount": 57,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -1062.5877192982455,
+                5015.219298245608
+              ],
+              "weightedSavingsPct95CI": [
+                -0.01516333447275379,
+                0.095808760550655
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 57,
+              "pairedEpisodeCount": 168,
+              "scenarioCount": 57,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -1062.5877192982455,
+                5015.219298245608
+              ],
+              "weightedSavingsPct95CI": [
+                -0.026929327980473164,
+                0.16647559999945488
+              ]
+            }
+          }
+        },
+        "v12VsV9": {
+          "completionRateGain95CI": [
+            0.004513888888888897,
+            0.1527777777777778
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 54,
+              "pairedEpisodeCount": 160,
+              "scenarioCount": 54,
+              "draws": 2000,
+              "meanSavings95CI": [
+                228361.072530864,
+                813875.7175925933
+              ],
+              "weightedSavingsPct95CI": [
+                3.6980492065397343,
+                7.755594432604412
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 54,
+              "pairedEpisodeCount": 160,
+              "scenarioCount": 54,
+              "draws": 2000,
+              "meanSavings95CI": [
+                228361.07253086456,
+                813875.7175925933
+              ],
+              "weightedSavingsPct95CI": [
+                6.531162036419143,
+                12.96666402549766
+              ]
+            }
+          }
+        },
+        "v12VsHiGHS": {
+          "completionRateGain95CI": [
+            0.004629629629629629,
+            0.1388888888888889
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 55,
+              "pairedEpisodeCount": 162,
+              "scenarioCount": 55,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -11900.681818181818,
+                1678.1818181818182
+              ],
+              "weightedSavingsPct95CI": [
+                -0.22769738941293344,
+                0.023585298624354354
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 55,
+              "pairedEpisodeCount": 162,
+              "scenarioCount": 55,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -11900.681818181818,
+                1678.1818181818182
+              ],
+              "weightedSavingsPct95CI": [
+                -0.39687664844695075,
+                0.04366916925057488
+              ]
+            }
+          }
+        },
+        "v12VsV7": {
+          "completionRateGain95CI": [
+            7.517135062566175e-19,
+            0.14814814814814814
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 55,
+              "pairedEpisodeCount": 161,
+              "scenarioCount": 55,
+              "draws": 2000,
+              "meanSavings95CI": [
+                250222.765151515,
+                839287.0833333336
+              ],
+              "weightedSavingsPct95CI": [
+                3.9948916283584155,
+                8.346497152771747
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 55,
+              "pairedEpisodeCount": 161,
+              "scenarioCount": 55,
+              "draws": 2000,
+              "meanSavings95CI": [
+                250222.76515151552,
+                839287.0833333326
+              ],
+              "weightedSavingsPct95CI": [
+                6.999731621557184,
+                13.800052012194163
+              ]
+            }
+          }
+        },
+        "v11VsV10": {
+          "completionRateGain95CI": [
+            0.0,
+            0.0
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 56,
+              "pairedEpisodeCount": 168,
+              "scenarioCount": 56,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -908.9285714285714,
+                5250.848214285699
+              ],
+              "weightedSavingsPct95CI": [
+                -0.013109759046248576,
+                0.1164386915022285
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 56,
+              "pairedEpisodeCount": 168,
+              "scenarioCount": 56,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -908.9285714285714,
+                5250.848214285699
+              ],
+              "weightedSavingsPct95CI": [
+                -0.023433252837188924,
+                0.20014728799152978
+              ]
+            }
+          }
+        },
+        "v10VsHiGHS": {
+          "completionRateGain95CI": [
+            -0.027777777777777776,
+            0.05555555555555555
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 54,
+              "pairedEpisodeCount": 162,
+              "scenarioCount": 54,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -14446.296296296296,
+                513.1481481481471
+              ],
+              "weightedSavingsPct95CI": [
+                -0.31838318320213943,
+                0.008262071543823449
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 54,
+              "pairedEpisodeCount": 162,
+              "scenarioCount": 54,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -14446.296296296296,
+                513.1481481481471
+              ],
+              "weightedSavingsPct95CI": [
+                -0.539024025532781,
+                0.015253606528127408
+              ]
+            }
+          }
+        },
+        "highsVsV7": {
+          "completionRateGain95CI": [
+            -0.08796296296296297,
+            0.0925925925925926
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 50,
+              "pairedEpisodeCount": 148,
+              "scenarioCount": 50,
+              "draws": 2000,
+              "meanSavings95CI": [
+                182889.2083333333,
+                794699.9999999983
+              ],
+              "weightedSavingsPct95CI": [
+                3.958980447667088,
+                8.937754561839673
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 50,
+              "pairedEpisodeCount": 148,
+              "scenarioCount": 50,
+              "draws": 2000,
+              "meanSavings95CI": [
+                182889.20833333334,
+                794700.0000000005
+              ],
+              "weightedSavingsPct95CI": [
+                7.005387320612579,
+                15.002087249503175
+              ]
+            }
+          }
+        }
+      },
+      "jointCompletePareto": {
+        "jointScenarioCount": 48,
+        "jointEpisodeCount": 143,
+        "eligibility": "all-six-matching-complete-repeats",
+        "byMethod": {
+          "costPolishV7": {
+            "scenarioCount": 48,
+            "jointEpisodeCount": 143,
+            "scenarioMeanTotalCostSumKRW": 313500716.6666667,
+            "scenarioMeanIncrementalCostSumKRW": 181128316.66666666,
+            "scenarioMeanRevisionCountSum": 1814.0,
+            "episodeTotalCostSumKRW": 940502150.0,
+            "episodeIncrementalCostSumKRW": 543384950.0,
+            "episodeRevisionCountSum": 5303.0,
+            "knownRevisionEpisodeCount": 143,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 166,
+            "fullSampleEpisodeCount": 216
+          },
+          "adaptiveV9": {
+            "scenarioCount": 48,
+            "jointEpisodeCount": 143,
+            "scenarioMeanTotalCostSumKRW": 312431016.6666667,
+            "scenarioMeanIncrementalCostSumKRW": 180058616.66666666,
+            "scenarioMeanRevisionCountSum": 1876.3333333333333,
+            "episodeTotalCostSumKRW": 937293050.0,
+            "episodeIncrementalCostSumKRW": 540175850.0,
+            "episodeRevisionCountSum": 5490.0,
+            "knownRevisionEpisodeCount": 143,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 165,
+            "fullSampleEpisodeCount": 216
+          },
+          "highsV8": {
+            "scenarioCount": 48,
+            "jointEpisodeCount": 143,
+            "scenarioMeanTotalCostSumKRW": 294098550.0,
+            "scenarioMeanIncrementalCostSumKRW": 161726150.0,
+            "scenarioMeanRevisionCountSum": 17316.0,
+            "episodeTotalCostSumKRW": 882295650.0,
+            "episodeIncrementalCostSumKRW": 485178450.0,
+            "episodeRevisionCountSum": 50978.0,
+            "knownRevisionEpisodeCount": 143,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 166,
+            "fullSampleEpisodeCount": 216
+          },
+          "stableHiGHSV10": {
+            "scenarioCount": 48,
+            "jointEpisodeCount": 143,
+            "scenarioMeanTotalCostSumKRW": 294337450.0,
+            "scenarioMeanIncrementalCostSumKRW": 161965050.0,
+            "scenarioMeanRevisionCountSum": 3451.0,
+            "episodeTotalCostSumKRW": 883012350.0,
+            "episodeIncrementalCostSumKRW": 485895150.0,
+            "episodeRevisionCountSum": 10196.0,
+            "knownRevisionEpisodeCount": 143,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 169,
+            "fullSampleEpisodeCount": 216
+          },
+          "commitmentHiGHSV11": {
+            "scenarioCount": 48,
+            "jointEpisodeCount": 143,
+            "scenarioMeanTotalCostSumKRW": 294246450.0,
+            "scenarioMeanIncrementalCostSumKRW": 161874050.0,
+            "scenarioMeanRevisionCountSum": 5130.0,
+            "episodeTotalCostSumKRW": 882739350.0,
+            "episodeIncrementalCostSumKRW": 485622150.0,
+            "episodeRevisionCountSum": 15147.0,
+            "knownRevisionEpisodeCount": 143,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 169,
+            "fullSampleEpisodeCount": 216
+          },
+          "seededHiGHSV12": {
+            "scenarioCount": 48,
+            "jointEpisodeCount": 143,
+            "scenarioMeanTotalCostSumKRW": 294246450.0,
+            "scenarioMeanIncrementalCostSumKRW": 161874050.0,
+            "scenarioMeanRevisionCountSum": 5018.5,
+            "episodeTotalCostSumKRW": 882739350.0,
+            "episodeIncrementalCostSumKRW": 485622150.0,
+            "episodeRevisionCountSum": 14746.0,
+            "knownRevisionEpisodeCount": 143,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 181,
+            "fullSampleEpisodeCount": 216
+          }
+        },
+        "frontiers": {
+          "totalAndRevisions": [
+            {
+              "method": "costPolishV7",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "adaptiveV9",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "highsV8",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "stableHiGHSV10",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "commitmentHiGHSV11",
+              "dominates": [],
+              "dominatedBy": [
+                "seededHiGHSV12"
+              ],
+              "pareto": false
+            },
+            {
+              "method": "seededHiGHSV12",
+              "dominates": [
+                "commitmentHiGHSV11"
+              ],
+              "dominatedBy": [],
+              "pareto": true
+            }
+          ],
+          "incrementalAndRevisions": [
+            {
+              "method": "costPolishV7",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "adaptiveV9",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "highsV8",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "stableHiGHSV10",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "commitmentHiGHSV11",
+              "dominates": [],
+              "dominatedBy": [
+                "seededHiGHSV12"
+              ],
+              "pareto": false
+            },
+            {
+              "method": "seededHiGHSV12",
+              "dominates": [
+                "commitmentHiGHSV11"
+              ],
+              "dominatedBy": [],
+              "pareto": true
+            }
+          ]
+        },
+        "scenarios": [
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 18089283.333333332,
+                "incrementalCost": 10278383.333333334,
+                "revisionCount": 65.33333333333333
+              },
+              "adaptiveV9": {
+                "totalCost": 18059116.666666668,
+                "incrementalCost": 10248216.666666666,
+                "revisionCount": 67.33333333333333
+              },
+              "highsV8": {
+                "totalCost": 17583300.0,
+                "incrementalCost": 9772400.0,
+                "revisionCount": 100.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 17583300.0,
+                "incrementalCost": 9772400.0,
+                "revisionCount": 47.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 17583300.0,
+                "incrementalCost": 9772400.0,
+                "revisionCount": 47.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 17583300.0,
+                "incrementalCost": 9772400.0,
+                "revisionCount": 47.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n24-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 11525300.0,
+                "incrementalCost": 6171950.0,
+                "revisionCount": 28.0
+              },
+              "adaptiveV9": {
+                "totalCost": 11525300.0,
+                "incrementalCost": 6171950.0,
+                "revisionCount": 28.0
+              },
+              "highsV8": {
+                "totalCost": 11525300.0,
+                "incrementalCost": 6171950.0,
+                "revisionCount": 47.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 11570300.0,
+                "incrementalCost": 6216950.0,
+                "revisionCount": 28.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 11555300.0,
+                "incrementalCost": 6201950.0,
+                "revisionCount": 34.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 11555300.0,
+                "incrementalCost": 6201950.0,
+                "revisionCount": 34.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n24-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 11582400.0,
+                "incrementalCost": 5727350.0,
+                "revisionCount": 24.0
+              },
+              "adaptiveV9": {
+                "totalCost": 11842650.0,
+                "incrementalCost": 5987600.0,
+                "revisionCount": 17.333333333333332
+              },
+              "highsV8": {
+                "totalCost": 11582400.0,
+                "incrementalCost": 5727350.0,
+                "revisionCount": 79.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 11582400.0,
+                "incrementalCost": 5727350.0,
+                "revisionCount": 28.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 11582400.0,
+                "incrementalCost": 5727350.0,
+                "revisionCount": 28.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 11582400.0,
+                "incrementalCost": 5727350.0,
+                "revisionCount": 28.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 14998316.666666666,
+                "incrementalCost": 8004466.666666667,
+                "revisionCount": 3.3333333333333335
+              },
+              "adaptiveV9": {
+                "totalCost": 14903216.666666666,
+                "incrementalCost": 7909366.666666667,
+                "revisionCount": 8.333333333333334
+              },
+              "highsV8": {
+                "totalCost": 14310900.0,
+                "incrementalCost": 7317050.0,
+                "revisionCount": 95.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 14310900.0,
+                "incrementalCost": 7317050.0,
+                "revisionCount": 4.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 14310900.0,
+                "incrementalCost": 7317050.0,
+                "revisionCount": 4.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 14310900.0,
+                "incrementalCost": 7317050.0,
+                "revisionCount": 4.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 30581650.0,
+                "incrementalCost": 17290400.0,
+                "revisionCount": 94.0
+              },
+              "adaptiveV9": {
+                "totalCost": 30581650.0,
+                "incrementalCost": 17290400.0,
+                "revisionCount": 94.0
+              },
+              "highsV8": {
+                "totalCost": 29254550.0,
+                "incrementalCost": 15963300.0,
+                "revisionCount": 145.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 29254550.0,
+                "incrementalCost": 15963300.0,
+                "revisionCount": 74.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 29254550.0,
+                "incrementalCost": 15963300.0,
+                "revisionCount": 74.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 29254550.0,
+                "incrementalCost": 15963300.0,
+                "revisionCount": 74.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n50-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 27220666.666666668,
+                "incrementalCost": 15648666.666666666,
+                "revisionCount": 72.0
+              },
+              "adaptiveV9": {
+                "totalCost": 27220666.666666668,
+                "incrementalCost": 15648666.666666666,
+                "revisionCount": 72.0
+              },
+              "highsV8": {
+                "totalCost": 26634300.0,
+                "incrementalCost": 15062300.0,
+                "revisionCount": 146.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 26614300.0,
+                "incrementalCost": 15042300.0,
+                "revisionCount": 64.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 26614300.0,
+                "incrementalCost": 15042300.0,
+                "revisionCount": 64.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 26614300.0,
+                "incrementalCost": 15042300.0,
+                "revisionCount": 64.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n50-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 21061816.666666668,
+                "incrementalCost": 11839916.666666666,
+                "revisionCount": 31.333333333333332
+              },
+              "adaptiveV9": {
+                "totalCost": 21061816.666666668,
+                "incrementalCost": 11839916.666666666,
+                "revisionCount": 31.333333333333332
+              },
+              "highsV8": {
+                "totalCost": 20638900.0,
+                "incrementalCost": 11417000.0,
+                "revisionCount": 96.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 20638900.0,
+                "incrementalCost": 11417000.0,
+                "revisionCount": 30.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 20623900.0,
+                "incrementalCost": 11402000.0,
+                "revisionCount": 59.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 20623900.0,
+                "incrementalCost": 11402000.0,
+                "revisionCount": 59.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 30207800.0,
+                "incrementalCost": 14176500.0,
+                "revisionCount": 3.0
+              },
+              "adaptiveV9": {
+                "totalCost": 30207800.0,
+                "incrementalCost": 14176500.0,
+                "revisionCount": 3.0
+              },
+              "highsV8": {
+                "totalCost": 30207800.0,
+                "incrementalCost": 14176500.0,
+                "revisionCount": 105.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 30207800.0,
+                "incrementalCost": 14176500.0,
+                "revisionCount": 3.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 30207800.0,
+                "incrementalCost": 14176500.0,
+                "revisionCount": 3.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 30207800.0,
+                "incrementalCost": 14176500.0,
+                "revisionCount": 3.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n100-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 65810050.0,
+                "incrementalCost": 37536750.0,
+                "revisionCount": 222.0
+              },
+              "adaptiveV9": {
+                "totalCost": 65563683.333333336,
+                "incrementalCost": 37290383.333333336,
+                "revisionCount": 215.0
+              },
+              "highsV8": {
+                "totalCost": 61837350.0,
+                "incrementalCost": 33564050.0,
+                "revisionCount": 274.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 61787350.0,
+                "incrementalCost": 33514050.0,
+                "revisionCount": 126.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 61817350.0,
+                "incrementalCost": 33544050.0,
+                "revisionCount": 213.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 61817350.0,
+                "incrementalCost": 33544050.0,
+                "revisionCount": 213.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-aged-backlog-balanced-n100-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 56365216.666666664,
+                "incrementalCost": 30552416.666666668,
+                "revisionCount": 17.0
+              },
+              "adaptiveV9": {
+                "totalCost": 55848200.0,
+                "incrementalCost": 30035400.0,
+                "revisionCount": 17.0
+              },
+              "highsV8": {
+                "totalCost": 51038950.0,
+                "incrementalCost": 25226150.0,
+                "revisionCount": 154.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 51038950.0,
+                "incrementalCost": 25226150.0,
+                "revisionCount": 18.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 51038950.0,
+                "incrementalCost": 25226150.0,
+                "revisionCount": 50.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 51038950.0,
+                "incrementalCost": 25226150.0,
+                "revisionCount": 50.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 4.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 4.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 224.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 59.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 83.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 79.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n24-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 131.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 20.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 20.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 35.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 35.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 163.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 384.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 50.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 61.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 110.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n50-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 393.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 104.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 153.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 128.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 24.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 24.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 239.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 85.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 85.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 57.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 839.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 60.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 60.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n100-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 637.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 169.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 297.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 278.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n100-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 3.3333333333333335
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 5.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 744.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 181.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 353.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 203.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-balanced-n100-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 761.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 140.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 243.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 115.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-tight-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 45500.0,
+                "incrementalCost": 45500.0,
+                "revisionCount": 62.0
+              },
+              "adaptiveV9": {
+                "totalCost": 45500.0,
+                "incrementalCost": 45500.0,
+                "revisionCount": 62.0
+              },
+              "highsV8": {
+                "totalCost": 45500.0,
+                "incrementalCost": 45500.0,
+                "revisionCount": 239.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 45500.0,
+                "incrementalCost": 45500.0,
+                "revisionCount": 77.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 45500.0,
+                "incrementalCost": 45500.0,
+                "revisionCount": 77.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 45500.0,
+                "incrementalCost": 45500.0,
+                "revisionCount": 77.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-tight-n24-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 50.666666666666664
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 61.333333333333336
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 282.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 83.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 83.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 114.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-tight-n50-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 9100.0,
+                "incrementalCost": 9100.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 2.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 465.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 120.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 120.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 193.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-tight-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 185.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 185.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 1052.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 251.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 398.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 441.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-tight-n100-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 18200.0,
+                "incrementalCost": 18200.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 18200.0,
+                "incrementalCost": 18200.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 873.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 257.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 457.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 457.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-new-arrivals-tight-n100-r4",
+            "pairedRepeatCount": 2,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 139.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 139.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 970.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 157.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 243.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 309.5
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 300300.0,
+                "incrementalCost": 263900.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 300300.0,
+                "incrementalCost": 263900.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 300300.0,
+                "incrementalCost": 263900.0,
+                "revisionCount": 94.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 300300.0,
+                "incrementalCost": 263900.0,
+                "revisionCount": 0.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 300300.0,
+                "incrementalCost": 263900.0,
+                "revisionCount": 0.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 300300.0,
+                "incrementalCost": 263900.0,
+                "revisionCount": 0.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n24-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 236600.0,
+                "incrementalCost": 200200.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 236600.0,
+                "incrementalCost": 200200.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 236600.0,
+                "incrementalCost": 200200.0,
+                "revisionCount": 149.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 236600.0,
+                "incrementalCost": 200200.0,
+                "revisionCount": 24.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 236600.0,
+                "incrementalCost": 200200.0,
+                "revisionCount": 26.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 236600.0,
+                "incrementalCost": 200200.0,
+                "revisionCount": 26.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 254800.0,
+                "incrementalCost": 236600.0,
+                "revisionCount": 8.0
+              },
+              "adaptiveV9": {
+                "totalCost": 254800.0,
+                "incrementalCost": 236600.0,
+                "revisionCount": 8.0
+              },
+              "highsV8": {
+                "totalCost": 254800.0,
+                "incrementalCost": 236600.0,
+                "revisionCount": 104.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 254800.0,
+                "incrementalCost": 236600.0,
+                "revisionCount": 23.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 254800.0,
+                "incrementalCost": 236600.0,
+                "revisionCount": 23.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 254800.0,
+                "incrementalCost": 236600.0,
+                "revisionCount": 23.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 591500.0,
+                "incrementalCost": 546000.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 591500.0,
+                "incrementalCost": 546000.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 591500.0,
+                "incrementalCost": 546000.0,
+                "revisionCount": 303.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 591500.0,
+                "incrementalCost": 546000.0,
+                "revisionCount": 0.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 591500.0,
+                "incrementalCost": 546000.0,
+                "revisionCount": 17.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 591500.0,
+                "incrementalCost": 546000.0,
+                "revisionCount": 17.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n50-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 682500.0,
+                "incrementalCost": 491400.0,
+                "revisionCount": 20.0
+              },
+              "adaptiveV9": {
+                "totalCost": 682500.0,
+                "incrementalCost": 491400.0,
+                "revisionCount": 20.0
+              },
+              "highsV8": {
+                "totalCost": 682500.0,
+                "incrementalCost": 491400.0,
+                "revisionCount": 340.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 682500.0,
+                "incrementalCost": 491400.0,
+                "revisionCount": 42.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 682500.0,
+                "incrementalCost": 491400.0,
+                "revisionCount": 57.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 682500.0,
+                "incrementalCost": 491400.0,
+                "revisionCount": 57.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n50-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 673400.0,
+                "incrementalCost": 500500.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 673400.0,
+                "incrementalCost": 500500.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 673400.0,
+                "incrementalCost": 500500.0,
+                "revisionCount": 270.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 673400.0,
+                "incrementalCost": 500500.0,
+                "revisionCount": 40.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 673400.0,
+                "incrementalCost": 500500.0,
+                "revisionCount": 85.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 673400.0,
+                "incrementalCost": 500500.0,
+                "revisionCount": 85.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 455000.0,
+                "incrementalCost": 409500.0,
+                "revisionCount": 29.0
+              },
+              "adaptiveV9": {
+                "totalCost": 455000.0,
+                "incrementalCost": 409500.0,
+                "revisionCount": 29.0
+              },
+              "highsV8": {
+                "totalCost": 445900.0,
+                "incrementalCost": 400400.0,
+                "revisionCount": 280.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 455000.0,
+                "incrementalCost": 409500.0,
+                "revisionCount": 51.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 455000.0,
+                "incrementalCost": 409500.0,
+                "revisionCount": 147.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 455000.0,
+                "incrementalCost": 409500.0,
+                "revisionCount": 147.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 964600.0,
+                "incrementalCost": 837200.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 964600.0,
+                "incrementalCost": 837200.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 955500.0,
+                "incrementalCost": 828100.0,
+                "revisionCount": 566.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 955500.0,
+                "incrementalCost": 828100.0,
+                "revisionCount": 0.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 955500.0,
+                "incrementalCost": 828100.0,
+                "revisionCount": 30.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 955500.0,
+                "incrementalCost": 828100.0,
+                "revisionCount": 30.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n100-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1264900.0,
+                "incrementalCost": 1128400.0,
+                "revisionCount": 26.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1264900.0,
+                "incrementalCost": 1128400.0,
+                "revisionCount": 26.0
+              },
+              "highsV8": {
+                "totalCost": 1264900.0,
+                "incrementalCost": 1128400.0,
+                "revisionCount": 597.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1264900.0,
+                "incrementalCost": 1128400.0,
+                "revisionCount": 98.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1264900.0,
+                "incrementalCost": 1128400.0,
+                "revisionCount": 98.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1264900.0,
+                "incrementalCost": 1128400.0,
+                "revisionCount": 98.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n100-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1164800.0,
+                "incrementalCost": 1046500.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1164800.0,
+                "incrementalCost": 1046500.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 1164800.0,
+                "incrementalCost": 1046500.0,
+                "revisionCount": 665.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1164800.0,
+                "incrementalCost": 1046500.0,
+                "revisionCount": 0.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1164800.0,
+                "incrementalCost": 1046500.0,
+                "revisionCount": 28.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1164800.0,
+                "incrementalCost": 1046500.0,
+                "revisionCount": 28.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-balanced-n100-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1346800.0,
+                "incrementalCost": 1092000.0,
+                "revisionCount": 37.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1352866.6666666667,
+                "incrementalCost": 1098066.6666666667,
+                "revisionCount": 51.666666666666664
+              },
+              "highsV8": {
+                "totalCost": 1292200.0,
+                "incrementalCost": 1037400.0,
+                "revisionCount": 593.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1355900.0,
+                "incrementalCost": 1101100.0,
+                "revisionCount": 91.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1346800.0,
+                "incrementalCost": 1092000.0,
+                "revisionCount": 189.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1346800.0,
+                "incrementalCost": 1092000.0,
+                "revisionCount": 189.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 985000.0,
+                "incrementalCost": 966800.0,
+                "revisionCount": 48.0
+              },
+              "adaptiveV9": {
+                "totalCost": 985000.0,
+                "incrementalCost": 966800.0,
+                "revisionCount": 48.0
+              },
+              "highsV8": {
+                "totalCost": 985000.0,
+                "incrementalCost": 966800.0,
+                "revisionCount": 118.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 985000.0,
+                "incrementalCost": 966800.0,
+                "revisionCount": 50.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 985000.0,
+                "incrementalCost": 966800.0,
+                "revisionCount": 50.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 985000.0,
+                "incrementalCost": 966800.0,
+                "revisionCount": 50.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n24-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 282100.0,
+                "incrementalCost": 218400.0,
+                "revisionCount": 21.0
+              },
+              "adaptiveV9": {
+                "totalCost": 282100.0,
+                "incrementalCost": 218400.0,
+                "revisionCount": 21.0
+              },
+              "highsV8": {
+                "totalCost": 282100.0,
+                "incrementalCost": 218400.0,
+                "revisionCount": 151.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 282100.0,
+                "incrementalCost": 218400.0,
+                "revisionCount": 25.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 282100.0,
+                "incrementalCost": 218400.0,
+                "revisionCount": 60.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 282100.0,
+                "incrementalCost": 218400.0,
+                "revisionCount": 60.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n24-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 591500.0,
+                "incrementalCost": 591500.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 460900.0,
+                "incrementalCost": 460900.0,
+                "revisionCount": 6.0
+              },
+              "highsV8": {
+                "totalCost": 345800.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 209.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 345800.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 27.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 345800.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 33.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 345800.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 33.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 427700.0,
+                "incrementalCost": 391300.0,
+                "revisionCount": 32.0
+              },
+              "adaptiveV9": {
+                "totalCost": 427700.0,
+                "incrementalCost": 391300.0,
+                "revisionCount": 32.0
+              },
+              "highsV8": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 183.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 345800.0,
+                "incrementalCost": 309400.0,
+                "revisionCount": 30.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 345800.0,
+                "incrementalCost": 309400.0,
+                "revisionCount": 30.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 345800.0,
+                "incrementalCost": 309400.0,
+                "revisionCount": 30.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1194800.0,
+                "incrementalCost": 1131100.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1176600.0,
+                "incrementalCost": 1112900.0,
+                "revisionCount": 2.0
+              },
+              "highsV8": {
+                "totalCost": 928200.0,
+                "incrementalCost": 864500.0,
+                "revisionCount": 296.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1037400.0,
+                "incrementalCost": 973700.0,
+                "revisionCount": 60.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1037400.0,
+                "incrementalCost": 973700.0,
+                "revisionCount": 60.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1037400.0,
+                "incrementalCost": 973700.0,
+                "revisionCount": 60.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n50-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 964100.0,
+                "incrementalCost": 818500.0,
+                "revisionCount": 109.0
+              },
+              "adaptiveV9": {
+                "totalCost": 940000.0,
+                "incrementalCost": 794400.0,
+                "revisionCount": 117.0
+              },
+              "highsV8": {
+                "totalCost": 858100.0,
+                "incrementalCost": 712500.0,
+                "revisionCount": 349.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 858100.0,
+                "incrementalCost": 712500.0,
+                "revisionCount": 58.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 858100.0,
+                "incrementalCost": 712500.0,
+                "revisionCount": 58.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 858100.0,
+                "incrementalCost": 712500.0,
+                "revisionCount": 58.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n50-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1316300.0,
+                "incrementalCost": 1125200.0,
+                "revisionCount": 50.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1255800.0,
+                "incrementalCost": 1064700.0,
+                "revisionCount": 56.0
+              },
+              "highsV8": {
+                "totalCost": 1055600.0,
+                "incrementalCost": 864500.0,
+                "revisionCount": 263.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1101100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 78.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1101100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 102.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1101100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 102.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1390566.6666666667,
+                "incrementalCost": 1308666.6666666667,
+                "revisionCount": 47.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1258500.0,
+                "incrementalCost": 1176600.0,
+                "revisionCount": 59.0
+              },
+              "highsV8": {
+                "totalCost": 864500.0,
+                "incrementalCost": 782600.0,
+                "revisionCount": 321.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 891800.0,
+                "incrementalCost": 809900.0,
+                "revisionCount": 50.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 891800.0,
+                "incrementalCost": 809900.0,
+                "revisionCount": 50.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 891800.0,
+                "incrementalCost": 809900.0,
+                "revisionCount": 50.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 5072950.0,
+                "incrementalCost": 4854550.0,
+                "revisionCount": 198.0
+              },
+              "adaptiveV9": {
+                "totalCost": 5000150.0,
+                "incrementalCost": 4781750.0,
+                "revisionCount": 204.0
+              },
+              "highsV8": {
+                "totalCost": 2344600.0,
+                "incrementalCost": 2126200.0,
+                "revisionCount": 506.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 2344600.0,
+                "incrementalCost": 2126200.0,
+                "revisionCount": 215.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 2344600.0,
+                "incrementalCost": 2126200.0,
+                "revisionCount": 225.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 2344600.0,
+                "incrementalCost": 2126200.0,
+                "revisionCount": 225.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n100-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 3474700.0,
+                "incrementalCost": 3356400.0,
+                "revisionCount": 82.0
+              },
+              "adaptiveV9": {
+                "totalCost": 3474700.0,
+                "incrementalCost": 3356400.0,
+                "revisionCount": 82.0
+              },
+              "highsV8": {
+                "totalCost": 2011100.0,
+                "incrementalCost": 1892800.0,
+                "revisionCount": 670.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 2011100.0,
+                "incrementalCost": 1892800.0,
+                "revisionCount": 84.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 2011100.0,
+                "incrementalCost": 1892800.0,
+                "revisionCount": 93.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 2011100.0,
+                "incrementalCost": 1892800.0,
+                "revisionCount": 93.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-same-distribution-batch-release-tight-n100-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 2350500.0,
+                "incrementalCost": 2314100.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 2350500.0,
+                "incrementalCost": 2314100.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 1483300.0,
+                "incrementalCost": 1446900.0,
+                "revisionCount": 652.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1565200.0,
+                "incrementalCost": 1528800.0,
+                "revisionCount": 186.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1483300.0,
+                "incrementalCost": 1446900.0,
+                "revisionCount": 316.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1483300.0,
+                "incrementalCost": 1446900.0,
+                "revisionCount": 316.0
+              }
+            }
+          }
+        ],
+        "scope": "Conditional all-six jointly completed matching repeats; average within scenario then equal scenario weight. No revision-to-KRW conversion. This table never overrides full-sample completion losses or establishes universal dominance."
+      },
+      "allMethodCommonComplete": {
+        "scenarioCount": 48,
+        "episodeCount": 143,
+        "byMethod": {
+          "costPolishV7": {
+            "totalScenarioMeanSumKRW": 313500716.6666667,
+            "incrementalScenarioMeanSumKRW": 181128316.66666666,
+            "revisionObservedSum": 5303.0
+          },
+          "adaptiveV9": {
+            "totalScenarioMeanSumKRW": 312431016.6666667,
+            "incrementalScenarioMeanSumKRW": 180058616.66666666,
+            "revisionObservedSum": 5490.0
+          },
+          "highsV8": {
+            "totalScenarioMeanSumKRW": 294098550.0,
+            "incrementalScenarioMeanSumKRW": 161726150.0,
+            "revisionObservedSum": 50978.0
+          },
+          "stableHiGHSV10": {
+            "totalScenarioMeanSumKRW": 294337450.0,
+            "incrementalScenarioMeanSumKRW": 161965050.0,
+            "revisionObservedSum": 10196.0
+          },
+          "commitmentHiGHSV11": {
+            "totalScenarioMeanSumKRW": 294246450.0,
+            "incrementalScenarioMeanSumKRW": 161874050.0,
+            "revisionObservedSum": 15147.0
+          },
+          "seededHiGHSV12": {
+            "totalScenarioMeanSumKRW": 294246450.0,
+            "incrementalScenarioMeanSumKRW": 161874050.0,
+            "revisionObservedSum": 14746.0
+          }
+        },
+        "scope": "Conditional all-six jointly completed matching repeats; average within scenario then equal scenario weight. No revision-to-KRW conversion. This table never overrides full-sample completion losses or establishes universal dominance. Thin-table revisionObservedSum is the raw matched-episode count; frontier revision axis uses scenarioMeanRevisionCountSum instead."
+      },
+      "observedDecisionGates": {
+        "candidateMethod": "seededHiGHSV12",
+        "assessmentState": "complete-panel",
+        "completionLossCountsByBaseline": {
+          "commitmentHiGHSV11": 1,
+          "stableHiGHSV10": 1,
+          "adaptiveV9": 5,
+          "highsV8": 4,
+          "costPolishV7": 5
+        },
+        "completionGainCountsByBaseline": {
+          "commitmentHiGHSV11": 13,
+          "stableHiGHSV10": 13,
+          "adaptiveV9": 21,
+          "highsV8": 19,
+          "costPolishV7": 20
+        },
+        "completionNonRegressionAllBaselines": false,
+        "defaultRecommendationEligible": false,
+        "nativeComparisons": {
+          "commitmentHiGHSV11": {
+            "lostEpisodeCount": 1,
+            "revisionPairedEpisodeCount": 168,
+            "revisionDelta": -443.0,
+            "strictRevisionReduction": true,
+            "incrementalFeeClaim": "no_stable_advantage",
+            "totalFeeClaim": "no_stable_advantage",
+            "noRobustFeeDeterioration": true,
+            "stabilityImprovementClaimAllowed": false
+          },
+          "stableHiGHSV10": {
+            "lostEpisodeCount": 1,
+            "revisionPairedEpisodeCount": 168,
+            "revisionDelta": 4727.0,
+            "strictRevisionReduction": false,
+            "incrementalFeeClaim": "no_stable_advantage",
+            "totalFeeClaim": "no_stable_advantage",
+            "noRobustFeeDeterioration": true,
+            "stabilityImprovementClaimAllowed": false
+          },
+          "highsV8": {
+            "lostEpisodeCount": 4,
+            "revisionPairedEpisodeCount": 162,
+            "revisionDelta": -40349.0,
+            "strictRevisionReduction": true,
+            "incrementalFeeClaim": "no_stable_advantage",
+            "totalFeeClaim": "no_stable_advantage",
+            "noRobustFeeDeterioration": true,
+            "stabilityImprovementClaimAllowed": false
+          }
+        },
+        "scope": "Observed necessary gates against the five included comparators only. Any full-sample completion loss blocks default eligibility; net gains and conditional fees/Pareto position do not offset losses. Native stability claims use each exact native paired set; zero-inclusive fee intervals do not prove stable savings. No claim against omitted V5 or universal/production recommendation."
+      }
+    },
+    "stress": {
+      "scenarioCount": 72,
+      "byMethod": {
+        "costPolishV7": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 79,
+          "fullyCompletedScenarioCount": 25,
+          "anyCompletedScenarioCount": 27,
+          "meanScenarioCompletionRate": 0.36574074074074076,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 186,
+            "knownInitialFailureCount": 30,
+            "knownLaterFailureCount": 107,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "adaptiveV9": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 81,
+          "fullyCompletedScenarioCount": 26,
+          "anyCompletedScenarioCount": 28,
+          "meanScenarioCompletionRate": 0.375,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 186,
+            "knownInitialFailureCount": 30,
+            "knownLaterFailureCount": 105,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "highsV8": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 105,
+          "fullyCompletedScenarioCount": 35,
+          "anyCompletedScenarioCount": 35,
+          "meanScenarioCompletionRate": 0.4861111111111111,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 179,
+            "knownInitialFailureCount": 37,
+            "knownLaterFailureCount": 74,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "stableHiGHSV10": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 114,
+          "fullyCompletedScenarioCount": 38,
+          "anyCompletedScenarioCount": 38,
+          "meanScenarioCompletionRate": 0.5277777777777778,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 179,
+            "knownInitialFailureCount": 37,
+            "knownLaterFailureCount": 65,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "commitmentHiGHSV11": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 111,
+          "fullyCompletedScenarioCount": 37,
+          "anyCompletedScenarioCount": 37,
+          "meanScenarioCompletionRate": 0.5138888888888888,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 178,
+            "knownInitialFailureCount": 38,
+            "knownLaterFailureCount": 67,
+            "unknownDayZeroCount": 0
+          }
+        },
+        "seededHiGHSV12": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 120,
+          "fullyCompletedScenarioCount": 40,
+          "anyCompletedScenarioCount": 40,
+          "meanScenarioCompletionRate": 0.5555555555555556,
+          "initialization": {
+            "knownDayZeroCount": 216,
+            "acceptedInitialPlanCount": 189,
+            "knownInitialFailureCount": 27,
+            "knownLaterFailureCount": 69,
+            "unknownDayZeroCount": 0
+          }
+        }
+      },
+      "comparisons": {
+        "v12VsV11": {
+          "completionRateGain95CI": [
+            0.0,
+            0.09722222222222222
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 37,
+              "pairedEpisodeCount": 111,
+              "scenarioCount": 37,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 37,
+              "pairedEpisodeCount": 111,
+              "scenarioCount": 37,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "v12VsV10": {
+          "completionRateGain95CI": [
+            -0.027777777777777776,
+            0.08333333333333333
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 37,
+              "pairedEpisodeCount": 111,
+              "scenarioCount": 37,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -2951.3513513513512,
+                150.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.04904962770587801,
+                0.0015984646316098594
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 37,
+              "pairedEpisodeCount": 111,
+              "scenarioCount": 37,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -2951.3513513513512,
+                150.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.08227406499420767,
+                0.0027601690598098613
+              ]
+            }
+          }
+        },
+        "v12VsV9": {
+          "completionRateGain95CI": [
+            0.06481481481481483,
+            0.2962962962962963
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 24,
+              "pairedEpisodeCount": 70,
+              "scenarioCount": 24,
+              "draws": 2000,
+              "meanSavings95CI": [
+                35406.49305555516,
+                1350155.4166666656
+              ],
+              "weightedSavingsPct95CI": [
+                0.5902824818360903,
+                7.465586581775116
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 24,
+              "pairedEpisodeCount": 70,
+              "scenarioCount": 24,
+              "draws": 2000,
+              "meanSavings95CI": [
+                35406.49305555515,
+                1350155.4166666644
+              ],
+              "weightedSavingsPct95CI": [
+                0.978794418191141,
+                12.51218319133995
+              ]
+            }
+          }
+        },
+        "v12VsHiGHS": {
+          "completionRateGain95CI": [
+            0.0,
+            0.1388888888888889
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 34,
+              "pairedEpisodeCount": 102,
+              "scenarioCount": 34,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -87117.94117647059,
+                -962.242647058829
+              ],
+              "weightedSavingsPct95CI": [
+                -1.4483712017914574,
+                -0.011305443781099109
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 34,
+              "pairedEpisodeCount": 102,
+              "scenarioCount": 34,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -87117.94117647059,
+                -962.242647058829
+              ],
+              "weightedSavingsPct95CI": [
+                -2.3546137459169474,
+                -0.019989829636445966
+              ]
+            }
+          }
+        },
+        "v12VsV7": {
+          "completionRateGain95CI": [
+            0.07407407407407408,
+            0.3055555555555556
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 23,
+              "pairedEpisodeCount": 69,
+              "scenarioCount": 23,
+              "draws": 2000,
+              "meanSavings95CI": [
+                54829.14855072485,
+                1092675.8152173895
+              ],
+              "weightedSavingsPct95CI": [
+                1.0111588229512567,
+                5.943676055904583
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 23,
+              "pairedEpisodeCount": 69,
+              "scenarioCount": 23,
+              "draws": 2000,
+              "meanSavings95CI": [
+                54829.14855072485,
+                1092675.8152173893
+              ],
+              "weightedSavingsPct95CI": [
+                1.6986620575535325,
+                10.104653013731296
+              ]
+            }
+          }
+        },
+        "v11VsV10": {
+          "completionRateGain95CI": [
+            -0.041666666666666664,
+            0.0
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 37,
+              "pairedEpisodeCount": 111,
+              "scenarioCount": 37,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -2951.3513513513512,
+                150.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.04904962770587801,
+                0.0015984646316098594
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 37,
+              "pairedEpisodeCount": 111,
+              "scenarioCount": 37,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -2951.3513513513512,
+                150.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.08227406499420767,
+                0.0027601690598098613
+              ]
+            }
+          }
+        },
+        "v10VsHiGHS": {
+          "completionRateGain95CI": [
+            -0.013888888888888888,
+            0.09722222222222222
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 34,
+              "pairedEpisodeCount": 102,
+              "scenarioCount": 34,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -85302.24264705883,
+                -1016.6544117647113
+              ],
+              "weightedSavingsPct95CI": [
+                -1.4214577896125677,
+                -0.011318725318828295
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 34,
+              "pairedEpisodeCount": 102,
+              "scenarioCount": 34,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -85302.24264705883,
+                -1016.6544117647113
+              ],
+              "weightedSavingsPct95CI": [
+                -2.297267662113106,
+                -0.0200130374186048
+              ]
+            }
+          }
+        },
+        "highsVsV7": {
+          "completionRateGain95CI": [
+            0.02314814814814815,
+            0.2268518518518519
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 23,
+              "pairedEpisodeCount": 69,
+              "scenarioCount": 23,
+              "draws": 2000,
+              "meanSavings95CI": [
+                74498.36956521739,
+                1124223.0072463762
+              ],
+              "weightedSavingsPct95CI": [
+                1.4650052450510789,
+                6.1345946895934444
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 23,
+              "pairedEpisodeCount": 69,
+              "scenarioCount": 23,
+              "draws": 2000,
+              "meanSavings95CI": [
+                74498.36956521739,
+                1124223.0072463753
+              ],
+              "weightedSavingsPct95CI": [
+                2.427387088772745,
+                10.338440124027592
+              ]
+            }
+          }
+        }
+      },
+      "jointCompletePareto": {
+        "jointScenarioCount": 23,
+        "jointEpisodeCount": 69,
+        "eligibility": "all-six-matching-complete-repeats",
+        "byMethod": {
+          "costPolishV7": {
+            "scenarioCount": 23,
+            "jointEpisodeCount": 69,
+            "scenarioMeanTotalCostSumKRW": 295541183.3333334,
+            "scenarioMeanIncrementalCostSumKRW": 172624733.33333334,
+            "scenarioMeanRevisionCountSum": 1948.6666666666667,
+            "episodeTotalCostSumKRW": 886623550.0,
+            "episodeIncrementalCostSumKRW": 517874200.0,
+            "episodeRevisionCountSum": 5846.0,
+            "knownRevisionEpisodeCount": 69,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 79,
+            "fullSampleEpisodeCount": 216
+          },
+          "adaptiveV9": {
+            "scenarioCount": 23,
+            "jointEpisodeCount": 69,
+            "scenarioMeanTotalCostSumKRW": 298784633.3333334,
+            "scenarioMeanIncrementalCostSumKRW": 175868183.33333334,
+            "scenarioMeanRevisionCountSum": 2009.0,
+            "episodeTotalCostSumKRW": 896353900.0,
+            "episodeIncrementalCostSumKRW": 527604550.0,
+            "episodeRevisionCountSum": 6027.0,
+            "knownRevisionEpisodeCount": 69,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 81,
+            "fullSampleEpisodeCount": 216
+          },
+          "highsV8": {
+            "scenarioCount": 23,
+            "jointEpisodeCount": 69,
+            "scenarioMeanTotalCostSumKRW": 283462250.0,
+            "scenarioMeanIncrementalCostSumKRW": 160545800.0,
+            "scenarioMeanRevisionCountSum": 7045.0,
+            "episodeTotalCostSumKRW": 850386750.0,
+            "episodeIncrementalCostSumKRW": 481637400.0,
+            "episodeRevisionCountSum": 21135.0,
+            "knownRevisionEpisodeCount": 69,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 105,
+            "fullSampleEpisodeCount": 216
+          },
+          "stableHiGHSV10": {
+            "scenarioCount": 23,
+            "jointEpisodeCount": 69,
+            "scenarioMeanTotalCostSumKRW": 283944950.0,
+            "scenarioMeanIncrementalCostSumKRW": 161028500.0,
+            "scenarioMeanRevisionCountSum": 2354.0,
+            "episodeTotalCostSumKRW": 851834850.0,
+            "episodeIncrementalCostSumKRW": 483085500.0,
+            "episodeRevisionCountSum": 7062.0,
+            "knownRevisionEpisodeCount": 69,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 114,
+            "fullSampleEpisodeCount": 216
+          },
+          "commitmentHiGHSV11": {
+            "scenarioCount": 23,
+            "jointEpisodeCount": 69,
+            "scenarioMeanTotalCostSumKRW": 283979500.0,
+            "scenarioMeanIncrementalCostSumKRW": 161063050.0,
+            "scenarioMeanRevisionCountSum": 2735.0,
+            "episodeTotalCostSumKRW": 851938500.0,
+            "episodeIncrementalCostSumKRW": 483189150.0,
+            "episodeRevisionCountSum": 8205.0,
+            "knownRevisionEpisodeCount": 69,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 111,
+            "fullSampleEpisodeCount": 216
+          },
+          "seededHiGHSV12": {
+            "scenarioCount": 23,
+            "jointEpisodeCount": 69,
+            "scenarioMeanTotalCostSumKRW": 283979500.0,
+            "scenarioMeanIncrementalCostSumKRW": 161063050.0,
+            "scenarioMeanRevisionCountSum": 2739.0,
+            "episodeTotalCostSumKRW": 851938500.0,
+            "episodeIncrementalCostSumKRW": 483189150.0,
+            "episodeRevisionCountSum": 8217.0,
+            "knownRevisionEpisodeCount": 69,
+            "unknownRevisionEpisodeCount": 0,
+            "fullSampleCompleteEpisodeCount": 120,
+            "fullSampleEpisodeCount": 216
+          }
+        },
+        "frontiers": {
+          "totalAndRevisions": [
+            {
+              "method": "costPolishV7",
+              "dominates": [
+                "adaptiveV9"
+              ],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "adaptiveV9",
+              "dominates": [],
+              "dominatedBy": [
+                "costPolishV7"
+              ],
+              "pareto": false
+            },
+            {
+              "method": "highsV8",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "stableHiGHSV10",
+              "dominates": [
+                "commitmentHiGHSV11",
+                "seededHiGHSV12"
+              ],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "commitmentHiGHSV11",
+              "dominates": [
+                "seededHiGHSV12"
+              ],
+              "dominatedBy": [
+                "stableHiGHSV10"
+              ],
+              "pareto": false
+            },
+            {
+              "method": "seededHiGHSV12",
+              "dominates": [],
+              "dominatedBy": [
+                "stableHiGHSV10",
+                "commitmentHiGHSV11"
+              ],
+              "pareto": false
+            }
+          ],
+          "incrementalAndRevisions": [
+            {
+              "method": "costPolishV7",
+              "dominates": [
+                "adaptiveV9"
+              ],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "adaptiveV9",
+              "dominates": [],
+              "dominatedBy": [
+                "costPolishV7"
+              ],
+              "pareto": false
+            },
+            {
+              "method": "highsV8",
+              "dominates": [],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "stableHiGHSV10",
+              "dominates": [
+                "commitmentHiGHSV11",
+                "seededHiGHSV12"
+              ],
+              "dominatedBy": [],
+              "pareto": true
+            },
+            {
+              "method": "commitmentHiGHSV11",
+              "dominates": [
+                "seededHiGHSV12"
+              ],
+              "dominatedBy": [
+                "stableHiGHSV10"
+              ],
+              "pareto": false
+            },
+            {
+              "method": "seededHiGHSV12",
+              "dominates": [],
+              "dominatedBy": [
+                "stableHiGHSV10",
+                "commitmentHiGHSV11"
+              ],
+              "pareto": false
+            }
+          ]
+        },
+        "scenarios": [
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 20388650.0,
+                "incrementalCost": 10993800.0,
+                "revisionCount": 54.0
+              },
+              "adaptiveV9": {
+                "totalCost": 20388650.0,
+                "incrementalCost": 10993800.0,
+                "revisionCount": 54.0
+              },
+              "highsV8": {
+                "totalCost": 20388650.0,
+                "incrementalCost": 10993800.0,
+                "revisionCount": 91.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 20388650.0,
+                "incrementalCost": 10993800.0,
+                "revisionCount": 61.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 20388650.0,
+                "incrementalCost": 10993800.0,
+                "revisionCount": 61.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 20388650.0,
+                "incrementalCost": 10993800.0,
+                "revisionCount": 61.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n24-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 13853100.0,
+                "incrementalCost": 7683200.0,
+                "revisionCount": 63.0
+              },
+              "adaptiveV9": {
+                "totalCost": 13853100.0,
+                "incrementalCost": 7683200.0,
+                "revisionCount": 63.0
+              },
+              "highsV8": {
+                "totalCost": 13929500.0,
+                "incrementalCost": 7759600.0,
+                "revisionCount": 84.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 13873100.0,
+                "incrementalCost": 7703200.0,
+                "revisionCount": 52.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 13873100.0,
+                "incrementalCost": 7703200.0,
+                "revisionCount": 52.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 13873100.0,
+                "incrementalCost": 7703200.0,
+                "revisionCount": 52.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 16886750.0,
+                "incrementalCost": 9572550.0,
+                "revisionCount": 52.0
+              },
+              "adaptiveV9": {
+                "totalCost": 16886750.0,
+                "incrementalCost": 9572550.0,
+                "revisionCount": 55.0
+              },
+              "highsV8": {
+                "totalCost": 17043400.0,
+                "incrementalCost": 9729200.0,
+                "revisionCount": 96.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 17023400.0,
+                "incrementalCost": 9709200.0,
+                "revisionCount": 53.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 17023400.0,
+                "incrementalCost": 9709200.0,
+                "revisionCount": 66.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 17023400.0,
+                "incrementalCost": 9709200.0,
+                "revisionCount": 66.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 28517700.0,
+                "incrementalCost": 16319500.0,
+                "revisionCount": 145.66666666666666
+              },
+              "adaptiveV9": {
+                "totalCost": 28517700.0,
+                "incrementalCost": 16319500.0,
+                "revisionCount": 145.66666666666666
+              },
+              "highsV8": {
+                "totalCost": 28309000.0,
+                "incrementalCost": 16110800.0,
+                "revisionCount": 195.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 28310850.0,
+                "incrementalCost": 16112650.0,
+                "revisionCount": 118.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 28309000.0,
+                "incrementalCost": 16110800.0,
+                "revisionCount": 155.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 28309000.0,
+                "incrementalCost": 16110800.0,
+                "revisionCount": 155.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 32971966.666666668,
+                "incrementalCost": 18891116.666666668,
+                "revisionCount": 130.33333333333334
+              },
+              "adaptiveV9": {
+                "totalCost": 32971966.666666668,
+                "incrementalCost": 18891116.666666668,
+                "revisionCount": 130.33333333333334
+              },
+              "highsV8": {
+                "totalCost": 32687050.0,
+                "incrementalCost": 18606200.0,
+                "revisionCount": 119.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 32687050.0,
+                "incrementalCost": 18606200.0,
+                "revisionCount": 95.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 32687050.0,
+                "incrementalCost": 18606200.0,
+                "revisionCount": 95.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 32687050.0,
+                "incrementalCost": 18606200.0,
+                "revisionCount": 95.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 60320816.666666664,
+                "incrementalCost": 35846516.666666664,
+                "revisionCount": 338.6666666666667
+              },
+              "adaptiveV9": {
+                "totalCost": 59739316.666666664,
+                "incrementalCost": 35265016.666666664,
+                "revisionCount": 345.3333333333333
+              },
+              "highsV8": {
+                "totalCost": 55617100.0,
+                "incrementalCost": 31142800.0,
+                "revisionCount": 341.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 55617100.0,
+                "incrementalCost": 31142800.0,
+                "revisionCount": 226.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 55617100.0,
+                "incrementalCost": 31142800.0,
+                "revisionCount": 226.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 55617100.0,
+                "incrementalCost": 31142800.0,
+                "revisionCount": 226.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n100-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 52382550.0,
+                "incrementalCost": 30150900.0,
+                "revisionCount": 350.0
+              },
+              "adaptiveV9": {
+                "totalCost": 54910950.0,
+                "incrementalCost": 32679300.0,
+                "revisionCount": 368.0
+              },
+              "highsV8": {
+                "totalCost": 48920950.0,
+                "incrementalCost": 26689300.0,
+                "revisionCount": 287.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 49021000.0,
+                "incrementalCost": 26789350.0,
+                "revisionCount": 227.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 49021000.0,
+                "incrementalCost": 26789350.0,
+                "revisionCount": 227.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 49021000.0,
+                "incrementalCost": 26789350.0,
+                "revisionCount": 227.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-aged-backlog-balanced-n100-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 62552183.333333336,
+                "incrementalCost": 36236783.333333336,
+                "revisionCount": 244.66666666666666
+              },
+              "adaptiveV9": {
+                "totalCost": 63931200.0,
+                "incrementalCost": 37615800.0,
+                "revisionCount": 259.0
+              },
+              "highsV8": {
+                "totalCost": 59652600.0,
+                "incrementalCost": 33337200.0,
+                "revisionCount": 304.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 59652600.0,
+                "incrementalCost": 33337200.0,
+                "revisionCount": 193.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 59652600.0,
+                "incrementalCost": 33337200.0,
+                "revisionCount": 193.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 59652600.0,
+                "incrementalCost": 33337200.0,
+                "revisionCount": 193.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-new-arrivals-balanced-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 12.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 12.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 161.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 38.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 45.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 77.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-new-arrivals-balanced-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 12.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 12.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 161.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 40.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 40.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 46.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-new-arrivals-balanced-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 44.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 442.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 95.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 95.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 121.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-new-arrivals-balanced-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 0.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 366.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 49.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 121.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 123.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-new-arrivals-balanced-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 53.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 53.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 878.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 169.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 169.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 165.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-new-arrivals-balanced-n100-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 24.0
+              },
+              "adaptiveV9": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 24.0
+              },
+              "highsV8": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 800.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 102.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 246.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 0.0,
+                "incrementalCost": 0.0,
+                "revisionCount": 188.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n24-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 436800.0,
+                "incrementalCost": 318500.0,
+                "revisionCount": 6.0
+              },
+              "adaptiveV9": {
+                "totalCost": 436800.0,
+                "incrementalCost": 318500.0,
+                "revisionCount": 6.0
+              },
+              "highsV8": {
+                "totalCost": 464100.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 132.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 473200.0,
+                "incrementalCost": 354900.0,
+                "revisionCount": 44.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 473200.0,
+                "incrementalCost": 354900.0,
+                "revisionCount": 44.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 473200.0,
+                "incrementalCost": 354900.0,
+                "revisionCount": 44.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n24-r2",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 412200.0,
+                "incrementalCost": 321200.0,
+                "revisionCount": 30.0
+              },
+              "adaptiveV9": {
+                "totalCost": 412200.0,
+                "incrementalCost": 321200.0,
+                "revisionCount": 30.0
+              },
+              "highsV8": {
+                "totalCost": 412200.0,
+                "incrementalCost": 321200.0,
+                "revisionCount": 129.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 412200.0,
+                "incrementalCost": 321200.0,
+                "revisionCount": 62.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 412200.0,
+                "incrementalCost": 321200.0,
+                "revisionCount": 69.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 412200.0,
+                "incrementalCost": 321200.0,
+                "revisionCount": 69.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n24-r3",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 5.0
+              },
+              "adaptiveV9": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 5.0
+              },
+              "highsV8": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 136.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 42.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 42.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 418600.0,
+                "incrementalCost": 382200.0,
+                "revisionCount": 42.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n24-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 400400.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 17.0
+              },
+              "adaptiveV9": {
+                "totalCost": 400400.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 17.0
+              },
+              "highsV8": {
+                "totalCost": 400400.0,
+                "incrementalCost": 345800.0,
+                "revisionCount": 144.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 418600.0,
+                "incrementalCost": 364000.0,
+                "revisionCount": 42.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 418600.0,
+                "incrementalCost": 364000.0,
+                "revisionCount": 42.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 418600.0,
+                "incrementalCost": 364000.0,
+                "revisionCount": 42.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 536900.0,
+                "incrementalCost": 436800.0,
+                "revisionCount": 14.0
+              },
+              "adaptiveV9": {
+                "totalCost": 536900.0,
+                "incrementalCost": 436800.0,
+                "revisionCount": 14.0
+              },
+              "highsV8": {
+                "totalCost": 536900.0,
+                "incrementalCost": 436800.0,
+                "revisionCount": 267.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 536900.0,
+                "incrementalCost": 436800.0,
+                "revisionCount": 28.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 536900.0,
+                "incrementalCost": 436800.0,
+                "revisionCount": 34.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 536900.0,
+                "incrementalCost": 436800.0,
+                "revisionCount": 34.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n50-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1518700.0,
+                "incrementalCost": 1464100.0,
+                "revisionCount": 119.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1458200.0,
+                "incrementalCost": 1403600.0,
+                "revisionCount": 123.0
+              },
+              "highsV8": {
+                "totalCost": 937300.0,
+                "incrementalCost": 882700.0,
+                "revisionCount": 286.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 937300.0,
+                "incrementalCost": 882700.0,
+                "revisionCount": 105.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 937300.0,
+                "incrementalCost": 882700.0,
+                "revisionCount": 145.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 937300.0,
+                "incrementalCost": 882700.0,
+                "revisionCount": 145.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n100-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1094700.0,
+                "incrementalCost": 985500.0,
+                "revisionCount": 63.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1090766.6666666667,
+                "incrementalCost": 981566.6666666666,
+                "revisionCount": 79.0
+              },
+              "highsV8": {
+                "totalCost": 1019200.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 653.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1073800.0,
+                "incrementalCost": 964600.0,
+                "revisionCount": 130.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1073800.0,
+                "incrementalCost": 964600.0,
+                "revisionCount": 130.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1073800.0,
+                "incrementalCost": 964600.0,
+                "revisionCount": 130.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-balanced-n100-r4",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1010100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 51.0
+              },
+              "adaptiveV9": {
+                "totalCost": 1010100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 51.0
+              },
+              "highsV8": {
+                "totalCost": 1001000.0,
+                "incrementalCost": 900900.0,
+                "revisionCount": 672.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 1010100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 253.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 1010100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 268.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 1010100.0,
+                "incrementalCost": 910000.0,
+                "revisionCount": 268.0
+              }
+            }
+          },
+          {
+            "scenarioId": "v12-stress-batch-release-tight-n50-r1",
+            "pairedRepeatCount": 3,
+            "byMethod": {
+              "costPolishV7": {
+                "totalCost": 1839066.6666666667,
+                "incrementalCost": 1766266.6666666667,
+                "revisionCount": 120.33333333333333
+              },
+              "adaptiveV9": {
+                "totalCost": 1821033.3333333333,
+                "incrementalCost": 1748233.3333333333,
+                "revisionCount": 118.66666666666667
+              },
+              "highsV8": {
+                "totalCost": 1724300.0,
+                "incrementalCost": 1651500.0,
+                "revisionCount": 301.0
+              },
+              "stableHiGHSV10": {
+                "totalCost": 2090500.0,
+                "incrementalCost": 2017700.0,
+                "revisionCount": 130.0
+              },
+              "commitmentHiGHSV11": {
+                "totalCost": 2126900.0,
+                "incrementalCost": 2054100.0,
+                "revisionCount": 170.0
+              },
+              "seededHiGHSV12": {
+                "totalCost": 2126900.0,
+                "incrementalCost": 2054100.0,
+                "revisionCount": 170.0
+              }
+            }
+          }
+        ],
+        "scope": "Conditional all-six jointly completed matching repeats; average within scenario then equal scenario weight. No revision-to-KRW conversion. This table never overrides full-sample completion losses or establishes universal dominance."
+      },
+      "allMethodCommonComplete": {
+        "scenarioCount": 23,
+        "episodeCount": 69,
+        "byMethod": {
+          "costPolishV7": {
+            "totalScenarioMeanSumKRW": 295541183.3333334,
+            "incrementalScenarioMeanSumKRW": 172624733.33333334,
+            "revisionObservedSum": 5846.0
+          },
+          "adaptiveV9": {
+            "totalScenarioMeanSumKRW": 298784633.3333334,
+            "incrementalScenarioMeanSumKRW": 175868183.33333334,
+            "revisionObservedSum": 6027.0
+          },
+          "highsV8": {
+            "totalScenarioMeanSumKRW": 283462250.0,
+            "incrementalScenarioMeanSumKRW": 160545800.0,
+            "revisionObservedSum": 21135.0
+          },
+          "stableHiGHSV10": {
+            "totalScenarioMeanSumKRW": 283944950.0,
+            "incrementalScenarioMeanSumKRW": 161028500.0,
+            "revisionObservedSum": 7062.0
+          },
+          "commitmentHiGHSV11": {
+            "totalScenarioMeanSumKRW": 283979500.0,
+            "incrementalScenarioMeanSumKRW": 161063050.0,
+            "revisionObservedSum": 8205.0
+          },
+          "seededHiGHSV12": {
+            "totalScenarioMeanSumKRW": 283979500.0,
+            "incrementalScenarioMeanSumKRW": 161063050.0,
+            "revisionObservedSum": 8217.0
+          }
+        },
+        "scope": "Conditional all-six jointly completed matching repeats; average within scenario then equal scenario weight. No revision-to-KRW conversion. This table never overrides full-sample completion losses or establishes universal dominance. Thin-table revisionObservedSum is the raw matched-episode count; frontier revision axis uses scenarioMeanRevisionCountSum instead."
+      },
+      "observedDecisionGates": {
+        "candidateMethod": "seededHiGHSV12",
+        "assessmentState": "complete-panel",
+        "completionLossCountsByBaseline": {
+          "commitmentHiGHSV11": 0,
+          "stableHiGHSV10": 3,
+          "adaptiveV9": 11,
+          "highsV8": 3,
+          "costPolishV7": 10
+        },
+        "completionGainCountsByBaseline": {
+          "commitmentHiGHSV11": 9,
+          "stableHiGHSV10": 9,
+          "adaptiveV9": 50,
+          "highsV8": 18,
+          "costPolishV7": 51
+        },
+        "completionNonRegressionAllBaselines": false,
+        "defaultRecommendationEligible": false,
+        "nativeComparisons": {
+          "commitmentHiGHSV11": {
+            "lostEpisodeCount": 0,
+            "revisionPairedEpisodeCount": 111,
+            "revisionDelta": 757.0,
+            "strictRevisionReduction": false,
+            "incrementalFeeClaim": "no_stable_advantage",
+            "totalFeeClaim": "no_stable_advantage",
+            "noRobustFeeDeterioration": true,
+            "stabilityImprovementClaimAllowed": false
+          },
+          "stableHiGHSV10": {
+            "lostEpisodeCount": 3,
+            "revisionPairedEpisodeCount": 111,
+            "revisionDelta": 3784.0,
+            "strictRevisionReduction": false,
+            "incrementalFeeClaim": "no_stable_advantage",
+            "totalFeeClaim": "no_stable_advantage",
+            "noRobustFeeDeterioration": true,
+            "stabilityImprovementClaimAllowed": false
+          },
+          "highsV8": {
+            "lostEpisodeCount": 3,
+            "revisionPairedEpisodeCount": 102,
+            "revisionDelta": -20126.0,
+            "strictRevisionReduction": true,
+            "incrementalFeeClaim": "conditional_deterioration_interval_negative",
+            "totalFeeClaim": "conditional_deterioration_interval_negative",
+            "noRobustFeeDeterioration": false,
+            "stabilityImprovementClaimAllowed": false
+          }
+        },
+        "scope": "Observed necessary gates against the five included comparators only. Any full-sample completion loss blocks default eligibility; net gains and conditional fees/Pareto position do not offset losses. Native stability claims use each exact native paired set; zero-inclusive fee intervals do not prove stable savings. No claim against omitted V5 or universal/production recommendation."
+      }
+    }
+  },
+  "procedure": {
+    "samplingUnit": "whole business scenario",
+    "draws": 2000,
+    "seed": 700001,
+    "PRNG": "32-bit LCG: (1664525 * state + 1013904223) mod 2^32",
+    "interval": "2.5th and 97.5th percentiles with linear interpolation",
+    "repeatHandling": "Average only matching jointly complete repeats within each fee scenario; keep all repeats in completion rates",
+    "tolerances": {
+      "feeKRW": 1e-06,
+      "percentagePoints": 1e-09,
+      "completionRate": 1e-12
+    }
+  },
+  "scope": "Independent formal parent final/normal exit/ESRCH group cleanup/end-to-end receipt eligibility, artifact binding, scenario aggregation and prescribed bootstrap interval reproduction. Does not audit physical execution/tariffs, establish optimality, remove completion-selection bias, or provide third-party certification. Recorded clocks and OS verification receipts are not externally authenticated."
+}

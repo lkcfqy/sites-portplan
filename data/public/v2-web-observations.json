@@ -1,0 +1,170 @@
+{
+  "created_at": "2026-10-12T07:25:54.152890+00:00",
+  "method": "Researcher factual transcriptions from official pages read through the web research tool. This is not original HTML or an exhaustive search result log.",
+  "records": [
+    {
+      "id": "R1",
+      "url": "https://snu.elsevierpure.com/en/publications/optimal-devanning-time-and-detention-charges-for-container-supply/",
+      "review_depth": "author-institution abstract and publisher-deposited metadata",
+      "observations": [
+        "Optimizes devanning time in a laden/empty container supply chain.",
+        "Compares three late-return/detention decision scenarios and centralized/decentralized policies."
+      ],
+      "limit": "Direct precedent for linking unpacking, empty return and detention. Full mathematical model was not reviewed; no claim that this paper lacks a particular tariff."
+    },
+    {
+      "id": "R2",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/itor.13622",
+      "review_depth": "publisher abstract, references and data-availability statement",
+      "observations": [
+        "Models demurrage/detention decisions and individual free-time policies under uncertainty.",
+        "Includes early/late retrieval and return scenarios."
+      ],
+      "limit": "Online publication 2025-01-31; final issue September 2026, 33(5):3548–3579. Data available on request, not openly downloaded. No new-uncertainty-model claim for PortPlan."
+    },
+    {
+      "id": "R3",
+      "url": "https://www.mdpi.com/2071-1050/15/7/5638",
+      "review_depth": "publisher-deposited abstract and metadata",
+      "observations": [
+        "Drop a container at a customer, leave while packing/unpacking occurs, then collect it.",
+        "Limited empty containers; MILP minimizing travel costs; branch-and-price algorithm."
+      ],
+      "limit": "Direct algorithmic precedent. Publisher HTML returned HTTP 429; features verified from the publisher-deposited Crossref abstract, not a full equation audit. Reported savings cannot be compared to PortPlan percentages."
+    },
+    {
+      "id": "R4",
+      "url": "https://www.mdpi.com/2071-1050/16/12/5090",
+      "review_depth": "publisher-deposited abstract and metadata",
+      "observations": [
+        "Combines trucking operation modes, empty relocation strategies, empty constraints and multiple inland depots.",
+        "MILP plus improved genetic algorithm; evaluates randomly generated instances."
+      ],
+      "limit": "Direct evidence that integrating operating constraints is established. Publisher HTML returned HTTP 429; no inference of missing features from abstract."
+    },
+    {
+      "id": "R5",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0305054820302197",
+      "review_depth": "publisher-indexed abstract and Crossref metadata",
+      "observations": [
+        "Divides horizon into days and permits multiple trips per truck per day.",
+        "Container customers have release and due dates."
+      ],
+      "limit": "A daily multi-period scheduling formulation is not novel by itself. Open institutional manuscript located but fetch returned HTTP 403; not a full-model comparison."
+    },
+    {
+      "id": "R6",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221723001947",
+      "review_depth": "publisher-indexed abstract/highlights and institution metadata",
+      "observations": [
+        "Time-window multi-trip drayage with limited inland empty stock, street-turning and extra-depot retrieval.",
+        "Synchronizes trips and empty inventory; column-and-row generation within branch-and-price."
+      ],
+      "limit": "A stronger routing/synchronization precedent. Institution exposes a CC BY paper, but this pass inspected the abstract/highlights and metadata only. Published real-world case does not supply PortPlan with real PNC demand."
+    },
+    {
+      "id": "R7",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0318606",
+      "review_depth": "open full text, methods/assumptions/supporting links",
+      "observations": [
+        "Joint external delivery/pickup scheduling with soft time windows and appointment feedback.",
+        "Fleet operating-cost model; adaptive ant colony algorithm with particle-swarm parameter tuning.",
+        "Open paper links supporting code and data ZIP files."
+      ],
+      "limit": "Full article methods/assumptions and support links inspected; supporting ZIP contents not validated or used. Published cost reductions are not a comparable benchmark without aligning instances, objective and constraints."
+    },
+    {
+      "id": "R8",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0191261507000185",
+      "review_depth": "publisher-indexed abstract and Crossref metadata",
+      "observations": [
+        "Optimizes the storage price schedule for inbound containers.",
+        "Schedule includes a free-time limit and storage price per unit time."
+      ],
+      "limit": "Storage pricing and free-time optimization are longstanding. This is a terminal pricing perspective; the abstract does not establish whether it contains PNC-style retroactive bands."
+    },
+    {
+      "id": "R9",
+      "url": "https://link.springer.com/article/10.1186/s41072-023-00132-1",
+      "review_depth": "open full text, introduction/research approach/definitions/conclusions",
+      "observations": [
+        "Reviews D&D terminology and operational challenges using literature, industry discussion and validation.",
+        "Identifies digitalization, additional hinterland free time and negotiation attention as feasible solutions."
+      ],
+      "limit": "Industry evidence concerns a maritime supply-chain setting with substantial European/Antwerp input. It does not validate Korean carrier contracts, tariff formulas or PortPlan savings."
+    },
+    {
+      "id": "P1",
+      "url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+      "review_depth": "official public product page; no paid product trial",
+      "observations": [
+        "Estimates D&D from selected delay days, free days and port/container daily rates.",
+        "Advertises configurable risk thresholds, alerts and contract/invoice checking."
+      ],
+      "limit": "Vendor claims, not an independent performance audit. Page does not establish supported Korean contract coverage or optimizer architecture. Do not claim competing products lack joint optimization merely because it is not described here."
+    },
+    {
+      "id": "P2",
+      "url": "https://www.maersk.com/news/articles/2023/11/15/simplify-demurrage-and-detention",
+      "review_depth": "official product instructions; no login or shipment lookup",
+      "observations": [
+        "B/L lookup shows container-level free days, last free day and D&D details.",
+        "Provides payment and purchase of additional free time through the authenticated portal."
+      ],
+      "limit": "Page displays 17 January 2024 despite 2023 URL path. Demonstrates existing fee visibility; generic explanatory examples are not proof of Korean combined-D&D slab arithmetic."
+    },
+    {
+      "id": "P3",
+      "url": "https://portpro.io/all-resources/blog/article/automate-dual-transaction",
+      "review_depth": "official 2026-01-02 product walkthrough and 2025-07-29 return-booking walkthrough; no product trial",
+      "observations": [
+        "Automates empty-return appointment booking after ready-to-return, completed live unload or empty status.",
+        "Allows maximum pickup/drop-off appointment capacity by day/time.",
+        "Matches full pickup and empty return, checks terminal/shift acceptance and container size, and requests dual appointments."
+      ],
+      "limit": "Direct commercial precedent for action-oriented joint movement workflows. Supported terminals and Korean availability were not established. No cost-optimality or relative performance claim follows from this walkthrough."
+    },
+    {
+      "id": "rules2026",
+      "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+      "observations": [
+        "Explicit graduate inclusion: 국립창원대학교 재학생(대학원생 포함).",
+        "Teams <=4; report/data/code; slides <=20 pages; submission 2026-11-06 18:00; review 11-13; presentation 11-20."
+      ],
+      "unknown": [
+        "Explicit solo minimum",
+        "English oral/PPT permission",
+        "AI rules",
+        "Scoring weights",
+        "Report page limit",
+        "Presentation duration"
+      ]
+    },
+    {
+      "id": "award2025",
+      "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=13934&nttSn=1400175",
+      "observations": [
+        "2025-11-05 departmental article reports 최우수상 for defense-export logistics-center location/routing optimization using LRP/VRPPD/MILP/CPLEX."
+      ],
+      "limit": "Not evidence of grand prize, all entrants, or 2026 rubric."
+    },
+    {
+      "id": "maersk-current-example",
+      "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/freetime-pre-do-check-guideline.pdf",
+      "page": 1,
+      "observations": [
+        "40 Dry High; 2025-12-03 through 12-12 free; return 12-15; three chargeable days; KRW 90000."
+      ],
+      "limit": "No cross-band days; cannot resolve multi-slab sum versus retrospective repricing."
+    },
+    {
+      "id": "maersk-legacy-example",
+      "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/sl/1-guideline-for-import-customers.pdf",
+      "page": 7,
+      "observations": [
+        "40 dry; special 21 free days; last free 2020-10-09; return 10-10; one chargeable day; KRW 88000."
+      ],
+      "limit": "Legacy rate example. Does not prove 2024 tariff arithmetic."
+    }
+  ]
+}

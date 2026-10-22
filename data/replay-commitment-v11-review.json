@@ -1,0 +1,1783 @@
+{
+  "schemaVersion": "portplan-commitment-replay-v11-independent-review-v1",
+  "valid": true,
+  "dataRole": "seen-v10-controlled-prefix-development",
+  "scope": "Independent source, causal-prefix, physical-resource and tariff-ledger review of six posthoc seen-case conditional continuations; no new solver calls, no unseen experiments or whole-policy performance conclusion.",
+  "solverCallsByThisReview": 0,
+  "newHeldOutExperiments": 0,
+  "replayIndex": {
+    "path": "/workspace/sites/portplan-review/artifacts/v11-commitment-replay-second/complete.json",
+    "sha256": "7c9f73feb60cd58724c527b7d91dd4501b2bc2ab29a75074453de6de4a41fba2"
+  },
+  "frozenV10IndexSHA256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+  "reviewImplementationSHA256": "80cc1057e9cd9ae64100b7facac747013b09111d00ee03c012dbbc273e17402f",
+  "independentLedgerSHA256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+  "declarationSHA256": "e29ebe903a523965ecedb9f644217634a76b75f6575bcca0fbef5713cd2e31da",
+  "sourceChecks": [
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/replay-commitment-v11.mjs",
+      "sha256": "0036b6ba5877dc83e140326a76b6b528dc57d1ae4db3b524573795a83b31136e",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/replay-commitment-v11.worker.mjs",
+      "sha256": "a107d111fd498ad902d0880aec057adbebfb5f7ba2b66f4cc83fce7ed858c150",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/replay-commitment-v11.planner.mjs",
+      "sha256": "c1423e3af9422265b6b708bed03d424d9a154f283d753a1b342b499744048ffd",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/highs-planner-v11.mjs",
+      "sha256": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "src/commitment-slack-v11.js",
+      "sha256": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "src/engine.js",
+      "sha256": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "src/rolling-plan.js",
+      "sha256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/highs-service-v8.py",
+      "sha256": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/certify-v4.py",
+      "sha256": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/benchmark-v2.mjs",
+      "sha256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "data/protocol-v2.json",
+      "sha256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/benchmark-v10.mjs",
+      "sha256": "0a85bb81481c868842b387b4d8f9a58130e193ffea546c6712f96e3bc5f74ccb",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/episode-v10.worker.mjs",
+      "sha256": "0135c6eb12e3ad830ee913ed2753748b35567287665b34bba577de79924e4675",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/rolling-benchmark-v7.mjs",
+      "sha256": "6feaee69c7a9b8b104f67517db7a79dfb4e8aede105056553dd39c4cc73fabe3",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/rolling-v7.worker.mjs",
+      "sha256": "0d5adc5e2e86017dd3c252e06bf692a9e4b7dd4e13d35e0694df6f84fcefdaa7",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/review-replay-commitment-v11.py",
+      "sha256": "80cc1057e9cd9ae64100b7facac747013b09111d00ee03c012dbbc273e17402f",
+      "matches": true
+    },
+    {
+      "kind": "implementationHashes",
+      "path": "scripts/review-v5.py",
+      "sha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/evidence-v10/v10-frozen-first/first-run/complete.json",
+      "sha256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/commitment-slack-review-v11.json",
+      "sha256": "fb37b8ea5c2cf738ad73548a93f1f65cc541bf7c111be59f76bd88fb023ee27b",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/protocol-v10.json",
+      "sha256": "fa5c6d49f43f0bf79b1905ae445300396469a985134296e1bfff94bd544414ad",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "artifacts/v11-commitment-replay-first/complete.json",
+      "sha256": "3c829f1970e835918bf5f89a587e0be902599f97b4bab955e0c3f0d98b19a5c1",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/evidence-v10/v10-frozen-first/first-run/inputs/v10-stress-new-arrivals-tight-n24-r3.json",
+      "sha256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/evidence-v10/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a1--stableHiGHSV10.json",
+      "sha256": "c0dbd3e15c79aab44689cfa268c799727a7ba257c06cb6b0ac9cf3cb104aed6a",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/evidence-v10/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a2--stableHiGHSV10.json",
+      "sha256": "ba188d35b2e8df7fe1b6bf4614ca353d100c055e0b9fb5da9222dbaeadee60af",
+      "matches": true
+    },
+    {
+      "kind": "sourceBindings",
+      "path": "data/evidence-v10/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a3--stableHiGHSV10.json",
+      "sha256": "0dde99195b46839c2a6f5fa43b4ae8f904e77c8944740041b46b88c8bab96ae0",
+      "matches": true
+    }
+  ],
+  "episodeCount": 6,
+  "completeEpisodeCount": 3,
+  "episodes": [
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a1--retain_cache",
+      "branch": "retain_cache",
+      "repeatIndex": 1,
+      "algorithmSeed": 49011,
+      "valid": true,
+      "complete": false,
+      "failure": {
+        "day": 5,
+        "kind": "no_complete_plan",
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "plannerStatus": "infeasible"
+      },
+      "timelineEntries": 6,
+      "historicalPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "replayedPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "d4ObservationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "d4FixedEventsSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179",
+      "d4EndpointSHA256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0",
+      "executedEventCount": 24,
+      "physicalDailyLedger": [
+        {
+          "day": 0,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 2
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:4aa3f07bada7c6288f52b241031929a5242aefdaae1769fbc88d00c88997756b",
+          "fixedEventsAfterSHA256": "0f4137bd47ddd0786cf66c51a87df9725483ad333db3fc2c58a152f410d2d966"
+        },
+        {
+          "day": 1,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 4
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:8b4eecc32802c740fdd444ebad8b6729c49e3daab4484ea0a454e636db43d0e6",
+          "fixedEventsAfterSHA256": "33f9ed0be2a526b6f3f524ba28aeb2934776801a0a42eb14c37ed44d4856295f"
+        },
+        {
+          "day": 2,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:cc154000b2ed1bc82512529b10ebb6c9ed2fa80b133c6fffd5e8ba5f479ae3ea",
+          "fixedEventsAfterSHA256": "4deb30cbbbfade12a6793fb8c96d40ea5dccf4b6fab66006c67766bfd7f0a36e"
+        },
+        {
+          "day": 3,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:099dc104ec6b3192bd2fc93ec217f250a78dcc52b124eec18e39793b319bde37",
+          "fixedEventsAfterSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179"
+        },
+        {
+          "day": 4,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+          "fixedEventsAfterSHA256": "0ac6e5a92a6ae8a1452b16700cc9f03fb7b3d274251e8db5b9acf0253b33a9f0"
+        }
+      ],
+      "independentSelectedPlanFees": [
+        {
+          "day": 0,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 1,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 2,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 3,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 4,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        }
+      ],
+      "independentActualCompletedFees": null,
+      "failedPrefixHasNoCompletedFees": true,
+      "sourceInputSHA256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "sourceEpisodeSHA256": "c0dbd3e15c79aab44689cfa268c799727a7ba257c06cb6b0ac9cf3cb104aed6a",
+      "rawReplaySHA256": "4937366793b8b8b91f8418a6713219f2b314fe6850433d6b374e43ffffab6fa0"
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a1--lower_m_candidate",
+      "branch": "lower_m_candidate",
+      "repeatIndex": 1,
+      "algorithmSeed": 49011,
+      "valid": true,
+      "complete": true,
+      "failure": null,
+      "timelineEntries": 14,
+      "historicalPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "replayedPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "d4ObservationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "d4FixedEventsSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179",
+      "d4EndpointSHA256": "552eaf29da3b4b464e4ac12065bcc273f8726614e397eb4173080ecd3be84c71",
+      "executedEventCount": 72,
+      "physicalDailyLedger": [
+        {
+          "day": 0,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 2
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:4aa3f07bada7c6288f52b241031929a5242aefdaae1769fbc88d00c88997756b",
+          "fixedEventsAfterSHA256": "0f4137bd47ddd0786cf66c51a87df9725483ad333db3fc2c58a152f410d2d966"
+        },
+        {
+          "day": 1,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 4
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:8b4eecc32802c740fdd444ebad8b6729c49e3daab4484ea0a454e636db43d0e6",
+          "fixedEventsAfterSHA256": "33f9ed0be2a526b6f3f524ba28aeb2934776801a0a42eb14c37ed44d4856295f"
+        },
+        {
+          "day": 2,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:cc154000b2ed1bc82512529b10ebb6c9ed2fa80b133c6fffd5e8ba5f479ae3ea",
+          "fixedEventsAfterSHA256": "4deb30cbbbfade12a6793fb8c96d40ea5dccf4b6fab66006c67766bfd7f0a36e"
+        },
+        {
+          "day": 3,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:099dc104ec6b3192bd2fc93ec217f250a78dcc52b124eec18e39793b319bde37",
+          "fixedEventsAfterSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179"
+        },
+        {
+          "day": 4,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+          "fixedEventsAfterSHA256": "2bf23254a0aa9f52868575e7fe754145211fd261544ceebf3b313631287925ee"
+        },
+        {
+          "day": 5,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "observationHash": "sha256:e4516a698d344d8f475c9d6ad4ae5c80ec77de822cf7e6875af81061a71f68d8",
+          "fixedEventsAfterSHA256": "3198501d4e33c84245a1c75a35581bc341178e65a086ef53007a022259d2c4bd"
+        },
+        {
+          "day": 6,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "observationHash": "sha256:e2790ae7619f6de1df70b7acf01382a00fb79f06f9a42b7b506c405c16ab913a",
+          "fixedEventsAfterSHA256": "2900d085f38670904bbd3a67582a6d5088b18ac3644e96ed3a007593b105ba45"
+        },
+        {
+          "day": 7,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:9dee498fa71610b76dc433671a1ee466d05e143a5337e13dfe4baec9416de3f7",
+          "fixedEventsAfterSHA256": "c63a54451f65c90bcc66e9b50578ff77f2e8a092961838e6e9ce1641978167d2"
+        },
+        {
+          "day": 8,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:b049f500a3968b1d2d44c7fa37fcf3f4994f3d076ba363e90e4293efb9c90dca",
+          "fixedEventsAfterSHA256": "687ba1728f42a3cab693e925e94e4c4c9ac118d93bdd88d10a6859b8a45c92ef"
+        },
+        {
+          "day": 9,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:185c575e2dd425d617b3f46f03d33d1b3f50fc60b4f23d38bd89e422b1966bc9",
+          "fixedEventsAfterSHA256": "60d5d848f1af22b026383c1c5dee28c5434e6b7d432d257a5c59cf7ba40e0fc4"
+        },
+        {
+          "day": 10,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:2e90b571faba1a3efd06b3b3b9f91fb04b46bcaaa553d541578c44fee499c6e5",
+          "fixedEventsAfterSHA256": "3a535c616f27167034e2cfa4c0d6b06487ba88a76f9fbca77e413e02f32b441d"
+        },
+        {
+          "day": 11,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:e4171e3e42543b2016c93aafc58c918959f5b08afb0702e80269ce7b51663f5f",
+          "fixedEventsAfterSHA256": "856173f8af2703b773fb61115949b0bce85c34784b7378a27cc9eb8f87ebf4ca"
+        },
+        {
+          "day": 12,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 3,
+            "warehouse": 1,
+            "staging": 3
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:6189df90743cb3e4e6830900965fdc567abaf8653828c0b29096fefc5a36c927",
+          "fixedEventsAfterSHA256": "24e534da166760d9cf1b605f41b6a9aeeeac545493f9c32825cc0a5893cf4713"
+        },
+        {
+          "day": 13,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 3,
+            "warehouse": 0,
+            "staging": 0
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:00f1a46fde4eb125270ab5595182d2ef57941446e9f794ef86a9749f3032fe9b",
+          "fixedEventsAfterSHA256": "6a5be1b7e57f315ee7afb6e5823961eb97b2f8d27270b4377b3f545deea8ccc0"
+        }
+      ],
+      "independentSelectedPlanFees": [
+        {
+          "day": 0,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 1,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 2,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 3,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 4,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 5,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 6,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 7,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 8,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 9,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 10,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 11,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 12,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 13,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        }
+      ],
+      "independentActualCompletedFees": {
+        "storageCost": 0.0,
+        "ddCost": 0,
+        "totalCost": 0.0,
+        "sunkCost": 0.0,
+        "incrementalCost": 0.0,
+        "objectiveCost": 0.0
+      },
+      "failedPrefixHasNoCompletedFees": false,
+      "sourceInputSHA256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "sourceEpisodeSHA256": "c0dbd3e15c79aab44689cfa268c799727a7ba257c06cb6b0ac9cf3cb104aed6a",
+      "rawReplaySHA256": "9f81fba71c20581221dc1e32a4744f902a8ddafc9830d8c054c6a99b54ef891c"
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a2--lower_m_candidate",
+      "branch": "lower_m_candidate",
+      "repeatIndex": 2,
+      "algorithmSeed": 49023,
+      "valid": true,
+      "complete": true,
+      "failure": null,
+      "timelineEntries": 14,
+      "historicalPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "replayedPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "d4ObservationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "d4FixedEventsSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179",
+      "d4EndpointSHA256": "552eaf29da3b4b464e4ac12065bcc273f8726614e397eb4173080ecd3be84c71",
+      "executedEventCount": 72,
+      "physicalDailyLedger": [
+        {
+          "day": 0,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 2
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:4aa3f07bada7c6288f52b241031929a5242aefdaae1769fbc88d00c88997756b",
+          "fixedEventsAfterSHA256": "0f4137bd47ddd0786cf66c51a87df9725483ad333db3fc2c58a152f410d2d966"
+        },
+        {
+          "day": 1,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 4
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:8b4eecc32802c740fdd444ebad8b6729c49e3daab4484ea0a454e636db43d0e6",
+          "fixedEventsAfterSHA256": "33f9ed0be2a526b6f3f524ba28aeb2934776801a0a42eb14c37ed44d4856295f"
+        },
+        {
+          "day": 2,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:cc154000b2ed1bc82512529b10ebb6c9ed2fa80b133c6fffd5e8ba5f479ae3ea",
+          "fixedEventsAfterSHA256": "4deb30cbbbfade12a6793fb8c96d40ea5dccf4b6fab66006c67766bfd7f0a36e"
+        },
+        {
+          "day": 3,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:099dc104ec6b3192bd2fc93ec217f250a78dcc52b124eec18e39793b319bde37",
+          "fixedEventsAfterSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179"
+        },
+        {
+          "day": 4,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+          "fixedEventsAfterSHA256": "2bf23254a0aa9f52868575e7fe754145211fd261544ceebf3b313631287925ee"
+        },
+        {
+          "day": 5,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "observationHash": "sha256:e4516a698d344d8f475c9d6ad4ae5c80ec77de822cf7e6875af81061a71f68d8",
+          "fixedEventsAfterSHA256": "3198501d4e33c84245a1c75a35581bc341178e65a086ef53007a022259d2c4bd"
+        },
+        {
+          "day": 6,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "observationHash": "sha256:e2790ae7619f6de1df70b7acf01382a00fb79f06f9a42b7b506c405c16ab913a",
+          "fixedEventsAfterSHA256": "2900d085f38670904bbd3a67582a6d5088b18ac3644e96ed3a007593b105ba45"
+        },
+        {
+          "day": 7,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:9dee498fa71610b76dc433671a1ee466d05e143a5337e13dfe4baec9416de3f7",
+          "fixedEventsAfterSHA256": "c63a54451f65c90bcc66e9b50578ff77f2e8a092961838e6e9ce1641978167d2"
+        },
+        {
+          "day": 8,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:b049f500a3968b1d2d44c7fa37fcf3f4994f3d076ba363e90e4293efb9c90dca",
+          "fixedEventsAfterSHA256": "687ba1728f42a3cab693e925e94e4c4c9ac118d93bdd88d10a6859b8a45c92ef"
+        },
+        {
+          "day": 9,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:185c575e2dd425d617b3f46f03d33d1b3f50fc60b4f23d38bd89e422b1966bc9",
+          "fixedEventsAfterSHA256": "60d5d848f1af22b026383c1c5dee28c5434e6b7d432d257a5c59cf7ba40e0fc4"
+        },
+        {
+          "day": 10,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:2e90b571faba1a3efd06b3b3b9f91fb04b46bcaaa553d541578c44fee499c6e5",
+          "fixedEventsAfterSHA256": "3a535c616f27167034e2cfa4c0d6b06487ba88a76f9fbca77e413e02f32b441d"
+        },
+        {
+          "day": 11,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:e4171e3e42543b2016c93aafc58c918959f5b08afb0702e80269ce7b51663f5f",
+          "fixedEventsAfterSHA256": "856173f8af2703b773fb61115949b0bce85c34784b7378a27cc9eb8f87ebf4ca"
+        },
+        {
+          "day": 12,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 3,
+            "warehouse": 1,
+            "staging": 3
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:6189df90743cb3e4e6830900965fdc567abaf8653828c0b29096fefc5a36c927",
+          "fixedEventsAfterSHA256": "24e534da166760d9cf1b605f41b6a9aeeeac545493f9c32825cc0a5893cf4713"
+        },
+        {
+          "day": 13,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 3,
+            "warehouse": 0,
+            "staging": 0
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:00f1a46fde4eb125270ab5595182d2ef57941446e9f794ef86a9749f3032fe9b",
+          "fixedEventsAfterSHA256": "6a5be1b7e57f315ee7afb6e5823961eb97b2f8d27270b4377b3f545deea8ccc0"
+        }
+      ],
+      "independentSelectedPlanFees": [
+        {
+          "day": 0,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 1,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 2,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 3,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 4,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 5,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 6,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 7,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 8,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 9,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 10,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 11,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 12,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 13,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        }
+      ],
+      "independentActualCompletedFees": {
+        "storageCost": 0.0,
+        "ddCost": 0,
+        "totalCost": 0.0,
+        "sunkCost": 0.0,
+        "incrementalCost": 0.0,
+        "objectiveCost": 0.0
+      },
+      "failedPrefixHasNoCompletedFees": false,
+      "sourceInputSHA256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "sourceEpisodeSHA256": "ba188d35b2e8df7fe1b6bf4614ca353d100c055e0b9fb5da9222dbaeadee60af",
+      "rawReplaySHA256": "4ef76c48a90390e36d0930e804e5ac6678db9f445f52e89a8d10e1d03ff122c9"
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a2--retain_cache",
+      "branch": "retain_cache",
+      "repeatIndex": 2,
+      "algorithmSeed": 49023,
+      "valid": true,
+      "complete": false,
+      "failure": {
+        "day": 5,
+        "kind": "no_complete_plan",
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "plannerStatus": "infeasible"
+      },
+      "timelineEntries": 6,
+      "historicalPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "replayedPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "d4ObservationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "d4FixedEventsSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179",
+      "d4EndpointSHA256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0",
+      "executedEventCount": 24,
+      "physicalDailyLedger": [
+        {
+          "day": 0,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 2
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:4aa3f07bada7c6288f52b241031929a5242aefdaae1769fbc88d00c88997756b",
+          "fixedEventsAfterSHA256": "0f4137bd47ddd0786cf66c51a87df9725483ad333db3fc2c58a152f410d2d966"
+        },
+        {
+          "day": 1,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 4
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:8b4eecc32802c740fdd444ebad8b6729c49e3daab4484ea0a454e636db43d0e6",
+          "fixedEventsAfterSHA256": "33f9ed0be2a526b6f3f524ba28aeb2934776801a0a42eb14c37ed44d4856295f"
+        },
+        {
+          "day": 2,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:cc154000b2ed1bc82512529b10ebb6c9ed2fa80b133c6fffd5e8ba5f479ae3ea",
+          "fixedEventsAfterSHA256": "4deb30cbbbfade12a6793fb8c96d40ea5dccf4b6fab66006c67766bfd7f0a36e"
+        },
+        {
+          "day": 3,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:099dc104ec6b3192bd2fc93ec217f250a78dcc52b124eec18e39793b319bde37",
+          "fixedEventsAfterSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179"
+        },
+        {
+          "day": 4,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+          "fixedEventsAfterSHA256": "0ac6e5a92a6ae8a1452b16700cc9f03fb7b3d274251e8db5b9acf0253b33a9f0"
+        }
+      ],
+      "independentSelectedPlanFees": [
+        {
+          "day": 0,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 1,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 2,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 3,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 4,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        }
+      ],
+      "independentActualCompletedFees": null,
+      "failedPrefixHasNoCompletedFees": true,
+      "sourceInputSHA256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "sourceEpisodeSHA256": "ba188d35b2e8df7fe1b6bf4614ca353d100c055e0b9fb5da9222dbaeadee60af",
+      "rawReplaySHA256": "1e6dfc5a41af567807f70960726c8c2836a458c8fdbd81ad78436acaf0835c3f"
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a3--retain_cache",
+      "branch": "retain_cache",
+      "repeatIndex": 3,
+      "algorithmSeed": 49039,
+      "valid": true,
+      "complete": false,
+      "failure": {
+        "day": 5,
+        "kind": "no_complete_plan",
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "plannerStatus": "infeasible"
+      },
+      "timelineEntries": 6,
+      "historicalPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "replayedPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "d4ObservationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "d4FixedEventsSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179",
+      "d4EndpointSHA256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0",
+      "executedEventCount": 24,
+      "physicalDailyLedger": [
+        {
+          "day": 0,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 2
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:4aa3f07bada7c6288f52b241031929a5242aefdaae1769fbc88d00c88997756b",
+          "fixedEventsAfterSHA256": "0f4137bd47ddd0786cf66c51a87df9725483ad333db3fc2c58a152f410d2d966"
+        },
+        {
+          "day": 1,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 4
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:8b4eecc32802c740fdd444ebad8b6729c49e3daab4484ea0a454e636db43d0e6",
+          "fixedEventsAfterSHA256": "33f9ed0be2a526b6f3f524ba28aeb2934776801a0a42eb14c37ed44d4856295f"
+        },
+        {
+          "day": 2,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:cc154000b2ed1bc82512529b10ebb6c9ed2fa80b133c6fffd5e8ba5f479ae3ea",
+          "fixedEventsAfterSHA256": "4deb30cbbbfade12a6793fb8c96d40ea5dccf4b6fab66006c67766bfd7f0a36e"
+        },
+        {
+          "day": 3,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:099dc104ec6b3192bd2fc93ec217f250a78dcc52b124eec18e39793b319bde37",
+          "fixedEventsAfterSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179"
+        },
+        {
+          "day": 4,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+          "fixedEventsAfterSHA256": "0ac6e5a92a6ae8a1452b16700cc9f03fb7b3d274251e8db5b9acf0253b33a9f0"
+        }
+      ],
+      "independentSelectedPlanFees": [
+        {
+          "day": 0,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 1,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 2,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 3,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 4,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        }
+      ],
+      "independentActualCompletedFees": null,
+      "failedPrefixHasNoCompletedFees": true,
+      "sourceInputSHA256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "sourceEpisodeSHA256": "0dde99195b46839c2a6f5fa43b4ae8f904e77c8944740041b46b88c8bab96ae0",
+      "rawReplaySHA256": "15ba7c92855528d60c9cd3c9aebc2df0739ac9701683100431200230b656f4d5"
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a3--lower_m_candidate",
+      "branch": "lower_m_candidate",
+      "repeatIndex": 3,
+      "algorithmSeed": 49039,
+      "valid": true,
+      "complete": true,
+      "failure": null,
+      "timelineEntries": 14,
+      "historicalPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "replayedPrefixCanonicalSHA256": "58fbfe94cfe9002b5186eb55c4d4b96c58a77ce5803d56f5b78833c331e7639a",
+      "d4ObservationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "d4FixedEventsSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179",
+      "d4EndpointSHA256": "552eaf29da3b4b464e4ac12065bcc273f8726614e397eb4173080ecd3be84c71",
+      "executedEventCount": 72,
+      "physicalDailyLedger": [
+        {
+          "day": 0,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 2
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:4aa3f07bada7c6288f52b241031929a5242aefdaae1769fbc88d00c88997756b",
+          "fixedEventsAfterSHA256": "0f4137bd47ddd0786cf66c51a87df9725483ad333db3fc2c58a152f410d2d966"
+        },
+        {
+          "day": 1,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 4
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:8b4eecc32802c740fdd444ebad8b6729c49e3daab4484ea0a454e636db43d0e6",
+          "fixedEventsAfterSHA256": "33f9ed0be2a526b6f3f524ba28aeb2934776801a0a42eb14c37ed44d4856295f"
+        },
+        {
+          "day": 2,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:cc154000b2ed1bc82512529b10ebb6c9ed2fa80b133c6fffd5e8ba5f479ae3ea",
+          "fixedEventsAfterSHA256": "4deb30cbbbfade12a6793fb8c96d40ea5dccf4b6fab66006c67766bfd7f0a36e"
+        },
+        {
+          "day": 3,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 2,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 2,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:099dc104ec6b3192bd2fc93ec217f250a78dcc52b124eec18e39793b319bde37",
+          "fixedEventsAfterSHA256": "4f08e9966c57403306990384db2a15c2f1048e865be3e703521fccaeb5616179"
+        },
+        {
+          "day": 4,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+          "fixedEventsAfterSHA256": "2bf23254a0aa9f52868575e7fe754145211fd261544ceebf3b313631287925ee"
+        },
+        {
+          "day": 5,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "observationHash": "sha256:e4516a698d344d8f475c9d6ad4ae5c80ec77de822cf7e6875af81061a71f68d8",
+          "fixedEventsAfterSHA256": "3198501d4e33c84245a1c75a35581bc341178e65a086ef53007a022259d2c4bd"
+        },
+        {
+          "day": 6,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 1,
+            "staging": 6
+          },
+          "observationHash": "sha256:e2790ae7619f6de1df70b7acf01382a00fb79f06f9a42b7b506c405c16ab913a",
+          "fixedEventsAfterSHA256": "2900d085f38670904bbd3a67582a6d5088b18ac3644e96ed3a007593b105ba45"
+        },
+        {
+          "day": 7,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:9dee498fa71610b76dc433671a1ee466d05e143a5337e13dfe4baec9416de3f7",
+          "fixedEventsAfterSHA256": "c63a54451f65c90bcc66e9b50578ff77f2e8a092961838e6e9ce1641978167d2"
+        },
+        {
+          "day": 8,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 2,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:b049f500a3968b1d2d44c7fa37fcf3f4994f3d076ba363e90e4293efb9c90dca",
+          "fixedEventsAfterSHA256": "687ba1728f42a3cab693e925e94e4c4c9ac118d93bdd88d10a6859b8a45c92ef"
+        },
+        {
+          "day": 9,
+          "executedEventCount": 7,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:185c575e2dd425d617b3f46f03d33d1b3f50fc60b4f23d38bd89e422b1966bc9",
+          "fixedEventsAfterSHA256": "60d5d848f1af22b026383c1c5dee28c5434e6b7d432d257a5c59cf7ba40e0fc4"
+        },
+        {
+          "day": 10,
+          "executedEventCount": 5,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:2e90b571faba1a3efd06b3b3b9f91fb04b46bcaaa553d541578c44fee499c6e5",
+          "fixedEventsAfterSHA256": "3a535c616f27167034e2cfa4c0d6b06487ba88a76f9fbca77e413e02f32b441d"
+        },
+        {
+          "day": 11,
+          "executedEventCount": 6,
+          "physicalUsage": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:e4171e3e42543b2016c93aafc58c918959f5b08afb0702e80269ce7b51663f5f",
+          "fixedEventsAfterSHA256": "856173f8af2703b773fb61115949b0bce85c34784b7378a27cc9eb8f87ebf4ca"
+        },
+        {
+          "day": 12,
+          "executedEventCount": 4,
+          "physicalUsage": {
+            "truck": 3,
+            "warehouse": 1,
+            "staging": 3
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:6189df90743cb3e4e6830900965fdc567abaf8653828c0b29096fefc5a36c927",
+          "fixedEventsAfterSHA256": "24e534da166760d9cf1b605f41b6a9aeeeac545493f9c32825cc0a5893cf4713"
+        },
+        {
+          "day": 13,
+          "executedEventCount": 3,
+          "physicalUsage": {
+            "truck": 3,
+            "warehouse": 0,
+            "staging": 0
+          },
+          "actualCapacity": {
+            "truck": 4,
+            "warehouse": 3,
+            "staging": 6
+          },
+          "observationHash": "sha256:00f1a46fde4eb125270ab5595182d2ef57941446e9f794ef86a9749f3032fe9b",
+          "fixedEventsAfterSHA256": "6a5be1b7e57f315ee7afb6e5823961eb97b2f8d27270b4377b3f545deea8ccc0"
+        }
+      ],
+      "independentSelectedPlanFees": [
+        {
+          "day": 0,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 1,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 2,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 3,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 4,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 5,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 6,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 7,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 8,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 9,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 10,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 11,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 12,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        },
+        {
+          "day": 13,
+          "storageCost": 0.0,
+          "ddCost": 0,
+          "totalCost": 0.0,
+          "sunkCost": 0.0,
+          "incrementalCost": 0.0,
+          "objectiveCost": 0.0
+        }
+      ],
+      "independentActualCompletedFees": {
+        "storageCost": 0.0,
+        "ddCost": 0,
+        "totalCost": 0.0,
+        "sunkCost": 0.0,
+        "incrementalCost": 0.0,
+        "objectiveCost": 0.0
+      },
+      "failedPrefixHasNoCompletedFees": false,
+      "sourceInputSHA256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+      "sourceEpisodeSHA256": "0dde99195b46839c2a6f5fa43b4ae8f904e77c8944740041b46b88c8bab96ae0",
+      "rawReplaySHA256": "30b2ce7bf4c3b5097d40080965ff0783d74963ddbe80f76060621a0e2cd5c6a6"
+    }
+  ]
+}

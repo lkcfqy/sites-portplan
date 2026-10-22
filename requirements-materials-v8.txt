@@ -1,0 +1,5 @@
+# Optional: regenerate the Korean presentation PDF; not needed for the app or audits.
+reportlab==4.4.9
+fonttools==4.61.1
+python-pptx==1.0.2
+# System font: fonts-noto-cjk (NotoSansCJK-Regular.ttc, Korean face).

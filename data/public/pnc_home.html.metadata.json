@@ -1,0 +1,10 @@
+{
+  "url": "https://www.pncport.com/kor/",
+  "final_url": "https://www.pncport.com/kor/",
+  "retrieved_at_utc": "2026-10-12T06:27:47.603731+00:00",
+  "http_status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "sha256": "a716eb68c2a81c97dba64656c40a7def2259771e951fac8b2fab62842d66d709",
+  "bytes": 36560,
+  "path": "data/public/pnc_home.html"
+}

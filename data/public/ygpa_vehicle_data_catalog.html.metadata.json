@@ -1,0 +1,10 @@
+{
+  "url": "https://www.data.go.kr/data/15059682/fileData.do",
+  "final_url": "https://www.data.go.kr/data/15059682/fileData.do",
+  "retrieved_at_utc": "2026-10-12T06:27:09.078414+00:00",
+  "http_status": 200,
+  "content_type": "text/html;charset=UTF-8",
+  "sha256": "c60174ba55a6e0a1a51032a179c58e31de734746e8139e20f782cf156692fcbb",
+  "bytes": 208974,
+  "path": "data/public/ygpa_vehicle_data_catalog.html"
+}

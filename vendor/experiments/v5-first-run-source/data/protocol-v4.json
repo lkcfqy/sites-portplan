@@ -1,0 +1,226 @@
+{
+  "protocolVersion": "portplan-v4-end-to-end-frozen-20261012-01",
+  "createdAt": "2026-10-12T18:02:36.249242+00:00",
+  "executionStateAtFreeze": "No V4 end-to-end comparison was executed before this protocol file was saved. The hash verifies bytes and local chronology; this is not an external preregistration.",
+  "purpose": "Exploratory equal end-to-end wall-budget challenge of direct event-date search, permutation search, raw MILP and audited-incumbent safe-presolve composite. Do not infer competition win probability or population savings.",
+  "horizon": {
+    "start": "2026-10-12",
+    "days": 14,
+    "timezone": "Asia/Seoul"
+  },
+  "defaultTariff": {
+    "pncFreeDays": 4,
+    "ddFreeDays": 10,
+    "pncMultiplier": 1,
+    "ddMultiplier": 1,
+    "pncMode": "retroactive",
+    "ddMode": "progressive"
+  },
+  "defaultOperations": {
+    "returnLagDays": 1,
+    "stagingUnit": "container"
+  },
+  "generator": {
+    "version": "makeScenarioV2 unchanged, imported from scripts/benchmark-v2.mjs",
+    "definition": {
+      "version": "v2-lcg-independent-cases",
+      "random": "state=(1664525*state+1013904223) mod 2^32; draw=state/2^32, initial state=seed",
+      "sharedDrawOrder": [
+        "sizeFt:40 if draw<0.45 else20",
+        "unloadDays:1 if draw<0.70;2 if draw<0.95;else3",
+        "mechanism-specific draws",
+        "discharge hour:07 if draw<0.5 else10"
+      ],
+      "aged-backlog": {
+        "dischargeDay": "-(3+floor(draw*14))",
+        "releaseDay": "floor(draw*4)",
+        "dueDay": "min(12,releaseDay+unloadDays-1+3+floor(draw*5))"
+      },
+      "new-arrivals": {
+        "releaseDay": "floor(draw*9)",
+        "dischargeDay": "releaseDay-(draw<0.75?0:1)",
+        "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+      },
+      "batch-release": {
+        "releaseDay": "[0,4,7][floor(draw*3)]",
+        "dischargeDay": "releaseDay-(2+floor(draw*5))",
+        "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+      },
+      "capacityProfiles": {
+        "balanced": [
+          "ceil(n/4) truck movements/day",
+          "ceil(n/5) unloading slots/day",
+          "ceil(n/2) staging containers/day"
+        ],
+        "tight": [
+          "ceil(n/6) truck movements/day",
+          "ceil(n/8) unloading slots/day",
+          "ceil(n/4) staging containers/day"
+        ]
+      },
+      "independence": "Each main case uses a unique seed. No order-list nesting or reuse across the 48 cases. This does not make synthetic configurations a representative population sample."
+    },
+    "selection": "Full factorial 3 mechanisms × 2 capacity profiles × 3 scales, one fixed unique new seed per cell, 41001 through 41018. No case replacement or outcome-based seed selection."
+  },
+  "methods": [
+    "permutation",
+    "eventSearch",
+    "rawMILP",
+    "presolveMILP"
+  ],
+  "budget": {
+    "hardWallMs": 1000,
+    "clock": "Parent performance.now(), from before fork/spawn through received audited result. Includes child process startup, dynamic imports, initial baselines, WASM initialization, model construction, preprocessing, solution audit and IPC delivery. Parent enforces deadline via SIGKILL. OS kill/exit delivery overhead is separately recorded.",
+    "childCooperativeReserveMs": 20,
+    "solverSeconds": "Remaining child seconds are merely an advisory GLPK limit. Parent hard wall is authoritative; synchronous WASM may be killed.",
+    "cpuAllocation": "One method child at a time; methods rotate in a Latin order for each case; no simultaneous benchmark methods. Host load may vary.",
+    "checkpoints": "Complete engine-audited and independently cost/constraint-audited schedules may be checkpointed by IPC before the hard deadline. Kill retains only checkpoints received within deadline, never a proof from a killed solve."
+  },
+  "methodDefinitions": {
+    "permutation": "Four greedy initial policies, followed by old solveStrongSearch permutation relocate/swap in small batches until deadline. Earliest decoder unchanged; each batch includes its actual runtime.",
+    "eventSearch": "Four greedy initial policies followed by direct (pickup, unloading-start, return) event-domain relocation and bounded randomized destroy/repair. All daily truck, unloading, staging constraints checked; complete schedules are audited before checkpoint.",
+    "rawMILP": "Cold solveOptimized with presolveV4=false; no heuristic fallback or precomputed incumbent.",
+    "presolveMILP": "Composite: four greedy initial policies plus one small permutation batch supply audited feasible cutoff/checkpoint; cold solveOptimized with presolveV4=true and those initial policies. No claim of GLPK MIP warm start. A lower-bound certificate is separately labeled as analytic optimality; cutoff fallback stays heuristic."
+  },
+  "primaryCases": [
+    {
+      "id": "v4-aged-backlog-balanced-n16",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "seed": 41001
+    },
+    {
+      "id": "v4-aged-backlog-balanced-n50",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "seed": 41002
+    },
+    {
+      "id": "v4-aged-backlog-balanced-n100",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "seed": 41003
+    },
+    {
+      "id": "v4-aged-backlog-tight-n16",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 41004
+    },
+    {
+      "id": "v4-aged-backlog-tight-n50",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "seed": 41005
+    },
+    {
+      "id": "v4-aged-backlog-tight-n100",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 100,
+      "seed": 41006
+    },
+    {
+      "id": "v4-new-arrivals-balanced-n16",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "seed": 41007
+    },
+    {
+      "id": "v4-new-arrivals-balanced-n50",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "seed": 41008
+    },
+    {
+      "id": "v4-new-arrivals-balanced-n100",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "seed": 41009
+    },
+    {
+      "id": "v4-new-arrivals-tight-n16",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 41010
+    },
+    {
+      "id": "v4-new-arrivals-tight-n50",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "seed": 41011
+    },
+    {
+      "id": "v4-new-arrivals-tight-n100",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 100,
+      "seed": 41012
+    },
+    {
+      "id": "v4-batch-release-balanced-n16",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "seed": 41013
+    },
+    {
+      "id": "v4-batch-release-balanced-n50",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "seed": 41014
+    },
+    {
+      "id": "v4-batch-release-balanced-n100",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "seed": 41015
+    },
+    {
+      "id": "v4-batch-release-tight-n16",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 41016
+    },
+    {
+      "id": "v4-batch-release-tight-n50",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "seed": 41017
+    },
+    {
+      "id": "v4-batch-release-tight-n100",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 100,
+      "seed": 41018
+    }
+  ],
+  "reporting": {
+    "retain": "Every frozen cell, all failures, no incumbents, zero denominators, ties and losses stay in raw data. Partial schedules have null fees and never count as feasible.",
+    "comparison": "Report feasibility, audited paired costs against each comparator, end-to-end completion and retained incumbent source. Compare rawMILP and presolveMILP separately; composite fallback is not GLPK success.",
+    "inference": "Exploratory synthetic stress cells, not representative orders or business population samples. No confidence interval, empirical customer savings, or first-place promise.",
+    "optimality": "Proven optimal counts require an audited complete solution and proof delivered before the deadline. Killed checkpoint is heuristic/feasible_incumbent_only.",
+    "feeBase": "Incremental modeled fees subtract fixed pre-horizon accrued-fee base, not verified actual payment or accounting sunk cost."
+  },
+  "dataBoundary": "Public official tariffs and disclosed fee interpretations only; all orders, capacities and mechanism mixtures synthetic. No private TOS, gate histories, internal plans or real customer records.",
+  "sourceBasis": [
+    "docs/source-audit.md",
+    "data/source_registry.json",
+    "docs/evaluation-v2.md"
+  ]
+}

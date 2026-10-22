@@ -1,0 +1,2005 @@
+{
+  "schemaVersion": "portplan-public-orders-audit-v6-1",
+  "auditedAtUtc": "2026-10-13T05:14:17.691390+00:00",
+  "status": "passed_structural_checks_with_semantic_gaps",
+  "source": {
+    "id": "california-freight-47-derived",
+    "repositoryUrl": "https://github.com/pengdongbo/Robust-BET-Dispatching-Dataset",
+    "commit": "0e608495c1520d1634d57c748f84156453d17869",
+    "pinnedRepositoryUrl": "https://github.com/pengdongbo/Robust-BET-Dispatching-Dataset/tree/0e608495c1520d1634d57c748f84156453d17869",
+    "publisherType": "author repository, not port authority/PNC",
+    "sourceClassification": "author-generated research instance based on real historical one-day California diesel-fleet movements",
+    "originalUntransformedOrders": false,
+    "pncOperationalOrders": false,
+    "generatedSourceQuote": "The generated problem instance with 47 customers are based on a real-world dataset, the typical one-day historical movements of a heavy-duty diesel truck fleet that operated in the Riverside and San Bernardino County regions of California.",
+    "travelMatrixClassification": "OpenRouteService-generated road-network estimates, not observed realized travel",
+    "auditInputModified": false,
+    "supplierSchemaEvidenceUsedForCalculations": false,
+    "metadataGeneratedByThisAudit": [
+      "audit timestamp/status/checks/profiles",
+      "source receipt and schema/unit annotations",
+      "direct-depot unit conversions with null reachability fields"
+    ],
+    "businessFieldsGeneratedByThisAudit": [],
+    "receipt": {
+      "path": "data/public/v6-data-sources/california-freight-47-derived/manifest.json",
+      "sha256": "19190d2af0ef0647ad50e160351bb54e738c2346a567183a575e72ac42e8518d",
+      "downloadTimeUtc": null,
+      "downloadTimeReason": "This file records status/bytes/hashes, not an acquisition timestamp."
+    },
+    "artifacts": [
+      {
+        "path": "data/public/v6-data-sources/california-freight-47-derived/LICENSE",
+        "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/LICENSE",
+        "bytes": 1063,
+        "sha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+        "expectedSha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+        "hashMatchesPinnedBytes": true
+      },
+      {
+        "path": "data/public/v6-data-sources/california-freight-47-derived/README.md",
+        "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/README.md",
+        "bytes": 944,
+        "sha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+        "expectedSha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+        "hashMatchesPinnedBytes": true
+      },
+      {
+        "path": "data/public/v6-data-sources/california-freight-47-derived/BETVRPBTW1_robust.csv",
+        "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPBTW1_robust.csv",
+        "bytes": 1305,
+        "sha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+        "expectedSha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+        "hashMatchesPinnedBytes": true
+      },
+      {
+        "path": "data/public/v6-data-sources/california-freight-47-derived/BETVRPB1_dist.csv",
+        "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_dist.csv",
+        "bytes": 20288,
+        "sha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+        "expectedSha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+        "hashMatchesPinnedBytes": true
+      },
+      {
+        "path": "data/public/v6-data-sources/california-freight-47-derived/BETVRPB1_time.csv",
+        "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_time.csv",
+        "bytes": 17854,
+        "sha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+        "expectedSha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+        "hashMatchesPinnedBytes": true
+      }
+    ]
+  },
+  "permit": {
+    "declaredLicense": "MIT",
+    "licenseFile": "data/public/v6-data-sources/california-freight-47-derived/LICENSE",
+    "copyright": "Copyright (c) 2024 Dongbo",
+    "noticePresent": true,
+    "redistributionCondition": "Carry the copyright and permission notice with copies/substantial portions.",
+    "datasetExceptionInSuppliedReadmeFound": false,
+    "upstreamHistoricalDataAndOpenRouteServiceRightsVerified": false,
+    "legalCertification": false
+  },
+  "schema": {
+    "columns": [
+      "id",
+      "stop_type",
+      "Stop Duration",
+      "weight",
+      "Arr",
+      "Due"
+    ],
+    "grain": "one generated depot/customer stop per row",
+    "recordCount": 48,
+    "customerCount": 47,
+    "depotCount": 1,
+    "candidateKey": "id",
+    "duplicateIds": {},
+    "exactDuplicateRowCount": 0,
+    "missingByColumn": {
+      "id": 0,
+      "stop_type": 0,
+      "Stop Duration": 0,
+      "weight": 0,
+      "Arr": 0,
+      "Due": 0
+    },
+    "invalidValues": [],
+    "units": {
+      "weight": "pounds (lbs)",
+      "Stop Duration": "minutes",
+      "Arr": "minutes, window lower bound",
+      "Due": "minutes, window upper bound",
+      "distanceMatrix": "meters",
+      "travelTimeMatrix": "seconds"
+    },
+    "unitSource": "required demands [in lbs.], time windows [in minute] and service times [in minute]; the distance [in meter] and travel duration [in second] matrices is generated by OpenRouteService",
+    "perFieldObservedVersusGeneratedProvenance": "Unknown: README classifies the whole case as generated based on history; it does not enumerate unchanged observed fields.",
+    "idsInFileOrder": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "typeCounts": {
+      "Begin Trip": 1,
+      "Delivery": 33,
+      "Pickup": 14
+    },
+    "numericCustomerProfiles": {
+      "Stop Duration": {
+        "validCount": 47,
+        "minimum": 5,
+        "maximum": 166,
+        "sum": 1258,
+        "zeroCount": 0
+      },
+      "weight": {
+        "validCount": 47,
+        "minimum": 340,
+        "maximum": 33435,
+        "sum": 206621,
+        "zeroCount": 0
+      },
+      "Arr": {
+        "validCount": 47,
+        "minimum": 0,
+        "maximum": 240,
+        "sum": 1260,
+        "zeroCount": 33
+      },
+      "Due": {
+        "validCount": 47,
+        "minimum": 120,
+        "maximum": 480,
+        "sum": 18560,
+        "zeroCount": 0
+      }
+    },
+    "byStopType": {
+      "Delivery": {
+        "count": 33,
+        "weightLbs": {
+          "validCount": 33,
+          "minimum": 400,
+          "maximum": 11920,
+          "sum": 87747,
+          "zeroCount": 0
+        },
+        "serviceMinutes": {
+          "validCount": 33,
+          "minimum": 5,
+          "maximum": 166,
+          "sum": 890,
+          "zeroCount": 0
+        }
+      },
+      "Pickup": {
+        "count": 14,
+        "weightLbs": {
+          "validCount": 14,
+          "minimum": 340,
+          "maximum": 33435,
+          "sum": 118874,
+          "zeroCount": 0
+        },
+        "serviceMinutes": {
+          "validCount": 14,
+          "minimum": 9,
+          "maximum": 57,
+          "sum": 368,
+          "zeroCount": 0
+        }
+      }
+    }
+  },
+  "timeWindows": {
+    "unit": "minutes",
+    "widthProfile": {
+      "validCount": 47,
+      "minimum": 120,
+      "maximum": 480,
+      "sum": 17300,
+      "zeroCount": 0
+    },
+    "distinctWindows": [
+      {
+        "open": 0,
+        "close": 120,
+        "count": 1
+      },
+      {
+        "open": 0,
+        "close": 160,
+        "count": 1
+      },
+      {
+        "open": 0,
+        "close": 240,
+        "count": 2
+      },
+      {
+        "open": 0,
+        "close": 480,
+        "count": 29
+      },
+      {
+        "open": 10,
+        "close": 160,
+        "count": 1
+      },
+      {
+        "open": 120,
+        "close": 480,
+        "count": 1
+      },
+      {
+        "open": 180,
+        "close": 300,
+        "count": 3
+      },
+      {
+        "open": 20,
+        "close": 180,
+        "count": 1
+      },
+      {
+        "open": 240,
+        "close": 400,
+        "count": 1
+      },
+      {
+        "open": 30,
+        "close": 240,
+        "count": 3
+      },
+      {
+        "open": 60,
+        "close": 200,
+        "count": 1
+      },
+      {
+        "open": 60,
+        "close": 240,
+        "count": 1
+      },
+      {
+        "open": 60,
+        "close": 300,
+        "count": 2
+      }
+    ],
+    "invertedWindowIds": [],
+    "serviceDurationExceedsWindowWidthIds": [],
+    "serviceDurationCheckMeaning": "Arithmetic screening only; no service-completion window semantics, route or fleet feasibility assumed.",
+    "depotWindow": {
+      "open": 0,
+      "close": 480
+    },
+    "shiftStartMinutes": null,
+    "clockOriginTimezone": null
+  },
+  "matrices": {
+    "distance": {
+      "file": "data/public/v6-data-sources/california-freight-47-derived/BETVRPB1_dist.csv",
+      "unit": "meter",
+      "rows": 48,
+      "columnCountFrequency": {
+        "48": 48
+      },
+      "headerIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47"
+      ],
+      "rowLabelsPresent": false,
+      "rowIndexMapping": "row position i -> customer/depot ID i; structural file-order mapping",
+      "rowIndexMappingPublisherExplicitlyDocumented": false,
+      "numeric": {
+        "validCount": 2304,
+        "minimum": 0,
+        "maximum": 116999.78,
+        "sum": 109938815.63,
+        "zeroCount": 52
+      },
+      "invalidCells": [],
+      "negativeCells": [],
+      "nonzeroDiagonal": [],
+      "offDiagonalZeroCount": 4,
+      "offDiagonalZeroPairsDirected": [
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          38,
+          37
+        ]
+      ],
+      "asymmetricUnorderedPairCount": 1116,
+      "unorderedPairCount": 1128,
+      "largestAsymmetry": {
+        "ids": [
+          4,
+          33
+        ],
+        "forward": 82346.43,
+        "reverse": 71491.85,
+        "absoluteDifference": 10854.58
+      },
+      "symmetrizationApplied": false,
+      "zeroValuesRepairedOrRemoved": false
+    },
+    "travelTime": {
+      "file": "data/public/v6-data-sources/california-freight-47-derived/BETVRPB1_time.csv",
+      "unit": "second",
+      "rows": 48,
+      "columnCountFrequency": {
+        "48": 48
+      },
+      "headerIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47"
+      ],
+      "rowLabelsPresent": false,
+      "rowIndexMapping": "row position i -> customer/depot ID i; structural file-order mapping",
+      "rowIndexMappingPublisherExplicitlyDocumented": false,
+      "numeric": {
+        "validCount": 2304,
+        "minimum": 0,
+        "maximum": 5031.75,
+        "sum": 5040631.6,
+        "zeroCount": 52
+      },
+      "invalidCells": [],
+      "negativeCells": [],
+      "nonzeroDiagonal": [],
+      "offDiagonalZeroCount": 4,
+      "offDiagonalZeroPairsDirected": [
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          38,
+          37
+        ]
+      ],
+      "asymmetricUnorderedPairCount": 1116,
+      "unorderedPairCount": 1128,
+      "largestAsymmetry": {
+        "ids": [
+          6,
+          35
+        ],
+        "forward": 3074.68,
+        "reverse": 2827.86,
+        "absoluteDifference": 246.82
+      },
+      "symmetrizationApplied": false,
+      "zeroValuesRepairedOrRemoved": false
+    }
+  },
+  "mapping": {
+    "structurallyConsistent": true,
+    "matrixRowPositionToId": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "publisherExplicitRowLabels": false,
+    "rowsJoinedByFileOrder": true,
+    "coordinatesAvailable": false
+  },
+  "directDepotNecessaryInformation": {
+    "evaluationScope": "Only given matrix arc 0->i; no intermediary customer, route optimizer or all-customer feasibility check.",
+    "roadShortestPathOptimalityVerified": false,
+    "shiftStartMinutes": null,
+    "reachabilityEvaluatedCount": 0,
+    "reachabilityUnknownCount": 47,
+    "customers": [
+      {
+        "id": 1,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1543.19,
+        "directDepotTravelMinutes": 25.719833333333334,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 35,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 2,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1535.31,
+        "directDepotTravelMinutes": 25.5885,
+        "windowOpenMinutes": 10,
+        "windowCloseMinutes": 160,
+        "serviceMinutes": 15,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 3,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 2547.4,
+        "directDepotTravelMinutes": 42.45666666666666,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 120,
+        "serviceMinutes": 18,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 4,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3135.66,
+        "directDepotTravelMinutes": 52.261,
+        "windowOpenMinutes": 20,
+        "windowCloseMinutes": 180,
+        "serviceMinutes": 33,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 5,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3092.51,
+        "directDepotTravelMinutes": 51.54183333333334,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 13,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 6,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3374.7,
+        "directDepotTravelMinutes": 56.245,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 14,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 7,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3379.07,
+        "directDepotTravelMinutes": 56.31783333333333,
+        "windowOpenMinutes": 60,
+        "windowCloseMinutes": 240,
+        "serviceMinutes": 6,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 8,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3379.07,
+        "directDepotTravelMinutes": 56.31783333333333,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 8,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 9,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3490.74,
+        "directDepotTravelMinutes": 58.179,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 14,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 10,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3284.99,
+        "directDepotTravelMinutes": 54.749833333333335,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 16,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 11,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3407.19,
+        "directDepotTravelMinutes": 56.7865,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 5,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 12,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 3527.86,
+        "directDepotTravelMinutes": 58.797666666666665,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 10,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 13,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 2094.49,
+        "directDepotTravelMinutes": 34.908166666666666,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 30,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 14,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1608.88,
+        "directDepotTravelMinutes": 26.814666666666668,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 14,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 15,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1887.5,
+        "directDepotTravelMinutes": 31.458333333333332,
+        "windowOpenMinutes": 240,
+        "windowCloseMinutes": 400,
+        "serviceMinutes": 10,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 16,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1564.18,
+        "directDepotTravelMinutes": 26.069666666666667,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 35,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 17,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 2272.72,
+        "directDepotTravelMinutes": 37.87866666666667,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 166,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 18,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1667.19,
+        "directDepotTravelMinutes": 27.7865,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 57,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 19,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1424.32,
+        "directDepotTravelMinutes": 23.738666666666667,
+        "windowOpenMinutes": 120,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 21,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 20,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1103.55,
+        "directDepotTravelMinutes": 18.3925,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 240,
+        "serviceMinutes": 30,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 21,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1232.55,
+        "directDepotTravelMinutes": 20.5425,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 240,
+        "serviceMinutes": 15,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 22,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1589.73,
+        "directDepotTravelMinutes": 26.4955,
+        "windowOpenMinutes": 60,
+        "windowCloseMinutes": 300,
+        "serviceMinutes": 20,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 23,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1630.2,
+        "directDepotTravelMinutes": 27.17,
+        "windowOpenMinutes": 30,
+        "windowCloseMinutes": 240,
+        "serviceMinutes": 26,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 24,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1418.59,
+        "directDepotTravelMinutes": 23.643166666666666,
+        "windowOpenMinutes": 30,
+        "windowCloseMinutes": 240,
+        "serviceMinutes": 11,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 25,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1268.95,
+        "directDepotTravelMinutes": 21.149166666666666,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 7,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 26,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1916.04,
+        "directDepotTravelMinutes": 31.934,
+        "windowOpenMinutes": 180,
+        "windowCloseMinutes": 300,
+        "serviceMinutes": 13,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 27,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1907.54,
+        "directDepotTravelMinutes": 31.792333333333332,
+        "windowOpenMinutes": 180,
+        "windowCloseMinutes": 300,
+        "serviceMinutes": 15,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 28,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 2012.88,
+        "directDepotTravelMinutes": 33.548,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 15,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 29,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1760.68,
+        "directDepotTravelMinutes": 29.344666666666665,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 12,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 30,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 726.89,
+        "directDepotTravelMinutes": 12.114833333333333,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 30,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 31,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1457.65,
+        "directDepotTravelMinutes": 24.294166666666666,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 25,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 32,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1377.82,
+        "directDepotTravelMinutes": 22.963666666666665,
+        "windowOpenMinutes": 60,
+        "windowCloseMinutes": 200,
+        "serviceMinutes": 41,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 33,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1147.41,
+        "directDepotTravelMinutes": 19.1235,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 43,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 34,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1209,
+        "directDepotTravelMinutes": 20.15,
+        "windowOpenMinutes": 30,
+        "windowCloseMinutes": 240,
+        "serviceMinutes": 15,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 35,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 1582.51,
+        "directDepotTravelMinutes": 26.375166666666665,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 24,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 36,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1265.6,
+        "directDepotTravelMinutes": 21.093333333333334,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 12,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 37,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1455.38,
+        "directDepotTravelMinutes": 24.256333333333334,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 27,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 38,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1455.38,
+        "directDepotTravelMinutes": 24.256333333333334,
+        "windowOpenMinutes": 180,
+        "windowCloseMinutes": 300,
+        "serviceMinutes": 27,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 39,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1093.79,
+        "directDepotTravelMinutes": 18.229833333333332,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 48,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 40,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 1857.65,
+        "directDepotTravelMinutes": 30.960833333333333,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 30,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 41,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 893.95,
+        "directDepotTravelMinutes": 14.899166666666666,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 160,
+        "serviceMinutes": 50,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 42,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 899.07,
+        "directDepotTravelMinutes": 14.9845,
+        "windowOpenMinutes": 60,
+        "windowCloseMinutes": 300,
+        "serviceMinutes": 76,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 43,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 254.84,
+        "directDepotTravelMinutes": 4.247333333333334,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 30,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 44,
+        "stopType": "Delivery",
+        "directDepotTravelSeconds": 845.48,
+        "directDepotTravelMinutes": 14.091333333333333,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 37,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 45,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 876.69,
+        "directDepotTravelMinutes": 14.6115,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 20,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 46,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 703.86,
+        "directDepotTravelMinutes": 11.731,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 9,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      },
+      {
+        "id": 47,
+        "stopType": "Pickup",
+        "directDepotTravelSeconds": 2094.38,
+        "directDepotTravelMinutes": 34.906333333333336,
+        "windowOpenMinutes": 0,
+        "windowCloseMinutes": 480,
+        "serviceMinutes": 30,
+        "shiftStartMinutes": null,
+        "earliestDirectArrivalMinutes": null,
+        "earliestServiceStartMinutes": null,
+        "arrivalWindowReachableAtShiftStart": null,
+        "reason": "No explicit shift start; depot Arr=0 is a window bound, not a fixed departure. No via-customer route, vehicle load, or release assumed."
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "sha256:LICENSE",
+      "status": "pass",
+      "evidence": {
+        "actual": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+        "expected": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c"
+      }
+    },
+    {
+      "id": "sha256:README.md",
+      "status": "pass",
+      "evidence": {
+        "actual": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+        "expected": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3"
+      }
+    },
+    {
+      "id": "sha256:BETVRPBTW1_robust.csv",
+      "status": "pass",
+      "evidence": {
+        "actual": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+        "expected": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc"
+      }
+    },
+    {
+      "id": "sha256:BETVRPB1_dist.csv",
+      "status": "pass",
+      "evidence": {
+        "actual": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+        "expected": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5"
+      }
+    },
+    {
+      "id": "sha256:BETVRPB1_time.csv",
+      "status": "pass",
+      "evidence": {
+        "actual": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+        "expected": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee"
+      }
+    },
+    {
+      "id": "publisher_generated_history_description",
+      "status": "pass",
+      "evidence": "The generated problem instance with 47 customers are based on a real-world dataset, the typical one-day historical movements of a heavy-duty diesel truck fleet that operated in the Riverside and San Bernardino County regions of California."
+    },
+    {
+      "id": "publisher_units_description",
+      "status": "pass",
+      "evidence": "required demands [in lbs.], time windows [in minute] and service times [in minute]"
+    },
+    {
+      "id": "publisher_ors_matrix_description",
+      "status": "pass",
+      "evidence": "the distance [in meter] and travel duration [in second] matrices is generated by OpenRouteService"
+    },
+    {
+      "id": "root_mit_notice",
+      "status": "pass",
+      "evidence": {
+        "licenseFile": "data/public/v6-data-sources/california-freight-47-derived/LICENSE",
+        "copyright": "Copyright (c) 2024 Dongbo"
+      }
+    },
+    {
+      "id": "receipt_is_list",
+      "status": "pass",
+      "evidence": "list"
+    },
+    {
+      "id": "receipt:LICENSE",
+      "status": "pass",
+      "evidence": {
+        "matchingEntryCount": 1,
+        "receiptEntries": [
+          {
+            "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/LICENSE",
+            "bytes": 1063,
+            "sha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+            "md5": "ab3ad5d906e3de2c0179b73b17fb166a",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "id": "receipt:README.md",
+      "status": "pass",
+      "evidence": {
+        "matchingEntryCount": 1,
+        "receiptEntries": [
+          {
+            "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/README.md",
+            "bytes": 944,
+            "sha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+            "md5": "bdf4153bb1f5853bd6c9874584855b72",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "id": "receipt:BETVRPBTW1_robust.csv",
+      "status": "pass",
+      "evidence": {
+        "matchingEntryCount": 1,
+        "receiptEntries": [
+          {
+            "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPBTW1_robust.csv",
+            "bytes": 1305,
+            "sha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+            "md5": "fa2239bbf73c0fd7be725b3a89f895e9",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "id": "receipt:BETVRPB1_dist.csv",
+      "status": "pass",
+      "evidence": {
+        "matchingEntryCount": 1,
+        "receiptEntries": [
+          {
+            "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_dist.csv",
+            "bytes": 20288,
+            "sha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+            "md5": "b5d234f38027461c9bad6978d2f43d06",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "id": "receipt:BETVRPB1_time.csv",
+      "status": "pass",
+      "evidence": {
+        "matchingEntryCount": 1,
+        "receiptEntries": [
+          {
+            "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_time.csv",
+            "bytes": 17854,
+            "sha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+            "md5": "3632463586c842cba79e28c5aaf93b0e",
+            "httpStatus": 200
+          }
+        ]
+      }
+    },
+    {
+      "id": "customer_header",
+      "status": "pass",
+      "evidence": {
+        "actual": [
+          "id",
+          "stop_type",
+          "Stop Duration",
+          "weight",
+          "Arr",
+          "Due"
+        ],
+        "expected": [
+          "id",
+          "stop_type",
+          "Stop Duration",
+          "weight",
+          "Arr",
+          "Due"
+        ]
+      }
+    },
+    {
+      "id": "customer_row_widths",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "customer_record_count",
+      "status": "pass",
+      "evidence": {
+        "recordCount": 48,
+        "expectedDepotPlusCustomers": 48
+      }
+    },
+    {
+      "id": "customer_required_population",
+      "status": "pass",
+      "evidence": {
+        "id": 0,
+        "stop_type": 0,
+        "Stop Duration": 0,
+        "weight": 0,
+        "Arr": 0,
+        "Due": 0
+      }
+    },
+    {
+      "id": "customer_numeric_finite",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "customer_ids_unique",
+      "status": "pass",
+      "evidence": {}
+    },
+    {
+      "id": "customer_ids_in_file_order",
+      "status": "pass",
+      "evidence": {
+        "actual": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "expected": "0..47, in this order"
+      }
+    },
+    {
+      "id": "customer_exact_rows_unique",
+      "status": "pass",
+      "evidence": {
+        "exactDuplicateCount": 0
+      }
+    },
+    {
+      "id": "stop_types_and_counts",
+      "status": "pass",
+      "evidence": {
+        "Begin Trip": 1,
+        "Delivery": 33,
+        "Pickup": 14
+      }
+    },
+    {
+      "id": "customer_numeric_nonnegative",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "window_open_not_after_close",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "customer_positive_demand_and_service",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "depot_zero_demand_service",
+      "status": "pass",
+      "evidence": [
+        {
+          "id": 0,
+          "stop_type": "Begin Trip",
+          "values": {
+            "Stop Duration": 0,
+            "weight": 0,
+            "Arr": 0,
+            "Due": 480
+          }
+        }
+      ]
+    },
+    {
+      "id": "distance:header_mapping",
+      "status": "pass",
+      "evidence": {
+        "actual": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47"
+        ],
+        "expected": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47"
+        ]
+      }
+    },
+    {
+      "id": "distance:48x48",
+      "status": "pass",
+      "evidence": {
+        "rows": 48,
+        "columnCountFrequency": {
+          "48": 48
+        }
+      }
+    },
+    {
+      "id": "distance:finite",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "distance:nonnegative",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "distance:diagonal_zero",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "travelTime:header_mapping",
+      "status": "pass",
+      "evidence": {
+        "actual": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47"
+        ],
+        "expected": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47"
+        ]
+      }
+    },
+    {
+      "id": "travelTime:48x48",
+      "status": "pass",
+      "evidence": {
+        "rows": 48,
+        "columnCountFrequency": {
+          "48": 48
+        }
+      }
+    },
+    {
+      "id": "travelTime:finite",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "travelTime:nonnegative",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "travelTime:diagonal_zero",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "id": "both_matrices_structurally_cover_exact_customer_ids",
+      "status": "pass",
+      "evidence": {
+        "customerIds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "rowMappingConfidence": "structural consistency, not independently labeled rows"
+      }
+    }
+  ],
+  "summary": {
+    "checkCount": 39,
+    "passedCheckCount": 39,
+    "failedCheckCount": 0,
+    "unknownSemanticFieldCount": 11,
+    "solverRuns": 0,
+    "feeEstimates": 0,
+    "newReleaseTimesCreated": 0
+  },
+  "failures": [],
+  "unknowns": [
+    {
+      "field": "matrixRowSemanticMapping",
+      "value": null,
+      "reason": "CSV has column IDs but no row labels; README does not explicitly state row order. File-order/zero-diagonal checks support the declared positional interpretation only."
+    },
+    {
+      "field": "shiftStartMinutes",
+      "value": null,
+      "reason": "No fixed shift-start field; depot window [0,480] does not establish departure at minute 0."
+    },
+    {
+      "field": "windowClockOriginTimezoneAndHistoricalDate",
+      "value": null,
+      "reason": "Only minute windows are declared; no dated clock origin/timezone or original movement date."
+    },
+    {
+      "field": "windowAppliesToServiceStartOrCompletion",
+      "value": null,
+      "reason": "README names time windows without defining completion semantics."
+    },
+    {
+      "field": "orderReleaseTime",
+      "value": null,
+      "reason": "No release field. Arr is the customer window lower bound; never converted to PortPlan release."
+    },
+    {
+      "field": "vehicleCapacityFleetCountShiftEndAndLoadingPolicy",
+      "value": null,
+      "reason": "No such CSV fields; depot Due is not asserted to be a driver shift end."
+    },
+    {
+      "field": "locationCoordinatesAndZeroArcCause",
+      "value": null,
+      "reason": "No coordinates; zero arcs may indicate colocated/ORS-snapped stops, but cause cannot be verified."
+    },
+    {
+      "field": "originalObservedFieldsAndGenerationTransformations",
+      "value": null,
+      "reason": "README calls this a generated instance based on history; per-field preservation/generation procedures and original logs are not supplied."
+    },
+    {
+      "field": "portContainerIdTypeDischargeCustomsWarehouseCapacityEmptyReturnAndTariff",
+      "value": null,
+      "reason": "Not port-container execution/fee data; cannot instantiate the PortPlan import-container fee model."
+    },
+    {
+      "field": "datasetSpecificLicenseExceptionAndUpstreamHistoryOrsRights",
+      "value": null,
+      "reason": "Root MIT notice is present; no exception in supplied README, but upstream historical data and ORS contractual rights are not independently verified."
+    },
+    {
+      "field": "samplingRepresentativenessAndCurrentFreshness",
+      "value": null,
+      "reason": "One generated historical day; no current operational coverage or independent days established."
+    }
+  ],
+  "findings": [
+    {
+      "id": "generated_not_raw_port_orders",
+      "severity": "high",
+      "confidence": "high",
+      "affectedUse": "Claims of real PNC order validation or operational fee savings",
+      "evidence": "The generated problem instance with 47 customers are based on a real-world dataset, the typical one-day historical movements of a heavy-duty diesel truck fleet that operated in the Riverside and San Bernardino County regions of California.",
+      "remediation": "Describe as a public, historically grounded generated freight instance; do not merge into V5 synthetic fee benchmark."
+    },
+    {
+      "id": "positional_matrix_rows",
+      "severity": "medium",
+      "confidence": "high",
+      "affectedUse": "Joining customers to matrix rows",
+      "evidence": "Headers 0..47 and 48 unlabeled numeric rows; customer file order 0..47; diagonal checks are not an authoritative row-label certificate.",
+      "remediation": "Preserve explicit file-order mapping and caveat; require publisher row-order documentation for operational use."
+    },
+    {
+      "id": "asymmetric_zero_arcs",
+      "severity": "medium",
+      "confidence": "high",
+      "affectedUse": "Travel-matrix ingest",
+      "evidence": {
+        "distance": {
+          "zeroDirected": 4,
+          "asymmetricUnordered": 1116
+        },
+        "travelTime": {
+          "zeroDirected": 4,
+          "asymmetricUnordered": 1116
+        }
+      },
+      "remediation": "Keep directed matrices and off-diagonal zeros unchanged; do not symmetrize or infer duplicate customer records."
+    },
+    {
+      "id": "missing_dispatch_and_fee_fields",
+      "severity": "high",
+      "confidence": "high",
+      "affectedUse": "Direct PortPlan scheduling/fee model or route-feasibility claim",
+      "evidence": "No explicit release, shift start, fleet/capacity, port-specific event dates or tariff.",
+      "remediation": "Keep missing business fields null; this deliverable audits inputs only and runs no optimizer."
+    }
+  ],
+  "reproducibility": {
+    "script": "scripts/audit-public-orders-v6.py",
+    "scriptSha256": "4a7fc6c0eaadb2611fd7cfeff66ea64f2a1631e6a056ea632aa7643ac2012bef",
+    "pythonVersion": "3.12.14",
+    "dependencies": "Python standard library only; Decimal for source numeric comparisons",
+    "command": "python scripts/audit-public-orders-v6.py",
+    "failureExitStatus": 1
+  }
+}

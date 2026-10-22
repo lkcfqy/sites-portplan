@@ -1,0 +1,194 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-17T08:53:00.099576+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v15-browser-first",
+  "fileCount": 34,
+  "uncompressedFileBytes": 1927360,
+  "archiveBytes": 912756,
+  "archiveSha256": "bdfa3c3d7916d2b19bbc4fb40889c7522d8f528828df551551c6bc5cee08aba9",
+  "entrypoint": "artifacts/v15-browser-targeted-first/README.zh.md",
+  "entrypointSha256": "00148d23d87a6e8641d9baba519cbe0d03e624d2fe95e05a58e78a34863d540e",
+  "files": [
+    {
+      "path": "artifacts/v15-browser-targeted-first.paths.json",
+      "bytes": 3074,
+      "sha256": "0ee2d3cca1f909d0da73a263ee53a744144ed1a48b88b43f56549e6f95f4607a"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/README.zh.md",
+      "bytes": 2579,
+      "sha256": "00148d23d87a6e8641d9baba519cbe0d03e624d2fe95e05a58e78a34863d540e"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/copied-original-index.json",
+      "bytes": 10502,
+      "sha256": "f3cb786e11b6d14e0ad29c758ec35d25145700bc5293375c035c768daf51ca04"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/events.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/harness-source.py",
+      "bytes": 24043,
+      "sha256": "d40a7cd9d4c22a193bbad8890af967924fba2a4252e6f5d92c76509ba47a3218"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/static-inputs.json",
+      "bytes": 81109,
+      "sha256": "bddc797dd6bb16383def873b5e9e0b0b7e67bfceab513b97b0dc9dc8cfd19c9a"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/stdout.log",
+      "bytes": 413,
+      "sha256": "2f01e5a3f8a6ca3396d27bfb11ffb8c9cb9e9b9f35827713c124410d05f696c8"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/summary.json",
+      "bytes": 40736,
+      "sha256": "ab9baa99c71e5dc86d9ad677babe443d51fbe91b4d207bf5be38c24d6dbb99a8"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/v15-report-source-native-download-1440/result.json",
+      "bytes": 1675,
+      "sha256": "c93fa6ca34e1b32540c0cf77fbac783436ed2a0e38bd05db42d9f57061ca08a5"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/v15-report-source-native-download-1440/screen.png",
+      "bytes": 191209,
+      "sha256": "23304008e7a5c42763f0a61b4da654c082c1f4c5cf51dd230865352cb5b25e26"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/v15-report-source-native-download-390/result.json",
+      "bytes": 1666,
+      "sha256": "b0616b6fca3b4bfa91559a7139943c6f7f2cbf08d5f32913216be758f92a14c9"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/download-followup-two/v15-report-source-native-download-390/screen.png",
+      "bytes": 101921,
+      "sha256": "c1c9059375b2f04338fc315a868d00b4db9a99143bc3fddcd938ffe0f3b8ba8c"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/excluded-downloads.json",
+      "bytes": 2561,
+      "sha256": "ccd0bc89b679033c1220a173a2e0d46375745ba2e5d55d7c399fa93d20c130ff"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/helpers/portplan-v15-local-download-browser.py",
+      "bytes": 24043,
+      "sha256": "d40a7cd9d4c22a193bbad8890af967924fba2a4252e6f5d92c76509ba47a3218"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/helpers/portplan-v15-targeted-browser.py",
+      "bytes": 23940,
+      "sha256": "cfad020f52b973b281c3ea3751173b11b178d9f4368ca2c320dc547a228a3601"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/events.jsonl",
+      "bytes": 856,
+      "sha256": "d0e7e14fb78f6cabaab3cc49d45f64a6c3fa1e3bc64c20cfc19fa09953d8425a"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/harness-source.py",
+      "bytes": 23940,
+      "sha256": "cfad020f52b973b281c3ea3751173b11b178d9f4368ca2c320dc547a228a3601"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/static-inputs.json",
+      "bytes": 81109,
+      "sha256": "bddc797dd6bb16383def873b5e9e0b0b7e67bfceab513b97b0dc9dc8cfd19c9a"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/stdout.log",
+      "bytes": 834,
+      "sha256": "66e8d058f4bf1ec74ddf613e308e3faac24f1f877dc0ff1a6899b546eb9ad0e0"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/summary.json",
+      "bytes": 109856,
+      "sha256": "f7efe310651374be2924c1b4fcdb7866f113e1009ab12579d757e06fc3f5a539"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-controlled-sha-rejection-refresh/controlled-sha-failure.png",
+      "bytes": 145328,
+      "sha256": "25af4594f6f20d12d76a198d85d05d10c3b40cd7324d7e8f17a058558b9243bb"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-controlled-sha-rejection-refresh/expanded-evidence.png",
+      "bytes": 156759,
+      "sha256": "30d417efee1e43c11530e592d632e960f2cd29d32bf16b92d6d2e6b51c046090"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-controlled-sha-rejection-refresh/result.json",
+      "bytes": 3656,
+      "sha256": "c94ad7529224e0f4eab4bba5741b20d77d9901d9a6b1617e9a11b947846dfd5e"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-controlled-sha-rejection-refresh/screen.png",
+      "bytes": 156759,
+      "sha256": "30d417efee1e43c11530e592d632e960f2cd29d32bf16b92d6d2e6b51c046090"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-ready-matrix-refresh-1440/expanded-evidence.png",
+      "bytes": 156759,
+      "sha256": "30d417efee1e43c11530e592d632e960f2cd29d32bf16b92d6d2e6b51c046090"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-ready-matrix-refresh-1440/result.json",
+      "bytes": 3383,
+      "sha256": "d2bbbf2ce3fc70672ee7a73c5ebaba26ca1232f9b59759a0033bfd932739a805"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-ready-matrix-refresh-1440/screen.png",
+      "bytes": 156759,
+      "sha256": "30d417efee1e43c11530e592d632e960f2cd29d32bf16b92d6d2e6b51c046090"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-ready-matrix-refresh-390/expanded-evidence.png",
+      "bytes": 84977,
+      "sha256": "0c6d28d4efd531940f376a1ab71d27b5107df22cc03e6cffb2c4a3c6f55bd539"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-ready-matrix-refresh-390/result.json",
+      "bytes": 3372,
+      "sha256": "e5b716eacf35f1445467fe330ae0291d3f676709851b952fb420546ae8e8949b"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-ready-matrix-refresh-390/screen.png",
+      "bytes": 84977,
+      "sha256": "0c6d28d4efd531940f376a1ab71d27b5107df22cc03e6cffb2c4a3c6f55bd539"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-report-source-native-download-1440/result.json",
+      "bytes": 572,
+      "sha256": "af29a8a1b6bbaa905a4b5628362c1e30e703145958b1e4e1758192994cfe171c"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-report-source-native-download-1440/screen.png",
+      "bytes": 162972,
+      "sha256": "5be54408e5b4462299298d278998ffdf4e55152f83fa76282dbc2bb299cff12b"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-report-source-native-download-390/result.json",
+      "bytes": 569,
+      "sha256": "abcdc1e2d1428c5635d32d3c58d78a9d2cc703c69f9583b39ac3c22853f991cb"
+    },
+    {
+      "path": "artifacts/v15-browser-targeted-first/initial-five/v15-report-source-native-download-390/screen.png",
+      "bytes": 84452,
+      "sha256": "2ce670138289d5241fed421ca5025fcb6ba227ad010a92f9a37d1fbca1263b25"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 912756,
+      "sha256": "bdfa3c3d7916d2b19bbc4fb40889c7522d8f528828df551551c6bc5cee08aba9"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

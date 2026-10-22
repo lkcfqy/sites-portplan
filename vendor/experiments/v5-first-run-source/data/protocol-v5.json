@@ -1,0 +1,1077 @@
+{
+  "protocolVersion": "portplan-v5-heldout-and-stability-frozen-20261013-01",
+  "createdAt": "2026-10-13T02:51:50.482280+00:00",
+  "executionStateAtFreeze": "The selected V5 seeds have not been used to generate scenarios, inspect feasibility, or run any method before this protocol was saved. Development used earlier V4 evidence and small hand-built fixtures. The protocol is a local prospective holdout definition, not external preregistration.",
+  "purpose": "Test whether inexpensive audited construction improves finite-budget incumbent coverage without suppressing adverse costs, and whether feasibility-triggered plan retention reduces pending date changes and solver calls at a possible fee/completion cost. No novelty, operational-population, or first-place claim.",
+  "horizon": {
+    "start": "2026-10-12",
+    "days": 14,
+    "timezone": "Asia/Seoul"
+  },
+  "defaultTariff": {
+    "pncFreeDays": 4,
+    "ddFreeDays": 10,
+    "pncMultiplier": 1,
+    "ddMultiplier": 1,
+    "pncMode": "retroactive",
+    "ddMode": "progressive"
+  },
+  "defaultOperations": {
+    "returnLagDays": 1,
+    "stagingUnit": "container"
+  },
+  "objectiveMode": "joint",
+  "generator": {
+    "version": "makeScenarioV2 unchanged, imported from scripts/benchmark-v2.mjs",
+    "implementationSha256AtProtocolFreeze": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "definition": {
+      "version": "v2-lcg-independent-cases",
+      "random": "state=(1664525*state+1013904223) mod 2^32; draw=state/2^32, initial state=seed",
+      "sharedDrawOrder": [
+        "sizeFt:40 if draw<0.45 else20",
+        "unloadDays:1 if draw<0.70;2 if draw<0.95;else3",
+        "mechanism-specific draws",
+        "discharge hour:07 if draw<0.5 else10"
+      ],
+      "aged-backlog": {
+        "dischargeDay": "-(3+floor(draw*14))",
+        "releaseDay": "floor(draw*4)",
+        "dueDay": "min(12,releaseDay+unloadDays-1+3+floor(draw*5))"
+      },
+      "new-arrivals": {
+        "releaseDay": "floor(draw*9)",
+        "dischargeDay": "releaseDay-(draw<0.75?0:1)",
+        "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+      },
+      "batch-release": {
+        "releaseDay": "[0,4,7][floor(draw*3)]",
+        "dischargeDay": "releaseDay-(2+floor(draw*5))",
+        "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+      },
+      "capacityProfiles": {
+        "balanced": [
+          "ceil(n/4) truck movements/day",
+          "ceil(n/5) unloading slots/day",
+          "ceil(n/2) staging containers/day"
+        ],
+        "tight": [
+          "ceil(n/6) truck movements/day",
+          "ceil(n/8) unloading slots/day",
+          "ceil(n/4) staging containers/day"
+        ]
+      },
+      "independence": "Unique new seed for every case, no order-list prefix reuse; duplicated generated orders, if any, must be disclosed rather than silently replaced. Generated cases are not independent real-world observations."
+    },
+    "selection": "Full 3 mechanisms × 2 capacity profiles × 3 scales × 2 distinct repetitions = 36 main cells, new seeds 61001..61036. All declared cases retained; no outcome-based selection, replacement or feasibility filtering."
+  },
+  "methods": [
+    "rawMILP",
+    "v4EventSearch",
+    "fastEvent"
+  ],
+  "budget": {
+    "hardWallMs": 1000,
+    "clock": "Parent performance.now(), from before fork through received independently audited complete result. Includes process startup, input/protocol reading, cold dynamic imports, initialization, trip-domain creation, search/solver, all validation, result serialization and IPC delivery. Parent rejects messages received after deadline and enforces SIGKILL; OS timer/exit overhead is reported separately.",
+    "childCooperativeReserveMs": 20,
+    "cpuAllocation": "One method child at a time, no competing benchmark/native-certificate workload. For case index j, rotate method order by j modulo 3; record the actual order and host/cgroup environment. Host load remains an uncertainty.",
+    "solverSeconds": "For rawMILP, the remaining child cooperative time is an advisory solver limit; the authoritative limit is the parent wall clock. No preloaded WASM, cached constructor or external incumbent is shared between children.",
+    "checkpoint": "Only complete engine-audited and independently fee/resource-audited candidates received before the parent deadline are usable. Killed solver attempts have no retained proof. Timely checkpoints may survive with status hard_time_limit and optimality feasible_incumbent_only; no complete candidate means null fees."
+  },
+  "fastConstructor": {
+    "phaseBudgetMs": 200,
+    "phaseStart": "Worker clock immediately after receiving input, before algorithm/audit dynamic imports. Imports and constructor initialization consume this 200 ms share as well as the whole parent budget.",
+    "deadlineRule": "min(whole child cooperative deadline, constructor phase start + 200 ms). If initialization consumes the share, pass an empty initial-policy map to the date search; do not run the old four greedy baselines as an undeclared fallback.",
+    "maxRestarts": 16,
+    "seed": "scenario.seed; constructor and date search both receive this same fixed seed",
+    "handoff": "Pass every complete independently audited constructor checkpoint; pass the returned best complete constructor candidate to solveEventSearch with initialPolicies:{fast:result}. If no complete result, initialPolicies:{}; the date search may construct/restart itself.",
+    "classification": "Heuristic fast-construction-plus-date-search composite, never an optimality certificate or MILP warm start. Record constructor phase time, attempt metadata, incumbent origin and checkpoint receipt time."
+  },
+  "methodDefinitions": {
+    "rawMILP": "Cold solveOptimized with presolveV4=false and joint objective; no heuristic initialization, fallback, prior model or externally supplied incumbent. Only solver proofs with an audited complete result delivered within parent wall time count as optimal.",
+    "v4EventSearch": "Current hardened V4 solveEventSearch, without supplied initialPolicies: its four original greedy initial policies and direct event-date relocation plus randomized destroy/repair. Entire cold initialization and all attempted moves share the parent budget. Explicitly record its current source hash rather than label it the historical V4 binary snapshot.",
+    "fastEvent": "Cold solveFastConstructor capped by the 200 ms phase and maxRestarts=16, followed by the same hardened V4 solveEventSearch with only the fast candidate as initialPolicies (or an empty map). It bypasses the four old greedy initializers. The whole composite, audits and delivery have the same 1,000 ms parent budget; no separate allowance for the constructor."
+  },
+  "primaryCases": [
+    {
+      "id": "v5-aged-backlog-balanced-n16-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 1,
+      "seed": 61001
+    },
+    {
+      "id": "v5-aged-backlog-balanced-n16-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 2,
+      "seed": 61002
+    },
+    {
+      "id": "v5-aged-backlog-balanced-n50-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 61003
+    },
+    {
+      "id": "v5-aged-backlog-balanced-n50-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 61004
+    },
+    {
+      "id": "v5-aged-backlog-balanced-n100-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 1,
+      "seed": 61005
+    },
+    {
+      "id": "v5-aged-backlog-balanced-n100-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 2,
+      "seed": 61006
+    },
+    {
+      "id": "v5-aged-backlog-tight-n16-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 1,
+      "seed": 61007
+    },
+    {
+      "id": "v5-aged-backlog-tight-n16-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 2,
+      "seed": 61008
+    },
+    {
+      "id": "v5-aged-backlog-tight-n50-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 61009
+    },
+    {
+      "id": "v5-aged-backlog-tight-n50-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 61010
+    },
+    {
+      "id": "v5-aged-backlog-tight-n100-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 1,
+      "seed": 61011
+    },
+    {
+      "id": "v5-aged-backlog-tight-n100-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 2,
+      "seed": 61012
+    },
+    {
+      "id": "v5-new-arrivals-balanced-n16-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 1,
+      "seed": 61013
+    },
+    {
+      "id": "v5-new-arrivals-balanced-n16-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 2,
+      "seed": 61014
+    },
+    {
+      "id": "v5-new-arrivals-balanced-n50-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 61015
+    },
+    {
+      "id": "v5-new-arrivals-balanced-n50-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 61016
+    },
+    {
+      "id": "v5-new-arrivals-balanced-n100-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 1,
+      "seed": 61017
+    },
+    {
+      "id": "v5-new-arrivals-balanced-n100-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 2,
+      "seed": 61018
+    },
+    {
+      "id": "v5-new-arrivals-tight-n16-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 1,
+      "seed": 61019
+    },
+    {
+      "id": "v5-new-arrivals-tight-n16-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 2,
+      "seed": 61020
+    },
+    {
+      "id": "v5-new-arrivals-tight-n50-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 61021
+    },
+    {
+      "id": "v5-new-arrivals-tight-n50-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 61022
+    },
+    {
+      "id": "v5-new-arrivals-tight-n100-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 1,
+      "seed": 61023
+    },
+    {
+      "id": "v5-new-arrivals-tight-n100-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 2,
+      "seed": 61024
+    },
+    {
+      "id": "v5-batch-release-balanced-n16-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 1,
+      "seed": 61025
+    },
+    {
+      "id": "v5-batch-release-balanced-n16-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 2,
+      "seed": 61026
+    },
+    {
+      "id": "v5-batch-release-balanced-n50-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 61027
+    },
+    {
+      "id": "v5-batch-release-balanced-n50-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 61028
+    },
+    {
+      "id": "v5-batch-release-balanced-n100-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 1,
+      "seed": 61029
+    },
+    {
+      "id": "v5-batch-release-balanced-n100-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 2,
+      "seed": 61030
+    },
+    {
+      "id": "v5-batch-release-tight-n16-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 1,
+      "seed": 61031
+    },
+    {
+      "id": "v5-batch-release-tight-n16-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 2,
+      "seed": 61032
+    },
+    {
+      "id": "v5-batch-release-tight-n50-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 61033
+    },
+    {
+      "id": "v5-batch-release-tight-n50-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 61034
+    },
+    {
+      "id": "v5-batch-release-tight-n100-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 1,
+      "seed": 61035
+    },
+    {
+      "id": "v5-batch-release-tight-n100-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 2,
+      "seed": 61036
+    }
+  ],
+  "optionalScaleControl": {
+    "required": false,
+    "hardWallMs": 3000,
+    "selectionRule": "All six 100-container repeat-1 main cases (one per mechanism/capacity), fixed before results. No selection based on primary failures; same inputs, methods, seed and 200 ms constructor phase.",
+    "caseIds": [
+      "v5-aged-backlog-balanced-n100-r1",
+      "v5-aged-backlog-tight-n100-r1",
+      "v5-new-arrivals-balanced-n100-r1",
+      "v5-new-arrivals-tight-n100-r1",
+      "v5-batch-release-balanced-n100-r1",
+      "v5-batch-release-tight-n100-r1"
+    ],
+    "reporting": "Separate labeled control artifact and summary, with not_run if omitted. These reused order cases are not additional independent samples and must never be merged into the 1,000 ms primary denominator.",
+    "cases": [
+      {
+        "id": "v5-aged-backlog-balanced-n100-r1--control3000",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "balanced",
+        "count": 100,
+        "repeat": 1,
+        "seed": 61005,
+        "referenceCaseId": "v5-aged-backlog-balanced-n100-r1"
+      },
+      {
+        "id": "v5-aged-backlog-tight-n100-r1--control3000",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "tight",
+        "count": 100,
+        "repeat": 1,
+        "seed": 61011,
+        "referenceCaseId": "v5-aged-backlog-tight-n100-r1"
+      },
+      {
+        "id": "v5-new-arrivals-balanced-n100-r1--control3000",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "balanced",
+        "count": 100,
+        "repeat": 1,
+        "seed": 61017,
+        "referenceCaseId": "v5-new-arrivals-balanced-n100-r1"
+      },
+      {
+        "id": "v5-new-arrivals-tight-n100-r1--control3000",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "tight",
+        "count": 100,
+        "repeat": 1,
+        "seed": 61023,
+        "referenceCaseId": "v5-new-arrivals-tight-n100-r1"
+      },
+      {
+        "id": "v5-batch-release-balanced-n100-r1--control3000",
+        "mechanism": "batch-release",
+        "capacityProfile": "balanced",
+        "count": 100,
+        "repeat": 1,
+        "seed": 61029,
+        "referenceCaseId": "v5-batch-release-balanced-n100-r1"
+      },
+      {
+        "id": "v5-batch-release-tight-n100-r1--control3000",
+        "mechanism": "batch-release",
+        "capacityProfile": "tight",
+        "count": 100,
+        "repeat": 1,
+        "seed": 61035,
+        "referenceCaseId": "v5-batch-release-tight-n100-r1"
+      }
+    ],
+    "inputIdentityRule": "Control id is an output grouping label; generate/use the scenario from referenceCaseId and its original main-case config, preserving original container ids and all modeled fields. Verify full scenario identity with its referenced primary input. These are repeated budgets on the same orders, not new holdout instances.",
+    "executionDecisionAtFreeze": "Root committed to run all six declared controls and all three methods before any V5 scenario generation. If environment failure prevents completion, retain incomplete/missing records rather than select substitute cases."
+  },
+  "rolling": {
+    "methods": [
+      "dailyReopt",
+      "stableRetain"
+    ],
+    "timeLimitSeconds": 0.2,
+    "generator": "Same unchanged makeScenarioV2; 3 mechanisms × 2 scales 12/24 × 2 capacity profiles × 2 distinct repetitions = 24 cases, new seeds 71001..71024. No order generation/preview before protocol save.",
+    "decisionTime": "Day start before daily atomic pickup/unloading-start/return actions. All synthetic orders, their release dates and unloading duration are known initially. Future capacity events and their duration are unknown; effects start on revealDay. No announcedDuration in any primary event.",
+    "shockPatterns": [
+      {
+        "id": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      }
+    ],
+    "patternAssignment": "(mechanismIndex + 2*capacityIndex + scaleIndex + repeatIndex) mod 4, with zero-based indices in declared order; each pattern has six cases and each mechanism has two of each pattern. The explicit per-case shocks are authoritative.",
+    "capacityTransformation": "capacity=max(0, nominal scalar resourceCapacity-reduction) while the shock is active. Normalize/realize as in V4; planner receives actual capacity only through current day and nominal unannounced future capacities. For overlaps use the V4 later-revelation then input-order rule.",
+    "methodDefinitions": {
+      "dailyReopt": "Invoke the same joint solveOptimized once each decision day, timeLimitSeconds=0.2, presolveV4=false, current minEventDay and fixedEvents, no initial-policy heuristic fallback. A complete checked plan executes only today; historical dates never change.",
+      "stableRetain": "At each decision day first reconstruct/reprice the last complete plan for the current observed scenario and check complete coverage, all current hard constraints and fixedEvents/minEventDay. If still valid, retain its pending event dates and do not invoke the optimizer. If absent/invalid, call exactly the same solveOptimized as dailyReopt once with the same 0.2 solver limit. A valid cache is retained even if fresh optimization might reduce fees; no cost threshold, periodic refresh, hindsight, or learned trigger is added."
+    },
+    "comparability": "Same information, physical execution, constraints and per-call solver time limit; different solver-call counts and total work. Not equal episode CPU or end-to-end budgets. Report solverCalls, cacheRetentions, planningWallMs and total runtime; cache checking itself is counted. No wall-deadline claim from an advisory GLPK limit.",
+    "failureRule": "A failed/infeasible/timed-out call without a complete audited plan terminates the episode and keeps its executed-event history and failure day. Do not repair with future knowledge, silently drop containers, price partial completion or replace the seed. Independently check current-day realized capacity before executing; ongoing unloading remains frozen.",
+    "revisionUnit": "One pending event pickup/unloadStart/return whose planned date changes since the immediately preceding accepted plan; count only events not already executed. At first plan revisions=0. Same-fee plan changes count too. Report by case and method, not as boxes, independent events or actual dispatcher cost.",
+    "reporting": "Complete execution counts and losses/wins retained. Pair terminal total/incremental fees only when both methods complete under identical shocks. Report positive/zero/negative fee differences, zero baselines, missing pairs, revision counts and solver calls on all cases and separately on complete matched episodes. No division by zero or composite score hiding failure.",
+    "cases": [
+      {
+        "id": "v5-rolling-aged-backlog-balanced-n12-r1",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "balanced",
+        "count": 12,
+        "repeat": 1,
+        "seed": 71001,
+        "shockPattern": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-balanced-n12-r2",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "balanced",
+        "count": 12,
+        "repeat": 2,
+        "seed": 71002,
+        "shockPattern": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-balanced-n24-r1",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "balanced",
+        "count": 24,
+        "repeat": 1,
+        "seed": 71003,
+        "shockPattern": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-balanced-n24-r2",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "balanced",
+        "count": 24,
+        "repeat": 2,
+        "seed": 71004,
+        "shockPattern": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-tight-n12-r1",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "tight",
+        "count": 12,
+        "repeat": 1,
+        "seed": 71005,
+        "shockPattern": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-tight-n12-r2",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "tight",
+        "count": 12,
+        "repeat": 2,
+        "seed": 71006,
+        "shockPattern": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-tight-n24-r1",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "tight",
+        "count": 24,
+        "repeat": 1,
+        "seed": 71007,
+        "shockPattern": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-aged-backlog-tight-n24-r2",
+        "mechanism": "aged-backlog",
+        "capacityProfile": "tight",
+        "count": 24,
+        "repeat": 2,
+        "seed": 71008,
+        "shockPattern": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-balanced-n12-r1",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "balanced",
+        "count": 12,
+        "repeat": 1,
+        "seed": 71009,
+        "shockPattern": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-balanced-n12-r2",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "balanced",
+        "count": 12,
+        "repeat": 2,
+        "seed": 71010,
+        "shockPattern": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-balanced-n24-r1",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "balanced",
+        "count": 24,
+        "repeat": 1,
+        "seed": 71011,
+        "shockPattern": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-balanced-n24-r2",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "balanced",
+        "count": 24,
+        "repeat": 2,
+        "seed": 71012,
+        "shockPattern": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-tight-n12-r1",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "tight",
+        "count": 12,
+        "repeat": 1,
+        "seed": 71013,
+        "shockPattern": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-tight-n12-r2",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "tight",
+        "count": 12,
+        "repeat": 2,
+        "seed": 71014,
+        "shockPattern": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-tight-n24-r1",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "tight",
+        "count": 24,
+        "repeat": 1,
+        "seed": 71015,
+        "shockPattern": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-new-arrivals-tight-n24-r2",
+        "mechanism": "new-arrivals",
+        "capacityProfile": "tight",
+        "count": 24,
+        "repeat": 2,
+        "seed": 71016,
+        "shockPattern": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-balanced-n12-r1",
+        "mechanism": "batch-release",
+        "capacityProfile": "balanced",
+        "count": 12,
+        "repeat": 1,
+        "seed": 71017,
+        "shockPattern": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-balanced-n12-r2",
+        "mechanism": "batch-release",
+        "capacityProfile": "balanced",
+        "count": 12,
+        "repeat": 2,
+        "seed": 71018,
+        "shockPattern": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-balanced-n24-r1",
+        "mechanism": "batch-release",
+        "capacityProfile": "balanced",
+        "count": 24,
+        "repeat": 1,
+        "seed": 71019,
+        "shockPattern": "combined-resource-shocks",
+        "shocks": [
+          {
+            "id": "truck-combined",
+            "revealDay": 4,
+            "resource": "truck",
+            "reduction": 1,
+            "duration": 2
+          },
+          {
+            "id": "warehouse-combined",
+            "revealDay": 6,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 1
+          },
+          {
+            "id": "staging-combined",
+            "revealDay": 8,
+            "resource": "staging",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-balanced-n24-r2",
+        "mechanism": "batch-release",
+        "capacityProfile": "balanced",
+        "count": 24,
+        "repeat": 2,
+        "seed": 71020,
+        "shockPattern": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-tight-n12-r1",
+        "mechanism": "batch-release",
+        "capacityProfile": "tight",
+        "count": 12,
+        "repeat": 1,
+        "seed": 71021,
+        "shockPattern": "early-truck-one-day",
+        "shocks": [
+          {
+            "id": "truck-early",
+            "revealDay": 3,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 1
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-tight-n12-r2",
+        "mechanism": "batch-release",
+        "capacityProfile": "tight",
+        "count": 12,
+        "repeat": 2,
+        "seed": 71022,
+        "shockPattern": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-tight-n24-r1",
+        "mechanism": "batch-release",
+        "capacityProfile": "tight",
+        "count": 24,
+        "repeat": 1,
+        "seed": 71023,
+        "shockPattern": "late-truck-two-days",
+        "shocks": [
+          {
+            "id": "truck-late",
+            "revealDay": 7,
+            "resource": "truck",
+            "reduction": 2,
+            "duration": 2
+          }
+        ]
+      },
+      {
+        "id": "v5-rolling-batch-release-tight-n24-r2",
+        "mechanism": "batch-release",
+        "capacityProfile": "tight",
+        "count": 24,
+        "repeat": 2,
+        "seed": 71024,
+        "shockPattern": "warehouse-two-days",
+        "shocks": [
+          {
+            "id": "warehouse-stop",
+            "revealDay": 5,
+            "resource": "warehouse",
+            "reduction": 1,
+            "duration": 2
+          }
+        ]
+      }
+    ]
+  },
+  "reporting": {
+    "retain": "Every declared case and method, all hard timeouts, honest no-solution-found states, proven infeasibilities, zero fees, ties and negative improvements retained; partial output has null complete-plan fees. No hidden rerun or successful-run-only average.",
+    "pairing": "Compare fastEvent with v4EventSearch and rawMILP separately, and v4EventSearch with rawMILP, on each complete audited pair set; include absolute KRW and both total/incremental bases. Best-of-all is product selection, not an unnamed algorithm or extra budget.",
+    "status": "Complete feasibility, end-to-end completion, retained checkpoint and strict/numerical/analytic optimality are separate. Floating fee overrides are outside primary default integers; a solver tolerance result is never silently upgraded to strict proof.",
+    "timing": "Record startup/phase/search/solver/audit/IPC if available, first complete incumbent receipt, final receipt, timeout/exit, attempted move counts and sources; report median/p95/max and all no-incumbent outcomes.",
+    "strata": "Break down by mechanism, capacity, scale and repetition; two seeds per cell do not establish a business population or make stochastic wall-limited searches exactly replayable.",
+    "interpretation": "V5 is a prospectively frozen new-seed assessment after method development on V4, not external preregistration or formal replication of advanced literature algorithms. Do not merge V4 and V5 outcomes to improve an apparent percentage. No customer savings, true recovery probabilities, confidence interval or winning odds."
+  },
+  "evidenceRequirements": {
+    "sourceFreeze": "Before the first V5 seed is generated/run, freeze runner and all relevant algorithm/engine/auditor/locking/protocol bytes and package versions with hashes. Source bug fixes after a run are disclosed and first raw evidence retained; a changed method requires a separately named run/protocol.",
+    "independentReview": "No new main benchmark is executed by the red-team reviewer. Final code/coverage/fee/freeze/deadline review follows complete archived records, independently of JS cost helpers; extra native certification is separate verification budget.",
+    "dataBoundary": "Only public tariff sources and their disclosed interpretations; all orders/capacities/shocks are synthetic. No private records, unsolicited contacts or fabricated enterprise attribution."
+  },
+  "sourceBasis": [
+    "docs/reviewer-v4.md",
+    "docs/evaluation-v4.md",
+    "docs/research-roadmap-v4.md",
+    "docs/validation-plan-v5.md",
+    "data/source_registry.json"
+  ]
+}

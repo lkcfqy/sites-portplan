@@ -1,0 +1,381 @@
+{
+  "schema": "portplan.v7.external-methods-source-manifest.1",
+  "createdAtUtc": "2026-10-13T12:05:18.334844+00:00",
+  "scope": "Public source-method investigation; no optimizers or new-seed benchmarks run",
+  "artifactCount": 12,
+  "sourceBytes": 294917,
+  "artifacts": [
+    {
+      "path": "alns/LICENSE.md",
+      "url": "https://raw.githubusercontent.com/N-Wouda/ALNS/5ef1fd1171e6be49c947cd3e56e485509b9c1d64/LICENSE.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 1095,
+      "sha256": "b2f979be5ffb974e15a8a90fc1866842e81d9af15489cb7a3fc2d91823afc66f",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T11:59:11.518608+00:00",
+      "upstreamCommit": "5ef1fd1171e6be49c947cd3e56e485509b9c1d64",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "alns/LICENSE.md",
+      "purpose": "Licensed companion RCPSP method reference; external PSPLIB instance excluded"
+    },
+    {
+      "path": "alns/README.md",
+      "url": "https://raw.githubusercontent.com/N-Wouda/ALNS/5ef1fd1171e6be49c947cd3e56e485509b9c1d64/README.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 5941,
+      "sha256": "0a0fc7ab90c08cf76cfe7bbd2f79970b7ca41fde39a9fc55ff77f03fc712c517",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T11:59:11.886415+00:00",
+      "upstreamCommit": "5ef1fd1171e6be49c947cd3e56e485509b9c1d64",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "alns/LICENSE.md",
+      "purpose": "Licensed companion RCPSP method reference; external PSPLIB instance excluded"
+    },
+    {
+      "path": "alns/resource_constrained_project_scheduling_problem.ipynb",
+      "url": "https://raw.githubusercontent.com/N-Wouda/ALNS/5ef1fd1171e6be49c947cd3e56e485509b9c1d64/examples/resource_constrained_project_scheduling_problem.ipynb",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 24485,
+      "sha256": "b479ff92404b2dc4dad6239ce09fd6715d874154cd88dbad3541fa1de965efb4",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T11:59:12.236507+00:00",
+      "upstreamCommit": "5ef1fd1171e6be49c947cd3e56e485509b9c1d64",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "alns/LICENSE.md",
+      "purpose": "Licensed companion RCPSP method reference; external PSPLIB instance excluded"
+    },
+    {
+      "path": "ortools/LICENSE",
+      "url": "https://raw.githubusercontent.com/google/or-tools/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5/LICENSE",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "declaredLicense": "Apache-2.0",
+      "retrievedAtUtc": "2026-10-13T11:59:12.581788+00:00",
+      "upstreamCommit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "ortools/LICENSE",
+      "purpose": "Optional exact generic RCPSP model reference; not benchmarked"
+    },
+    {
+      "path": "ortools/rcpsp_sat.py",
+      "url": "https://raw.githubusercontent.com/google/or-tools/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5/examples/python/rcpsp_sat.py",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 14776,
+      "sha256": "b9b959642e2b30e8116f7ed3a5c7be25fdbcae74cddc263c03ce2ad3b95b0bb8",
+      "declaredLicense": "Apache-2.0",
+      "retrievedAtUtc": "2026-10-13T11:59:13.242151+00:00",
+      "upstreamCommit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "ortools/LICENSE",
+      "purpose": "Optional exact generic RCPSP model reference; not benchmarked"
+    },
+    {
+      "path": "papers/alns-joss-05028.pdf",
+      "url": "https://joss.theoj.org/papers/10.21105/joss.05028.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 222905,
+      "sha256": "4f4dd409718bea5e88fa001a069707fc62a73d8f2abb76ad4007657a66d5a35f",
+      "declaredLicense": "CC-BY-4.0",
+      "retrievedAtUtc": "2026-10-13T12:00:31.847468+00:00",
+      "upstreamCommit": null,
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "papers/alns-joss-05028.pdf",
+      "purpose": "Open software publication and attribution/license evidence"
+    },
+    {
+      "path": "tsp-grasp/LICENSE",
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/LICENSE",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 1081,
+      "sha256": "f33e67c7e2a783fc2fb9e9facb5be488d5dcbb1b055f487a927f4313231ad4e8",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T12:00:33.679163+00:00",
+      "upstreamCommit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "tsp-grasp/LICENSE",
+      "purpose": "Licensed GRASP reference source selection, TSP only; not an installed full package"
+    },
+    {
+      "path": "tsp-grasp/README.md",
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/README.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 2119,
+      "sha256": "a248bfa374f94063f525f21f61cd925111ab34816d46b74a26aaf88f0a20ecba",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T12:00:34.138291+00:00",
+      "upstreamCommit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "tsp-grasp/LICENSE",
+      "purpose": "Licensed GRASP reference source selection, TSP only; not an installed full package"
+    },
+    {
+      "path": "tsp-grasp/src/tspgrasp/grasp.py",
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/src/tspgrasp/grasp.py",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 1356,
+      "sha256": "25271922198b55b51a4ee3abf29557255d21271dbb236555cdd8d7f4761a43f1",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T12:00:34.513353+00:00",
+      "upstreamCommit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "tsp-grasp/LICENSE",
+      "purpose": "Licensed GRASP reference source selection, TSP only; not an installed full package"
+    },
+    {
+      "path": "tsp-grasp/src/tspgrasp/pypure/grasp.py",
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/src/tspgrasp/pypure/grasp.py",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 1333,
+      "sha256": "ed0c75b2e937e7a25d4cd2714f7a9327987e43563b7cdd0c4461981960dc302b",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T12:01:17.706871+00:00",
+      "upstreamCommit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "tsp-grasp/LICENSE",
+      "purpose": "Licensed GRASP reference source selection, TSP only; not an installed full package"
+    },
+    {
+      "path": "tsp-grasp/src/tspgrasp/pypure/constructive.py",
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/src/tspgrasp/pypure/constructive.py",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 4670,
+      "sha256": "f620759a2331cc719c3c7e58d9fdcb116a23639c119d73030bd9c526e9f30c43",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T12:01:18.064299+00:00",
+      "upstreamCommit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "tsp-grasp/LICENSE",
+      "purpose": "Licensed GRASP reference source selection, TSP only; not an installed full package"
+    },
+    {
+      "path": "tsp-grasp/src/tspgrasp/base.py",
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/src/tspgrasp/base.py",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 3798,
+      "sha256": "dc311c97f732b9a730cc230d06c456fcc5c413602f63d1079ec3d1701d87bee7",
+      "declaredLicense": "MIT",
+      "retrievedAtUtc": "2026-10-13T12:01:18.308113+00:00",
+      "upstreamCommit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "unmodified": true,
+      "executed": false,
+      "redistributed": true,
+      "licenseEvidencePath": "tsp-grasp/LICENSE",
+      "purpose": "Licensed GRASP reference source selection, TSP only; not an installed full package"
+    }
+  ],
+  "upstreamVersions": [
+    {
+      "repository": "https://github.com/N-Wouda/ALNS",
+      "branchAtRetrieval": "master",
+      "commit": "5ef1fd1171e6be49c947cd3e56e485509b9c1d64",
+      "license": "MIT",
+      "notice": "alns/LICENSE.md",
+      "filesAreSelection": true
+    },
+    {
+      "repository": "https://github.com/bruscalia/tsp-grasp",
+      "branchAtRetrieval": "main",
+      "commit": "f609c5ce753cc9dec6e597056e0da3325167c8ab",
+      "license": "MIT",
+      "notice": "tsp-grasp/LICENSE",
+      "filesAreSelection": true
+    },
+    {
+      "repository": "https://github.com/google/or-tools",
+      "branchAtRetrieval": "stable",
+      "commit": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+      "license": "Apache-2.0",
+      "notice": "ortools/LICENSE",
+      "filesAreSelection": true
+    }
+  ],
+  "readButNotRedistributed": [
+    {
+      "path": null,
+      "url": "https://www.resende.info/mauricio/doc/sgrasp2010.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 223609,
+      "sha256": "794a96fbecba5c911896b5e1cd3b3b2e8e9826b5ae8806bdba6645b22ca7b58a",
+      "declaredLicense": "unknown; openly readable author report, no redistribution grant located",
+      "retrievedAtUtc": "2026-10-13T12:00:35.880121+00:00",
+      "redistributed": false
+    }
+  ],
+  "additionalSources": [
+    {
+      "id": "feo-resende-1995",
+      "title": "Greedy Randomized Adaptive Search Procedures",
+      "authors": [
+        "Thomas A. Feo",
+        "Mauricio G. C. Resende"
+      ],
+      "year": 1995,
+      "doi": "10.1007/BF01096763",
+      "url": "https://link.springer.com/article/10.1007/BF01096763",
+      "readDepth": "Actual publisher page and abstract; subscription full text not obtained",
+      "redistributed": false
+    },
+    {
+      "id": "alns-rcpsp-official-doc",
+      "url": "https://alns.readthedocs.io/en/stable/examples/resource_constrained_project_scheduling_problem.html",
+      "readDepth": "Full official example including schedule/destroy/repair/justify code; pinned notebook separately archived",
+      "licenseEvidence": "alns/LICENSE.md",
+      "redistributedPage": false
+    },
+    {
+      "id": "fleszar-hindi-2004",
+      "title": "Solving the resource-constrained project scheduling problem by a variable neighbourhood search",
+      "authors": [
+        "Krzysztof Fleszar",
+        "Khalil S. Hindi"
+      ],
+      "year": 2004,
+      "journal": "European Journal of Operational Research 155(2), 402–413",
+      "doi": "10.1016/S0377-2217(02)00884-6",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221702008846",
+      "readDepth": "Public indexed publisher metadata/abstract and actual licensed companion implementation citing Figure 1; original full paper not obtained",
+      "directOpenStatus": 403,
+      "accessLimitRespected": true,
+      "redistributed": false
+    },
+    {
+      "id": "valls-ballestin-quintanilla-2005",
+      "title": "Justification and RCPSP: A technique that pays",
+      "authors": [
+        "Vicente Valls",
+        "Francisco Ballestín",
+        "Sacramento Quintanilla"
+      ],
+      "year": 2005,
+      "journal": "European Journal of Operational Research 165(2), 375–386",
+      "doi": "10.1016/j.ejor.2004.04.008",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221704002462",
+      "readDepth": "Indexed publisher metadata/abstract and actual licensed companion justify implementation; original full paper not obtained",
+      "redistributed": false
+    },
+    {
+      "id": "psplib-j30-separate-investigation",
+      "projectDocument": "docs/public-validation-v7.md",
+      "scope": "Official original RCPSP instances only; no PortPlan field mapping",
+      "licenseBoundary": "Research-use permission is separate from ALNS MIT; no raw PSPLIB data bundled here",
+      "independentSourceCaseCount": 480,
+      "realPortOrders": false
+    },
+    {
+      "id": "prior-v6-drayage-investigation",
+      "projectDocument": "docs/real-data-investigation-v6.md",
+      "manifest": "data/public/v6-data-sources/manifest.json",
+      "readDepth": "Existing verified sources revisited to avoid duplicate large downloads",
+      "conclusion": "No directly compatible complete real PNC source or confirmed licensed published drayage method implementation was obtained in the examined sources; not an exhaustive absence claim"
+    }
+  ],
+  "failedPathProbes": [
+    {
+      "url": "https://raw.githubusercontent.com/google/or-tools/100f66e6242ab8bf8d32feb8f3bf086db66ae2b5/examples/python/minimal_jobshop_sat.py",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bruscalia/tsp-grasp/f609c5ce753cc9dec6e597056e0da3325167c8ab/src/tspgrasp/constructive.py",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "methodRecommendations": [
+    {
+      "name": "source-adapted classical GRASP",
+      "target": "PortPlan same date/resource/fee/execution-lock model",
+      "actualSources": [
+        "Resende–Ribeiro author report, 2010 revision",
+        "feo-resende-1995",
+        "tsp-grasp licensed reference selection"
+      ],
+      "retainedMethodCore": [
+        "greedy randomized adaptive construction",
+        "restricted candidate list",
+        "local improvement",
+        "multistart best complete feasible incumbent"
+      ],
+      "adaptationBoundary": [
+        "legal joint pickup/unload/return triples",
+        "fee/scarcity score",
+        "dynamic capacity and staging intervals",
+        "executed event locks",
+        "problem-specific single/pair moves and checkpoint/deadline implementation"
+      ],
+      "claimLimits": [
+        "not a specific drayage paper reproduction",
+        "not a novelty or SOTA claim",
+        "no performance result from this investigation"
+      ]
+    },
+    {
+      "name": "literature-inspired bounded iterated serial SGS",
+      "target": "Standalone original generic RCPSP public benchmark",
+      "actualSources": [
+        "alns-rcpsp-official-doc",
+        "fleszar-hindi-2004",
+        "valls-ballestin-quintanilla-2005",
+        "papers/alns-joss-05028.pdf"
+      ],
+      "retainedMethodCore": [
+        "topological priority list",
+        "earliest feasible complete fixed-duration insertion",
+        "explicit destroy/repair choices"
+      ],
+      "adaptationBoundary": [
+        "different selection/acceptance/justification/iteration/time rules must be reported",
+        "full companion uses adaptive segmented roulette and 5000 iterations",
+        "no creation of PortPlan release/fees/pickup/return fields"
+      ],
+      "claimLimits": [
+        "partial external resource/precedence validation only",
+        "not complete Fleszar VNS or Muller ALNS reproduction",
+        "PSPLIB is generated research benchmark, not real port orders"
+      ]
+    }
+  ],
+  "verification": {
+    "allArchivedSourceBytesMatchRetrievalHashes": true,
+    "sourceCodeExecuted": false,
+    "nativeSolverRun": false,
+    "existingRawDataModified": false,
+    "authorsContacted": false,
+    "accessControlsBypassed": false,
+    "attributionPath": "ATTRIBUTION.md"
+  }
+}

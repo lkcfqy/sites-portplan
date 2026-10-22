@@ -1,0 +1,1969 @@
+{
+  "schemaVersion": "portplan-pure-python-feasibility-review-v6",
+  "valid": true,
+  "fixture": false,
+  "readOnly": true,
+  "solverRuns": 0,
+  "importsJavaScript": false,
+  "scope": "Independently enumerated necessary interval bounds and published witnesses only; no positive feasibility, native-solver reproof, new-seed outcome or operational certification",
+  "inputHashes": {
+    "data/feasibility-witnesses-v6.json": "2a5f76e5c8df79c889b0840d3a901fa68579d247978156bf0e40fe875aafbc94",
+    "data/rolling-v5.json": "482f6f8df7f0d46cf7d8b0356961c1aaf787f5e9f1566db7e18ce7c1afa23592",
+    "src/feasibility-explanation-v6.js": "12a55a4cb65c3d4d6c22db71e43f62b23fb3837675529d9430c1b8c86038042d",
+    "data/failure-diagnosis-v6.json": "57f9a34ed16a20c9fab115c0666b8c826d1c77bbe0d2a660a777d7ef0c2c419d"
+  },
+  "reviewImplementationSha256": "8867e32980018e6d9eb5302d6a0c98ae1263d0ca5f4fa9d9c6896bffe8837ff6",
+  "implementationBindings": {
+    "explanationModuleSha256": "12a55a4cb65c3d4d6c22db71e43f62b23fb3837675529d9430c1b8c86038042d",
+    "publishedExplanationSha256": "12a55a4cb65c3d4d6c22db71e43f62b23fb3837675529d9430c1b8c86038042d",
+    "exportedFunctionSourceSha256": "0aa07d6b10ab0184cfc59f81367d632384253472ba02d50b4e5f3993e9ce57fa",
+    "functionSourceExtraction": "Unique export function explainFeasibility declaration through end of its single-function module"
+  },
+  "summary": {
+    "caseCount": 24,
+    "nominalNecessaryInfeasibilityCount": 1,
+    "failedMethodEpisodeCount": 16,
+    "failedEpisodeNecessaryInfeasibilityCount": 4,
+    "unresolvedFailedEpisodeCount": 12,
+    "explanationInputsChecked": 40,
+    "publishedWitnessesChecked": 15,
+    "legalTripDomainsEnumerated": 64808,
+    "intervalsChecked": 4200,
+    "nativeLockedInfeasibilityRecordsReferenced": 16,
+    "nativeProofsReverifiedByNecessaryCuts": 4,
+    "unknownNecessaryCutResultsAreFeasibleClaims": false,
+    "wallSeconds": 1.807765108998865
+  },
+  "cases": [
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n12-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1755,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n12-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1926,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n24-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 4158,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n24-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 3542,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n12-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 2115,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "dailyReopt": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 2115,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "stableRetain": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 2115,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n12-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1984,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "stableRetain": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 396,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "dailyReopt": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 398,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n24-r1",
+      "nominal": {
+        "valid": true,
+        "status": "proven_infeasible_necessary_condition",
+        "provesInfeasibility": true,
+        "provesFeasibility": false,
+        "tripCount": 3629,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 1,
+        "publishedWitnessesChecked": 1,
+        "witnesses": [
+          {
+            "kind": "resource_interval_lower_bound",
+            "resource": "warehouse",
+            "fromDay": 1,
+            "toDay": 9,
+            "minimumRequired": 28,
+            "availableCapacity": 27,
+            "deficit": 1,
+            "contributors": [
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C001",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C002",
+                "minimumUsage": 2
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C003",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C004",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C005",
+                "minimumUsage": 2
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C006",
+                "minimumUsage": 2
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C007",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C008",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C009",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C010",
+                "minimumUsage": 2
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C011",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C012",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C013",
+                "minimumUsage": 2
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C014",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C015",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C016",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C017",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C018",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C019",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C021",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C022",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C023",
+                "minimumUsage": 1
+              },
+              {
+                "id": "v5-rolling-aged-backlog-tight-n24-r1-C024",
+                "minimumUsage": 1
+              }
+            ]
+          }
+        ]
+      },
+      "failures": {
+        "dailyReopt": {
+          "valid": true,
+          "status": "proven_infeasible_necessary_condition",
+          "provesInfeasibility": true,
+          "provesFeasibility": false,
+          "tripCount": 3629,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 1,
+          "publishedWitnessesChecked": 1,
+          "witnesses": [
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "warehouse",
+              "fromDay": 1,
+              "toDay": 9,
+              "minimumRequired": 28,
+              "availableCapacity": 27,
+              "deficit": 1,
+              "contributors": [
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C001",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C002",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C003",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C004",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C008",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C009",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C010",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C011",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C012",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C013",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C014",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C015",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C017",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C018",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C019",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C021",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C022",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C024",
+                  "minimumUsage": 1
+                }
+              ]
+            }
+          ],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "stableRetain": {
+          "valid": true,
+          "status": "proven_infeasible_necessary_condition",
+          "provesInfeasibility": true,
+          "provesFeasibility": false,
+          "tripCount": 3629,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 1,
+          "publishedWitnessesChecked": 1,
+          "witnesses": [
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "warehouse",
+              "fromDay": 1,
+              "toDay": 9,
+              "minimumRequired": 28,
+              "availableCapacity": 27,
+              "deficit": 1,
+              "contributors": [
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C001",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C002",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C003",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C004",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C008",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C009",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C010",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C011",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C012",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C013",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C014",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C015",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C017",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C018",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C019",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C021",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C022",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-aged-backlog-tight-n24-r1-C024",
+                  "minimumUsage": 1
+                }
+              ]
+            }
+          ],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n24-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 4219,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "stableRetain": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 1811,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "dailyReopt": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 1811,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n12-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 874,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n12-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 827,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n24-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1897,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n24-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 2365,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n12-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1177,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "dailyReopt": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 352,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "stableRetain": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 353,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n12-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1018,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n24-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 2263,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n24-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1855,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "stableRetain": {
+          "valid": true,
+          "status": "proven_infeasible_necessary_condition",
+          "provesInfeasibility": true,
+          "provesFeasibility": false,
+          "tripCount": 240,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 6,
+          "publishedWitnessesChecked": 6,
+          "witnesses": [
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 8,
+              "toDay": 13,
+              "minimumRequired": 24,
+              "availableCapacity": 22,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 1
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 7,
+              "toDay": 13,
+              "minimumRequired": 26,
+              "availableCapacity": 24,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 1
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 6,
+              "toDay": 13,
+              "minimumRequired": 30,
+              "availableCapacity": 28,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 1
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 5,
+              "toDay": 13,
+              "minimumRequired": 34,
+              "availableCapacity": 32,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 4,
+              "toDay": 13,
+              "minimumRequired": 38,
+              "availableCapacity": 36,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C011",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C014",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 3,
+              "toDay": 13,
+              "minimumRequired": 42,
+              "availableCapacity": 40,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C001",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C011",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C013",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C014",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            }
+          ],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "dailyReopt": {
+          "valid": true,
+          "status": "proven_infeasible_necessary_condition",
+          "provesInfeasibility": true,
+          "provesFeasibility": false,
+          "tripCount": 242,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 6,
+          "publishedWitnessesChecked": 6,
+          "witnesses": [
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 8,
+              "toDay": 13,
+              "minimumRequired": 24,
+              "availableCapacity": 22,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 7,
+              "toDay": 13,
+              "minimumRequired": 26,
+              "availableCapacity": 24,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 6,
+              "toDay": 13,
+              "minimumRequired": 30,
+              "availableCapacity": 28,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 5,
+              "toDay": 13,
+              "minimumRequired": 34,
+              "availableCapacity": 32,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 4,
+              "toDay": 13,
+              "minimumRequired": 38,
+              "availableCapacity": 36,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C011",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C014",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            },
+            {
+              "kind": "resource_interval_lower_bound",
+              "resource": "truck",
+              "fromDay": 3,
+              "toDay": 13,
+              "minimumRequired": 42,
+              "availableCapacity": 40,
+              "deficit": 2,
+              "contributors": [
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C001",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C002",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C003",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C004",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C005",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C006",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C007",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C008",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C009",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C010",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C011",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C012",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C013",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C014",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C015",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C016",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C017",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C018",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C019",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C020",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C021",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C022",
+                  "minimumUsage": 2
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C023",
+                  "minimumUsage": 1
+                },
+                {
+                  "id": "v5-rolling-new-arrivals-tight-n24-r2-C024",
+                  "minimumUsage": 2
+                }
+              ]
+            }
+          ],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n12-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1098,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n12-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 952,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n24-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1545,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n24-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1770,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n12-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 759,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "dailyReopt": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 759,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "stableRetain": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 759,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n12-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 878,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {
+        "stableRetain": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 93,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        },
+        "dailyReopt": {
+          "valid": true,
+          "status": "not_proven_infeasible",
+          "provesInfeasibility": false,
+          "provesFeasibility": false,
+          "tripCount": 93,
+          "intervalsChecked": 105,
+          "violatedBoundCount": 0,
+          "publishedWitnessesChecked": 0,
+          "witnesses": [],
+          "nativeLockedCertificateStatus": "proven_infeasible",
+          "nativeProofVerifiedByThisEnumeration": false
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n24-r1",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1688,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n24-r2",
+      "nominal": {
+        "valid": true,
+        "status": "not_proven_infeasible",
+        "provesInfeasibility": false,
+        "provesFeasibility": false,
+        "tripCount": 1719,
+        "intervalsChecked": 105,
+        "violatedBoundCount": 0,
+        "publishedWitnessesChecked": 0,
+        "witnesses": []
+      },
+      "failures": {}
+    }
+  ]
+}

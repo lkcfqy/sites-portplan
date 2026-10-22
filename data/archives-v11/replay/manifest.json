@@ -1,0 +1,369 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-16T17:26:22.424071+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v11-commitment-replay",
+  "fileCount": 69,
+  "uncompressedFileBytes": 7509482,
+  "archiveBytes": 124096,
+  "archiveSha256": "5d0d2c194e801fee97e49f8442c1a9f43ff94b0670cb833f514678de7932089e",
+  "entrypoint": "data/replay-commitment-v11.json",
+  "entrypointSha256": "163dbf425804070890539cf0f5e523bde090ce33e1e234f5108f8a25f2ab3220",
+  "files": [
+    {
+      "path": "artifacts/v11-commitment-replay-first/complete.json",
+      "bytes": 43649,
+      "sha256": "3c829f1970e835918bf5f89a587e0be902599f97b4bab955e0c3f0d98b19a5c1"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/decision-journal-001.jsonl",
+      "bytes": 38051,
+      "sha256": "d8d014931bed8fc9c4637ccceb7da49d9d35b1e7fe3b8b584c9ff6915d2772f9"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/decision-journal-002.jsonl",
+      "bytes": 38043,
+      "sha256": "10a1100caabf10698f46f9fd85dda04719eb107f6d55c62617ad79696cf8d556"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/decision-journal-003.jsonl",
+      "bytes": 38041,
+      "sha256": "d2521ae7289ff2eacdf0d4995f00b9ce051549025d09d0003fbd536a8118920a"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/decision-journal-004.jsonl",
+      "bytes": 38048,
+      "sha256": "8ddb5600ce26956b21f9f9b4b32162cc060a8372c4a6152d7d964472c564e9b5"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/decision-journal-005.jsonl",
+      "bytes": 38041,
+      "sha256": "64e76711a50971c2b90ca144cf2f0d30462a8cde9a5900f3e584f3d2eb0eb842"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/decision-journal-006.jsonl",
+      "bytes": 38042,
+      "sha256": "c4f0bc714c805707094fe00d00f33109ba4c4a706ae7c06a200a37a9050eeed1"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/declaration.json",
+      "bytes": 9578,
+      "sha256": "51ec513ff7ddf470ec66b65b272408a1e7c98cc25e304a801d721b4b4e8a904f"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/episode-001.json",
+      "bytes": 11066,
+      "sha256": "1df8ff6312182ba45d7f858bc26b8dccbea6492098eae1d6de8d8573d774aca5"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/episode-002.json",
+      "bytes": 134941,
+      "sha256": "ebdc254af131abe28abbc093f6a8ee93fcddf1df7b2b0b3aef3364f71294ee15"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/episode-003.json",
+      "bytes": 134905,
+      "sha256": "54960ebfe2dde77747c373c179812e1bebaff8a6844b3237524caa03de6019ab"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/episode-004.json",
+      "bytes": 11058,
+      "sha256": "b9f8a8ff350a9feb2f13d7ffec166b741dfab033efa84586502345a4934cba11"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/episode-005.json",
+      "bytes": 11081,
+      "sha256": "a4092fd3d79261ffc5a6338611d4c3b760906f4acaf4a0d8a32f152b34589d41"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/episode-006.json",
+      "bytes": 134937,
+      "sha256": "18b39601140ed534a17ff238967e3412a79bc62c518f6eb13b0b58296d0c4c6c"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/data/protocol-v2.json",
+      "bytes": 17300,
+      "sha256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/benchmark-v10.mjs",
+      "bytes": 38101,
+      "sha256": "0a85bb81481c868842b387b4d8f9a58130e193ffea546c6712f96e3bc5f74ccb"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/benchmark-v2.mjs",
+      "bytes": 19439,
+      "sha256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/certify-v4.py",
+      "bytes": 33565,
+      "sha256": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/episode-v10.worker.mjs",
+      "bytes": 8554,
+      "sha256": "0135c6eb12e3ad830ee913ed2753748b35567287665b34bba577de79924e4675"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/highs-planner-v11.mjs",
+      "bytes": 22273,
+      "sha256": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/highs-service-v8.py",
+      "bytes": 17941,
+      "sha256": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/replay-commitment-v11.mjs",
+      "bytes": 10095,
+      "sha256": "cc782fc8aa222e0829cc893b837e2b4f48debe904d1bbcb2ce56b47cd8e48ff5"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/replay-commitment-v11.planner.mjs",
+      "bytes": 24169,
+      "sha256": "c1423e3af9422265b6b708bed03d424d9a154f283d753a1b342b499744048ffd"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/replay-commitment-v11.worker.mjs",
+      "bytes": 9745,
+      "sha256": "0624c5a2453a9f827b5f092e41e74f2c7c74bb0c33a61a27297edbe5fcffc573"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/review-replay-commitment-v11.py",
+      "bytes": 23075,
+      "sha256": "80cc1057e9cd9ae64100b7facac747013b09111d00ee03c012dbbc273e17402f"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/review-v5.py",
+      "bytes": 55405,
+      "sha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/rolling-benchmark-v7.mjs",
+      "bytes": 30049,
+      "sha256": "6feaee69c7a9b8b104f67517db7a79dfb4e8aede105056553dd39c4cc73fabe3"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/scripts/rolling-v7.worker.mjs",
+      "bytes": 10972,
+      "sha256": "0d5adc5e2e86017dd3c252e06bf692a9e4b7dd4e13d35e0694df6f84fcefdaa7"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/src/commitment-slack-v11.js",
+      "bytes": 8307,
+      "sha256": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/src/engine.js",
+      "bytes": 27539,
+      "sha256": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-first/source/src/rolling-plan.js",
+      "bytes": 15849,
+      "sha256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/complete.json",
+      "bytes": 16622,
+      "sha256": "7c9f73feb60cd58724c527b7d91dd4501b2bc2ab29a75074453de6de4a41fba2"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/decision-journal-001.jsonl",
+      "bytes": 64131,
+      "sha256": "eca96eb3fec4bb92ef7e056d8ec35dffc37aa4282e93be5b4267e21687836790"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/decision-journal-002.jsonl",
+      "bytes": 463187,
+      "sha256": "83a908cdd78620b8182e141e76631bd0eea15b9542dd8c0ecf5d89f537ef4bcd"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/decision-journal-003.jsonl",
+      "bytes": 463213,
+      "sha256": "283e6e9d6152311bcbed127ee5507213ea9fd97c6d9d89a3e2ef9d4f358accd4"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/decision-journal-004.jsonl",
+      "bytes": 64138,
+      "sha256": "d5ca927acb3a567e8c20e1d3787af092623730c0bfc4c3a39e08046a5e5d3b34"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/decision-journal-005.jsonl",
+      "bytes": 64147,
+      "sha256": "8fce2d8d9f515a550e4dcad32f88cb3f5366b51aec906e415ec75af28e545f34"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/decision-journal-006.jsonl",
+      "bytes": 463215,
+      "sha256": "fce965f816e8a2865a64738878711b85c9351b6287d2936af6ccbf26483fbb23"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/declaration.json",
+      "bytes": 10344,
+      "sha256": "e29ebe903a523965ecedb9f644217634a76b75f6575bcca0fbef5713cd2e31da"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/episode-001.json",
+      "bytes": 218480,
+      "sha256": "4937366793b8b8b91f8418a6713219f2b314fe6850433d6b374e43ffffab6fa0"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/episode-002.json",
+      "bytes": 1206637,
+      "sha256": "9f81fba71c20581221dc1e32a4744f902a8ddafc9830d8c054c6a99b54ef891c"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/episode-003.json",
+      "bytes": 1206664,
+      "sha256": "4ef76c48a90390e36d0930e804e5ac6678db9f445f52e89a8d10e1d03ff122c9"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/episode-004.json",
+      "bytes": 218509,
+      "sha256": "1e6dfc5a41af567807f70960726c8c2836a458c8fdbd81ad78436acaf0835c3f"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/episode-005.json",
+      "bytes": 218521,
+      "sha256": "15ba7c92855528d60c9cd3c9aebc2df0739ac9701683100431200230b656f4d5"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/episode-006.json",
+      "bytes": 1206678,
+      "sha256": "30b2ce7bf4c3b5097d40080965ff0783d74963ddbe80f76060621a0e2cd5c6a6"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/data/protocol-v2.json",
+      "bytes": 17300,
+      "sha256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/benchmark-v10.mjs",
+      "bytes": 38101,
+      "sha256": "0a85bb81481c868842b387b4d8f9a58130e193ffea546c6712f96e3bc5f74ccb"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/benchmark-v2.mjs",
+      "bytes": 19439,
+      "sha256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/certify-v4.py",
+      "bytes": 33565,
+      "sha256": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/episode-v10.worker.mjs",
+      "bytes": 8554,
+      "sha256": "0135c6eb12e3ad830ee913ed2753748b35567287665b34bba577de79924e4675"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/highs-planner-v11.mjs",
+      "bytes": 22273,
+      "sha256": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/highs-service-v8.py",
+      "bytes": 17941,
+      "sha256": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/replay-commitment-v11.mjs",
+      "bytes": 11270,
+      "sha256": "0036b6ba5877dc83e140326a76b6b528dc57d1ae4db3b524573795a83b31136e"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/replay-commitment-v11.planner.mjs",
+      "bytes": 24169,
+      "sha256": "c1423e3af9422265b6b708bed03d424d9a154f283d753a1b342b499744048ffd"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/replay-commitment-v11.worker.mjs",
+      "bytes": 10118,
+      "sha256": "a107d111fd498ad902d0880aec057adbebfb5f7ba2b66f4cc83fce7ed858c150"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/review-replay-commitment-v11.py",
+      "bytes": 23075,
+      "sha256": "80cc1057e9cd9ae64100b7facac747013b09111d00ee03c012dbbc273e17402f"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/review-v5.py",
+      "bytes": 55405,
+      "sha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/rolling-benchmark-v7.mjs",
+      "bytes": 30049,
+      "sha256": "6feaee69c7a9b8b104f67517db7a79dfb4e8aede105056553dd39c4cc73fabe3"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/scripts/rolling-v7.worker.mjs",
+      "bytes": 10972,
+      "sha256": "0d5adc5e2e86017dd3c252e06bf692a9e4b7dd4e13d35e0694df6f84fcefdaa7"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/src/commitment-slack-v11.js",
+      "bytes": 8307,
+      "sha256": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/src/engine.js",
+      "bytes": 27539,
+      "sha256": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474"
+    },
+    {
+      "path": "artifacts/v11-commitment-replay-second/source/src/rolling-plan.js",
+      "bytes": 15849,
+      "sha256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815"
+    },
+    {
+      "path": "data/replay-commitment-v11-review.json",
+      "bytes": 57327,
+      "sha256": "b258dfd3db28aa2df987e5086821b59169d56f386455d3c3b83b4b135980eae3"
+    },
+    {
+      "path": "data/replay-commitment-v11.json",
+      "bytes": 26676,
+      "sha256": "163dbf425804070890539cf0f5e523bde090ce33e1e234f5108f8a25f2ab3220"
+    },
+    {
+      "path": "scripts/replay-commitment-v11.mjs",
+      "bytes": 11270,
+      "sha256": "0036b6ba5877dc83e140326a76b6b528dc57d1ae4db3b524573795a83b31136e"
+    },
+    {
+      "path": "scripts/replay-commitment-v11.planner.mjs",
+      "bytes": 24169,
+      "sha256": "c1423e3af9422265b6b708bed03d424d9a154f283d753a1b342b499744048ffd"
+    },
+    {
+      "path": "scripts/replay-commitment-v11.worker.mjs",
+      "bytes": 10118,
+      "sha256": "a107d111fd498ad902d0880aec057adbebfb5f7ba2b66f4cc83fce7ed858c150"
+    },
+    {
+      "path": "scripts/review-replay-commitment-v11.py",
+      "bytes": 23075,
+      "sha256": "80cc1057e9cd9ae64100b7facac747013b09111d00ee03c012dbbc273e17402f"
+    },
+    {
+      "path": "tests/replay-commitment-v11.test.mjs",
+      "bytes": 6576,
+      "sha256": "c2c52509c9b57e4bf163f41e557c8e13fc910119f89d30119353ca46ba22fadc"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 124096,
+      "sha256": "5d0d2c194e801fee97e49f8442c1a9f43ff94b0670cb833f514678de7932089e"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

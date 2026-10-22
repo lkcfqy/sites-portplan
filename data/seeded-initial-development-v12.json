@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "portplan-seeded-initial-development-v12",
+  "dataRole": "predeclared-seen-V10-subset",
+  "valid": true,
+  "scopeCorrection": "The fifteen endpoints are five distinct V10 scenarios, three repeats each, where V7 completed but V10 lost at D0. They are a selected development subset of all 63 known V10 D0 failures, not all such failures. This corrects the overly broad original declaration wording without altering it.",
+  "originalDeclaration": {
+    "path": "artifacts/seeded-v12-d0-first-development/declaration.json",
+    "sha256": "c4618b9094eed72d7400196f87993e26167a3f1e0876831c36ac92468f4b4a37"
+  },
+  "originalSummary": {
+    "path": "artifacts/seeded-v12-d0-first-development/summary.json",
+    "sha256": "5b3104a5b8987ff36d00edc575e4b7850f23d225a109fca589026d66870db349"
+  },
+  "independentReview": {
+    "path": "data/development-seed-review-v12.json",
+    "sha256": "f806399473fab8b096b7f42eb10c584c2fcb626577b23e84595bf7a79b8c24f3"
+  },
+  "independentBusinessScenarios": 5,
+  "endpoints": 15,
+  "timelyCompleteConstructedSeeds": 15,
+  "acceptanceMsRange": [
+    3.906,
+    38.596
+  ],
+  "wholeCallMsRange": [
+    207.193,
+    219.803
+  ],
+  "overTargetMsRange": [
+    7.193,
+    19.803
+  ],
+  "scope": "Internal timely complete-seed gate, not a hard 200ms return guarantee. No full rolling outcome, new orders, unseen validation or prospective improvement inferred.",
+  "newHeldOutExperiments": 0,
+  "parameters": {
+    "constructorBudgetMs": 40,
+    "auditReserveMs": 5,
+    "maxRestarts": 3
+  }
+}

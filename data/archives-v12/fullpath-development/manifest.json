@@ -1,0 +1,1694 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-16T17:36:26.544326+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v12-fullpath-development",
+  "fileCount": 334,
+  "uncompressedFileBytes": 300357807,
+  "archiveBytes": 2554868,
+  "archiveSha256": "daf49b8758628c486f478a59f9b518366b7420b7d4f814b09faa1d9cc5597391",
+  "entrypoint": "data/development-fullpath-v12.json",
+  "entrypointSha256": "e599e6670ff0f943966aa2c34388aa69b541fb1040d13869f40552ba826f21b1",
+  "files": [
+    {
+      "path": "artifacts/v12-fullpath-first-development/checkpoint.json",
+      "bytes": 294849,
+      "sha256": "ac2b8756c1874ccfb753b4d589b9df5ba0beebad596c396f60d27f9e4889dc68"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/complete.json",
+      "bytes": 294963,
+      "sha256": "07fdec26975ea5d662ff985e0ae5a0348d6228ae0378b733dafe6a0792851cb8"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/declaration.json",
+      "bytes": 49922,
+      "sha256": "e2c97156b2b4e69809d176559971c512cb7b32df87c37445897698fc01510523"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes.ndjson",
+      "bytes": 235690,
+      "sha256": "fd5d3cfb0e8013934f976d55bc071ce7d642c6af95575d8a53f25351ba36f68a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r1--a1--adaptiveV9.json",
+      "bytes": 2001928,
+      "sha256": "98d4b90ae831f65fd521e83029f0a6eec662f760b83ecf4047305acb0a9980e9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 3017979,
+      "sha256": "7a9d077e36af6ac913fafc3ed813f56dfa03b4a02f75e9fe325416ecda4b7913"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r1--a1--costPolishV7.json",
+      "bytes": 731759,
+      "sha256": "ef20745ff00676b8cc926c74bd589be19abf7b740efa9718cf305dfcfca69772"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r1--a1--highsV8.json",
+      "bytes": 1144320,
+      "sha256": "acd34b353c76d511728c365090324377a010a71701b343895e9ee3661f9fb96f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 3241977,
+      "sha256": "016039ca65445a0bad73196cf70500d25a52cc5deb53cea458272b963f00fe9d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 1644025,
+      "sha256": "6106ffe79575dfd999a8a2c86c8203fae7212c26d0079161f367d0ebaf4ce493"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r3--a1--adaptiveV9.json",
+      "bytes": 1962105,
+      "sha256": "be897f098ba0844ef4c3fb4241d06745fb82446d266a99c12522bc4cc47c6396"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r3--a1--commitmentHiGHSV11.json",
+      "bytes": 117113,
+      "sha256": "6685ff12c60e17138209dd642951ac97a1bb23862b32e543a0ff6882349ca3ee"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r3--a1--costPolishV7.json",
+      "bytes": 651819,
+      "sha256": "a4fc0973d9d21975f0d952e3dce50698e866b9a60436edc3855153eb0d758a80"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r3--a1--highsV8.json",
+      "bytes": 94209,
+      "sha256": "eb329aa72373fa46fa6136536921f7fcd7d2a82298bf9ad8e1535a1eb518f508"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r3--a1--seededHiGHSV12.json",
+      "bytes": 3266106,
+      "sha256": "38c61065224709110b1c97c859a3a6508cf694b0150ffbf033243a9a93825213"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n100-r3--a1--stableHiGHSV10.json",
+      "bytes": 115602,
+      "sha256": "7ee150f6649d87fa7322876579500513bcd76cec0049c7593e457e1d40f48146"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n24-r1--a1--adaptiveV9.json",
+      "bytes": 639279,
+      "sha256": "f74466a08d6752fc3b458853caf7267faaf6769fbf06306330710e3e37bb2435"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 916805,
+      "sha256": "85531c17ccc235e7c7bcbe9d42346e8de7c009b32e999f397d130bd8ec6f2963"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n24-r1--a1--costPolishV7.json",
+      "bytes": 223068,
+      "sha256": "b710dba87153aa51e3d5cde3d92067e6dc30fb014dad512a7db545dc4225099f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n24-r1--a1--highsV8.json",
+      "bytes": 350836,
+      "sha256": "dd962496be6b5135e514638dd302b664d352aedac546a0ee46830c2c5f1b9295"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 1041345,
+      "sha256": "52c018252c1a51c7bc3c62e1b4a716ed92b021995ff5b61ccfc771ebefaf959e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 500220,
+      "sha256": "84327bf0ddd79699138e1974200f97655557e293389e37f7f94dfe967d6972ae"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n50-r1--a1--adaptiveV9.json",
+      "bytes": 1198061,
+      "sha256": "fdc48c7c1cf114c5e1472b2ac7987a78a5384b07c48824123b82f23123536e03"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1562896,
+      "sha256": "bf6d359a7ae2300ad51cbf85a0de5ec1989351c0447275e102111502d25c1032"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n50-r1--a1--costPolishV7.json",
+      "bytes": 438464,
+      "sha256": "60f1768d433d2117fe086c9c74ccb3905b35fbf8cd7ded92e9a241a98368ab11"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n50-r1--a1--highsV8.json",
+      "bytes": 598884,
+      "sha256": "456e635a15206128b50bb56f38217280e4e4f6207cc1c352ceb26b73eeb597e9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 1790969,
+      "sha256": "4e367d79f6edaf44eb27fcd1f76af10b091c96dbce8db0290e7735d3b6ceaa32"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-balanced-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 860618,
+      "sha256": "c2853e600355e965ca9949bb2c6067c98e58ff00aed4b9b909756bd1d212ff04"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n100-r1--a1--adaptiveV9.json",
+      "bytes": 37182,
+      "sha256": "fbcf34ce9132c7c2b1edfde89cef957c03591e5e976023fc39e0cfc11ea8c771"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 38304,
+      "sha256": "ffd72c1eb53cff55a0a82bc807c5b8646b3d88346243fef3c4601ec0b0ff1d20"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n100-r1--a1--costPolishV7.json",
+      "bytes": 35771,
+      "sha256": "46a276991bfe9ed9a364428dd272297dc733d02f6fae460b869dd1ea229b5a73"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n100-r1--a1--highsV8.json",
+      "bytes": 35542,
+      "sha256": "9aca5b9a1393b49e20cbbad7c5eec13807fd10fd9716e74eee98dbf26dcf7276"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 40163,
+      "sha256": "8c553f9311cbf145749f3e978545511dba3405f702b682d0cef32f313379d545"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 36724,
+      "sha256": "a75540f9b406d8c7f8d9d84b112b6f635b189bf79590f4497428b5f5a55b8ee9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n24-r1--a1--adaptiveV9.json",
+      "bytes": 103781,
+      "sha256": "63ac6f6c3f125ad02627777cd7b1c086da62bce692ea1b52196827efacee884a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 163489,
+      "sha256": "b4753e6e378dc885ae204e536960b72e80a24bd6011093f79cb023b8459c9b9a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n24-r1--a1--costPolishV7.json",
+      "bytes": 45334,
+      "sha256": "011236bcfb0d279b56745fe2c648fb694c634a3cb6f937c3d56817a4ee95ad10"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n24-r1--a1--highsV8.json",
+      "bytes": 77657,
+      "sha256": "5cbf13da424c5726a50077f6ad130608340fb60f23afdb90778f99e8aa1e8288"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 173066,
+      "sha256": "f4f904ca1b0d106871bbe5dd1ce64856404a5df143466b6717492089bdba4955"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 108930,
+      "sha256": "85c4fcdc8c1bbfb4e29ea772a8dfacd4ccc10cab2e102eb34d7d95b4d399af3c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n50-r1--a1--adaptiveV9.json",
+      "bytes": 24239,
+      "sha256": "34c1114dfef31ec2b9a5eb0635a1901626abfd29e1645203dffe337cb6d2e8d5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2322005,
+      "sha256": "b9bc22f8ffa6fe2c9c55484bfb0c8b82ff9956b111fbf50f001ff8f8693d3590"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n50-r1--a1--costPolishV7.json",
+      "bytes": 22765,
+      "sha256": "d3f0de93d703bfa513228cef587e16de044eb43e6426a1441b93527f0cc572f2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n50-r1--a1--highsV8.json",
+      "bytes": 814316,
+      "sha256": "cbb69b541bf666780ee284e8c32fdc14c40e803cf4a4ec9b0515a428f2325e19"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2440984,
+      "sha256": "ef8aba0c203571bd8331f890a046c0b9fd32845a0939f6e8e17d977db7516bba"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-aged-backlog-tight-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1187978,
+      "sha256": "e0654c11ec7ee22760c1aa57a814098f141c8bfa170ffbb2526bdc25cba5b928"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n100-r1--a1--adaptiveV9.json",
+      "bytes": 2256551,
+      "sha256": "b5ac2f9ba96a38cb3eea53c7e14c9206288bea5482e77c069b76eef44dd57954"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 5132309,
+      "sha256": "cbba325eb69c145cd3807de3c1f6821ea5b1ce6bebcc40c393297537a42bd2b0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n100-r1--a1--costPolishV7.json",
+      "bytes": 786213,
+      "sha256": "c5d82e8a23aba24a43520d711c86ca97a5f97438b35e1e913ca4931a5539b4bd"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n100-r1--a1--highsV8.json",
+      "bytes": 1684229,
+      "sha256": "e2d6b3c7854ba9d28f863ba9b7e4cd239185adad57579235402a11b609519d1f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 5541211,
+      "sha256": "76a398da3f8b9884e0f9e6b0ac2aaef4f4c20c7558026e79651096e1f5a643c3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 2422574,
+      "sha256": "2b6f1569641c209db1b7ad0e476722fc96ddcdc491b521b0fa6e591a72df6b13"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n24-r1--a1--adaptiveV9.json",
+      "bytes": 469967,
+      "sha256": "6ba6773c64c7a0becb29f55bf1c063d8a4e64c1a7a7a5a63d2af3c9e5638700e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1373331,
+      "sha256": "f4a733077e718b1c2c80977d3f3d123b880eb6afb85481059426694fb859c4a5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n24-r1--a1--costPolishV7.json",
+      "bytes": 225971,
+      "sha256": "8ebdf5848a36d26880250d3465fb06b3a6ba3964e62229aa6c80926657d8f229"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n24-r1--a1--highsV8.json",
+      "bytes": 379708,
+      "sha256": "b64801a3766f0e987665f9a4cd62a7175578bf53fc5962d3d49584b79d27030b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 1540660,
+      "sha256": "3eafad57d4ea82be5884889b1b94030aac9469fa06ac7b91805506f6c8d612e8"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 669411,
+      "sha256": "655eb2be917ce5e61a3a9b04f7aa3f5a2ceaa796abf1fe6054b596f997beec0a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n50-r1--a1--adaptiveV9.json",
+      "bytes": 868805,
+      "sha256": "75d27a02c713b09086fd3c692b9849f903872cba1b80a90be3f5055a1dd89c27"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2744816,
+      "sha256": "e4375caf499bb528dc89409b66041d667ed5d0a0ab2b91533d2560a7e8ffeab1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n50-r1--a1--costPolishV7.json",
+      "bytes": 416260,
+      "sha256": "b84dcd5928956542382c028207e9c3909093c2b8803a242acb6a393991dcc5a1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n50-r1--a1--highsV8.json",
+      "bytes": 874293,
+      "sha256": "dd19b390c5630ede59dfca836af8a1bb8c1925b895088f4cef98b83d689d1a37"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 3052967,
+      "sha256": "ce5faa61757f10db0f8ef997d1fd1606e4ff40a542d2e38c3ebf2d199143b074"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-balanced-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1257161,
+      "sha256": "a9f979b555d6ce7d8ff5c34cd8f4045468c0649ea5ec73c7d8d74a8c755b9c1d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r1--a1--adaptiveV9.json",
+      "bytes": 2619419,
+      "sha256": "f9bbb115b065f47c24996345571b708bff532001cbfb9955cfc94b0bf58af8ed"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 5037685,
+      "sha256": "0330163ac76a24421f06041a44878baf5323986d148ae9f405edc9c1ca76d333"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r1--a1--costPolishV7.json",
+      "bytes": 850298,
+      "sha256": "09b106ec1faa3ac23cc1af15e5343a1c2a1e97d3169cc2bba03c4edb5462f049"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r1--a1--highsV8.json",
+      "bytes": 1660373,
+      "sha256": "1c1cb21f1790171b08cbb3869f66b6e4c3d946ad4765f4773507403d17192738"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 5489414,
+      "sha256": "71e7472a9b95384e7a7d599c64b2216cb12c29c6afe7905fa9a7cab91a06b7e2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 2397962,
+      "sha256": "6383f299da0651fffc3d2db2bd06a9140f6ff3e8a76f23b6a8090e981994708d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r2--a1--adaptiveV9.json",
+      "bytes": 2547854,
+      "sha256": "8dc9ccb618ab3c2c18e98f296c93c3074f7928648258721839b0e319996db1e6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r2--a1--commitmentHiGHSV11.json",
+      "bytes": 114276,
+      "sha256": "45d649a65b2e04c14d02c21468f5e7347013d5c9c09845c228f6cef7b279a537"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r2--a1--costPolishV7.json",
+      "bytes": 811143,
+      "sha256": "4ca9b37ae32a78c546f6e79f74507db7d64282faead4e05e38c1414e8998b9cb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r2--a1--highsV8.json",
+      "bytes": 91589,
+      "sha256": "5c122efb208ac4e861f465547cff7eb014f4e6e76a9026c5ca92b27e8397ee42"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r2--a1--seededHiGHSV12.json",
+      "bytes": 5152363,
+      "sha256": "89c1606916a77cf7284055fa89788b2ff0c510b37aefc6416cbab6356d5d203a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r2--a1--stableHiGHSV10.json",
+      "bytes": 112636,
+      "sha256": "b654ee9aee209b2020ea930a6f6a6fb89ac97f9d8c45ae6fc19bf9e9481c868d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r4--a1--adaptiveV9.json",
+      "bytes": 2756011,
+      "sha256": "b458ce1fe258228c3521266e82d772d5d3d4f842c735e084ec336da5a3d31299"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r4--a1--commitmentHiGHSV11.json",
+      "bytes": 114362,
+      "sha256": "ce19291bf1a95cd4bf9815f2e1b38f1a6c7000914d1b765a1d95012cddcfb548"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r4--a1--costPolishV7.json",
+      "bytes": 901099,
+      "sha256": "3acc215801384bbefa456ffb2073105ab7963057288c414c1332457797c921b6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r4--a1--highsV8.json",
+      "bytes": 91611,
+      "sha256": "5681bafe430cca6b03286550ce174e851af6ed0a71e531f0b9cee07acab6afeb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r4--a1--seededHiGHSV12.json",
+      "bytes": 5081863,
+      "sha256": "a093919fa02a0f1494000d3cef5b944973516cb2720ecb9e9de9821c9c21d9d9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n100-r4--a1--stableHiGHSV10.json",
+      "bytes": 112808,
+      "sha256": "922b69f2ae1f87d7ef2054b7c0d7c359cc7bc415d4d6cefb8d50e0e94403b46d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n24-r1--a1--adaptiveV9.json",
+      "bytes": 755480,
+      "sha256": "89972707dfaac0c63dd52584e2ddff017621e5043efc98d85a4cca1ac4cda38b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1196577,
+      "sha256": "5651320b62c769fdc8c1f2d8e7e3df25a8615af480590175fb84b15b5a274b37"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n24-r1--a1--costPolishV7.json",
+      "bytes": 251120,
+      "sha256": "8717d5b9813f8e6db7c98417edadb7b195b9b8ea862aa92f1d0c87def5b3aade"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n24-r1--a1--highsV8.json",
+      "bytes": 466047,
+      "sha256": "3c1b764e0390386e3c26aea1097418c26036d3f7dab4d97a691ad703fa2c9373"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 1309066,
+      "sha256": "fa6cd21eafb5f01c908c36041aa176103dc362453ea2efd57a9e81eda60d9493"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 624204,
+      "sha256": "7b3c9f89f4fc718541fe4c8b38ebf6f0432eebcc264f24f2217c9a9a60540cd2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n50-r1--a1--adaptiveV9.json",
+      "bytes": 1371467,
+      "sha256": "4d6a34bfef5703facce21396714bf659ca8e255a84526507813578afc4e9b8db"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2404048,
+      "sha256": "cd7b77eb8a53d2db2b65eef31e9d3343b0392c4795ebdb8804314a57b85d7be5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n50-r1--a1--costPolishV7.json",
+      "bytes": 460974,
+      "sha256": "7afc5fe7f9c9c14afd2a5ecc9aa6bc7112f1860f0b69fc9ee3ebd44ed3c285be"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n50-r1--a1--highsV8.json",
+      "bytes": 883026,
+      "sha256": "484c940316aecb10f92b1654d914bff12f2d5295fb76573355fd49aa1d8af433"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2627026,
+      "sha256": "0fb8c63da081123c10ba82e83cdc3d0308c81bca84d6307df12510f1e0b37e2e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-batch-release-tight-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1169175,
+      "sha256": "c32ba93966acc064ec73a785a73039ed6166e645ed3a9351616715c39c39dca6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n100-r1--a1--adaptiveV9.json",
+      "bytes": 1578965,
+      "sha256": "35e65d02d3b68284029baf7b38e962e653ffd46c58496e27c4110e8072290670"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 5095185,
+      "sha256": "8e05df535be651e1d8fb0048de0df7b162f08cf810c43506db68cb671e69da3d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n100-r1--a1--costPolishV7.json",
+      "bytes": 769328,
+      "sha256": "8c1706ae4900dcf2dfbc7b8f9b1ba5a14070dac92395dd12fe9c0814fc5abf4a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n100-r1--a1--highsV8.json",
+      "bytes": 1696322,
+      "sha256": "53d61db49af06f9a9bdb91ec315d93e8a01bbe40d0d6383556e5818a385e6c3a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 5906966,
+      "sha256": "93249fbb1088be5e30bc301eb0d477f5daf6d982eb28cfc9e980d600ade78f73"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 2403009,
+      "sha256": "1292df53739d45cd7293c7d3b5f14dc3269592d5dc6f6443cda17e1872fcd817"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n24-r1--a1--adaptiveV9.json",
+      "bytes": 452907,
+      "sha256": "19de6cf04abfad84feed5eceecf4ffbbabd5b55e9b212f93e03455a0044540ff"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1311352,
+      "sha256": "24129e12e77a99198cd51e7570e7e779acf4e75b7e143e78f22912d4b03cd3d4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n24-r1--a1--costPolishV7.json",
+      "bytes": 220908,
+      "sha256": "8de916801e84042d0ace3d7068f8120198a9ac2b4471a6ef48189330cb6878e6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n24-r1--a1--highsV8.json",
+      "bytes": 483549,
+      "sha256": "7eed696bbfba4ee2d896a2079a9b4d2449cf6b64dd5fa56b851e5ef87b6a2edd"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 1574992,
+      "sha256": "a07df318d48dbe7b5da77f370e498d08b5d18aa52ba661b425192264c0f23ad4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 669196,
+      "sha256": "db3c6fe1af326e95cfa7bc944910bdc821e3becfd4f2dc8b9a320ab0541fe15a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n50-r1--a1--adaptiveV9.json",
+      "bytes": 964447,
+      "sha256": "d4686fc1f6e7e7e356c2a2f234eb301bbb0b22a00315c56b8005bd2ddde30cf3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2551614,
+      "sha256": "b3a5e1b3ab48bacf48b93abf6b356b8c0bebde08cbe63ce8bbb9582a893cb7a6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n50-r1--a1--costPolishV7.json",
+      "bytes": 433576,
+      "sha256": "f19ce1ef349d790a638ba2c958f0029da9c93af958f9d3628e221cb570c8c83d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n50-r1--a1--highsV8.json",
+      "bytes": 883002,
+      "sha256": "1571e67a29d55ad67280c97f6ff1f2a4a5f199911b72f1a557404c8aad8a514e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2442838,
+      "sha256": "e69188f4c086893da83b14de0a32884fe5328b1b4f919153c06da2669410a87f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-balanced-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1263923,
+      "sha256": "f8b56c5d0fc0cc92e3ed003f26c9d3785b4896db139f12abd78189bf20b302ff"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n100-r1--a1--adaptiveV9.json",
+      "bytes": 543658,
+      "sha256": "ef676042497a7049633df60ffb2dd4c74248b657d0c7658c3e2f0014880d424d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 112993,
+      "sha256": "ab61db6b8bd20617a14d5abd738e19b4d9afd799a2de0baa5a5718af9755a5cd"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n100-r1--a1--costPolishV7.json",
+      "bytes": 198376,
+      "sha256": "338be8b4545546921f03f7e7d5aad96c666637713e21023f57f11bbf35744dc6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n100-r1--a1--highsV8.json",
+      "bytes": 90296,
+      "sha256": "724eaa3a73d1dfa08f035b45f93507294fd43a8f051a42537b72103dfb740172"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 5271643,
+      "sha256": "b3da4c30eb6cec367948ff654fa20720198c191ee692519dabfce218b597b8f5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 111325,
+      "sha256": "54c273e211e46bf6b89215ed327468039d4eb31fc96029d7b0b7f631bdcbe2e0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r1--a1--adaptiveV9.json",
+      "bytes": 76689,
+      "sha256": "0360a5e4d848b4e2fdc72f65594267780fcfdb0571adb40bfcb1a3c57b498f4e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 157860,
+      "sha256": "191de27f855454907238fbee19126928affb7b9700c4e8a0e55907d0d9f98541"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r1--a1--costPolishV7.json",
+      "bytes": 43812,
+      "sha256": "b2a785b3302e90f6083bda25a8c004ef8b5615895492cf68fa6d18f10c8c2db8"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r1--a1--highsV8.json",
+      "bytes": 78543,
+      "sha256": "4c9658d51d174edbb9bfd0b1b0171ceaf4b7bc7704f9c4a4604c77e45ff08ce3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 167438,
+      "sha256": "b68ec2685bd043b54acb46062f811c996f6638a32de84665d51242c664bf7741"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 105763,
+      "sha256": "f6bd5a8f74664abb8be98464058e4390307f6557f7b33e2ab4921a64c08cb7a2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r3--a1--adaptiveV9.json",
+      "bytes": 472958,
+      "sha256": "271ef43b72144e0a8cb91f4c30f1d8ff7b074ee713b88eebc0df115d3495f350"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r3--a1--commitmentHiGHSV11.json",
+      "bytes": 18613,
+      "sha256": "b18ef8af165c7e57723b71f29e3b9033baf025d2788083af614052fa417f2405"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r3--a1--costPolishV7.json",
+      "bytes": 236336,
+      "sha256": "9d809e9f9f08188bcb06dd1001811604fed1d7a3adb3068414d7dfd969c0721f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r3--a1--highsV8.json",
+      "bytes": 15803,
+      "sha256": "ba52e640da774edc3f132bb55727f26fa0caa9c49a99a2d6977f9cd168b6e4c6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r3--a1--seededHiGHSV12.json",
+      "bytes": 1339106,
+      "sha256": "af87fd19e9754ff789638214b8e62fe9918219ca43dd50deb6488cfab64ac359"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n24-r3--a1--stableHiGHSV10.json",
+      "bytes": 17059,
+      "sha256": "f43987e08030d701415cf882dda1d0a44f2dd721c86977707bc3365656da86f4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n50-r1--a1--adaptiveV9.json",
+      "bytes": 1107601,
+      "sha256": "e84e431ab6fa4cee224ad4f98f79eabdd58bdff06dea7c7919fba6bb25859422"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2505567,
+      "sha256": "3baa16d58190b752e54062e14adef518ffa0edb8d1f038bdd60adf6f56c30cd1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n50-r1--a1--costPolishV7.json",
+      "bytes": 481227,
+      "sha256": "7d1b0e3b8294233e62a3f9a38ebc9621eff26b8e1e5bd2c0d4293fcb123baee2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n50-r1--a1--highsV8.json",
+      "bytes": 902620,
+      "sha256": "387e63bc822010f5af088b139d2c3f309ede26cd1fdaff32c7b8e12b02e8a3ee"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 3006242,
+      "sha256": "b0c0a235aef62d253fd62a2a7acf96fea78dddbfa690449af3f025e2dfed560e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-same-distribution-new-arrivals-tight-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1256792,
+      "sha256": "d041a03e1c5e1e0063aa395e8edc909677fa02ff3bccb4eec822df27322bc4cf"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n100-r1--a1--adaptiveV9.json",
+      "bytes": 2235372,
+      "sha256": "53c06d325c7f3a49631df3d53ad7b7b90eb4a314c7efd8278da013785d8a1b34"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2846306,
+      "sha256": "7c44b4eab46049156b874060cb7ff8c5b7a72680e808b0a07ed18f10ff700bb1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n100-r1--a1--costPolishV7.json",
+      "bytes": 879485,
+      "sha256": "3a7fe8090ceaa0cadc1ec46f83b2dd0a3879efbdfb3a061dde901cfe8589d9a3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n100-r1--a1--highsV8.json",
+      "bytes": 1205602,
+      "sha256": "46d00b1fa45911765dfa716557e7fe68b819333ff98535f7944cde5db1ca9329"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 3268610,
+      "sha256": "213a49aa97aa9aaa7ea987a9c02f843baf3a48b38fefbe74f88b2ade1fc70ba9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 1744253,
+      "sha256": "09d6349d87240afb0bd2be1b540cdcef9668adda949cea1042362fe6d71e6658"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n24-r1--a1--adaptiveV9.json",
+      "bytes": 721679,
+      "sha256": "c20c6627935a9768e5e68a537fd80fdd6252baad3516bee83592ae8d27f282f0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 774472,
+      "sha256": "930ba9e228a99499680cadd983bd4997da528c057998dc5398f5275871433a27"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n24-r1--a1--costPolishV7.json",
+      "bytes": 241762,
+      "sha256": "efbe72fb754456c9a9ed50aa252de53066486e2edfb8ae927ffed24c5995e2f0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n24-r1--a1--highsV8.json",
+      "bytes": 341823,
+      "sha256": "b20cd45bdbbfdc7de8eccf4d343bc78f4b4b6726ea5c58feff3e58710f2663ad"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 988541,
+      "sha256": "3e1dcb059a558fcc99b767afebeac593b69a61b0bca0c4e07853e2d4fac76e3e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 483431,
+      "sha256": "cfcb08206f6693841b2a44d6b808f18934d7848fddf9b3f57907ba0f25f242dc"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n50-r1--a1--adaptiveV9.json",
+      "bytes": 1260803,
+      "sha256": "05e430ca08a4a6ba828677d255f30f74df7341e9a33973639488b2a166a57319"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1884273,
+      "sha256": "e455015d5056986d2521032ddafd95c2ee43f4f8d80ac85c89f961067b360e4e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n50-r1--a1--costPolishV7.json",
+      "bytes": 476054,
+      "sha256": "da04ec922d8009f9f8b548eb098d2ceb255cece4ada238fcbcfac29014562aea"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n50-r1--a1--highsV8.json",
+      "bytes": 744027,
+      "sha256": "10fb7b14ff6ed709c42d9581017bae283f8c073b50ba9e0e8a45bb2e882bb551"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2126569,
+      "sha256": "74fa1bb3d0ea52f048773691525c30f69c7e9ea942014c875c6562b1122233e3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-balanced-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1081643,
+      "sha256": "876749b3b58bc40b05c7162368d1e73594d0b1f15d01de6329cae4cf50db1f10"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n100-r1--a1--adaptiveV9.json",
+      "bytes": 34992,
+      "sha256": "4fb6d7377f579260404d95555671e87f04d84c1c36574ab89b801b33357d9459"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 36002,
+      "sha256": "58905f424109f2e66047da202cbfe36a31dc799fe34a4d14605fb6c71960f632"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n100-r1--a1--costPolishV7.json",
+      "bytes": 33517,
+      "sha256": "ff9c8bc1e36c3eb22e53514ec20eee06db5709d8e2c67bf0b562621b0c1f8948"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n100-r1--a1--highsV8.json",
+      "bytes": 33269,
+      "sha256": "08e6e90c420349c9064dd9e66ad8a42f710d15c36f49cfb2e2ed3fabb152ef15"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 37939,
+      "sha256": "ac943dbddb2358ac5ed193e2a1c6189f2005f51592685519b3220a180ce4b4f2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 34533,
+      "sha256": "27e76a5a6e8aadc19b78405b4b136185911ba6e902954bcc1a07ab3c35635cba"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n24-r1--a1--adaptiveV9.json",
+      "bytes": 99532,
+      "sha256": "ef16128f6ece1830f22bfb5a392028fdcd4d9f35829f53302cca1332012fec21"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 156917,
+      "sha256": "229eb360f81eeb6a72065108aedf9459125fbd603b3e4d4a542b1e47389c3384"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n24-r1--a1--costPolishV7.json",
+      "bytes": 43403,
+      "sha256": "dd4f4d30a085210b517f9c57abb26e0d7d745c1672f7e4108468dfb14e494a1e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n24-r1--a1--highsV8.json",
+      "bytes": 74413,
+      "sha256": "269fe1550f1279c525163cd2f58a8f9cb3df6dad3834117130f8783a4551d671"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 166216,
+      "sha256": "b9c00939a5449ce2fa207085cba9750e35b88e805a234b47e1de02c4e8a4163f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 105258,
+      "sha256": "391101b6757b6ee5330eb2efa682207b3f7367a9682a827afba62a2813b0bedf"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n50-r1--a1--adaptiveV9.json",
+      "bytes": 23044,
+      "sha256": "e52e41c563bf3454c675f83d2ddc887587b87921a9176ad3984cb43d54a864d4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 384008,
+      "sha256": "029ad4afce3ffceeac8d5863739cc0c19e0960fdfdf19ecfb739b365197d1cc1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n50-r1--a1--costPolishV7.json",
+      "bytes": 21588,
+      "sha256": "66194e2ae80d5e0e495cd661cc5c804e22e5a110503ccca629bb952ff2d5f086"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n50-r1--a1--highsV8.json",
+      "bytes": 194144,
+      "sha256": "7486a775601f87e83af532c8a8874dd6b3d24ddeb10b27b45c5f074e191318c6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 400108,
+      "sha256": "1bfc6fea603996e78eaaf1fbdf0fd935bd1864b596341ae804751af746f2fc3f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-aged-backlog-tight-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 279352,
+      "sha256": "86bb05f5f90ead834b71b62a28bec060411cd1c042d37dcfcc1e867a88e82df0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n100-r1--a1--adaptiveV9.json",
+      "bytes": 2394653,
+      "sha256": "8ef1efad6c1aeb7009e4438c6467fdf408cd5df58aea8150a736ae5ec6703fb9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 4947220,
+      "sha256": "438ef88d6bd41314291505866b3d4ea646a6a9b4cdd13b71d720c8863cf4c9e1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n100-r1--a1--costPolishV7.json",
+      "bytes": 796946,
+      "sha256": "336f017d1976cf2e00517f119af2b07eab9b3608da6cd133838b39caaf845f6c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n100-r1--a1--highsV8.json",
+      "bytes": 1631894,
+      "sha256": "12314616bdea6fb359f3e15cc2ec0a0ea66195c4d5c93e7bbc2eccd740cab7a9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 5427471,
+      "sha256": "f0604ba555e7621d47eebdfb1a2e0d06304cc28ad212be5eade45dffdf19daf5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 2320444,
+      "sha256": "79f40fb390a3fa158e94310caa88a47e515c4cb53ea0080e80974455a2e6a899"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n24-r1--a1--adaptiveV9.json",
+      "bytes": 535291,
+      "sha256": "2078cf2e3a1b5e8a929ec3f35c7bf02f4d0d38d5869127f5e07277e9eda0cacb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1267303,
+      "sha256": "3617e34b54525cb0a8c6ad8d98613a5d23cc45e0ec9f08ac0b7f8ef163b00e9e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n24-r1--a1--costPolishV7.json",
+      "bytes": 231207,
+      "sha256": "45a33e8c4ab12c5d3e28dd7036bbc1c9142ae30ba02f8309dc821c108298f572"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n24-r1--a1--highsV8.json",
+      "bytes": 452639,
+      "sha256": "5b2d42cbceb92cc3bdd33164065ab9c2e44f746098ce39a63c476d142e98b5a2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 1445328,
+      "sha256": "e4d5f9b5501741c3434af673bcf6965761f36ecd8ed2fe7a02d18f665837dd71"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 647314,
+      "sha256": "d85712bcdd9911cfd030c2d08402b195cf3cd20f6c0c0ffdf5521c3e6171fbb4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n50-r1--a1--adaptiveV9.json",
+      "bytes": 1248912,
+      "sha256": "3c5243e9c4b3c11122111606150d74f2269f95b955e4e8a55e2d3f82005cc3a4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2539517,
+      "sha256": "847e801bbc14aea711860c596854daf68c56b213b7f817789c9c3ecc5208a0ec"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n50-r1--a1--costPolishV7.json",
+      "bytes": 407016,
+      "sha256": "244f9146d2767f7be584a10cc7f0c6ad076e29d2d023352bb789fb25299fcb50"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n50-r1--a1--highsV8.json",
+      "bytes": 852984,
+      "sha256": "f7010730fd600f9b990b483d6f6fd5b899453af759e7048e73d5917923ac8e41"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2788822,
+      "sha256": "849486085a55dc7237f33a4b652f1e9279f4e7e2fd4c096f1af35778f6681004"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-balanced-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1220139,
+      "sha256": "2484cfc6d4fc4bea718dd9e2813d49ed76bddb92a6b012d3fbd1764a9d158dfb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r1--a1--adaptiveV9.json",
+      "bytes": 1560416,
+      "sha256": "612e7c74bacac6743fdd3ec1a14ee3d98ce02060e8e14af08384a13e23bf7180"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 4449720,
+      "sha256": "ede703aa977b74c451af18ad37dfda4df4a051e79cc41a9fefe72825b2915988"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r1--a1--costPolishV7.json",
+      "bytes": 501481,
+      "sha256": "67cefed09b2a9955c75c94941faf5f4690977573ab82b33db8ba17499b141645"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r1--a1--highsV8.json",
+      "bytes": 1609428,
+      "sha256": "61ca0df6b9735aaa4355fb6064dcceecc542e1220d58d0bd787d4d95ed2d3f2c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 4906398,
+      "sha256": "4a117d76e9e3412e2aa9fb81267ca86d487c2a13b96af0ec090923f5ab7ca414"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 2323272,
+      "sha256": "a8a47b8ab737166e0e85eb9edc3475bfce0c76023409c8d12b73f029cd8bdfe4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r4--a1--adaptiveV9.json",
+      "bytes": 2786112,
+      "sha256": "2606adc509b0a0f9e40bbc33ce9b95f0ae5d2822da5de0c542121368334073d6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r4--a1--commitmentHiGHSV11.json",
+      "bytes": 109895,
+      "sha256": "ea43edd915ed91826e87a8ad31bf54201d405ab00d1e7581d47e589537a7cf1b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r4--a1--costPolishV7.json",
+      "bytes": 929001,
+      "sha256": "5a2685633602a7afd1b47236b236984a929dcae5ee3fc5e6e81c03a8122ef808"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r4--a1--highsV8.json",
+      "bytes": 88265,
+      "sha256": "2c6cb16307803f4817f46dd2d80c91462170c2a8e54c3b1015bac21fa0e98e7c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r4--a1--seededHiGHSV12.json",
+      "bytes": 4911367,
+      "sha256": "2f685156b325ec38b5bec42830975120104fb95606ae0bb7c08e0f3c79640ab1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n100-r4--a1--stableHiGHSV10.json",
+      "bytes": 108360,
+      "sha256": "c4f7fa270ccdba9eaeccafb9bacb8f0733a4de48397bd6f4a9145813d926d2f9"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n24-r1--a1--adaptiveV9.json",
+      "bytes": 272439,
+      "sha256": "9adbc0ecffbf6d2aebabb8a6f3f4614327b63018f2f68bb441e9984284741152"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 444442,
+      "sha256": "816013ba74c68824c9072cc263f7b8b0ecb2f6f301edc202bdc3ed3ffa0fd901"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n24-r1--a1--costPolishV7.json",
+      "bytes": 105794,
+      "sha256": "08eed1075ec8312910afc28fcac07ec20759981d8c12d6f5dbcc8c871d8e86fa"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n24-r1--a1--highsV8.json",
+      "bytes": 200381,
+      "sha256": "21314120068f0ab87a5060e979595d52490024096e4343e28e9197487c7852bc"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 468498,
+      "sha256": "cd7f636142b8445d2a5991bea0ce3a215cccf4c4fed2ea88d80d8598f7bf6895"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 286549,
+      "sha256": "646739089cacb2bc893f8b3143406593d650704896bdb032dd9f7445f928c765"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n50-r1--a1--adaptiveV9.json",
+      "bytes": 1588111,
+      "sha256": "0a41e753d7ac0c4ebad11a6ba10411b5ac6710592560ebda07e800d4ccdfb910"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2233293,
+      "sha256": "a3dd686131bea9c3cd8a506563e0dd45736382b611d1bbe07ac4b28ec59297fd"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n50-r1--a1--costPolishV7.json",
+      "bytes": 533184,
+      "sha256": "238f32c34f93dc886c90212aab8c62b17685c58e6f8deccb9043ce7d476a2ccb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n50-r1--a1--highsV8.json",
+      "bytes": 854945,
+      "sha256": "9f36a747285edf9323c05c5305541afe631e82b41ddda75f3aff46fb07cafd17"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2495718,
+      "sha256": "ac3422112652c575edc8147bae0d81f1341095442ce88dd65185a3f04b60bf70"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-batch-release-tight-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1227542,
+      "sha256": "56e72537080c27130784119ee4c598942ed2ff08c0821f54a66947fe5fdebfc0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n100-r1--a1--adaptiveV9.json",
+      "bytes": 1550373,
+      "sha256": "a36302524ce28b8182390e26e4e6f12fbf2d416c4ca435d00f609e4cbda86b75"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 4502726,
+      "sha256": "bcabceaa2cc46b0048ca9e35d229a5e7c5aa636314f0ebeb58e1f433ccbe4577"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n100-r1--a1--costPolishV7.json",
+      "bytes": 738393,
+      "sha256": "3a4fb4a92984b9191c4e9716b74593736977bdca8f77e076798be72519f3c278"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n100-r1--a1--highsV8.json",
+      "bytes": 1652092,
+      "sha256": "79f74d02dd64de70f341a2c8ce6c2c22b5c1e45b1013d62800d206f16638bedb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 5761048,
+      "sha256": "25a85b2dbe3f711a74de253929904d33b8d9c043e80afeac12bcaa46fcbc1964"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 2334147,
+      "sha256": "4e17ea984e6c36d0af0c7fcbd9d36f2490d8ba7784a6c460cd0f0f18ec8dd168"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n24-r1--a1--adaptiveV9.json",
+      "bytes": 442162,
+      "sha256": "a765bb1e357c43a0d1c41e252172c1a818219626d3e13e8bf7cf73969a19f6d6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1254725,
+      "sha256": "2a602a8d7e9839ee4168f9085426e6dbecfa6e3e96d9c802519e907ff2475167"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n24-r1--a1--costPolishV7.json",
+      "bytes": 215786,
+      "sha256": "3cfe413dba9512c57485120c360b7faabc8dc363cc7491abeb9e114f422c2b82"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n24-r1--a1--highsV8.json",
+      "bytes": 468594,
+      "sha256": "7cb8fe7f667386967f5090c022b6c6866cadeec0554653aaf90e69ef753fa0eb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 1338506,
+      "sha256": "b05163d5b9e222252c5fc27cc228aaa08b9a9efe4db8b4f2d6e4e38edd89883c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 642351,
+      "sha256": "f6533cb7d180707d5e3d5b79aeaea3b04f1075ef44b7866bd496f2f80d8ded22"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n50-r1--a1--adaptiveV9.json",
+      "bytes": 824941,
+      "sha256": "2ad2b02fbb9752cbf10ebe9f976c9637a83a811a4f5c0147f7400ec9558f3eb1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 2255905,
+      "sha256": "7372b2d5db499ce950da81cc07442ec69e5bc6c606c4031cca59adbe53fa0eab"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n50-r1--a1--costPolishV7.json",
+      "bytes": 397638,
+      "sha256": "96424baca361e158d2da2fc08aeb8f52757ee7afc150ff16c6c80bf06fc34dd1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n50-r1--a1--highsV8.json",
+      "bytes": 861754,
+      "sha256": "b698becb982a1bea6106e1fe09cbf73d164b3b0079d75b12cbed58a8824fff02"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 2493793,
+      "sha256": "e521ae6aa1d9b999913cc4b2eb66e9ff1fc83a759ba584f15288f5accab43737"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-balanced-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 1232334,
+      "sha256": "d442d23a01dd12e224e5097d78d2fea1a9bf7914fe89fae00a9df15429660e2a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n100-r1--a1--adaptiveV9.json",
+      "bytes": 1119120,
+      "sha256": "b9d103bee59f6c8dd826c8c176368e06b1d8fcb0b1ea02178c69502fa73f26cc"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n100-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 1776309,
+      "sha256": "b0ba1081b0a742548cd2534d14007287ac736621c50839612b89effeb576235c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n100-r1--a1--costPolishV7.json",
+      "bytes": 463178,
+      "sha256": "f04c80141dcbbda933ba08b602bdd813817434c6f375a4664c101083d2ea28fe"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n100-r1--a1--highsV8.json",
+      "bytes": 738280,
+      "sha256": "28d7ce80d6ccd8d9f62c2ff709552aeffe5bdf134f67be2a38b456e24dcd66d3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n100-r1--a1--seededHiGHSV12.json",
+      "bytes": 1683575,
+      "sha256": "a537ac5b7b09e5b86f666395c8a897a8bfe2e1658e8f5b2b78c3bdf61e34881d"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n100-r1--a1--stableHiGHSV10.json",
+      "bytes": 1188354,
+      "sha256": "a8e4724a67fd1276a694a475fd3285237be6a89b7dba6b8ac4098a38939afe04"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n24-r1--a1--adaptiveV9.json",
+      "bytes": 16978,
+      "sha256": "e438ca522c34422960a18bf8feb8a6776c31f18b03f30fd55724bebb00de47b5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n24-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 18007,
+      "sha256": "569f10528ea63c711007fd359cc26b3bf97759d6c7bc6921e73a8080d53562fe"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n24-r1--a1--costPolishV7.json",
+      "bytes": 15464,
+      "sha256": "b3a14312229993a7876000094433cdf44da05e222b75e95372ba0192cbad8b50"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n24-r1--a1--highsV8.json",
+      "bytes": 15246,
+      "sha256": "9304eaef8269d13269aaa3fced476c6092866b689a6787a4d23c8bb92f66e1a1"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n24-r1--a1--seededHiGHSV12.json",
+      "bytes": 19912,
+      "sha256": "a0261095cca43a7dcf932710d4b74a9e316a1b0e4349545bd788e21596af0a06"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n24-r1--a1--stableHiGHSV10.json",
+      "bytes": 16552,
+      "sha256": "832f4b9e14c33cfeda4fd9ea0669b41211f1456596e51862446ebb331eb94c3c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n50-r1--a1--adaptiveV9.json",
+      "bytes": 682567,
+      "sha256": "947fdc5d0438161a55bcc500161125aa1a9b4d16fb843dfa6a21000ad023f6bb"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n50-r1--a1--commitmentHiGHSV11.json",
+      "bytes": 412494,
+      "sha256": "fb281925026af0ff373ba6fd22804224475c2130b5f20dd34558456559b7fb96"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n50-r1--a1--costPolishV7.json",
+      "bytes": 277444,
+      "sha256": "5d55f242bd8088f6e402eefb43b167435277ffa36c614046d751b536ea6d47d6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n50-r1--a1--highsV8.json",
+      "bytes": 453793,
+      "sha256": "2afcaf493f4f10bf209f806c92921137322992da8086db285893ccb6d12245e6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n50-r1--a1--seededHiGHSV12.json",
+      "bytes": 1278290,
+      "sha256": "23c9f899ac2dc0c1a03ec1f5bc7edd8997e56e994082773c5bbe4a27f9a1d786"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/episodes/v12-development-v10-stress-new-arrivals-tight-n50-r1--a1--stableHiGHSV10.json",
+      "bytes": 625215,
+      "sha256": "68c85efa2759e7787f6ab2859385352f47451e70d68e7ecc24e8046fb86531d0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-balanced-n100-r1.json",
+      "bytes": 28886,
+      "sha256": "2ea97fa0067215a60bea5909ecb8145cc4e3af23a724b9b1881d10fd24b4fc45"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-balanced-n100-r3.json",
+      "bytes": 28888,
+      "sha256": "1bef3c411ad059ca76c8d6b29aaad58fa1a71c6c460cf2cda554e5bfc7bc1f0a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-balanced-n24-r1.json",
+      "bytes": 7872,
+      "sha256": "30cabbe04d7c626030b1a4af2702e028cd914649967444e16e3c366c3c2b43c0"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-balanced-n50-r1.json",
+      "bytes": 15029,
+      "sha256": "7f8e3ad9297e6485152ae70c4fff84cd8c884cd4c287c4fffd79243537e449b3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-tight-n100-r1.json",
+      "bytes": 28575,
+      "sha256": "ba4c2a6d1ea4c4f4d981b523e513c446c45b1ea5701ad944c7af8b46be5b2f8a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-tight-n24-r1.json",
+      "bytes": 7787,
+      "sha256": "0287e68cd6dab4a4a781c4e4fe3a6c5a90fa3ffdc43aba55f16e8444a6bf34bd"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-aged-backlog-tight-n50-r1.json",
+      "bytes": 14862,
+      "sha256": "e4a6ca198bcaa480a2dfe59b100f942838e77b7aa88eddaef21db583fe184372"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-balanced-n100-r1.json",
+      "bytes": 29023,
+      "sha256": "8f7e580a270fa9fc79520b3e3c354c19ad27c6488fe1a0de81413c8f0fbdbd61"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-balanced-n24-r1.json",
+      "bytes": 7906,
+      "sha256": "67456162e22f98e61e31b0db1f92d461563430bbf13123d8b7006f402936f514"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-balanced-n50-r1.json",
+      "bytes": 15091,
+      "sha256": "508edc2bcde5e9bbf555fac98067d982b66eda843aec2aef36ed604de506d8f8"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-tight-n100-r1.json",
+      "bytes": 28706,
+      "sha256": "96f319b77f969a98b11f91e3ea379f9b7768478668819cb1224691657461f45e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-tight-n100-r2.json",
+      "bytes": 28714,
+      "sha256": "b9f69eaedfeb1e3bfbc51be1f87b2376152389957c51c582a591ed5087196d5c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-tight-n100-r4.json",
+      "bytes": 28703,
+      "sha256": "523f72ed5515511678012dfcdcc3dee4301a01f9ef27926cefbf7d93202cf884"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-tight-n24-r1.json",
+      "bytes": 7818,
+      "sha256": "7421360a7de936042202576ba6397b2b790ac4eaf9431c4611d29547c6c97762"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-batch-release-tight-n50-r1.json",
+      "bytes": 14930,
+      "sha256": "588f022b6a4603ee00ec0c711b646d7f773f47925648363420d234faf7540205"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-balanced-n100-r1.json",
+      "bytes": 28905,
+      "sha256": "12dfa9bc6433655a363f2ad4d0f670b42b9c1a5cfdac686c43a1532e5a338ea4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-balanced-n24-r1.json",
+      "bytes": 7880,
+      "sha256": "b8112939b0a1a7fcf10bd0a66b1789cb8c4de6d676e46ff202de2d25d404477a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-balanced-n50-r1.json",
+      "bytes": 15036,
+      "sha256": "4bd5a50301133379f970715a50eb0da9437c985adf0565ec230f1410c02347da"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-tight-n100-r1.json",
+      "bytes": 28594,
+      "sha256": "fb438bf25c29cbe9794ad461fe1d6dd94cd4d8d7afc6a6a53c7f8846a8c3fa3c"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-tight-n24-r1.json",
+      "bytes": 7789,
+      "sha256": "4f52c01e16627e298c628903c28ca96cb77e6ebc609f7a591ae4b4122ca65981"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-tight-n24-r3.json",
+      "bytes": 7794,
+      "sha256": "533341d10cc868ced376ac29e4fb9ffb89f1439aca8307f3b18cf1c242a6f2ac"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-same-distribution-new-arrivals-tight-n50-r1.json",
+      "bytes": 14875,
+      "sha256": "678477de74ef2aa457d7162f9f9990f9f1cfc6f5c7a80bc6284a18a2678b47f2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-aged-backlog-balanced-n100-r1.json",
+      "bytes": 28111,
+      "sha256": "36cfa30ae9e747cc37361f5a510c2699d38225dce0f9f288513b581ebd3c33e5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-aged-backlog-balanced-n24-r1.json",
+      "bytes": 7929,
+      "sha256": "15116d25a794a20e7dbf9149fc3a3e6494fdcaf71ca5ab4a49caa8a8a0543a06"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-aged-backlog-balanced-n50-r1.json",
+      "bytes": 14802,
+      "sha256": "ff9aeecc0008af402ed67473ea806f426ae4691895e7a170a0be83c8212fc167"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-aged-backlog-tight-n100-r1.json",
+      "bytes": 27800,
+      "sha256": "ca1a16e443e3c60e7eb3e415419176a8c59ce080f2ca0c940eed44e32226e0f6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-aged-backlog-tight-n24-r1.json",
+      "bytes": 7844,
+      "sha256": "991127e1200753be5833111bdb62302ae3ad85b8206e26efcadfd0e36e4fe9b5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-aged-backlog-tight-n50-r1.json",
+      "bytes": 14636,
+      "sha256": "ea2d0bb926b610cfb2d0c7d8879c3d4713a0c30bb79f6e7878a5a57327bd5e4b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-balanced-n100-r1.json",
+      "bytes": 28241,
+      "sha256": "ccf6af9f64a1e805a40b9942aec6a2b27e1b6272566ed3744e38ccf76454e706"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-balanced-n24-r1.json",
+      "bytes": 7964,
+      "sha256": "12a83193d4eb1f323135ebaaa998e1cc46a1350882458a517ce69f35a510160b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-balanced-n50-r1.json",
+      "bytes": 14867,
+      "sha256": "baa0fd562855dc042a8cff5a4e219f481f18e630785668d4f78c7e664f296dc2"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-tight-n100-r1.json",
+      "bytes": 27926,
+      "sha256": "9e8cd58d7449cb9e90d864e9dd78bf9759ea4bc0636f06a30137de8acd763ab4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-tight-n100-r4.json",
+      "bytes": 28265,
+      "sha256": "3fdc5e63ed0fb627a9a19fac606726e19317245ffd5a2966b295675643b7091f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-tight-n24-r1.json",
+      "bytes": 7874,
+      "sha256": "942012fd84ff5225040e5140e73cd8bcc25b4f111706c1c170de498cfd6a7d43"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-batch-release-tight-n50-r1.json",
+      "bytes": 14699,
+      "sha256": "6343f85ebaf70f796121e8b1de62e4a0eff0548465eb729dc75da81b241a1c5a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-new-arrivals-balanced-n100-r1.json",
+      "bytes": 28133,
+      "sha256": "6ce96d395d7a30829ad60ba890ef496b92eef6a911f803262020de984a513f52"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-new-arrivals-balanced-n24-r1.json",
+      "bytes": 7934,
+      "sha256": "a567130b327d25e50c8ee95c700b5ba23a6f65a125fe2f34d2cd6fc3e70f9e15"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-new-arrivals-balanced-n50-r1.json",
+      "bytes": 14807,
+      "sha256": "e803b7b3f59d18389585753c2ccb58dcbceddf67e54db607e69659fc7539bd94"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-new-arrivals-tight-n100-r1.json",
+      "bytes": 27814,
+      "sha256": "6dd586d32a720a334c04bb3eb904559e1529b254bdf57c24456e321446b95d49"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-new-arrivals-tight-n24-r1.json",
+      "bytes": 7854,
+      "sha256": "176be1fb6231dce1814521644a6bb3d86fb20dfcdf095825073ac6fcd93a865e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/inputs/v10-stress-new-arrivals-tight-n50-r1.json",
+      "bytes": 14645,
+      "sha256": "24be8bc0d239f44973ebb7667cb615748f6175c66e97b66d1e6cf767f93297c6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/run.stdout.log",
+      "bytes": 31476,
+      "sha256": "92b5ad0f93193ba144021e28a3b3d37e995b5ccd7a30ebe9f41329c69e39af9b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/data/protocol-v12.json",
+      "bytes": 37487,
+      "sha256": "b9f5f71660e123730e2dc06deb556bb0534e6e6c124eb3f8469f78e870746ce6"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/data/protocol-v2.json",
+      "bytes": 17300,
+      "sha256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/package-lock.json",
+      "bytes": 35839,
+      "sha256": "6adf7e460d457ed6ef0a6f940c99987ddb569c5e432194de5e4fd4bd2c9f0afe"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/package.json",
+      "bytes": 1642,
+      "sha256": "60c5c30c5e7efb1eacd7e4c8b0c0f18d962a429b7d68465d882df72a7d29036e"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/__pycache__/certify-v4.cpython-312.pyc",
+      "bytes": 45392,
+      "sha256": "5341f730928fe64c15afaafd2d0644275a472b030dd03435a631b61756964e98"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/benchmark-v12.mjs",
+      "bytes": 43487,
+      "sha256": "47e3daefedb3db2bb9245595df3ea2b48e193d31a1be907c65d3c92e7e38f4ea"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/benchmark-v2.mjs",
+      "bytes": 19439,
+      "sha256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/certify-v4.py",
+      "bytes": 33565,
+      "sha256": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/development-v12.mjs",
+      "bytes": 19990,
+      "sha256": "96fec526d995e4d0ff9bb5ed95135ff747898583355126bd3b62f7b6d7ce15ac"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/episode-v12.worker.mjs",
+      "bytes": 8811,
+      "sha256": "07262016cfa90cc3151807c0663fb5ca86f884509cdc8c80bcfc6892786c516a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/highs-planner-v10.mjs",
+      "bytes": 19600,
+      "sha256": "9272c19c8afe47ae9cafe8efb7fd8d45dca2c25de4001b4e132e5709f5a8f310"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/highs-planner-v11.mjs",
+      "bytes": 22273,
+      "sha256": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/highs-planner-v12.mjs",
+      "bytes": 29002,
+      "sha256": "aa7a320e1916f6c157b2eed7ebad7eb2ad06c83bc6cea6743e1e45ca5e3285e4"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/highs-planner-v8.mjs",
+      "bytes": 14594,
+      "sha256": "cfa0abecc7bf8f305dacfe76936f30b0aa1b877619315070c9245d7f87ed0bad"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/highs-service-v8.py",
+      "bytes": 17941,
+      "sha256": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/rolling-benchmark-v7.mjs",
+      "bytes": 30049,
+      "sha256": "6feaee69c7a9b8b104f67517db7a79dfb4e8aede105056553dd39c4cc73fabe3"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/scripts/rolling-v7.worker.mjs",
+      "bytes": 10972,
+      "sha256": "0d5adc5e2e86017dd3c252e06bf692a9e4b7dd4e13d35e0694df6f84fcefdaa7"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/adaptive-planner-v9.js",
+      "bytes": 23912,
+      "sha256": "cc6d6e26c3f14f090f1ee78a25210e45e5ca1331cb5c731d4cb568d684ffed8a"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/candidate-delivery-v9.js",
+      "bytes": 7011,
+      "sha256": "6a675ae69756175c7a11a451fabfed2ead21f0ac9d039e5d51156f3ecb6d48ba"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/commitment-slack-v11.js",
+      "bytes": 8307,
+      "sha256": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/cost-recovery-v7.js",
+      "bytes": 18567,
+      "sha256": "89d5b2598639e4b08683c93e61d268064d2455c9df435b596016a1ecb947e25f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/engine.js",
+      "bytes": 27539,
+      "sha256": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/event-search-v4.js",
+      "bytes": 8927,
+      "sha256": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/execution-constraints.js",
+      "bytes": 1660,
+      "sha256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/fast-constructor-v5.js",
+      "bytes": 12000,
+      "sha256": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/locked-recovery-v9.js",
+      "bytes": 15114,
+      "sha256": "cc048ae6eeb823426e96f530b64fabff5e070cb7a01d67a508e5cde763aaa615"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/recovery-planner-v6.js",
+      "bytes": 22975,
+      "sha256": "560d3d8a136adbcabfe00373ea549d68f107859764feadff607c08bc4acf12bc"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/rolling-plan.js",
+      "bytes": 15849,
+      "sha256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/solver-glpk.js",
+      "bytes": 8432,
+      "sha256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/solver-presolver.js",
+      "bytes": 7516,
+      "sha256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/source/src/strong-baseline.js",
+      "bytes": 3939,
+      "sha256": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac"
+    },
+    {
+      "path": "artifacts/v12-fullpath-first-development/start.json",
+      "bytes": 368,
+      "sha256": "fee9acc3bf715e964c0cb5cb59b0a7d645990e2197098626040da2549137ad9f"
+    },
+    {
+      "path": "data/development-fullpath-review-v12.json",
+      "bytes": 461514,
+      "sha256": "b12096b71c3e7a302ba2d607944d1982f02943c881252cf3ef2db0ee767e5908"
+    },
+    {
+      "path": "data/development-fullpath-v12.json",
+      "bytes": 42790,
+      "sha256": "e599e6670ff0f943966aa2c34388aa69b541fb1040d13869f40552ba826f21b1"
+    },
+    {
+      "path": "scripts/archive-development-v12.py",
+      "bytes": 3985,
+      "sha256": "f124a72b46bffbbfcdbfeb2f20591630ec81a9be42ffd695fdc06055f9b05359"
+    },
+    {
+      "path": "scripts/restore-evidence-v12.py",
+      "bytes": 5070,
+      "sha256": "789016919a5d4f1cb9f7add80c6f5081ac79bc5cdbf106cf90e0bad3d7080b32"
+    },
+    {
+      "path": "scripts/review-development-fullpath-v12.py",
+      "bytes": 16128,
+      "sha256": "d836f74d7c55d304b9f9d525025dd4d699c6efb77e2e271b314b1aa4ccf675a5"
+    },
+    {
+      "path": "scripts/review-v10.py",
+      "bytes": 32545,
+      "sha256": "f73a3c4af72cc55f835c35d05a44278cda835e849eafe8f2dd476f3e1d42b5ef"
+    },
+    {
+      "path": "scripts/review-v12.py",
+      "bytes": 68311,
+      "sha256": "198bb99443611ce815b03406adfa05f0255581857c43e2b0ad40402b91a6e9bd"
+    },
+    {
+      "path": "scripts/review-v5.py",
+      "bytes": 55405,
+      "sha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9"
+    },
+    {
+      "path": "scripts/review-v8.py",
+      "bytes": 30299,
+      "sha256": "d00376834719daa05e4eb3f26f45c482d46d3a90243369d007fccedf4f05d8dd"
+    },
+    {
+      "path": "scripts/review-v9.py",
+      "bytes": 32427,
+      "sha256": "ac976b2906a331b1cb7224fecf22e4041c4915ea407d54cf2a381f29d2f56683"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 2554868,
+      "sha256": "daf49b8758628c486f478a59f9b518366b7420b7d4f814b09faa1d9cc5597391"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

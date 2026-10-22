@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "portplan-v14-release",
+  "status": "formal-research-complete-default-gate-not-met",
+  "candidateMethod": "guardedHiGHSV13",
+  "formalExperimentComplete": true,
+  "independentReviewComplete": true,
+  "independentBootstrapReviewComplete": true,
+  "fullChampionshipPlanComplete": false,
+  "defaultRecommendationEligible": false,
+  "panelObservedNecessaryGates": {
+    "same-distribution": true,
+    "stress": false
+  },
+  "enterpriseRecordsRequired": false,
+  "entrantReadiness": "not_verified",
+  "rankGuaranteed": false,
+  "formalSourceGitCommit": "d61118924f7d0f9c1e1f6a43d6725a6deec101a0",
+  "formalIndexSha256": "a0081a725e21a019c783bffe5b3c0e8aedf8f8b29903564fa04fa1ee53a2fcb9",
+  "frozenManifestSha256": "2833cf5c8ddeb1d01f4f06fba0dd045aa5e82bb6a25cd6d00799e63caddd71bd",
+  "evidence": {
+    "results": {
+      "path": "/data/v14-results.json",
+      "bytes": 875579,
+      "sha256": "18d794150d2928a53cd4661ce2b32c90bf59e18e10299e6817f8e4fd0ee84ce8"
+    },
+    "review": {
+      "path": "/data/review-v14.json",
+      "bytes": 8816318,
+      "sha256": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f"
+    },
+    "statistics": {
+      "path": "/data/bootstrap-review-v14.json",
+      "bytes": 156799,
+      "sha256": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48"
+    },
+    "protocol": {
+      "path": "/data/protocol-v14.json",
+      "bytes": 55794,
+      "sha256": "7711db53e044231b018a2381b7bdc5a87319f00d3f4848f26803ed1b820bada4"
+    }
+  },
+  "scope": "Complete first prespecified synthetic natural-D0 study, with independent physical and scenario-cluster statistical reviews. The same-distribution completion-only necessary gate passes; stress fails. Conditional fee deterioration and all adverse identifiers remain visible. This is not a universal/default production recommendation, entrant certification, enterprise outcome or guaranteed rank.",
+  "notes": "144 fresh business cases x 3 fixed algorithm/timing repeats x 7 unchanged methods = 3024. No rerun, seed replacement, forced endpoint import or post-result tuning. Historical V1-V13 evidence is unchanged. Current browser, package recovery and publication are accepted separately."
+}

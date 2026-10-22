@@ -1,0 +1,1152 @@
+{
+  "schemaVersion": "portplan-public-source-field-coverage-v12",
+  "generatedAt": "2026-10-16T17:42:32.712040+00:00",
+  "status": "complete_for_declared_finite_public_source_coverage",
+  "valid": true,
+  "checkedScope": "Existing source receipts, current local artifact SHA-256, units/field/missingness/claim coverage. No fresh acquisition, original-numeric recomputation, model experiment, solver or operational validation.",
+  "readOnlyHistoricalInputs": true,
+  "networkRequests": 0,
+  "solverRuns": 0,
+  "newExperiments": 0,
+  "requiresPrivateBusinessData": false,
+  "requiresIdentifierBearingGateCSV": false,
+  "nextPublicSourceFieldCoverage": {
+    "status": "completed",
+    "supportedNativeDataQuestionSource": "ygpa_gate_2026h1",
+    "supportedNativeDataQuestion": "同港车辆入出场时长的独立日历样本外MAE；见V11去标识观测独立复算。",
+    "meaning": "native data means source-native observed visit labels, not native optimization solver performance.",
+    "fullLifecycleEvidence": "explicit reproducible simulation, not a real paired import/unload/empty-return dataset",
+    "newRealLifecycleDatasetFound": false,
+    "publicResearchPreparationBlockedByPrivateData": false
+  },
+  "summary": {
+    "sourceCount": 7,
+    "uniqueLocallyHashedArtifacts": 41,
+    "uniqueArtifactsMatchingHistoricalReceipts": 24,
+    "historicalOriginalBindingsNotRead": 4,
+    "completeRealContainerLifecycleSources": 0,
+    "coversPublicObservedVisitPrediction": true,
+    "coversMathematicalResourceComponent": true,
+    "coversOfficialFeeRuleExamples": true,
+    "sourceCoverageCompleteWithinDeclaredScope": true,
+    "thirdPartyCertification": false,
+    "competitionRankGuaranteed": false
+  },
+  "sourceCategoriesMustRemainSeparate": [
+    "public observed vehicle visits",
+    "publisher-described bulk-port process records",
+    "generated freight and constructed container research instances",
+    "generated mathematical RCPSP benchmark",
+    "official fee rules and narrow examples",
+    "PortPlan synthetic full-lifecycle experiments"
+  ],
+  "canonicalPortPlanMissingLifecycleFields": [
+    "paired container identity and20/40ft size",
+    "actual vessel discharge timestamp",
+    "customs/release and hard unloading due window",
+    "pickup/unload-start/unload-duration/empty-return linked events",
+    "daily truck/warehouse/staging capacities with units",
+    "carrier/contract/free-time/tariff applicability and invoices"
+  ],
+  "sources": [
+    {
+      "id": "ygpa_gate_2026h1",
+      "title": "YGPA光阳西码头2026上半年车辆进出观测",
+      "sourceType": "public_observed_vehicle_terminal_visits",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://www.data.go.kr/data/15059682/fileData.do",
+      "citation": "여수광양항만공사 / data.go.kr, 15059682, 2026 H1 vehicle gate data",
+      "license": {
+        "label": "Catalog: 이용허락범위 제한 없음",
+        "evidencePath": "data/public/ygpa_vehicle_data_catalog.html",
+        "scope": "官方目录的使用许可范围不限声明；本项目分发去标识观测，不重新认证发布者/原始记录真实性。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/ygpa_vehicle_data_catalog.html",
+          "role": "official_catalog_snapshot",
+          "url": "https://www.data.go.kr/data/15059682/fileData.do",
+          "bytes": 208974,
+          "sha256": "c60174ba55a6e0a1a51032a179c58e31de734746e8139e20f782cf156692fcbb",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "c60174ba55a6e0a1a51032a179c58e31de734746e8139e20f782cf156692fcbb",
+          "expectedHashSource": "data/source_registry.json#sources/ygpa_gate_2026h1/catalog_snapshot"
+        },
+        {
+          "path": "data/public/v3-gate-visits-deidentified.csv",
+          "role": "identifier_free_derived_observations",
+          "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+          "bytes": 1550641,
+          "sha256": "685d1d39517f6b59d3e8a28b9eee26e9bf5594aa883271c15c8313e545893bb2",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "685d1d39517f6b59d3e8a28b9eee26e9bf5594aa883271c15c8313e545893bb2",
+          "expectedHashSource": "data/public-gate-validation-v3.json#source/cleanedSha256"
+        }
+      ],
+      "originalArtifacts": [
+        {
+          "filename": "ygpa_west_2026h1.csv",
+          "path": null,
+          "recordedCachePath": "/tmp/portplan-source-cache/ygpa_west_2026h1.csv",
+          "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+          "sha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+          "bytes": 5401590,
+          "verification": "historical_receipt_only_not_read_in_v12",
+          "redistributed": false
+        }
+      ],
+      "fields": [
+        {
+          "sourceFields": [
+            "entry_local"
+          ],
+          "units": "local minute timestamp; Asia/Seoul inferred, not explicit in original CSV",
+          "provenance": "observed timestamp retained in identifier-free derivative",
+          "portPlanRelevance": "Entry hour/weekday known at gate entry; not container release."
+        },
+        {
+          "sourceFields": [
+            "elapsed_minutes"
+          ],
+          "units": "minutes",
+          "provenance": "entry-to-exit timestamp difference",
+          "portPlanRelevance": "Gate visit elapsed-time label; not road travel, loading or warehouse unload duration."
+        },
+        {
+          "sourceFields": [
+            "source_line"
+          ],
+          "units": "source CSV row number",
+          "provenance": "derived traceability key",
+          "portPlanRelevance": "Not a stable vehicle/container ID."
+        }
+      ],
+      "missingFields": [
+        "stable vehicle/container identity",
+        "vessel discharge and customs release",
+        "container size",
+        "warehouse unloading start/end and due window",
+        "matched empty return",
+        "daily truck/warehouse/staging capacities",
+        "carrier/contract/invoice/free-time applicability"
+      ],
+      "supportedQuestions": [
+        "基于入场时已知小时/星期信息，能否降低同港后续月份车辆进出场时长的离线预测MAE？"
+      ],
+      "supportedEvidence": {
+        "records": 58171,
+        "train": {
+          "period": "2026-01 through 2026-04",
+          "records": 41039
+        },
+        "validation": {
+          "period": "2026-05",
+          "records": 7980,
+          "purpose": "select among three predeclared candidates"
+        },
+        "test": {
+          "period": "2026-06",
+          "records": 9152,
+          "observedDates": 21
+        },
+        "selectedModel": "hour_median",
+        "selectedTestMAEMinutes": 16.468422202797203,
+        "baselineTestMAEMinutes": 16.877185314685313,
+        "visitWeightedMAEImprovementPct": 2.421986274763681,
+        "equalObservedDateMeanMAEImprovementMinutes": 0.6952351568486952,
+        "observedDateBootstrap95IntervalMinutes": [
+          0.3024015758736723,
+          1.2936972394539736
+        ],
+        "bootstrapUnit": "observed test date; equal-date effect, not visit-weighted MAE difference",
+        "independentRecalculation": "V11 independently recalculated the identifier-free CSV; source-to-deidentified mapping was not newly authenticated."
+      },
+      "unsupportedClaims": [
+        "独立车辆样本、前瞻部署效果或跨港泛化",
+        "仓库服务时长、可用容量、排队因果解释",
+        "PortPlan完整箱生命周期可行性或实际节费"
+      ],
+      "caveats": [
+        "研究为回顾性探索；模型候选在拟合前固定，历史总体统计此前已看过。",
+        "缺失日期不按零流量填补；重复车辆可能相关。",
+        "原始有标识CSV只保留既有SHA声明，本轮不读取、不重新下载、不重新分发。"
+      ],
+      "audits": [
+        {
+          "path": "data/public-gate-protocol-v3.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 1796,
+          "sha256": "633eb5b1c61b140da6e8f5252cf482900571be4f27b7fb6c5fde336730dc8b7e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Calendar split, candidates and retrospective scope."
+        },
+        {
+          "path": "data/public-gate-validation-v3.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 26945,
+          "sha256": "d714b3f0bba3a0d82776ff660a1a5e7f4da7eea46a448d61d2fb4c589582112e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved complete results, all candidates and date metrics."
+        },
+        {
+          "path": "data/public-evidence-readiness-v11.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 670796,
+          "sha256": "ed3c4ddf37528ee08d5831e178df8f42cf94528be2bead1783ae539e0779db8e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "V11 independently recalculated deidentified rows, splits, errors and date bootstrap; not raw mapping authentication."
+        }
+      ]
+    },
+    {
+      "id": "psplib_j30",
+      "title": "PSPLIB J30单模式RCPSP公开数学基准",
+      "sourceType": "generated_mathematical_resource_precedence_benchmark",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://www.om-db.wi.tum.de/psplib/",
+      "citation": "Kolisch / Sprecher, PSPLIB project scheduling problem library; J30 single-mode instance set",
+      "license": {
+        "label": "Research evaluation explicitly permitted; numeric redistribution license not established",
+        "evidencePath": "data/public/v7-validation/psplib-library.html",
+        "quote": "The data sets may be used for the evaluation of solution procedures for single- and multi-mode resource-constrained project scheduling problems.",
+        "scope": "研究评价使用声明不等于明确再分发许可；原始TGZ、OPT、merged数值文件不打入下载包，方法示例代码许可也不替代数据许可。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/v7-validation/psplib-library.html",
+          "role": "official_research_use_or_format_snapshot",
+          "url": "https://www.om-db.wi.tum.de/psplib/library.php",
+          "bytes": 4427,
+          "sha256": "bd3a315302fbdf2370d1b3241ac780ebc67a0150222814440da4fa27d7b27e22",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "bd3a315302fbdf2370d1b3241ac780ebc67a0150222814440da4fa27d7b27e22",
+          "expectedHashSource": "data/public/v7-validation/manifest.json#records/psplib-library.html"
+        },
+        {
+          "path": "data/public/v7-validation/psplib-general.html",
+          "role": "official_research_use_or_format_snapshot",
+          "url": "https://www.om-db.wi.tum.de/psplib/geninfo.php",
+          "bytes": 2111,
+          "sha256": "cefba51218f7f84c42e9ed77b1fbc922e7f6789355d2eb4108690cd3c6f42e4a",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "cefba51218f7f84c42e9ed77b1fbc922e7f6789355d2eb4108690cd3c6f42e4a",
+          "expectedHashSource": "data/public/v7-validation/manifest.json#records/psplib-general.html"
+        },
+        {
+          "path": "data/public/v7-validation/psplib-sm-download.html",
+          "role": "official_research_use_or_format_snapshot",
+          "url": "https://www.om-db.wi.tum.de/psplib/getdata.php?mode=sm",
+          "bytes": 5818,
+          "sha256": "b171d5b19b99e3003cd7208cf5769b9e72aa4979bc1f8c846997351488dbf028",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "b171d5b19b99e3003cd7208cf5769b9e72aa4979bc1f8c846997351488dbf028",
+          "expectedHashSource": "data/public/v7-validation/manifest.json#records/psplib-sm-download.html"
+        },
+        {
+          "path": "data/public/v7-validation/psplib-solution-format.html",
+          "role": "official_research_use_or_format_snapshot",
+          "url": "https://www.om-db.wi.tum.de/psplib/format.php",
+          "bytes": 2437,
+          "sha256": "25bb8ddc22df512058fc018feaf067d9ef4f3ea8456cafe6fcaec83e1de57471",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "25bb8ddc22df512058fc018feaf067d9ef4f3ea8456cafe6fcaec83e1de57471",
+          "expectedHashSource": "data/public/v7-validation/manifest.json#records/psplib-solution-format.html"
+        }
+      ],
+      "originalArtifacts": [
+        {
+          "filename": "j30.sm.tgz",
+          "path": null,
+          "recordedCachePath": "/tmp/portplan-v7-psplib/j30.sm.tgz",
+          "url": "https://www.om-db.wi.tum.de/psplib/download_dataset.php?set=j30&mode=sm&format=tgz",
+          "sha256": "c18202a56588e3cdf3c1aebc5fa59d06b22ee634c74ddf554b6df6bc100044ff",
+          "bytes": 187623,
+          "verification": "historical_receipt_only_not_read_in_v12",
+          "redistributed": false
+        },
+        {
+          "filename": "j30.opt",
+          "path": null,
+          "recordedCachePath": "/tmp/portplan-v7-psplib/j30.opt",
+          "url": "https://www.om-db.wi.tum.de/psplib/download_solution.php?set=j30&mode=sm&type=opt",
+          "sha256": "9036456d909d5d2102975c13dd6fe36fe503b3ed1df5b91fa652aa7dc9648ee3",
+          "bytes": 16199,
+          "verification": "historical_receipt_only_not_read_in_v12",
+          "redistributed": false
+        },
+        {
+          "filename": "j30-merged.json",
+          "path": null,
+          "recordedCachePath": "/tmp/portplan-v7-psplib/j30-merged.json",
+          "url": "https://www.om-db.wi.tum.de/psplib/download_merged.php?set=j30&mode=sm",
+          "sha256": "8f2c005cdf81bf0c962e2930c9c241ed327ba832202ff579d953c4e93f39029e",
+          "bytes": 156950,
+          "verification": "historical_receipt_only_not_read_in_v12",
+          "redistributed": false
+        }
+      ],
+      "fields": [
+        {
+          "sourceFields": [
+            "task id",
+            "duration",
+            "successors"
+          ],
+          "units": "abstract integer ticks and task IDs",
+          "provenance": "generated RCPSP instance",
+          "portPlanRelevance": "Precedence and nonpreemptive resource scheduling component."
+        },
+        {
+          "sourceFields": [
+            "four renewable resource demands",
+            "four renewable capacities"
+          ],
+          "units": "abstract integer resource units",
+          "provenance": "generated, constant capacities",
+          "portPlanRelevance": "Renewable resource feasibility, not measured vehicles/warehouse/staging."
+        },
+        {
+          "sourceFields": [
+            "optimal makespan reference"
+          ],
+          "units": "abstract ticks",
+          "provenance": "published reference solution table",
+          "portPlanRelevance": "Saved objective comparison; not KRW or operational port optimum."
+        },
+        {
+          "sourceFields": [
+            "project release",
+            "horizon",
+            "due",
+            "tardiness",
+            "MPM"
+          ],
+          "units": "source project metadata; tick-based",
+          "provenance": "generated metadata",
+          "portPlanRelevance": "Source due/tardiness are not standard RCPSP hard task deadlines; directly treating due as PortPlan dueDay changes the problem."
+        }
+      ],
+      "missingFields": [
+        "calendar-day meaning",
+        "container identity/size",
+        "pickup-unload-empty-return event chain",
+        "PortPlan daily capacity profile and resource units",
+        "carrier/storage/D&D tariffs",
+        "actual observed orders or executions"
+      ],
+      "supportedQuestions": [
+        "通用非抢占工序、前置关系与可再生资源组件是否在公开RCPSP数学基准上形成可审查计划？"
+      ],
+      "supportedEvidence": {
+        "savedInstances": 480,
+        "tasksPerInstance": 32,
+        "nonDummyTasksPerInstance": 30,
+        "renewableResourceTypes": 4,
+        "v12Scope": "Hash binding and field/claim coverage only; original numeric caches not read/downloaded, no new feasibility/optimality reconstruction."
+      },
+      "unsupportedClaims": [
+        "PSPLIB是实港口订单或未见业务留出",
+        "抽象tick等于天/分钟",
+        "在PSPLIB成功证明完整港口模型有效或节省KRW费用",
+        "本轮重新核查480原始数值实例或重新求解"
+      ],
+      "caveats": [
+        "16项历史输入/480份已保存资源台账绑定是V11的有限检查；新审计只核其文件完整性与字段边界。"
+      ],
+      "audits": [
+        {
+          "path": "data/public/v7-validation/psplib-j30-audit.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 228421,
+          "sha256": "aee69ff2cecb584757bcfa7765fb869c3488b3ed418fb2c611e8541278ce5fb9",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved original input parser audit, not rerun here."
+        },
+        {
+          "path": "data/public-resource-v7.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 3088335,
+          "sha256": "8006575658f320ba0db851af8e6f0251ac9935bb8d72790bf0b9f405594d4dd6",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved 480-case component results, not rerun."
+        },
+        {
+          "path": "data/public-resource-review-v7.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 509370,
+          "sha256": "0ca57ba433fad8ae94bbee4a3ae03b571fcfcefc4bd34145f761f4a8f08d0c40",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved independent resource audit and license scope."
+        },
+        {
+          "path": "data/public-evidence-readiness-v11.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 670796,
+          "sha256": "ed3c4ddf37528ee08d5831e178df8f42cf94528be2bead1783ae539e0779db8e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "V11 saved-audit/resource-ledger binding; numeric cache not reacquired."
+        }
+      ]
+    },
+    {
+      "id": "plos_constructed_container_2025",
+      "title": "PLOS ONE外部集装箱送提调度构造算例",
+      "sourceType": "published_constructed_simulation_instance_and_code",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://doi.org/10.1371/journal.pone.0318606",
+      "citation": "Huang P, Wang H, Tan F, Jiang Y, Cai J (2025). Optimization of external container delivery and pickup scheduling based on appointment mechanism. PLOS ONE 20(2): e0318606.",
+      "license": {
+        "label": "CC BY 4.0 article declaration",
+        "evidencePath": "data/public/v2-external-plos-article.xml",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "文章XML明示CC BY 4.0且原件/补充材料保留作者与来源；未发现另行单独的代码软件许可证，不虚构MIT/Apache授权。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/v2-external-plos-article.xml",
+          "role": "article_original",
+          "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0318606&type=manuscript",
+          "bytes": 139217,
+          "sha256": "084d5c901f26d3c403e15336cdc26aa6009de5073c051d3b8fdfd94229f3ada4",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "084d5c901f26d3c403e15336cdc26aa6009de5073c051d3b8fdfd94229f3ada4",
+          "expectedHashSource": "data/public/v2-external-manifest.json#files/data/public/v2-external-plos-article.xml"
+        },
+        {
+          "path": "data/public/v2-external-plos-code.zip",
+          "role": "journal_supporting_original",
+          "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0318606.s001&type=supplementary",
+          "bytes": 17819,
+          "sha256": "df567384f3b7390bebf774c6559c9ca369d489df97edb56cec8fb8cb7d054a6c",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "df567384f3b7390bebf774c6559c9ca369d489df97edb56cec8fb8cb7d054a6c",
+          "expectedHashSource": "data/public/v2-external-manifest.json#files/data/public/v2-external-plos-code.zip"
+        },
+        {
+          "path": "data/public/v2-external-plos-data.zip",
+          "role": "journal_supporting_original",
+          "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0318606.s002&type=supplementary",
+          "bytes": 141081,
+          "sha256": "2ef18612fc0d3e01ace17b8d16c2f29b916d9b2b711e39b32322c9e765fcfb68",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "2ef18612fc0d3e01ace17b8d16c2f29b916d9b2b711e39b32322c9e765fcfb68",
+          "expectedHashSource": "data/public/v2-external-manifest.json#files/data/public/v2-external-plos-data.zip"
+        }
+      ],
+      "originalArtifacts": [],
+      "fields": [
+        {
+          "sourceFields": [
+            "six yard directional demand rows",
+            "terminal/yard nodes"
+          ],
+          "units": "296 tasks each direction; 592 directional tasks total",
+          "provenance": "constructed demand",
+          "portPlanRelevance": "Not 296 paired import-and-empty-return container lifecycles."
+        },
+        {
+          "sourceFields": [
+            "distance matrix",
+            "time windows",
+            "gate appointment capacities"
+          ],
+          "units": "kilometers; minutes over 1440-minute horizon; vehicles per 120-minute slot",
+          "provenance": "constructed model inputs",
+          "portPlanRelevance": "Minute-level routing and appointment constraint study, not calendar-day PortPlan import data."
+        },
+        {
+          "sourceFields": [
+            "S2 cost iteration series",
+            "arrival-by-slot figure data"
+          ],
+          "units": "RMB fleet-operating objective; six 500-iteration series; two 12-slot arrival series",
+          "provenance": "simulation result arrays",
+          "portPlanRelevance": "500 iterations are not 500 independent cases; Actual arrival quantity label is not an observed gate dataset."
+        }
+      ],
+      "missingFields": [
+        "real observation dates",
+        "paired container identity and size",
+        "vessel discharge/customs release",
+        "warehouse unload and return links",
+        "PNC storage and carrier contract/free-time/D&D rules"
+      ],
+      "supportedQuestions": [
+        "公开论文的分钟级车辆调度假设、输入和可执行性问题能否透明复核？"
+      ],
+      "supportedEvidence": {
+        "savedTracks": 2,
+        "savedSeedsPerTrack": 6,
+        "originalInputRuntimeErrors": 6,
+        "explicitDistanceRepairReturned": 6,
+        "explicitRepair": "distance2 := distance",
+        "returnedCostIndependentlyCertified": false,
+        "v12Scope": "Preserved originals and saved outcome/assumption bindings only; no new run."
+      },
+      "unsupportedClaims": [
+        "真实箱单或公开现场观测",
+        "论文完整预算复现成功",
+        "六条修补返回费用已独立认证",
+        "RMB车辆总成本能直接比较PortPlan的KRW两费或证明优于论文"
+      ],
+      "caveats": [
+        "文章与代码存在容量及处理时长参数冲突；没有擅自转成PortPlan订单。",
+        "该PLOS构造模型与另列Zenodo散粮港口OCEL是不同来源。"
+      ],
+      "audits": [
+        {
+          "path": "data/public/v2-external-plos-instance-audit.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 9685,
+          "sha256": "ff05cc8c6134073fde9d80a5956b442b140069930b8f7009ba1bf6fd299eeddb",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved constructed-case/S2 inventory and parameter conflicts."
+        },
+        {
+          "path": "data/external-reproduction-v3.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 436746,
+          "sha256": "c3e832ff0a8213c8537a6052732dbd156533125734f476a32df7b85232b300a7",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Both saved historical tracks, including all six original-input errors."
+        },
+        {
+          "path": "data/public-evidence-readiness-v11.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 670796,
+          "sha256": "ed3c4ddf37528ee08d5831e178df8f42cf94528be2bead1783ae539e0779db8e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "V11 original-code AST/input/protocol/outcome binding; not rerun or cost certification."
+        }
+      ]
+    },
+    {
+      "id": "bulkport_ocel_22019684",
+      "title": "Zenodo中国散粮港口提货OCEL日志",
+      "sourceType": "publisher_described_field_collected_bulk_port_process_log",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://zenodo.org/records/22019684",
+      "citation": "Jia Wei, RongJia Song, Chun Ouyang, Weiping Cui (2026), IoT-Enriched OCEL Dataset for the Cargo Pickup Process at a Major Chinese Port, DOI10.5281/zenodo.22019684",
+      "license": {
+        "label": "CC BY 4.0",
+        "evidencePath": "data/public/v6-data-sources/port-bulk-ocel-22019684/zenodo-metadata.json",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "Zenodo该记录数据许可；发布者称现场采集，本项目未独立认证采集港口/采集过程。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/v6-data-sources/port-bulk-ocel-22019684/CargoPickup_IoT.sqlite",
+          "role": "original_sqlite",
+          "url": "https://zenodo.org/api/records/22019684/files/CargoPickup_IoT.sqlite/content",
+          "bytes": 7188480,
+          "sha256": "edcb515fddc502db99a2122cf8d69b951d00269644aa46f6d550a43bb017075f",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "edcb515fddc502db99a2122cf8d69b951d00269644aa46f6d550a43bb017075f",
+          "expectedHashSource": "data/public/v6-data-sources/manifest.json#sources/port-bulk-ocel-22019684/artifactDownloads/0"
+        },
+        {
+          "path": "data/public/v6-data-sources/port-bulk-ocel-22019684/zenodo-metadata.json",
+          "role": "publisher_metadata",
+          "url": "https://zenodo.org/api/records/22019684",
+          "bytes": 6888,
+          "sha256": "fba73ff0839d78cb3bfcffce3c21ebecc6f09934fc915ea2970c67766dbed65f",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null
+        }
+      ],
+      "originalArtifacts": [],
+      "fields": [
+        {
+          "sourceFields": [
+            "event id/type",
+            "native table,rowid",
+            "event-object and Truck→Pickup Plan links"
+          ],
+          "units": "occurrence and object identities",
+          "provenance": "publisher log + derived association keys",
+          "portPlanRelevance": "Identity collisions/multiplied joins and complete/incomplete process windows."
+        },
+        {
+          "sourceFields": [
+            "Enterport",
+            "LoadTruck",
+            "WeighLoadedTruck",
+            "ExitPort timestamps"
+          ],
+          "units": "raw naive local timestamp strings; derived spans in seconds; timezone unknown",
+          "provenance": "recorded process events",
+          "portPlanRelevance": "Recorded-clock spans, not measured unloading duration or online information availability."
+        },
+        {
+          "sourceFields": [
+            "Truck objects",
+            "assignment windows"
+          ],
+          "units": "50 object identities; 489 retrospective assignment windows",
+          "provenance": "publisher log + post-hoc association",
+          "portPlanRelevance": "Object count is not authenticated usable fleet capacity."
+        }
+      ],
+      "missingFields": [
+        "container identity/size and lifecycle",
+        "clock timezone/calibration",
+        "observed loading start/end service duration",
+        "release/due windows",
+        "daily truck/warehouse/staging capacity",
+        "matched empty return",
+        "port fee contracts"
+      ],
+      "supportedQuestions": [
+        "公开多对象日志能否在保留ID冲突、关联重复及缺失的条件下复核流程窗口与记录时钟跨度？"
+      ],
+      "supportedEvidence": {
+        "assignmentWindows": 489,
+        "completeOrderedObservation": 454,
+        "incompleteObservation": 35,
+        "gateRecordedSpanMedianSeconds": 4231,
+        "loadToLoadedWeighRecordedSpanMedianSeconds": 2108,
+        "v12Scope": "Existing independent SQL audit bound, not newly rerun; original SQLite bytes rehashed only."
+      },
+      "unsupportedClaims": [
+        "散粮提货等于集装箱提卸还",
+        "35个缺记录窗口是物理订单失败",
+        "时钟跨度等于仓库服务时长或可用容量",
+        "线上调度效果或收费节省"
+      ],
+      "caveats": [
+        "原生event有6989行但6950个不同ID；不能以event ID静默去重或把连接膨胀行当新增事件。",
+        "四阶段完整窗口统计分母454，全部关联窗口分母489；无时区字符串不强加UTC/KST。"
+      ],
+      "audits": [
+        {
+          "path": "data/port-ledger-v7.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 975619,
+          "sha256": "2e0d2f31587b2455f85388092ef3fcc7fd94e9d11644613d42eb78c6beb9362b",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved full occurrence/association/window ledger."
+        },
+        {
+          "path": "data/port-ledger-review-v7.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 140288,
+          "sha256": "62dd82362c1cbd89b3eff81fb0cb400ccf93f535eb3fad152c66dacddd65a100",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Independent read-only SQL review of all 489 windows; not rerun here."
+        }
+      ]
+    },
+    {
+      "id": "bet_freight_47_generated",
+      "title": "固定提交Robust BET 47客户货运研究实例",
+      "sourceType": "generated_freight_instance_based_on_historical_movements",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://github.com/pengdongbo/Robust-BET-Dispatching-Dataset/tree/0e608495c1520d1634d57c748f84156453d17869",
+      "commit": "0e608495c1520d1634d57c748f84156453d17869",
+      "citation": "Dongbo Peng, Robust-BET-Dispatching-Dataset, copyright (c) 2024 Dongbo; pinned commit 0e608495c1520d1634d57c748f84156453d17869",
+      "license": {
+        "label": "Repository MIT; no supplied data exception found",
+        "evidencePath": "data/public/v6-data-sources/california-freight-47-derived/LICENSE",
+        "scope": "保留版权和许可文本；未独立认证上游历史轨迹及OpenRouteService权利，不将仓库许可证写成法律认证。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/v6-data-sources/california-freight-47-derived/LICENSE",
+          "role": "license",
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/LICENSE",
+          "bytes": 1063,
+          "sha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+          "expectedHashSource": "data/public-orders-audit-v6.json#source/artifacts"
+        },
+        {
+          "path": "data/public/v6-data-sources/california-freight-47-derived/README.md",
+          "role": "pinned_repository_original",
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/README.md",
+          "bytes": 944,
+          "sha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+          "expectedHashSource": "data/public-orders-audit-v6.json#source/artifacts"
+        },
+        {
+          "path": "data/public/v6-data-sources/california-freight-47-derived/BETVRPBTW1_robust.csv",
+          "role": "pinned_repository_original",
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPBTW1_robust.csv",
+          "bytes": 1305,
+          "sha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+          "expectedHashSource": "data/public-orders-audit-v6.json#source/artifacts"
+        },
+        {
+          "path": "data/public/v6-data-sources/california-freight-47-derived/BETVRPB1_dist.csv",
+          "role": "pinned_repository_original",
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_dist.csv",
+          "bytes": 20288,
+          "sha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+          "expectedHashSource": "data/public-orders-audit-v6.json#source/artifacts"
+        },
+        {
+          "path": "data/public/v6-data-sources/california-freight-47-derived/BETVRPB1_time.csv",
+          "role": "pinned_repository_original",
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_time.csv",
+          "bytes": 17854,
+          "sha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+          "expectedHashSource": "data/public-orders-audit-v6.json#source/artifacts"
+        }
+      ],
+      "originalArtifacts": [],
+      "fields": [
+        {
+          "sourceFields": [
+            "id",
+            "stop_type"
+          ],
+          "units": "depot/customer ID; 33 Delivery, 14 Pickup, 1 depot",
+          "provenance": "generated research instance",
+          "portPlanRelevance": "Freight stop type, not container pickup/empty-return chain."
+        },
+        {
+          "sourceFields": [
+            "weight"
+          ],
+          "units": "pounds (lbs)",
+          "provenance": "generated; raw-vs-derived per-field provenance unknown",
+          "portPlanRelevance": "Freight demand cannot be relabeled TEU/container size."
+        },
+        {
+          "sourceFields": [
+            "Stop Duration",
+            "Arr",
+            "Due"
+          ],
+          "units": "minutes; Arr/Due customer window bounds",
+          "provenance": "generated; not individually verified observations",
+          "portPlanRelevance": "Arr is not historical order release; service time is not observed warehouse unloading."
+        },
+        {
+          "sourceFields": [
+            "BETVRPB1_dist.csv",
+            "BETVRPB1_time.csv"
+          ],
+          "units": "two directed 48×48 matrices; meters and seconds respectively",
+          "provenance": "OpenRouteService-estimated matrices",
+          "portPlanRelevance": "Preserve asymmetry/off-diagonal zeros; source uses seconds vs minute windows."
+        }
+      ],
+      "missingFields": [
+        "original historical traces and per-field generation provenance",
+        "fleet count/capacity/shift/departure rule",
+        "container ID/size/discharge",
+        "warehouse/staging daily capacity",
+        "matched empty return",
+        "carrier/port contract tariff and free time"
+      ],
+      "supportedQuestions": [
+        "固定许可原件的货运字段、窗口与矩阵形状/单位是否足以支持后续明确建模的约束实例？"
+      ],
+      "supportedEvidence": {
+        "customers": 47,
+        "nodes": 48,
+        "originalFilesAudited": 5,
+        "originalUntransformedOrders": false,
+        "existingAudit": "V6 independently parsed five pinned original files with Decimal; no solver.",
+        "v12Scope": "Rehash prior pinned originals and bind saved audit; no route experiment."
+      },
+      "unsupportedClaims": [
+        "真实未经变换订单、真实集装箱箱单或PNC实单",
+        "ORS时间等于实际行驶记录",
+        "把lbs改为TEU或Arr直接等同PortPlan releaseDay",
+        "已完成路线最优比较或PortPlan现场节费"
+      ],
+      "caveats": [
+        "作者README明确使用generated instance based on historical movements；原始历史数据未公开在这五个文件中。",
+        "窗口时钟起点/时区、固定0时出车均未知；矩阵与节点仅按原文件行序位置关联，源矩阵无显式行ID标签。"
+      ],
+      "audits": [
+        {
+          "path": "data/public-orders-audit-v6.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 60961,
+          "sha256": "57f011bc3f16d083ef4063a26735da526a142d0a20f1ff57e187653af28604f5",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Independent original-file schema/unit/permit/quality audit, not rerun here."
+        }
+      ]
+    },
+    {
+      "id": "pnc_2026_storage",
+      "title": "PNC 2026标准费率及冲突对照",
+      "sourceType": "official_public_tariff_rules_not_shipments",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://www.pncport.com/resources/homepage/kor/data/2026_PNC_Standard_Tariff.pdf",
+      "citation": "Pusan Newport Company, PNC Standard Tariff 2026, pp.3–4; effective 2026-01-01",
+      "license": {
+        "label": "Official publicly accessible documents; explicit open redistribution license not established",
+        "evidencePath": "data/public/pnc_2026_standard_tariff.pdf",
+        "scope": "规则引用/取证原件；不宣称CC/MIT许可、真实合同适用性或税务/结算认证。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/pnc_2026_standard_tariff.pdf",
+          "role": "official_public_document",
+          "url": "https://www.pncport.com/resources/homepage/kor/data/2026_PNC_Standard_Tariff.pdf",
+          "bytes": 347225,
+          "sha256": "b607d120c37c9d0eacd0842418e105afd2e6283c0ebe86e4f742e8311b3f696c",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "b607d120c37c9d0eacd0842418e105afd2e6283c0ebe86e4f742e8311b3f696c",
+          "expectedHashSource": "data/source_registry.json#sources/pnc_2026/snapshot"
+        },
+        {
+          "path": "data/public/pnc_tariff_landing.html",
+          "role": "official_public_document",
+          "url": "https://www.pncport.com/kor/Info/details.do?id=MD040",
+          "bytes": 25361,
+          "sha256": "1ed3838d1b103efb5c3b3058e7f709dda1da0759accd8e009ae90ae55b699357",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "1ed3838d1b103efb5c3b3058e7f709dda1da0759accd8e009ae90ae55b699357",
+          "expectedHashSource": "data/source_registry.json#sources/pnc_tariff_landing/snapshot"
+        },
+        {
+          "path": "data/public/pnc_2025_standard_tariff.pdf",
+          "role": "official_public_document",
+          "url": "https://www.pncport.com/resources/homepage/kor/data/2025_PNC_Standard_Tariff.pdf",
+          "bytes": 506094,
+          "sha256": "dc4739df5a7fc6770d479c480cfd27f2f626082b579de591ae5f628adb038e6c",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "dc4739df5a7fc6770d479c480cfd27f2f626082b579de591ae5f628adb038e6c",
+          "expectedHashSource": "data/source_registry.json#sources/pnc_2025/snapshot"
+        },
+        {
+          "path": "data/public/pnc_cost_inquiry_observation.json",
+          "role": "researcher_extraction_not_original_html",
+          "url": "https://svc.pncport.com/info/CMS/Container/CostInquiry.pnc?mCode=MN177",
+          "bytes": 1031,
+          "sha256": "c92e4a5747c43b033bfbe66767dcf6bf00af80af36e6a2681adc881b81139c38",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "c92e4a5747c43b033bfbe66767dcf6bf00af80af36e6a2681adc881b81139c38",
+          "expectedHashSource": "data/source_registry.json#sources/pnc_shipper_web/snapshot"
+        }
+      ],
+      "originalArtifacts": [],
+      "fields": [
+        {
+          "sourceFields": [
+            "dry import free days",
+            "charged-day slabs/rates"
+          ],
+          "units": "4 calendar storage free days; KRW per TEU per charged day",
+          "provenance": "official dated tariff",
+          "portPlanRelevance": "Highest reached slab reprices all charged days; 20ft=1TEU,40ft=2TEU in declared ordinary-dry scope."
+        },
+        {
+          "sourceFields": [
+            "discharge 08:00 cutoff",
+            "gate-out endpoint"
+          ],
+          "units": "Korea local calendar days; before08:00 same day, at/after next day; gate-out included",
+          "provenance": "official tariff endpoint rule",
+          "portPlanRelevance": "Requires actual discharge timestamp and pickup date, not provided by tariff."
+        }
+      ],
+      "missingFields": [
+        "specific shipments and discharge/pickup",
+        "customer contract/discount/tax applicability",
+        "warehouse/return events and capacities",
+        "final invoice/settlement"
+      ],
+      "supportedQuestions": [
+        "给定已声明干箱参数和日期，PNC公开标准规则及官方20ft示例是否数值一致？"
+      ],
+      "supportedEvidence": {
+        "officialExample": {
+          "sizeFeet": 20,
+          "storageDays": 15,
+          "feeKRW": 500500
+        },
+        "tariffChosen": "dated 2026 PDF, not older cost-inquiry webpage table",
+        "savedFeeCheckScope": "V11 executes product arithmetic: two official narrow examples jointly across PNC/Maersk plus eleven project-derived boundary cases."
+      },
+      "unsupportedClaims": [
+        "公开标准费就是某真实订单实际发票",
+        "成本查询提取是原始HTML",
+        "费用函数覆盖所有箱种/合同/税务",
+        "真实节费或全球最低费用"
+      ],
+      "caveats": [
+        "成本查询页显示费率与2025表一致；保存的是研究者事实提取，非该页HTML。采用有日期2026 PDF仍不证明真实结算适用。"
+      ],
+      "audits": [
+        {
+          "path": "data/source_registry.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 26056,
+          "sha256": "23270ace40e83b4485cf948fc7fdc0cbc2f36224f96c3eed91a190249bca8fbb",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Historical official source receipts, interpretations and conflict reconciliation."
+        },
+        {
+          "path": "data/public-evidence-readiness-v11.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 670796,
+          "sha256": "ed3c4ddf37528ee08d5831e178df8f42cf94528be2bead1783ae539e0779db8e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "V11 limited fee arithmetic examples; not third independent formula or invoice validation."
+        }
+      ]
+    },
+    {
+      "id": "maersk_korea_combined_dd",
+      "title": "Maersk韩国进口Combined D&D公开费率与规则",
+      "sourceType": "official_public_carrier_rules_not_shipments",
+      "directPortPlanLifecycleDataset": false,
+      "landingUrl": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+      "citation": "Maersk South Korea import D&D page, dated adjustment and PNC storage notices, calculator guide and D&D terms",
+      "license": {
+        "label": "Official publicly accessible documents; explicit open redistribution license not established",
+        "evidencePath": "data/public/maersk_korea_import.html",
+        "scope": "官方规则/例证引用，不据此宣称开源许可、合同或发票适用性。"
+      },
+      "artifacts": [
+        {
+          "path": "data/public/maersk_korea_import.html",
+          "role": "official_public_document",
+          "url": "https://www.maersk.com/local-information/asia-pacific/south-korea/import",
+          "bytes": 165514,
+          "sha256": "c2087edc5ba035b76cc794dcb390e4bd5347d254984bc4c2127ca3d0a5bbde4b",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "c2087edc5ba035b76cc794dcb390e4bd5347d254984bc4c2127ca3d0a5bbde4b",
+          "expectedHashSource": "data/source_registry.json#sources/maersk_korea_import/snapshot"
+        },
+        {
+          "path": "data/public/maersk_2024_dd_rate_change.pdf",
+          "role": "official_public_document",
+          "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/kr-exp-imp-dd-rate-jul-2024.pdf",
+          "bytes": 221612,
+          "sha256": "3eed973e7e662dde6fcbb58126dce1cee25ff8b973b9a858afdd2d011771372c",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "3eed973e7e662dde6fcbb58126dce1cee25ff8b973b9a858afdd2d011771372c",
+          "expectedHashSource": "data/source_registry.json#sources/maersk_2024_change/snapshot"
+        },
+        {
+          "path": "data/public/maersk_pnc_storage_2023.pdf",
+          "role": "official_public_document",
+          "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/busan-port-import-storage-fee-imposition-process-change-information-26dec.pdf",
+          "bytes": 144694,
+          "sha256": "7ce3166a7e37127af2afb3b31707e393fceb36e6af6508a5104cb04467d1ffc3",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "7ce3166a7e37127af2afb3b31707e393fceb36e6af6508a5104cb04467d1ffc3",
+          "expectedHashSource": "data/source_registry.json#sources/maersk_pnc_storage/snapshot"
+        },
+        {
+          "path": "data/public/maersk_dd_terms.html",
+          "role": "official_public_document",
+          "url": "https://terms.maersk.com/dnd",
+          "bytes": 91196,
+          "sha256": "f1f34b7756114d6ec6374e4331bc4e2b5eea1efc6a5fef80f3472b35301ba314",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "f1f34b7756114d6ec6374e4331bc4e2b5eea1efc6a5fef80f3472b35301ba314",
+          "expectedHashSource": "data/source_registry.json#sources/maersk_terms/snapshot"
+        },
+        {
+          "path": "data/public/v2-maersk-korea-calculator-guide.pdf",
+          "role": "official_narrow_worked_example",
+          "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/freetime-pre-do-check-guideline.pdf",
+          "bytes": 264781,
+          "sha256": "7999be66da21ef47521022c14a41f7e9357cffdeab16ba4661b468d6aaf8f4e8",
+          "verification": "sha256_matches_saved_receipt",
+          "expectedSha256": "7999be66da21ef47521022c14a41f7e9357cffdeab16ba4661b468d6aaf8f4e8",
+          "expectedHashSource": "data/public/v2-research-source-manifest.json#files/data/public/v2-maersk-korea-calculator-guide.pdf"
+        }
+      ],
+      "originalArtifacts": [],
+      "fields": [
+        {
+          "sourceFields": [
+            "dry free time",
+            "20ft vs40/40HC/45H daily bands"
+          ],
+          "units": "10 free calendar days; KRW per container per day by listed type",
+          "provenance": "official published table; contract/purchased free time can differ",
+          "portPlanRelevance": "Requires actual size, applicable contract/free time, discharge and empty return."
+        },
+        {
+          "sourceFields": [
+            "discharge date",
+            "empty gate-in date",
+            "combined D&D scope"
+          ],
+          "units": "inclusive calendar endpoints; special inland-truck place-of-delivery exception",
+          "provenance": "official Korea page/terms",
+          "portPlanRelevance": "Inside/outside terminal combined D&D distinct from PNC separately invoiced storage."
+        },
+        {
+          "sourceFields": [
+            "cross-band accumulation"
+          ],
+          "units": "declared progressive sum of day slabs",
+          "provenance": "PortPlan interpretation, not established Korea cross-band worked example",
+          "portPlanRelevance": "Not promoted to an unqualified official billing fact."
+        }
+      ],
+      "missingFields": [
+        "actual container/empty-return dates",
+        "specific booking Pricing Calculation Date and contract",
+        "purchased/negotiated free time",
+        "invoice/tax settlement",
+        "physical resource capacities and unloading"
+      ],
+      "supportedQuestions": [
+        "给定声明的适用类型/日历/免期和跨档解释，费用计算及官方窄示例能否审查？"
+      ],
+      "supportedEvidence": {
+        "officialExample": "Calculator-guide 40HC, three chargeable days; narrow first-band case only.",
+        "crossBandBillingConfirmed": false,
+        "terminalStorageSeparateFromCarrierDD": true
+      },
+      "unsupportedClaims": [
+        "韩国跨档累加已由官方算例充分证明",
+        "所有合同统一十天免期",
+        "Combined D&D包含另行PNC堆存费",
+        "真实发票或实际经营收益验证"
+      ],
+      "caveats": [
+        "费率变化与Pricing Calculation Date及特约有效期有关。",
+        "本项目对两项独立费用相加；沉没/增量费用是研究记账口径，非新增官方收费类型。"
+      ],
+      "audits": [
+        {
+          "path": "data/source_registry.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 26056,
+          "sha256": "23270ace40e83b4485cf948fc7fdc0cbc2f36224f96c3eed91a190249bca8fbb",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Official rule/notice receipts and declared cross-band interpretation."
+        },
+        {
+          "path": "data/public-evidence-readiness-v11.json",
+          "role": "saved_audit_or_protocol",
+          "url": null,
+          "bytes": 670796,
+          "sha256": "ed3c4ddf37528ee08d5831e178df8f42cf94528be2bead1783ae539e0779db8e",
+          "verification": "new_byte_binding_only",
+          "expectedSha256": null,
+          "expectedHashSource": null,
+          "checkedScope": "Saved limited product arithmetic evidence, not independent full invoice validation."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "SHA matches saved bytes, not publisher authenticity, field collection authenticity, license legal certification, or correctness of historical algorithms.",
+    "V12 coverage does not rerun V11 gate fitting/bootstrap, historical PSPLIB/PLOS experiments, existing SQL process audit, or fee tests; it binds their saved scope honestly.",
+    "Gate source-to-deidentified transformation and PSPLIB numeric originals retain historical receipt bindings only; neither is newly read or fetched.",
+    "No cross-source join invents full container orders. Different ports, cargo types, units, objectives and data generation methods cannot be pooled as one real lifecycle dataset.",
+    "Independent hand-written/physical/native diagnostic reviews elsewhere are separate deliverables; source coverage cannot certify an optimizer, real savings, enterprise endorsement or a competition rank."
+  ],
+  "reproduction": {
+    "command": "python scripts/check-public-source-field-coverage-v12.py",
+    "operation": "Read-only current SHA and finite-schema/binding checks; stdout JSON; no network, external packages, solver or original identifier-bearing/cache files.",
+    "historicalNativeDataRecalculation": "python scripts/verify-public-evidence-v11.py --output artifacts/public-evidence-recheck-new.json",
+    "historicalNativeDataCommandScope": "Optional independent V11 recheck; requires a fresh output path; not executed as part of this V12 coverage audit."
+  },
+  "receiptBindings": [
+    {
+      "path": "data/source_registry.json",
+      "bytes": 26056,
+      "sha256": "23270ace40e83b4485cf948fc7fdc0cbc2f36224f96c3eed91a190249bca8fbb",
+      "role": "saved_receipt_integrity_binding"
+    },
+    {
+      "path": "data/public-gate-validation-v3.json",
+      "bytes": 26945,
+      "sha256": "d714b3f0bba3a0d82776ff660a1a5e7f4da7eea46a448d61d2fb4c589582112e",
+      "role": "saved_receipt_integrity_binding"
+    },
+    {
+      "path": "data/public/v7-validation/manifest.json",
+      "bytes": 12431,
+      "sha256": "9ea7a75ca6f7cd9eeedf75023d018ef766796b9e9a4462ae0e0798f848298d7f",
+      "role": "saved_receipt_integrity_binding"
+    },
+    {
+      "path": "data/public/v2-external-manifest.json",
+      "bytes": 1507,
+      "sha256": "24553369f5c654b2f9e55f54ac13a95d0d998ae769c21493f35cb86f410f2352",
+      "role": "saved_receipt_integrity_binding"
+    },
+    {
+      "path": "data/public/v6-data-sources/manifest.json",
+      "bytes": 27046,
+      "sha256": "22f9fdf51a1977c48549d6dd4d952509a9ece91fa1e1c187206d3bcb9b585a7b",
+      "role": "saved_receipt_integrity_binding"
+    },
+    {
+      "path": "data/public-orders-audit-v6.json",
+      "bytes": 60961,
+      "sha256": "57f011bc3f16d083ef4063a26735da526a142d0a20f1ff57e187653af28604f5",
+      "role": "saved_receipt_integrity_binding"
+    },
+    {
+      "path": "data/public/v2-research-source-manifest.json",
+      "bytes": 6341,
+      "sha256": "caae1310c376171f2bc1df9d00fb6e4a368be3d6eccbd6a0e74172469ae8fa3d",
+      "role": "saved_receipt_integrity_binding"
+    }
+  ]
+}

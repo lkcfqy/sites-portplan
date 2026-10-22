@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "portplan-continuation-v13",
+  "formalIndexSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+  "fullChampionshipPlanComplete": false,
+  "defaultRecommendationEligible": false,
+  "enterpriseRecordsRequired": false,
+  "developmentPolicyRef": "AGENTS.md",
+  "browserAcceptance": {
+    "status": "passed",
+    "record": {
+      "path": "/data/browser-acceptance-v13.json",
+      "sha256": "19da0dd6575045307e2a02aba90ca1ce6bfdb6e2cdc8f324ec5b58520793c36d"
+    }
+  },
+  "algorithmDevelopment": {
+    "status": "reviewed_seen_controlled_experiment",
+    "protocolRef": "data/protocol-development-v13.json",
+    "newFormalExperimentComplete": false,
+    "record": {
+      "path": "/data/development-guard-v13.json",
+      "sha256": "0f64a723b0c0692ac2200b46c37bdd9a1226380963c0d55a6dad696b8dc3a124"
+    },
+    "review": {
+      "path": "/data/development-guard-review-v13.json",
+      "sha256": "142cb311d5aa2790889d958f90af810bdaf7fac0f916213f03a544082db6beff"
+    }
+  },
+  "entrantReadiness": "not_verified",
+  "rankGuaranteed": false
+}

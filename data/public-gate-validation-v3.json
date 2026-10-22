@@ -1,0 +1,1025 @@
+{
+  "version": 3,
+  "studyStatus": "Exploratory retrospective validation designed after reading aggregate public-data statistics. Model choices fixed before fitting; this is not a prospective deployment trial.",
+  "generatedAt": "2026-10-12T08:00:17.114099+00:00",
+  "source": {
+    "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+    "catalogUrl": "https://www.data.go.kr/data/15059682/fileData.do",
+    "sha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+    "cleanedSha256": "685d1d39517f6b59d3e8a28b9eee26e9bf5594aa883271c15c8313e545893bb2",
+    "timezone": "Asia/Seoul inferred",
+    "grain": "one public vehicle terminal visit"
+  },
+  "protocolSha256": "633eb5b1c61b140da6e8f5252cf482900571be4f27b7fb6c5fde336730dc8b7e",
+  "protocol": {
+    "version": "public-gate-calendar-holdout-v3",
+    "studyStatus": "Exploratory retrospective validation designed after reading aggregate public-data statistics. Model choices fixed before fitting; this is not a prospective deployment trial.",
+    "source": "YGPA West Container Terminal vehicle gate visits, public 2026 H1 CSV",
+    "sourceSha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+    "target": "Elapsed minutes from entry to exit timestamps, not road travel or warehouse unloading duration",
+    "featuresKnownAtEntry": [
+      "local entry hour",
+      "local entry weekday"
+    ],
+    "timezone": "Asia/Seoul inferred from terminal location; not explicit in source CSV",
+    "split": {
+      "trainEnd": "2026-04-30",
+      "validationStart": "2026-05-01",
+      "validationEnd": "2026-05-31",
+      "testStart": "2026-06-01",
+      "testEnd": "2026-06-30"
+    },
+    "candidates": [
+      "global_median",
+      "hour_median",
+      "weekday_hour_median"
+    ],
+    "minimumGroupTrainingCount": 100,
+    "smallGroupFallback": "Use global training median; no refitting on validation or test labels",
+    "selection": "Lowest validation MAE; ties prefer the earlier declared candidate",
+    "metrics": [
+      "visit-weighted mean absolute error",
+      "median absolute error",
+      "P90 absolute error",
+      "daily paired MAE difference"
+    ],
+    "dailyBootstrap": {
+      "resamples": 1000,
+      "seed": 39001,
+      "unit": "observed test date",
+      "interval": 0.95
+    },
+    "quality": "Discard all-blank rows; retain source records with valid nonnegative entry/exit times. Retain apparent duplicate visits because no stable unmasked identifier is supplied. Missing dates are not zero-volume days.",
+    "reporting": "Retain all candidate metrics including losses. No PNC fee savings or vehicle/container-level independent sampling claim. Source contains no stable identifier to separate repeat vehicles."
+  },
+  "quality": {
+    "allBlankRows": 168046,
+    "invalidDatetimeRows": 0
+  },
+  "summary": {
+    "sourceType": "public_observed_gate_visits",
+    "records": 58171,
+    "trainCount": 41039,
+    "validationCount": 7980,
+    "testCount": 9152,
+    "selectedModel": "hour_median",
+    "selectionPeriod": "May 2026 validation only",
+    "testMAE": 16.468422202797203,
+    "baselineMAE": 16.877185314685313,
+    "maeImprovementPct": 2.421986274763681,
+    "testMedianAbsoluteError": 12.0,
+    "testP90AbsoluteError": 35.0,
+    "observedTestDates": 21,
+    "equalDateMeanMAEImprovementMinutes": 0.6952351568486952,
+    "dailyBootstrap95IntervalMinutes": [
+      0.3024015758736723,
+      1.2936972394539736
+    ]
+  },
+  "candidates": [
+    {
+      "model": "global_median",
+      "learnedGroups": 0,
+      "validation": {
+        "count": 7980,
+        "mae": 18.482581453634086,
+        "medianAbsoluteError": 12.0,
+        "p90AbsoluteError": 42.0,
+        "byDate": [
+          {
+            "date": "2026-05-01",
+            "visits": 31,
+            "mae": 16.838709677419356
+          },
+          {
+            "date": "2026-05-02",
+            "visits": 90,
+            "mae": 8.922222222222222
+          },
+          {
+            "date": "2026-05-03",
+            "visits": 3,
+            "mae": 60.666666666666664
+          },
+          {
+            "date": "2026-05-04",
+            "visits": 680,
+            "mae": 20.776470588235295
+          },
+          {
+            "date": "2026-05-05",
+            "visits": 27,
+            "mae": 12.37037037037037
+          },
+          {
+            "date": "2026-05-06",
+            "visits": 686,
+            "mae": 14.096209912536443
+          },
+          {
+            "date": "2026-05-07",
+            "visits": 644,
+            "mae": 17.667701863354036
+          },
+          {
+            "date": "2026-05-08",
+            "visits": 627,
+            "mae": 16.89792663476874
+          },
+          {
+            "date": "2026-05-09",
+            "visits": 95,
+            "mae": 10.578947368421053
+          },
+          {
+            "date": "2026-05-10",
+            "visits": 2,
+            "mae": 11.5
+          },
+          {
+            "date": "2026-05-11",
+            "visits": 710,
+            "mae": 17.125352112676055
+          },
+          {
+            "date": "2026-05-12",
+            "visits": 714,
+            "mae": 16.404761904761905
+          },
+          {
+            "date": "2026-05-13",
+            "visits": 652,
+            "mae": 17.188650306748468
+          },
+          {
+            "date": "2026-05-14",
+            "visits": 650,
+            "mae": 22.655384615384616
+          },
+          {
+            "date": "2026-05-15",
+            "visits": 588,
+            "mae": 14.806122448979592
+          },
+          {
+            "date": "2026-05-16",
+            "visits": 48,
+            "mae": 10.875
+          },
+          {
+            "date": "2026-05-17",
+            "visits": 6,
+            "mae": 4.666666666666667
+          },
+          {
+            "date": "2026-05-18",
+            "visits": 585,
+            "mae": 22.157264957264957
+          },
+          {
+            "date": "2026-05-19",
+            "visits": 634,
+            "mae": 20.277602523659304
+          },
+          {
+            "date": "2026-05-20",
+            "visits": 508,
+            "mae": 27.503937007874015
+          }
+        ]
+      },
+      "test": {
+        "count": 9152,
+        "mae": 16.877185314685313,
+        "medianAbsoluteError": 12.0,
+        "p90AbsoluteError": 36.0,
+        "byDate": [
+          {
+            "date": "2026-06-01",
+            "visits": 581,
+            "mae": 18.06368330464716
+          },
+          {
+            "date": "2026-06-02",
+            "visits": 694,
+            "mae": 18.96829971181556
+          },
+          {
+            "date": "2026-06-03",
+            "visits": 107,
+            "mae": 15.271028037383177
+          },
+          {
+            "date": "2026-06-04",
+            "visits": 728,
+            "mae": 17.206043956043956
+          },
+          {
+            "date": "2026-06-05",
+            "visits": 794,
+            "mae": 17.64735516372796
+          },
+          {
+            "date": "2026-06-06",
+            "visits": 41,
+            "mae": 9.951219512195122
+          },
+          {
+            "date": "2026-06-07",
+            "visits": 1,
+            "mae": 14.0
+          },
+          {
+            "date": "2026-06-08",
+            "visits": 595,
+            "mae": 15.142857142857142
+          },
+          {
+            "date": "2026-06-09",
+            "visits": 538,
+            "mae": 15.518587360594795
+          },
+          {
+            "date": "2026-06-10",
+            "visits": 687,
+            "mae": 15.14556040756914
+          },
+          {
+            "date": "2026-06-11",
+            "visits": 555,
+            "mae": 15.216216216216216
+          },
+          {
+            "date": "2026-06-12",
+            "visits": 592,
+            "mae": 18.56081081081081
+          },
+          {
+            "date": "2026-06-13",
+            "visits": 83,
+            "mae": 12.19277108433735
+          },
+          {
+            "date": "2026-06-14",
+            "visits": 1,
+            "mae": 7.0
+          },
+          {
+            "date": "2026-06-15",
+            "visits": 639,
+            "mae": 15.41001564945227
+          },
+          {
+            "date": "2026-06-16",
+            "visits": 639,
+            "mae": 15.996870109546165
+          },
+          {
+            "date": "2026-06-17",
+            "visits": 669,
+            "mae": 18.424514200298955
+          },
+          {
+            "date": "2026-06-18",
+            "visits": 614,
+            "mae": 17.77687296416938
+          },
+          {
+            "date": "2026-06-19",
+            "visits": 551,
+            "mae": 17.77676950998185
+          },
+          {
+            "date": "2026-06-20",
+            "visits": 42,
+            "mae": 19.642857142857142
+          },
+          {
+            "date": "2026-06-30",
+            "visits": 1,
+            "mae": 61.0
+          }
+        ]
+      }
+    },
+    {
+      "model": "hour_median",
+      "learnedGroups": 15,
+      "validation": {
+        "count": 7980,
+        "mae": 18.129197994987468,
+        "medianAbsoluteError": 12.0,
+        "p90AbsoluteError": 41.0,
+        "byDate": [
+          {
+            "date": "2026-05-01",
+            "visits": 31,
+            "mae": 15.741935483870968
+          },
+          {
+            "date": "2026-05-02",
+            "visits": 90,
+            "mae": 8.3
+          },
+          {
+            "date": "2026-05-03",
+            "visits": 3,
+            "mae": 59.666666666666664
+          },
+          {
+            "date": "2026-05-04",
+            "visits": 680,
+            "mae": 20.16029411764706
+          },
+          {
+            "date": "2026-05-05",
+            "visits": 27,
+            "mae": 11.814814814814815
+          },
+          {
+            "date": "2026-05-06",
+            "visits": 686,
+            "mae": 13.940233236151604
+          },
+          {
+            "date": "2026-05-07",
+            "visits": 644,
+            "mae": 17.895962732919255
+          },
+          {
+            "date": "2026-05-08",
+            "visits": 627,
+            "mae": 16.524720893141946
+          },
+          {
+            "date": "2026-05-09",
+            "visits": 95,
+            "mae": 9.273684210526316
+          },
+          {
+            "date": "2026-05-10",
+            "visits": 2,
+            "mae": 19.0
+          },
+          {
+            "date": "2026-05-11",
+            "visits": 710,
+            "mae": 16.91549295774648
+          },
+          {
+            "date": "2026-05-12",
+            "visits": 714,
+            "mae": 16.064425770308123
+          },
+          {
+            "date": "2026-05-13",
+            "visits": 652,
+            "mae": 16.677914110429448
+          },
+          {
+            "date": "2026-05-14",
+            "visits": 650,
+            "mae": 22.186153846153847
+          },
+          {
+            "date": "2026-05-15",
+            "visits": 588,
+            "mae": 14.710884353741497
+          },
+          {
+            "date": "2026-05-16",
+            "visits": 48,
+            "mae": 9.8125
+          },
+          {
+            "date": "2026-05-17",
+            "visits": 6,
+            "mae": 4.5
+          },
+          {
+            "date": "2026-05-18",
+            "visits": 585,
+            "mae": 21.379487179487178
+          },
+          {
+            "date": "2026-05-19",
+            "visits": 634,
+            "mae": 20.182965299684543
+          },
+          {
+            "date": "2026-05-20",
+            "visits": 508,
+            "mae": 26.840551181102363
+          }
+        ]
+      },
+      "test": {
+        "count": 9152,
+        "mae": 16.468422202797203,
+        "medianAbsoluteError": 12.0,
+        "p90AbsoluteError": 35.0,
+        "byDate": [
+          {
+            "date": "2026-06-01",
+            "visits": 581,
+            "mae": 17.411359724612737
+          },
+          {
+            "date": "2026-06-02",
+            "visits": 694,
+            "mae": 18.64985590778098
+          },
+          {
+            "date": "2026-06-03",
+            "visits": 107,
+            "mae": 15.08411214953271
+          },
+          {
+            "date": "2026-06-04",
+            "visits": 728,
+            "mae": 17.09065934065934
+          },
+          {
+            "date": "2026-06-05",
+            "visits": 794,
+            "mae": 17.149874055415616
+          },
+          {
+            "date": "2026-06-06",
+            "visits": 41,
+            "mae": 9.75609756097561
+          },
+          {
+            "date": "2026-06-07",
+            "visits": 1,
+            "mae": 9.0
+          },
+          {
+            "date": "2026-06-08",
+            "visits": 595,
+            "mae": 15.12436974789916
+          },
+          {
+            "date": "2026-06-09",
+            "visits": 538,
+            "mae": 15.526022304832713
+          },
+          {
+            "date": "2026-06-10",
+            "visits": 687,
+            "mae": 14.43231441048035
+          },
+          {
+            "date": "2026-06-11",
+            "visits": 555,
+            "mae": 15.025225225225226
+          },
+          {
+            "date": "2026-06-12",
+            "visits": 592,
+            "mae": 18.39864864864865
+          },
+          {
+            "date": "2026-06-13",
+            "visits": 83,
+            "mae": 11.481927710843374
+          },
+          {
+            "date": "2026-06-14",
+            "visits": 1,
+            "mae": 4.0
+          },
+          {
+            "date": "2026-06-15",
+            "visits": 639,
+            "mae": 14.856025039123631
+          },
+          {
+            "date": "2026-06-16",
+            "visits": 639,
+            "mae": 15.55868544600939
+          },
+          {
+            "date": "2026-06-17",
+            "visits": 669,
+            "mae": 17.89088191330344
+          },
+          {
+            "date": "2026-06-18",
+            "visits": 614,
+            "mae": 16.941368078175895
+          },
+          {
+            "date": "2026-06-19",
+            "visits": 551,
+            "mae": 17.101633393829403
+          },
+          {
+            "date": "2026-06-20",
+            "visits": 42,
+            "mae": 19.833333333333332
+          },
+          {
+            "date": "2026-06-30",
+            "visits": 1,
+            "mae": 61.0
+          }
+        ]
+      }
+    },
+    {
+      "model": "weekday_hour_median",
+      "learnedGroups": 65,
+      "validation": {
+        "count": 7980,
+        "mae": 18.15375939849624,
+        "medianAbsoluteError": 12.0,
+        "p90AbsoluteError": 41.0,
+        "byDate": [
+          {
+            "date": "2026-05-01",
+            "visits": 31,
+            "mae": 15.935483870967742
+          },
+          {
+            "date": "2026-05-02",
+            "visits": 90,
+            "mae": 9.122222222222222
+          },
+          {
+            "date": "2026-05-03",
+            "visits": 3,
+            "mae": 60.666666666666664
+          },
+          {
+            "date": "2026-05-04",
+            "visits": 680,
+            "mae": 20.139705882352942
+          },
+          {
+            "date": "2026-05-05",
+            "visits": 27,
+            "mae": 11.25925925925926
+          },
+          {
+            "date": "2026-05-06",
+            "visits": 686,
+            "mae": 14.051020408163266
+          },
+          {
+            "date": "2026-05-07",
+            "visits": 644,
+            "mae": 18.121894409937887
+          },
+          {
+            "date": "2026-05-08",
+            "visits": 627,
+            "mae": 16.57974481658692
+          },
+          {
+            "date": "2026-05-09",
+            "visits": 95,
+            "mae": 10.421052631578947
+          },
+          {
+            "date": "2026-05-10",
+            "visits": 2,
+            "mae": 11.5
+          },
+          {
+            "date": "2026-05-11",
+            "visits": 710,
+            "mae": 16.888732394366198
+          },
+          {
+            "date": "2026-05-12",
+            "visits": 714,
+            "mae": 16.166666666666668
+          },
+          {
+            "date": "2026-05-13",
+            "visits": 652,
+            "mae": 16.62269938650307
+          },
+          {
+            "date": "2026-05-14",
+            "visits": 650,
+            "mae": 21.926923076923078
+          },
+          {
+            "date": "2026-05-15",
+            "visits": 588,
+            "mae": 14.65221088435374
+          },
+          {
+            "date": "2026-05-16",
+            "visits": 48,
+            "mae": 10.4375
+          },
+          {
+            "date": "2026-05-17",
+            "visits": 6,
+            "mae": 4.666666666666667
+          },
+          {
+            "date": "2026-05-18",
+            "visits": 585,
+            "mae": 21.338461538461537
+          },
+          {
+            "date": "2026-05-19",
+            "visits": 634,
+            "mae": 20.242902208201894
+          },
+          {
+            "date": "2026-05-20",
+            "visits": 508,
+            "mae": 26.706692913385826
+          }
+        ]
+      },
+      "test": {
+        "count": 9152,
+        "mae": 16.49907124125874,
+        "medianAbsoluteError": 12.0,
+        "p90AbsoluteError": 35.0,
+        "byDate": [
+          {
+            "date": "2026-06-01",
+            "visits": 581,
+            "mae": 17.438898450946645
+          },
+          {
+            "date": "2026-06-02",
+            "visits": 694,
+            "mae": 18.84293948126801
+          },
+          {
+            "date": "2026-06-03",
+            "visits": 107,
+            "mae": 15.233644859813085
+          },
+          {
+            "date": "2026-06-04",
+            "visits": 728,
+            "mae": 17.169642857142858
+          },
+          {
+            "date": "2026-06-05",
+            "visits": 794,
+            "mae": 17.178841309823678
+          },
+          {
+            "date": "2026-06-06",
+            "visits": 41,
+            "mae": 9.195121951219512
+          },
+          {
+            "date": "2026-06-07",
+            "visits": 1,
+            "mae": 14.0
+          },
+          {
+            "date": "2026-06-08",
+            "visits": 595,
+            "mae": 14.971428571428572
+          },
+          {
+            "date": "2026-06-09",
+            "visits": 538,
+            "mae": 15.483271375464684
+          },
+          {
+            "date": "2026-06-10",
+            "visits": 687,
+            "mae": 14.462882096069869
+          },
+          {
+            "date": "2026-06-11",
+            "visits": 555,
+            "mae": 15.177477477477478
+          },
+          {
+            "date": "2026-06-12",
+            "visits": 592,
+            "mae": 18.403716216216218
+          },
+          {
+            "date": "2026-06-13",
+            "visits": 83,
+            "mae": 12.024096385542169
+          },
+          {
+            "date": "2026-06-14",
+            "visits": 1,
+            "mae": 7.0
+          },
+          {
+            "date": "2026-06-15",
+            "visits": 639,
+            "mae": 14.881064162754303
+          },
+          {
+            "date": "2026-06-16",
+            "visits": 639,
+            "mae": 15.666666666666666
+          },
+          {
+            "date": "2026-06-17",
+            "visits": 669,
+            "mae": 17.823617339312406
+          },
+          {
+            "date": "2026-06-18",
+            "visits": 614,
+            "mae": 16.95439739413681
+          },
+          {
+            "date": "2026-06-19",
+            "visits": 551,
+            "mae": 17.06261343012704
+          },
+          {
+            "date": "2026-06-20",
+            "visits": 42,
+            "mae": 19.428571428571427
+          },
+          {
+            "date": "2026-06-30",
+            "visits": 1,
+            "mae": 61.0
+          }
+        ]
+      }
+    }
+  ],
+  "periods": {
+    "train": {
+      "visits": 41039,
+      "observedDates": 78,
+      "firstEntry": "2026-01-01T09:20:00",
+      "lastEntry": "2026-04-20T21:46:00"
+    },
+    "validation": {
+      "visits": 7980,
+      "observedDates": 20,
+      "firstEntry": "2026-05-01T00:46:00",
+      "lastEntry": "2026-05-20T22:04:00"
+    },
+    "test": {
+      "visits": 9152,
+      "observedDates": 21,
+      "firstEntry": "2026-06-01T06:13:00",
+      "lastEntry": "2026-06-30T23:54:00"
+    }
+  },
+  "testExamples": [
+    {
+      "entryLocal": "2026-06-01T06:13:00",
+      "observedMinutes": 45.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-01T11:11:00",
+      "observedMinutes": 7.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-01T15:13:00",
+      "observedMinutes": 18.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-02T09:24:00",
+      "observedMinutes": 9.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-02T13:23:00",
+      "observedMinutes": 38.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-02T16:02:00",
+      "observedMinutes": 19.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-03T15:11:00",
+      "observedMinutes": 27.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-04T10:30:00",
+      "observedMinutes": 8.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-04T14:03:00",
+      "observedMinutes": 58.0,
+      "predictionMinutes": 24.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-04T16:31:00",
+      "observedMinutes": 26.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-05T10:16:00",
+      "observedMinutes": 29.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-05T13:29:00",
+      "observedMinutes": 11.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-05T15:41:00",
+      "observedMinutes": 39.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-08T07:51:00",
+      "observedMinutes": 19.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-08T11:02:00",
+      "observedMinutes": 5.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-08T15:18:00",
+      "observedMinutes": 61.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-09T09:39:00",
+      "observedMinutes": 44.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-09T13:45:00",
+      "observedMinutes": 26.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-10T08:02:00",
+      "observedMinutes": 19.0,
+      "predictionMinutes": 18.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-10T10:53:00",
+      "observedMinutes": 41.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-10T14:03:00",
+      "observedMinutes": 25.0,
+      "predictionMinutes": 24.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-11T08:18:00",
+      "observedMinutes": 2.0,
+      "predictionMinutes": 18.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-11T11:46:00",
+      "observedMinutes": 40.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-11T15:55:00",
+      "observedMinutes": 9.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-12T10:05:00",
+      "observedMinutes": 13.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-12T14:22:00",
+      "observedMinutes": 37.0,
+      "predictionMinutes": 24.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-13T09:15:00",
+      "observedMinutes": 13.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-15T10:15:00",
+      "observedMinutes": 20.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-15T13:49:00",
+      "observedMinutes": 57.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-15T17:15:00",
+      "observedMinutes": 9.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-16T10:36:00",
+      "observedMinutes": 8.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-16T14:12:00",
+      "observedMinutes": 68.0,
+      "predictionMinutes": 24.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-17T08:02:00",
+      "observedMinutes": 8.0,
+      "predictionMinutes": 18.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-17T10:41:00",
+      "observedMinutes": 20.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-17T14:34:00",
+      "observedMinutes": 62.0,
+      "predictionMinutes": 24.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-18T08:08:00",
+      "observedMinutes": 12.0,
+      "predictionMinutes": 18.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-18T11:18:00",
+      "observedMinutes": 17.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-18T15:28:00",
+      "observedMinutes": 17.0,
+      "predictionMinutes": 23.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-19T09:27:00",
+      "observedMinutes": 16.0,
+      "predictionMinutes": 20.0,
+      "baselineMinutes": 23.0
+    },
+    {
+      "entryLocal": "2026-06-19T13:52:00",
+      "observedMinutes": 5.0,
+      "predictionMinutes": 25.0,
+      "baselineMinutes": 23.0
+    }
+  ],
+  "limitations": [
+    "These are observed Gwangyang gate visits, not PNC containers, truck routes or warehouse processing records.",
+    "Missing dates are not imputed as zero activity. Features contain only entry hour/weekday, not future exits or whole-day counts.",
+    "Repeated vehicles cannot be separated; date-block intervals are retrospective uncertainty diagnostics, not deployment guarantees.",
+    "Training remains fixed at January-April; May chooses a declared model; June labels are used for evaluation only.",
+    "Duration prediction accuracy cannot be translated into savings, appointment capacity or PNC operational validity."
+  ]
+}

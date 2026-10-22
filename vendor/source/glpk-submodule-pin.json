@@ -1,0 +1,13 @@
+{
+  "url": "https://api.github.com/repos/jvail/glpk.js/contents/src/glpk?ref=80e1ff5bd80b588bc233a4427b0687128146c8d0",
+  "acquisition": "GitHub connector GET",
+  "retrieved_at_utc": "2026-10-12T06:44:23.509268+00:00",
+  "response": {
+    "name": "glpk",
+    "path": "src/glpk",
+    "sha": "4945cf1cb8e860b24d8b79a8a258c2d214945d10",
+    "size": 0,
+    "type": "submodule",
+    "submodule_git_url": "https://salsa.debian.org/science-team/glpk.git"
+  }
+}

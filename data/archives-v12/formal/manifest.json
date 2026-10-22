@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "formal",
+  "createdAt": "2026-10-16T18:18:09.667192+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v12-frozen-first",
+  "chunkSizeLimit": 3500000,
+  "fileCount": 2933,
+  "uncompressedFileBytes": 3002077487,
+  "archiveBytes": 19557108,
+  "archiveSha256": "fc98f1b02d8b0664f8da7671dbe5a5b0d414f539bb78abe594f9ae908122a009",
+  "frozenManifestSha256": "a1266ca661fa1927e65182aff54755f3a8a15bb28096d3e1227c35a54a6e9165",
+  "entrypoint": "first-run/complete.json",
+  "entrypointSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+  "formalIndexSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+  "protocolHash": "b0b7c0d0ee8f49bda0ff69b6d8f4701d0e360cccc489a28377745a5635e5069a",
+  "scenarioCount": 144,
+  "episodeCount": 2592,
+  "independentReviewSha256": {
+    "physical": "cf1ef392780593c71ad90cfcc1f2a3911d78fdcaa2ee55cd4405929aa66dd757",
+    "bootstrap": "82e7c19eb8e7b4db27ef98b5d0a94fbb6bbd617fc5381dc22a4b7398d7ca2a17"
+  },
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 3500000,
+      "sha256": "8ba8860db240de5d0db4323484bcfb449c61e954ed126414462c846fa0100f77"
+    },
+    {
+      "file": "part-0002.bin",
+      "bytes": 3500000,
+      "sha256": "0f996ebeb64b37acc7c9aa0b6119b1b0c5d8a1b8a42e52d08b5f577712674d06"
+    },
+    {
+      "file": "part-0003.bin",
+      "bytes": 3500000,
+      "sha256": "d208946081a8268ae887484b8be75c44cdb2d7be3858fbfabbdc9e038418f753"
+    },
+    {
+      "file": "part-0004.bin",
+      "bytes": 3500000,
+      "sha256": "c2618e7fba508429703104011970c21e3ca9cad2438757a0444c47fb7bdddcdd"
+    },
+    {
+      "file": "part-0005.bin",
+      "bytes": 3500000,
+      "sha256": "562a408248f9b01c6d9dbbad42c6ec010c4520832b0244e9a0340df258d45536"
+    },
+    {
+      "file": "part-0006.bin",
+      "bytes": 2057108,
+      "sha256": "de1195481c76cd7b25c30344e106e309b8cbcb35163c24abd7e7155d6356571f"
+    }
+  ]
+}

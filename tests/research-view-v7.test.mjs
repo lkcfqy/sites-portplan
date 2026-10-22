@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {gzipSync} from 'node:zlib';
+import {projectRollingRecordV7,assertProjectionV7,packBrowserViewV7,verifyFrozenViewV7,MAX_BROWSER_VIEW_V7_BYTES} from '../scripts/build-view-v7.mjs';
+import {decodeRollingViewV7} from '../src/research-view-v7.js';
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex'),SOURCE='a'.repeat(64),METHODS=['dailyReoptV4','stableRetainV5','lockedRecoveryV6','costPolishV7','graspBaselineV7'];
+function fixture(){
+  const row={id:'long-original-container-A',pickupDay:0,unloadDay:1,returnDay:3,totalCost:123.25,incrementalCost:100.25},trace={day:1,callWallMs:12.5,deadlineOverrunMs:0,plannerStatus:'feasible',candidateSource:'locked_constructor',stages:{model:{largeDebug:[1,2,3]}},cacheAudit:{rows:[row]},searchStats:{rclSelections:2},polishMetadata:{seedAccepted:true,seedIncrementalCost:110.25,finalIncrementalCost:100.25,jointNonincrease:true,beforeDates:[{...row,returnDay:4}],afterDates:[row],acceptedMoveHistory:[{kind:'pair',jointDecrease:10}],seedAudit:{valid:true},finalAudit:{valid:true}}};
+  const result={status:'feasible',complete:true,auditValid:true,totalCost:123.25,incrementalCost:100.25,storageCost:40,ddCost:83.25,sunkCost:23,objectiveCost:100.25,rows:[row],executedEvents:[{id:row.id,event:'pickup',day:0}],finalState:[{id:row.id,phase:'returned',returnDay:3}],usage:[{day:0,truck:1}],timeline:[{day:0,decisions:[row],state:[{id:row.id,phase:'staged'}],executedEvents:[{id:row.id,event:'pickup',day:0}],observedEvents:[{id:'shock-non-container',capacity:2}],audit:{valid:true,scheduleAudit:{valid:true},freezeAudit:{valid:true}}}],terminalAudit:{independentErrors:[],engine:{valid:true}},finalAudit:{valid:true},failure:null,revisionCount:1,plannerStats:{callWallMs:[12.5],constructorCalls:1,solverCalls:0},plannerTrace:[trace],stderr:'diagnostic only'};
+  const c={id:'case-original',nominalScenario:{containers:[{id:row.id}]},events:[{id:'shock-non-container',duration:1}],policies:Object.fromEntries(METHODS.map(m=>[m,structuredClone(result)])),initialComparison:{pairs:{stableRetainV5__costPolishV7:{decisionsEqual:false}}}};
+  return {schemaVersion:'raw',executionState:'complete',protocol:{methods:METHODS},summary:{caseCount:1,byMethod:{costPolishV7:{completeCount:1}},comparisons:{negative:{incrementalSavingsKRW:-10}},initialEquality:{differentCaseCount:1}},cases:[c],developmentControls:{dataRole:'old-development',summary:{caseCount:1},cases:[structuredClone(c)]},implementationHashes:{source:'original'},limitations:['all failures retained']};
+}
+function packed(){const original=fixture(),view=projectRollingRecordV7(original,SOURCE);return {original,view,...packBrowserViewV7(view)};}
+
+test('all five methods, physical records, costs, summaries and complete polish proofs survive the browser transport',async()=>{
+  const {original,view,wrapper,bytes}=packed();assertProjectionV7(original,view);const decoded=await decodeRollingViewV7(JSON.parse(bytes));assert.deepStrictEqual(decoded,view);assert.deepStrictEqual(fixture(),original);assert.ok(bytes.length<MAX_BROWSER_VIEW_V7_BYTES);assert.equal(wrapper.sourceArchiveSha256,SOURCE);
+  for(const c of [decoded.cases[0],decoded.developmentControls.cases[0]])for(const m of METHODS){assert.deepStrictEqual(c.policies[m].timeline,original.cases[0].policies[m].timeline);assert.deepStrictEqual(c.policies[m].plannerTrace[0].polishMetadata,original.cases[0].policies[m].plannerTrace[0].polishMetadata);assert.equal(c.policies[m].rows[0].id,'long-original-container-A');assert.equal(c.policies[m].timeline[0].observedEvents[0].id,'shock-non-container');}
+});
+test('only declared duplicated diagnostic fields are omitted; regression guard rejects evidence changes',()=>{
+  const {original,view}=packed();assert.equal(view.cases[0].policies.costPolishV7.stderr,undefined);assert.equal(view.cases[0].policies.costPolishV7.plannerTrace[0].stages,undefined);assert.equal(view.cases[0].policies.costPolishV7.plannerTrace[0].cacheAudit,undefined);assert.equal(view.browserProjectionOmissions.solverStageTrees,10);
+  for(const change of [v=>v.summary.caseCount++,v=>v.cases[0].policies.costPolishV7.rows[0].returnDay++,v=>v.cases[0].policies.costPolishV7.timeline[0].state[0].phase='changed',v=>v.cases[0].policies.costPolishV7.plannerTrace[0].polishMetadata.beforeDates[0].pickupDay++,v=>delete v.developmentControls.cases[0].policies.graspBaselineV7]){const altered=structuredClone(view);change(altered);assert.throws(()=>assertProjectionV7(original,altered),/Projection changed/);}
+});
+test('codec, base64, byte counts and source/checksum bindings reject corrupted wrappers',async()=>{
+  const {wrapper}=packed();
+  for(const overrides of [{transportCodec:'unknown'},{schemaVersion:'unknown'},{payload:'invalid!'}, {decodedBytes:wrapper.decodedBytes+1},{compressedBytes:wrapper.compressedBytes+1},{decodedBytes:256*1024*1024},{sourceArchiveSha256:'invalid'},{compressedSha256:'0'.repeat(64)},{projectionSha256:'0'.repeat(64)}])await assert.rejects(()=>decodeRollingViewV7({...wrapper,...overrides}));
+  const badInner={schemaVersion:'portplan-rolling-v7-ui-projection',executionState:'complete',sourceArchiveSha256:'b'.repeat(64)},raw=Buffer.from(JSON.stringify(badInner)),zip=gzipSync(raw);await assert.rejects(()=>decodeRollingViewV7({...wrapper,payload:zip.toString('base64'),compressedBytes:zip.length,compressedSha256:sha(zip),decodedBytes:raw.length,projectionSha256:sha(raw)}),/source binding/);
+});
+test('frozen transport manifest verifies exact bytes and SHA, never promotes a changed derivative',()=>{
+  const {bytes}=packed(),manifest={sourceArchiveSha256:SOURCE,derivedBrowserView:{artifact:'data/rolling-v7-view.json',bytes:bytes.length,sha256:sha(bytes)}};verifyFrozenViewV7(bytes,manifest);assert.throws(()=>verifyFrozenViewV7(Buffer.concat([bytes,Buffer.from(' ')]),manifest),/differs/);assert.throws(()=>verifyFrozenViewV7(bytes,{...manifest,derivedBrowserView:{...manifest.derivedBrowserView,sha256:'0'.repeat(64)}}),/differs/);assert.throws(()=>verifyFrozenViewV7(bytes,{...manifest,sourceArchiveSha256:'b'.repeat(64)}),/source differs/);assert.throws(()=>verifyFrozenViewV7(bytes,{}),/binding/);
+});

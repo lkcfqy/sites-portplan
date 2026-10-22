@@ -1,0 +1,4 @@
+# Optional V12 PDF/PPT rendering and in-memory saved-artifact review.
+-r requirements-materials-v8.txt
+PyMuPDF==1.26.6
+# System font: fonts-noto-cjk (Korean face of NotoSansCJK-Regular.ttc).

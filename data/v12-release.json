@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "portplan-v12-release-status",
+  "researchVersion": "12.0.0",
+  "status": "research_iteration_complete_default_gate_not_met",
+  "baseCommit": "89df13da2679a698d5386e4c5ec8602a1c053f1c",
+  "formalExperimentComplete": true,
+  "independentReviewComplete": true,
+  "independentBootstrapReviewComplete": true,
+  "fullChampionshipPlanComplete": false,
+  "developmentRoute": "public_evidence_first",
+  "developmentPolicyRef": "AGENTS.md",
+  "externalBusinessValidation": "optional_not_performed",
+  "externalBusinessValidationRequired": false,
+  "browserInteractionValidation": "not_performed",
+  "entrantDefenseValidation": "not_performed",
+  "seededHiGHSV12RecommendedAsDefault": false,
+  "developmentEvidence": {
+    "controlledPrefixReplay": "data/replay-commitment-v11.json",
+    "initialCandidateDevelopment": "data/seeded-initial-development-v12.json",
+    "oldFullPathDevelopment": "data/development-fullpath-v12.json",
+    "oldFullPathIndependentReview": "data/development-fullpath-review-v12.json",
+    "independentSolverDiagnostic": "data/native-diagnostic-v12.json",
+    "independentSolverDiagnosticReview": "data/native-diagnostic-review-v12-final.json"
+  },
+  "prospectiveDeclaration": {
+    "protocolRef": "data/protocol-v12.json",
+    "businessScenarios": 144,
+    "timingRepeats": 3,
+    "methods": 6,
+    "episodeCount": 2592,
+    "inputsGenerated": true,
+    "sourceFrozen": true,
+    "generationComplete": true
+  },
+  "notes": "首次144场景×3计时重复×6方法共2592条完成，独立物理和统计复核通过。每面板每方法216次运行：V12完成181、120，原生HiGHS为166、105；仍有4、3次原生完成而V12失败，两个面板均未过预声明默认替换门槛。压力共同完成配对新增两费增加约0.734%，95%节省区间全负，不能只报完成净增或少改期。全部首次输入、失败、负面及184文件冻结源码完整保留；18页韩文PDF/可编辑PPT、中韩报告及19次配对损失诊断分别记录。真实浏览器操作和本人资格/报名/复现/答辩未验收；企业资料和联系人可选，不保证名次。",
+  "preFreezeTests": {
+    "passed": 642,
+    "failed": 0,
+    "skipped": 0,
+    "rawLogSha256": "bafe879c555b302d3e3c047592e07ff11c6ae526b634c556287dd28a6f20cb7e"
+  },
+  "sourceCommit": "d591f37abf8163e09f49fea6f3a32e9b9d0947f8",
+  "protocolHash": "b0b7c0d0ee8f49bda0ff69b6d8f4701d0e360cccc489a28377745a5635e5069a",
+  "frozenManifestSha256": "a1266ca661fa1927e65182aff54755f3a8a15bb28096d3e1227c35a54a6e9165",
+  "formalExperimentStartedAt": "2026-10-16T17:48:28.263Z",
+  "formalIndexSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+  "formalExperimentCompletedAt": "2026-10-16T18:11:48.555Z",
+  "researchVerificationPassed": true,
+  "publicEvidenceResearchComplete": true,
+  "materials": {
+    "status": "generated_and_verified",
+    "koreanSlides": 18,
+    "editablePresentation": true,
+    "artifactReviewComplete": true,
+    "reviewRef": "data/material-review-v12.json",
+    "renderSourceScope": "Actual first-run values and independent audits; rendered variants are presentation only. Frozen generator and original material-reader failure retained."
+  },
+  "postFirstRunPresentationChanges": [
+    {
+      "files": [
+        "src/research-v12-ui.js",
+        "tests/research-v12-ui.test.mjs"
+      ],
+      "reason": "Expose dynamic complete source/evidence recovery packages with original bytes/SHA; no algorithm, protocol, frozen source or score changes.",
+      "focusedTestsPassed": 3
+    },
+    {
+      "files": [
+        "scripts/build-defense-v12.py",
+        "tests/materials-v12.test.mjs"
+      ],
+      "reason": "Correct public development-wrapper versus original raw-summary binding, support hash-verified archive restoration, and increase slide table readability with explicitly rounded display intervals. Reports/JSON retain original statistical values; algorithms, protocol, audits and first-run scores unchanged.",
+      "preservedFirstReaderSha256": "96ad9e43a9d41ae439384e466a14d08264d0bf98db3b7a68ff2b8812935035d1",
+      "preservedEvidenceDirectory": "artifacts/v12-material-first-check/",
+      "initialGeneratedArtifactsDirectory": "artifacts/v12-material-first-generated/",
+      "actualFinalGeneratorSha256": "8c9d915b3d7781d1603c5e327808cd6d5fe58d4f9bf14ed63c2cae4cb835f761"
+    }
+  ],
+  "formalArchive": {
+    "manifest": "data/archives-v12/formal/manifest.json",
+    "manifestSha256": "f4335bc07beddb4a8f0b5ca20cbcbcc0ec2c55a65e329979ded6fd7b8dbb716a",
+    "archiveSha256": "fc98f1b02d8b0664f8da7671dbe5a5b0d414f539bb78abe594f9ae908122a009",
+    "archiveBytes": 19557108,
+    "fileCount": 2933,
+    "uncompressedFileBytes": 3002077487,
+    "originalBytesPreserved": true
+  },
+  "publicEvidenceRoadmapRef": "data/championship-acceptance-v12.json",
+  "recoveryVerificationRef": "data/recovery-verification-v12.json",
+  "lossDiagnosisRef": "data/v12-loss-diagnosis.json"
+}

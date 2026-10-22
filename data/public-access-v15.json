@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "portplan-public-access-v15",
+  "projectId": "YOUR_SITES_PROJECT_ID",
+  "siteUrl": "https://YOUR_SITE.example",
+  "requestedByUser": "全部公开吧，然后继续推进冲冠计划",
+  "accessMode": "public",
+  "policyRevision": 2,
+  "policyUpdatedAt": "2026-10-17T08:28:22.358418+00:00",
+  "anonymousBrowsing": true,
+  "scope": [
+    "current website",
+    "published reports",
+    "published PDF and editable PPT",
+    "published research evidence",
+    "current source download packages"
+  ],
+  "sourceRepositoryPermissionsChanged": false,
+  "credentialsPublished": false,
+  "initialAnonymousVerification": {
+    "receipt": "/workspace/scratch/portplan-public-anonymous-initial.json",
+    "passedPaths": [
+      "/",
+      "/data/v14-release.json",
+      "/downloads/defense-v14.ko.pdf",
+      "/downloads/defense-v14.ko.pptx",
+      "/data/download-packages-v14.json"
+    ],
+    "cookiesUsed": false,
+    "authenticationUsed": false
+  },
+  "historicalReceiptsRemainUnchanged": true,
+  "fullAnonymousVerification": {
+    "receiptSha256": "3fea17ba7310ca9fbd55752873e8631c56b51a992c5b5c0b4617bb7f0ad6bf7c",
+    "fileCount": 461,
+    "zipCount": 22,
+    "assetBytes": 244690000,
+    "failures": 0,
+    "retries": 0,
+    "redirects": 0,
+    "scope": "Original V14 live deployment before V15 source edits; every response matched its local dist SHA.",
+    "authenticationUsed": false,
+    "cookiesUsed": false,
+    "receiptPath": "/data/anonymous-access-v15-first.json"
+  },
+  "browserVerification": {
+    "path": "/data/anonymous-browser-access-v15-first.json",
+    "sha256": "a209fd6e5ec80a4a0847643b6aa939788fc4f1fbc0ebd6e28e4485b7bb032f7d",
+    "nativePdfPptSourceZipDownloads": 6,
+    "viewportWidths": [
+      1440,
+      390
+    ],
+    "initialBrowserRunAllPassed": false,
+    "correctedWorkerCasesPassed": 7,
+    "correction": "Actual browser user-agent restored by test bridge only when omitted from worker request metadata; original failure retained.",
+    "productSourceChangedForThisCorrection": false
+  }
+}

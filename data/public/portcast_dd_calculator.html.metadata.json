@@ -1,0 +1,10 @@
+{
+  "url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+  "final_url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+  "retrieved_at_utc": "2026-10-12T06:28:24.620365+00:00",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "sha256": "097235004b93f98c848c6c96d0acb63cee6142657156e5ac2cca7b86a528d710",
+  "bytes": 96925,
+  "path": "data/public/portcast_dd_calculator.html"
+}

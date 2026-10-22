@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "portplan-v7-public-validation-source-1",
+  "records": [
+    {
+      "filename": "psplib-home.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/",
+      "retrievedAtUtc": "2026-10-13T11:52:46.792931+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 2375,
+      "sha256": "ad4344598523d45ead3bc6a0affafe50dbc7c23b6acb53e6f4f20c30971f7ee0",
+      "saved": true
+    },
+    {
+      "filename": "psplib-singlemode.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/getdata_sm.html",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/getdata_sm.html",
+      "retrievedAtUtc": "2026-10-13T11:52:46.793407+00:00",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=iso-8859-1",
+      "bytes": 236,
+      "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+      "saved": true
+    },
+    {
+      "filename": "psplib-format.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/format.html",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/format.html",
+      "retrievedAtUtc": "2026-10-13T11:52:46.793860+00:00",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=iso-8859-1",
+      "bytes": 236,
+      "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+      "saved": true
+    },
+    {
+      "filename": "psplib-general.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/geninfo.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/geninfo.php",
+      "retrievedAtUtc": "2026-10-13T11:53:34.721463+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 2111,
+      "sha256": "cefba51218f7f84c42e9ed77b1fbc922e7f6789355d2eb4108690cd3c6f42e4a",
+      "saved": true
+    },
+    {
+      "filename": "psplib-data.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/data.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/data.php",
+      "retrievedAtUtc": "2026-10-13T11:53:34.722100+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 3424,
+      "sha256": "265003a78da1658a702343bc2763a922ab786bbb6049da8b1670dc8da9edde76",
+      "saved": true
+    },
+    {
+      "filename": "psplib-download.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/download.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/download.php",
+      "retrievedAtUtc": "2026-10-13T11:53:34.722503+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 3235,
+      "sha256": "3d3917d4b087a50bfc99b36e4307d2672eff1108c0a4886c836c30779de21697",
+      "saved": true
+    },
+    {
+      "filename": "psplib-solution-format.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/format.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/format.php",
+      "retrievedAtUtc": "2026-10-13T11:53:34.722898+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 2437,
+      "sha256": "25bb8ddc22df512058fc018feaf067d9ef4f3ea8456cafe6fcaec83e1de57471",
+      "saved": true
+    },
+    {
+      "filename": "psplib-library.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/library.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/library.php",
+      "retrievedAtUtc": "2026-10-13T11:54:49.470647+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 4427,
+      "sha256": "bd3a315302fbdf2370d1b3241ac780ebc67a0150222814440da4fa27d7b27e22",
+      "saved": true
+    },
+    {
+      "filename": "psplib-sm-download.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/getdata.php?mode=sm",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/getdata.php?mode=sm",
+      "retrievedAtUtc": "2026-10-13T11:54:49.471295+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 5818,
+      "sha256": "b171d5b19b99e3003cd7208cf5769b9e72aa4979bc1f8c846997351488dbf028",
+      "saved": true
+    },
+    {
+      "filename": "psplib-solutions.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/solutions.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/solutions.php",
+      "retrievedAtUtc": "2026-10-13T11:54:49.471724+00:00",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=iso-8859-1",
+      "bytes": 236,
+      "sha256": "9448f8a1159c9b14e3e1b9d8eab1a6ddf88d26e1f888a34cef430c756e4e6e1e",
+      "saved": true
+    },
+    {
+      "filename": "psplib-parameters.html",
+      "url": "https://www.om-db.wi.tum.de/psplib/parameter.php",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/parameter.php",
+      "retrievedAtUtc": "2026-10-13T11:54:49.472326+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 1760,
+      "sha256": "ace7bd0c8e975ae3fa17f4f210187fc92ee67bbf3b86d41633929ecae5175d0f",
+      "saved": true
+    },
+    {
+      "filename": "j30.sm.tgz",
+      "url": "https://www.om-db.wi.tum.de/psplib/download_dataset.php?set=j30&mode=sm&format=tgz",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/download_dataset.php?set=j30&mode=sm&format=tgz",
+      "retrievedAtUtc": "2026-10-13T11:55:24.684061+00:00",
+      "httpStatus": 200,
+      "contentType": "application/gzip",
+      "contentDisposition": "attachment; filename=\"j30.sm.tgz\"",
+      "bytes": 187623,
+      "sha256": "c18202a56588e3cdf3c1aebc5fa59d06b22ee634c74ddf554b6df6bc100044ff",
+      "saved": true,
+      "forensicPath": "/tmp/portplan-v7-psplib/j30.sm.tgz",
+      "redistributionLicenseEstablished": false
+    },
+    {
+      "filename": "j30.opt",
+      "url": "https://www.om-db.wi.tum.de/psplib/download_solution.php?set=j30&mode=sm&type=opt",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/download_solution.php?set=j30&mode=sm&type=opt",
+      "retrievedAtUtc": "2026-10-13T11:55:24.685260+00:00",
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentDisposition": "attachment; filename=\"j30opt.sm\"",
+      "bytes": 16199,
+      "sha256": "9036456d909d5d2102975c13dd6fe36fe503b3ed1df5b91fa652aa7dc9648ee3",
+      "saved": true,
+      "forensicPath": "/tmp/portplan-v7-psplib/j30.opt",
+      "redistributionLicenseEstablished": false
+    },
+    {
+      "filename": "j30-merged.json",
+      "url": "https://www.om-db.wi.tum.de/psplib/download_merged.php?set=j30&mode=sm",
+      "finalUrl": "https://www.om-db.wi.tum.de/psplib/download_merged.php?set=j30&mode=sm",
+      "retrievedAtUtc": "2026-10-13T11:55:24.685930+00:00",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "contentDisposition": "attachment; filename=\"j30_sm_merged.json\"",
+      "bytes": 156950,
+      "sha256": "8f2c005cdf81bf0c962e2930c9c241ed327ba832202ff579d953c4e93f39029e",
+      "saved": true,
+      "forensicPath": "/tmp/portplan-v7-psplib/j30-merged.json",
+      "redistributionLicenseEstablished": false
+    }
+  ],
+  "scope": "External published instances for partial resource/precedence validation, not operational port orders or fee savings",
+  "outreach": false,
+  "permit": {
+    "researchEvaluationExplicitlyInvited": true,
+    "quote": "Researchers may download the benchmark sets to evaluate their algorithms, and they may send their results to be added to the library.",
+    "source": "https://www.om-db.wi.tum.de/psplib/library.php",
+    "explicitDatasetRedistributionLicense": null,
+    "rawArchivesBundled": false
+  },
+  "derivedArtifacts": [
+    {
+      "filename": "protocol-public-v7.json",
+      "path": "data/protocol-public-v7.json",
+      "sha256": "8c5370eaf867b167663717b97e6c895b796dbb832b84375ef61ad3a5b4bed364",
+      "classification": "pre-run prospective local protocol for known external instances"
+    },
+    {
+      "filename": "audit-psplib-j30.py",
+      "path": "data/public/v7-validation/audit-psplib-j30.py",
+      "bytes": 6582,
+      "sha256": "9e11cba77a8441e60ab229855f0e8fa8be884e88d40576c336e8add65bdd4f67",
+      "classification": "own read-only source profile and serial feasibility fixture, not method performance"
+    },
+    {
+      "filename": "psplib-j30-audit.json",
+      "path": "data/public/v7-validation/psplib-j30-audit.json",
+      "bytes": 228421,
+      "sha256": "aee69ff2cecb584757bcfa7765fb869c3488b3ed418fb2c611e8541278ce5fb9",
+      "classification": "own read-only source profile and serial feasibility fixture, not method performance"
+    }
+  ],
+  "actualOrdersDatasetFound": false,
+  "psplibCaseCount": 480,
+  "formalMethodRuns": 960,
+  "licenseScope": "Explicit research evaluation invitation, no MIT/CC raw-instance redistribution grant found.",
+  "formalCaseComparisons": 480,
+  "firstRunArchive": {
+    "path": "data/public-resource-v7.json",
+    "bytes": 3088335,
+    "sha256": "8006575658f320ba0db851af8e6f0251ac9935bb8d72790bf0b9f405594d4dd6",
+    "protocolHash": "8c5370eaf867b167663717b97e6c895b796dbb832b84375ef61ad3a5b4bed364",
+    "executionState": "complete",
+    "firstRunImmutable": true,
+    "sourceSnapshotManifestSha256": "703d5b4747008d3f333c93821b616fdaedc088884988d7cac22f0507567a3f81",
+    "invocation": "node scripts/public-resource-benchmark-v7.mjs --record-first-run --input-dir /tmp/portplan-v7-psplib > artifacts/public-resource-v7/first-run.stdout.log 2>&1"
+  },
+  "firstRunSummary": {
+    "caseCount": 480,
+    "byMethod": {
+      "baselineSerialSGS": {
+        "caseCount": 480,
+        "completeCount": 480,
+        "noTimelyCompleteCount": 0,
+        "referenceOptimalMatchCount": 172,
+        "belowReferenceCount": 0,
+        "gapTicks": {
+          "count": 480,
+          "minimum": 0,
+          "median": 4.5,
+          "p95": 19,
+          "maximum": 37
+        },
+        "gapPct": {
+          "count": 480,
+          "minimum": 0,
+          "median": 7.9156223893066,
+          "p95": 27.272727272727273,
+          "maximum": 44.44444444444444
+        },
+        "zeroReferenceCount": 0,
+        "makespanSum": 31179,
+        "wallTimeMs": {
+          "count": 480,
+          "minimum": 0.02309399999995776,
+          "median": 0.0323479999999563,
+          "p95": 0.06588799999985895,
+          "maximum": 1.0452179999999913
+        },
+        "deadlineOverrunCount": 0,
+        "iterations": {
+          "count": 480,
+          "minimum": 0,
+          "median": 0,
+          "p95": 0,
+          "maximum": 0
+        },
+        "statuses": {
+          "feasible": 480
+        }
+      },
+      "iteratedSGS": {
+        "caseCount": 480,
+        "completeCount": 480,
+        "noTimelyCompleteCount": 0,
+        "referenceOptimalMatchCount": 353,
+        "belowReferenceCount": 0,
+        "gapTicks": {
+          "count": 480,
+          "minimum": 0,
+          "median": 0,
+          "p95": 3,
+          "maximum": 12
+        },
+        "gapPct": {
+          "count": 480,
+          "minimum": 0,
+          "median": 0,
+          "p95": 4.615384615384615,
+          "maximum": 17.647058823529413
+        },
+        "zeroReferenceCount": 0,
+        "makespanSum": 28604,
+        "wallTimeMs": {
+          "count": 480,
+          "minimum": 8.305816999999934,
+          "median": 12.576058000000103,
+          "p95": 17.939758999999867,
+          "maximum": 32.92945400000008
+        },
+        "deadlineOverrunCount": 0,
+        "iterations": {
+          "count": 480,
+          "minimum": 256,
+          "median": 256,
+          "p95": 256,
+          "maximum": 256
+        },
+        "statuses": {
+          "feasible": 480
+        }
+      }
+    },
+    "paired": {
+      "caseCount": 480,
+      "missingBaselineCount": 0,
+      "missingIteratedCount": 0,
+      "betterCount": 307,
+      "tiedCount": 173,
+      "worseCount": 0,
+      "baselineMakespanSum": 31179,
+      "iteratedMakespanSum": 28604,
+      "reductionTicks": 2575,
+      "weightedReductionPct": 8.258763911607172,
+      "zeroBaselineCount": 0,
+      "worseCaseIds": []
+    },
+    "auditErrors": [],
+    "fees": "not_applicable",
+    "portModelEquivalent": false
+  },
+  "independentReviewStatus": "complete; internally independent Python source parsing and resource ledger, not third-party certification",
+  "independentReviewArtifact": {
+    "path": "data/public-resource-review-v7.json",
+    "sha256": "0ca57ba433fad8ae94bbee4a3ae03b571fcfcefc4bd34145f761f4a8f08d0c40",
+    "caseCount": 480,
+    "methodResults": 960,
+    "solverRuns": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "portplan-logisticsolver",
+  "version": "6.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Source-backed container pickup and empty-return planning research prototype",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "node scripts/prepare-public.mjs && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "benchmark:v2": "node scripts/benchmark-v2.mjs",
+    "benchmark:v4": "node scripts/benchmark-v4.mjs",
+    "rolling:v4": "node scripts/rolling-benchmark-v4.mjs",
+    "verify:v4": "python scripts/verify-release-v4.py",
+    "defense:v4": "python scripts/build-defense-v4.py --require-results",
+    "robustness:v2": "node scripts/robustness-v2.mjs",
+    "public:gate": "python scripts/public-gate-validation-v3.py",
+    "public:reproduce": "python scripts/reproduce-public-v3.py",
+    "defense": "node scripts/build-defense.mjs",
+    "benchmark:v5": "node scripts/benchmark-v5.mjs",
+    "rolling:v5": "node scripts/rolling-benchmark-v5.mjs",
+    "certify:v5": "python scripts/certify-v5.py",
+    "verify:v5": "python scripts/verify-release-v5.py",
+    "defense:v5": "python scripts/build-defense-v5.py --require-results",
+    "rolling:v6": "node scripts/rolling-benchmark-v6.mjs",
+    "verify:v6": "python scripts/verify-release-v6.py",
+    "defense:v6": "python scripts/build-defense-v6.py --require-results",
+    "view:v6": "node scripts/build-view-v6.mjs"
+  },
+  "dependencies": {
+    "glpk.js": "5.0.0"
+  },
+  "devDependencies": {
+    "vite": "7.1.12"
+  }
+}

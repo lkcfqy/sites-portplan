@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "portplan-v12-postrun-presentation-verification",
+  "valid": true,
+  "scope": "Post-first-run material reader correction, recovery links and readable presentation only; no solver, protocol, frozen source, raw record or formal score changes.",
+  "formalIndexSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+  "frozenGeneratorSha256": "96ad9e43a9d41ae439384e466a14d08264d0bf98db3b7a68ff2b8812935035d1",
+  "actualGeneratorSha256": "8c9d915b3d7781d1603c5e327808cd6d5fe58d4f9bf14ed63c2cae4cb835f761",
+  "materialReviewSha256": "6a12398bbca3c33923b7da68d730defa6a8684a376267a79240cf9ca23e54c73",
+  "actualPdfVisualSamplesReviewed": [
+    1,
+    7,
+    10,
+    12,
+    14,
+    15,
+    17
+  ],
+  "visuallyInspectedByPrimaryAgent": [
+    10,
+    15
+  ],
+  "visualScope": "Actual generated PDF sample pages rendered with PyMuPDF; no browser interaction certification.",
+  "initialReaderFailurePreserved": "artifacts/v12-material-check-first.log",
+  "firstReaderAndCorrectionPreserved": "artifacts/v12-material-first-check/",
+  "firstGeneratedMaterialsPreserved": "artifacts/v12-material-first-generated/",
+  "finalOutputHashes": {
+    "docs/defense-v12.ko.html": "8bf471863eab6cdd13bd2e791b6c446eb9e5cfaf934a2064cc77f9c075708ece",
+    "docs/defense-v12.ko.pdf": "cec184fd91e9a880cb671bf6ec95613b0967ab5002a36d53aa6fb1dd08482845",
+    "docs/submission-v12.ko.md": "c4d7c305740400e886b6d08365d100a0ea877c356354f6b962a13a6e3ed24f15",
+    "docs/defense-v12.en.md": "85b00e3ded4ae58b442b76f22cc1c7c334d06c08332487a3ce15747a9ce95033",
+    "docs/contribution-log-v12.md": "881670e74e0a7a87d39fc2f2ea3d015b9c479035ba0bb89610deef2e9243b4a0",
+    "docs/defense-v12.ko.pptx": "0612d6e44ec712aa757d5bf5f984609c9fcad54faec46f0a974e35ab7144f72c",
+    "docs/report-v12.zh.md": "37d0cce170b44644b23d64d852d704f88f5d763f4765477ec819bcde591b742c",
+    "docs/optional-pilot-v12.blank.md": "e3e500ff9af729baa88dbc3c686b2a2412f8f3adf8a5f05519c200fceee45248",
+    "docs/entrant-defense-v12.blank.md": "c12cad74b2a5c97afc76fc4e71fa647825d276df255a97dda8bba25fc465b718"
+  },
+  "solverRuns": 0,
+  "browserInteractionCertified": false,
+  "entrantUnderstandingCertified": false
+}

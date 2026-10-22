@@ -1,0 +1,10 @@
+{
+  "url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/kr-exp-imp-dd-rate-jul-2024.pdf",
+  "final_url": "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/korea/import/kr-exp-imp-dd-rate-jul-2024.pdf",
+  "retrieved_at_utc": "2026-10-12T06:27:07.055139+00:00",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "sha256": "3eed973e7e662dde6fcbb58126dce1cee25ff8b973b9a858afdd2d011771372c",
+  "bytes": 221612,
+  "path": "data/public/maersk_2024_dd_rate_change.pdf"
+}

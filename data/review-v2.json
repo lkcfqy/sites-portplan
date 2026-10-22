@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-10-12T07:33:02.195340+00:00",
+  "status": "pass",
+  "scope": "Independent standard-library Python audit of archived synthetic experiments; not solver reruns, third-party certification, contract validation, or independent statistical observations.",
+  "script": "scripts/review-v2.py",
+  "scriptSha256": "b750e8ae06ee6746f7e9b88c31580f9a479d2d3f4b0f058e2a950dba5fca5b8a",
+  "sources": [
+    {
+      "path": "data/benchmark-v2.json",
+      "sha256": "c80670e5b30ad7564174213ad1546a63d218a2da7260a903f034b27a53806e05",
+      "generatedAt": "2026-10-12T07:24:25.566Z"
+    },
+    {
+      "path": "data/robustness-v2.json",
+      "sha256": "0a04199e5682ebee532f8dae8ae06216fff271fb0ccc33851fe5f5e2ea2e0bcc",
+      "generatedAt": "2026-10-12T07:22:41.807Z"
+    },
+    {
+      "path": "data/conservative-v2.json",
+      "sha256": "4ec2f8334d191db3d5695dcc5353adf2bfc55a8b9e7b8930489150775ae14d64",
+      "generatedAt": "2026-10-12T07:26:59.711Z"
+    }
+  ],
+  "counts": {
+    "main": 183,
+    "scale": 7,
+    "sensitivity": 203,
+    "operationVariants": 24,
+    "originalDisruptionChecks": 18,
+    "hindsight": 18,
+    "conservativeNominalFeeRecalculations": 6,
+    "conservativeFixedPlanConstraintChecks": 30
+  },
+  "completeScheduleChecks": 435,
+  "mainUniqueSeeds": 48,
+  "mainDistinctOrderContentGroups": 48,
+  "independentAggregates": {
+    "main": {
+      "caseCount": 48,
+      "pairedCaseCount": 36,
+      "baselineIncrementalKRW": 127526150,
+      "optimizedIncrementalKRW": 107452550,
+      "incrementalSavingsKRW": 20073600,
+      "weightedIncrementalSavingsPct": 15.740771598609383,
+      "baselineTotalKRW": 226637050,
+      "optimizedTotalKRW": 206563450,
+      "weightedTotalSavingsPct": 8.857157291802025,
+      "positiveSavingsCount": 19,
+      "tiedCount": 17,
+      "negativeSavingsCount": 0,
+      "zeroBaselineCount": 14
+    },
+    "scale": {
+      "caseCount": 4,
+      "pairedCaseCount": 1,
+      "baselineIncrementalKRW": 36131750,
+      "optimizedIncrementalKRW": 27018150,
+      "incrementalSavingsKRW": 9113600,
+      "weightedIncrementalSavingsPct": 25.22324548354287,
+      "baselineTotalKRW": 60787100,
+      "optimizedTotalKRW": 51673500,
+      "weightedTotalSavingsPct": 14.992654691538172,
+      "positiveSavingsCount": 1,
+      "tiedCount": 0,
+      "negativeSavingsCount": 0,
+      "zeroBaselineCount": 0
+    }
+  },
+  "strictAblations": [
+    {
+      "variant": "storageOnly",
+      "caseCount": 5,
+      "extraCostKRW": 87550,
+      "defaultTotalCostKRW": 8004800,
+      "extraCostPct": 1.0937187687387568
+    },
+    {
+      "variant": "ddOnly",
+      "caseCount": 6,
+      "extraCostKRW": 487550,
+      "defaultTotalCostKRW": 8350600,
+      "extraCostPct": 5.838502622566043
+    }
+  ],
+  "originalDisruptedPlansInvalid": 16,
+  "conservativeCost": {
+    "originalTotalKRW": 14408650,
+    "conservativeTotalKRW": 19061200,
+    "premiumKRW": 4652550,
+    "premiumPct": 32.289978589250204
+  },
+  "errorCount": 0,
+  "errors": [],
+  "limitations": [
+    "Checks implement the disclosed tariff interpretation; do not establish invoice applicability.",
+    "Repeated scenarios/variants and repeated checks are not independent samples.",
+    "An optimizer status is read from the archive; this checker verifies feasibility and costs, not a general optimality certificate.",
+    "Strong-search and MILP budgets differ; no equal-CPU or SOTA claim is validated."
+  ]
+}

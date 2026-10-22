@@ -1,0 +1,472 @@
+{
+  "schemaVersion": "portplan-independent-v8-bootstrap-review",
+  "valid": true,
+  "readOnly": true,
+  "importsJavaScript": false,
+  "solverRuns": 0,
+  "inputIndexSha256": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6",
+  "frozenManifestSha256": "cde6f155769f57b6c5acbb7acafa65709fc41eb6f00d1fc8c122b8c6a6070daf",
+  "implementationSha256": "5276118e312ca0074f2249e397295c01ca4c3f3be5a18eab195add7380b42fce",
+  "episodeCount": 2160,
+  "businessScenarioCount": 144,
+  "panels": {
+    "same-distribution": {
+      "scenarioCount": 72,
+      "byMethod": {
+        "stableRetainV5": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 120,
+          "fullyCompletedScenarioCount": 40,
+          "anyCompletedScenarioCount": 40,
+          "meanScenarioCompletionRate": 0.5555555555555556
+        },
+        "lockedRecoveryV6": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 156,
+          "fullyCompletedScenarioCount": 52,
+          "anyCompletedScenarioCount": 52,
+          "meanScenarioCompletionRate": 0.7222222222222222
+        },
+        "costPolishV7": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 156,
+          "fullyCompletedScenarioCount": 52,
+          "anyCompletedScenarioCount": 52,
+          "meanScenarioCompletionRate": 0.7222222222222222
+        },
+        "adaptiveV8": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 80,
+          "fullyCompletedScenarioCount": 25,
+          "anyCompletedScenarioCount": 28,
+          "meanScenarioCompletionRate": 0.37037037037037046
+        },
+        "highsV8": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 166,
+          "fullyCompletedScenarioCount": 55,
+          "anyCompletedScenarioCount": 56,
+          "meanScenarioCompletionRate": 0.7685185185185186
+        }
+      },
+      "comparisons": {
+        "adaptiveVsV7": {
+          "completionRateGain95CI": [
+            -0.45844907407407404,
+            -0.24537037037037035
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -5926.785714285715,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.14564191886816893,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -5926.785714285715,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.26784153698307284,
+                0.0
+              ]
+            }
+          }
+        },
+        "adaptiveVsV5": {
+          "completionRateGain95CI": [
+            -0.27314814814814814,
+            -0.10173611111111172
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -5716.071428571428,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.14145828717229098,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -5716.071428571428,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                -0.25922264523509975,
+                0.0
+              ]
+            }
+          }
+        },
+        "adaptiveVsV6": {
+          "completionRateGain95CI": [
+            -0.45844907407407404,
+            -0.24537037037037035
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -5716.071428571428,
+                30814.285714285714
+              ],
+              "weightedSavingsPct95CI": [
+                -0.13832502770081917,
+                0.8726904918712501
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -5716.071428571428,
+                30814.285714285714
+              ],
+              "weightedSavingsPct95CI": [
+                -0.2521900167199324,
+                1.4314014394487098
+              ]
+            }
+          }
+        },
+        "adaptiveVsHiGHS": {
+          "completionRateGain95CI": [
+            -0.5138888888888888,
+            -0.2916666666666667
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -27529.375,
+                -3213.9285714285734
+              ],
+              "weightedSavingsPct95CI": [
+                -1.0070397417074228,
+                -0.0854872828395992
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 80,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -27529.375,
+                -3213.9285714285734
+              ],
+              "weightedSavingsPct95CI": [
+                -1.6744889447112086,
+                -0.1453342092648243
+              ]
+            }
+          }
+        },
+        "highsVsV7": {
+          "completionRateGain95CI": [
+            -0.027777777777777776,
+            0.12962962962962965
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 49,
+              "pairedEpisodeCount": 147,
+              "scenarioCount": 49,
+              "draws": 2000,
+              "meanSavings95CI": [
+                246646.335034014,
+                900786.3350340158
+              ],
+              "weightedSavingsPct95CI": [
+                3.552522263786506,
+                8.203659135898434
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 49,
+              "pairedEpisodeCount": 147,
+              "scenarioCount": 49,
+              "draws": 2000,
+              "meanSavings95CI": [
+                246646.33503401343,
+                900786.3350340134
+              ],
+              "weightedSavingsPct95CI": [
+                6.251695609717424,
+                13.844063182100145
+              ]
+            }
+          }
+        }
+      }
+    },
+    "stress": {
+      "scenarioCount": 72,
+      "byMethod": {
+        "stableRetainV5": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 66,
+          "fullyCompletedScenarioCount": 22,
+          "anyCompletedScenarioCount": 22,
+          "meanScenarioCompletionRate": 0.3055555555555556
+        },
+        "lockedRecoveryV6": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 92,
+          "fullyCompletedScenarioCount": 30,
+          "anyCompletedScenarioCount": 31,
+          "meanScenarioCompletionRate": 0.42592592592592593
+        },
+        "costPolishV7": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 89,
+          "fullyCompletedScenarioCount": 29,
+          "anyCompletedScenarioCount": 30,
+          "meanScenarioCompletionRate": 0.41203703703703703
+        },
+        "adaptiveV8": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 48,
+          "fullyCompletedScenarioCount": 16,
+          "anyCompletedScenarioCount": 16,
+          "meanScenarioCompletionRate": 0.2222222222222222
+        },
+        "highsV8": {
+          "recordedEpisodeCount": 216,
+          "completeEpisodeCount": 116,
+          "fullyCompletedScenarioCount": 38,
+          "anyCompletedScenarioCount": 39,
+          "meanScenarioCompletionRate": 0.5370370370370371
+        }
+      },
+      "comparisons": {
+        "adaptiveVsV7": {
+          "completionRateGain95CI": [
+            -0.287037037037037,
+            -0.10648148148148148
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "adaptiveVsV5": {
+          "completionRateGain95CI": [
+            -0.1527777777777778,
+            -0.027777777777777776
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "adaptiveVsV6": {
+          "completionRateGain95CI": [
+            -0.3009259259259259,
+            -0.1111111111111111
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                0.0,
+                0.0
+              ],
+              "weightedSavingsPct95CI": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "adaptiveVsHiGHS": {
+          "completionRateGain95CI": [
+            -0.42592592592592593,
+            -0.21747685185185248
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -11368.75,
+                46232.03124999996
+              ],
+              "weightedSavingsPct95CI": [
+                -1.0964814703001515,
+                1.7705298974891603
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 16,
+              "pairedEpisodeCount": 48,
+              "scenarioCount": 16,
+              "draws": 2000,
+              "meanSavings95CI": [
+                -11368.75,
+                46232.03124999996
+              ],
+              "weightedSavingsPct95CI": [
+                -1.3607139681167078,
+                2.920508372403995
+              ]
+            }
+          }
+        },
+        "highsVsV7": {
+          "completionRateGain95CI": [
+            0.03240740740740741,
+            0.2222222222222222
+          ],
+          "fees": {
+            "total": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 82,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                319063.61607142823,
+                1151571.6964285725
+              ],
+              "weightedSavingsPct95CI": [
+                3.6938729406323163,
+                11.173824270207131
+              ]
+            },
+            "incremental": {
+              "pairedScenarioCount": 28,
+              "pairedEpisodeCount": 82,
+              "scenarioCount": 28,
+              "draws": 2000,
+              "meanSavings95CI": [
+                319063.61607142823,
+                1151571.6964285714
+              ],
+              "weightedSavingsPct95CI": [
+                6.382715583864681,
+                17.12034168510926
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "procedure": {
+    "samplingUnit": "whole business scenario",
+    "draws": 2000,
+    "seed": 700001,
+    "PRNG": "32-bit LCG: (1664525 * state + 1013904223) mod 2^32",
+    "interval": "2.5th and 97.5th percentiles with linear interpolation",
+    "repeatHandling": "Average only matching jointly complete repeats within each fee scenario; keep all repeats in completion rates",
+    "tolerances": {
+      "feeKRW": 1e-06,
+      "percentagePoints": 1e-09,
+      "completionRate": 1e-12
+    }
+  },
+  "scope": "Independent receipt eligibility, artifact binding, scenario aggregation and prescribed bootstrap interval reproduction. Does not audit physical execution/tariffs, establish optimality, remove completion-selection bias, or provide third-party certification."
+}

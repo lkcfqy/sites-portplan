@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "counts": {
+    "records": 58171,
+    "trainCount": 41039,
+    "validationCount": 7980,
+    "testCount": 9152
+  },
+  "independentCandidates": [
+    {
+      "name": "global_median",
+      "validationMAE": 18.482581453634086,
+      "testMAE": 16.877185314685313
+    },
+    {
+      "name": "hour_median",
+      "validationMAE": 18.129197994987468,
+      "testMAE": 16.468422202797203
+    },
+    {
+      "name": "weekday_hour_median",
+      "validationMAE": 18.15375939849624,
+      "testMAE": 16.49907124125874
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Independent recalculation of archived features/labels; not field deployment or invoice verification.",
+    "Raw source hash is recorded by the fitting stage; this audit verifies the distributed identifier-free derivative and protocol."
+  ]
+}

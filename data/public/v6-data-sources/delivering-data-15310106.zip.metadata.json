@@ -1,0 +1,11 @@
+{
+  "file": "data/public/v6-data-sources/delivering-data-15310106.zip",
+  "url": "https://zenodo.org/api/records/15310106/files/data.zip/content",
+  "retrievedAt": "2026-10-13T04:58:27.181128+00:00",
+  "status": 200,
+  "bytes": 2926700,
+  "sha256": "f28906181e925fa1697b069febff350a331ee8cd73d99cd678de661a350a5005",
+  "md5": "0daa54c790e7c562665093de95ff1dec",
+  "contentType": "application/octet-stream,application/octet-stream",
+  "etag": null
+}

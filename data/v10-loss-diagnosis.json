@@ -1,0 +1,5226 @@
+{
+  "schemaVersion": "portplan-v10-loss-diagnosis-v1",
+  "valid": true,
+  "generatedAt": "2026-10-16T14:28:01.527246+00:00",
+  "readOnlyOriginalEvidence": true,
+  "newSolverCalls": 0,
+  "onlinePolicyReruns": 0,
+  "newHeldOutExperiments": 0,
+  "sourceHashes": {
+    "artifacts/v10-frozen-first/first-run/complete.json": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+    "artifacts/v10-frozen-first/manifest.json": "e78d485d24614d4c1a7249f2f46ef8d68e171a7f3fe222d557c557c902f91b6f",
+    "artifacts/v10-frozen-first/first-run/inputs/v10-stress-new-arrivals-tight-n24-r3.json": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c",
+    "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a1--stableHiGHSV10.json": "c0dbd3e15c79aab44689cfa268c799727a7ba257c06cb6b0ac9cf3cb104aed6a",
+    "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a1--highsV8.json": "dc54d2cc418ed34d35e3151ddfa6a6ad33684d301bc275195c2c9023013bac5d",
+    "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a2--stableHiGHSV10.json": "ba188d35b2e8df7fe1b6bf4614ca353d100c055e0b9fb5da9222dbaeadee60af",
+    "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a2--highsV8.json": "5e6cf3d409c8558f0f0280ddc81feb7725b44992da4c7b38283e3ae9381bb0af",
+    "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a3--stableHiGHSV10.json": "0dde99195b46839c2a6f5fa43b4ae8f904e77c8944740041b46b88c8bab96ae0",
+    "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a3--highsV8.json": "88686c0fc21cac56a73cc069193952cacc912fd6c3e5b80267e805d04a231c9d"
+  },
+  "frozenRelevantImplementationHashes": {
+    "scripts/highs-planner-v10.mjs": "9272c19c8afe47ae9cafe8efb7fd8d45dca2c25de4001b4e132e5709f5a8f310",
+    "scripts/highs-planner-v8.mjs": "cfa0abecc7bf8f305dacfe76936f30b0aa1b877619315070c9245d7f87ed0bad",
+    "scripts/highs-service-v8.py": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02",
+    "scripts/review-v5.py": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+    "scripts/review-v10.py": "f73a3c4af72cc55f835c35d05a44278cda835e849eafe8f2dd476f3e1d42b5ef"
+  },
+  "independentLedgerSha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+  "independentReviewerSha256": "f73a3c4af72cc55f835c35d05a44278cda835e849eafe8f2dd476f3e1d42b5ef",
+  "diagnosticImplementationSource": "from pathlib import Path\nfrom datetime import datetime, timezone\nimport importlib.util, json, hashlib, copy\n\nROOT=Path('/workspace/sites/portplan-review')\nRUN=ROOT/'artifacts/v10-frozen-first/first-run'\nEXPECTED='33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2'\ndef load_module(name,path):\n s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m\nreview=load_module('v10_loss_review',ROOT/'scripts/review-v10.py')\nold=load_module('v9_loss_helpers',ROOT/'scripts/diagnose-v9-losses.py')\nledger=review.ledger\ndef sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()\ndef canonical(x):return json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':'),allow_nan=False)\ndef vh(x):return hashlib.sha256(canonical(x).encode()).hexdigest()\ndef read(p):return json.loads(Path(p).read_text())\ndef bind(p):return {'path':str(Path(p).relative_to(ROOT)),'sha256':sha(p)}\ndef require(condition,reason):\n if not condition:raise ValueError(reason)\ndef checked(a):\n p=RUN/a['path'];require(sha(p)==a['sha256'],'Original artifact hash differs');return p,read(p)\nindex_path=RUN/'complete.json';require(sha(index_path)==EXPECTED,'V10 original index hash differs')\nindex=read(index_path);frozen=RUN.parent;manifest_path=frozen/'manifest.json';manifest=read(manifest_path)\nsources={str(index_path.relative_to(ROOT)):sha(index_path),str(manifest_path.relative_to(ROOT)):sha(manifest_path)}\nrequire(index['protocolHash']==manifest['protocolHash'],'Protocol binding differs')\nrequire(sha(frozen/'source/data/protocol-v10.json')==index['protocolHash'],'Original protocol bytes differ')\nrelevant={}\nfor name in ['scripts/highs-planner-v10.mjs','scripts/highs-planner-v8.mjs','scripts/highs-service-v8.py','scripts/review-v5.py','scripts/review-v10.py']:\n p=frozen/'source'/name\n require(sha(p)==manifest['implementationHashes'][name],'Frozen source hash differs')\n relevant[name]=sha(p)\nlosses=index['summary']['panels']['stress']['comparisons']['v10VsHiGHS']['completion']['lostEpisodeIds']\nrequire(losses==[f'v10-stress-new-arrivals-tight-n24-r3::repeat-{a}'for a in [1,2,3]],'V10 pressure loss set differs')\nall_pairs={}\nfor panel,summary in index['summary']['panels'].items():\n all_pairs[panel]={key:{'baselineMethod':c['baselineMethod'],'candidateMethod':c['candidateMethod'],\n   'gainedEpisodeCount':c['completion']['gainedEpisodeCount'],'lostEpisodeCount':c['completion']['lostEpisodeCount'],\n   'netCompletedEpisodeCount':c['completion']['gainedEpisodeCount']-c['completion']['lostEpisodeCount'],\n   'lostEpisodeIds':c['completion']['lostEpisodeIds'],'gainedEpisodeIds':c['completion']['gainedEpisodeIds']}\n   for key,c in summary['comparisons'].items() if key.startswith('v10Vs')}\nepisodes=[];groups={}\nfor identifier in losses:\n case_id,a=identifier.split('::repeat-');a=int(a)\n case=next(c for c in index['cases']if c['id']==case_id);inp,source=checked(case['inputArtifact']);sources[str(inp.relative_to(ROOT))]=sha(inp)\n repeat=case['repeats'][a-1];loaded={}\n for method in ['stableHiGHSV10','highsV8']:\n  p,e=checked(repeat['policies'][method]['artifact']);sources[str(p.relative_to(ROOT))]=sha(p)\n  require(e['caseId']==case_id and e['repeatIndex']==a and e['method']==method and e['algorithmSeed']==repeat['algorithmSeed'],'Episode identity mismatch')\n  loaded[method]=(p,e,review.audit_episode(source['nominalScenario'],source['events'],e['result'],e['episodeId'],5000,method=method,call_budget=200))\n vp,ve,va=loaded['stableHiGHSV10'];bp,be,ba=loaded['highsV8'];v,b=ve['result'],be['result']\n require(not v['complete']and b['complete'],'Expected loss pair')\n snapshot=old.reconstruct(source['nominalScenario'],source['events'],v);day=snapshot['minEventDay'];trace=v['plannerTrace'][day]\n fixed=snapshot['fixedEvents'];nominal=source['nominalScenario'];forced=[]\n for box in nominal['containers']:\n  locks=fixed.get(box['id'],{})\n  starts=[locks['unloadDay']]if 'unloadDay'in locks else list(range(max(day,box['releaseDay']),box['dueDay']-box['unloadDays']+2))\n  if starts and all(start<=day<start+box['unloadDays']for start in starts):\n   forced.append({'id':box['id'],'containerInput':box,'physicalLocks':locks,\n    'allUnloadStartsIgnoringOtherResources':starts,'reason':'fixed_continuous_unloading'if 'unloadDay'in locks else 'pending_floor_plus_delivery_deadline',\n    'minimumWarehouseOccupancyAtFailureDay':1})\n cap=ledger.capacity(snapshot['scenario'],'warehouse',day)\n proof={'proofType':'independent_mandatory_warehouse_occupancy_lower_bound','day':day,\n  'resource':'warehouse','forcedContainers':forced,'minimumDemand':len(forced),'publicCapacity':cap,\n  'violation':len(forced)>cap,'independentlyProvenObservedPrefixInfeasible':len(forced)>cap,\n  'scope':'failure-day public observation and original physical prefix only; no future realization, solver, or JS used',\n  'derivation':'Any legal schedule must keep every locked continuous unload interval and put every pending unload no earlier than day. Superset unload domains are used; occupancy common to every possible start is a valid lower bound.'}\n require(proof['violation'],'Expected strict necessary capacity contradiction')\n cache=trace['stabilitySelection']['beforeDates']\n independent_cache_flags=review.v9.independent_candidate_flags(snapshot['scenario'],cache,fixed,day)\n require(independent_cache_flags[:2]==(False,True),'Expected resource-invalid but lock-valid cached dates')\n div=old.divergence(v,b,day)\n require(div['firstDivergentAcceptedDates']['day']==1 and div['firstDivergentPhysicalExecutionDayBeforeFailure']==1,'Expected D1 path divergence')\n selection_history=[]\n for call in v['plannerTrace']:\n  q=call['stabilitySelection']\n  selection_history.append({'day':call['day'],'decisionReason':q['decisionReason'],\n     'proposalChangedEventCount':q.get('proposalChangedEventCount'),'changedEventCount':q.get('changedEventCount'),\n     'nativeCostMinusCacheKRW':q.get('nativeCostMinusCacheKRW'),'candidateSource':call.get('candidateSource')})\n d4=copy.deepcopy(v['plannerTrace'][4]['stabilitySelection'])\n before={r['id']:r for r in d4['beforeDates']};proposal={r['id']:r for r in d4['proposalDates']};c17=case_id+'-C017'\n require(before[c17]['unloadDay']==4 and proposal[c17]['unloadDay']==8 and d4['proposalChangedEventCount']==29 and d4['nativeCostMinusCacheKRW']==0,'D4 tie evidence differs')\n # Independently validate both D4 endpoints against only that day observation.\n past4={}\n for entry in v['timeline'][:4]:\n  for event in entry['executedEvents']:past4.setdefault(event['id'],{})[ledger.EVENT_FIELDS[event['event']]]=event['day']\n actual=ledger.realize(nominal,source['events']);obs4,_=ledger.observed_snapshot(nominal,actual,source['events'],4)\n d4_audits={}\n for side in ['before','proposal','after']:\n  rows=d4[side+'Dates'];ledger.audit_dates(obs4,rows,'D4 '+side,past4,4)\n  totals=review.reprice_dates(obs4,rows)\n  for field,amount in totals.items():ledger.close(d4[side+'Fees'][field],amount,'D4 tie '+field)\n  d4_audits[side]={'valid':True,'fees':totals,'datesSha256':vh(old.dates(rows))}\n baseline_on_prefix=old.optional_audit(snapshot,b['timeline'][day]['decisions'],'native baseline on V10 prefix')\n native=copy.deepcopy(trace['nativeCertificate']);gate=copy.deepcopy(trace['stabilitySelection']['nativeGate'])\n require(native['provenInfeasible']and not native['hasIncumbent']and gate['receivedAtMs']<200 and not trace['hardTimeout'],'Expected timely native infeasible result')\n groups.setdefault(snapshot['modelIdentityHash'],[]).append(ve['episodeId'])\n episodes.append({'episodeId':ve['episodeId'],'caseId':case_id,'repeatIndex':a,'algorithmSeed':repeat['algorithmSeed'],\n  'originalInput':bind(inp),'candidateEpisode':bind(vp),'baselineEpisode':bind(bp),\n  'candidateOriginalComplete':False,'baselineOriginalComplete':True,\n  'originalFailure':v['failure'],'originalEpisodeWallMs':v['wallTimeMs'],\n  'candidateOriginalIndependentAudit':va,'baselineOriginalIndependentAudit':ba,\n  'failureSnapshot':snapshot,'nativeCertificate':native,'nativeGate':gate,\n  'callWallMs':trace['callWallMs'],'plannerWallMs':trace['wallTimeMs'],'hardTimeout':trace['hardTimeout'],\n  'originalCacheAudit':copy.deepcopy(trace['stages']['cacheAudit']),\n  'independentCacheAudit':{'scheduleValid':independent_cache_flags[0],'freezeValid':independent_cache_flags[1]},\n  'independentNecessaryConditionProof':proof,**div,'baselineFailureDayPlanOnCandidateSnapshot':baseline_on_prefix,\n  'selectionHistory':selection_history,'day4TieSelectionOriginal':d4,'day4EndpointsIndependentAudits':d4_audits,\n  'mechanism':'past_commitment_and_pending_deadline_force_current_warehouse_demand_above_public_capacity',\n  'excludedExplanations':['200ms candidate receipt or selection timeout','5000ms parent cold-episode timeout','missing feasible incumbent alone being mistaken for infeasibility','native baseline success after the same physical prefix'],\n  'stillUnknown':['Whether accepting the D4 native fee-tie proposal alone would complete the full actual future path','Which alternate online rule can prevent this loss without new losses or higher full-path fees on new validation','Counterfactual necessity of D1 versus later selection changes; no controlled replay has been run']})\nfor path,h in sources.items():require(sha(ROOT/path)==h,'Original source changed during read-only diagnosis')\nnative_metrics={}\nfor panel,s in index['summary']['panels'].items():\n c=s['comparisons']['v10VsHiGHS'];native_metrics[panel]={'completion':all_pairs[panel]['v10VsHiGHS'],\n  'fees':copy.deepcopy(c['fees']),'revisions':copy.deepcopy(c['revisions'])}\noutput={'schemaVersion':'portplan-v10-loss-diagnosis-v1','valid':True,'generatedAt':datetime.now(timezone.utc).isoformat(),\n 'readOnlyOriginalEvidence':True,'newSolverCalls':0,'onlinePolicyReruns':0,'newHeldOutExperiments':0,\n 'sourceHashes':sources,'frozenRelevantImplementationHashes':relevant,\n 'independentLedgerSha256':sha(ROOT/'scripts/review-v5.py'),'independentReviewerSha256':sha(ROOT/'scripts/review-v10.py'),\n 'diagnosticImplementationSource':Path(__file__).read_text(),'diagnosticImplementationSha256':sha(__file__),\n 'scope':'Posthoc development diagnosis of frozen V10 first-run negative outcomes; no method changes or score replacement',\n 'summary':{'comparisonLossCount':3,'uniqueBusinessScenarioCount':1,'algorithmTimingRepeats':3,'failureDay':5,\n    'uniqueObservedPrefixModelCount':len(groups),'timelyNativeInfeasibleCount':3,'independentNecessaryConditionViolationCount':3,\n    'allBaselineCompletionGainsAndLosses':all_pairs,'defaultRecommendationEligibility':False,\n    'netNativePressureGainDoesNotMeanZeroLoss':{'gains':15,'losses':3,'net':12}},\n 'diagnosticIdentityGroups':groups,'nativeComparisonMetrics':native_metrics,'episodes':episodes,\n 'conclusions':['Three repeated failures are one business scenario, not three independent cases.',\n   'D5 current-prefix warehouse infeasibility has both the timely original native status and an independent no-solver necessary-condition contradiction.',\n   'The original native baseline followed a different physical prefix from D1; its complete success does not show recovery was possible after V10 past commitments.',\n   'D4 retaining a zero-fee cache instead of a zero-fee alternative is a documented stability/resilience tradeoff; switching only D4 has not been tested.',\n   'Pressure native completion net +12 retains 3 real losses. All old-baseline losses are retained, so the predefined default gate is not passed.',\n   'Conditional fee intervals crossing zero and fewer revisions do not establish global non-regression or a stable fee advantage.']}\ndest=ROOT/'data/v10-loss-diagnosis.json'\nwith dest.open('x')as f:json.dump(output,f,ensure_ascii=False,indent=2,allow_nan=False);f.write('\\n')\nprint(json.dumps({'output':str(dest),'bytes':dest.stat().st_size,'episodes':3,'businessScenarios':1,'prefixModels':len(groups),'proofs':[(e['repeatIndex'],e['independentNecessaryConditionProof']['minimumDemand'],e['independentNecessaryConditionProof']['publicCapacity'])for e in episodes]},ensure_ascii=False))\n\n",
+  "diagnosticImplementationSha256": "34a7d085afceccafc831f877ab1a7dec6b9eb95af539e847476fe04afe8119c6",
+  "scope": "Posthoc development diagnosis of frozen V10 first-run negative outcomes; no method changes or score replacement",
+  "summary": {
+    "comparisonLossCount": 3,
+    "uniqueBusinessScenarioCount": 1,
+    "algorithmTimingRepeats": 3,
+    "failureDay": 5,
+    "uniqueObservedPrefixModelCount": 1,
+    "timelyNativeInfeasibleCount": 3,
+    "independentNecessaryConditionViolationCount": 3,
+    "allBaselineCompletionGainsAndLosses": {
+      "same-distribution": {
+        "v10VsHiGHS": {
+          "baselineMethod": "highsV8",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 3,
+          "lostEpisodeCount": 0,
+          "netCompletedEpisodeCount": 3,
+          "lostEpisodeIds": [],
+          "gainedEpisodeIds": [
+            "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-3"
+          ]
+        },
+        "v10VsV9": {
+          "baselineMethod": "adaptiveV9",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 26,
+          "lostEpisodeCount": 15,
+          "netCompletedEpisodeCount": 11,
+          "lostEpisodeIds": [
+            "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+            "v10-same-distribution-batch-release-tight-n50-r2::repeat-1",
+            "v10-same-distribution-batch-release-tight-n50-r2::repeat-2",
+            "v10-same-distribution-batch-release-tight-n50-r2::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r4::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r4::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r4::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-1",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-3",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n100-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-3"
+          ]
+        },
+        "v10VsV7": {
+          "baselineMethod": "costPolishV7",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 27,
+          "lostEpisodeCount": 15,
+          "netCompletedEpisodeCount": 12,
+          "lostEpisodeIds": [
+            "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+            "v10-same-distribution-batch-release-tight-n50-r2::repeat-1",
+            "v10-same-distribution-batch-release-tight-n50-r2::repeat-2",
+            "v10-same-distribution-batch-release-tight-n50-r2::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r4::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r4::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r4::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-1",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-3",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n100-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n100-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-3"
+          ]
+        },
+        "v10VsV5": {
+          "baselineMethod": "stableRetainV5",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 42,
+          "lostEpisodeCount": 8,
+          "netCompletedEpisodeCount": 34,
+          "lostEpisodeIds": [
+            "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r2::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-same-distribution-aged-backlog-balanced-n100-r1::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n100-r1::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n100-r1::repeat-3",
+            "v10-same-distribution-aged-backlog-balanced-n100-r2::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n100-r2::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n100-r2::repeat-3",
+            "v10-same-distribution-aged-backlog-balanced-n100-r4::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n100-r4::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n100-r4::repeat-3",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-1",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n24-r3::repeat-3",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+            "v10-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-balanced-n50-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-1",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-2",
+            "v10-same-distribution-new-arrivals-balanced-n100-r3::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n100-r2::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n100-r2::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n100-r2::repeat-3",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-1",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+            "v10-same-distribution-new-arrivals-tight-n100-r4::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r2::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r1::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r1::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r1::repeat-3",
+            "v10-same-distribution-batch-release-tight-n100-r3::repeat-1",
+            "v10-same-distribution-batch-release-tight-n100-r3::repeat-2",
+            "v10-same-distribution-batch-release-tight-n100-r3::repeat-3"
+          ]
+        }
+      },
+      "stress": {
+        "v10VsHiGHS": {
+          "baselineMethod": "highsV8",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 15,
+          "lostEpisodeCount": 3,
+          "netCompletedEpisodeCount": 12,
+          "lostEpisodeIds": [
+            "v10-stress-new-arrivals-tight-n24-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n24-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n24-r3::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r3::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r3::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-3",
+            "v10-stress-batch-release-tight-n100-r3::repeat-1",
+            "v10-stress-batch-release-tight-n100-r3::repeat-2",
+            "v10-stress-batch-release-tight-n100-r3::repeat-3"
+          ]
+        },
+        "v10VsV9": {
+          "baselineMethod": "adaptiveV9",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 36,
+          "lostEpisodeCount": 12,
+          "netCompletedEpisodeCount": 24,
+          "lostEpisodeIds": [
+            "v10-stress-batch-release-tight-n50-r2::repeat-1",
+            "v10-stress-batch-release-tight-n50-r2::repeat-2",
+            "v10-stress-batch-release-tight-n50-r2::repeat-3",
+            "v10-stress-batch-release-tight-n50-r3::repeat-1",
+            "v10-stress-batch-release-tight-n50-r3::repeat-2",
+            "v10-stress-batch-release-tight-n50-r3::repeat-3",
+            "v10-stress-batch-release-tight-n100-r2::repeat-1",
+            "v10-stress-batch-release-tight-n100-r2::repeat-2",
+            "v10-stress-batch-release-tight-n100-r2::repeat-3",
+            "v10-stress-batch-release-tight-n100-r4::repeat-1",
+            "v10-stress-batch-release-tight-n100-r4::repeat-2",
+            "v10-stress-batch-release-tight-n100-r4::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-3",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-3",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-3",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-1",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-2",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-3",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-1",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-2",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-3",
+            "v10-stress-batch-release-tight-n100-r1::repeat-1",
+            "v10-stress-batch-release-tight-n100-r1::repeat-2",
+            "v10-stress-batch-release-tight-n100-r1::repeat-3"
+          ]
+        },
+        "v10VsV7": {
+          "baselineMethod": "costPolishV7",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 37,
+          "lostEpisodeCount": 12,
+          "netCompletedEpisodeCount": 25,
+          "lostEpisodeIds": [
+            "v10-stress-batch-release-tight-n50-r2::repeat-1",
+            "v10-stress-batch-release-tight-n50-r2::repeat-2",
+            "v10-stress-batch-release-tight-n50-r2::repeat-3",
+            "v10-stress-batch-release-tight-n50-r3::repeat-1",
+            "v10-stress-batch-release-tight-n50-r3::repeat-2",
+            "v10-stress-batch-release-tight-n50-r3::repeat-3",
+            "v10-stress-batch-release-tight-n100-r2::repeat-1",
+            "v10-stress-batch-release-tight-n100-r2::repeat-2",
+            "v10-stress-batch-release-tight-n100-r2::repeat-3",
+            "v10-stress-batch-release-tight-n100-r4::repeat-1",
+            "v10-stress-batch-release-tight-n100-r4::repeat-2",
+            "v10-stress-batch-release-tight-n100-r4::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-3",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-3",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-3",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-1",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-2",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-3",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-1",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-2",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-3",
+            "v10-stress-batch-release-tight-n100-r1::repeat-1",
+            "v10-stress-batch-release-tight-n100-r1::repeat-2",
+            "v10-stress-batch-release-tight-n100-r1::repeat-3"
+          ]
+        },
+        "v10VsV5": {
+          "baselineMethod": "stableRetainV5",
+          "candidateMethod": "stableHiGHSV10",
+          "gainedEpisodeCount": 54,
+          "lostEpisodeCount": 3,
+          "netCompletedEpisodeCount": 51,
+          "lostEpisodeIds": [
+            "v10-stress-batch-release-tight-n50-r2::repeat-1",
+            "v10-stress-batch-release-tight-n50-r2::repeat-2",
+            "v10-stress-batch-release-tight-n50-r2::repeat-3"
+          ],
+          "gainedEpisodeIds": [
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n24-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r3::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r3::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r3::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r4::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r4::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r4::repeat-3",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n24-r3::repeat-3",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n50-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n50-r3::repeat-3",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-1",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-2",
+            "v10-stress-new-arrivals-balanced-n100-r2::repeat-3",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-1",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-2",
+            "v10-stress-new-arrivals-balanced-n100-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n50-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-1",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-2",
+            "v10-stress-new-arrivals-tight-n100-r3::repeat-3",
+            "v10-stress-new-arrivals-tight-n100-r4::repeat-1",
+            "v10-stress-new-arrivals-tight-n100-r4::repeat-2",
+            "v10-stress-new-arrivals-tight-n100-r4::repeat-3",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-1",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-2",
+            "v10-stress-batch-release-balanced-n24-r2::repeat-3",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-1",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-2",
+            "v10-stress-batch-release-balanced-n50-r2::repeat-3",
+            "v10-stress-batch-release-tight-n100-r3::repeat-1",
+            "v10-stress-batch-release-tight-n100-r3::repeat-2",
+            "v10-stress-batch-release-tight-n100-r3::repeat-3"
+          ]
+        }
+      }
+    },
+    "defaultRecommendationEligibility": false,
+    "netNativePressureGainDoesNotMeanZeroLoss": {
+      "gains": 15,
+      "losses": 3,
+      "net": 12
+    }
+  },
+  "diagnosticIdentityGroups": {
+    "65c3f724bde758e8ac33ed7849e99e3ccb2cf60d08295d65679b9aa1f113bf95": [
+      "v10-stress-new-arrivals-tight-n24-r3--a1--stableHiGHSV10",
+      "v10-stress-new-arrivals-tight-n24-r3--a2--stableHiGHSV10",
+      "v10-stress-new-arrivals-tight-n24-r3--a3--stableHiGHSV10"
+    ]
+  },
+  "nativeComparisonMetrics": {
+    "same-distribution": {
+      "completion": {
+        "baselineMethod": "highsV8",
+        "candidateMethod": "stableHiGHSV10",
+        "gainedEpisodeCount": 3,
+        "lostEpisodeCount": 0,
+        "netCompletedEpisodeCount": 3,
+        "lostEpisodeIds": [],
+        "gainedEpisodeIds": [
+          "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+          "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-3"
+        ]
+      },
+      "fees": {
+        "total": {
+          "pairedScenarioCount": 51,
+          "pairedEpisodeCount": 153,
+          "baselineScenarioMeanSumKRW": 382292050,
+          "candidateScenarioMeanSumKRW": 382336650,
+          "scenarioWeightedSavingsKRW": -44600,
+          "weightedSavingsPct": -0.011666473315361907,
+          "scenarioWinTieLoss": {
+            "win": 3,
+            "tie": 42,
+            "loss": 6
+          },
+          "baselineEpisodeSumKRW": 1146876150,
+          "candidateEpisodeSumKRW": 1147009950,
+          "zeroBaselineScenarioCount": 20,
+          "zeroBaselineEpisodeCount": 60,
+          "worstScenarioLossKRW": 30000,
+          "negativeScenarioIds": [
+            "v10-same-distribution-aged-backlog-balanced-n24-r2",
+            "v10-same-distribution-batch-release-balanced-n24-r3",
+            "v10-same-distribution-batch-release-balanced-n50-r3",
+            "v10-same-distribution-batch-release-balanced-n50-r4",
+            "v10-same-distribution-batch-release-balanced-n100-r4",
+            "v10-same-distribution-batch-release-tight-n50-r4"
+          ],
+          "negativeEpisodeIds": [
+            "v10-same-distribution-aged-backlog-balanced-n24-r2::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n24-r2::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n24-r3::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n24-r3::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n24-r3::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r3::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r3::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r3::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r4::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r4::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r4::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n100-r4::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n100-r4::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n100-r4::repeat-3",
+            "v10-same-distribution-batch-release-tight-n50-r4::repeat-1",
+            "v10-same-distribution-batch-release-tight-n50-r4::repeat-2",
+            "v10-same-distribution-batch-release-tight-n50-r4::repeat-3"
+          ],
+          "uncertainty": {
+            "unit": "scenario",
+            "scenarioCount": 51,
+            "draws": 2000,
+            "meanSavings95CI": [
+              -3327.450980392157,
+              1594.8039215686235
+            ],
+            "weightedSavingsPct95CI": [
+              -0.06264978374053819,
+              0.017867195701266204
+            ],
+            "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+          }
+        },
+        "incremental": {
+          "pairedScenarioCount": 51,
+          "pairedEpisodeCount": 153,
+          "baselineScenarioMeanSumKRW": 222751650,
+          "candidateScenarioMeanSumKRW": 222796250,
+          "scenarioWeightedSavingsKRW": -44600,
+          "weightedSavingsPct": -0.020022298375792055,
+          "scenarioWinTieLoss": {
+            "win": 3,
+            "tie": 42,
+            "loss": 6
+          },
+          "baselineEpisodeSumKRW": 668254950,
+          "candidateEpisodeSumKRW": 668388750,
+          "zeroBaselineScenarioCount": 20,
+          "zeroBaselineEpisodeCount": 60,
+          "worstScenarioLossKRW": 30000,
+          "negativeScenarioIds": [
+            "v10-same-distribution-aged-backlog-balanced-n24-r2",
+            "v10-same-distribution-batch-release-balanced-n24-r3",
+            "v10-same-distribution-batch-release-balanced-n50-r3",
+            "v10-same-distribution-batch-release-balanced-n50-r4",
+            "v10-same-distribution-batch-release-balanced-n100-r4",
+            "v10-same-distribution-batch-release-tight-n50-r4"
+          ],
+          "negativeEpisodeIds": [
+            "v10-same-distribution-aged-backlog-balanced-n24-r2::repeat-1",
+            "v10-same-distribution-aged-backlog-balanced-n24-r2::repeat-2",
+            "v10-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n24-r3::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n24-r3::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n24-r3::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r3::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r3::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r3::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n50-r4::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n50-r4::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n50-r4::repeat-3",
+            "v10-same-distribution-batch-release-balanced-n100-r4::repeat-1",
+            "v10-same-distribution-batch-release-balanced-n100-r4::repeat-2",
+            "v10-same-distribution-batch-release-balanced-n100-r4::repeat-3",
+            "v10-same-distribution-batch-release-tight-n50-r4::repeat-1",
+            "v10-same-distribution-batch-release-tight-n50-r4::repeat-2",
+            "v10-same-distribution-batch-release-tight-n50-r4::repeat-3"
+          ],
+          "uncertainty": {
+            "unit": "scenario",
+            "scenarioCount": 51,
+            "draws": 2000,
+            "meanSavings95CI": [
+              -3327.450980392157,
+              1594.8039215686235
+            ],
+            "weightedSavingsPct95CI": [
+              -0.10669366753720158,
+              0.030425219959652278
+            ],
+            "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+          }
+        }
+      },
+      "revisions": {
+        "pairedEpisodeCount": 153,
+        "baselineObservedSum": 53667,
+        "candidateObservedSum": 12117
+      }
+    },
+    "stress": {
+      "completion": {
+        "baselineMethod": "highsV8",
+        "candidateMethod": "stableHiGHSV10",
+        "gainedEpisodeCount": 15,
+        "lostEpisodeCount": 3,
+        "netCompletedEpisodeCount": 12,
+        "lostEpisodeIds": [
+          "v10-stress-new-arrivals-tight-n24-r3::repeat-1",
+          "v10-stress-new-arrivals-tight-n24-r3::repeat-2",
+          "v10-stress-new-arrivals-tight-n24-r3::repeat-3"
+        ],
+        "gainedEpisodeIds": [
+          "v10-stress-aged-backlog-balanced-n24-r2::repeat-1",
+          "v10-stress-aged-backlog-balanced-n24-r2::repeat-2",
+          "v10-stress-aged-backlog-balanced-n24-r2::repeat-3",
+          "v10-stress-aged-backlog-balanced-n100-r2::repeat-1",
+          "v10-stress-aged-backlog-balanced-n100-r2::repeat-2",
+          "v10-stress-aged-backlog-balanced-n100-r2::repeat-3",
+          "v10-stress-aged-backlog-balanced-n100-r3::repeat-1",
+          "v10-stress-aged-backlog-balanced-n100-r3::repeat-2",
+          "v10-stress-aged-backlog-balanced-n100-r3::repeat-3",
+          "v10-stress-new-arrivals-tight-n50-r3::repeat-1",
+          "v10-stress-new-arrivals-tight-n50-r3::repeat-2",
+          "v10-stress-new-arrivals-tight-n50-r3::repeat-3",
+          "v10-stress-batch-release-tight-n100-r3::repeat-1",
+          "v10-stress-batch-release-tight-n100-r3::repeat-2",
+          "v10-stress-batch-release-tight-n100-r3::repeat-3"
+        ]
+      },
+      "fees": {
+        "total": {
+          "pairedScenarioCount": 39,
+          "pairedEpisodeCount": 117,
+          "baselineScenarioMeanSumKRW": 298311900,
+          "candidateScenarioMeanSumKRW": 298801300,
+          "scenarioWeightedSavingsKRW": -489400,
+          "weightedSavingsPct": -0.16405647914146235,
+          "scenarioWinTieLoss": {
+            "win": 3,
+            "tie": 28,
+            "loss": 8
+          },
+          "baselineEpisodeSumKRW": 894935700,
+          "candidateEpisodeSumKRW": 896403900,
+          "zeroBaselineScenarioCount": 15,
+          "zeroBaselineEpisodeCount": 45,
+          "worstScenarioLossKRW": 392150,
+          "negativeScenarioIds": [
+            "v10-stress-aged-backlog-balanced-n24-r3",
+            "v10-stress-aged-backlog-balanced-n50-r2",
+            "v10-stress-aged-backlog-balanced-n50-r3",
+            "v10-stress-aged-backlog-balanced-n100-r1",
+            "v10-stress-batch-release-balanced-n24-r1",
+            "v10-stress-batch-release-balanced-n100-r4",
+            "v10-stress-batch-release-tight-n50-r4",
+            "v10-stress-batch-release-tight-n100-r1"
+          ],
+          "negativeEpisodeIds": [
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-1",
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-2",
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-3",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n50-r3::repeat-1",
+            "v10-stress-aged-backlog-balanced-n50-r3::repeat-2",
+            "v10-stress-aged-backlog-balanced-n50-r3::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-3",
+            "v10-stress-batch-release-balanced-n24-r1::repeat-1",
+            "v10-stress-batch-release-balanced-n24-r1::repeat-2",
+            "v10-stress-batch-release-balanced-n24-r1::repeat-3",
+            "v10-stress-batch-release-balanced-n100-r4::repeat-1",
+            "v10-stress-batch-release-balanced-n100-r4::repeat-2",
+            "v10-stress-batch-release-balanced-n100-r4::repeat-3",
+            "v10-stress-batch-release-tight-n50-r4::repeat-1",
+            "v10-stress-batch-release-tight-n50-r4::repeat-2",
+            "v10-stress-batch-release-tight-n50-r4::repeat-3",
+            "v10-stress-batch-release-tight-n100-r1::repeat-1",
+            "v10-stress-batch-release-tight-n100-r1::repeat-2",
+            "v10-stress-batch-release-tight-n100-r1::repeat-3"
+          ],
+          "uncertainty": {
+            "unit": "scenario",
+            "scenarioCount": 39,
+            "draws": 2000,
+            "meanSavings95CI": [
+              -36073.62179487179,
+              2406.9871794871765
+            ],
+            "weightedSavingsPct95CI": [
+              -0.6282350661352006,
+              0.04157422929441462
+            ],
+            "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+          }
+        },
+        "incremental": {
+          "pairedScenarioCount": 39,
+          "pairedEpisodeCount": 117,
+          "baselineScenarioMeanSumKRW": 171870200,
+          "candidateScenarioMeanSumKRW": 172359600,
+          "scenarioWeightedSavingsKRW": -489400,
+          "weightedSavingsPct": -0.284749770466317,
+          "scenarioWinTieLoss": {
+            "win": 3,
+            "tie": 28,
+            "loss": 8
+          },
+          "baselineEpisodeSumKRW": 515610600,
+          "candidateEpisodeSumKRW": 517078800,
+          "zeroBaselineScenarioCount": 15,
+          "zeroBaselineEpisodeCount": 45,
+          "worstScenarioLossKRW": 392150,
+          "negativeScenarioIds": [
+            "v10-stress-aged-backlog-balanced-n24-r3",
+            "v10-stress-aged-backlog-balanced-n50-r2",
+            "v10-stress-aged-backlog-balanced-n50-r3",
+            "v10-stress-aged-backlog-balanced-n100-r1",
+            "v10-stress-batch-release-balanced-n24-r1",
+            "v10-stress-batch-release-balanced-n100-r4",
+            "v10-stress-batch-release-tight-n50-r4",
+            "v10-stress-batch-release-tight-n100-r1"
+          ],
+          "negativeEpisodeIds": [
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-1",
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-2",
+            "v10-stress-aged-backlog-balanced-n24-r3::repeat-3",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-1",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-2",
+            "v10-stress-aged-backlog-balanced-n50-r2::repeat-3",
+            "v10-stress-aged-backlog-balanced-n50-r3::repeat-1",
+            "v10-stress-aged-backlog-balanced-n50-r3::repeat-2",
+            "v10-stress-aged-backlog-balanced-n50-r3::repeat-3",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-1",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-2",
+            "v10-stress-aged-backlog-balanced-n100-r1::repeat-3",
+            "v10-stress-batch-release-balanced-n24-r1::repeat-1",
+            "v10-stress-batch-release-balanced-n24-r1::repeat-2",
+            "v10-stress-batch-release-balanced-n24-r1::repeat-3",
+            "v10-stress-batch-release-balanced-n100-r4::repeat-1",
+            "v10-stress-batch-release-balanced-n100-r4::repeat-2",
+            "v10-stress-batch-release-balanced-n100-r4::repeat-3",
+            "v10-stress-batch-release-tight-n50-r4::repeat-1",
+            "v10-stress-batch-release-tight-n50-r4::repeat-2",
+            "v10-stress-batch-release-tight-n50-r4::repeat-3",
+            "v10-stress-batch-release-tight-n100-r1::repeat-1",
+            "v10-stress-batch-release-tight-n100-r1::repeat-2",
+            "v10-stress-batch-release-tight-n100-r1::repeat-3"
+          ],
+          "uncertainty": {
+            "unit": "scenario",
+            "scenarioCount": 39,
+            "draws": 2000,
+            "meanSavings95CI": [
+              -36073.62179487179,
+              2406.9871794871765
+            ],
+            "weightedSavingsPct95CI": [
+              -1.0631620356863514,
+              0.0694837684179404
+            ],
+            "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+          }
+        }
+      },
+      "revisions": {
+        "pairedEpisodeCount": 117,
+        "baselineObservedSum": 45972,
+        "candidateObservedSum": 17625
+      }
+    }
+  },
+  "episodes": [
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a1--stableHiGHSV10",
+      "caseId": "v10-stress-new-arrivals-tight-n24-r3",
+      "repeatIndex": 1,
+      "algorithmSeed": 49011,
+      "originalInput": {
+        "path": "artifacts/v10-frozen-first/first-run/inputs/v10-stress-new-arrivals-tight-n24-r3.json",
+        "sha256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c"
+      },
+      "candidateEpisode": {
+        "path": "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a1--stableHiGHSV10.json",
+        "sha256": "c0dbd3e15c79aab44689cfa268c799727a7ba257c06cb6b0ac9cf3cb104aed6a"
+      },
+      "baselineEpisode": {
+        "path": "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a1--highsV8.json",
+        "sha256": "dc54d2cc418ed34d35e3151ddfa6a6ad33684d301bc275195c2c9023013bac5d"
+      },
+      "candidateOriginalComplete": false,
+      "baselineOriginalComplete": true,
+      "originalFailure": {
+        "day": 5,
+        "kind": "no_complete_plan",
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "plannerStatus": "infeasible"
+      },
+      "originalEpisodeWallMs": 358.4052570000058,
+      "candidateOriginalIndependentAudit": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 6,
+        "acceptedPlans": 5,
+        "executedEvents": 24,
+        "revisions": 81,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 6,
+          "cacheAcceptedCalls": 2,
+          "nativeAcceptedCalls": 3,
+          "retainedCacheCalls": 2,
+          "completeNativeProposals": 5,
+          "strictReplacements": 0,
+          "feeTiesRetained": 2
+        }
+      },
+      "baselineOriginalIndependentAudit": {
+        "complete": true,
+        "historyAvailable": true,
+        "timelineEntries": 14,
+        "acceptedPlans": 14,
+        "executedEvents": 72,
+        "revisions": 233,
+        "pricedRows": 24,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": 0,
+        "incrementalCost": 0,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 0,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 0,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "failureSnapshot": {
+        "scenario": {
+          "id": "v10-stress-new-arrivals-tight-n24-r3",
+          "name": "V2 new-arrivals / tight / 24",
+          "seed": 492039,
+          "horizonStart": "2026-10-12",
+          "horizonDays": 14,
+          "truckCapacity": [
+            4,
+            4,
+            2,
+            2,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "warehouseCapacity": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "stagingCapacity": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "tariff": {
+            "pncFreeDays": 4,
+            "ddFreeDays": 10,
+            "pncMultiplier": 1,
+            "ddMultiplier": 1,
+            "pncMode": "retroactive",
+            "ddMode": "progressive"
+          },
+          "operations": {
+            "returnLagDays": 1,
+            "stagingUnit": "container"
+          },
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 8,
+              "dischargeDateTime": "2026-10-20T10:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 5,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T07:00:00+09:00",
+              "dueDay": 4,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T10:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 5,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "releaseDay": 7,
+              "dischargeDateTime": "2026-10-18T10:00:00+09:00",
+              "dueDay": 11,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 4,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 3,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 0,
+              "dischargeDateTime": "2026-10-12T10:00:00+09:00",
+              "dueDay": 2,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T07:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 8,
+              "dischargeDateTime": "2026-10-20T07:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-16T10:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 7,
+              "dischargeDateTime": "2026-10-19T07:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 3,
+              "dischargeDateTime": "2026-10-15T10:00:00+09:00",
+              "dueDay": 7,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 0,
+              "dischargeDateTime": "2026-10-12T07:00:00+09:00",
+              "dueDay": 3,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T10:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-15T07:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "observedEvents": [
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "truck",
+            "capacity": 4,
+            "activeShockIds": [],
+            "announcements": []
+          },
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "warehouse",
+            "capacity": 1,
+            "activeShockIds": [
+              "warehouse-sequential"
+            ],
+            "announcements": [
+              {
+                "id": "warehouse-sequential",
+                "revealDay": 5,
+                "resource": "warehouse",
+                "capacity": 1
+              }
+            ]
+          },
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "staging",
+            "capacity": 6,
+            "activeShockIds": [],
+            "announcements": []
+          }
+        ],
+        "fixedEvents": {
+          "v10-stress-new-arrivals-tight-n24-r3-C012": {
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C022": {
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C002": {
+            "pickupDay": 1,
+            "unloadDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C008": {
+            "pickupDay": 1,
+            "unloadDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C009": {
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C004": {
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C014": {
+            "pickupDay": 2,
+            "unloadDay": 2
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C013": {
+            "pickupDay": 3,
+            "unloadDay": 3
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C017": {
+            "pickupDay": 4,
+            "unloadDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C024": {
+            "pickupDay": 4,
+            "unloadDay": 4
+          }
+        },
+        "minEventDay": 5,
+        "originalObservationHash": "sha256:8044acf2b935ad5427689c5f8bbf277b8e3ad967734d1561970c967ce4fcaeeb",
+        "observationHashIndependentlyVerified": true,
+        "physicalLockCount": 24,
+        "usesOnlyPublicInformationAvailableAtFailureDay": true,
+        "modelIdentityHash": "65c3f724bde758e8ac33ed7849e99e3ccb2cf60d08295d65679b9aa1f113bf95"
+      },
+      "nativeCertificate": {
+        "schemaVersion": "portplan-native-highs-v8",
+        "status": "infeasible",
+        "solverStatus": 2,
+        "solverMessage": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "solver": "HiGHS via scipy.optimize.milp",
+        "solverThreads": 1,
+        "formulation": "independent time-indexed pickup/unload/return binaries with cumulative precedence",
+        "objectiveMode": "joint",
+        "objectiveCost": null,
+        "lowerBound": null,
+        "relativeGap": null,
+        "hasIncumbent": false,
+        "provenOptimal": false,
+        "provenInfeasible": true,
+        "rows": [],
+        "independentCosts": null,
+        "modelSize": {
+          "binaryColumns": 278,
+          "constraints": 786,
+          "nonzeros": 3645
+        },
+        "modelWallMs": 2.4551430005885777,
+        "solverWallMs": 1.2829190000047674,
+        "independentAuditWallMs": 0,
+        "solverTimeLimitMs": 194.84970178059302,
+        "remainingBudgetAtReceiptMs": 199.30517578125,
+        "certificateScope": "current observed deterministic model and fixed history only; not rolling-policy optimality",
+        "numericalAssurance": {
+          "primarySafeInteger": true,
+          "roundsFees": false,
+          "optimalityUsesNativeNumericalTolerances": true
+        },
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "proofType": "HiGHS_model_infeasible",
+        "nodeCount": null,
+        "solverOptionWarnings": [
+          "Unrecognized options detected: {'threads', 'random_seed'}. These will be passed to HiGHS verbatim."
+        ],
+        "serviceWallMs": 3.7455629999385565,
+        "deadlineOverrunMs": 0
+      },
+      "nativeGate": {
+        "receivedAtMs": 4.533534999999972,
+        "copiedAtMs": null,
+        "auditFinishedAtMs": null,
+        "feesMatchedAtMs": null,
+        "selectionFinishedAtMs": null,
+        "acceptedAtMs": null,
+        "outcome": "no_incumbent"
+      },
+      "callWallMs": 4.706421999999975,
+      "plannerWallMs": 4.590238999999997,
+      "hardTimeout": false,
+      "originalCacheAudit": {
+        "valid": false,
+        "errors": [
+          "Day 5: warehouse capacity exceeded."
+        ],
+        "scheduleAudit": {
+          "valid": false,
+          "errors": [
+            "Day 5: warehouse capacity exceeded."
+          ]
+        },
+        "freezeAudit": {
+          "valid": true,
+          "errors": []
+        }
+      },
+      "independentCacheAudit": {
+        "scheduleValid": false,
+        "freezeValid": true
+      },
+      "independentNecessaryConditionProof": {
+        "proofType": "independent_mandatory_warehouse_occupancy_lower_bound",
+        "day": 5,
+        "resource": "warehouse",
+        "forcedContainers": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "containerInput": {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            "physicalLocks": {},
+            "allUnloadStartsIgnoringOtherResources": [
+              5
+            ],
+            "reason": "pending_floor_plus_delivery_deadline",
+            "minimumWarehouseOccupancyAtFailureDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "containerInput": {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-16T10:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            "physicalLocks": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "allUnloadStartsIgnoringOtherResources": [
+              4
+            ],
+            "reason": "fixed_continuous_unloading",
+            "minimumWarehouseOccupancyAtFailureDay": 1
+          }
+        ],
+        "minimumDemand": 2,
+        "publicCapacity": 1,
+        "violation": true,
+        "independentlyProvenObservedPrefixInfeasible": true,
+        "scope": "failure-day public observation and original physical prefix only; no future realization, solver, or JS used",
+        "derivation": "Any legal schedule must keep every locked continuous unload interval and put every pending unload no earlier than day. Superset unload domains are used; occupancy common to every possible start is a valid lower bound."
+      },
+      "firstDivergentAcceptedDates": {
+        "day": 1,
+        "candidateDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 7,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 9,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 6
+          }
+        ],
+        "baselineDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 4,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 7,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 8,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          }
+        ],
+        "candidateDatesSha256": "4a0d8e6dd8657810233eb944b24985163ab6a40716fb32653c0c230ed4d34ac9",
+        "baselineDatesSha256": "daf4a0286f04206ff0b8cd8689ece4f7a09e474bac173347db05af8809c6a1f8",
+        "changedContainerCount": 21,
+        "changedEventCount": 43,
+        "physicalEventsEqualThroughPreviousDay": true
+      },
+      "firstDivergentPhysicalExecutionDayBeforeFailure": 1,
+      "physicalPrefixesEqualAtCandidateFailure": false,
+      "interpretation": "A different initial or prior accepted plan prevents treating whole-path completion differences as a controlled same-prefix recovery experiment.",
+      "baselineFailureDayPlanOnCandidateSnapshot": {
+        "available": true,
+        "valid": false,
+        "reason": "native baseline on V10 prefix/v10-stress-new-arrivals-tight-n24-r3-C002: changed executed unloadDay"
+      },
+      "selectionHistory": [
+        {
+          "day": 0,
+          "decisionReason": "initialize_native",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 1,
+          "decisionReason": "retain_fee_tie",
+          "proposalChangedEventCount": 43,
+          "changedEventCount": 0,
+          "nativeCostMinusCacheKRW": 0,
+          "candidateSource": "cached_incumbent"
+        },
+        {
+          "day": 2,
+          "decisionReason": "replace_invalid_cache",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 3,
+          "decisionReason": "replace_invalid_cache",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 4,
+          "decisionReason": "retain_fee_tie",
+          "proposalChangedEventCount": 29,
+          "changedEventCount": 0,
+          "nativeCostMinusCacheKRW": 0,
+          "candidateSource": "cached_incumbent"
+        },
+        {
+          "day": 5,
+          "decisionReason": "no_valid_candidate",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "no_complete_plan"
+        }
+      ],
+      "day4TieSelectionOriginal": {
+        "rule": "strict_fee_replacement_retain_ties",
+        "feeEpsilonKRW": 1e-06,
+        "cacheStatus": "valid",
+        "cacheValid": true,
+        "beforeDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 7,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "beforeFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "proposalDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "proposalFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "afterDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 7,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "afterFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "nativeCostMinusCacheKRW": 0,
+        "cacheCostMinusSelectedKRW": 0,
+        "changedEventCount": 0,
+        "proposalChangedEventCount": 29,
+        "decisionReason": "retain_fee_tie",
+        "selectedSource": "cached_incumbent",
+        "cacheGate": {
+          "auditFinishedAtMs": 0.4188130000000001,
+          "selectionFinishedAtMs": 0.4737739999999917,
+          "acceptedAtMs": 0.4739649999999642
+        },
+        "nativeGate": {
+          "receivedAtMs": 10.006477999999959,
+          "copiedAtMs": 10.050363000000004,
+          "auditFinishedAtMs": 10.334685999999977,
+          "feesMatchedAtMs": 10.390528999999958,
+          "selectionFinishedAtMs": 10.416468000000009,
+          "acceptedAtMs": null,
+          "outcome": "retain_fee_tie"
+        }
+      },
+      "day4EndpointsIndependentAudits": {
+        "before": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0"
+        },
+        "proposal": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "552eaf29da3b4b464e4ac12065bcc273f8726614e397eb4173080ecd3be84c71"
+        },
+        "after": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0"
+        }
+      },
+      "mechanism": "past_commitment_and_pending_deadline_force_current_warehouse_demand_above_public_capacity",
+      "excludedExplanations": [
+        "200ms candidate receipt or selection timeout",
+        "5000ms parent cold-episode timeout",
+        "missing feasible incumbent alone being mistaken for infeasibility",
+        "native baseline success after the same physical prefix"
+      ],
+      "stillUnknown": [
+        "Whether accepting the D4 native fee-tie proposal alone would complete the full actual future path",
+        "Which alternate online rule can prevent this loss without new losses or higher full-path fees on new validation",
+        "Counterfactual necessity of D1 versus later selection changes; no controlled replay has been run"
+      ]
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a2--stableHiGHSV10",
+      "caseId": "v10-stress-new-arrivals-tight-n24-r3",
+      "repeatIndex": 2,
+      "algorithmSeed": 49023,
+      "originalInput": {
+        "path": "artifacts/v10-frozen-first/first-run/inputs/v10-stress-new-arrivals-tight-n24-r3.json",
+        "sha256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c"
+      },
+      "candidateEpisode": {
+        "path": "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a2--stableHiGHSV10.json",
+        "sha256": "ba188d35b2e8df7fe1b6bf4614ca353d100c055e0b9fb5da9222dbaeadee60af"
+      },
+      "baselineEpisode": {
+        "path": "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a2--highsV8.json",
+        "sha256": "5e6cf3d409c8558f0f0280ddc81feb7725b44992da4c7b38283e3ae9381bb0af"
+      },
+      "candidateOriginalComplete": false,
+      "baselineOriginalComplete": true,
+      "originalFailure": {
+        "day": 5,
+        "kind": "no_complete_plan",
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "plannerStatus": "infeasible"
+      },
+      "originalEpisodeWallMs": 346.08039799996186,
+      "candidateOriginalIndependentAudit": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 6,
+        "acceptedPlans": 5,
+        "executedEvents": 24,
+        "revisions": 81,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 6,
+          "cacheAcceptedCalls": 2,
+          "nativeAcceptedCalls": 3,
+          "retainedCacheCalls": 2,
+          "completeNativeProposals": 5,
+          "strictReplacements": 0,
+          "feeTiesRetained": 2
+        }
+      },
+      "baselineOriginalIndependentAudit": {
+        "complete": true,
+        "historyAvailable": true,
+        "timelineEntries": 14,
+        "acceptedPlans": 14,
+        "executedEvents": 72,
+        "revisions": 233,
+        "pricedRows": 24,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": 0,
+        "incrementalCost": 0,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 0,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 0,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "failureSnapshot": {
+        "scenario": {
+          "id": "v10-stress-new-arrivals-tight-n24-r3",
+          "name": "V2 new-arrivals / tight / 24",
+          "seed": 492039,
+          "horizonStart": "2026-10-12",
+          "horizonDays": 14,
+          "truckCapacity": [
+            4,
+            4,
+            2,
+            2,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "warehouseCapacity": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "stagingCapacity": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "tariff": {
+            "pncFreeDays": 4,
+            "ddFreeDays": 10,
+            "pncMultiplier": 1,
+            "ddMultiplier": 1,
+            "pncMode": "retroactive",
+            "ddMode": "progressive"
+          },
+          "operations": {
+            "returnLagDays": 1,
+            "stagingUnit": "container"
+          },
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 8,
+              "dischargeDateTime": "2026-10-20T10:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 5,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T07:00:00+09:00",
+              "dueDay": 4,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T10:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 5,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "releaseDay": 7,
+              "dischargeDateTime": "2026-10-18T10:00:00+09:00",
+              "dueDay": 11,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 4,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 3,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 0,
+              "dischargeDateTime": "2026-10-12T10:00:00+09:00",
+              "dueDay": 2,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T07:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 8,
+              "dischargeDateTime": "2026-10-20T07:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-16T10:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 7,
+              "dischargeDateTime": "2026-10-19T07:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 3,
+              "dischargeDateTime": "2026-10-15T10:00:00+09:00",
+              "dueDay": 7,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 0,
+              "dischargeDateTime": "2026-10-12T07:00:00+09:00",
+              "dueDay": 3,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T10:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-15T07:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "observedEvents": [
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "truck",
+            "capacity": 4,
+            "activeShockIds": [],
+            "announcements": []
+          },
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "warehouse",
+            "capacity": 1,
+            "activeShockIds": [
+              "warehouse-sequential"
+            ],
+            "announcements": [
+              {
+                "id": "warehouse-sequential",
+                "revealDay": 5,
+                "resource": "warehouse",
+                "capacity": 1
+              }
+            ]
+          },
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "staging",
+            "capacity": 6,
+            "activeShockIds": [],
+            "announcements": []
+          }
+        ],
+        "fixedEvents": {
+          "v10-stress-new-arrivals-tight-n24-r3-C012": {
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C022": {
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C002": {
+            "pickupDay": 1,
+            "unloadDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C008": {
+            "pickupDay": 1,
+            "unloadDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C009": {
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C004": {
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C014": {
+            "pickupDay": 2,
+            "unloadDay": 2
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C013": {
+            "pickupDay": 3,
+            "unloadDay": 3
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C017": {
+            "pickupDay": 4,
+            "unloadDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C024": {
+            "pickupDay": 4,
+            "unloadDay": 4
+          }
+        },
+        "minEventDay": 5,
+        "originalObservationHash": "sha256:8044acf2b935ad5427689c5f8bbf277b8e3ad967734d1561970c967ce4fcaeeb",
+        "observationHashIndependentlyVerified": true,
+        "physicalLockCount": 24,
+        "usesOnlyPublicInformationAvailableAtFailureDay": true,
+        "modelIdentityHash": "65c3f724bde758e8ac33ed7849e99e3ccb2cf60d08295d65679b9aa1f113bf95"
+      },
+      "nativeCertificate": {
+        "schemaVersion": "portplan-native-highs-v8",
+        "status": "infeasible",
+        "solverStatus": 2,
+        "solverMessage": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "solver": "HiGHS via scipy.optimize.milp",
+        "solverThreads": 1,
+        "formulation": "independent time-indexed pickup/unload/return binaries with cumulative precedence",
+        "objectiveMode": "joint",
+        "objectiveCost": null,
+        "lowerBound": null,
+        "relativeGap": null,
+        "hasIncumbent": false,
+        "provenOptimal": false,
+        "provenInfeasible": true,
+        "rows": [],
+        "independentCosts": null,
+        "modelSize": {
+          "binaryColumns": 278,
+          "constraints": 786,
+          "nonzeros": 3645
+        },
+        "modelWallMs": 2.516815000490169,
+        "solverWallMs": 1.2176619993624627,
+        "independentAuditWallMs": 0,
+        "solverTimeLimitMs": 194.1227275778583,
+        "remainingBudgetAtReceiptMs": 198.639892578125,
+        "certificateScope": "current observed deterministic model and fixed history only; not rolling-policy optimality",
+        "numericalAssurance": {
+          "primarySafeInteger": true,
+          "roundsFees": false,
+          "optimalityUsesNativeNumericalTolerances": true
+        },
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "proofType": "HiGHS_model_infeasible",
+        "nodeCount": null,
+        "solverOptionWarnings": [
+          "Unrecognized options detected: {'threads', 'random_seed'}. These will be passed to HiGHS verbatim."
+        ],
+        "serviceWallMs": 3.7422280001919717,
+        "deadlineOverrunMs": 0
+      },
+      "nativeGate": {
+        "receivedAtMs": 4.541967999999997,
+        "copiedAtMs": null,
+        "auditFinishedAtMs": null,
+        "feesMatchedAtMs": null,
+        "selectionFinishedAtMs": null,
+        "acceptedAtMs": null,
+        "outcome": "no_incumbent"
+      },
+      "callWallMs": 4.765280999999959,
+      "plannerWallMs": 4.647034000000019,
+      "hardTimeout": false,
+      "originalCacheAudit": {
+        "valid": false,
+        "errors": [
+          "Day 5: warehouse capacity exceeded."
+        ],
+        "scheduleAudit": {
+          "valid": false,
+          "errors": [
+            "Day 5: warehouse capacity exceeded."
+          ]
+        },
+        "freezeAudit": {
+          "valid": true,
+          "errors": []
+        }
+      },
+      "independentCacheAudit": {
+        "scheduleValid": false,
+        "freezeValid": true
+      },
+      "independentNecessaryConditionProof": {
+        "proofType": "independent_mandatory_warehouse_occupancy_lower_bound",
+        "day": 5,
+        "resource": "warehouse",
+        "forcedContainers": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "containerInput": {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            "physicalLocks": {},
+            "allUnloadStartsIgnoringOtherResources": [
+              5
+            ],
+            "reason": "pending_floor_plus_delivery_deadline",
+            "minimumWarehouseOccupancyAtFailureDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "containerInput": {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-16T10:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            "physicalLocks": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "allUnloadStartsIgnoringOtherResources": [
+              4
+            ],
+            "reason": "fixed_continuous_unloading",
+            "minimumWarehouseOccupancyAtFailureDay": 1
+          }
+        ],
+        "minimumDemand": 2,
+        "publicCapacity": 1,
+        "violation": true,
+        "independentlyProvenObservedPrefixInfeasible": true,
+        "scope": "failure-day public observation and original physical prefix only; no future realization, solver, or JS used",
+        "derivation": "Any legal schedule must keep every locked continuous unload interval and put every pending unload no earlier than day. Superset unload domains are used; occupancy common to every possible start is a valid lower bound."
+      },
+      "firstDivergentAcceptedDates": {
+        "day": 1,
+        "candidateDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 7,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 9,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 6
+          }
+        ],
+        "baselineDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 4,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 7,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 8,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          }
+        ],
+        "candidateDatesSha256": "4a0d8e6dd8657810233eb944b24985163ab6a40716fb32653c0c230ed4d34ac9",
+        "baselineDatesSha256": "daf4a0286f04206ff0b8cd8689ece4f7a09e474bac173347db05af8809c6a1f8",
+        "changedContainerCount": 21,
+        "changedEventCount": 43,
+        "physicalEventsEqualThroughPreviousDay": true
+      },
+      "firstDivergentPhysicalExecutionDayBeforeFailure": 1,
+      "physicalPrefixesEqualAtCandidateFailure": false,
+      "interpretation": "A different initial or prior accepted plan prevents treating whole-path completion differences as a controlled same-prefix recovery experiment.",
+      "baselineFailureDayPlanOnCandidateSnapshot": {
+        "available": true,
+        "valid": false,
+        "reason": "native baseline on V10 prefix/v10-stress-new-arrivals-tight-n24-r3-C002: changed executed unloadDay"
+      },
+      "selectionHistory": [
+        {
+          "day": 0,
+          "decisionReason": "initialize_native",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 1,
+          "decisionReason": "retain_fee_tie",
+          "proposalChangedEventCount": 43,
+          "changedEventCount": 0,
+          "nativeCostMinusCacheKRW": 0,
+          "candidateSource": "cached_incumbent"
+        },
+        {
+          "day": 2,
+          "decisionReason": "replace_invalid_cache",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 3,
+          "decisionReason": "replace_invalid_cache",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 4,
+          "decisionReason": "retain_fee_tie",
+          "proposalChangedEventCount": 29,
+          "changedEventCount": 0,
+          "nativeCostMinusCacheKRW": 0,
+          "candidateSource": "cached_incumbent"
+        },
+        {
+          "day": 5,
+          "decisionReason": "no_valid_candidate",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "no_complete_plan"
+        }
+      ],
+      "day4TieSelectionOriginal": {
+        "rule": "strict_fee_replacement_retain_ties",
+        "feeEpsilonKRW": 1e-06,
+        "cacheStatus": "valid",
+        "cacheValid": true,
+        "beforeDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 7,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "beforeFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "proposalDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "proposalFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "afterDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 7,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "afterFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "nativeCostMinusCacheKRW": 0,
+        "cacheCostMinusSelectedKRW": 0,
+        "changedEventCount": 0,
+        "proposalChangedEventCount": 29,
+        "decisionReason": "retain_fee_tie",
+        "selectedSource": "cached_incumbent",
+        "cacheGate": {
+          "auditFinishedAtMs": 0.448237000000006,
+          "selectionFinishedAtMs": 0.5021380000000022,
+          "acceptedAtMs": 0.5023180000000025
+        },
+        "nativeGate": {
+          "receivedAtMs": 9.996254000000022,
+          "copiedAtMs": 10.069733000000042,
+          "auditFinishedAtMs": 10.362347999999997,
+          "feesMatchedAtMs": 10.421356000000003,
+          "selectionFinishedAtMs": 10.447795000000042,
+          "acceptedAtMs": null,
+          "outcome": "retain_fee_tie"
+        }
+      },
+      "day4EndpointsIndependentAudits": {
+        "before": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0"
+        },
+        "proposal": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "552eaf29da3b4b464e4ac12065bcc273f8726614e397eb4173080ecd3be84c71"
+        },
+        "after": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0"
+        }
+      },
+      "mechanism": "past_commitment_and_pending_deadline_force_current_warehouse_demand_above_public_capacity",
+      "excludedExplanations": [
+        "200ms candidate receipt or selection timeout",
+        "5000ms parent cold-episode timeout",
+        "missing feasible incumbent alone being mistaken for infeasibility",
+        "native baseline success after the same physical prefix"
+      ],
+      "stillUnknown": [
+        "Whether accepting the D4 native fee-tie proposal alone would complete the full actual future path",
+        "Which alternate online rule can prevent this loss without new losses or higher full-path fees on new validation",
+        "Counterfactual necessity of D1 versus later selection changes; no controlled replay has been run"
+      ]
+    },
+    {
+      "episodeId": "v10-stress-new-arrivals-tight-n24-r3--a3--stableHiGHSV10",
+      "caseId": "v10-stress-new-arrivals-tight-n24-r3",
+      "repeatIndex": 3,
+      "algorithmSeed": 49039,
+      "originalInput": {
+        "path": "artifacts/v10-frozen-first/first-run/inputs/v10-stress-new-arrivals-tight-n24-r3.json",
+        "sha256": "22ec165dc3a8591730fef5a866a471cd11357d6107e9b85fe21c4441a9ddc88c"
+      },
+      "candidateEpisode": {
+        "path": "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a3--stableHiGHSV10.json",
+        "sha256": "0dde99195b46839c2a6f5fa43b4ae8f904e77c8944740041b46b88c8bab96ae0"
+      },
+      "baselineEpisode": {
+        "path": "artifacts/v10-frozen-first/first-run/episodes/v10-stress-new-arrivals-tight-n24-r3--a3--highsV8.json",
+        "sha256": "88686c0fc21cac56a73cc069193952cacc912fd6c3e5b80267e805d04a231c9d"
+      },
+      "candidateOriginalComplete": false,
+      "baselineOriginalComplete": true,
+      "originalFailure": {
+        "day": 5,
+        "kind": "no_complete_plan",
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "plannerStatus": "infeasible"
+      },
+      "originalEpisodeWallMs": 345.4212609999813,
+      "candidateOriginalIndependentAudit": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 6,
+        "acceptedPlans": 5,
+        "executedEvents": 24,
+        "revisions": 81,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 6,
+          "cacheAcceptedCalls": 2,
+          "nativeAcceptedCalls": 3,
+          "retainedCacheCalls": 2,
+          "completeNativeProposals": 5,
+          "strictReplacements": 0,
+          "feeTiesRetained": 2
+        }
+      },
+      "baselineOriginalIndependentAudit": {
+        "complete": true,
+        "historyAvailable": true,
+        "timelineEntries": 14,
+        "acceptedPlans": 14,
+        "executedEvents": 72,
+        "revisions": 233,
+        "pricedRows": 24,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": 0,
+        "incrementalCost": 0,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 0,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 0,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "failureSnapshot": {
+        "scenario": {
+          "id": "v10-stress-new-arrivals-tight-n24-r3",
+          "name": "V2 new-arrivals / tight / 24",
+          "seed": 492039,
+          "horizonStart": "2026-10-12",
+          "horizonDays": 14,
+          "truckCapacity": [
+            4,
+            4,
+            2,
+            2,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "warehouseCapacity": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            1,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "stagingCapacity": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "tariff": {
+            "pncFreeDays": 4,
+            "ddFreeDays": 10,
+            "pncMultiplier": 1,
+            "ddMultiplier": 1,
+            "pncMode": "retroactive",
+            "ddMode": "progressive"
+          },
+          "operations": {
+            "returnLagDays": 1,
+            "stagingUnit": "container"
+          },
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 8,
+              "dischargeDateTime": "2026-10-20T10:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 5,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T07:00:00+09:00",
+              "dueDay": 4,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T10:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 5,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "releaseDay": 7,
+              "dischargeDateTime": "2026-10-18T10:00:00+09:00",
+              "dueDay": 11,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 4,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T07:00:00+09:00",
+              "dueDay": 3,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 0,
+              "dischargeDateTime": "2026-10-12T10:00:00+09:00",
+              "dueDay": 2,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-14T07:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "releaseDay": 1,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 8,
+              "dischargeDateTime": "2026-10-20T07:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-16T10:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T07:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 7,
+              "dischargeDateTime": "2026-10-19T07:00:00+09:00",
+              "dueDay": 12,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-17T07:00:00+09:00",
+              "dueDay": 9,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 3,
+              "dischargeDateTime": "2026-10-15T10:00:00+09:00",
+              "dueDay": 7,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 0,
+              "dischargeDateTime": "2026-10-12T07:00:00+09:00",
+              "dueDay": 3,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "releaseDay": 6,
+              "dischargeDateTime": "2026-10-18T10:00:00+09:00",
+              "dueDay": 8,
+              "dataOrigin": "synthetic"
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-15T07:00:00+09:00",
+              "dueDay": 6,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "observedEvents": [
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "truck",
+            "capacity": 4,
+            "activeShockIds": [],
+            "announcements": []
+          },
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "warehouse",
+            "capacity": 1,
+            "activeShockIds": [
+              "warehouse-sequential"
+            ],
+            "announcements": [
+              {
+                "id": "warehouse-sequential",
+                "revealDay": 5,
+                "resource": "warehouse",
+                "capacity": 1
+              }
+            ]
+          },
+          {
+            "kind": "day_start_capacity",
+            "day": 5,
+            "resource": "staging",
+            "capacity": 6,
+            "activeShockIds": [],
+            "announcements": []
+          }
+        ],
+        "fixedEvents": {
+          "v10-stress-new-arrivals-tight-n24-r3-C012": {
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C022": {
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C002": {
+            "pickupDay": 1,
+            "unloadDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C008": {
+            "pickupDay": 1,
+            "unloadDay": 1
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C009": {
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C004": {
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C014": {
+            "pickupDay": 2,
+            "unloadDay": 2
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C013": {
+            "pickupDay": 3,
+            "unloadDay": 3
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C017": {
+            "pickupDay": 4,
+            "unloadDay": 4
+          },
+          "v10-stress-new-arrivals-tight-n24-r3-C024": {
+            "pickupDay": 4,
+            "unloadDay": 4
+          }
+        },
+        "minEventDay": 5,
+        "originalObservationHash": "sha256:8044acf2b935ad5427689c5f8bbf277b8e3ad967734d1561970c967ce4fcaeeb",
+        "observationHashIndependentlyVerified": true,
+        "physicalLockCount": 24,
+        "usesOnlyPublicInformationAvailableAtFailureDay": true,
+        "modelIdentityHash": "65c3f724bde758e8ac33ed7849e99e3ccb2cf60d08295d65679b9aa1f113bf95"
+      },
+      "nativeCertificate": {
+        "schemaVersion": "portplan-native-highs-v8",
+        "status": "infeasible",
+        "solverStatus": 2,
+        "solverMessage": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "solver": "HiGHS via scipy.optimize.milp",
+        "solverThreads": 1,
+        "formulation": "independent time-indexed pickup/unload/return binaries with cumulative precedence",
+        "objectiveMode": "joint",
+        "objectiveCost": null,
+        "lowerBound": null,
+        "relativeGap": null,
+        "hasIncumbent": false,
+        "provenOptimal": false,
+        "provenInfeasible": true,
+        "rows": [],
+        "independentCosts": null,
+        "modelSize": {
+          "binaryColumns": 278,
+          "constraints": 786,
+          "nonzeros": 3645
+        },
+        "modelWallMs": 2.3453999992852914,
+        "solverWallMs": 1.1929950005651335,
+        "independentAuditWallMs": 0,
+        "solverTimeLimitMs": 195.05272750070435,
+        "remainingBudgetAtReceiptMs": 199.3984375,
+        "certificateScope": "current observed deterministic model and fixed history only; not rolling-policy optimality",
+        "numericalAssurance": {
+          "primarySafeInteger": true,
+          "roundsFees": false,
+          "optimalityUsesNativeNumericalTolerances": true
+        },
+        "reason": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "proofType": "HiGHS_model_infeasible",
+        "nodeCount": null,
+        "solverOptionWarnings": [
+          "Unrecognized options detected: {'random_seed', 'threads'}. These will be passed to HiGHS verbatim."
+        ],
+        "serviceWallMs": 3.5460259996398236,
+        "deadlineOverrunMs": 0
+      },
+      "nativeGate": {
+        "receivedAtMs": 4.310002999999995,
+        "copiedAtMs": null,
+        "auditFinishedAtMs": null,
+        "feesMatchedAtMs": null,
+        "selectionFinishedAtMs": null,
+        "acceptedAtMs": null,
+        "outcome": "no_incumbent"
+      },
+      "callWallMs": 4.501367000000016,
+      "plannerWallMs": 4.387126999999964,
+      "hardTimeout": false,
+      "originalCacheAudit": {
+        "valid": false,
+        "errors": [
+          "Day 5: warehouse capacity exceeded."
+        ],
+        "scheduleAudit": {
+          "valid": false,
+          "errors": [
+            "Day 5: warehouse capacity exceeded."
+          ]
+        },
+        "freezeAudit": {
+          "valid": true,
+          "errors": []
+        }
+      },
+      "independentCacheAudit": {
+        "scheduleValid": false,
+        "freezeValid": true
+      },
+      "independentNecessaryConditionProof": {
+        "proofType": "independent_mandatory_warehouse_occupancy_lower_bound",
+        "day": 5,
+        "resource": "warehouse",
+        "forcedContainers": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "containerInput": {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "releaseDay": 2,
+              "dischargeDateTime": "2026-10-13T10:00:00+09:00",
+              "dueDay": 5,
+              "dataOrigin": "synthetic"
+            },
+            "physicalLocks": {},
+            "allUnloadStartsIgnoringOtherResources": [
+              5
+            ],
+            "reason": "pending_floor_plus_delivery_deadline",
+            "minimumWarehouseOccupancyAtFailureDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "containerInput": {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "releaseDay": 4,
+              "dischargeDateTime": "2026-10-16T10:00:00+09:00",
+              "dueDay": 10,
+              "dataOrigin": "synthetic"
+            },
+            "physicalLocks": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "allUnloadStartsIgnoringOtherResources": [
+              4
+            ],
+            "reason": "fixed_continuous_unloading",
+            "minimumWarehouseOccupancyAtFailureDay": 1
+          }
+        ],
+        "minimumDemand": 2,
+        "publicCapacity": 1,
+        "violation": true,
+        "independentlyProvenObservedPrefixInfeasible": true,
+        "scope": "failure-day public observation and original physical prefix only; no future realization, solver, or JS used",
+        "derivation": "Any legal schedule must keep every locked continuous unload interval and put every pending unload no earlier than day. Superset unload domains are used; occupancy common to every possible start is a valid lower bound."
+      },
+      "firstDivergentAcceptedDates": {
+        "day": 1,
+        "candidateDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 7,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 9,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 6
+          }
+        ],
+        "baselineDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 4,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 7,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 8,
+            "unloadDay": 9,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 2
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          }
+        ],
+        "candidateDatesSha256": "4a0d8e6dd8657810233eb944b24985163ab6a40716fb32653c0c230ed4d34ac9",
+        "baselineDatesSha256": "daf4a0286f04206ff0b8cd8689ece4f7a09e474bac173347db05af8809c6a1f8",
+        "changedContainerCount": 21,
+        "changedEventCount": 43,
+        "physicalEventsEqualThroughPreviousDay": true
+      },
+      "firstDivergentPhysicalExecutionDayBeforeFailure": 1,
+      "physicalPrefixesEqualAtCandidateFailure": false,
+      "interpretation": "A different initial or prior accepted plan prevents treating whole-path completion differences as a controlled same-prefix recovery experiment.",
+      "baselineFailureDayPlanOnCandidateSnapshot": {
+        "available": true,
+        "valid": false,
+        "reason": "native baseline on V10 prefix/v10-stress-new-arrivals-tight-n24-r3-C002: changed executed unloadDay"
+      },
+      "selectionHistory": [
+        {
+          "day": 0,
+          "decisionReason": "initialize_native",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 1,
+          "decisionReason": "retain_fee_tie",
+          "proposalChangedEventCount": 43,
+          "changedEventCount": 0,
+          "nativeCostMinusCacheKRW": 0,
+          "candidateSource": "cached_incumbent"
+        },
+        {
+          "day": 2,
+          "decisionReason": "replace_invalid_cache",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 3,
+          "decisionReason": "replace_invalid_cache",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "native_highs"
+        },
+        {
+          "day": 4,
+          "decisionReason": "retain_fee_tie",
+          "proposalChangedEventCount": 29,
+          "changedEventCount": 0,
+          "nativeCostMinusCacheKRW": 0,
+          "candidateSource": "cached_incumbent"
+        },
+        {
+          "day": 5,
+          "decisionReason": "no_valid_candidate",
+          "proposalChangedEventCount": null,
+          "changedEventCount": null,
+          "nativeCostMinusCacheKRW": null,
+          "candidateSource": "no_complete_plan"
+        }
+      ],
+      "day4TieSelectionOriginal": {
+        "rule": "strict_fee_replacement_retain_ties",
+        "feeEpsilonKRW": 1e-06,
+        "cacheStatus": "valid",
+        "cacheValid": true,
+        "beforeDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 7,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "beforeFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "proposalDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "proposalFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "afterDates": [
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+            "pickupDay": 12,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+            "pickupDay": 7,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+            "pickupDay": 10,
+            "unloadDay": 10,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+            "pickupDay": 1,
+            "unloadDay": 1,
+            "returnDay": 4
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+            "pickupDay": 5,
+            "unloadDay": 5,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 3
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+            "pickupDay": 3,
+            "unloadDay": 3,
+            "returnDay": 5
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+            "pickupDay": 2,
+            "unloadDay": 2,
+            "returnDay": 6
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+            "pickupDay": 11,
+            "unloadDay": 12,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+            "pickupDay": 9,
+            "unloadDay": 9,
+            "returnDay": 12
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 11
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+            "pickupDay": 10,
+            "unloadDay": 11,
+            "returnDay": 13
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+            "pickupDay": 8,
+            "unloadDay": 8,
+            "returnDay": 10
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+            "pickupDay": 7,
+            "unloadDay": 7,
+            "returnDay": 9
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+            "pickupDay": 0,
+            "unloadDay": 0,
+            "returnDay": 1
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+            "pickupDay": 6,
+            "unloadDay": 6,
+            "returnDay": 8
+          },
+          {
+            "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+            "pickupDay": 4,
+            "unloadDay": 4,
+            "returnDay": 7
+          }
+        ],
+        "afterFees": {
+          "storageCost": 0,
+          "ddCost": 0,
+          "totalCost": 0,
+          "sunkCost": 0,
+          "incrementalCost": 0,
+          "objectiveCost": 0
+        },
+        "nativeCostMinusCacheKRW": 0,
+        "cacheCostMinusSelectedKRW": 0,
+        "changedEventCount": 0,
+        "proposalChangedEventCount": 29,
+        "decisionReason": "retain_fee_tie",
+        "selectedSource": "cached_incumbent",
+        "cacheGate": {
+          "auditFinishedAtMs": 0.4489979999999605,
+          "selectionFinishedAtMs": 0.5025979999999777,
+          "acceptedAtMs": 0.5027579999999716
+        },
+        "nativeGate": {
+          "receivedAtMs": 9.412845000000004,
+          "copiedAtMs": 9.454837999999995,
+          "auditFinishedAtMs": 9.725770999999952,
+          "feesMatchedAtMs": 9.778930000000003,
+          "selectionFinishedAtMs": 9.803946999999994,
+          "acceptedAtMs": null,
+          "outcome": "retain_fee_tie"
+        }
+      },
+      "day4EndpointsIndependentAudits": {
+        "before": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0"
+        },
+        "proposal": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "552eaf29da3b4b464e4ac12065bcc273f8726614e397eb4173080ecd3be84c71"
+        },
+        "after": {
+          "valid": true,
+          "fees": {
+            "storageCost": 0.0,
+            "ddCost": 0,
+            "totalCost": 0.0,
+            "sunkCost": 0.0,
+            "incrementalCost": 0.0,
+            "objectiveCost": 0.0
+          },
+          "datesSha256": "02ee5295764a9734f45f7713a33862d09fa8030d99ea5bd08d335a2c5df8b2f0"
+        }
+      },
+      "mechanism": "past_commitment_and_pending_deadline_force_current_warehouse_demand_above_public_capacity",
+      "excludedExplanations": [
+        "200ms candidate receipt or selection timeout",
+        "5000ms parent cold-episode timeout",
+        "missing feasible incumbent alone being mistaken for infeasibility",
+        "native baseline success after the same physical prefix"
+      ],
+      "stillUnknown": [
+        "Whether accepting the D4 native fee-tie proposal alone would complete the full actual future path",
+        "Which alternate online rule can prevent this loss without new losses or higher full-path fees on new validation",
+        "Counterfactual necessity of D1 versus later selection changes; no controlled replay has been run"
+      ]
+    }
+  ],
+  "conclusions": [
+    "Three repeated failures are one business scenario, not three independent cases.",
+    "D5 current-prefix warehouse infeasibility has both the timely original native status and an independent no-solver necessary-condition contradiction.",
+    "The original native baseline followed a different physical prefix from D1; its complete success does not show recovery was possible after V10 past commitments.",
+    "D4 retaining a zero-fee cache instead of a zero-fee alternative is a documented stability/resilience tradeoff; switching only D4 has not been tested.",
+    "Pressure native completion net +12 retains 3 real losses. All old-baseline losses are retained, so the predefined default gate is not passed.",
+    "Conditional fee intervals crossing zero and fewer revisions do not establish global non-regression or a stable fee advantage."
+  ]
+}

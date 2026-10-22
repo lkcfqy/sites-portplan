@@ -1,0 +1,96 @@
+{
+  "source_id": "icpa_public_gate_results",
+  "source_url": "https://newscon.icpa.or.kr/containerInfo/list.do?menuKey=125",
+  "source_metadata": "data/public/icpa_gate_results.html.metadata.json",
+  "rows": [
+    {
+      "source_display_row": "12212",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "40/GP",
+      "direction_original": "반출",
+      "load_state_original": "Empty",
+      "event_local": "2026-10-12 15:30:59"
+    },
+    {
+      "source_display_row": "12211",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "20/GP",
+      "direction_original": "반입",
+      "load_state_original": "Full",
+      "event_local": "2026-10-12 15:30:42"
+    },
+    {
+      "source_display_row": "12210",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "20/GP",
+      "direction_original": "반입",
+      "load_state_original": "Full",
+      "event_local": "2026-10-12 15:30:42"
+    },
+    {
+      "source_display_row": "12209",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "20/GP",
+      "direction_original": "반출",
+      "load_state_original": "Full",
+      "event_local": "2026-10-12 15:30:01"
+    },
+    {
+      "source_display_row": "12208",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "40/GP",
+      "direction_original": "반입",
+      "load_state_original": "Empty",
+      "event_local": "2026-10-12 15:29:41"
+    },
+    {
+      "source_display_row": "12207",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "20/GP",
+      "direction_original": "반입",
+      "load_state_original": "Empty",
+      "event_local": "2026-10-12 15:29:19"
+    },
+    {
+      "source_display_row": "12206",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "20/GP",
+      "direction_original": "반입",
+      "load_state_original": "Full",
+      "event_local": "2026-10-12 15:28:52"
+    },
+    {
+      "source_display_row": "12205",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "40/GP",
+      "direction_original": "반출",
+      "load_state_original": "Empty",
+      "event_local": "2026-10-12 15:28:39"
+    },
+    {
+      "source_display_row": "12204",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "40/GP",
+      "direction_original": "반출",
+      "load_state_original": "Full",
+      "event_local": "2026-10-12 15:28:38"
+    },
+    {
+      "source_display_row": "12203",
+      "terminal_original": "E1컨테이너터미널",
+      "size_type_original": "40/GP",
+      "direction_original": "반입",
+      "load_state_original": "Full",
+      "event_local": "2026-10-12 15:28:24"
+    }
+  ],
+  "row_count": 10,
+  "excluded_fields": [
+    "container_number",
+    "vessel_voyage"
+  ],
+  "grain": "published CODECO gate result event",
+  "timezone": "Asia/Seoul inferred from location; not explicitly encoded",
+  "use_in_optimizer": false,
+  "warning_zh": "这是仁川港公开页面的有界事件快照，不是PNC订单或完整历史；没有卸船时间、合同或仓库约束。size_type_original中ISO 45代码不能直接解释为45英尺。"
+}

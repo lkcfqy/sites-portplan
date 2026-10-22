@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-16T18:35:54.599794+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v12-clean-recovery-proof",
+  "fileCount": 15,
+  "uncompressedFileBytes": 1113547,
+  "archiveBytes": 159752,
+  "archiveSha256": "3347801b14dca1675ee1c8b1c66c00a17488597c4df066e7d809f07edb3c662a",
+  "entrypoint": "artifacts/v12-clean-recovery-proof/recovery-verification-v12.json",
+  "entrypointSha256": "cf5719d22a74d399b29fc87ee04118b14619afa30fc101c8747f453540adbb47",
+  "files": [
+    {
+      "path": "artifacts/v12-clean-recovery-proof/portplan-v12-clean-recovery-plan.md",
+      "bytes": 2727,
+      "sha256": "67e10873dcdeb516d462725b508a1350a2d3b73c1c1035bfa50617ea22fcf9aa"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/build.log",
+      "bytes": 4174,
+      "sha256": "6949bf30562ae2dff49115fd16477ee9468cdfc19bd3fc90d3227e0b323ccfcc"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/defense-check-only.log",
+      "bytes": 1916,
+      "sha256": "da6377d8cf2bf03aff74778bf6ce43e58abc564df1dbfece878f39ea452f6d71"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/five-public-evidence-checks.log",
+      "bytes": 567,
+      "sha256": "0cc2a9ca25fa7cf12f2e42ef39b28e61152300bd004a8d1ef24770d9728bda9c"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/npm-ci.log",
+      "bytes": 28,
+      "sha256": "487d937f9767aeb7ddb31707b16ec5c7f5b20cbb29cddce2fa5bfd641bb8ef65"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/restore-v10.log",
+      "bytes": 291,
+      "sha256": "3d7029b40cad915c1d65d022c1cc54b38f320ab330146672568d775830b0960e"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/restore-v12-formal.log",
+      "bytes": 291,
+      "sha256": "a79181bc2e70ed8af47bcfde37ce324510b5ef6067b94de8753af4f391f6e38b"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/restore-v12-seed-development.log",
+      "bytes": 310,
+      "sha256": "15f679f02c16374588e034524446474067ed9e38a9a5bf6d167f2cb318b6834a"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/restore-v8.log",
+      "bytes": 289,
+      "sha256": "2e2dd2e561171846b56783184b0936ef07ace0675f139f2acc8824f2ff9c11fc"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/restore-v9.log",
+      "bytes": 289,
+      "sha256": "f37125bdcfc60720c1c6ab1dd19c307f96bddc364bfe6568409a33cc194af3be"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-logs/seven-source-coverage.log",
+      "bytes": 479,
+      "sha256": "5529404519d5f6380c51f7f65ad53956f937d7b1bfb48e3d236bd28084c2df00"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-public-evidence-v12-first.json",
+      "bytes": 670901,
+      "sha256": "5672dbc03f1c01774171417bf0304095aac28a98f165ba82bcf5679242515a60"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/recovery-verification-v12.json",
+      "bytes": 402207,
+      "sha256": "cf5719d22a74d399b29fc87ee04118b14619afa30fc101c8747f453540adbb47"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/tested-download-packages-v12.json",
+      "bytes": 6147,
+      "sha256": "b54afb1b39c7b5a87b1ce0d3b466fb1b8ff6589b076bdb2d5448274d8a35526b"
+    },
+    {
+      "path": "artifacts/v12-clean-recovery-proof/verify-portplan-v12-clean-recovery.py",
+      "bytes": 22931,
+      "sha256": "d8c796cb14938f214aababbfcaaee33b4868081c906076237293496c2b3acc29"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 159752,
+      "sha256": "3347801b14dca1675ee1c8b1c66c00a17488597c4df066e7d809f07edb3c662a"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

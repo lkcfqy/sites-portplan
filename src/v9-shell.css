@@ -1,0 +1,9 @@
+@media (min-width:701px){
+  .sidebar{overflow-y:auto}
+  .sidebar .nav,.sidebar-note{flex-shrink:0}
+}
+@media (max-width:700px){
+  .sidebar .nav{display:flex;overflow-x:auto;overflow-y:hidden;gap:3px;align-items:stretch;scrollbar-width:thin}
+  .sidebar .nav-button{flex:0 0 86px;min-width:86px;padding:5px 3px}
+  .sidebar .nav-button span{font-size:9px}
+}

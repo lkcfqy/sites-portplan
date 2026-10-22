@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "portplan-v7-browser-view-manifest-1",
+  "sourceArchiveSha256": "a8b0d67f7ff5fbf3b27fe260ab8d9d17be331a9942df37704d8d8365546000c6",
+  "derivedBrowserView": {
+    "artifact": "data/rolling-v7-view.json",
+    "bytes": 2857962,
+    "sha256": "e003ce844958a2bb86f5d1badc56264358cec846eb2188ef91143d960deba1a1"
+  },
+  "role": "Lossless compression of all execution/fees/decisions/audits and summaries, with explicit internal debug omissions; no experiment rerun."
+}

@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "portplan-v15-targeted-browser-candidate-acceptance",
+  "scope": "Actual local Chromium checks of the V15 presentation candidate only. Original first-five has three passed and two cancelled native downloads; a separate transport-corrected two-download followup passes. Distinct logical coverage is five, not seven or a first-five all-pass. No new optimizer experiment or future final/public-version certification.",
+  "candidateCoverageAccepted": true,
+  "firstRunValid": false,
+  "finalBuildAccepted": false,
+  "finalPublishedVersionAccepted": false,
+  "candidateSourceCommit": "194e6a5197c223893adaf12f7a4be5a8712b9c0a",
+  "candidateDistInventorySha256": "f31599fd3a09fb16b21dc67cb6b08f0779d0c8ed5c3cca90ed108c60ce2d7403",
+  "candidateDistFileCount": 479,
+  "candidateDistBytes": 250902104,
+  "browser": {
+    "executable": "/usr/bin/chromium",
+    "version": "154.0.8037.57"
+  },
+  "base": "http://127.0.0.1:4173",
+  "anonymous": true,
+  "siteCredentialsRead": false,
+  "cookiesOrAuthorizationOrBypassUsed": false,
+  "counts": {
+    "firstRunCases": 5,
+    "firstRunPassed": 3,
+    "firstRunNativeDownloadCancelled": 2,
+    "independentDownloadFollowupCases": 2,
+    "independentDownloadFollowupPassed": 2,
+    "distinctLogicalCoverage": 5,
+    "nativePayloadDownloadsCompared": 6
+  },
+  "firstReceipt": {
+    "path": "artifacts/browser-v15-first/summary.json",
+    "sha256": "f7efe310651374be2924c1b4fcdb7866f113e1009ab12579d757e06fc3f5a539",
+    "harnessSha256": "cfad020f52b973b281c3ea3751173b11b178d9f4368ca2c320dc547a228a3601",
+    "preserved": true
+  },
+  "downloadFollowupReceipt": {
+    "path": "artifacts/browser-v15-downloads-first/summary.json",
+    "sha256": "ab9baa99c71e5dc86d9ad677babe443d51fbe91b4d207bf5be38c24d6dbb99a8",
+    "harnessSha256": "d40a7cd9d4c22a193bbad8890af967924fba2a4252e6f5d92c76509ba47a3218",
+    "preserved": true
+  },
+  "correction": {
+    "productSourceChanged": false,
+    "distChanged": false,
+    "tlsVerificationDisabled": false,
+    "environmentProxyVariablesChanged": false,
+    "change": "Only stop configuring Chromium with the public outbound proxy for localhost. Public connections keep normal proxy/TLS.",
+    "failedRawStatusRetained": "product_assertion_failed; native save_as failureKind cancelled",
+    "originalPassedPresentationChecksRerun": false
+  },
+  "actualDevelopmentPresentation": {
+    "methods": [
+      "seededHiGHSV12",
+      "guardedHiGHSV13",
+      "timelyHiGHSV15"
+    ],
+    "uniqueSeenCases": 4,
+    "endpoints": 12,
+    "branches": 36,
+    "perMethodComplete": 5,
+    "perMethodFailed": 7,
+    "allFailedJobIds": {
+      "seededHiGHSV12": [
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a1--seededHiGHSV12",
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a2--seededHiGHSV12",
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a3--seededHiGHSV12",
+        "v15-seen-v14-stress-new-arrivals-tight-n100-r3--a1--seededHiGHSV12",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a1--seededHiGHSV12",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a2--seededHiGHSV12",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a3--seededHiGHSV12"
+      ],
+      "guardedHiGHSV13": [
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a1--guardedHiGHSV13",
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a2--guardedHiGHSV13",
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a3--guardedHiGHSV13",
+        "v15-seen-v14-stress-new-arrivals-tight-n100-r3--a1--guardedHiGHSV13",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a1--guardedHiGHSV13",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a2--guardedHiGHSV13",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a3--guardedHiGHSV13"
+      ],
+      "timelyHiGHSV15": [
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a1--timelyHiGHSV15",
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a2--timelyHiGHSV15",
+        "v15-seen-v14-stress-aged-backlog-balanced-n50-r2--a3--timelyHiGHSV15",
+        "v15-seen-v14-stress-new-arrivals-tight-n100-r3--a1--timelyHiGHSV15",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a1--timelyHiGHSV15",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a2--timelyHiGHSV15",
+        "v15-seen-v14-stress-new-arrivals-tight-n50-r1--a3--timelyHiGHSV15"
+      ]
+    },
+    "all24PairListsEqual": true,
+    "jointPerControl": 5,
+    "gainedPerControl": 0,
+    "lostPerControl": 0,
+    "confidenceIntervalsComputed": false,
+    "freshScenarios": false,
+    "naturalD0": false
+  },
+  "actualEvidenceHashes": {
+    "results": {
+      "path": "/data/delivery-v15-first-index.json",
+      "bytes": 224984,
+      "sha256": "b996dcf846c0e00ba3f89da453176af8f4a4302061e8dd2f27b7d4966196eaee"
+    },
+    "review": {
+      "path": "/data/review-delivery-v15.json",
+      "bytes": 194166,
+      "sha256": "588c5e5f9beb549765a746a311a70d5fc22d23d4947cbd45ab349900b0985cf5"
+    },
+    "protocol": {
+      "path": "/data/protocol-development-v15.json",
+      "bytes": 386526,
+      "sha256": "e65a550c749256e04dffa2df20d0d597ee6755914456296cb7264bdf48655b2d"
+    }
+  },
+  "controlledFault": {
+    "type": "Append one whitespace byte to actual review HTTP response inside this test route only",
+    "path": "/data/review-delivery-v15.json",
+    "naturalFailure": false,
+    "originalEvidenceModified": false,
+    "oldResultsCleared": true,
+    "realEvidenceRestoredByRefresh": true
+  },
+  "actualDownloads": [
+    {
+      "case": "v15-report-source-native-download-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "href": "/downloads/v15-development-results.zh.md",
+      "actualURL": "http://127.0.0.1:4173/downloads/v15-development-results.zh.md",
+      "label": "V15 complete actual development report",
+      "path": "v15-report-source-native-download-1440/01-v15-development-results.zh.md",
+      "bytes": 23062,
+      "sha256": "5c89899c7888c0f4e1be44b0d228e8d171a14edaca6ffb83323dff0985c06b9b",
+      "exactExpectedBytes": true
+    },
+    {
+      "case": "v15-report-source-native-download-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "href": "/data/download-packages-v15.json",
+      "actualURL": "http://127.0.0.1:4173/data/download-packages-v15.json",
+      "label": "Current dynamic source-package manifest",
+      "path": "v15-report-source-native-download-1440/02-download-packages-v15.json",
+      "bytes": 218884,
+      "sha256": "2ec4ffb3c8c4f6ecf2ec4def3054e5e3721ae43928b47fb6585eb1140365515e",
+      "exactExpectedBytes": true
+    },
+    {
+      "case": "v15-report-source-native-download-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "href": "/downloads/portplan-source.zip",
+      "actualURL": "http://127.0.0.1:4173/downloads/portplan-source.zip",
+      "label": "Current actual source ZIP",
+      "path": "v15-report-source-native-download-1440/03-portplan-source.zip",
+      "bytes": 19974851,
+      "sha256": "22af005405bfed1ff3f5ce02249d7e00d210a3c469d390d8b342319fc3758eae",
+      "exactExpectedBytes": true
+    },
+    {
+      "case": "v15-report-source-native-download-390",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "href": "/downloads/v15-development-results.zh.md",
+      "actualURL": "http://127.0.0.1:4173/downloads/v15-development-results.zh.md",
+      "label": "V15 complete actual development report",
+      "path": "v15-report-source-native-download-390/01-v15-development-results.zh.md",
+      "bytes": 23062,
+      "sha256": "5c89899c7888c0f4e1be44b0d228e8d171a14edaca6ffb83323dff0985c06b9b",
+      "exactExpectedBytes": true
+    },
+    {
+      "case": "v15-report-source-native-download-390",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "href": "/data/download-packages-v15.json",
+      "actualURL": "http://127.0.0.1:4173/data/download-packages-v15.json",
+      "label": "Current dynamic source-package manifest",
+      "path": "v15-report-source-native-download-390/02-download-packages-v15.json",
+      "bytes": 218884,
+      "sha256": "2ec4ffb3c8c4f6ecf2ec4def3054e5e3721ae43928b47fb6585eb1140365515e",
+      "exactExpectedBytes": true
+    },
+    {
+      "case": "v15-report-source-native-download-390",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "href": "/downloads/portplan-source.zip",
+      "actualURL": "http://127.0.0.1:4173/downloads/portplan-source.zip",
+      "label": "Current actual source ZIP",
+      "path": "v15-report-source-native-download-390/03-portplan-source.zip",
+      "bytes": 19974851,
+      "sha256": "22af005405bfed1ff3f5ce02249d7e00d210a3c469d390d8b342319fc3758eae",
+      "exactExpectedBytes": true
+    }
+  ],
+  "archive": {
+    "manifestPath": "data/archives-v15/browser-first/manifest.json",
+    "manifestSha256": "ef95e055340e0d0fefcc0cd20e84f244db8f0a89b26aaa6eb5bb103d18743997",
+    "archiveRoot": "v15-browser-first",
+    "fileCount": 34,
+    "uncompressedFileBytes": 1927360,
+    "archiveBytes": 912756,
+    "archiveSha256": "bdfa3c3d7916d2b19bbc4fb40889c7522d8f528828df551551c6bc5cee08aba9",
+    "chunkCount": 1,
+    "payloadsExcluded": 6,
+    "excludedPayloadBytes": 40433594,
+    "sourceScratchAndArtifactOriginalsPreserved": true
+  },
+  "historicLocal53Independent": true,
+  "historicPublic13AndWorker7Independent": true,
+  "nativeSolverRuns": 0,
+  "entrantUnderstandingCertified": false,
+  "rankGuaranteed": false,
+  "finalVersionStatus": "Not yet separately accepted; root must bind any subsequent final build/public browser receipt to its own actual commit/inventory."
+}

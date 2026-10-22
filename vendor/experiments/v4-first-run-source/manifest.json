@@ -1,0 +1,65 @@
+{
+  "benchmarkProtocolHash": "cfda2b5cdf2bd5806a9fdbc0b380eea7e03cccfe04e51e01528365d0230acfc1",
+  "archiveStartedAt": "2026-10-12T18:08:38.915Z",
+  "snapshotCreatedAt": "2026-10-12",
+  "files": {
+    "scripts/benchmark-v4.mjs": {
+      "expectedSHA256": "d4bab08bce7d791c31175ecdabd541337b4111be5ae8427b662d821c132968a4",
+      "snapshotSHA256": "d4bab08bce7d791c31175ecdabd541337b4111be5ae8427b662d821c132968a4",
+      "matchesExperiment": true
+    },
+    "scripts/benchmark-v2.mjs": {
+      "expectedSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+      "snapshotSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+      "matchesExperiment": true
+    },
+    "src/event-search-v4.js": {
+      "expectedSHA256": "6b93523ce3cb9a15819a5e84cbb0d74f1ae53e827d6afc5dc807e7fdbd00aba8",
+      "snapshotSHA256": "6b93523ce3cb9a15819a5e84cbb0d74f1ae53e827d6afc5dc807e7fdbd00aba8",
+      "matchesExperiment": true
+    },
+    "src/strong-baseline.js": {
+      "expectedSHA256": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac",
+      "snapshotSHA256": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac",
+      "matchesExperiment": true
+    },
+    "src/engine.js": {
+      "expectedSHA256": "26828651136ee442527e408b911eded3840f1f00a023870836d474e1334dd0f4",
+      "snapshotSHA256": "26828651136ee442527e408b911eded3840f1f00a023870836d474e1334dd0f4",
+      "matchesExperiment": true
+    },
+    "src/solver-glpk.js": {
+      "expectedSHA256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+      "snapshotSHA256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+      "matchesExperiment": true
+    },
+    "src/solver-presolver.js": {
+      "expectedSHA256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+      "snapshotSHA256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+      "matchesExperiment": true
+    },
+    "data/protocol-v2.json": {
+      "expectedSHA256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+      "snapshotSHA256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+      "matchesExperiment": true
+    }
+  },
+  "additionalFiles": {
+    "data/protocol-v4.json": {
+      "sha256": "cfda2b5cdf2bd5806a9fdbc0b380eea7e03cccfe04e51e01528365d0230acfc1",
+      "basis": "Runtime dependency/protocol copied during source snapshot; not separately hashed at benchmark launch."
+    },
+    "src/execution-constraints.js": {
+      "sha256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+      "basis": "Runtime dependency/protocol copied during source snapshot; not separately hashed at benchmark launch."
+    },
+    "package.json": {
+      "sha256": "1a671aad3649d172b9c85d6c37e4eaaf229efaaed977293e6f8c7e6abde2c92b",
+      "basis": "Runtime dependency/protocol copied during source snapshot; not separately hashed at benchmark launch."
+    },
+    "package-lock.json": {
+      "sha256": "060177f4ec8ae66db67c95ac1ad72f95965081e8e3452548f976eb815383fd9b",
+      "basis": "Runtime dependency/protocol copied during source snapshot; not separately hashed at benchmark launch."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "protocolHash": "8c5370eaf867b167663717b97e6c895b796dbb832b84375ef61ad3a5b4bed364",
+  "implementationHashes": {
+    "src/rcpsp-v7.js": "7566ae032ca8f8998a8646470b3033e87afc32f05c2f43f3b094da1483a5896b",
+    "scripts/public-resource-benchmark-v7.mjs": "e2d658451ccf27d3732b6ebab78791558d5be45c7b5856731de93f4020e67360",
+    "tests/rcpsp-v7.test.mjs": "78cf34c6f225a74b2e61228d7b48a57e55809dc925ced747bd5608a2e43c7ef3",
+    "data/protocol-public-v7.json": "8c5370eaf867b167663717b97e6c895b796dbb832b84375ef61ad3a5b4bed364",
+    "data/public/v7-external-methods/alns/LICENSE.md": "b2f979be5ffb974e15a8a90fc1866842e81d9af15489cb7a3fc2d91823afc66f",
+    "data/public/v7-external-methods/alns/resource_constrained_project_scheduling_problem.ipynb": "b479ff92404b2dc4dad6239ce09fd6715d874154cd88dbad3541fa1de965efb4"
+  },
+  "capturedBeforeFirstMethodCall": true
+}

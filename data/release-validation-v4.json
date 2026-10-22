@@ -1,0 +1,46 @@
+{
+  "release": "PortPlan V4",
+  "checkedAt": "2026-10-12T18:27:21.943928+00:00",
+  "tests": {
+    "passed": 83,
+    "failed": 0,
+    "command": "npm run verify:v4"
+  },
+  "browser": {
+    "initialPlanComplete": "12箱",
+    "dailyExecutionExportRows": 39,
+    "liveReplay": "本机重跑：完整可行 · 最终两费 4,894,300 ₩ · 37 个待执行事件日期变化",
+    "budgetTableRows": 72,
+    "materialDownloads": 8,
+    "mobileNavigationOneRow": true,
+    "cancelVerified": true,
+    "scenarioChangeCancelsWorker": true,
+    "pageErrors": []
+  },
+  "browserScope": "Vite development server; default 12-container plan, first rolling scenario, exports, all V4 material links, desktop and 390px mobile, cancellation and scene changes. Not exhaustive browser verification of every large scenario.",
+  "pdf": {
+    "path": "docs/defense-v4.ko.pdf",
+    "pages": 16
+  },
+  "sources": {
+    "data/benchmark-v4.json": "96f7cd638535391ba78c191c7d4d9681746d799360234c3818d4a123862de3af",
+    "data/rolling-v4.json": "0f7aa70153dc39035527660ca6ed3c464da580a9bd87aa1f1c3ec0c307c67aa3",
+    "data/certificate-v4.json": "dd77a4ed9c694ad0f857237c08601170b81354b35e17a36859904f0d8dd5d999"
+  },
+  "productionBrowser": {
+    "initialPlanComplete": "12箱",
+    "dailyExecutionExportRows": 39,
+    "liveReplay": "本机重跑：完整可行 · 最终两费 4,894,300 ₩ · 37 个待执行事件日期变化",
+    "budgetTableRows": 72,
+    "materialDownloads": 8,
+    "mobileNavigationOneRow": true,
+    "cancelVerified": true,
+    "scenarioChangeCancelsWorker": true,
+    "pageErrors": []
+  },
+  "productionBrowserScope": "Same representative controls checked against vite preview serving dist, including both compiled browser workers.",
+  "build": {
+    "command": "npm run build",
+    "passed": true
+  }
+}

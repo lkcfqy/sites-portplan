@@ -1,0 +1,66 @@
+[
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/License.txt",
+    "httpStatus": 200,
+    "bytes": 19342,
+    "sha256": "48f99d700291c586c53ceed67e424e4513ef0a2ba1b61d1472d4113086d820c9",
+    "etag": "\"7bcf11a03aa3e77c7bdd7f38595f376d\"",
+    "lastModified": "Sat, 28 May 2022 04:33:52 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/Readme.txt",
+    "httpStatus": 200,
+    "bytes": 422,
+    "sha256": "1325a6079ad41da79c150dd34bf20b866ce26330e3dac2d28f8753e0f812a54d",
+    "etag": "\"21627a3d923163c0284c34c651bbe97b\"",
+    "lastModified": "Sat, 28 May 2022 04:34:03 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/new_route_data.json",
+    "httpStatus": 200,
+    "bytes": 178703,
+    "sha256": "5b6292cf03ed6abc1a8e37a61405c05e14751dc2820a0856f04fd14563f362a3",
+    "etag": "\"ba4b01870e070426df8f534ba9225e0d\"",
+    "lastModified": "Fri, 03 Jun 2022 02:49:06 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/new_package_data.json",
+    "httpStatus": 200,
+    "bytes": 717877,
+    "sha256": "27fc132c7f9de5498301844e27e0d57eba7898bd2f2a247c51742d5b87400c95",
+    "etag": "\"1b8176db21adf7d138f6057a46fb24db\"",
+    "lastModified": "Fri, 03 Jun 2022 02:49:05 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/new_travel_times.json",
+    "httpStatus": 200,
+    "bytes": 4310705,
+    "sha256": "3a96c295d70f1eb372c89126e77e69f60d7bb1b9d38b2a913777d9341d560ab6",
+    "etag": "\"47331f99098326d2ff57bc47e6a0f6b0\"",
+    "lastModified": "Fri, 03 Jun 2022 02:49:10 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/readme.md",
+    "httpStatus": 200,
+    "bytes": 154,
+    "sha256": "0f500350643f54601efe351071b85f1f781ec5e1ee30be6425953184fe6da196",
+    "etag": "\"21769f4b152935cda6b372e31eae4755\"",
+    "lastModified": "Fri, 03 Jun 2022 02:49:11 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_score_inputs/new_actual_sequences.json",
+    "httpStatus": 200,
+    "bytes": 21937,
+    "sha256": "174625ccf3e0aed722f1129feee558ee5672372a3757d475072f7e04c300c2db",
+    "etag": "\"76463bb87651206287e51ee5d79c093a\"",
+    "lastModified": "Fri, 03 Jun 2022 02:58:23 GMT"
+  },
+  {
+    "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_score_inputs/new_invalid_sequence_scores.json",
+    "httpStatus": 200,
+    "bytes": 884,
+    "sha256": "d401c4a1c8d441962d2add760adf14325fe9d08af5573c0afc287eeab18d199b",
+    "etag": "\"82836f1f35a3acf3bd4dabbf89dd5e51\"",
+    "lastModified": "Fri, 03 Jun 2022 02:58:23 GMT"
+  }
+]

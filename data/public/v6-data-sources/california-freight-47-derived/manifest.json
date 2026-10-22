@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/LICENSE",
+    "bytes": 1063,
+    "sha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+    "md5": "ab3ad5d906e3de2c0179b73b17fb166a",
+    "httpStatus": 200
+  },
+  {
+    "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/README.md",
+    "bytes": 944,
+    "sha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+    "md5": "bdf4153bb1f5853bd6c9874584855b72",
+    "httpStatus": 200
+  },
+  {
+    "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPBTW1_robust.csv",
+    "bytes": 1305,
+    "sha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+    "md5": "fa2239bbf73c0fd7be725b3a89f895e9",
+    "httpStatus": 200
+  },
+  {
+    "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_dist.csv",
+    "bytes": 20288,
+    "sha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+    "md5": "b5d234f38027461c9bad6978d2f43d06",
+    "httpStatus": 200
+  },
+  {
+    "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_time.csv",
+    "bytes": 17854,
+    "sha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+    "md5": "3632463586c842cba79e28c5aaf93b0e",
+    "httpStatus": 200
+  }
+]

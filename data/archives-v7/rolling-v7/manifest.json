@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "portplan-lossless-evidence-transport-v7",
+  "artifact": "data/rolling-v7.json",
+  "sha256": "a8b0d67f7ff5fbf3b27fe260ab8d9d17be331a9942df37704d8d8365546000c6",
+  "bytes": 118230496,
+  "chunkMaximumBytes": 4000000,
+  "parts": [
+    {
+      "file": "part-001.bin",
+      "bytes": 4000000,
+      "sha256": "14222af2c2ef5c22c98ff790c613cd1684d314619279a71fcea72a25b76fed93"
+    },
+    {
+      "file": "part-002.bin",
+      "bytes": 4000000,
+      "sha256": "4d391233a60818d1720d1d04cc6e7d891851e81802413dfd8199c3b343d8ebf0"
+    },
+    {
+      "file": "part-003.bin",
+      "bytes": 4000000,
+      "sha256": "27a8f31c025c3c4ea5417e75957658bd57ec925061e03ca38e10213d47187a29"
+    },
+    {
+      "file": "part-004.bin",
+      "bytes": 4000000,
+      "sha256": "a4227b1914f837f1afedb5e78f2bc1aeaa227cf666374bb5670405d4ddd85e5a"
+    },
+    {
+      "file": "part-005.bin",
+      "bytes": 4000000,
+      "sha256": "7dd0c479d1b92830ba6b72b7051b95c11003c570a3c02be33adf9943d777bbcf"
+    },
+    {
+      "file": "part-006.bin",
+      "bytes": 4000000,
+      "sha256": "fb2889df41c134584b539ead617e810abd866435b39e91f5973ed48b47949a9f"
+    },
+    {
+      "file": "part-007.bin",
+      "bytes": 4000000,
+      "sha256": "a5e005eecda935070934434ab7ae1b5ca7b73dcf54b2a7f458731cb6bbdfc040"
+    },
+    {
+      "file": "part-008.bin",
+      "bytes": 4000000,
+      "sha256": "545a680cb095413e3e618c41d2455f73b5ad3b16c942b91c4527c906b5b9233c"
+    },
+    {
+      "file": "part-009.bin",
+      "bytes": 4000000,
+      "sha256": "c3dc53d8aa2adaf78a17349f218cba81965c5a463734dc0ee217bf0c96e26075"
+    },
+    {
+      "file": "part-010.bin",
+      "bytes": 4000000,
+      "sha256": "c4032c1c486792d857fd4f504b5154e6a8433df947b6201e7414659128f4b80c"
+    },
+    {
+      "file": "part-011.bin",
+      "bytes": 4000000,
+      "sha256": "47d36106c5f69963ffabba942bf94119a6ac136756be6b96e33cc59dce7d6996"
+    },
+    {
+      "file": "part-012.bin",
+      "bytes": 4000000,
+      "sha256": "093b146c13c7f59b10e86df27c2307dd2547b400410bb5c9856e01cbf39fa70a"
+    },
+    {
+      "file": "part-013.bin",
+      "bytes": 4000000,
+      "sha256": "e787802d5f93fc5c1a6206e4620d9c2b52d5d0d62a9d47bea9090679f6d54fc2"
+    },
+    {
+      "file": "part-014.bin",
+      "bytes": 4000000,
+      "sha256": "4b144d481566c2d5c8762e01018076d7e96605027ceaa5ef4a1b75a655065ace"
+    },
+    {
+      "file": "part-015.bin",
+      "bytes": 4000000,
+      "sha256": "09382d84756fa12199e016991b8b9d318f9b6755b02ff9785c98a794f3c0e639"
+    },
+    {
+      "file": "part-016.bin",
+      "bytes": 4000000,
+      "sha256": "f5c25f5b258b5ce2dd6f117ebab254ced73e6209d2a6725519839f3cf6ab3014"
+    },
+    {
+      "file": "part-017.bin",
+      "bytes": 4000000,
+      "sha256": "afb2a890cab6d306defc8a2294f6f29733fdd4daa61a9f0351d553328eb74931"
+    },
+    {
+      "file": "part-018.bin",
+      "bytes": 4000000,
+      "sha256": "f17c6a07ba30d9b5fd04e8b19189aadf474f521c2cc013032df82ddf0fadabe8"
+    },
+    {
+      "file": "part-019.bin",
+      "bytes": 4000000,
+      "sha256": "8d04a577a2245ac176d2e899a100a2c3bf5f7d7c0ecc17505916a44dec1534b3"
+    },
+    {
+      "file": "part-020.bin",
+      "bytes": 4000000,
+      "sha256": "9d3d1a0cdcf3e8083dd6dc08940053b91608922ae88f8b558ccbfeeabf3aabb9"
+    },
+    {
+      "file": "part-021.bin",
+      "bytes": 4000000,
+      "sha256": "9bd33b962667bd912106b35b2ece106a0ecf5077586a8cc1099090d62987283e"
+    },
+    {
+      "file": "part-022.bin",
+      "bytes": 4000000,
+      "sha256": "063f32aa4cc687409a0aa8c715d45c68304666e8e8941835b4098d79023e17f3"
+    },
+    {
+      "file": "part-023.bin",
+      "bytes": 4000000,
+      "sha256": "f97b3a272a015c1b8372bc3bfb3dc97636b4337c4527a64a1cb7d23192cd442e"
+    },
+    {
+      "file": "part-024.bin",
+      "bytes": 4000000,
+      "sha256": "5be8eccc09d3baacf74db323097b6f0b6ac46aa5f84ae09bbae61b3f8ee89551"
+    },
+    {
+      "file": "part-025.bin",
+      "bytes": 4000000,
+      "sha256": "a8e8e629197720c9029bd3e5b6ce573a59c3427bd0ed4b7bb1f0f0629a7f76b0"
+    },
+    {
+      "file": "part-026.bin",
+      "bytes": 4000000,
+      "sha256": "2a1875132177ff8c9c427f72a4818a7881e77a849fb5c0c79c067dd1c100875e"
+    },
+    {
+      "file": "part-027.bin",
+      "bytes": 4000000,
+      "sha256": "1756507e05fc7eca0ecbdd88d53a9cc41d75a73bc0e2b3a076a067ac0a7de82b"
+    },
+    {
+      "file": "part-028.bin",
+      "bytes": 4000000,
+      "sha256": "169ace327435007b52099a1745261c9cacf9c4facfd35e3e097989c51198b873"
+    },
+    {
+      "file": "part-029.bin",
+      "bytes": 4000000,
+      "sha256": "94dd02ae47971e5a714130670f7d58e4e1e5ae0aff61a011954d7399b565c665"
+    },
+    {
+      "file": "part-030.bin",
+      "bytes": 2230496,
+      "sha256": "eee454dcffdc997b7d471ab9e70290a47d22550a58f28e0a359d38b773390ba1"
+    }
+  ],
+  "purpose": "Lossless source repository transport. Restore missing archive; never replace existing evidence. No experiments are rerun."
+}

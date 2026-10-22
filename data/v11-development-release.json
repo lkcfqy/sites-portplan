@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "portplan-v11-development-release",
+  "recordedAtAsiaSeoul": "2026-10-17T01:51:50+09:00",
+  "status": "development_verified_formal_not_run",
+  "latestFormalResearch": "V10",
+  "newFormalExperimentComplete": false,
+  "recommendedAsDefault": false,
+  "fullChampionshipPlanComplete": false,
+  "enterpriseRecordsRequired": false,
+  "businessContactsRequired": false,
+  "verification": {
+    "testSuite": {
+      "passed": 540,
+      "failed": 0,
+      "skipped": 0,
+      "includesColdFactorySmokes": [
+        "V7",
+        "V8",
+        "V9",
+        "V10"
+      ]
+    },
+    "focusedV11AlgorithmTests": 32,
+    "offlinePublicChecks": {
+      "passed": 5,
+      "report": "data/public-evidence-readiness-v11.json"
+    },
+    "archivedEndpointIntegration": {
+      "endpointScores": 6,
+      "containerDomainScores": 144,
+      "syntheticServiceCalls": 6,
+      "newOptimizerCalls": 0,
+      "wholePathPolicyReplays": 0,
+      "newHeldOutExperiments": 0,
+      "report": "data/commitment-slack-integration-v11.json"
+    },
+    "cleanDirectoryRecovery": {
+      "passed": true,
+      "packages": 14,
+      "uniqueFiles": 826,
+      "npmCi": true,
+      "build": true,
+      "offlinePublicChecks": 5,
+      "endpointContainerChecks": 144,
+      "report": "data/recovery-verification-v11.json"
+    }
+  },
+  "unchangedFormalIndexSha256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+  "remaining": [
+    "Controlled whole-path continuation on seen inputs",
+    "Initial timely complete-schedule coverage",
+    "New frozen prospective evaluation",
+    "Actual supported-browser interaction",
+    "Entrant personal reproduction, defense and registration/rules checks"
+  ],
+  "notes": "V11 is an independent Node/Python development prototype. The browser still uses the existing GLPK methods. A smaller next-day compulsory warehouse lower bound is not a recoverability guarantee or proof of new held-out improvement."
+}

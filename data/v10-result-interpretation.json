@@ -1,0 +1,4570 @@
+{
+  "schemaVersion": "portplan-v10-posthoc-descriptive-interpretation-1",
+  "readOnlyInputs": true,
+  "solverRuns": 0,
+  "scriptSha256": "67406742074542efaa741d8ffdcb6f8c37618459782e6920fcc724ec0bb4f91f",
+  "inputIndexSha256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+  "protocolSha256": "fa5c6d49f43f0bf79b1905ae445300396469a985134296e1bfff94bd544414ad",
+  "frozenManifestSha256": "e78d485d24614d4c1a7249f2f46ef8d68e171a7f3fe222d557c557c902f91b6f",
+  "frozenImplementationHashes": {
+    "scripts/highs-planner-v10.mjs": "9272c19c8afe47ae9cafe8efb7fd8d45dca2c25de4001b4e132e5709f5a8f310",
+    "scripts/highs-planner-v8.mjs": "cfa0abecc7bf8f305dacfe76936f30b0aa1b877619315070c9245d7f87ed0bad",
+    "scripts/highs-service-v8.py": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02",
+    "scripts/benchmark-v10.mjs": "0a85bb81481c868842b387b4d8f9a58130e193ffea546c6712f96e3bc5f74ccb",
+    "scripts/episode-v10.worker.mjs": "0135c6eb12e3ad830ee913ed2753748b35567287665b34bba577de79924e4675",
+    "scripts/benchmark-v2.mjs": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "src/adaptive-planner-v9.js": "cc6d6e26c3f14f090f1ee78a25210e45e5ca1331cb5c731d4cb568d684ffed8a",
+    "data/protocol-v10.json": "fa5c6d49f43f0bf79b1905ae445300396469a985134296e1bfff94bd544414ad"
+  },
+  "independentReviewSha256": {
+    "data/review-v10.json": "def9cd2920b9976a02d2e495903a3b001369eea4f039d7216325878a81fd634d",
+    "data/bootstrap-review-v10.json": "a55a55cf7d36a14eccbbb4b34162b8413bc4893d8d006d7b875b0ee9a30a3648"
+  },
+  "method": "All 432 original-native and 432 V10 SHA-bound episodes, recorded selection proofs and timestamps only; no optimizer/generator rerun or bootstrap recomputation.",
+  "panels": {
+    "same-distribution": {
+      "highsV8": {
+        "episodes": 216,
+        "completeEpisodes": 153,
+        "calls": 2121,
+        "solverCalls": 2121,
+        "workerAndNativeStartupMs": {
+          "count": 216,
+          "mean": 241.5228149074074,
+          "minimum": 219.68541900000002,
+          "maximum": 342.103348
+        },
+        "episodeParentWallMs": {
+          "count": 216,
+          "mean": 577.5102383055532,
+          "minimum": 269.34677600004943,
+          "maximum": 1115.5088770000148
+        },
+        "callWallMs": {
+          "count": 2121,
+          "mean": 28.66812132673267,
+          "minimum": 3.5603170000000546,
+          "maximum": 257.68060599999995
+        },
+        "readyAtCallStartCount": 2121,
+        "nativeStatusCounts": {
+          "optimal": 2058,
+          "infeasible": 36,
+          "time_limit": 27
+        },
+        "failureKinds": {
+          "no_complete_plan": 63
+        },
+        "failureRecords": [
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.779475000000048,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n50-r2--a1--highsV8.json",
+              "sha256": "cbce7ceb803450451d0f2946017e1bfd6c8053d35cbb765a576dbfb547c26413"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.94100800000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n50-r2--a2--highsV8.json",
+              "sha256": "0bcfeaf57d86a70952dfaca979d83e281e4999a14e79b2ff0d6248725cc1c885"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n50-r2::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.18166500000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n50-r2--a3--highsV8.json",
+              "sha256": "c3a75cc48435f6a9c71d1f8df4e97e738b8fbd42c5907fc3ca86eae4bf496954"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 213.99026600000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n100-r3--a1--highsV8.json",
+              "sha256": "bb5a6eb5af09fb62f124476224fa301f03a8baf6571cc7574747b473ac86e776"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "optimal",
+            "callWallMs": 212.53429699999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n100-r3--a2--highsV8.json",
+              "sha256": "db1f181513a70c595481b5c80b3f7b3c733e83510fa9b2879e6c9f9ac739c053"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 218.60202499999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n100-r3--a3--highsV8.json",
+              "sha256": "25e00ea9f258dada0d7135872af979bd901029fee250531cb3d1289c8e1aad7a"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r1::repeat-1",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.04968600000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r1--a1--highsV8.json",
+              "sha256": "faf5684ae764a9656eb3472dcc13d7bdac881baf3b8838b8aac98a18155a93b9"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r1::repeat-2",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.80566299999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r1--a2--highsV8.json",
+              "sha256": "c7bcb166fcab0a427849113d74476cae659b6ad1b011d22101092eb3372bdcc5"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r1::repeat-3",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.134371999999985,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r1--a3--highsV8.json",
+              "sha256": "246688b23d3d44bcd76fe94c7ee5be422ae8ca31a6ea4bdefaa311aaade86150"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.140562999999986,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r2--a1--highsV8.json",
+              "sha256": "acc06b76859385009290ab79209ec813bf70c66f26dd10aa4a9e1a7008ed1640"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 22.006569999999954,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r2--a2--highsV8.json",
+              "sha256": "fed1a6a49ac6e181052a1420062da2eea1b9b94640988d99b0b78541230a7c38"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.32105100000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r2--a3--highsV8.json",
+              "sha256": "492f8aa266dc82c4352bd721ad09266757655e496d85bd7dcabcccd72d4995e7"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 24.04555399999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r4--a1--highsV8.json",
+              "sha256": "36c26d248ea260e4afd90a0d6ba8b920d45f58b33ef3413b2ec6b33326ce72a1"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 22.98979299999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r4--a2--highsV8.json",
+              "sha256": "d0132b744322a26529f5475406e49ce70f249d544551999e6275cb4f382cace2"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 23.501194000000055,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r4--a3--highsV8.json",
+              "sha256": "d36548f91a21b2e4ff3e8448bfa2625e482a8b1bdbf10276c07a037bbafa4e41"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.802882999999952,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r2--a1--highsV8.json",
+              "sha256": "e657fde1da737ca3824a5d771fac81d4a1ea50a748f2095ab7c78b2e6f5f870b"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.08124799999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r2--a2--highsV8.json",
+              "sha256": "e33974c44cfa14a778d831d02655e1b328da9b0bbd046214cfd69848e46ed326"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.484670999999935,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r2--a3--highsV8.json",
+              "sha256": "acd4e24d16f8c3f13156c5a8922691731e9536c851a0914cb4ce2f03cb2bb832"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.056063999999992,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r3--a1--highsV8.json",
+              "sha256": "1f16f521d7ea39692b039041c496833b1e6017c9470269f0b87e6907adf898f1"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.693530999999894,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r3--a2--highsV8.json",
+              "sha256": "c2a50861ce187af7b63f9cdcdf0cfa915d415cdc907ce19dcb0c003cc86d0132"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.72503800000004,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r3--a3--highsV8.json",
+              "sha256": "bc7cbb127bdca2b222cb133098ecb61552a79f40a003dffd35105dd5db185ac9"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r4::repeat-1",
+            "day": 8,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.748986999999943,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r4--a1--highsV8.json",
+              "sha256": "177118873e08c712f1045abaa87aaa144ddff60b98e566da5fffe4b244829639"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r4::repeat-2",
+            "day": 8,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.630319999999983,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r4--a2--highsV8.json",
+              "sha256": "f2856d97acf673f4adb7ea37edcc8df4208e15c87deeb0489a064e93c1f9b030"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r4::repeat-3",
+            "day": 8,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.36246099999994,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r4--a3--highsV8.json",
+              "sha256": "9e2d194704d1b4b78318ea840867cd8cb609d7c1b929b2db0bc5ffce3557ff16"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 216.175075,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r1--a1--highsV8.json",
+              "sha256": "95130489c6c84a06ad4fc474e05a195615f94663c148c47e6102d7521f91f091"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 247.33552500000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r1--a2--highsV8.json",
+              "sha256": "1f8d72c303bb524491b7970a5f756ef616e6180bbc28a61a346e62830c78b4eb"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.38055199999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r1--a3--highsV8.json",
+              "sha256": "a63541ef9fcf180b5cdce519b46e127fdabc7076d0d7b0228328eb0030cd77a7"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 240.408951,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r2--a1--highsV8.json",
+              "sha256": "b5651e45b30ace4a9c444d999acde597521863294497113d1e6839183fe94b76"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 233.713914,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r2--a2--highsV8.json",
+              "sha256": "c287bba31f3e805edb5db69d85966f173b551bee029529af3f825a0fddd24f26"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 247.86617999999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r2--a3--highsV8.json",
+              "sha256": "1c30868f132c8f18b32ce31a4fbdb4ef47e7519742f9becdeb5756f17d5a26fe"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 217.14165299999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r3--a1--highsV8.json",
+              "sha256": "31eac27cda788e74b79332f9141a165d7319bb848aef8cc476e16cc08d8383e5"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 224.01562099999995,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r3--a2--highsV8.json",
+              "sha256": "8bac52351963a88cfb3dca4658226383c2f3d7d2e3a57ee0e9d7c33404b15d59"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 212.46164000000005,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r3--a3--highsV8.json",
+              "sha256": "d4c3eddb0dbfc57b74328d8ab7d3f410bec16720de2ada28ebc191dff255eb61"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 256.53589199999993,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r4--a1--highsV8.json",
+              "sha256": "5447f87f73ab04fb504d4f18b353155605710026d392f277639951283d80c006"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 210.87924499999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r4--a2--highsV8.json",
+              "sha256": "056bd206298d26bb9730553fb24d2a654c8d66e088382ce07c39e9af21408fa8"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 257.68060599999995,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r4--a3--highsV8.json",
+              "sha256": "5667cfe9bcd0a9df9752ace0a6d960aa93498599f3a3a802a8fbca4e94843506"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r1::repeat-1",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.837436000000025,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r1--a1--highsV8.json",
+              "sha256": "cb62615a3f7b68cf76d0fd5d41360f8e77ebd70e2f1e39a0af19859fb5ee5222"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r1::repeat-2",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.40408100000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r1--a2--highsV8.json",
+              "sha256": "8a40db151fc6fad0d67c444f8bf2c8fbda634e4eace94e5e715c667a682f3eff"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r1::repeat-3",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.559361999999965,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r1--a3--highsV8.json",
+              "sha256": "30ca7a42d1cc83bcfb91d0a2681ca58b74412031e8260cef5908df1fb51481da"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.999250000000018,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r2--a1--highsV8.json",
+              "sha256": "f2175e0c7d15702f18fec1786c40f8e25a15573abb952b4bb8ddae9f0d8ce038"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.76035300000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r2--a2--highsV8.json",
+              "sha256": "95a50e2962f726773f4e08766245f966cbcee8f58035550d907fae73b43412a7"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.396342000000004,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r2--a3--highsV8.json",
+              "sha256": "a3d1884d07af023337428c1d24a1104519ddcccfc0c96afb65adea3a59b5462f"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 218.01896000000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r3--a1--highsV8.json",
+              "sha256": "0d1b83e976bc44bea13f2148f3bbc69b0af14444a9f4dd1eb4abc5e246571ef5"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 202.54427499999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r3--a2--highsV8.json",
+              "sha256": "e0c2b6200edf7d221a5ad2d88550799ad0cff7dccbd0a33cb54188925e403d95"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.859527,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r3--a3--highsV8.json",
+              "sha256": "58c0575a362a21bc419920dfa180a773281c57fa783f16f00b2933f2e2b270d1"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n100-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 227.32852799999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n100-r1--a1--highsV8.json",
+              "sha256": "f2b3eb39f6e1221b613e109edf16b8a3de92b5a9185431e74c6995febfe6427f"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n100-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 226.66382400000003,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n100-r1--a2--highsV8.json",
+              "sha256": "05ee8df3561d3448b441a3c67e9c4e9f5a917946f1d6e1dc7d9aa6be39af177e"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n100-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 233.523645,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n100-r1--a3--highsV8.json",
+              "sha256": "041cb3a430b3c1d9424e84ba6482a2cf59b2996d7fd435a482667ec89e4e1a39"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r2::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 6.13982500000003,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r2--a1--highsV8.json",
+              "sha256": "6a6cc79357f6bc9839ec2bf1757803fe2fbadb2158cd385c245bcf2005bbed97"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r2::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 6.433101000000022,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r2--a2--highsV8.json",
+              "sha256": "22d121b8675726739d841ae944b20a6200ea10ca7a20e56db488e66ec30f1bcc"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r2::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 5.939327000000048,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r2--a3--highsV8.json",
+              "sha256": "e27894bbf6cb42c94d0dedd6edc753baceade289eab9b8731ccba7208d405894"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.383988999999985,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r4--a1--highsV8.json",
+              "sha256": "3acb68a78e90d4170ffcb80817cc60ba69c694f455072232c5968de1e271b2ff"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.256387999999987,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r4--a2--highsV8.json",
+              "sha256": "3397e4a451f101e75a99fcb9cb1850f3db2fda1ee1dfd5db7acadb56e226284c"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.389325999999983,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r4--a3--highsV8.json",
+              "sha256": "9679e3a52a442a8383430272dffcad39d36c846d04bc984d0505483266ae524d"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n50-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.390038000000004,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n50-r2--a1--highsV8.json",
+              "sha256": "06f1d0926f5b08407bb48ce7419e8bafbe449d21e6de3216d65d0f99173aec95"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n50-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.745960000000025,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n50-r2--a2--highsV8.json",
+              "sha256": "511296b858d54b3fb746f5392d7db6792f1850222c9ae6c09e1f26ab6b4c0691"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n50-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 12.481880999999987,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n50-r2--a3--highsV8.json",
+              "sha256": "9a1a6f88c4c6cfc3a56aa046b72d842199f7f383a006030f137b464e1b9e4695"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "optimal",
+            "callWallMs": 209.8811,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r2--a1--highsV8.json",
+              "sha256": "cb71b94db97b48c4cdb76a674f94eb127b18ea04aaecc82063eb18224dbca6a3"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "optimal",
+            "callWallMs": 209.502833,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r2--a2--highsV8.json",
+              "sha256": "19b6c87819919472f89e41e832dc9f319d28d5f911b352b03a70c8e3dfbec152"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.69086399999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r2--a3--highsV8.json",
+              "sha256": "55d3a08f24c5d1a1c694cee7048dd4b2b3d43de74c07bd0641963737693bdb16"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 231.606424,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r4--a1--highsV8.json",
+              "sha256": "b020da9bdbeea2632ea18f6fe5b34e6646d3ca8f3cf11f9521b16e5fe76d16b1"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 223.18584600000003,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r4--a2--highsV8.json",
+              "sha256": "09f28d27e4336b73ca5cf1de6a4fec3aecc4d3d2a715d25c0ac90b0e18a4e629"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 230.98094399999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r4--a3--highsV8.json",
+              "sha256": "8ad737343d09bb87457683b6dca5b153145f66a3a30e08b2b14a907557344134"
+            }
+          }
+        ],
+        "callsOver200Ms": 33,
+        "failureNativeStatusCounts": {
+          "infeasible": 36,
+          "time_limit": 24,
+          "optimal": 3
+        },
+        "failurePlannerStatusCounts": {
+          "infeasible": 36,
+          "time_limit": 27
+        },
+        "failureDayCounts": {
+          "3": 6,
+          "0": 36,
+          "2": 6,
+          "4": 12,
+          "8": 3
+        },
+        "selectionEvidenceScope": "V10 selection diagnostics are not emitted or measured for the unchanged original V8 native baseline."
+      },
+      "stableHiGHSV10": {
+        "episodes": 216,
+        "completeEpisodes": 156,
+        "calls": 2172,
+        "solverCalls": 2172,
+        "workerAndNativeStartupMs": {
+          "count": 216,
+          "mean": 240.3510200416667,
+          "minimum": 218.705584,
+          "maximum": 292.57029300000005
+        },
+        "episodeParentWallMs": {
+          "count": 216,
+          "mean": 593.6384631250016,
+          "minimum": 274.6367399999872,
+          "maximum": 1305.810576000018
+        },
+        "callWallMs": {
+          "count": 2172,
+          "mean": 29.528860858195213,
+          "minimum": 3.7678559999999948,
+          "maximum": 258.73522499999996
+        },
+        "readyAtCallStartCount": 2172,
+        "nativeStatusCounts": {
+          "optimal": 2113,
+          "time_limit": 26,
+          "infeasible": 33
+        },
+        "failureKinds": {
+          "no_complete_plan": 60
+        },
+        "failureRecords": [
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 218.306889,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n100-r3--a1--stableHiGHSV10.json",
+              "sha256": "501ffcf85524abc3a45294c5443e0bdb0c212ffaee6631179ffa4d0e176dbd98"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "optimal",
+            "callWallMs": 207.105961,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n100-r3--a2--stableHiGHSV10.json",
+              "sha256": "3977ad9b51e3dea3a0b5bc85daf4476a5c15d356dbcca92487f68df211496037"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 214.19532800000002,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-balanced-n100-r3--a3--stableHiGHSV10.json",
+              "sha256": "58f71f90ab215548da937dbea188b33d8481650c698a69a942023da0e16db845"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r1::repeat-1",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.942597000000035,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r1--a1--stableHiGHSV10.json",
+              "sha256": "3a5f8339126c7df8ed8cd3baeecbff1f353d0c5de05c124fa77c4422373a90a8"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r1::repeat-2",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.400230000000022,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r1--a2--stableHiGHSV10.json",
+              "sha256": "e25e962e2baea6ac6f4c18ab2e63cf62e9af8e3babef4e3812ee01ac27f78597"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r1::repeat-3",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.535620999999992,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r1--a3--stableHiGHSV10.json",
+              "sha256": "13c7fda88345aa6850f6aeeb4a42ca73dafb9a8a14f5b9c7d03d5962926de2f6"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.407971000000032,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r2--a1--stableHiGHSV10.json",
+              "sha256": "d3832dd2ebffee7b180a3062934237f050e7dd03d0ace3794c3308487b4efbc9"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.142336,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r2--a2--stableHiGHSV10.json",
+              "sha256": "8213f13707f4c3e9f154f48c2ad8afb038e17b38b449ba786d3f5686dc45fc1c"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.569549999999992,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r2--a3--stableHiGHSV10.json",
+              "sha256": "69c6671b830d215d79f40e67c336ccca8e635ebb96b851cc8011e83810e693c9"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 22.37053199999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r4--a1--stableHiGHSV10.json",
+              "sha256": "7466df70d2d8518428a29ec9f15db360af73e5b9e94b25c770be659fa6916fc0"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 22.297082999999986,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r4--a2--stableHiGHSV10.json",
+              "sha256": "f99d0b9c63dc19fa9fc4bc2a1ce2724efa80c31798d57c3abf9a6668dbb4c660"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n24-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 22.727863999999954,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n24-r4--a3--stableHiGHSV10.json",
+              "sha256": "28424399e6a3b1fec666e604546cc72b095919215127d17893a40860155eca89"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.005361000000107,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r2--a1--stableHiGHSV10.json",
+              "sha256": "eec18f97ef91cced454b5b4c6fd163386b58f63b0085c11d1c4787082b44e271"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 20.95840099999998,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r2--a2--stableHiGHSV10.json",
+              "sha256": "39b6367aaf9e56ac5d9b479d8d495504165c330f1f04cb1adadc85161c468f67"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.724511000000007,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r2--a3--stableHiGHSV10.json",
+              "sha256": "cec4ca9cbdc1aa01b5469b16c1ec8c4a2dd87fe4fa283f255500b3e9634fa972"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.449719999999957,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r3--a1--stableHiGHSV10.json",
+              "sha256": "d69aa8e2df4e9adda1efad56bd6178022e240d924a8ad041f01a2075c50814ef"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.240349000000037,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r3--a2--stableHiGHSV10.json",
+              "sha256": "2d2e36560a3abbd5f2e9711d1c4f1eb3fdca6257594ec44b3540dd5ca0913617"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r3::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.270591999999965,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r3--a3--stableHiGHSV10.json",
+              "sha256": "4844e611c046bb8719251f6dc3bc8e0390633fed97a1f18969a8d56513f8b251"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r4::repeat-1",
+            "day": 8,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.480636000000004,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r4--a1--stableHiGHSV10.json",
+              "sha256": "b54acde04b6af221e4aa76480a5dd6dcad28fa1c9c81fe51c39dfd773abbde55"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r4::repeat-2",
+            "day": 8,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.181370000000015,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r4--a2--stableHiGHSV10.json",
+              "sha256": "b2296250d6d5e54479775a898fdc06716346a1395493b8c29b089097361b0001"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n50-r4::repeat-3",
+            "day": 8,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.700996000000032,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n50-r4--a3--stableHiGHSV10.json",
+              "sha256": "e2a14ca67601c96ee613b7e33f952950fabc29f49ad9d901f06ce313781749e5"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 206.659398,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r1--a1--stableHiGHSV10.json",
+              "sha256": "dd5df043a51f4046edef051119de5d9f206f6a1f5f37eee5da3355fd6e105cc8"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 218.87586299999998,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r1--a2--stableHiGHSV10.json",
+              "sha256": "79a6bff9d20aa6282801fb9fea8fa8010e640d3acb2c844f9fd6c2bb8d3041e6"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 215.06587100000002,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r1--a3--stableHiGHSV10.json",
+              "sha256": "ee4ca1c9b455992326f1bf1bb9187ab73939fb45c2bee1adb6f54aa1d1f3497f"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 240.023051,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r2--a1--stableHiGHSV10.json",
+              "sha256": "75cb24dcc447b055ff289addd44a44434a3c2b6edd0ad27aee8b5febbf13e403"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 238.972964,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r2--a2--stableHiGHSV10.json",
+              "sha256": "f1adfeba07dcda862f22655c88a3338425aecf3710bcedb33e93390c8f29b6b2"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 239.389955,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r2--a3--stableHiGHSV10.json",
+              "sha256": "c19a67c0166f4beff215d10104af5e6b46082710a471804f60557da07314c752"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 212.81158100000005,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r3--a1--stableHiGHSV10.json",
+              "sha256": "359829c3f76e46a27fe9ef76357cb8b82f1f5949cae6bae2139dbf6ab51f1424"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 207.180228,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r3--a2--stableHiGHSV10.json",
+              "sha256": "32e85b6e7b24a86a99d72c73d8c3dc93416a42b1f171242317b924228c70d99c"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 215.883239,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r3--a3--stableHiGHSV10.json",
+              "sha256": "e3b16d425e23a0f262c894ebdcfd5ad4e801118998dbd4f2af1ec85a8210c34c"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 255.072495,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r4--a1--stableHiGHSV10.json",
+              "sha256": "1fbd46c5ae4af9ed3a83755176b790a9318b2672e50773f712751f29680ae9a3"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 258.73522499999996,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r4--a2--stableHiGHSV10.json",
+              "sha256": "af6557aee93bad445734858fd4adbfed2fde8e44f9c0d5933eef64d217e5709b"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-aged-backlog-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 258.66037200000005,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-aged-backlog-tight-n100-r4--a3--stableHiGHSV10.json",
+              "sha256": "05189db2e5c997520637a09dce61e5013cb4a5fb87bead940afa16c33ca75aa5"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r1::repeat-1",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.12964199999999,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r1--a1--stableHiGHSV10.json",
+              "sha256": "9ca5acbbaf6079c531c144b4b09e38107683d64fa2969921c5983511cec7f77e"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r1::repeat-2",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.67304200000001,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r1--a2--stableHiGHSV10.json",
+              "sha256": "f6023c68a650fb61ebfecca1dc39fa2bfd9c74609eb0cc03343f823b47b68660"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r1::repeat-3",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.045635000000004,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r1--a3--stableHiGHSV10.json",
+              "sha256": "e72a9f193fd45069371d5ba3b3e98bd162a81c6427a808b0a76a8f2d75e7b743"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.660993000000019,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r2--a1--stableHiGHSV10.json",
+              "sha256": "ad92d8e77cb9c69c61903b7fd582f27acc47caa26be2b934a3d1787e139dc9e2"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.618578000000014,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r2--a2--stableHiGHSV10.json",
+              "sha256": "aedbc236756667fdf125f1591c3c716dab99bcb1ebc4905ed228fa2f22208c5e"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.409118999999976,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r2--a3--stableHiGHSV10.json",
+              "sha256": "3e26e39b665f771be8311e37794d7ae096e02d958e28abb9c04c98f77da9f4dd"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 214.409949,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r3--a1--stableHiGHSV10.json",
+              "sha256": "06fe0475222feebc5cc61c8436a57f62c2d76d5daffec89715b6b28debb58a58"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 202.352259,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r3--a2--stableHiGHSV10.json",
+              "sha256": "3590110ad55bcf0879489dd3270ff5b1cf0d111dca256e62dbed1aa24abfb962"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 242.12768499999999,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n24-r3--a3--stableHiGHSV10.json",
+              "sha256": "38aa79fe5580afe773fa2f45fd20763a3c8794ef2db6ecbbf5a5604c3aca3a9b"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n100-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 212.51207399999998,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n100-r1--a1--stableHiGHSV10.json",
+              "sha256": "88fc6d5d5a775611523117a8ea5f01b462c94ad993778836ffd99e8c420e709a"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n100-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 235.59443700000003,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n100-r1--a2--stableHiGHSV10.json",
+              "sha256": "97fb725702daad086f82d32444e8453a2d3b3fff953b7111f468ffa10cebc1b4"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-new-arrivals-tight-n100-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 215.589452,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-new-arrivals-tight-n100-r1--a3--stableHiGHSV10.json",
+              "sha256": "955d3c00a18ff86e511545731413fdb6ae78e86b672397614078c8c89cac0163"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r2::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 6.469845999999961,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r2--a1--stableHiGHSV10.json",
+              "sha256": "3134d9bc9dc046b8281355fd96f2f2f251e4dc8a61271036d60b6355a5097cdc"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r2::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 6.587321000000031,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r2--a2--stableHiGHSV10.json",
+              "sha256": "85f62d40bb85bfda47ec0d163aead775199b1e768e351d50bb3372af05fcd651"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r2::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 6.66724899999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r2--a3--stableHiGHSV10.json",
+              "sha256": "866eeba7f540fca47169f47d7298cab2b65b938526ee30df804be96a068bd9b4"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.086573999999985,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r4--a1--stableHiGHSV10.json",
+              "sha256": "c575313b616622139890607bb66c92b28009a9a02d80706800c95d3aaa5b7993"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.18710299999998,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r4--a2--stableHiGHSV10.json",
+              "sha256": "ae2751f0fa87eb0634cd0adfd12258a57b3f2d61c9c137355db75c4aa8ee7b38"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n24-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.172780999999986,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n24-r4--a3--stableHiGHSV10.json",
+              "sha256": "faacf2974432d3f55616ef61d28077b1b072e18acd35ba26f3ef47e56fb453ab"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n50-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.686918999999989,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n50-r2--a1--stableHiGHSV10.json",
+              "sha256": "35330680eeb4a44ba1695c97daf746367b9e048971b6525081169b112be93d64"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n50-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.042691999999988,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n50-r2--a2--stableHiGHSV10.json",
+              "sha256": "f69048b82a1e18dcc467219a49b55362e0b24d356e02b9f689189a4199159db6"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n50-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.145314999999982,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n50-r2--a3--stableHiGHSV10.json",
+              "sha256": "58fb66aa22990041cbf26add24c059048794d1ed63009d3cd652739882a9c7ef"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "optimal",
+            "callWallMs": 205.107119,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r2--a1--stableHiGHSV10.json",
+              "sha256": "9f7d4b1afad92f7b6eb6c841beb819268b12073d014330b0572f0703ee62afc8"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.578366,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r2--a2--stableHiGHSV10.json",
+              "sha256": "3f343fd5794df3f6f775a4ae98af96b9ba6a9491d1cce9369e43bef3f7953f8d"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.42026199999998,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r2--a3--stableHiGHSV10.json",
+              "sha256": "9cd779ff5d308571d15a16e80b306be1e56bf99f81307a30bb7ef80b4a32fe97"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 230.29108800000006,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r4--a1--stableHiGHSV10.json",
+              "sha256": "be1aa997662280ee9e0a279f6ffacda65338bcc9cfef37d49270224eaa779306"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 221.154174,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r4--a2--stableHiGHSV10.json",
+              "sha256": "59356d4055d94c2562b369334c5a6a40e52e35e3692fce9b36e1886ae490c2a2"
+            }
+          },
+          {
+            "episodeId": "v10-same-distribution-batch-release-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 221.280727,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-same-distribution-batch-release-tight-n100-r4--a3--stableHiGHSV10.json",
+              "sha256": "92c97848f2a396830d5ce85ffa325dcc81e7fb38cb1d10e53b6590c51de64279"
+            }
+          }
+        ],
+        "cacheStatusCounts": {
+          "absent": 216,
+          "valid": 1668,
+          "invalid": 288
+        },
+        "decisionReasonCounts": {
+          "initialize_native": 180,
+          "retain_fee_tie": 1662,
+          "replace_invalid_cache": 264,
+          "retain_without_timely_valid_native": 6,
+          "no_valid_candidate": 60
+        },
+        "nativeGateOutcomeCounts": {
+          "initialize_native": 180,
+          "retain_fee_tie": 1662,
+          "replace_invalid_cache": 264,
+          "late_candidate": 21,
+          "no_incumbent": 45
+        },
+        "selectedSourceCounts": {
+          "native_highs": 444,
+          "cached_incumbent": 1668,
+          "no_complete_plan": 60
+        },
+        "cacheAcceptedCalls": 1668,
+        "nativeAcceptedCalls": 444,
+        "proposalCount": 2127,
+        "timelyFeeTieRetainedCalls": 1662,
+        "feeTieWithDifferentProposalCalls": 1440,
+        "feeTieProposalChangedEventsSum": 47652,
+        "strictReplacementCalls": 0,
+        "costlierRetainedCalls": 0,
+        "lateCandidateRetainedCacheCalls": 6,
+        "lateReceiptRetainedCacheCalls": 5,
+        "retainedCacheAfterNoIncumbentCalls": 0,
+        "cacheAcceptedThenCallOver200Ms": 6,
+        "callsOver200Ms": 33,
+        "proposalCheaperThanValidCacheCalls": 0,
+        "initializationAcceptedCalls": 180,
+        "invalidCacheRecoveryAcceptedCalls": 264,
+        "failureNativeStatusCounts": {
+          "time_limit": 25,
+          "optimal": 2,
+          "infeasible": 33
+        },
+        "failurePlannerStatusCounts": {
+          "time_limit": 27,
+          "infeasible": 33
+        },
+        "failureDayCounts": {
+          "0": 36,
+          "2": 6,
+          "4": 12,
+          "8": 3,
+          "3": 3
+        },
+        "failureNativeGateOutcomeCounts": {
+          "late_candidate": 15,
+          "no_incumbent": 45
+        }
+      }
+    },
+    "stress": {
+      "highsV8": {
+        "episodes": 216,
+        "completeEpisodes": 120,
+        "calls": 2001,
+        "solverCalls": 2001,
+        "workerAndNativeStartupMs": {
+          "count": 216,
+          "mean": 239.09062166203705,
+          "minimum": 219.037405,
+          "maximum": 316.69833
+        },
+        "episodeParentWallMs": {
+          "count": 216,
+          "mean": 575.9678560462979,
+          "minimum": 272.06187400000636,
+          "maximum": 1221.8226439999416
+        },
+        "callWallMs": {
+          "count": 2001,
+          "mean": 30.635706363818088,
+          "minimum": 3.5620099999999866,
+          "maximum": 259.438463
+        },
+        "readyAtCallStartCount": 2001,
+        "nativeStatusCounts": {
+          "optimal": 1896,
+          "infeasible": 81,
+          "time_limit": 24
+        },
+        "failureKinds": {
+          "no_complete_plan": 96
+        },
+        "failureRecords": [
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n24-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 5.750023999999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n24-r2--a1--highsV8.json",
+              "sha256": "abec3a26aefe5fef5d3b46d79ce858cbc1561d4f72193c93630c349aa8d93204"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n24-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 5.311591999999962,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n24-r2--a2--highsV8.json",
+              "sha256": "509c5fe81b2647ee84bdc6536191cf440b94cc48362cc8a6ed4bac5276b356e4"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n24-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 5.567512999999963,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n24-r2--a3--highsV8.json",
+              "sha256": "722d4402408d621c18c590ffc8be2c1ee548aa3fdb23c0a886e17af190e05fe8"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n100-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 20.080456000000027,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n100-r2--a1--highsV8.json",
+              "sha256": "b42a2a33cae1b4695463f66d5aadfc5e80a324815ae4700ed09e600d367409b5"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n100-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 26.401700000000005,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n100-r2--a2--highsV8.json",
+              "sha256": "d5e21178364992254def185807f836d206a1e4f3048f4162965ebd1deb3276c0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n100-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 19.91368799999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n100-r2--a3--highsV8.json",
+              "sha256": "65b05d732b89d05ab5a522befa6a90e869360c5ea8f1ad3b995486921d1f7dba"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n100-r3::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 19.747060000000033,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n100-r3--a1--highsV8.json",
+              "sha256": "4a43f60b005ff6089c12d22f361b8f56f8ad3357eef59f3b42686421e9cee052"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n100-r3::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 19.928750000000036,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n100-r3--a2--highsV8.json",
+              "sha256": "bb0f8440c2c4d08cd188ff563aa680be7f5c8ac22492e3fc3cfe607d3d9deb94"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-balanced-n100-r3::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 24.359661999999958,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-balanced-n100-r3--a3--highsV8.json",
+              "sha256": "752beb44783acbe4877a0c38228492beb1cfb6878227199ea291661891f66162"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r1::repeat-1",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 18.28402299999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r1--a1--highsV8.json",
+              "sha256": "e86fa5d2336afcc796d2ce306c4f64ccb70074fe6994211e94f99ccdbc87df77"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r1::repeat-2",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 18.62776500000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r1--a2--highsV8.json",
+              "sha256": "46f31213fabc30f52b1f35d3c221942e046cf7566dbe07d8a5074ba9eebe1d07"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r1::repeat-3",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.770408999999972,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r1--a3--highsV8.json",
+              "sha256": "b6a5bfb142e8f96fa5c606d96bb2a9e8ecd6daa021646cbad6dda2a6b2541118"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.113585,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r2--a1--highsV8.json",
+              "sha256": "57c624aeb11ef5a79515cfe5800b24120e6305feb3ada26a7aa42879a9009627"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.882457000000045,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r2--a2--highsV8.json",
+              "sha256": "78a75575b479514ab8da736045fa34be7293066a5d772bf24342101eed386ce6"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.961123999999984,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r2--a3--highsV8.json",
+              "sha256": "321c2efb77e7913fa7a21e9352d51f4414b8c958749000d6b14b3a5ee5024b5f"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r3::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.55121300000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r3--a1--highsV8.json",
+              "sha256": "abdb21ead3477567b90df440387f0790fb5808878af8e0ec565ff9b8caa91ec7"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r3::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.76667299999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r3--a2--highsV8.json",
+              "sha256": "4e419e1573606975fd95f3611913fb00a1fe93bcfd7ce1b17682a776f15f77fa"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r3::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.199729999999988,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r3--a3--highsV8.json",
+              "sha256": "791e0851726adeef1c5485bcab0bc9eaac1859fafd7d3b6e48007674078e4678"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 24.223318999999975,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r4--a1--highsV8.json",
+              "sha256": "2c70ca48b81a8b4fbb74e6b2cacd4bbf46615f3b6dfc880b98de9b2519b2c158"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 23.520134000000013,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r4--a2--highsV8.json",
+              "sha256": "78075a75eea8bc0f6ae3974c8c82d8018f8887b486ebaad574ee5fd7590ce5c8"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 24.020226999999977,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r4--a3--highsV8.json",
+              "sha256": "09130dc896e420e9e468a95bd0ff426c912227b367de9a23949da6cc810834cf"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r1::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 29.12447199999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r1--a1--highsV8.json",
+              "sha256": "2384032c3e59ec738a536f48ea9a302554a8e992f4e809d9f17ff0eca7239bdb"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r1::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 31.30316300000004,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r1--a2--highsV8.json",
+              "sha256": "9e6b88d637831207060ee6dbdb22015cec61ab54df5ba9f155bea24d418dc177"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r1::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 30.242053999999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r1--a3--highsV8.json",
+              "sha256": "d43bd6d859f2d2fad2168802fe2673502cb7ae387d1939366d2d3fef23b7e950"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.987211000000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r2--a1--highsV8.json",
+              "sha256": "d19a60e99dc9e0cf40f2dc3221d6a2b095d137041a3ff7d8ad5d9324d8c05f31"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.14688799999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r2--a2--highsV8.json",
+              "sha256": "1df7ac08d66a457c45d80954fcbcab9d90b01ea5726b0b58825ca4482747813a"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.281698000000006,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r2--a3--highsV8.json",
+              "sha256": "1fdb1a1664fb2bfcfcc3c20ffe1f9bc080abab9d288f14561e4152e0c41c3356"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r3::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.092007999999964,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r3--a1--highsV8.json",
+              "sha256": "658d05977620c1d116d996d8320a749e926fd36a6146f03877260718e0fe5919"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r3::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 12.923316999999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r3--a2--highsV8.json",
+              "sha256": "2d116e7fdb756c18c3aba2a28709bc3369237c332c9560eb28380fee02f84f0e"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r3::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.01971900000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r3--a3--highsV8.json",
+              "sha256": "9af7075e7aa7f5fb040acf06d44c56364a712e23ae356a453e99eaf23af76d19"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r4::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 29.432619999999986,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r4--a1--highsV8.json",
+              "sha256": "6064c3039ef64aecc66daf3bb1dcf827bc8dfaae302fc8399bf1c1f71c431be5"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r4::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 28.86273299999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r4--a2--highsV8.json",
+              "sha256": "560eb2e0c6359b2f9eb3e003dc64234c491c8f41fcec467a4fc51a892334b2ed"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r4::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 28.288868999999977,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r4--a3--highsV8.json",
+              "sha256": "e01a94b52a8fea2c5f3fec49ea63d1d3fe0a0a433e36685df0ff38c639a0653e"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 209.760022,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r1--a1--highsV8.json",
+              "sha256": "4937d254d623b3d6c69711a5e4ab98c5d0d6018cbcccf6c169b760d37dfd8ec4"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 218.164947,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r1--a2--highsV8.json",
+              "sha256": "f05ec03917be750a51aff65bc9c6ce1d95e9e33d6c96841f1a25d9071553bd69"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 210.704096,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r1--a3--highsV8.json",
+              "sha256": "8129a4b675f19d6036613e8417f6fc76bbc20ac06cbb1a2193db4b73caec9aee"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 259.438463,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r2--a1--highsV8.json",
+              "sha256": "15329cbf19ee34922e84a493bebca121d277f94ee7025234ffd6e1c84007aace"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 235.834085,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r2--a2--highsV8.json",
+              "sha256": "5a6076fb58e0387ebf9900b5c5e758294151d5523df736eeb8622c775c0f9a96"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 234.728139,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r2--a3--highsV8.json",
+              "sha256": "b9f2481f616ada4569a1a1fd165b3ee9b2dad2e511ffaf5baaf1ecb8ba80052d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 208.218398,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r3--a1--highsV8.json",
+              "sha256": "03e90d73152e876d8649c43160228982b54d91b2f95ab0a6f902399459035ea0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.59117599999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r3--a2--highsV8.json",
+              "sha256": "4902a6bedfb78f09c487f1bb289f709c44b48d9ebca533661d683fc36edbbaee"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 206.32023400000003,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r3--a3--highsV8.json",
+              "sha256": "91d8312e887c963e0e59c7c18a452b21079b2a80cc6b640c0c0f6bb03af00f91"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 94.79787099999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r4--a1--highsV8.json",
+              "sha256": "d3c0635a7d5057db60e69e28a46cd79ef5eb2ed70bc86b37d14b98ca1c81ba91"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 99.50245999999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r4--a2--highsV8.json",
+              "sha256": "7ae5949870d31d627a58fd8c218d8b05eb9864e757da06b18ab761c9d83b8ced"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 97.205173,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r4--a3--highsV8.json",
+              "sha256": "c9ea0b8dc7040e6e72cad7f48a6cc6ca785d347f0ac0630c44c233589b7846e7"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.491900000000015,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r1--a1--highsV8.json",
+              "sha256": "9661c4e06504d45463b2b199b339505f42a687ae279180dc1945c2a681f1d733"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.29327600000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r1--a2--highsV8.json",
+              "sha256": "ecd26b03b0d5824eaa2009d2f849d9d8298424f673958a9457eec30808e11b50"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.49651799999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r1--a3--highsV8.json",
+              "sha256": "8c3ce708cde3061057ff9815014e3848545ff0df5a415dc69b1b6fd925bdc9e9"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.824351000000036,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r2--a1--highsV8.json",
+              "sha256": "885b073e868dd05cf328ba1ac33a68c85fb20ad0177d036de9e0dfebc4488a91"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.142995000000042,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r2--a2--highsV8.json",
+              "sha256": "b88e3d99e38ef6fdf80ee3000e0ec33ad7798d95d0ee3fb9a7f50c18d02d4b3b"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.402301000000023,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r2--a3--highsV8.json",
+              "sha256": "c0dd2b3a464067b6b8f5acf264ad4b41fbf53340ab430eb0adef2a2856cf4865"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r4::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.141280999999992,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r4--a1--highsV8.json",
+              "sha256": "64ddb1fca3d726b1dc0288d2142ec9e50f87e419d35ab07f4f3a12dc790a1a5a"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r4::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.676021999999989,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r4--a2--highsV8.json",
+              "sha256": "7b2cac370b7805ca6d5cc5d46e3d83219900c763706e55490104314039512eb0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r4::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.286573999999973,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r4--a3--highsV8.json",
+              "sha256": "341707732b6a973b3f5462fa00ea4fe5992c19aaf056cbb92861063e7ca1289e"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r1::repeat-1",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.19306400000005,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r1--a1--highsV8.json",
+              "sha256": "6ce6038d81f728ea92d8acebf241161c6ad53f78f5d7f8b8c88a94785cf12385"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r1::repeat-2",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.556393999999955,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r1--a2--highsV8.json",
+              "sha256": "c0cf4a9d0f4d91cb1e51d3a077beb389c926aeb2b0d3b89b453a9d3ae74efd06"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r1::repeat-3",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 12.425857000000065,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r1--a3--highsV8.json",
+              "sha256": "9069417fef56e7ff111fca9c7ae220d4f27e52ba2b69c65b3cf416728a684dcd"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.24801100000002,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r2--a1--highsV8.json",
+              "sha256": "7e7db826d84cccad137349ffc446cc4e7b82ef3c2cb9d2c754caab39ebe7f9e4"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.349162999999976,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r2--a2--highsV8.json",
+              "sha256": "a401088f9965538279141f556d0fcfb527ff2e890b4a3d1db2280329faff8acd"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.465025000000082,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r2--a3--highsV8.json",
+              "sha256": "a4ca5f5b327b8dd2ee9cf439c6909fc9a2efcf39c20f50fb947546434690607d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r3::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.079223999999954,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r3--a1--highsV8.json",
+              "sha256": "278301fe3fcc7bf25f68376ece025138fd41eef7563d4c767c6582f0e6fac4a5"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r3::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.072952999999984,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r3--a2--highsV8.json",
+              "sha256": "00bbaede6883adc3e96d7414a99059f00684a80d00f1b2567ee686005652a0d4"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r3::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.491866000000073,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r3--a3--highsV8.json",
+              "sha256": "cd92a9b16dbc322394c54a5ca6fb0de10a682aa1861895f0033584201ee66807"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r1::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 19.74767099999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r1--a1--highsV8.json",
+              "sha256": "acffade38abbfb3ead1ab8a89616418919897ab1c8e8ab39f68eb2a856ad008d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r1::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 19.71471299999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r1--a2--highsV8.json",
+              "sha256": "892f78cb6192351c8b4ef1aa24bca189193d926072b363bbcc1063c2a4648df5"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r1::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.74546399999997,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r1--a3--highsV8.json",
+              "sha256": "e8dc9394c35c802d457473522a04baf15d5182c71ca21f2f77ae1db4e720262f"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r2::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 207.65509800000007,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r2--a1--highsV8.json",
+              "sha256": "c572ef5f2fb4d7c5df67630c0f7d9d8acdb13c24bbc634a735124fd7eaa5ea8f"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r2::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.53108399999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r2--a2--highsV8.json",
+              "sha256": "69fe8422018d165955ed159dfba0001d6e0ee0b5a3c4a6222bd9c3df2c9e0a69"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r2::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 209.98208799999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r2--a3--highsV8.json",
+              "sha256": "e12058eb107a04c1a8050e2ca0e479fd2d6556fce78ab8bac3e26c537dc215c7"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-balanced-n24-r3::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.677870000000041,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-balanced-n24-r3--a1--highsV8.json",
+              "sha256": "96aa509e3e500263c8b0b6b0235b32702abba1249e0dd5d53aac336a36820f71"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-balanced-n24-r3::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.597570999999959,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-balanced-n24-r3--a2--highsV8.json",
+              "sha256": "4ad2715cd1ea78ad9507cd4e0f27561c416b1954da83aef82c99dee8333bf754"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-balanced-n24-r3::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.746962999999994,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-balanced-n24-r3--a3--highsV8.json",
+              "sha256": "69ebc9a9edca9512aba9d25d94802829274ba44d332d0d04107b2591a38fa2b0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r1::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.898397999999986,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r1--a1--highsV8.json",
+              "sha256": "8c0e6c5ed25c1addf725cee7f629d251616deeb3fe12a1cdf9fe5f49ef11dfee"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r1::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.6595629999999915,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r1--a2--highsV8.json",
+              "sha256": "ecf9a82023d070f7190dbc862cc4e32f7e575742f14050ad65e217a85e98d8fb"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r1::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.701655000000017,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r1--a3--highsV8.json",
+              "sha256": "ff3638f69618c587cd3cee2645c0926d20f6a07ec4fa87761e56c72a21b000a1"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.88983399999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r2--a1--highsV8.json",
+              "sha256": "1e381f08f181b4fcc1db1b49174539e9860ad7ffdb5d5e0789c17815ac74ffbd"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.247664999999984,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r2--a2--highsV8.json",
+              "sha256": "4fa7f39c9440526b6b352d06f20265c368f9aa8d8edff171c4f94d4a283e23ab"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.00989100000004,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r2--a3--highsV8.json",
+              "sha256": "e7e9aba621dc96e5986cc22ec6cd17cd8c9fa8c0171eab3488eab089d56d8094"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.619935999999996,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r3--a1--highsV8.json",
+              "sha256": "ef8047b07d975751e2fe4550f46f63f834347b830d0457bdba2dfc0bce22c61d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.197864999999979,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r3--a2--highsV8.json",
+              "sha256": "5d211883d47a739f7a41aefb5bbf12884c48bb14a9dccf7315638c5a48645171"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.01160299999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r3--a3--highsV8.json",
+              "sha256": "48632b89f1050893fbe0b041598e753399730536822451f6f7331011a215e690"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r2::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.260500999999977,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r2--a1--highsV8.json",
+              "sha256": "2211666a331a6549670b674262d216ffafa3745308942e16b91c97d644f88497"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r2::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.143025999999963,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r2--a2--highsV8.json",
+              "sha256": "ea2156c2194ace60356c7a2a646696b8bc8b49e66fbff280294d163666562b00"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r2::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.84811400000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r2--a3--highsV8.json",
+              "sha256": "d8c5f1c936375d17f836a67be02df3956a03a4f68d703208dee1562f9220d3f3"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r3::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.451976000000059,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r3--a1--highsV8.json",
+              "sha256": "49e5ef610baa0c6529229bb5259c42561b468e711360d04b97df8021bcd790aa"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r3::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.753545999999972,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r3--a2--highsV8.json",
+              "sha256": "e662e5b36dac7395dcba278643f5e8c5158b5839897d2c40835f6a2650b57e16"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r3::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.49929800000001,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r3--a3--highsV8.json",
+              "sha256": "d139eb546010f94b0fb57baff1036a1ee5b2be2484db09fd11c47abc4660fdc8"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r2::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.029802000000018,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r2--a1--highsV8.json",
+              "sha256": "de2786ee7ed5d0c693c386874af886ffe6797fdffc517d8baad9b3284b69059d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r2::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.110062999999968,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r2--a2--highsV8.json",
+              "sha256": "57732a2d8e1cc52a83013533f3e5ab50652aa360f1a06f142f70bbe608d6fcd0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r2::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.496557999999936,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r2--a3--highsV8.json",
+              "sha256": "4f07498bda771baf42649e93c13ff73613c057c439e04aadee8341a2852b2b24"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r3::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.504310999999916,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r3--a1--highsV8.json",
+              "sha256": "6874ae6c2a461c7c8cf824d2340de82397a254efea638d6170df1dd9ddb5cf27"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r3::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.71253999999999,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r3--a2--highsV8.json",
+              "sha256": "950bf324fa44d59a5d73ffec2b71b1c7ded0ae82be8ab83581558079948d29f5"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r3::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 30.018228000000022,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r3--a3--highsV8.json",
+              "sha256": "0a87ff011f90f8c0a3c3ef7800ddded476e4b30db092aedabf43d1710bf10ddc"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.70520599999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r4--a1--highsV8.json",
+              "sha256": "25c4966b3468c831f742b9149011c943c7f60b6b6fd2eb5325fcbe486ac6e44d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 210.9144,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r4--a2--highsV8.json",
+              "sha256": "b04b069b9a045f51cd75f135f082d4273258297064fd644dd256a86f11286b72"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 212.13020899999998,
+            "nativeGateOutcome": null,
+            "cacheStatus": null,
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r4--a3--highsV8.json",
+              "sha256": "c0c9ca040218fe59a65d67e9430004d69f351dd77c9f98444af58a518b009133"
+            }
+          }
+        ],
+        "callsOver200Ms": 24,
+        "failureNativeStatusCounts": {
+          "infeasible": 81,
+          "time_limit": 15
+        },
+        "failurePlannerStatusCounts": {
+          "infeasible": 81,
+          "time_limit": 15
+        },
+        "failureDayCounts": {
+          "5": 21,
+          "6": 24,
+          "2": 3,
+          "4": 3,
+          "3": 15,
+          "0": 27,
+          "7": 3
+        },
+        "selectionEvidenceScope": "V10 selection diagnostics are not emitted or measured for the unchanged original V8 native baseline."
+      },
+      "stableHiGHSV10": {
+        "episodes": 216,
+        "completeEpisodes": 132,
+        "calls": 2064,
+        "solverCalls": 2064,
+        "workerAndNativeStartupMs": {
+          "count": 216,
+          "mean": 239.50606343055554,
+          "minimum": 218.491692,
+          "maximum": 304.389255
+        },
+        "episodeParentWallMs": {
+          "count": 216,
+          "mean": 601.1789263703735,
+          "minimum": 273.9763240000466,
+          "maximum": 1279.6579810000258
+        },
+        "callWallMs": {
+          "count": 2064,
+          "mean": 31.98900659544574,
+          "minimum": 3.776209000000051,
+          "maximum": 256.89039199999996
+        },
+        "readyAtCallStartCount": 2064,
+        "nativeStatusCounts": {
+          "optimal": 1974,
+          "infeasible": 69,
+          "time_limit": 21
+        },
+        "failureKinds": {
+          "no_complete_plan": 84
+        },
+        "failureRecords": [
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r1::repeat-1",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 18.147040000000004,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r1--a1--stableHiGHSV10.json",
+              "sha256": "607afc288009c19581eeeef9aadfe46ea9eee0e6a4c14566e5e561c12d1b0768"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r1::repeat-2",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 18.479944999999987,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r1--a2--stableHiGHSV10.json",
+              "sha256": "8135b0fc08134d35d3409d40201258c63fd3ea73cd3ed0c6a393b36ec8c73bc2"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r1::repeat-3",
+            "day": 2,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 18.563669000000004,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r1--a3--stableHiGHSV10.json",
+              "sha256": "4162b0f14bc295386d38f770e28e3cbf79fa6bac438fadf955846c4f5a52e4ab"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r2::repeat-1",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.951137000000017,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r2--a1--stableHiGHSV10.json",
+              "sha256": "e401b019fd417850f2fd7904f9ccb7d7b14ecaa082bbb7c70243015f3d393d68"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r2::repeat-2",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.217315999999983,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r2--a2--stableHiGHSV10.json",
+              "sha256": "2cc6b30ac033f9dd89140f63309d0eee60d4edbb182a5fd38281567c564c3a7a"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r2::repeat-3",
+            "day": 4,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.630191000000025,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r2--a3--stableHiGHSV10.json",
+              "sha256": "44aa8c21529f38b42310e0cc8bd0b80b40242df3eda846554eac7265a4f13a16"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r3::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.885860000000037,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r3--a1--stableHiGHSV10.json",
+              "sha256": "0ea1e1e00406c5d0d054a7c9266a5200b27cbe2ab1c0ac9cd568b1f035a49885"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r3::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 18.471401999999955,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r3--a2--stableHiGHSV10.json",
+              "sha256": "30d3b6dfe9566d99f045bdf733f1d53e819a8998524603d854656230b2f72d4d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r3::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 17.346006999999986,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r3--a3--stableHiGHSV10.json",
+              "sha256": "ede778c763679990a456cf380ab99191e75bd5c3b1784c349e414e6741f24be2"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 23.940478999999982,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r4--a1--stableHiGHSV10.json",
+              "sha256": "78bd61007e04737d8e219750acb3922dce154211794c464b3904d0962cf6b823"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 23.706829999999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r4--a2--stableHiGHSV10.json",
+              "sha256": "79674ee013b5ab2116d534909f4b251d84fcaedac1980c36302f85ab7c66d832"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n24-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 45.06097199999999,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n24-r4--a3--stableHiGHSV10.json",
+              "sha256": "f879f7119f0557e04e19686d3f4c6b95f2afb1e6b07dbf9d9043742b4f3ba8a0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r1::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 29.29767899999996,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r1--a1--stableHiGHSV10.json",
+              "sha256": "639ac0ec399440b4063fe234ed4386123243d156346d13ee3bcf90a1e869a0b0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r1::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 30.176245999999935,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r1--a2--stableHiGHSV10.json",
+              "sha256": "ab68e8dae57ee1db97dbecbb5fe7ea9e9adf2bcd7bce7e1eead32ff4bd928906"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r1::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 29.652258000000018,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r1--a3--stableHiGHSV10.json",
+              "sha256": "e97dc7bccd4fb901be07111a2a6e0e2ca77c8373712dd413bfe7ed50c3716817"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 16.337016000000062,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r2--a1--stableHiGHSV10.json",
+              "sha256": "47bffd0a7a59b7bbcfa68c5544843b81aec4a5528989274f0942c66b44a6d996"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.04651899999999,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r2--a2--stableHiGHSV10.json",
+              "sha256": "bfb5a5ff1058489b317a640a439258374f19b41fb12fe231090a8f9131c2d7fa"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.670619999999985,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r2--a3--stableHiGHSV10.json",
+              "sha256": "c524e5b7815d06ab11a80ab19be61d3e08c4946b396f43bef9c49883dac349b0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r3::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.346461999999974,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r3--a1--stableHiGHSV10.json",
+              "sha256": "5817faf285e34ac2c8ef69f10ba61822649c58cfb3147619d2a8bf0a1d716c38"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r3::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.514448000000016,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r3--a2--stableHiGHSV10.json",
+              "sha256": "111f39bbe099a20adf86ce0f38b45983107a91c906aa6b1831f31440e6e8ce03"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r3::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.571060000000102,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r3--a3--stableHiGHSV10.json",
+              "sha256": "be443d89d7de986eeddf6d15ef03b489428a56c06c75389afa61eff9398c8e77"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r4::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 29.53554300000002,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r4--a1--stableHiGHSV10.json",
+              "sha256": "407984aed6a935f3349fd991cb6aef4d1e08031c57d90013c12fbfdf485dd2d9"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r4::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 30.04069499999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r4--a2--stableHiGHSV10.json",
+              "sha256": "25d740a4ed00c6af2b42c511bdf4689441896a245f25d075a6c757fa704e49f9"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n50-r4::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 29.114978000000008,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n50-r4--a3--stableHiGHSV10.json",
+              "sha256": "7f884a43eaa711f71d01f2552a3c12644bff151dd6fe34cacbc45d05e8b662d6"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 238.554737,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r1--a1--stableHiGHSV10.json",
+              "sha256": "782be32d0290c0bae86a949d2cca3ebd9fcaae5960082f32a6d19b219f7e3535"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 208.76176700000002,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r1--a2--stableHiGHSV10.json",
+              "sha256": "e1bb3c4beb9da5b09d543672b8f2ffc52f50242606cb9c790300e17c063295aa"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 211.04996999999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r1--a3--stableHiGHSV10.json",
+              "sha256": "d5660e4a2ffd8991c3b29df6aba4f7229c17e9fc9314e60431afba2f02e98c6a"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 256.89039199999996,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r2--a1--stableHiGHSV10.json",
+              "sha256": "66318a65367b2029d7866e64ce14057dbcaa9a20d2b610134b97cefae77eefd3"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 238.94100699999996,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r2--a2--stableHiGHSV10.json",
+              "sha256": "d9d340356d9d2626905f360dfe89b1a5f53accf97c9b6a9932bcff59712be3c1"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 246.67192000000006,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r2--a3--stableHiGHSV10.json",
+              "sha256": "6f822f82077fa2f87b2ba7316f2de4d488f8641a950d80e2d7deb04686144f4b"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 209.92839200000003,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r3--a1--stableHiGHSV10.json",
+              "sha256": "a589426fe5259b766b52ca545f31d8811178ad647dd457e15a735cadce5b6232"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 209.77425799999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r3--a2--stableHiGHSV10.json",
+              "sha256": "6ca9605246a0d70069a29643519d9e4c2f8ca7311580479ae0c5faaca7afe7f6"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 213.434459,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r3--a3--stableHiGHSV10.json",
+              "sha256": "48d0542622ffbd63c62ab50f93d44bec3941756a0c6a99ff5d4309e1d56e118c"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 99.42340200000001,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r4--a1--stableHiGHSV10.json",
+              "sha256": "2a60c0eb2c5971dba1df1baa26128b61e8adb9090eba9ce745bc3b92a0e5cf1e"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 95.51208300000002,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r4--a2--stableHiGHSV10.json",
+              "sha256": "c491d8904839b85c083dcf37ceb918f456abbe9c52e61c1792b58adc61afce13"
+            }
+          },
+          {
+            "episodeId": "v10-stress-aged-backlog-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 136.3415,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-aged-backlog-tight-n100-r4--a3--stableHiGHSV10.json",
+              "sha256": "7c69bc6bca38ce493a486047cdde26042b141d59c2e839c2e9163ff4d4d40b74"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r1::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.777015000000006,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r1--a1--stableHiGHSV10.json",
+              "sha256": "00bcbffcdb7b3ecd37bfd6bcc2ec751f8b4c49c5fc496a432c53bafc93007755"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r1::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.494484999999997,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r1--a2--stableHiGHSV10.json",
+              "sha256": "52c66397a03fedc235a623c57b87452b5384821cd4e652a3270fabed457c4507"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r1::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.340416000000005,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r1--a3--stableHiGHSV10.json",
+              "sha256": "0cde968afee59d6ab0db09f111e33356ad14988b6bfe7fa92756b23e4bc8d408"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.79091900000003,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r2--a1--stableHiGHSV10.json",
+              "sha256": "bfb1fc975b491cfa20b5e1d44b9c2c0120a7fefb5e1f1f2f1b9c90cdc339d8cb"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.24212,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r2--a2--stableHiGHSV10.json",
+              "sha256": "db27c3944ff620fe3c6b263d88976da65cb6022db6137f560fafb3121303ee1f"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.586525999999992,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r2--a3--stableHiGHSV10.json",
+              "sha256": "e1c3361a60a1ca5e3fdb091b6754722a6931904eaadd38ee6e8f910e9b88742b"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r3::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.706421999999975,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r3--a1--stableHiGHSV10.json",
+              "sha256": "c0dbd3e15c79aab44689cfa268c799727a7ba257c06cb6b0ac9cf3cb104aed6a"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r3::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.765280999999959,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r3--a2--stableHiGHSV10.json",
+              "sha256": "ba188d35b2e8df7fe1b6bf4614ca353d100c055e0b9fb5da9222dbaeadee60af"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r3::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.501367000000016,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r3--a3--stableHiGHSV10.json",
+              "sha256": "0dde99195b46839c2a6f5fa43b4ae8f904e77c8944740041b46b88c8bab96ae0"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r4::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.092835000000036,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r4--a1--stableHiGHSV10.json",
+              "sha256": "6cd5cb49ad0d5d234a269b9df4ce3e93af63fa06a4102cf7e7dc099aaa99a456"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r4::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 10.897242000000006,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r4--a2--stableHiGHSV10.json",
+              "sha256": "5b1ddf65ca7141f084af851c7639d1ee0f78d77974c452d0b72dad447d4617c8"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n24-r4::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.288865999999985,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n24-r4--a3--stableHiGHSV10.json",
+              "sha256": "aeed46eaf401ae38e7ef6cdd2667c79699527d4a32440422c970e6de27aad8b4"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r1::repeat-1",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 12.549532,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r1--a1--stableHiGHSV10.json",
+              "sha256": "da6baead517f8a4208e43ae9969ef394edbf98676bf0763c42861a6306c4175d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r1::repeat-2",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 12.542912000000001,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r1--a2--stableHiGHSV10.json",
+              "sha256": "41be0eb8a2f52bfdc3f0c10dabe4b01517985fa32a1979c34cb3d51fef681171"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r1::repeat-3",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 11.900526000000013,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r1--a3--stableHiGHSV10.json",
+              "sha256": "d9b5a948926eb58559a3aed31991dfb0a14ae0701931ea5dac1edda616bebe00"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r2::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.052220000000034,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r2--a1--stableHiGHSV10.json",
+              "sha256": "edeb2e0f844a704d505093ccec8c92a6951f3d5c34c4153808a77b010d3413db"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r2::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.395911999999953,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r2--a2--stableHiGHSV10.json",
+              "sha256": "4bc465a3e8ba7ff25b90c8479af5b60644ca4bf1ea83dae3aae4ec57fa162349"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n50-r2::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.890698999999927,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n50-r2--a3--stableHiGHSV10.json",
+              "sha256": "2f200eef972ef7f0e0d53e61e4fdeee3e7d2c3f830fc32bd077b1823e6fce4d9"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r1::repeat-1",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 20.485378999999966,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r1--a1--stableHiGHSV10.json",
+              "sha256": "64f590616b5822cb401b78d25fad7106f892b289a3ccc4b7dd0a9978b1bac157"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r1::repeat-2",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 21.054606000000035,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r1--a2--stableHiGHSV10.json",
+              "sha256": "5ff61f7441a26a4df123aeeb7378955a4ec1e677a58941c4d562f42a5b4c5e70"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r1::repeat-3",
+            "day": 7,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 22.347589000000198,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r1--a3--stableHiGHSV10.json",
+              "sha256": "1e0d929e6baebaf33d5f5090c4f15b24f140f5bc6c0e29be62f798ece9fdfd1d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r2::repeat-1",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 214.04160000000002,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r2--a1--stableHiGHSV10.json",
+              "sha256": "51b80fca39c55e60b835f4a0736d4a29f46cf33837e77c3e90c184f5d7226240"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r2::repeat-2",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 214.909941,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r2--a2--stableHiGHSV10.json",
+              "sha256": "e99c3e353b2116b3df0f50a7c5d6e9418fb01d3e41e90f312ca0badf8fd99009"
+            }
+          },
+          {
+            "episodeId": "v10-stress-new-arrivals-tight-n100-r2::repeat-3",
+            "day": 3,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 209.847939,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-new-arrivals-tight-n100-r2--a3--stableHiGHSV10.json",
+              "sha256": "33ebaf1fe4e25a36a88fbe9ebe6398b163b7b39027a028d26ebdb4f38141668d"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-balanced-n24-r3::repeat-1",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.672562000000028,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-balanced-n24-r3--a1--stableHiGHSV10.json",
+              "sha256": "ba7de859dfae5f61db1f790c2a86b4e2580d898839909de80adfa25ca997673b"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-balanced-n24-r3::repeat-2",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.985376999999971,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-balanced-n24-r3--a2--stableHiGHSV10.json",
+              "sha256": "826f97418f2649e6f9a8c2958ebe6fd40d8491c4b3d8e76e0934e0dede05a4bc"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-balanced-n24-r3::repeat-3",
+            "day": 5,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 5.556707000000017,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-balanced-n24-r3--a3--stableHiGHSV10.json",
+              "sha256": "ba9d7fce3e780c66b0eaac4b2c8c60c29ca4161a981738242f03895e9fd0d332"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r1::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.838859999999954,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r1--a1--stableHiGHSV10.json",
+              "sha256": "15eaf2680bc32d9d64b521dd36a4fc16d4ac7d883f797c2077b0f9be63346d25"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r1::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.644440999999972,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r1--a2--stableHiGHSV10.json",
+              "sha256": "04ae06c1b0863314013624eeeee5ac32961316b1a082584e0073b9697e168863"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r1::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 4.673252999999988,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r1--a3--stableHiGHSV10.json",
+              "sha256": "ca919598cb5b7434aa14dc2b56ba0f410c0998c5c467d184e9f1acde247cb901"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r2::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.102390000000014,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r2--a1--stableHiGHSV10.json",
+              "sha256": "97774219d96fc554715e8fcf3f0353db43f18973a66e4c0ce13c0fda166d8203"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r2::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.383788999999979,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r2--a2--stableHiGHSV10.json",
+              "sha256": "b7a2e9cc1adf2c680520b9f5ed9490840999fb1d74bb62d1825a62280b050d6b"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r2::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.582895000000008,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r2--a3--stableHiGHSV10.json",
+              "sha256": "02648f11fbc8dc2c49e68b4415c0d75c39e2a6ce75a070dd9486adb9e81fedcc"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r3::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 13.886612000000014,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r3--a1--stableHiGHSV10.json",
+              "sha256": "d39809c9a830e6e8dd14170ccbecdadc2af2e176720a2ce8b62cfdf9f32cf532"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r3::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.626653000000005,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r3--a2--stableHiGHSV10.json",
+              "sha256": "2fe852ddc0ff90c1b5b36e4ed993d22466ed7dd6bf20279bcbfd43fce3fadaab"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n24-r3::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.367556000000036,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n24-r3--a3--stableHiGHSV10.json",
+              "sha256": "2ce471d4772d8aa1b168e2a168d3f0e03266970c39785bb69994d4c8488a2805"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r2::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 9.14800200000002,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r2--a1--stableHiGHSV10.json",
+              "sha256": "93d5477f5224121baa9fc552d3438984370d8eec263c32570e104807e2123022"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r2::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 7.77675099999999,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r2--a2--stableHiGHSV10.json",
+              "sha256": "cbc72aa3720403a4da09fc1cfcff5cb56510a575fbc08d573cd88b52138cbaef"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r2::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.216595999999981,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r2--a3--stableHiGHSV10.json",
+              "sha256": "4f6147f83ce851e377567834b3030bb23fbf7f73e8f5d2ed2b3debc779564ade"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r3::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.465375999999992,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r3--a1--stableHiGHSV10.json",
+              "sha256": "1bfc3895d8035af366a3310676f85a3ebbdca21b13d04241b170704d9828b82c"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r3::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.895534999999995,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r3--a2--stableHiGHSV10.json",
+              "sha256": "8e4e67db45392d6fecd91735ad530504c012304d8ab3631ed2b14e91f56055f9"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n50-r3::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 8.56676600000003,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n50-r3--a3--stableHiGHSV10.json",
+              "sha256": "8f4301c843392b324e5965e42608671230f45c6d2e0b14361a166857bbf2aded"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r2::repeat-1",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 15.923812999999996,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r2--a1--stableHiGHSV10.json",
+              "sha256": "7a06d22ad184fbffe706e0310e55d74a8b185a5431bc94b85c74d5b0729dc607"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r2::repeat-2",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.672289999999975,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r2--a2--stableHiGHSV10.json",
+              "sha256": "78b0d7b6d74cb71627aee5eee05e7b93b9c2d7cad4e302c701fca51469127ba9"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r2::repeat-3",
+            "day": 6,
+            "kind": "no_complete_plan",
+            "plannerStatus": "infeasible",
+            "nativeStatus": "infeasible",
+            "callWallMs": 14.834190000000035,
+            "nativeGateOutcome": "no_incumbent",
+            "cacheStatus": "invalid",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r2--a3--stableHiGHSV10.json",
+              "sha256": "b21125afc41151bc4542ec21d20f42f679b5a90b4e3a7adcf0cad5e17476ed79"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r4::repeat-1",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 212.233702,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r4--a1--stableHiGHSV10.json",
+              "sha256": "5be659800eee01c4b3c61d370900eaee8df1f3f0a724bb42add08f2327081441"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r4::repeat-2",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 213.646965,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r4--a2--stableHiGHSV10.json",
+              "sha256": "a6b5212acd28dea81b2b75fd05bc7cb0afd67553b5d4706565842a6e53a38a0f"
+            }
+          },
+          {
+            "episodeId": "v10-stress-batch-release-tight-n100-r4::repeat-3",
+            "day": 0,
+            "kind": "no_complete_plan",
+            "plannerStatus": "time_limit",
+            "nativeStatus": "time_limit",
+            "callWallMs": 210.705559,
+            "nativeGateOutcome": "late_candidate",
+            "cacheStatus": "absent",
+            "artifact": {
+              "path": "episodes/v10-stress-batch-release-tight-n100-r4--a3--stableHiGHSV10.json",
+              "sha256": "cf6cc977a82a963375b5377492cc75258a83a43003b12b61be1cbb542583030f"
+            }
+          }
+        ],
+        "cacheStatusCounts": {
+          "absent": 216,
+          "valid": 1305,
+          "invalid": 543
+        },
+        "decisionReasonCounts": {
+          "initialize_native": 189,
+          "retain_fee_tie": 1299,
+          "replace_invalid_cache": 486,
+          "no_valid_candidate": 84,
+          "retain_without_timely_valid_native": 6
+        },
+        "nativeGateOutcomeCounts": {
+          "initialize_native": 189,
+          "retain_fee_tie": 1299,
+          "replace_invalid_cache": 486,
+          "no_incumbent": 81,
+          "late_candidate": 9
+        },
+        "selectedSourceCounts": {
+          "native_highs": 675,
+          "cached_incumbent": 1305,
+          "no_complete_plan": 84
+        },
+        "cacheAcceptedCalls": 1305,
+        "nativeAcceptedCalls": 675,
+        "proposalCount": 1983,
+        "timelyFeeTieRetainedCalls": 1299,
+        "feeTieWithDifferentProposalCalls": 1116,
+        "feeTieProposalChangedEventsSum": 38760,
+        "strictReplacementCalls": 0,
+        "costlierRetainedCalls": 0,
+        "lateCandidateRetainedCacheCalls": 6,
+        "lateReceiptRetainedCacheCalls": 6,
+        "retainedCacheAfterNoIncumbentCalls": 0,
+        "cacheAcceptedThenCallOver200Ms": 6,
+        "callsOver200Ms": 21,
+        "proposalCheaperThanValidCacheCalls": 0,
+        "initializationAcceptedCalls": 189,
+        "invalidCacheRecoveryAcceptedCalls": 486,
+        "failureNativeStatusCounts": {
+          "infeasible": 69,
+          "time_limit": 15
+        },
+        "failurePlannerStatusCounts": {
+          "infeasible": 69,
+          "time_limit": 15
+        },
+        "failureDayCounts": {
+          "2": 3,
+          "4": 3,
+          "3": 15,
+          "0": 27,
+          "5": 18,
+          "7": 6,
+          "6": 12
+        },
+        "failureNativeGateOutcomeCounts": {
+          "no_incumbent": 81,
+          "late_candidate": 3
+        }
+      }
+    }
+  }
+}

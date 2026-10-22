@@ -1,0 +1,101 @@
+[
+  {
+    "label": "competition-2026",
+    "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+    "final_url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+    "retrieved_at_utc": "2026-10-12T17:58:47.806382+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 51043,
+    "sha256": "99203d6e58ac422e64ec06ce2fe7c25f1f7e8b2a4f176c2560ae41ab0f08320e",
+    "path": "data/public/v4-competition/competition-2026.html"
+  },
+  {
+    "label": "department-notice-2026",
+    "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=6583&nttSn=1416220",
+    "final_url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=6583&nttSn=1416220",
+    "retrieved_at_utc": "2026-10-12T17:58:49.733055+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 64077,
+    "sha256": "575c2a648f708b0b336358e69033ba387e3a18109754f3061538686119354bf8",
+    "path": "data/public/v4-competition/department-notice-2026.html"
+  },
+  {
+    "label": "official-logisticsolver2025-call",
+    "url": "https://www.changwon.ac.kr/portal/na/ntt/selectNttInfo.do?mi=13605&nttSn=1378825",
+    "final_url": "https://www.changwon.ac.kr/portal/na/ntt/selectNttInfo.do?mi=13605&nttSn=1378825",
+    "retrieved_at_utc": "2026-10-12T17:58:51.996394+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 118111,
+    "sha256": "c9da3463cabe5e73356cb236bafc77de77214429f5e8e31f5a9d3dfd0bf053dd",
+    "path": "data/public/v4-competition/official-logisticsolver2025-call.html"
+  },
+  {
+    "label": "official-logisticsolver2025-extra-call",
+    "url": "https://www.changwon.ac.kr/portal/na/ntt/selectNttInfo.do?mi=13605&nttSn=1387545",
+    "final_url": "https://www.changwon.ac.kr/portal/na/ntt/selectNttInfo.do?mi=13605&nttSn=1387545",
+    "retrieved_at_utc": "2026-10-12T17:58:53.807510+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 115515,
+    "sha256": "bd9e0c6f2d4761a1316ed2142676a906da10878901e74d4cc9c540f3131909bb",
+    "path": "data/public/v4-competition/official-logisticsolver2025-extra-call.html"
+  },
+  {
+    "label": "department-award-2025",
+    "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=13934&nttSn=1400175",
+    "final_url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=13934&nttSn=1400175",
+    "retrieved_at_utc": "2026-10-12T17:58:55.496945+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 72044,
+    "sha256": "770c1e97809d8b3ed6c3c38083a3aea0160ccc6bce39a6396a142eaaa5355bdd",
+    "path": "data/public/v4-competition/department-award-2025.html"
+  },
+  {
+    "label": "official-logisticsolver2025-call-attachment",
+    "url": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=ca1c4c24e1753440c4b8119822449284",
+    "final_url": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=ca1c4c24e1753440c4b8119822449284",
+    "retrieved_at_utc": "2026-10-12T17:58:56.846963+00:00",
+    "http_status": 200,
+    "content_type": "application-download",
+    "bytes": 196096,
+    "sha256": "900abf5eb97bc50888087c5b6f06b3b34f6f1e8b046eb27da4691934ce68ecf4",
+    "path": "data/public/v4-competition/official-logisticsolver2025-call-attachment.hwp"
+  },
+  {
+    "label": "award-certificate-2025",
+    "url": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=ae41b01efd1bc327d4de00cce47cbb30",
+    "retrieved_at_utc": "2026-10-12T17:59:20.490428+00:00",
+    "sha256": "420fd58c5c07a93ebd805dcb58c8053de50fe96f7a301dfadbf2b86ef8f48a76",
+    "bytes": 1048986,
+    "path": "data/public/v4-competition/award-certificate-2025.png"
+  },
+  {
+    "label": "department-2026-attachment1",
+    "url": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=c86500e18212244bc852d6342af8a982",
+    "retrieved_at_utc": "2026-10-12T17:59:22.253880+00:00",
+    "sha256": "0f5ba5c312cf034dd3215aafb23f7d322df64ba3e4c66181341c8c0b123c41b5",
+    "bytes": 1351045,
+    "path": "data/public/v4-competition/department-2026-attachment1.png"
+  },
+  {
+    "label": "department-2026-attachment2",
+    "url": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=100bf928e03637d75436589b85a0c165",
+    "retrieved_at_utc": "2026-10-12T17:59:24.111797+00:00",
+    "sha256": "bcffd4e28e4f60c736b5876708604135b1f418f90b154c3144546cd3f3f1dafd",
+    "bytes": 1716757,
+    "path": "data/public/v4-competition/department-2026-attachment2.png"
+  },
+  {
+    "label": "official-logisticsolver2025-extra-call-attachment",
+    "url": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=80ba177d7105abfe736e49ff43210095",
+    "retrieved_at_utc": "2026-10-12T18:00:40.260869+00:00",
+    "http_status": 200,
+    "bytes": 121344,
+    "sha256": "92f5b0e5430a45e6a2c2182ed8a5317222c3340f90e2bdb1513d995fbee38b7e",
+    "path": "data/public/v4-competition/official-logisticsolver2025-extra-call-attachment.hwp"
+  }
+]

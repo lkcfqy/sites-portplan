@@ -1,0 +1,17 @@
+{
+  "protocolHash": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+  "implementationHashes": {
+    "scripts/rolling-benchmark-v5.mjs": "94d942070f719453b6a38482ca1fe06fdc1f33a8d4dd01ec608a81e466148aee",
+    "src/stable-planner-v5.js": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64",
+    "src/rolling-plan.js": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+    "src/engine.js": "9f1938b893cc6b524f8cb52eed3984958c6de30e38918bb092b6e82ed7ffeaca",
+    "src/solver-glpk.js": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+    "src/solver-presolver.js": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+    "src/execution-constraints.js": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+    "scripts/benchmark-v2.mjs": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "data/protocol-v2.json": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+    "data/protocol-v5.json": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+    "package.json": "ab4d5e4b47217955d3489bb190fb485b00a13352f10c6a3d40578389a5ca6687",
+    "package-lock.json": "0e66904b36e6432a005aebcef7eb7eb2eb41e4193938be610f8c7a749df011e6"
+  }
+}

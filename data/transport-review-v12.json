@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "portplan-v12-formal-transport-review",
+  "valid": true,
+  "checkedAt": "2026-10-16T18:20:11.801135+00:00",
+  "archiveManifestSha256": "f4335bc07beddb4a8f0b5ca20cbcbcc0ec2c55a65e329979ded6fd7b8dbb716a",
+  "archiveSha256": "fc98f1b02d8b0664f8da7671dbe5a5b0d414f539bb78abe594f9ae908122a009",
+  "archiveFileCount": 2933,
+  "archiveBytes": 19557108,
+  "uncompressedFileBytes": 3002077487,
+  "fullArchiveDecoded": true,
+  "allDecodedFilesMatchedExistingBytes": true,
+  "existingEvidenceReplaced": false,
+  "materialStaging": "Read-only hardlink view of the completed immutable original snapshot existed before this idempotent decode; final clean-package recovery is a separate pending check.",
+  "solverRuns": 0,
+  "scope": "Transport integrity and idempotent archive decoding only; not a new experiment, independent optimum certificate, other-OS or actual browser validation."
+}

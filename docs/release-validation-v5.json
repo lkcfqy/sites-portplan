@@ -1,0 +1,198 @@
+{
+  "scope": "Local V5 production build and browser checks; frozen research was not rerun",
+  "readonlyVerifier": {
+    "command": "python scripts/verify-release-v5.py",
+    "testsPassed": 126,
+    "testsFailed": 0,
+    "frozenV4V5HashesVerified": true,
+    "nativeAndStdlibReviewValid": true
+  },
+  "browser": {
+    "defaultV5Complete": true,
+    "initialResearchArchivesDeferred": true,
+    "evidenceLoadedPerView": true,
+    "dayReplayAndKeyboardSlider": true,
+    "liveStableReplay": "V5 本机重跑：完整可行 · 求解调用 2 次 · 保留计划 8 次 · 日期变化 14 · 最终费用 8,935,900 ₩",
+    "liveExecutionExport": true,
+    "cancelVerified": true,
+    "scenarioChangeCancels": true,
+    "subviewChangeCancels": true,
+    "heldoutMethodRows": 108,
+    "nativeCertificateRows": 42,
+    "materialDownloads": 8,
+    "V4ArchivePreserved": true,
+    "allV4ArchiveModesNoMobileOverflow": true,
+    "mobileNoOverflowAndOneRowNavigation": true,
+    "pageErrors": [],
+    "failedResponses": []
+  },
+  "pdf": {
+    "pageCount": 16,
+    "bodyFooterOverlap": false,
+    "pdfBytes": 600919,
+    "layout": [
+      {
+        "page": 1,
+        "bodyBottom": 500.5,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 2,
+        "bodyBottom": 461.9375,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 3,
+        "bodyBottom": 552.796875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 4,
+        "bodyBottom": 536.15625,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 5,
+        "bodyBottom": 605.171875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 6,
+        "bodyBottom": 491.28125,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 7,
+        "bodyBottom": 503.28125,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 8,
+        "bodyBottom": 554.828125,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 9,
+        "bodyBottom": 480.796875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 10,
+        "bodyBottom": 524.609375,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 11,
+        "bodyBottom": 471.96875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 12,
+        "bodyBottom": 471.96875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 13,
+        "bodyBottom": 460.421875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 14,
+        "bodyBottom": 606.796875,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 15,
+        "bodyBottom": 503.28125,
+        "footerTop": 674.453125,
+        "overlap": false
+      },
+      {
+        "page": 16,
+        "bodyBottom": 503.28125,
+        "footerTop": 674.453125,
+        "overlap": false
+      }
+    ]
+  },
+  "workbenchExport": {
+    "pass": true,
+    "reports": [
+      {
+        "mode": "v5",
+        "selected": "optimized",
+        "filename": "portplan-optimized-schedule.csv",
+        "rowCount": 12,
+        "containerCount": 12,
+        "visibleRowCount": 12,
+        "modeOK": true,
+        "countOK": true,
+        "visibleRowsAgree": true,
+        "mismatch": [],
+        "csvIncrementalSum": 2309600,
+        "visibleRecommendedCost": 2309600,
+        "costOK": true,
+        "solverOptions": {
+          "timeLimitSeconds": 10,
+          "objectiveMode": "joint",
+          "presolveV4": true,
+          "fastV5": {
+            "constructorBudgetMs": 200,
+            "eventSearchBudgetMs": 250,
+            "maxRestarts": 16,
+            "seed": 42
+          }
+        }
+      },
+      {
+        "mode": "v4",
+        "selected": "optimized",
+        "filename": "portplan-optimized-schedule.csv",
+        "rowCount": 12,
+        "containerCount": 12,
+        "visibleRowCount": 12,
+        "modeOK": true,
+        "countOK": true,
+        "visibleRowsAgree": true,
+        "mismatch": [],
+        "csvIncrementalSum": 2309600,
+        "visibleRecommendedCost": 2309600,
+        "costOK": true,
+        "solverOptions": {
+          "timeLimitSeconds": 2,
+          "objectiveMode": "joint",
+          "presolveV4": true,
+          "eventSearchV4": {
+            "timeBudgetMs": 250,
+            "seed": 42
+          },
+          "strongSearch": {
+            "restartCount": 12,
+            "iterations": 80,
+            "seed": 42
+          }
+        }
+      }
+    ],
+    "consoleErrors": []
+  },
+  "loaderFaultInjection": {
+    "scope": "Local network interception fixture; not research evidence",
+    "loadFailureRetryPassed": true,
+    "lateResponseKeepsCurrentView": true
+  }
+}

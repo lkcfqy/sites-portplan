@@ -1,0 +1,205 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PortPlan V14</title><style>
+body{margin:0;background:#dce8e0;color:#173c40;font-family:"Noto Sans CJK KR","Noto Sans KR",sans-serif}.slide{box-sizing:border-box;width:1280px;min-height:720px;margin:24px auto;padding:44px 62px;background:#f7faf5;position:relative;page-break-after:always}h1{font-size:35px;line-height:1.4;margin:10px 0 22px;white-space:pre-line}.kicker{font-size:13px;letter-spacing:3px;color:#39826d}p{font-size:20px;line-height:1.7}table{width:100%;border-collapse:collapse;font-size:15px;margin:22px 0}th,td{text-align:left;border-bottom:1px solid #d3e0d3;padding:12px 10px;overflow-wrap:anywhere}th{background:#e6f0e4}.note{font-size:14px;background:#e8f2e5;padding:14px 18px;line-height:1.8}.flow{display:flex;gap:24px;align-items:stretch;margin:38px 0}.flow div{flex:1;background:#e0efe0;border-left:5px solid #36836c;padding:24px;font-size:23px;white-space:pre-line}.chart{margin:22px 0}.row{display:grid;grid-template-columns:240px 1fr 250px;align-items:center;gap:16px;margin:19px 0;font-size:17px}.track{height:21px;background:#dfebde}.fill{height:100%;background:#35826d}.footer{font-size:12px;letter-spacing:.5px;margin-top:25px;color:#638176}@media(max-width:1300px){.slide{width:100%;min-height:0;margin:12px auto;padding:30px}h1{font-size:29px}.row{grid-template-columns:180px 1fr 190px}}@media print{@page{size:1280px 720px;margin:0}body{background:white}.slide{width:1280px;height:720px;margin:0;overflow:hidden}}
+</style><body>
+<section class="slide" id="slide-1"><div class="kicker">01 / PORTPLAN V14</div>
+<h1>더 싼 계획을 고를 때
+내일의 필수 창고 부담도 확인합니다.</h1><p>V14 연구는 기존 V13 guard를 자연 D0부터 평가합니다. 새로운 V14 알고리즘이나 미래 예측 모형을 만들었다는 주장이 아닙니다.</p>
+<div class="flow"><div>현재 공개 정보</div><div>요금 + 필요 창고 M</div><div>기한 내 검산·선택</div></div>
+<div class="note">합성 일 단위 연구입니다. 전역 최적·미래 안전·기업 실현 절감·대회 순위를 보장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 01 / 18</div></section>
+<section class="slide" id="slide-2"><div class="kicker">02 / PORTPLAN V14</div>
+<h1>반출·연속 적출·반납을
+하나의 날짜 장부에서 검산합니다.</h1><p>모든 주문은 시작부터 알려집니다. 계획기는 당일 공개 관측과 실제 실행 잠금만 받고, 미래 미공지 충격은 받지 않습니다.</p>
+<table style="font-size:18px"><thead><tr><th>날짜</th><th>자원·제약</th></tr></thead><tbody>
+<tr><td>반출 p / 반납 r</td><td>각각 운송 작업; 방출·납기·과거 잠금</td></tr>
+<tr><td>연속 적출 u</td><td>연속 창고 일수; 순서와 완료 기한</td></tr>
+<tr><td>체류 p부터 r 전</td><td>staging 용량; 비용과 실행 장부</td></tr>
+</tbody></table>
+<div class="note">경로·기사 시간·예약 슬롯·실제 계약 청구는 이 일 단위 모형의 검증 범위 밖입니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 02 / 18</div></section>
+<section class="slide" id="slide-3"><div class="kicker">03 / PORTPLAN V14</div>
+<h1>공개 자료와 재현 가능한 연구로
+근거와 가정을 구분합니다.</h1><p>공개 요율·관측·수학 기준과 합성 주문 실험은 서로 다른 증거입니다. 기업 주문·연락처·견적·파일럿은 선택 확장입니다.</p>
+<table style="font-size:18px"><thead><tr><th>증거</th><th>가능한 범위</th></tr></thead><tbody>
+<tr><td>공개 요율</td><td>명시한 요금 함수 재계산</td></tr>
+<tr><td>공개 기준·관측</td><td>그 자료에 한정한 검증</td></tr>
+<tr><td>새 합성 주문·충격</td><td>고정 모형에서 방법 간 비교</td></tr>
+</tbody></table>
+<div class="note">합성 결과를 실단·실현 매출·기업 채택으로 바꾸어 쓰지 않습니다. 기업 자료는 이 연구의 선행 조건이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 03 / 18</div></section>
+<section class="slide" id="slide-4"><div class="kicker">04 / PORTPLAN V14</div>
+<h1>V13은 엄격한 요금 개선에도
+필요 창고 지표의 비증가를 요구합니다.</h1><p>유효 초기해가 있으면 더 싼 native 후보도 완전한 M 비교가 기한 안에 끝나고 M이 늘지 않을 때만 교체합니다. 동률이면 M이 엄격히 줄어야 합니다.</p>
+<table style="font-size:18px"><thead><tr><th>상태</th><th>선택</th></tr></thead><tbody>
+<tr><td>기한 내 완전 incumbent 있음</td><td>엄격 절감 + M 비증가 / 동률 + M 감소</td></tr>
+<tr><td>점수 불완전·늦음·오류</td><td>이미 검산된 incumbent 유지</td></tr>
+<tr><td>유효 incumbent 없음</td><td>유일한 완전 후보를 M만으로 거부하지 않음</td></tr>
+</tbody></table>
+<div class="note">M은 현재 정보의 필요 하한 대리량입니다. 낮은 M도 미공지 충격에서 완주하거나 복구할 충분조건은 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 04 / 18</div></section>
+<section class="slide" id="slide-5"><div class="kicker">05 / PORTPLAN V14</div>
+<h1>144개 새 업무 장면을
+동일한 일곱 방법으로 비교합니다.</h1><p>동일 분포와 스트레스는 각 72장면입니다. 장면별 세 시계 반복은 새 업무 표본 세 개가 아닙니다.</p>
+<table style="font-size:18px"><thead><tr><th>고정 항목</th><th>선언</th></tr></thead><tbody>
+<tr><td>행렬</td><td>3 기작 × 2 용량 × 24/50/100 × 4</td></tr>
+<tr><td>업무 시드</td><td>791001–791072 / 792001–792072</td></tr>
+<tr><td>반복·bootstrap</td><td>79011/79023/79039; 800001 × 2000</td></tr>
+<tr><td>전체</td><td>144 × 3 × 7 = 3024; 전부 최초 결과 보존</td></tr>
+</tbody></table>
+<div class="note">기존 주문·과거 강제 prefix·개발 endpoint import 없이 매회 자연 D0에서 시작합니다. 실패·중복·비싼 결과를 교체하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 05 / 18</div></section>
+<section class="slide" id="slide-6"><div class="kicker">06 / PORTPLAN V14</div>
+<h1>200ms 협력 호출과
+5초 냉시작 수명주기를 함께 보존합니다.</h1><p>구성·native·현재 감사·M 점수·선택이 같은 200ms를 나눕니다. 부모 5초는 시작 전부터 정상 종료·전체 그룹 정리·최종 감사까지 포함합니다.</p>
+<table style="font-size:18px"><thead><tr><th>시계</th><th>포함·접수 조건</th></tr></thead><tbody>
+<tr><td>일별 200ms</td><td>협력 예산; 함수 반환의 하드 보장 아님</td></tr>
+<tr><td>부모 5000ms</td><td>import / ready / 전체 경로 / close / IPC</td></tr>
+<tr><td>완료 접수</td><td>정상 exit0 + ESRCH 그룹 소멸 + 최종 부모 기한</td></tr>
+<tr><td>증거 누락·기한 실패</td><td>fees·history는 null/unknown; 원문 별도 보존</td></tr>
+</tbody></table>
+<div class="note">먼저 final을 보냈다는 이유만으로 완주를 인정하지 않습니다. 정상 종료·정리·최종 접수가 같은 5초 안이어야 합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 06 / 18</div></section>
+<section class="slide" id="slide-7"><div class="kicker">07 / PORTPLAN V14</div>
+<h1>동일 분포 · 새 주문
+완주와 초기·후속 실패를 분리합니다.</h1><p>완료는 부모 수명주기까지 접수된 전체 실행입니다. D0와 후속 실패를 합쳐 초기해 개선으로 포장하지 않습니다.</p>
+<table style="font-size:18px"><thead><tr><th>방법</th><th>완료</th><th>D0 실패</th><th>후속 실패</th><th>D0 미확보</th></tr></thead><tbody>
+<tr><td>V7</td><td>137/216</td><td>33</td><td>46</td><td>0</td></tr>
+<tr><td>V9</td><td>137/216</td><td>33</td><td>46</td><td>0</td></tr>
+<tr><td>native HiGHS</td><td>150/216</td><td>45</td><td>21</td><td>0</td></tr>
+<tr><td>V10</td><td>150/216</td><td>45</td><td>21</td><td>0</td></tr>
+<tr><td>V11</td><td>153/216</td><td>45</td><td>18</td><td>0</td></tr>
+<tr><td>V12</td><td>171/216</td><td>27</td><td>18</td><td>0</td></tr>
+<tr><td>V13 guard</td><td>171/216</td><td>27</td><td>18</td><td>0</td></tr>
+</tbody></table>
+<div class="note">각 방법 72장면 × 3시계 = 216회. unknown은 물리 실패의 증명이 아니며, 초기 수락이 전체 완주를 보장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 07 / 18</div></section>
+<section class="slide" id="slide-8"><div class="kicker">08 / PORTPLAN V14</div>
+<h1>동일 분포 · 새 주문
+V13의 이득·손실을 각 기준별로 보존합니다.</h1><p>이득은 기준 미완료·V13 완료, 손실은 기준 완료·V13 미완료입니다. 비용 분모는 해당 쌍이 함께 완료한 반복만 사용합니다.</p>
+<table style="font-size:18px"><thead><tr><th>기준</th><th>완료 이득</th><th>완료 손실</th><th>비용 장면/회</th></tr></thead><tbody>
+<tr><td>V12</td><td>0</td><td>0</td><td>57/171</td></tr>
+<tr><td>V11</td><td>18</td><td>0</td><td>51/153</td></tr>
+<tr><td>V10</td><td>21</td><td>0</td><td>50/150</td></tr>
+<tr><td>V9</td><td>34</td><td>0</td><td>46/137</td></tr>
+<tr><td>native HiGHS</td><td>21</td><td>0</td><td>50/150</td></tr>
+<tr><td>V7</td><td>34</td><td>0</td><td>46/137</td></tr>
+</tbody></table>
+<div class="note">다른 기준의 이득이나 순완료 증가는 손실 한 건을 상쇄하지 않습니다. 모든 손실 ID는 중·한 보고서 부록에 있습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 08 / 18</div></section>
+<section class="slide" id="slide-9"><div class="kicker">09 / PORTPLAN V14</div>
+<h1>동일 분포 · 새 주문
+같은 완료 집합에서 두 비용과 변경을 봅니다.</h1><p>절감률의 양수는 V13이 저렴함을 뜻합니다. 전부 음수인 구간은 조건부 비용 악화이며, 0 포함은 안정적 절감의 증거가 아닙니다.</p>
+<table style="font-size:16px"><thead><tr><th>기준</th><th>장면/회</th><th>총요금 95% CI</th><th>증분 95% CI</th><th>변경 원합 / 알려진 n</th></tr></thead><tbody>
+<tr><td>V12</td><td>57/171</td><td>[-7.7964, -0.8260]</td><td>[-13.5605, -1.4634]</td><td>18,257 → 21,691 / n=171</td></tr>
+<tr><td>V11</td><td>51/153</td><td>[-7.0303, -0.5766]</td><td>[-12.4335, -1.0372]</td><td>13,593 → 16,861 / n=153</td></tr>
+<tr><td>V10</td><td>50/150</td><td>[-7.1581, -0.6079]</td><td>[-12.5053, -1.0902]</td><td>10,710 → 16,735 / n=150</td></tr>
+<tr><td>V9</td><td>46/137</td><td>[-2.6611, 6.0444]</td><td>[-4.5664, 10.2492]</td><td>6,289 → 17,371 / n=137</td></tr>
+<tr><td>native HiGHS</td><td>50/150</td><td>[-7.1415, -0.6391]</td><td>[-12.7782, -1.1537]</td><td>47,073 → 15,982 / n=150</td></tr>
+<tr><td>V7</td><td>46/137</td><td>[-2.1698, 6.0728]</td><td>[-3.6937, 10.3473]</td><td>6,206 → 17,371 / n=137</td></tr>
+</tbody></table>
+<div class="note">비용은 장면 등가중, 변경은 같은 완료 집합의 알려진 원이벤트 합과 자체 n입니다. 시계 반복을 독립 CI 표본으로 보지 않습니다. 구간은 기술적 주변구간이며 동시 우월 보장이 아닙니다. CI는 약 소수 4자리로 표시하고 작은 값의 부호는 보존합니다. 전체 정밀도는 보고서·JSON을 참조합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 09 / 18</div></section>
+<section class="slide" id="slide-10"><div class="kicker">10 / PORTPLAN V14</div>
+<h1>동일 분포 · 새 주문
+일곱 방법 공통 완료 부분집합을 따로 둡니다.</h1><p>공통 41장면 / 122회. 장면 내 평균 뒤 장면을 등가중 합산한 조건부 수치입니다.</p>
+<table style="font-size:18px"><thead><tr><th>방법</th><th>총요금 합</th><th>증분요금 합</th><th>변경 합</th></tr></thead><tbody>
+<tr><td>V7</td><td>417,091,867</td><td>241,751,517</td><td>1,486</td></tr>
+<tr><td>V9</td><td>416,303,800</td><td>240,963,450</td><td>1,507</td></tr>
+<tr><td>native HiGHS</td><td>393,118,400</td><td>217,778,050</td><td>13,108</td></tr>
+<tr><td>V10</td><td>393,254,400</td><td>217,914,050</td><td>2,736</td></tr>
+<tr><td>V11</td><td>393,299,400</td><td>217,959,050</td><td>3,470</td></tr>
+<tr><td>V12</td><td>393,299,400</td><td>217,959,050</td><td>3,242</td></tr>
+<tr><td>V13 guard</td><td>407,209,850</td><td>231,869,500</td><td>4,507</td></tr>
+</tbody></table>
+<div class="note">전체 표본 완료 손실을 이 표로 덮지 않습니다. 변경을 임의의 KRW 가중치로 바꾸거나 서로 다른 분모를 혼합하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 10 / 18</div></section>
+<section class="slide" id="slide-11"><div class="kicker">11 / PORTPLAN V14</div>
+<h1>스트레스 · 새 주문
+완주와 초기·후속 실패를 분리합니다.</h1><p>완료는 부모 수명주기까지 접수된 전체 실행입니다. D0와 후속 실패를 합쳐 초기해 개선으로 포장하지 않습니다.</p>
+<table style="font-size:18px"><thead><tr><th>방법</th><th>완료</th><th>D0 실패</th><th>후속 실패</th><th>D0 미확보</th></tr></thead><tbody>
+<tr><td>V7</td><td>87/216</td><td>33</td><td>96</td><td>0</td></tr>
+<tr><td>V9</td><td>86/216</td><td>33</td><td>97</td><td>0</td></tr>
+<tr><td>native HiGHS</td><td>116/216</td><td>38</td><td>62</td><td>0</td></tr>
+<tr><td>V10</td><td>117/216</td><td>39</td><td>60</td><td>0</td></tr>
+<tr><td>V11</td><td>118/216</td><td>39</td><td>59</td><td>0</td></tr>
+<tr><td>V12</td><td>126/216</td><td>27</td><td>63</td><td>0</td></tr>
+<tr><td>V13 guard</td><td>124/216</td><td>28</td><td>64</td><td>0</td></tr>
+</tbody></table>
+<div class="note">각 방법 72장면 × 3시계 = 216회. unknown은 물리 실패의 증명이 아니며, 초기 수락이 전체 완주를 보장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 11 / 18</div></section>
+<section class="slide" id="slide-12"><div class="kicker">12 / PORTPLAN V14</div>
+<h1>스트레스 · 새 주문
+V13의 이득·손실을 각 기준별로 보존합니다.</h1><p>이득은 기준 미완료·V13 완료, 손실은 기준 완료·V13 미완료입니다. 비용 분모는 해당 쌍이 함께 완료한 반복만 사용합니다.</p>
+<table style="font-size:18px"><thead><tr><th>기준</th><th>완료 이득</th><th>완료 손실</th><th>비용 장면/회</th></tr></thead><tbody>
+<tr><td>V12</td><td>3</td><td>5</td><td>41/121</td></tr>
+<tr><td>V11</td><td>10</td><td>4</td><td>39/114</td></tr>
+<tr><td>V10</td><td>11</td><td>4</td><td>38/113</td></tr>
+<tr><td>V9</td><td>38</td><td>0</td><td>29/86</td></tr>
+<tr><td>native HiGHS</td><td>12</td><td>4</td><td>38/112</td></tr>
+<tr><td>V7</td><td>37</td><td>0</td><td>29/87</td></tr>
+</tbody></table>
+<div class="note">다른 기준의 이득이나 순완료 증가는 손실 한 건을 상쇄하지 않습니다. 모든 손실 ID는 중·한 보고서 부록에 있습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 12 / 18</div></section>
+<section class="slide" id="slide-13"><div class="kicker">13 / PORTPLAN V14</div>
+<h1>스트레스 · 새 주문
+같은 완료 집합에서 두 비용과 변경을 봅니다.</h1><p>절감률의 양수는 V13이 저렴함을 뜻합니다. 전부 음수인 구간은 조건부 비용 악화이며, 0 포함은 안정적 절감의 증거가 아닙니다.</p>
+<table style="font-size:16px"><thead><tr><th>기준</th><th>장면/회</th><th>총요금 95% CI</th><th>증분 95% CI</th><th>변경 원합 / 알려진 n</th></tr></thead><tbody>
+<tr><td>V12</td><td>41/121</td><td>[-17.0281, -6.6523]</td><td>[-29.4627, -11.1780]</td><td>19,842 → 23,586 / n=121</td></tr>
+<tr><td>V11</td><td>39/114</td><td>[-17.2183, -6.7309]</td><td>[-30.1866, -11.3481]</td><td>17,265 → 20,611 / n=114</td></tr>
+<tr><td>V10</td><td>38/113</td><td>[-15.4673, -6.0972]</td><td>[-27.6165, -10.1917]</td><td>14,355 → 20,043 / n=113</td></tr>
+<tr><td>V9</td><td>29/86</td><td>[-9.2027, -1.1822]</td><td>[-15.7328, -1.9676]</td><td>9,073 → 17,844 / n=86</td></tr>
+<tr><td>native HiGHS</td><td>38/112</td><td>[-17.7790, -6.6128]</td><td>[-31.0234, -11.2647]</td><td>41,905 → 21,476 / n=112</td></tr>
+<tr><td>V7</td><td>29/87</td><td>[-9.1678, -1.1379]</td><td>[-15.7348, -1.9155]</td><td>9,142 → 17,970 / n=87</td></tr>
+</tbody></table>
+<div class="note">비용은 장면 등가중, 변경은 같은 완료 집합의 알려진 원이벤트 합과 자체 n입니다. 시계 반복을 독립 CI 표본으로 보지 않습니다. 구간은 기술적 주변구간이며 동시 우월 보장이 아닙니다. CI는 약 소수 4자리로 표시하고 작은 값의 부호는 보존합니다. 전체 정밀도는 보고서·JSON을 참조합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 13 / 18</div></section>
+<section class="slide" id="slide-14"><div class="kicker">14 / PORTPLAN V14</div>
+<h1>스트레스 · 새 주문
+일곱 방법 공통 완료 부분집합을 따로 둡니다.</h1><p>공통 25장면 / 74회. 장면 내 평균 뒤 장면을 등가중 합산한 조건부 수치입니다.</p>
+<table style="font-size:18px"><thead><tr><th>방법</th><th>총요금 합</th><th>증분요금 합</th><th>변경 합</th></tr></thead><tbody>
+<tr><td>V7</td><td>341,383,733</td><td>201,979,133</td><td>2,303</td></tr>
+<tr><td>V9</td><td>341,259,083</td><td>201,854,483</td><td>2,318</td></tr>
+<tr><td>native HiGHS</td><td>326,268,850</td><td>186,864,250</td><td>8,394</td></tr>
+<tr><td>V10</td><td>326,550,650</td><td>187,146,050</td><td>2,968</td></tr>
+<tr><td>V11</td><td>326,479,750</td><td>187,075,150</td><td>3,624</td></tr>
+<tr><td>V12</td><td>326,642,850</td><td>187,238,250</td><td>3,815</td></tr>
+<tr><td>V13 guard</td><td>359,948,200</td><td>220,543,600</td><td>4,651</td></tr>
+</tbody></table>
+<div class="note">전체 표본 완료 손실을 이 표로 덮지 않습니다. 변경을 임의의 KRW 가중치로 바꾸거나 서로 다른 분모를 혼합하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 14 / 18</div></section>
+<section class="slide" id="slide-15"><div class="kicker">15 / PORTPLAN V14</div>
+<h1>완료 기본문턱과
+비용·변경 안정성 주장을 구분합니다.</h1><p>기본문턱은 완전 panel과 여섯 기준 모두의 완료 손실 0입니다. native 안정성은 같은 쌍의 변경 엄격 감소와 두 비용 구간 조건을 별도로 요구합니다.</p>
+<table style="font-size:18px"><thead><tr><th>panel</th><th>관측 기본 자격</th><th>native 안정성 허용</th></tr></thead><tbody>
+<tr><td>동일 분포 · 새 주문</td><td>True</td><td>0/4</td></tr>
+<tr><td>스트레스 · 새 주문</td><td>False</td><td>0/4</td></tr>
+</tbody></table>
+<div class="note">통과도 이 모형·포함 기준의 필요 관측 조건일 뿐입니다. 비용 조건을 몰래 기본 자격에 더하거나 빼지 않으며 실무 기본값·우승 보장이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 15 / 18</div></section>
+<section class="slide" id="slide-16"><div class="kicker">16 / PORTPLAN V14</div>
+<h1>불리한 식별자와 원문을
+보고서 부록에서 빠짐없이 공개합니다.</h1><p>14개 사전 비교의 완료 손실·비용 악화 식별자 2349개 출현을 원영수증에서 재도출했습니다. 변경 악화 ID도 별도로 나열합니다.</p>
+<table style="font-size:18px"><thead><tr><th>보존 대상</th><th>보고 방식</th></tr></thead><tbody>
+<tr><td>모든 비교의 완료 손실</td><td>중·한 보고서 부록; 반복 ID 전부</td></tr>
+<tr><td>총·증분 비용 악화</td><td>장면 ID와 반복 ID; 조건부 분모</td></tr>
+<tr><td>변경 악화·unknown</td><td>원영수증 재도출; null을 0으로 바꾸지 않음</td></tr>
+</tbody></table>
+<div class="note">동일 ID가 여러 비교에 나올 수 있어 출현 수는 독립 업무 표본 수가 아닙니다. 실패 경로의 null 비용을 성공 비용과 비교하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 16 / 18</div></section>
+<section class="slide" id="slide-17"><div class="kicker">17 / PORTPLAN V14</div>
+<h1>최초 실행·물리·통계·소스를
+같은 SHA 사슬에 묶습니다.</h1><p>두 독립 Python 구현은 내부 검산입니다. 기록된 시계·OS·원격 push 관측은 외부 인증이나 제삼자 보증이 아닙니다.</p>
+<table style="font-size:18px"><thead><tr><th>증거</th><th>SHA-256</th></tr></thead><tbody>
+<tr><td>정식 최초 index</td><td>a0081a725e21a019c783bffe5b3c0e8aedf8f8b29903564fa04fa1ee53a2fcb9</td></tr>
+<tr><td>물리·선택 검산</td><td>4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f</td></tr>
+<tr><td>통계 검산</td><td>95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48</td></tr>
+</tbody></table>
+<div class="note">원입력·실행 물리 장부·선택 증거·실패·동결 source를 보존합니다. V12 정식 결과와 V13 개발 결과는 다시 쓰지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 17 / 18</div></section>
+<section class="slide" id="slide-18"><div class="kicker">18 / PORTPLAN V14</div>
+<h1>제출 준비와 본인 수행은
+각각 검토해야 합니다.</h1><p>이 자료는 AI 도움으로 만든 연구·발표 초안입니다. 본인의 자격·등록·당해 AI 규칙·기여·재현·발표 이해는 자동으로 인증되지 않습니다.</p>
+<div class="flow"><div>본인 근거 확인</div><div>새 출력에서 재현</div><div>질문에 본인 설명</div></div>
+<div class="note">기업 연락처를 선행 조건으로 요구하지 않습니다. 모델 범위와 실제 실패를 설명하고 대회 공식 요구에 맞춰 본인이 최종 검토합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 18 / 18</div></section>
+</body></html>

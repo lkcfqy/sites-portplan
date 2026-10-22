@@ -1,0 +1,10 @@
+{
+  "file": "delivering-data-article.xml",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12206052/fullTextXML",
+  "retrievedAt": "2026-10-13T05:01:37.775876+00:00",
+  "httpStatus": 200,
+  "bytes": 36226,
+  "sha256": "046d029fea981b6df6ca3b0e9d501ad8222c2e7158d2e8c670850a41da961181",
+  "md5": "01effb653fc51a13a32a511655919377",
+  "contentType": "application/xml"
+}

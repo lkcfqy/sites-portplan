@@ -1,0 +1,205 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PortPlan V10</title><style>
+body{margin:0;background:#dce8e0;color:#173c40;font-family:"Noto Sans CJK KR","Noto Sans KR",sans-serif}.slide{box-sizing:border-box;width:1280px;min-height:720px;margin:24px auto;padding:44px 62px;background:#f7faf5;position:relative;page-break-after:always}h1{font-size:35px;line-height:1.4;margin:10px 0 22px;white-space:pre-line}.kicker{font-size:13px;letter-spacing:3px;color:#39826d}p{font-size:20px;line-height:1.7}table{width:100%;border-collapse:collapse;font-size:15px;margin:22px 0}th,td{text-align:left;border-bottom:1px solid #d3e0d3;padding:12px 10px;overflow-wrap:anywhere}th{background:#e6f0e4}.note{font-size:14px;background:#e8f2e5;padding:14px 18px;line-height:1.8}.flow{display:flex;gap:24px;align-items:stretch;margin:38px 0}.flow div{flex:1;background:#e0efe0;border-left:5px solid #36836c;padding:24px;font-size:23px;white-space:pre-line}.chart{margin:22px 0}.row{display:grid;grid-template-columns:240px 1fr 250px;align-items:center;gap:16px;margin:19px 0;font-size:17px}.track{height:21px;background:#dfebde}.fill{height:100%;background:#35826d}.footer{font-size:12px;letter-spacing:.5px;margin-top:25px;color:#638176}@media(max-width:1300px){.slide{width:100%;min-height:0;margin:12px auto;padding:30px}h1{font-size:29px}.row{grid-template-columns:180px 1fr 190px}}@media print{@page{size:1280px 720px;margin:0}body{background:white}.slide{width:1280px;height:720px;margin:0;overflow:hidden}}
+</style><body>
+<section class="slide" id="slide-1"><div class="kicker">01 / PORTPLAN V10</div>
+<h1>같은 요금이라면 유효한 날짜를
+그대로 유지할 수 있을까요?</h1><p>PortPlan V10은 원래 native HiGHS가 계산한 새 후보와 현재 유효 계획을 같은 관측 정보로 재검사합니다. 실제 요금이 엄격히 낮을 때만 계획을 교체합니다.</p>
+<div class="flow"><div>현재 유효 계획</div><div>native 후보·같은 요금?</div><div>동률 유지 / 엄격 절감 교체</div></div>
+<div class="note">선언된 관측 문턱을 모두 충족하지 못했습니다. V10은 실험 선택 항목이며 기본값 권고 조건을 충족하지 않았습니다. V10 동일 생성분포 · 새 주문 시드 156/216; 스트레스 · 새 주문 시드 132/216 / native 동일 생성분포 · 새 주문 시드 153/216; 스트레스 · 새 주문 시드 120/216. 알려진 합성 주문의 일 단위 모형이며 실제 기업 절감·우승 확률이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 01 / 18</div></section>
+<section class="slide" id="slide-2"><div class="kicker">02 / PORTPLAN V10</div>
+<h1>반출·적출·반납과 요금을
+하나의 날짜 장부로 연결합니다.</h1><p>반출·반납은 각각 운송 작업을 사용합니다. 적출은 연속 창고 일수를 차지하고, 반출부터 반납 전까지 체류 공간을 점유합니다.</p>
+<table><thead><tr><th>모형</th><th>계산할 항목</th><th>미포함 범위</th></tr></thead><tbody>
+<tr><td>반출 p / 적출 u / 반납 r</td><td>방출·납기·선후행·실행 잠금</td><td>도로 경로·예약·기사 근무시간</td></tr>
+<tr><td>일별 운송·창고·체류 [p,r)</td><td>용량·연속 점유·container/TEU</td><td>시간대별 실운영</td></tr>
+<tr><td>PNC 보관료 / Maersk D&amp;D</td><td>공개 요율·명시한 기산일 해석</td><td>계약·실제 청구·세금 검증</td></tr>
+</tbody></table>
+<div class="note">기존 주문은 시작 시 모두 알려집니다. 비용 목표는 선언한 두 요금이며 신규 주문 도착이나 전체 물류 원가가 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 02 / 18</div></section>
+<section class="slide" id="slide-3"><div class="kicker">03 / PORTPLAN V10</div>
+<h1>V9의 한계도
+수정하지 않은 이전 결과로 남깁니다.</h1><p>V9는 V8의 늦은 후보 전달을 개선했지만 V7에 대한 일관된 향상을 보이지 않았습니다. 이를 V10의 다른 새 주문 입력과 빼서 개선량으로 만들지 않습니다.</p>
+<table><thead><tr><th>이전 V9 평가 · 별도 입력</th><th>V9 완주</th><th>V7 완주</th></tr></thead><tbody>
+<tr><td>동일 생성분포 · 새 주문 시드</td><td>150/216</td><td>150/216</td></tr>
+<tr><td>스트레스 · 새 주문 시드</td><td>84/216</td><td>85/216</td></tr>
+</tbody></table>
+<div class="note">이전 V8/V9 최초 입력·반복·실패·비용 악화는 그대로 보존합니다. 같은 새 V10 입력에서 함께 실행한 정책끼리만 이번 차이를 계산합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 03 / 18</div></section>
+<section class="slide" id="slide-4"><div class="kicker">04 / PORTPLAN V10</div>
+<h1>V10: 단 한 번의 native MILP와
+엄격한 비용 교체 규칙입니다.</h1><p>현재 cache를 재가격·물리/잠금 검사한 뒤 원래 native 서비스를 한 번 호출합니다. 현재 유효 cache보다 추가 요금이 엄격히 낮은 적시 후보만 교체합니다.</p>
+<div class="flow"><div>cache 재가격·검사</div><div>native MILP 1회</div><div>엄격 절감만 교체</div></div>
+<div class="note">비교 epsilon은 고정 0.000001원입니다. 동일/더 높은 요금은 유지합니다. cache가 없거나 무효이면 기존 복구 방식으로 완전 후보를 구합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 04 / 18</div></section>
+<section class="slide" id="slide-5"><div class="kicker">05 / PORTPLAN V10</div>
+<h1>날짜 유지의 의미와
+보장하지 않는 것을 구분합니다.</h1><p>같은 비용의 후보를 거부하면 그 호출의 불필요한 변경을 피할 수 있습니다. 엄격히 더 저렴한 후보는 여러 날짜를 바꿀 수 있고 이후 경로도 달라집니다.</p>
+<table><thead><tr><th>구현한 것</th><th>구현/증명하지 않은 것</th></tr></thead><tbody>
+<tr><td>동일 요금의 유효 cache 유지</td><td>전체 경로 최소 변경</td></tr>
+<tr><td>strict fee replacement</td><td>두 번째 단계 사전식/lexicographic 최적화</td></tr>
+<tr><td>같은 native 요금 목표·1회 solve</td><td>변경 1회를 임의 원화 가중치로 환산</td></tr>
+<tr><td>현재 관측·실행 잠금 검사</td><td>미래 충격의 완주·비용 보장</td></tr>
+</tbody></table>
+<div class="note">더 적은 날짜 변경과 비용·완주의 교환관계는 실험에서 확인합니다. 지역 선택 규칙을 전역 안정성 정리로 표현하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 05 / 18</div></section>
+<section class="slide" id="slide-6"><div class="kicker">06 / PORTPLAN V10</div>
+<h1>native 기준과 웹 시연을
+정확히 구분합니다.</h1><p>V10과 원래 HiGHS는 같은 native Python 서비스·모형·수치 예산을 사용합니다. 초기화, IPC, 날짜 복사·재가격·검사는 전체 기한에 포함합니다.</p>
+<table><thead><tr><th>항목</th><th>실행 범위</th></tr></thead><tbody>
+<tr><td>V10 / 원래 native HiGHS</td><td>오프라인 연구 worker와 Python/HiGHS</td></tr>
+<tr><td>웹 브라우저 계획기</td><td>기존 GLPK와 합성 입력 시뮬레이터</td></tr>
+<tr><td>일별 / 전체 냉 기한</td><td>200ms / 부모 5,000ms</td></tr>
+<tr><td>검산</td><td>기록 시각 일관성·독립 날짜/요율 재구성</td></tr>
+</tbody></table>
+<div class="note">웹에서 native HiGHS를 실행한다고 주장하지 않습니다. 내부 기록 검산은 외부 시계 인증·같은 CPU 시간·절대 실시간 보장이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 06 / 18</div></section>
+<section class="slide" id="slide-7"><div class="kicker">07 / PORTPLAN V10</div>
+<h1>기존 생성·충격 메커니즘에
+새 주문 시드를 사전 고정했습니다.</h1><p>144개 업무 시나리오 × 5개 정책 × 3개 알고리즘/타이밍 반복 = 2,160개 episode. 반복은 새 독립 업무 표본이 아닙니다.</p>
+<table><thead><tr><th>패널 / 반복</th><th>범위</th></tr></thead><tbody>
+<tr><td>동일 생성분포 72개</td><td>기존 생성기·기존 충격; 새 주문 시드</td></tr>
+<tr><td>스트레스 72개</td><td>기존 V8/V9 충격 catalog; 새 주문 시드</td></tr>
+<tr><td>모든 정책·반복</td><td>순차 냉 worker; 순서 순환; 모든 실패 보존</td></tr>
+<tr><td>해석</td><td>패널별 보고; 입력 교체·실패 재추첨 없음</td></tr>
+</tbody></table>
+<div class="note">구현·예산·분석을 새 입력 생성 전에 고정합니다. 144개 업무 시나리오를 432개 독립 사례로 세지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 07 / 18</div></section>
+<section class="slide" id="slide-8"><div class="kicker">08 / PORTPLAN V10</div>
+<h1>동일 생성분포 · 새 주문 시드
+조건부 비용보다 전체 완주를 먼저 봅니다.</h1><p>완주는 물리 행동과 최종 검사를 부모 기한 내 수락한 경우입니다. 미확보 이력과 비용은 null이며 물리 불가능이나 0원으로 바꾸지 않습니다.</p>
+<div class="chart">
+<div class="row"><span>V5 유효 계획 유지</span><div class="track"><div class="fill" style="width:56.4815%"></div></div><span>122/216 · 3/3 40 · 미확보 0</span></div>
+<div class="row"><span>V7 비용 다듬기</span><div class="track"><div class="fill" style="width:66.6667%"></div></div><span>144/216 · 3/3 48 · 미확보 0</span></div>
+<div class="row"><span>V9 적시 후보 전달</span><div class="track"><div class="fill" style="width:67.1296%"></div></div><span>145/216 · 3/3 48 · 미확보 0</span></div>
+<div class="row"><span>독립 native HiGHS</span><div class="track"><div class="fill" style="width:70.8333%"></div></div><span>153/216 · 3/3 51 · 미확보 0</span></div>
+<div class="row"><span>V10 동일 요금 계획 유지</span><div class="track"><div class="fill" style="width:72.2222%"></div></div><span>156/216 · 3/3 52 · 미확보 0</span></div>
+</div>
+<div class="note">episode 완주 수, 세 반복 모두 완주한 시나리오, 이력 미확보를 분리합니다. 조건부 Pareto가 전체 완주 손실을 덮지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 08 / 18</div></section>
+<section class="slide" id="slide-9"><div class="kicker">09 / PORTPLAN V10</div>
+<h1>동일 생성분포 · 새 주문 시드
+같은 공동 완주 반복의 요금만 비교합니다.</h1><p>양수 절감은 기준 − 후보입니다. 시나리오 내 일치하는 공동 완주 반복을 평균한 뒤 시나리오를 동일 가중합니다.</p>
+<table><thead><tr><th>후보 / 기준</th><th>시나리오 / 쌍</th><th>총요금 절감</th><th>추가요금 절감</th><th>낮음/동일/높음</th></tr></thead><tbody>
+<tr><td>V10 동일 요금 계획 유지 / 독립 native HiGHS</td><td>51 / 153</td><td>-0.01%</td><td>-0.02%</td><td>3/42/6</td></tr>
+<tr><td>V10 동일 요금 계획 유지 / V9 적시 후보 전달</td><td>44 / 130</td><td>5.37%</td><td>9.13%</td><td>19/24/1</td></tr>
+<tr><td>V10 동일 요금 계획 유지 / V7 비용 다듬기</td><td>43 / 129</td><td>5.41%</td><td>9.18%</td><td>19/23/1</td></tr>
+<tr><td>V10 동일 요금 계획 유지 / V5 유효 계획 유지</td><td>38 / 114</td><td>0.57%</td><td>1.01%</td><td>13/22/3</td></tr>
+<tr><td>독립 native HiGHS / V7 비용 다듬기</td><td>42 / 126</td><td>5.45%</td><td>9.18%</td><td>19/22/1</td></tr>
+</tbody></table>
+<div class="note">비교별 분모가 다릅니다. 구간이 0을 포함하면 안정적인 비용 우위를 주장하지 않습니다. 모든 악화 ID와 조건부 구간은 보고서에 보존합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 09 / 18</div></section>
+<section class="slide" id="slide-10"><div class="kicker">10 / PORTPLAN V10</div>
+<h1>스트레스 · 새 주문 시드
+조건부 비용보다 전체 완주를 먼저 봅니다.</h1><p>완주는 물리 행동과 최종 검사를 부모 기한 내 수락한 경우입니다. 미확보 이력과 비용은 null이며 물리 불가능이나 0원으로 바꾸지 않습니다.</p>
+<div class="chart">
+<div class="row"><span>V5 유효 계획 유지</span><div class="track"><div class="fill" style="width:37.5000%"></div></div><span>81/216 · 3/3 27 · 미확보 0</span></div>
+<div class="row"><span>V7 비용 다듬기</span><div class="track"><div class="fill" style="width:49.5370%"></div></div><span>107/216 · 3/3 35 · 미확보 0</span></div>
+<div class="row"><span>V9 적시 후보 전달</span><div class="track"><div class="fill" style="width:50.0000%"></div></div><span>108/216 · 3/3 36 · 미확보 0</span></div>
+<div class="row"><span>독립 native HiGHS</span><div class="track"><div class="fill" style="width:55.5556%"></div></div><span>120/216 · 3/3 40 · 미확보 0</span></div>
+<div class="row"><span>V10 동일 요금 계획 유지</span><div class="track"><div class="fill" style="width:61.1111%"></div></div><span>132/216 · 3/3 44 · 미확보 0</span></div>
+</div>
+<div class="note">episode 완주 수, 세 반복 모두 완주한 시나리오, 이력 미확보를 분리합니다. 조건부 Pareto가 전체 완주 손실을 덮지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 10 / 18</div></section>
+<section class="slide" id="slide-11"><div class="kicker">11 / PORTPLAN V10</div>
+<h1>스트레스 · 새 주문 시드
+같은 공동 완주 반복의 요금만 비교합니다.</h1><p>양수 절감은 기준 − 후보입니다. 시나리오 내 일치하는 공동 완주 반복을 평균한 뒤 시나리오를 동일 가중합니다.</p>
+<table><thead><tr><th>후보 / 기준</th><th>시나리오 / 쌍</th><th>총요금 절감</th><th>추가요금 절감</th><th>낮음/동일/높음</th></tr></thead><tbody>
+<tr><td>V10 동일 요금 계획 유지 / 독립 native HiGHS</td><td>39 / 117</td><td>-0.16%</td><td>-0.28%</td><td>3/28/8</td></tr>
+<tr><td>V10 동일 요금 계획 유지 / V9 적시 후보 전달</td><td>32 / 96</td><td>6.59%</td><td>11.19%</td><td>19/11/2</td></tr>
+<tr><td>V10 동일 요금 계획 유지 / V7 비용 다듬기</td><td>32 / 95</td><td>6.41%</td><td>10.88%</td><td>17/13/2</td></tr>
+<tr><td>V10 동일 요금 계획 유지 / V5 유효 계획 유지</td><td>26 / 78</td><td>-0.07%</td><td>-0.11%</td><td>7/14/5</td></tr>
+<tr><td>독립 native HiGHS / V7 비용 다듬기</td><td>29 / 86</td><td>5.26%</td><td>8.85%</td><td>13/15/1</td></tr>
+</tbody></table>
+<div class="note">비교별 분모가 다릅니다. 구간이 0을 포함하면 안정적인 비용 우위를 주장하지 않습니다. 모든 악화 ID와 조건부 구간은 보고서에 보존합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 11 / 18</div></section>
+<section class="slide" id="slide-12"><div class="kicker">12 / PORTPLAN V10</div>
+<h1>완주 손실·최악 비용 악화를
+모든 비교에서 보존합니다.</h1><p>완주 얻음/잃음은 전체 일치 반복의 episode 기준입니다. 최악 비용 증가는 비교 가능한 시나리오 평균 기준입니다.</p>
+<table><thead><tr><th>패널</th><th>비교</th><th>비용 악화 시나리오</th><th>최악 증가 ₩</th><th>완주 얻음/잃음</th></tr></thead><tbody>
+<tr><td>same-distribution</td><td>v10VsHiGHS</td><td>6</td><td>30,000</td><td>3 / 0</td></tr>
+<tr><td>same-distribution</td><td>v10VsV9</td><td>1</td><td>21,067</td><td>26 / 15</td></tr>
+<tr><td>same-distribution</td><td>v10VsV7</td><td>1</td><td>21,067</td><td>27 / 15</td></tr>
+<tr><td>same-distribution</td><td>v10VsV5</td><td>3</td><td>33,200</td><td>42 / 8</td></tr>
+<tr><td>same-distribution</td><td>highsVsV7</td><td>1</td><td>2,867</td><td>27 / 18</td></tr>
+<tr><td>stress</td><td>v10VsHiGHS</td><td>8</td><td>392,150</td><td>15 / 3</td></tr>
+<tr><td>stress</td><td>v10VsV9</td><td>2</td><td>18,200</td><td>36 / 12</td></tr>
+<tr><td>stress</td><td>v10VsV7</td><td>2</td><td>18,200</td><td>37 / 12</td></tr>
+<tr><td>stress</td><td>v10VsV5</td><td>5</td><td>231,550</td><td>54 / 3</td></tr>
+<tr><td>stress</td><td>highsVsV7</td><td>1</td><td>9,100</td><td>34 / 21</td></tr>
+</tbody></table>
+<div class="note">어느 이전 기준에든 완주 손실이 있으면 기본값 관측 자격을 얻지 못합니다. 모든 총/추가 요금 악화·완주 손실 ID를 보고서에 남깁니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 12 / 18</div></section>
+<section class="slide" id="slide-13"><div class="kicker">13 / PORTPLAN V10</div>
+<h1>변경 수는 같은 공동 완주 집합에서
+별도 단위로 비교합니다.</h1><p>변경 1회는 아직 실행하지 않은 반출·적출 시작·반납 날짜 하나의 수정입니다. 비용과 합친 점수나 임의 원화 가중치를 만들지 않습니다.</p>
+<table><thead><tr><th>패널</th><th>비교</th><th>공동 완주 반복</th><th>기준 변경 합</th><th>후보 변경 합</th></tr></thead><tbody>
+<tr><td>same-distribution</td><td>v10VsHiGHS</td><td>153</td><td>53,667</td><td>12,117</td></tr>
+<tr><td>same-distribution</td><td>v10VsV9</td><td>130</td><td>6,033</td><td>9,709</td></tr>
+<tr><td>same-distribution</td><td>v10VsV7</td><td>129</td><td>5,778</td><td>9,489</td></tr>
+<tr><td>same-distribution</td><td>v10VsV5</td><td>114</td><td>3,351</td><td>7,755</td></tr>
+<tr><td>same-distribution</td><td>highsVsV7</td><td>126</td><td>5,589</td><td>40,758</td></tr>
+<tr><td>stress</td><td>v10VsHiGHS</td><td>117</td><td>45,972</td><td>17,625</td></tr>
+<tr><td>stress</td><td>v10VsV9</td><td>96</td><td>10,510</td><td>14,157</td></tr>
+<tr><td>stress</td><td>v10VsV7</td><td>95</td><td>10,058</td><td>14,094</td></tr>
+<tr><td>stress</td><td>v10VsV5</td><td>78</td><td>4,854</td><td>10,002</td></tr>
+<tr><td>stress</td><td>highsVsV7</td><td>86</td><td>7,274</td><td>31,677</td></tr>
+</tbody></table>
+<div class="note">변경 수의 미확보 값은 0이 아닙니다. native 안정성 주장은 같은 native 공동 완주 쌍에서 엄격히 적은 변경과 비용 구간 조건을 함께 요구합니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 13 / 18</div></section>
+<section class="slide" id="slide-14"><div class="kicker">14 / PORTPLAN V10</div>
+<h1>다섯 방법이 모두 완주한 집합에서
+요금·변경의 Pareto를 따로 봅니다.</h1><p>다섯 방법의 동일 반복이 모두 완주한 부분집합만 사용합니다. 시나리오별 공동 반복을 평균한 뒤 시나리오를 동일 가중합니다.</p>
+<table><thead><tr><th>패널</th><th>정책</th><th>시나리오/반복</th><th>총요금 평균합 ₩</th><th>추가요금 평균합 ₩</th><th>변경 평균합</th></tr></thead><tbody>
+<tr><td>same-distribution</td><td>V5 유효 계획 유지</td><td>36 / 108</td><td>150,747,750</td><td>87,094,400</td><td>940</td></tr>
+<tr><td>same-distribution</td><td>V7 비용 다듬기</td><td>36 / 108</td><td>156,822,983</td><td>93,169,633</td><td>1,035</td></tr>
+<tr><td>same-distribution</td><td>V9 적시 후보 전달</td><td>36 / 108</td><td>156,749,683</td><td>93,096,333</td><td>1,106</td></tr>
+<tr><td>same-distribution</td><td>독립 native HiGHS</td><td>36 / 108</td><td>150,204,450</td><td>86,551,100</td><td>10,751</td></tr>
+<tr><td>same-distribution</td><td>V10 동일 요금 계획 유지</td><td>36 / 108</td><td>150,289,050</td><td>86,635,700</td><td>2,311</td></tr>
+<tr><td>stress</td><td>V5 유효 계획 유지</td><td>25 / 74</td><td>153,615,000</td><td>91,410,900</td><td>1,326</td></tr>
+<tr><td>stress</td><td>V7 비용 다듬기</td><td>25 / 74</td><td>159,157,533</td><td>96,953,433</td><td>1,493</td></tr>
+<tr><td>stress</td><td>V9 적시 후보 전달</td><td>25 / 74</td><td>158,948,233</td><td>96,744,133</td><td>1,584</td></tr>
+<tr><td>stress</td><td>독립 native HiGHS</td><td>25 / 74</td><td>153,112,500</td><td>90,908,400</td><td>8,785</td></tr>
+<tr><td>stress</td><td>V10 동일 요금 계획 유지</td><td>25 / 74</td><td>153,492,750</td><td>91,288,650</td><td>3,083</td></tr>
+</tbody></table>
+<div class="note">이 선택된 집합의 요금과 변경은 별도 축입니다. 우위는 양쪽 비악화와 한쪽 엄격 개선일 때만이며, 전체 완주 손실·선택 편향은 남습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 14 / 18</div></section>
+<section class="slide" id="slide-15"><div class="kicker">15 / PORTPLAN V10</div>
+<h1>원 날짜·요금·선택 근거와
+통계를 독립 검산합니다.</h1><p>Python이 2,160개 episode를 확인했습니다. V10 선택 호출 4,236개, 동률 유지 2,961개, 엄격 교체 0개를 원 날짜에서 재구성합니다.</p>
+<table><thead><tr><th>검산</th><th>경계</th></tr></thead><tbody>
+<tr><td>cache / proposal / selected 원 날짜</td><td>현재 요율·물리 자원·실행 잠금 재계산</td></tr>
+<tr><td>동률 유지 / 엄격 교체</td><td>완전 proof와 기록된 기한 일관성</td></tr>
+<tr><td>bootstrap / 공동 Pareto / 관측 문턱</td><td>별도 Python 통계 검산; 같은 index SHA</td></tr>
+<tr><td>현장·전역 최적·외부 시계 인증</td><td>확인하지 않음</td></tr>
+</tbody></table>
+<div class="note">조건부 비용 구간은 공동 완주 선택 편향을 제거하지 않습니다. 내부 독립 검산은 제3자 인증이나 운영 보장이 아닙니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 15 / 18</div></section>
+<section class="slide" id="slide-16"><div class="kicker">16 / PORTPLAN V10</div>
+<h1>실제 기능과 연구 기준을
+같은 성과로 합치지 않습니다.</h1><p>웹은 합성 주문·용량 사건의 날짜별 관측·잠금·실패·내보내기를 제공합니다. 명시적 가격·권한의 자원 메뉴는 별도 현재 관측 복구 도구입니다.</p>
+<div class="flow"><div>합성 웹 시뮬레이션</div><div>native 연구 증거</div><div>공개 출처·독립 검산</div></div>
+<div class="note">작은 교육 예제는 공식 144개 입력이나 실제 현장 성과가 아닙니다. 자원 제안은 구매·배차가 아니며 V10 자체가 전역 최소 변경을 보장하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 16 / 18</div></section>
+<section class="slide" id="slide-17"><div class="kicker">17 / PORTPLAN V10</div>
+<h1>공개 자료로 개발을 계속하고
+남은 검증은 범위별로 기록합니다.</h1><p>공개 출처·공개 요율·재현 가능한 실험이 기본 개발 경로입니다. 기업 자료·연락처·현장 시험은 선택 확장이며 이 경로의 선행 조건이 아닙니다.</p>
+<table><thead><tr><th>검증 기록</th><th>현재 상태</th></tr></thead><tbody>
+<tr><td>알고리즘 연구</td><td>완결 실험·두 검산; 선언된 문턱은 별도 판정</td></tr>
+<tr><td>브라우저 실제 조작</td><td>미검증 · 지원 연결 입구 없음</td></tr>
+<tr><td>현장 적합성 / 견적 / 효과</td><td>선택 확장 · 미실시; 공개 연구의 선행 조건 아님</td></tr>
+<tr><td>본인 설명 / 질의 / 재현</td><td>빈 양식 제공 · 미확인</td></tr>
+<tr><td>등록 / 당해 AI 규정 / 서약</td><td>명확히 확인되지 않음; 자료 제출 11/6 18:00 KST 해석</td></tr>
+</tbody></table>
+<div class="note">공개 등록은 정원 소진 시 종료하며 사용자의 자리·자격은 미확인입니다. 당해 AI 규정과 본인 이해를 대신 인증하지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 17 / 18</div></section>
+<section class="slide" id="slide-18"><div class="kicker">18 / PORTPLAN V10</div>
+<h1>사전 문턱과 전체 원본을
+함께 보고 다음 판단을 내립니다.</h1><p>선언된 관측 문턱을 모두 충족하지 못했습니다. V10은 실험 선택 항목이며 기본값 권고 조건을 충족하지 않았습니다.</p>
+<table><thead><tr><th>패널</th><th>모든 기준 완주 손실 0</th><th>native 완주 손실 0</th><th>동일 쌍 변경 감소</th><th>두 비용 구간 조건</th></tr></thead><tbody>
+<tr><td>동일 생성분포 · 새 주문 시드</td><td>False</td><td>True</td><td>True</td><td>True</td></tr>
+<tr><td>스트레스 · 새 주문 시드</td><td>False</td><td>False</td><td>True</td><td>True</td></tr>
+</tbody></table>
+<div class="note">관측 문턱 통과도 운영 기본값 보장이 아닙니다. 전체 입력·모든 반복·실패·proof·고정 source·두 검산을 SHA로 전달하며 최초 결과를 덮어쓰지 않습니다.</div>
+<div class="footer">AI 작성 준비 자료 · 본인 검토·현장 검증 미확인 / 18 / 18</div></section>
+</body></html>

@@ -1,0 +1,856 @@
+{
+  "schemaVersion": "portplan-readonly-review-v5",
+  "valid": true,
+  "readOnly": true,
+  "solverRuns": 0,
+  "importsMainImplementation": false,
+  "fixture": false,
+  "scope": "Internal second implementation of declared daily fees, resource execution, causal information, frozen history and ledger counts; synthetic evidence, not third-party certification or competition ranking proof",
+  "protocolHash": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+  "inputHashes": {
+    "data/protocol-v5.json": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+    "data/benchmark-v5.json": "d04e704749b8b93449aaa6ce8270959a52c4d9eefdb21926e37c7ff694ee754e",
+    "data/rolling-v5.json": "482f6f8df7f0d46cf7d8b0356961c1aaf787f5e9f1566db7e18ce7c1afa23592"
+  },
+  "reviewImplementationSHA256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+  "sourceHashes": {
+    "static": [
+      {
+        "path": "scripts/benchmark-v5.mjs",
+        "experimentSHA256": "deba4bbafc91e648b52b973e344139f3a7055cd8a93b5000b452e50ad959e450",
+        "snapshotMatches": true,
+        "currentSHA256": "deba4bbafc91e648b52b973e344139f3a7055cd8a93b5000b452e50ad959e450",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "scripts/benchmark-v4.mjs",
+        "experimentSHA256": "b24f9828e2b9b330cd088ac67351d672cc63d6f2e60ac3909e0bbafcc7c6b88e",
+        "snapshotMatches": true,
+        "currentSHA256": "b24f9828e2b9b330cd088ac67351d672cc63d6f2e60ac3909e0bbafcc7c6b88e",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "scripts/benchmark-v2.mjs",
+        "experimentSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+        "snapshotMatches": true,
+        "currentSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/fast-constructor-v5.js",
+        "experimentSHA256": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f",
+        "snapshotMatches": true,
+        "currentSHA256": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/event-search-v4.js",
+        "experimentSHA256": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b",
+        "snapshotMatches": true,
+        "currentSHA256": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/engine.js",
+        "experimentSHA256": "9f1938b893cc6b524f8cb52eed3984958c6de30e38918bb092b6e82ed7ffeaca",
+        "snapshotMatches": true,
+        "currentSHA256": "07d9271bc47071a97884c9a4dac52f30a14aa56615ea2a5c66e6f61d12b9218d",
+        "currentMatchesFirstRun": false
+      },
+      {
+        "path": "src/solver-glpk.js",
+        "experimentSHA256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+        "snapshotMatches": true,
+        "currentSHA256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/solver-presolver.js",
+        "experimentSHA256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+        "snapshotMatches": true,
+        "currentSHA256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/strong-baseline.js",
+        "experimentSHA256": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac",
+        "snapshotMatches": true,
+        "currentSHA256": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/execution-constraints.js",
+        "experimentSHA256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+        "snapshotMatches": true,
+        "currentSHA256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "data/protocol-v2.json",
+        "experimentSHA256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+        "snapshotMatches": true,
+        "currentSHA256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "data/protocol-v4.json",
+        "experimentSHA256": "cfda2b5cdf2bd5806a9fdbc0b380eea7e03cccfe04e51e01528365d0230acfc1",
+        "snapshotMatches": true,
+        "currentSHA256": "cfda2b5cdf2bd5806a9fdbc0b380eea7e03cccfe04e51e01528365d0230acfc1",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "data/protocol-v5.json",
+        "experimentSHA256": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+        "snapshotMatches": true,
+        "currentSHA256": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "package.json",
+        "experimentSHA256": "ab4d5e4b47217955d3489bb190fb485b00a13352f10c6a3d40578389a5ca6687",
+        "snapshotMatches": true,
+        "currentSHA256": "377b34146d6c2acb4ffb8d15cd5b83492477d4e2e74df69ccc994ed610764ebb",
+        "currentMatchesFirstRun": false
+      },
+      {
+        "path": "package-lock.json",
+        "experimentSHA256": "0e66904b36e6432a005aebcef7eb7eb2eb41e4193938be610f8c7a749df011e6",
+        "snapshotMatches": true,
+        "currentSHA256": "c596b27fc7dc90bde2121c8f5a991bb5befc0cf927d9e5a20e33745202259747",
+        "currentMatchesFirstRun": false
+      }
+    ],
+    "rolling": [
+      {
+        "path": "scripts/rolling-benchmark-v5.mjs",
+        "experimentSHA256": "94d942070f719453b6a38482ca1fe06fdc1f33a8d4dd01ec608a81e466148aee",
+        "snapshotMatches": true,
+        "currentSHA256": "94d942070f719453b6a38482ca1fe06fdc1f33a8d4dd01ec608a81e466148aee",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/stable-planner-v5.js",
+        "experimentSHA256": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64",
+        "snapshotMatches": true,
+        "currentSHA256": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/rolling-plan.js",
+        "experimentSHA256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+        "snapshotMatches": true,
+        "currentSHA256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/engine.js",
+        "experimentSHA256": "9f1938b893cc6b524f8cb52eed3984958c6de30e38918bb092b6e82ed7ffeaca",
+        "snapshotMatches": true,
+        "currentSHA256": "07d9271bc47071a97884c9a4dac52f30a14aa56615ea2a5c66e6f61d12b9218d",
+        "currentMatchesFirstRun": false
+      },
+      {
+        "path": "src/solver-glpk.js",
+        "experimentSHA256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+        "snapshotMatches": true,
+        "currentSHA256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/solver-presolver.js",
+        "experimentSHA256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+        "snapshotMatches": true,
+        "currentSHA256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "src/execution-constraints.js",
+        "experimentSHA256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+        "snapshotMatches": true,
+        "currentSHA256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "scripts/benchmark-v2.mjs",
+        "experimentSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+        "snapshotMatches": true,
+        "currentSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "data/protocol-v2.json",
+        "experimentSHA256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+        "snapshotMatches": true,
+        "currentSHA256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "data/protocol-v5.json",
+        "experimentSHA256": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+        "snapshotMatches": true,
+        "currentSHA256": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+        "currentMatchesFirstRun": true
+      },
+      {
+        "path": "package.json",
+        "experimentSHA256": "ab4d5e4b47217955d3489bb190fb485b00a13352f10c6a3d40578389a5ca6687",
+        "snapshotMatches": true,
+        "currentSHA256": "377b34146d6c2acb4ffb8d15cd5b83492477d4e2e74df69ccc994ed610764ebb",
+        "currentMatchesFirstRun": false
+      },
+      {
+        "path": "package-lock.json",
+        "experimentSHA256": "0e66904b36e6432a005aebcef7eb7eb2eb41e4193938be610f8c7a749df011e6",
+        "snapshotMatches": true,
+        "currentSHA256": "c596b27fc7dc90bde2121c8f5a991bb5befc0cf927d9e5a20e33745202259747",
+        "currentMatchesFirstRun": false
+      }
+    ]
+  },
+  "nativeVerification": {
+    "status": "bound_and_consistent",
+    "inputSha256": "2da426c32bf0eebb501c8ed97af2c51a1f63e4b549415faf9fc750335e372639",
+    "originArchiveSha256": "d04e704749b8b93449aaa6ce8270959a52c4d9eefdb21926e37c7ff694ee754e",
+    "primaryCaseCount": 36,
+    "sameInputControlCaseCount": 6,
+    "controlsAreAdditionalIndependentSamples": false,
+    "evidenceBindings": {
+      "originArchiveSha256": "d04e704749b8b93449aaa6ce8270959a52c4d9eefdb21926e37c7ff694ee754e",
+      "protocolSha256": "7cfee99b5522236c3fd70a13b4fcbf11e2273d0c0cd3dd887465608c1f1c2109",
+      "primaryCaseIds": [
+        "v5-aged-backlog-balanced-n16-r1",
+        "v5-aged-backlog-balanced-n16-r2",
+        "v5-aged-backlog-balanced-n50-r1",
+        "v5-aged-backlog-balanced-n50-r2",
+        "v5-aged-backlog-balanced-n100-r1",
+        "v5-aged-backlog-balanced-n100-r2",
+        "v5-aged-backlog-tight-n16-r1",
+        "v5-aged-backlog-tight-n16-r2",
+        "v5-aged-backlog-tight-n50-r1",
+        "v5-aged-backlog-tight-n50-r2",
+        "v5-aged-backlog-tight-n100-r1",
+        "v5-aged-backlog-tight-n100-r2",
+        "v5-new-arrivals-balanced-n16-r1",
+        "v5-new-arrivals-balanced-n16-r2",
+        "v5-new-arrivals-balanced-n50-r1",
+        "v5-new-arrivals-balanced-n50-r2",
+        "v5-new-arrivals-balanced-n100-r1",
+        "v5-new-arrivals-balanced-n100-r2",
+        "v5-new-arrivals-tight-n16-r1",
+        "v5-new-arrivals-tight-n16-r2",
+        "v5-new-arrivals-tight-n50-r1",
+        "v5-new-arrivals-tight-n50-r2",
+        "v5-new-arrivals-tight-n100-r1",
+        "v5-new-arrivals-tight-n100-r2",
+        "v5-batch-release-balanced-n16-r1",
+        "v5-batch-release-balanced-n16-r2",
+        "v5-batch-release-balanced-n50-r1",
+        "v5-batch-release-balanced-n50-r2",
+        "v5-batch-release-balanced-n100-r1",
+        "v5-batch-release-balanced-n100-r2",
+        "v5-batch-release-tight-n16-r1",
+        "v5-batch-release-tight-n16-r2",
+        "v5-batch-release-tight-n50-r1",
+        "v5-batch-release-tight-n50-r2",
+        "v5-batch-release-tight-n100-r1",
+        "v5-batch-release-tight-n100-r2"
+      ],
+      "scaleControlCaseIds": [
+        "v5-aged-backlog-balanced-n100-r1--control3000",
+        "v5-aged-backlog-tight-n100-r1--control3000",
+        "v5-new-arrivals-balanced-n100-r1--control3000",
+        "v5-new-arrivals-tight-n100-r1--control3000",
+        "v5-batch-release-balanced-n100-r1--control3000",
+        "v5-batch-release-tight-n100-r1--control3000"
+      ],
+      "independentPrimaryScenarioCount": 36,
+      "repeatedInputBudgetControlCount": 6,
+      "implementationSha256": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78",
+      "wrapperSha256": "45a3eb620cb6fe246a8bf2d2602404e8ed2e56106409cfff606f00563798bc60",
+      "scope": "36 primary instances plus 6 repeated-input budget controls; not 42 independent scenarios"
+    },
+    "byGroup": {
+      "primary": {
+        "caseCount": 36,
+        "certificateStatuses": {
+          "proven_optimal": 31,
+          "feasible_with_bound": 4,
+          "proven_infeasible": 1
+        }
+      },
+      "sameInputScaleControls": {
+        "caseCount": 6,
+        "certificateStatuses": {
+          "proven_optimal": 5,
+          "feasible_with_bound": 1
+        }
+      }
+    },
+    "summary": {
+      "inputCaseCount": 42,
+      "caseCount": 42,
+      "omittedCaseCount": 0,
+      "passedCaseCount": 42,
+      "failedCaseCount": 0,
+      "provenOptimalCount": 36,
+      "solverOptimalWithNumericToleranceCount": 0,
+      "provenInfeasibleCount": 1,
+      "noCertificateCount": 0,
+      "auditedCandidateCount": 94,
+      "wallSeconds": 29.22448252700042
+    },
+    "sha256": "70744bf584ba3a6709a24b02b90428f4f55217eb07adf9dcfc7fe5c88e6021fb",
+    "flattenedInputSha256": "2da426c32bf0eebb501c8ed97af2c51a1f63e4b549415faf9fc750335e372639"
+  },
+  "rollingAudits": [
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n12-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 10,
+          "solverCalls": 10,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 34,
+          "planningWallMs": 120.16316499999998
+        },
+        "stableRetain": {
+          "timelineEntries": 10,
+          "solverCalls": 2,
+          "reusedPlans": 8,
+          "replannedDueToInvalid": 1,
+          "revisions": 14,
+          "planningWallMs": 37.02117800000008
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n12-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 10,
+          "solverCalls": 3,
+          "reusedPlans": 7,
+          "replannedDueToInvalid": 2,
+          "revisions": 5,
+          "planningWallMs": 22.87100599999991
+        },
+        "dailyReopt": {
+          "timelineEntries": 10,
+          "solverCalls": 10,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 31,
+          "planningWallMs": 52.63800299999997
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n24-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 9,
+          "solverCalls": 9,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 50,
+          "planningWallMs": 87.98552799999999
+        },
+        "stableRetain": {
+          "timelineEntries": 9,
+          "solverCalls": 2,
+          "reusedPlans": 7,
+          "replannedDueToInvalid": 1,
+          "revisions": 2,
+          "planningWallMs": 29.00428100000005
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-balanced-n24-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 9,
+          "solverCalls": 2,
+          "reusedPlans": 7,
+          "replannedDueToInvalid": 1,
+          "revisions": 7,
+          "planningWallMs": 30.171899000000053
+        },
+        "dailyReopt": {
+          "timelineEntries": 9,
+          "solverCalls": 9,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 46,
+          "planningWallMs": 82.39022799999987
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n12-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 1,
+          "solverCalls": 1,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 5.9182780000001
+        },
+        "stableRetain": {
+          "timelineEntries": 1,
+          "solverCalls": 1,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 6.93536400000005
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n12-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 6,
+          "solverCalls": 3,
+          "reusedPlans": 3,
+          "replannedDueToInvalid": 2,
+          "revisions": 6,
+          "planningWallMs": 217.049713
+        },
+        "dailyReopt": {
+          "timelineEntries": 6,
+          "solverCalls": 6,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 52,
+          "planningWallMs": 829.7245880000002
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n24-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 1,
+          "solverCalls": 1,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 13.846831000000066
+        },
+        "stableRetain": {
+          "timelineEntries": 1,
+          "solverCalls": 1,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 13.960269000000153
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-aged-backlog-tight-n24-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 4,
+          "solverCalls": 2,
+          "reusedPlans": 2,
+          "replannedDueToInvalid": 1,
+          "revisions": 0,
+          "planningWallMs": 33.7758230000004
+        },
+        "dailyReopt": {
+          "timelineEntries": 4,
+          "solverCalls": 4,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 37,
+          "planningWallMs": 83.33624099999997
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n12-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 4,
+          "planningWallMs": 43.746083
+        },
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 2,
+          "reusedPlans": 12,
+          "replannedDueToInvalid": 1,
+          "revisions": 3,
+          "planningWallMs": 13.533387999999377
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n12-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 1,
+          "reusedPlans": 13,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 13.18102500000009
+        },
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 3,
+          "planningWallMs": 37.871385000000146
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n24-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 12,
+          "planningWallMs": 78.38891299999977
+        },
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 1,
+          "reusedPlans": 13,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 18.430423000000246
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-balanced-n24-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 1,
+          "reusedPlans": 13,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 18.652841999999964
+        },
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 28,
+          "planningWallMs": 75.02696900000001
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n12-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 5,
+          "solverCalls": 5,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 9,
+          "planningWallMs": 21.854142000000138
+        },
+        "stableRetain": {
+          "timelineEntries": 5,
+          "solverCalls": 2,
+          "reusedPlans": 3,
+          "replannedDueToInvalid": 1,
+          "revisions": 0,
+          "planningWallMs": 12.104944000000614
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n12-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 2,
+          "reusedPlans": 12,
+          "replannedDueToInvalid": 1,
+          "revisions": 13,
+          "planningWallMs": 17.055380000000696
+        },
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 70,
+          "planningWallMs": 52.53228299999955
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n24-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 119,
+          "planningWallMs": 210.3115619999994
+        },
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 2,
+          "reusedPlans": 12,
+          "replannedDueToInvalid": 1,
+          "revisions": 33,
+          "planningWallMs": 201.5832349999996
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-new-arrivals-tight-n24-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 9,
+          "solverCalls": 3,
+          "reusedPlans": 6,
+          "replannedDueToInvalid": 2,
+          "revisions": 15,
+          "planningWallMs": 25.74674300000015
+        },
+        "dailyReopt": {
+          "timelineEntries": 9,
+          "solverCalls": 9,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 137,
+          "planningWallMs": 123.881437
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n12-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 8,
+          "planningWallMs": 35.07402299999967
+        },
+        "stableRetain": {
+          "timelineEntries": 13,
+          "solverCalls": 2,
+          "reusedPlans": 11,
+          "replannedDueToInvalid": 1,
+          "revisions": 3,
+          "planningWallMs": 12.283379000000878
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n12-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 3,
+          "reusedPlans": 11,
+          "replannedDueToInvalid": 2,
+          "revisions": 8,
+          "planningWallMs": 15.45659599999999
+        },
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 21,
+          "planningWallMs": 35.617065000000366
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n24-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 38,
+          "planningWallMs": 76.13210200000003
+        },
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 3,
+          "reusedPlans": 11,
+          "replannedDueToInvalid": 2,
+          "revisions": 22,
+          "planningWallMs": 34.88659800000005
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-balanced-n24-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 1,
+          "reusedPlans": 13,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 19.01562000000058
+        },
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 10,
+          "planningWallMs": 74.52489500000001
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n12-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 1,
+          "solverCalls": 1,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 4.848023999999896
+        },
+        "stableRetain": {
+          "timelineEntries": 1,
+          "solverCalls": 1,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 0,
+          "planningWallMs": 5.03902700000026
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n12-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 9,
+          "solverCalls": 3,
+          "reusedPlans": 6,
+          "replannedDueToInvalid": 2,
+          "revisions": 9,
+          "planningWallMs": 214.12527699999964
+        },
+        "dailyReopt": {
+          "timelineEntries": 9,
+          "solverCalls": 9,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 20,
+          "planningWallMs": 604.7163460000002
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n24-r1",
+      "methods": {
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 56,
+          "planningWallMs": 97.2449400000005
+        },
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 3,
+          "reusedPlans": 11,
+          "replannedDueToInvalid": 2,
+          "revisions": 19,
+          "planningWallMs": 34.084303000000546
+        }
+      }
+    },
+    {
+      "id": "v5-rolling-batch-release-tight-n24-r2",
+      "methods": {
+        "stableRetain": {
+          "timelineEntries": 14,
+          "solverCalls": 3,
+          "reusedPlans": 11,
+          "replannedDueToInvalid": 2,
+          "revisions": 35,
+          "planningWallMs": 36.45597899999848
+        },
+        "dailyReopt": {
+          "timelineEntries": 14,
+          "solverCalls": 14,
+          "reusedPlans": 0,
+          "replannedDueToInvalid": 0,
+          "revisions": 91,
+          "planningWallMs": 84.97540199999821
+        }
+      }
+    }
+  ],
+  "rollingRecomputedComparison": {
+    "baselineMethod": "dailyReopt",
+    "candidateMethod": "stableRetain",
+    "caseCount": 24,
+    "pairedCaseCount": 16,
+    "baselineIncrementalKRW": 25105050,
+    "candidateIncrementalKRW": 25108250,
+    "incrementalSavingsKRW": -3200,
+    "weightedIncrementalSavingsPct": -0.012746439461383267,
+    "baselineTotalKRW": 42928550,
+    "candidateTotalKRW": 42931750,
+    "positiveSavingsCount": 1,
+    "tiedCount": 14,
+    "negativeSavingsCount": 1,
+    "zeroBaselineCount": 5,
+    "missingBaselineCount": 8,
+    "missingCandidateCount": 8,
+    "worstLossKRW": 9100,
+    "weightedTotalSavingsPct": -0.007454246649374367,
+    "baselineRevisionsAll": 876,
+    "candidateRevisionsAll": 194,
+    "baselineSolverCallsAll": 242,
+    "candidateSolverCallsAll": 49,
+    "baselineRevisionsPaired": 621,
+    "candidateRevisionsPaired": 164,
+    "baselineSolverCallsPaired": 206,
+    "candidateSolverCallsPaired": 33
+  },
+  "summary": {
+    "primaryCases": 36,
+    "primaryMethodRecords": 108,
+    "sameInputScaleControls": 6,
+    "scaleControlMethodRecords": 18,
+    "scaleControlsAreAdditionalIndependentSamples": false,
+    "rollingCases": 24,
+    "rollingMethodRecords": 48,
+    "primaryCompleteSchedulesRepriced": 81,
+    "controlCompleteSchedulesRepriced": 13,
+    "rollingCompleteSchedulesRepriced": 32,
+    "rollingTimelineEntriesChecked": 483,
+    "timelyFinalResultsChecked": 111,
+    "timelyRetainedCheckpointsChecked": 0,
+    "feeAbsoluteTolerance": 1e-06
+  }
+}

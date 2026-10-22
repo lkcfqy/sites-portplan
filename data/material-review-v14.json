@@ -1,0 +1,45 @@
+{
+  "valid": true,
+  "schemaVersion": "portplan-v14-material-review",
+  "pdfPageCount": 18,
+  "pptxSlideCount": 18,
+  "editableTextShapes": 114,
+  "editableTables": 16,
+  "minimumEditableTableFontPt": 12.0,
+  "sameSlideSource": true,
+  "sourceTextCoverage": true,
+  "pdfAndPptBoundsValid": true,
+  "solverRuns": 0,
+  "browserInteractionCertified": false,
+  "entrantUnderstandingCertified": false,
+  "studyVersion": "v14",
+  "candidateMethod": "guardedHiGHSV13",
+  "sourceGitCommit": "d61118924f7d0f9c1e1f6a43d6725a6deec101a0",
+  "inputIndexSha256": "a0081a725e21a019c783bffe5b3c0e8aedf8f8b29903564fa04fa1ee53a2fcb9",
+  "evidenceHashes": {
+    "data/v14-release.json": "545428e33cc3502666515c2a7bfd7bf42328e5193527b8e0896a9d235f6354a2",
+    "data/v14-results.json": "18d794150d2928a53cd4661ce2b32c90bf59e18e10299e6817f8e4fd0ee84ce8",
+    "data/evidence-v14/v14-frozen-first/first-run/complete.json": "a0081a725e21a019c783bffe5b3c0e8aedf8f8b29903564fa04fa1ee53a2fcb9",
+    "data/protocol-v14.json": "7711db53e044231b018a2381b7bdc5a87319f00d3f4848f26803ed1b820bada4",
+    "data/evidence-v14/v14-frozen-first/manifest.json": "2833cf5c8ddeb1d01f4f06fba0dd045aa5e82bb6a25cd6d00799e63caddd71bd",
+    "sourceGitCommit": "d61118924f7d0f9c1e1f6a43d6725a6deec101a0",
+    "data/review-v14.json": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f",
+    "data/bootstrap-review-v14.json": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48"
+  },
+  "adverseIdentifierOccurrences": 2349,
+  "fullAdverseAppendixLanguages": [
+    "ko",
+    "zh"
+  ],
+  "outputHashes": {
+    "docs/defense-v14.ko.html": "b8493053d51181751d20bded9c7db94ca6762588a0e000f93d9c3c9dcf00dd4f",
+    "docs/defense-v14.ko.pdf": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+    "docs/defense-v14.ko.pptx": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+    "docs/submission-v14.ko.md": "9cafb88439bda86146918a7b4c32f883c69121acb8fc33e345217379b9389c57",
+    "docs/report-v14.zh.md": "a21d7421282130c5c388fc523613799f49bd9929b1a34588172ad162a243fef8",
+    "docs/defense-v14.en.md": "33ff6295ad5e2e45f20af9c14cf62b95d113b449e6e7497be9bae933867ced5e",
+    "docs/contribution-log-v14.md": "f7eda425981b335eae9f369ee3cb3a82e53bffe1890343e39a76b0f5c30bed98",
+    "docs/entrant-defense-v14.blank.md": "aa25161a4958ba38fb9903588a56e6a9980600fd1db83ed1cc33041fe6efa0d6"
+  },
+  "rootAuthorized": true
+}

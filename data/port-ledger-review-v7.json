@@ -1,0 +1,5977 @@
+{
+  "schemaVersion": "portplan-native-port-ledger-independent-sql-review-v7-1",
+  "valid": true,
+  "readOnly": true,
+  "fixture": false,
+  "solverRuns": 0,
+  "generatedAt": "2026-10-13T12:44:44.035094+00:00",
+  "inputHashes": {
+    "data/public/v6-data-sources/port-bulk-ocel-22019684/CargoPickup_IoT.sqlite": "edcb515fddc502db99a2122cf8d69b951d00269644aa46f6d550a43bb017075f",
+    "data/port-ledger-v7.json": "2e0d2f31587b2455f85388092ef3fcc7fd94e9d11644613d42eb78c6beb9362b",
+    "data/public/v6-data-sources/manifest.json": "22f9fdf51a1977c48549d6dd4d952509a9ece91fa1e1c187206d3bcb9b585a7b",
+    "scripts/audit-port-ledger-v7.py": "14d58040ca8aa603dc4d93faf89c159539609716bb4856473e85d54d8e988826",
+    "scripts/review-port-ledger-v7.py": "cabc437e1c794ec0f29f04cdfe30f92e2ea24fc4a5baa4e2958e598a4a45f163",
+    "tests/port-ledger-review-v7.test.mjs": "437bb4df38d81518a685f2cafcb24be680a9d661c29bad46db6416b7e89e5eaf"
+  },
+  "sourceSqliteSha256": "edcb515fddc502db99a2122cf8d69b951d00269644aa46f6d550a43bb017075f",
+  "reviewer": "Python stdlib SQLite; no producer import, event-ID parsing, optimizer or fee inference",
+  "associationMethod": "SQL LEAD assignment windows partitioned by typed Truck and ordered by naive assigned timestamp/rowid; UNION ALL typed table/rowid occurrences; DISTINCT event-object membership",
+  "sqliteVersion": "3.53.1",
+  "errors": [],
+  "recomputedSummary": {
+    "globalEventRows": 6989,
+    "distinctGlobalEventIds": 6950,
+    "duplicateGlobalEventIdExtraRows": 39,
+    "nativeTypedOccurrences": 6989,
+    "sourceEventObjectRows": 7258,
+    "duplicateEventObjectExtraRows": 39,
+    "conflictingTypedTimestampIds": 39,
+    "naiveRawJoinRows": 7492,
+    "joinRowsWithUniqueMembership": 7336,
+    "invalidTimestampOccurrences": 0,
+    "unlinkedEventOccurrences": 0,
+    "multiTruckEventOccurrences": 0,
+    "truckObjects": 50,
+    "assignmentVisits": 489,
+    "visitCategories": {
+      "complete_ordered_observation": 454,
+      "incomplete_observation": 35
+    },
+    "coreAndExceptionOccurrences": 1892,
+    "associatedCoreAndExceptionOccurrences": 1892,
+    "unmatchedCoreAndExceptionOccurrences": 0,
+    "solverRuns": 0,
+    "feeEstimates": 0,
+    "syntheticBusinessFieldsAdded": 0
+  },
+  "recomputedClockSpans": {
+    "gateSpanSeconds": {
+      "count": 454,
+      "minimum": 1654.0,
+      "median": 4231.0,
+      "mean": 4915.997797356828,
+      "p95": 9822.0,
+      "maximum": 12247.0
+    },
+    "loadToWeighSpanSeconds": {
+      "count": 454,
+      "minimum": 371.0,
+      "median": 2108.0,
+      "mean": 2855.5594713656387,
+      "p95": 7668.0,
+      "maximum": 10092.0
+    }
+  },
+  "recomputedIntegrityChecks": {
+    "typedAndGlobalEventMultiplicityMatch": true,
+    "danglingEventObjectReferences": 0,
+    "allCoreOccurrencesAccountedFor": true
+  },
+  "recomputedTypeCounts": {
+    "LodgePickupPlan": 269,
+    "AssessPickupPlan": 269,
+    "ApprovePickupPlan": 269,
+    "RejectPickupPlan": 0,
+    "AssignTruck": 489,
+    "Enterport": 489,
+    "RegisterTruckArrival": 489,
+    "WeighEmptyTruck": 489,
+    "CheckEmptyTruckWeightAbnormality": 489,
+    "FailtoWeigh": 3,
+    "ArriveatSilo": 486,
+    "DetermineContinuanceofPickup": 486,
+    "FailtoLoad": 32,
+    "LoadTruck": 454,
+    "WeighLoadedTruck": 454,
+    "EvaluateTruckExit": 454,
+    "InputTallySheet": 454,
+    "IssueWeighingTicket": 454,
+    "DetainAtPort": 6,
+    "ExitPort": 454
+  },
+  "reviewCounts": {
+    "assignmentVisitsCompared": 489,
+    "allTypedOccurrencesCounted": 6989,
+    "coreAndExceptionOccurrencesCompared": 1892,
+    "unmatchedOccurrencesCompared": 0,
+    "invalidTimestampOccurrencesCompared": 0,
+    "sourceDatabaseChanges": 0
+  },
+  "visitReviews": [
+    {
+      "visitId": "assignment/292",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/587",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/737",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/898",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1132",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1338",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1555",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1731",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1924",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2109",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/245",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/457",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/661",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/861",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1061",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1268",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1468",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1666",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1863",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2066",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/241",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/463",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/690",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/872",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1098",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1323",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1518",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1722",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1911",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2091",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/395",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/617",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/825",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1035",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1229",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1443",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1650",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1848",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2040",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/180",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/392",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/613",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/839",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1032",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1230",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1426",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1629",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1831",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2025",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/285",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/565",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/770",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/955",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1154",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1391",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1580",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1751",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1958",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/258",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/489",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/709",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/914",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1085",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1276",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1489",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1673",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1901",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/294",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/508",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/775",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1001",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1194",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1401",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1596",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1801",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2003",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/141",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/271",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/536",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/733",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/904",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1121",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1336",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1513",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1756",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1942",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/265",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/558",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/697",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/890",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1097",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1286",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1514",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1703",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1893",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2101",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/266",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/484",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/696",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/942",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1118",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1298",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1501",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1683",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1907",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2147",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/398",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/623",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/823",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1026",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1227",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1430",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1631",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1834",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2022",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2137",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/299",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/527",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/681",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/866",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1070",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1267",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1474",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1676",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1874",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2068",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/242",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/465",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/688",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/870",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1063",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1261",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1461",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1665",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1862",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2061",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/397",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/642",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/845",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1033",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1247",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1448",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1643",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1847",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2042",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/247",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/486",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/666",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/921",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1158",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1332",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1553",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1771",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1960",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/300",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/525",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/718",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/909",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1144",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1337",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1583",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1781",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1961",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/267",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/521",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/728",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/882",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1079",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1278",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1484",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1685",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1935",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/239",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/483",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/668",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/891",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1150",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1350",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1592",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1791",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1984",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/248",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/535",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/693",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/975",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1176",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1377",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1563",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1758",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1938",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2136",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/286",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/495",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/794",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/967",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1149",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1354",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1577",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1776",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1964",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/237",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/513",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/685",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/895",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1112",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1299",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1497",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1686",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1871",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2067",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/181",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/402",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/630",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/847",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1054",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1250",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1449",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1654",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1855",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2046",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/273",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/481",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/673",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/869",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1065",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1262",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1462",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1661",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1861",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2060",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/283",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/542",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/714",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/963",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1133",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1297",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1512",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1698",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1886",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2089",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/272",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/478",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/743",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/910",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1082",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1273",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1465",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1664",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1865",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2083",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/253",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/473",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/689",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/876",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1096",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1287",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1473",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1671",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1878",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2073",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/189",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/396",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/618",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/819",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1015",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1220",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1417",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1619",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1818",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2019",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/246",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/459",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/671",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/864",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1093",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1274",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1477",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1693",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1894",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2138",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/399",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/637",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/844",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1039",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1237",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1436",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1640",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1840",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2035",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2148",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/270",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/490",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/713",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/972",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1146",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1353",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1547",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1726",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1916",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2150",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/122",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/238",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/491",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/726",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/884",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1087",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1303",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1492",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1682",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1891",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2087",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/243",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/494",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/711",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/930",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1179",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1378",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1582",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1793",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1992",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/275",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/472",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/665",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/907",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1081",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1301",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1510",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1690",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1900",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2097",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/262",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/479",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/672",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/903",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1080",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1284",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1487",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1692",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1932",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2126",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/401",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/616",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/820",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1017",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1214",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1416",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1615",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1814",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2009",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2164",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/295",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/569",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/716",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/961",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1130",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1320",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1519",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1708",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1892",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2084",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/250",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/458",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/682",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/936",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1151",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1356",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1562",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1770",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1963",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/244",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/464",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/669",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/871",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1075",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1309",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1499",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1746",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1965",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2122",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/252",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/548",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/715",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/945",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1103",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1288",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1521",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1749",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1946",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/249",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/528",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/683",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/915",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1117",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1306",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1490",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1706",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1895",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/393",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/646",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/838",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1034",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1234",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1427",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1625",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1824",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2015",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2131",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/394",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/619",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/817",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1014",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1213",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1412",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1618",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1816",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2008",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/278",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/496",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/677",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/875",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1071",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1334",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1524",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1711",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1898",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2086",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/260",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/476",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/779",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1005",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1203",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1409",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1606",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1795",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1990",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2169",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/190",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/400",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/620",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/826",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1025",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1226",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1438",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1637",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1838",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2029",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/142",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/263",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/482",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/734",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/916",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1173",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1381",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1566",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1752",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1936",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/121",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/282",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/519",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/712",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/887",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1078",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1280",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1476",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1691",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1881",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2070",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/259",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/509",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/729",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/912",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1084",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1348",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1560",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1783",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1956",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2149",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2177",
+      "valid": true,
+      "category": "incomplete_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 0,
+        "WeighLoadedTruck": 0,
+        "ExitPort": 0
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/2181",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/240",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/523",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/792",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/992",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1185",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1379",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 1
+    },
+    {
+      "visitId": "assignment/1574",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1754",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/1969",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    },
+    {
+      "visitId": "assignment/2173",
+      "valid": true,
+      "category": "complete_ordered_observation",
+      "stageCounts": {
+        "Enterport": 1,
+        "LoadTruck": 1,
+        "WeighLoadedTruck": 1,
+        "ExitPort": 1
+      },
+      "exceptionCount": 0
+    }
+  ],
+  "limitations": [
+    "Retrospective full-history assignment windows are not an online planner information set.",
+    "Original timestamps are naive; timezone and cross-system clock calibration remain unknown.",
+    "Spans are differences of recorded clocks, not verified physical loading start/end service duration.",
+    "Missing observations are not automatically physical failure, unfinished orders or recoverable schedules.",
+    "Publisher-described field collection is not independently authenticated; no container lifecycle, resource capacity or fee fields inferred."
+  ]
+}

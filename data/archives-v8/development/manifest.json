@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "portplan-v8-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-15T08:23:42.859054+00:00",
+  "archiveFormat": "tar.gz",
+  "archiveRoot": "mechanism-v8-first",
+  "chunkSizeLimit": 3500000,
+  "fileCount": 28,
+  "uncompressedFileBytes": 22811171,
+  "archiveBytes": 1330824,
+  "archiveSha256": "2bb59691837a86adf700d08af4bd8584a2925ff6b7b092ed6fc140650943ee9c",
+  "frozenManifestSha256": "01571193568db7e11ef7e32aa844f9ca2679b3b625ff99bc1cf3bce83f2737cc",
+  "entrypoint": "results.json",
+  "entrypointSha256": "537140a831fb5807bb703b2757b9203c328d3062a6e486006c3780e44c0eaf23",
+  "formalIndexSha256": null,
+  "protocolHash": "01571193568db7e11ef7e32aa844f9ca2679b3b625ff99bc1cf3bce83f2737cc",
+  "scenarioCount": 28,
+  "episodeCount": 392,
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 1330824,
+      "sha256": "2bb59691837a86adf700d08af4bd8584a2925ff6b7b092ed6fc140650943ee9c"
+    }
+  ]
+}

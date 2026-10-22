@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "portplan-v9-release-status",
+  "researchVersion": "9.0.0",
+  "status": "research_iteration_complete",
+  "baseCommit": "4698cea419c52ff81af0990f23e6119c4895da90",
+  "formalExperimentComplete": true,
+  "independentReviewComplete": true,
+  "independentBootstrapReviewComplete": true,
+  "fullChampionshipPlanComplete": false,
+  "browserInteractionValidation": "not_performed",
+  "externalBusinessValidation": "not_performed",
+  "entrantDefenseValidation": "not_performed",
+  "minimumPricedResourceIntervention": "implemented_current_snapshot_finite_menu",
+  "notes": "首次144场景×3次×5方法正式实验与物理/统计独立复核完成。V9完成150/216、84/216；原V8同批96/216、57/216；V7为150/216、85/216。及时交付改善成立，但费用无稳定优势，压力仍有退步，保留为实验选项。明示菜单资源补救已实现并通过四条合成教学记录独立枚举；真实企业、Browser交互与本人答辩验收未完成，完整冲冠计划尚未完成。",
+  "formalIndexSha256": "83d165a965e421af0ebc0b399f426eab3ae48eddc4a564374a6074f9edad7204",
+  "adaptiveV9RecommendedAsDefault": false,
+  "resourceTeachingIndependentEnumerationComplete": true,
+  "materials": {
+    "koreanSlides": 18,
+    "editablePresentation": true,
+    "artifactReviewComplete": true
+  }
+}

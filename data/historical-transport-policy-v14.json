@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "portplan-historical-transport-policy-v14",
+  "scope": "Current download ZIPs retain source code, JSON, manifests, public inputs and all other retained evidence. Exactly the listed V8/V9 historical binary chunks remain in the complete authorized Git source and historical Sites version; they are not in current ZIPs. ZIPs contain no Git history.",
+  "immutablePolicy": true,
+  "omittedFiles": [
+    {
+      "path": "data/archives-v8/development/part-0001.bin",
+      "bytes": 1330824,
+      "sha256": "2bb59691837a86adf700d08af4bd8584a2925ff6b7b092ed6fc140650943ee9c"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0001.bin",
+      "bytes": 3500000,
+      "sha256": "654e5df0e18adfbfec432a164c6b5ef4f01998aa461114acb8581e0e7215117f"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0002.bin",
+      "bytes": 3500000,
+      "sha256": "987c39dd2957bc2c2092bd144aa56b35ac5fcd9d059a2e56e0e7553a8f092680"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0003.bin",
+      "bytes": 3500000,
+      "sha256": "5bf607e604b22fb9197b3ee3cdcdc66b206c2c0106e6693f065df724dbf132d7"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0004.bin",
+      "bytes": 3500000,
+      "sha256": "4032cd1dc0c830cae3b0c6deb90d3280c9f55bc714075997de56d9416ab43c00"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0005.bin",
+      "bytes": 3500000,
+      "sha256": "776767c6d23ef775e4f1f4f1c0c785b6f0e16c234118e06a29fe98c6d020eb54"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0006.bin",
+      "bytes": 3500000,
+      "sha256": "12d2699322cb9c6cca47da8fcdf13add7c579475e5bc6bac29e1030a71b7cf1f"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0007.bin",
+      "bytes": 3500000,
+      "sha256": "d08e80311b376a12b9d0508f766f5db31b76c03304a960655be0adcb9df1c72d"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0008.bin",
+      "bytes": 3500000,
+      "sha256": "122d3e1f23dd2430bf5c1533e23a9f65d894d7af7b087321b143de7f545c5aeb"
+    },
+    {
+      "path": "data/archives-v8/formal/part-0009.bin",
+      "bytes": 3011162,
+      "sha256": "b07099e65a030b1591ee7a733f29c9e6e4acbb4a34722d95cc95c0aa1f869483"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0001.bin",
+      "bytes": 3500000,
+      "sha256": "8a7ee1def5cf6c19f62510137495105a77d5b647e6ad687e0901ec6e4da32fe0"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0002.bin",
+      "bytes": 3500000,
+      "sha256": "6fa332b84ad023b34c0bbede172e74ad73e48529944ec846a8c907d5235d44e2"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0003.bin",
+      "bytes": 3500000,
+      "sha256": "9f90f211568e823653e2280fe6cac0ea7f38871893eef9d9cd833f0048e6d274"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0004.bin",
+      "bytes": 3500000,
+      "sha256": "81ef09adf499badc17a21805bb14c743345c9c8ad3d23a3dd9687d66b103e800"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0005.bin",
+      "bytes": 3500000,
+      "sha256": "bd98e320b684b1e5fb86bbbbef1f8e068ea935c5b6eb0787ae67d38d5632beee"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0006.bin",
+      "bytes": 3500000,
+      "sha256": "2115dc907fd89797d674ac0c62a27fef1266000c93fcdd2497f09a9ce13192f1"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0007.bin",
+      "bytes": 3500000,
+      "sha256": "cf00c7269c4f658d65a50ce791441f25c7992913b08d45c79d95fdc2d276010b"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0008.bin",
+      "bytes": 3500000,
+      "sha256": "b8ba7642654b58a25b3b2fb7aa34c5a3dbd9e0d49506c13ec9a445a6f4bb0077"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0009.bin",
+      "bytes": 3500000,
+      "sha256": "a1f26f0315e7bfb521dc05ff66260e0b397d4c741c69841047f6d83cdc076368"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0010.bin",
+      "bytes": 3500000,
+      "sha256": "4b3a07ea6793068aae5dfcab8d093a492997d8994af96d88ce7fe3af971c65e5"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0011.bin",
+      "bytes": 3500000,
+      "sha256": "df7bbb62d07cb9bb8c8311ec4fcc0f27ab237db9898ff8c04e502944ab83cc32"
+    },
+    {
+      "path": "data/archives-v9/formal/part-0012.bin",
+      "bytes": 2671212,
+      "sha256": "85acfca56aeb2613b688f5620ecf3c268ecf51849ff50ea5c8cd11b97454e834"
+    }
+  ],
+  "omittedFileCount": 22,
+  "omittedFileBytes": 73513198,
+  "omittedRecordsSha256": "371bbb3e4f5ed501bb3382533c15b0a52d94c6d87a7c6c36b50eef4cb58fd805",
+  "primaryRecovery": {
+    "kind": "authorized-private-sites-source-git",
+    "projectId": "YOUR_SITES_PROJECT_ID",
+    "commit": "f99d252180d87ef616278ca8e14e17b496480fb4",
+    "fullSourceContainsEveryListedFile": true,
+    "requiresAuthorizedRepositoryAccess": true,
+    "currentBundleBuildRequiresGitCredentials": false
+  },
+  "secondaryRecord": {
+    "kind": "historical-owner-private-sites-saved-version",
+    "projectId": "YOUR_SITES_PROJECT_ID",
+    "versionNumber": 14,
+    "savedVersionId": "YOUR_SITES_PROJECT_ID~appgver_387ea040c75481918d2412f31941b8d7",
+    "sourceCommit": "f99d252180d87ef616278ca8e14e17b496480fb4",
+    "liveSiteUrlIsImmutableHistoricalDownload": false,
+    "scope": "Secondary retained release record; use authorized Sites version access. No direct immutable public archive URL is asserted."
+  },
+  "retainedInCurrentPackages": [
+    "all implementation source and dependency locks",
+    "all source JSON and hash manifests",
+    "public inputs and mathematical/source references within their declared licenses",
+    "V6/V7 archives required by the current build",
+    "all non-listed evidence, including V10 onward"
+  ],
+  "recoveryGuide": "/downloads/recovery-v14.zh.md",
+  "rules": [
+    "Do not delete, rewrite or change any original binary, frozen result or SHA.",
+    "At a complete-source first packaging, verify listed bytes and fixed Git commit before omitting them.",
+    "An unchanged clean current-bundle recovery can build without omitted files or Git credentials using the embedded source coverage receipt.",
+    "Any missing retained source file, unlisted omission, conflicting receipt or changed historical binary is an error.",
+    "Current download manifests describe retained packages and explicit historical omissions; they do not claim a complete historical archive or Git clone."
+  ]
+}

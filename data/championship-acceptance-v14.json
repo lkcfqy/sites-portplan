@@ -1,0 +1,374 @@
+{
+  "schemaVersion": "portplan-championship-acceptance-v14",
+  "recordedAtAsiaSeoul": "2026-10-17T14:42:17.103327+09:00",
+  "fullChampionshipPlanComplete": false,
+  "scope": "Current public-evidence-first route, separate acceptance tracks and optional empty business intake. Enterprise records, contacts, quotes, interviews and pilots are optional enhancements, not prerequisites. This file is not an interview, business approval, signature, registration or proof of entrant understanding.",
+  "developmentPolicyRef": "AGENTS.md",
+  "technicalV10": {
+    "status": "research_complete_default_gate_not_met",
+    "publishedVersionRef": null,
+    "acceptanceEvidenceRef": "data/material-review-v10.json",
+    "passed": false,
+    "researchVerificationPassed": true,
+    "defaultRecommendationEligible": false,
+    "formalIndexSha256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+    "scope": "Complete frozen experiment, physical/statistical review and research materials; observed default replacement criteria are not met. This is not field or entrant acceptance."
+  },
+  "browserInteraction": {
+    "status": "v14_completed_actual_cloud_chromium_automation",
+    "performedAtAsiaSeoul": "2026-10-17T16:22:53.034513+09:00",
+    "evidenceRef": "data/browser-acceptance-v14.json",
+    "passed": true,
+    "scope": "51 unique first Chromium cases cover V14 saved natural-D0 evidence, all 14 comparisons/adverse identifiers, mobile and historical workbench/execution/resource teaching interactions. Two independent new desktop/mobile cases click V14 PDF, editable PPT and Chinese/Korean reports, eight actual downloads matched to material original bytes. No rerun of the 51 cases; native methods and entrant readiness are separate.",
+    "controlledFaultScope": "Only localhost Worker HTTP response substitution with inert or scheduled-late-error scripts; not a natural solver timeout or formal research result.",
+    "entrantUnderstandingCertified": false,
+    "preparationRef": "docs/browser-acceptance-v14.zh.md",
+    "performedAtUTC": "2026-10-17T07:22:53.034513+00:00",
+    "currentCandidateRecordSha256": "8528deb08f97a4862c608326c82c340cfdc9ca7333495733b3cfd7b8ba498633",
+    "candidateStaticInventorySha256": "a57ea774c976360cf12a13bad5a9500bfe28b846c2514ca8cbb1083bd2f6607f"
+  },
+  "businessPilot": {
+    "status": "optional_not_performed",
+    "requiredForPublicRoute": false,
+    "requiredForPublicEvidenceRoute": false,
+    "requiredForChampionshipPlan": false,
+    "dataPermissionRef": null,
+    "observedOrdersRef": null,
+    "actualQuoteSourcesRef": null,
+    "resourceDeliverabilityRef": null,
+    "manualBaselineRef": null,
+    "perContainerBillReconciliationRef": null,
+    "actualPlannerFeedbackRef": null,
+    "actualExecutionRef": null,
+    "passed": null,
+    "scope": "Optional only if the user voluntarily supplies authorized records or explicitly changes the agreed route. Do not repeatedly request enterprise records, contracts, contacts, interviews, quotes or pilots. No actual business validation or savings are claimed.",
+    "entrantAvailabilityStatement": "暂时没有真实业务资料或联系人"
+  },
+  "entrantReadiness": {
+    "status": "not_verified",
+    "eligibilityRef": null,
+    "registrationRef": null,
+    "currentYearPledgeRef": null,
+    "currentYearAIPolicyRef": null,
+    "actualContributionRecordRef": null,
+    "personalReproductionRef": null,
+    "personalPresentationRef": null,
+    "passed": null
+  },
+  "publicEvidenceRoute": {
+    "status": "v14_public_research_browser_and_clean_recovery_complete_default_and_entrant_pending",
+    "requiresEnterpriseRecords": false,
+    "requiresBusinessContacts": false,
+    "existingPublicResearchComplete": true,
+    "milestones": [
+      {
+        "id": "public_rules_and_tariff_provenance",
+        "status": "evidence_available_with_scope_limits",
+        "evidenceRefs": [
+          "data/source_registry.json",
+          "docs/source-audit.md",
+          "docs/rules-update-v10.md"
+        ],
+        "acceptance": "Keep original public sources, dates, conflicts, fee interpretations and usage limits inspectable. Public standard fees are not private invoice certification."
+      },
+      {
+        "id": "public_component_validation",
+        "status": "completed_component_validation",
+        "evidenceRefs": [
+          "docs/public-gate-validation-v3.md",
+          "data/public-resource-review-v7.json",
+          "data/port-ledger-review-v7.json"
+        ],
+        "acceptance": "Retain the separate gate-observation, original RCPSP and native bulk-port-log scopes; do not convert them into complete real container orders or realized fee savings."
+      },
+      {
+        "id": "frozen_scenario_research_v10",
+        "status": "completed_internal_independent_review",
+        "evidenceRefs": [
+          "data/v10-results.json",
+          "data/review-v10.json",
+          "data/bootstrap-review-v10.json",
+          "data/material-review-v10.json"
+        ],
+        "acceptance": "Preserve the complete frozen inputs, all repeats, failures, negative results, source hashes and independently checked physical/statistical results. This is synthetic daily-model evidence."
+      },
+      {
+        "id": "next_public_source_field_coverage",
+        "status": "completed_declared_finite_source_coverage",
+        "evidenceRefs": [
+          "data/public-source-field-coverage-v12.json",
+          "docs/public-source-field-coverage-v12.zh.md",
+          "scripts/check-public-source-field-coverage-v12.py"
+        ],
+        "planRef": "docs/acceptance-handoff-v10.zh.md#公开资料路线里程碑",
+        "acceptance": "Seven separate sources, 41 current file bindings and 24 historical-receipt matches checked. Four original files remain historical declarations only. Gate held-out visit MAE is the supported observed question; full container lifecycle is explicitly synthetic."
+      },
+      {
+        "id": "algorithm_default_replacement_gate",
+        "status": "not_met_in_v14_stress_panel",
+        "evidenceRefs": [
+          "data/v14-results.json",
+          "data/review-v14.json",
+          "data/bootstrap-review-v14.json"
+        ],
+        "acceptance": "V14 same-distribution necessary completion-only gate passes but stress retains matching-repeat completion losses against V12/V11/V10/native HiGHS. Conditional fees deteriorate. Net completion gains and fewer revisions against native do not waive losses or fee deterioration."
+      },
+      {
+        "id": "browser_interaction",
+        "status": "v14_53_actual_unique_chromium_checks_passed",
+        "evidenceRefs": [
+          "data/browser-acceptance-v14.json",
+          "docs/browser-acceptance-v14.zh.md"
+        ],
+        "acceptance": "51 unique first Chromium cases cover V14 saved natural-D0 evidence, all 14 comparisons/adverse identifiers, mobile and historical workbench/execution/resource teaching interactions. Two independent new desktop/mobile cases click V14 PDF, editable PPT and Chinese/Korean reports, eight actual downloads matched to material original bytes. No rerun of the 51 cases; native methods and entrant readiness are separate."
+      },
+      {
+        "id": "entrant_reproduction_and_defense",
+        "status": "not_verified",
+        "evidenceRefs": [
+          "docs/acceptance-handoff-v10.zh.md",
+          "data/pilot-entrant-rehearsal-v10.csv"
+        ],
+        "acceptance": "The entrant must actually check personal eligibility/registration/current-year conditions, reproduce a bounded example, demonstrate success and failure and explain the limits. AI may not attest completion."
+      },
+      {
+        "id": "public_evidence_offline_recalculation_v11",
+        "status": "completed_with_explicit_scope",
+        "evidenceRefs": [
+          "data/public-evidence-readiness-v11.json",
+          "scripts/verify-public-evidence-v11.py",
+          "docs/public-evidence-route-v11.zh.md"
+        ],
+        "acceptance": "Five finite offline checks passed: independent observed-gate recalculation, existing fee arithmetic and original/saved/frozen evidence bindings. Not new optimizer, third-party or business validation."
+      },
+      {
+        "id": "commitment_slack_v11_development",
+        "status": "controlled_seen_prefix_replay_complete",
+        "evidenceRefs": [
+          "data/replay-commitment-v11.json",
+          "data/replay-commitment-v11-review.json",
+          "data/archives-v11/replay/manifest.json"
+        ],
+        "acceptance": "One seen 24-container scenario, three timing repeats, two common-prefix branches. Cache branches fail D5 and low-M branches complete D13; this is not new-sample or general recovery evidence. Failed harness first attempt retained."
+      },
+      {
+        "id": "cross_computer_recovery_package_v11",
+        "status": "completed_clean_directory_recovery",
+        "evidenceRefs": [
+          "docs/recovery-guide.zh.md",
+          "scripts/prepare-public.mjs",
+          "tests/recovery-packaging-v11.test.mjs",
+          "data/recovery-verification-v11.json"
+        ],
+        "acceptance": "Historical V11 clean-directory recovery remains scoped to that release. Current V12 candidate packages have separately passed actual same-Linux clean recovery; see data/recovery-verification-v12.json."
+      },
+      {
+        "id": "seeded_v12_old_input_development",
+        "status": "completed_development_only",
+        "evidenceRefs": [
+          "data/seeded-initial-development-v12.json",
+          "data/development-seed-review-v12.json",
+          "data/development-fullpath-v12.json",
+          "data/development-fullpath-review-v12.json"
+        ],
+        "acceptance": "15 selected old D0 endpoints and 41 old full-path scenarios are kept separate from new formal samples; retain cooperative-call overruns, adverse costs and revisions."
+      },
+      {
+        "id": "independent_native_diagnostic_v12",
+        "status": "completed_independently_reviewed_seen_snapshots",
+        "evidenceRefs": [
+          "data/native-diagnostic-v12.json",
+          "data/native-diagnostic-review-v12-final.json"
+        ],
+        "acceptance": "Nine old failed snapshots, two solvers and two budgets produce 36 tasks. CP-SAT does not show overall superiority; the 2000ms offline budget is not the default budget. Original and strengthened audit bytes retained."
+      },
+      {
+        "id": "frozen_scenario_research_v12",
+        "status": "completed_internal_independent_review_default_gate_not_met",
+        "evidenceRefs": [
+          "data/v12-results.json",
+          "data/review-v12.json",
+          "data/bootstrap-review-v12.json",
+          "data/freeze-review-v12.json"
+        ],
+        "acceptance": "All 144 business scenarios x three timing repeats x six methods = 2592 records retained, with independent physical and scenario-bootstrap reviews; all original failures and negative IDs preserved."
+      },
+      {
+        "id": "v12_actual_materials",
+        "status": "generated_and_verified",
+        "evidenceRefs": [
+          "data/material-review-v12.json",
+          "docs/defense-v12.ko.pdf",
+          "docs/defense-v12.ko.pptx",
+          "docs/report-v12.zh.md",
+          "docs/submission-v12.ko.md"
+        ],
+        "acceptance": "Generate bounded Korean PDF/native editable PPT and Chinese/Korean reports from actual first-run bytes only, then inspect rendered artifacts and all adverse identifier coverage."
+      },
+      {
+        "id": "v12_final_recovery_and_private_publication",
+        "status": "clean_recovery_passed_private_publication_recorded_separately",
+        "evidenceRefs": [
+          "docs/recovery-guide.zh.md",
+          "docs/native-v12-quickstart.zh.md",
+          "data/recovery-verification-v12.json",
+          "data/archives-v12/clean-recovery-proof/manifest.json"
+        ],
+        "acceptance": "Actual 17-package candidate merged into a new empty directory, complete source/AGENTS/safe-hosting bytes checked, npm ci/build, V8/V9/V10/V12 formal plus V12 seed restoration, five offline public checks, seven-source check and 18-page material check passed. This receipt binds the tested package SHA values. Later packages adding this receipt and acceptance metadata require a separate final per-source/hash check; no new clean-install, other-OS or browser claim is made for them. Pushed source and private publication status are recorded by Sites saved-version/deployment receipts."
+      },
+      {
+        "id": "frozen_scenario_research_v14",
+        "status": "complete_independently_reviewed_stress_gate_not_met",
+        "evidenceRefs": [
+          "data/v14-results.json",
+          "data/review-v14.json",
+          "data/bootstrap-review-v14.json"
+        ],
+        "acceptance": "144 new natural-D0 scenarios x three timing repeats x seven unchanged methods. Preserve first failures, conditional fee deterioration, all 14 adverse comparison indices and exact frozen source/protocol bindings. This does not certify default replacement or entrant readiness."
+      },
+      {
+        "id": "v14_actual_materials",
+        "status": "generated_byte_layout_and_actual_visual_checks_passed",
+        "evidenceRefs": [
+          "data/material-review-v14.json",
+          "docs/defense-v14.ko.pdf",
+          "docs/defense-v14.ko.pptx",
+          "data/archives-v14/preparation-first/manifest.json"
+        ],
+        "acceptance": "18-page actual first-run Korean materials with all negative fees/gates retained and native editable PPT; original PDF/PPT SHA and visual checks preserved. Does not attest entrant understanding."
+      },
+      {
+        "id": "v14_clean_recovery",
+        "status": "actual_same_linux_candidate_recovery_and_frozen_dual_reviews_passed",
+        "evidenceRefs": [
+          "data/recovery-verification-v14.json",
+          "data/archives-v14/clean-recovery-proof/manifest.json",
+          "docs/recovery-v14.zh.md"
+        ],
+        "acceptance": "21 exact tested packages, 993 retained sources, no Git or 22 omitted old binaries; npm ci/build, 3994 V14 restored files and both frozen Python audits matched published JSON; complete post SHA and original source/public/dist checks passed. Receipt explicitly binds the tested candidate. Final package and deployment receipts are recorded separately. No other-OS, native rerun or entrant attestation."
+      }
+    ],
+    "claimLimit": "No percentage-complete estimate, guaranteed rank, field deployment, enterprise endorsement or realized business ROI is inferred.",
+    "followUpRefs": [
+      "docs/v14-loss-diagnosis.zh.md",
+      "docs/entrant-defense-v14.blank.md",
+      "docs/recovery-v14.zh.md"
+    ]
+  },
+  "officialSchedule": {
+    "sourceRef": "data/competition-rules-review-v14.json",
+    "checkedAtAsiaSeoul": "2026-10-17T15:35:13+09:00",
+    "materialDeadlineLocal": "2026-11-06T18:00:00",
+    "timezoneInterpretation": "Asia/Seoul inferred from the Korean university context; the public page has no separate timezone label.",
+    "firstReviewDateLocal": "2026-11-13",
+    "presentationReviewDateLocal": "2026-11-20",
+    "registrationDeadline": null,
+    "registrationRule": "First come, until capacity is filled; remaining places and this entrant's status are not verified.",
+    "presentationUploadDeadline": null,
+    "officialPresentationDuration": null,
+    "checkedAtUTC": "2026-10-17T06:35:13Z"
+  },
+  "emptyIntakeTemplates": [
+    "data/pilot-orders-and-baseline-v10.csv",
+    "data/pilot-resources-and-quotes-v10.csv",
+    "data/pilot-fees-and-feedback-v10.csv",
+    "data/pilot-entrant-rehearsal-v10.csv"
+  ],
+  "emptyIntakeScope": "The first three business CSVs are optional inactive templates, not requests for records. The entrant rehearsal CSV can be used with public or synthetic examples; a contact or external observer is not a prerequisite for recording actual personal practice.",
+  "publicationHandling": "Keep filled records in an authorized internal location by default. Use deidentified role/container references; do not add personal details, real contracts or full invoices to the source repository, Site or public download packages by default.",
+  "handoffRef": "docs/browser-acceptance-v14.zh.md",
+  "goalStatus": "v14_formal_research_reviewed_default_gate_not_met_championship_plan_incomplete",
+  "technicalV12": {
+    "status": "research_complete_default_gate_not_met",
+    "researchVerificationPassed": true,
+    "defaultRecommendationEligible": false,
+    "formalIndexSha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646",
+    "frozenManifestSha256": "a1266ca661fa1927e65182aff54755f3a8a15bb28096d3e1227c35a54a6e9165",
+    "evidenceRefs": [
+      "data/v12-results.json",
+      "data/review-v12.json",
+      "data/bootstrap-review-v12.json"
+    ],
+    "scope": "First prespecified synthetic experiment and independent audits completed; observed losses remain, so this method remains experimental. Not browser, entrant or enterprise acceptance."
+  },
+  "currentMaterialsStatus": "v14_actual_first_run_18_page_korean_pdf_editable_ppt_reports_generated_and_byte_layout_visually_reviewed",
+  "publicationStatus": "verification_recorded_separately_by_Sites_saved_version_and_deployment_receipt",
+  "currentRecoveryStatus": "v14_same_linux_clean_candidate_recovery_passed_final_package_verification_separate",
+  "currentBrowserStatus": "v14_first_51_and_two_distinct_new_material_download_cases_passed",
+  "technicalV13": {
+    "status": "reviewed_seen_controlled_development",
+    "formalExperimentComplete": false,
+    "defaultRecommendationEligible": false,
+    "protocolRef": "data/protocol-development-v13.json",
+    "scope": "Two seen D5 endpoint pairs; not new business samples or natural policy initialization. V12 formal results remain unchanged.",
+    "recordRef": "data/development-guard-v13.json",
+    "reviewRef": "data/development-guard-review-v13.json",
+    "firstRunIndexSha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611",
+    "businessCases": 2,
+    "timingRepeats": 3,
+    "recordedRuns": 12,
+    "newHeldOutBusinessCases": 0,
+    "forcedEndpoints": true,
+    "seedComplete": 6,
+    "nativeComplete": 0,
+    "nativeFailureDay": 6,
+    "unknownHistory": 0,
+    "ciComputed": false
+  },
+  "updatedAtUTC": "2026-10-17T07:33:27.052954+00:00",
+  "recoveryV13": {
+    "evidenceRef": "data/recovery-verification-v13.json",
+    "scope": "Three V13 evidence archives and frozen read-only Python audit; final source-package byte/install and live deployment receipts are recorded separately."
+  },
+  "technicalV14": {
+    "status": "research_complete_stress_default_gate_not_met",
+    "candidateMethod": "guardedHiGHSV13",
+    "formalExperimentComplete": true,
+    "independentReviewComplete": true,
+    "independentBootstrapReviewComplete": true,
+    "defaultRecommendationEligible": false,
+    "newProspectiveInputsGenerated": true,
+    "plannedBusinessCases": 144,
+    "plannedTimingRepeats": 3,
+    "plannedMethods": 7,
+    "plannedEpisodes": 3024,
+    "protocolRef": "data/protocol-v14.json",
+    "scope": "First natural D0 validation of unchanged guardedHiGHSV13; 144 fresh business scenarios, 3 fixed timing repeats and 7 methods, all 3024 first records preserved. Both independent reviews valid. Necessary completion gate passes only same-distribution; stress completion losses and increased conditional fees prevent overall default recommendation. Not field, entrant or rank certification.",
+    "recordedBusinessCases": 144,
+    "recordedEpisodes": 3024,
+    "firstRunIndexSha256": "a0081a725e21a019c783bffe5b3c0e8aedf8f8b29903564fa04fa1ee53a2fcb9",
+    "frozenManifestSha256": "2833cf5c8ddeb1d01f4f06fba0dd045aa5e82bb6a25cd6d00799e63caddd71bd",
+    "physicalReviewSha256": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f",
+    "bootstrapReviewSha256": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48",
+    "panelNecessaryCompletionOnlyGates": {
+      "same-distribution": true,
+      "stress": false
+    },
+    "evidenceRefs": [
+      "data/v14-results.json",
+      "data/review-v14.json",
+      "data/bootstrap-review-v14.json",
+      "data/protocol-v14.json"
+    ],
+    "archiveRef": "data/archives-v14/formal/manifest.json",
+    "diagnosisRefs": [
+      "data/diagnosis-v14.json",
+      "docs/v14-loss-diagnosis.zh.md"
+    ],
+    "retainedRawFiles": 3813,
+    "retainedRawFileBytes": 4016168738
+  },
+  "materialV14": {
+    "evidenceRef": "data/material-review-v14.json",
+    "actualPages": 18,
+    "actualEditableSlides": 18,
+    "scope": "Eight outputs generated from completed first natural D0 study and valid independent reviews. PDF all pages rendered and visually inspected; native PPT text/tables retained. No personal entrant attestation."
+  },
+  "recoveryV14": {
+    "evidenceRef": "data/recovery-verification-v14.json",
+    "proofArchiveRef": "data/archives-v14/clean-recovery-proof/manifest.json",
+    "testedPackageManifestSha256": "497c414f93d49b37d70ffcdcf5849cedcd62a3b0df924a0aa19bc8bb785f4f03",
+    "testedCandidateSourceGitCommit": "662bada8d1289fc414c274432434ee3fd5bfebd7",
+    "scope": "Actual same-Linux first complete recovery candidate proof. The first two helper preflights failed on optional generic transport metadata and a nonexistent V13 material set; both are retained. V3 matched actual historical scope, then fresh installation/build, all four raw archives, both actual frozen Python audits and complete post-SHA passed. These receipts bind the specific 21-package candidate, not later final package bytes."
+  }
+}

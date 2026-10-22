@@ -1,0 +1,629 @@
+{
+  "protocolVersion": "portplan-v2-frozen-20261012-01",
+  "createdAt": "2026-10-12T07:19:19.902971+00:00",
+  "executionStateAtFreeze": "No V2 benchmark executed before this file was frozen. Hash authenticates bytes; Git commit records local sequencing, not external registration.",
+  "purpose": "Challenge V1 with stronger search, independent generated scenarios, scale controls, tariff sensitivity and objective ablations. All orders remain synthetic.",
+  "horizon": {
+    "start": "2026-10-12",
+    "days": 14,
+    "timezone": "Asia/Seoul"
+  },
+  "defaultTariff": {
+    "pncFreeDays": 4,
+    "ddFreeDays": 10,
+    "pncMultiplier": 1,
+    "ddMultiplier": 1,
+    "pncMode": "retroactive",
+    "ddMode": "progressive"
+  },
+  "defaultOperations": {
+    "returnLagDays": 1,
+    "stagingUnit": "container"
+  },
+  "generator": {
+    "version": "v2-lcg-independent-cases",
+    "random": "state=(1664525*state+1013904223) mod 2^32; draw=state/2^32, initial state=seed",
+    "sharedDrawOrder": [
+      "sizeFt:40 if draw<0.45 else20",
+      "unloadDays:1 if draw<0.70;2 if draw<0.95;else3",
+      "mechanism-specific draws",
+      "discharge hour:07 if draw<0.5 else10"
+    ],
+    "aged-backlog": {
+      "dischargeDay": "-(3+floor(draw*14))",
+      "releaseDay": "floor(draw*4)",
+      "dueDay": "min(12,releaseDay+unloadDays-1+3+floor(draw*5))"
+    },
+    "new-arrivals": {
+      "releaseDay": "floor(draw*9)",
+      "dischargeDay": "releaseDay-(draw<0.75?0:1)",
+      "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+    },
+    "batch-release": {
+      "releaseDay": "[0,4,7][floor(draw*3)]",
+      "dischargeDay": "releaseDay-(2+floor(draw*5))",
+      "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+    },
+    "capacityProfiles": {
+      "balanced": [
+        "ceil(n/4) truck movements/day",
+        "ceil(n/5) unloading slots/day",
+        "ceil(n/2) staging containers/day"
+      ],
+      "tight": [
+        "ceil(n/6) truck movements/day",
+        "ceil(n/8) unloading slots/day",
+        "ceil(n/4) staging containers/day"
+      ]
+    },
+    "independence": "Each main case uses a unique seed. No order-list nesting or reuse across the 48 cases. This does not make synthetic configurations a representative population sample."
+  },
+  "policies": [
+    "fifo",
+    "earliestFreeEnd",
+    "marginalCost",
+    "earliestDeadline",
+    "strongSearch",
+    "optimized"
+  ],
+  "budgets": {
+    "milpTimeLimitSeconds": 2,
+    "strongSearch": {
+      "restartCount": 12,
+      "iterations": 80,
+      "seed": "scenario.seed"
+    },
+    "fairness": "All methods see the identical full-horizon inputs. Search uses fixed attempt counts; MILP has a solver time limit. CPU budgets are not equal. Report actual wall-clock time per policy, inclusive of calls; optimized wall-clock includes lazy initialization on first use."
+  },
+  "primaryCases": [
+    {
+      "id": "aged-backlog-balanced-n16-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 1,
+      "seed": 21001
+    },
+    {
+      "id": "aged-backlog-balanced-n16-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 2,
+      "seed": 21002
+    },
+    {
+      "id": "aged-backlog-balanced-n16-r3",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 3,
+      "seed": 21003
+    },
+    {
+      "id": "aged-backlog-balanced-n16-r4",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 4,
+      "seed": 21004
+    },
+    {
+      "id": "aged-backlog-balanced-n50-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 21005
+    },
+    {
+      "id": "aged-backlog-balanced-n50-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 21006
+    },
+    {
+      "id": "aged-backlog-balanced-n50-r3",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 3,
+      "seed": 21007
+    },
+    {
+      "id": "aged-backlog-balanced-n50-r4",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 4,
+      "seed": 21008
+    },
+    {
+      "id": "aged-backlog-tight-n16-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 1,
+      "seed": 21009
+    },
+    {
+      "id": "aged-backlog-tight-n16-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 2,
+      "seed": 21010
+    },
+    {
+      "id": "aged-backlog-tight-n16-r3",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 3,
+      "seed": 21011
+    },
+    {
+      "id": "aged-backlog-tight-n16-r4",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 4,
+      "seed": 21012
+    },
+    {
+      "id": "aged-backlog-tight-n50-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 21013
+    },
+    {
+      "id": "aged-backlog-tight-n50-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 21014
+    },
+    {
+      "id": "aged-backlog-tight-n50-r3",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 3,
+      "seed": 21015
+    },
+    {
+      "id": "aged-backlog-tight-n50-r4",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 4,
+      "seed": 21016
+    },
+    {
+      "id": "new-arrivals-balanced-n16-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 1,
+      "seed": 21017
+    },
+    {
+      "id": "new-arrivals-balanced-n16-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 2,
+      "seed": 21018
+    },
+    {
+      "id": "new-arrivals-balanced-n16-r3",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 3,
+      "seed": 21019
+    },
+    {
+      "id": "new-arrivals-balanced-n16-r4",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 4,
+      "seed": 21020
+    },
+    {
+      "id": "new-arrivals-balanced-n50-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 21021
+    },
+    {
+      "id": "new-arrivals-balanced-n50-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 21022
+    },
+    {
+      "id": "new-arrivals-balanced-n50-r3",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 3,
+      "seed": 21023
+    },
+    {
+      "id": "new-arrivals-balanced-n50-r4",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 4,
+      "seed": 21024
+    },
+    {
+      "id": "new-arrivals-tight-n16-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 1,
+      "seed": 21025
+    },
+    {
+      "id": "new-arrivals-tight-n16-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 2,
+      "seed": 21026
+    },
+    {
+      "id": "new-arrivals-tight-n16-r3",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 3,
+      "seed": 21027
+    },
+    {
+      "id": "new-arrivals-tight-n16-r4",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 4,
+      "seed": 21028
+    },
+    {
+      "id": "new-arrivals-tight-n50-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 21029
+    },
+    {
+      "id": "new-arrivals-tight-n50-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 21030
+    },
+    {
+      "id": "new-arrivals-tight-n50-r3",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 3,
+      "seed": 21031
+    },
+    {
+      "id": "new-arrivals-tight-n50-r4",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 4,
+      "seed": 21032
+    },
+    {
+      "id": "batch-release-balanced-n16-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 1,
+      "seed": 21033
+    },
+    {
+      "id": "batch-release-balanced-n16-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 2,
+      "seed": 21034
+    },
+    {
+      "id": "batch-release-balanced-n16-r3",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 3,
+      "seed": 21035
+    },
+    {
+      "id": "batch-release-balanced-n16-r4",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "repeat": 4,
+      "seed": 21036
+    },
+    {
+      "id": "batch-release-balanced-n50-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 21037
+    },
+    {
+      "id": "batch-release-balanced-n50-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 21038
+    },
+    {
+      "id": "batch-release-balanced-n50-r3",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 3,
+      "seed": 21039
+    },
+    {
+      "id": "batch-release-balanced-n50-r4",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 4,
+      "seed": 21040
+    },
+    {
+      "id": "batch-release-tight-n16-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 1,
+      "seed": 21041
+    },
+    {
+      "id": "batch-release-tight-n16-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 2,
+      "seed": 21042
+    },
+    {
+      "id": "batch-release-tight-n16-r3",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 3,
+      "seed": 21043
+    },
+    {
+      "id": "batch-release-tight-n16-r4",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "repeat": 4,
+      "seed": 21044
+    },
+    {
+      "id": "batch-release-tight-n50-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 21045
+    },
+    {
+      "id": "batch-release-tight-n50-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 21046
+    },
+    {
+      "id": "batch-release-tight-n50-r3",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 3,
+      "seed": 21047
+    },
+    {
+      "id": "batch-release-tight-n50-r4",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 4,
+      "seed": 21048
+    }
+  ],
+  "scaleControls": [
+    {
+      "id": "scale-aged-backlog-balanced-n100",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "seed": 22001
+    },
+    {
+      "id": "scale-aged-backlog-tight-n100",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 100,
+      "seed": 22002
+    },
+    {
+      "id": "scale-new-arrivals-tight-n100",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 100,
+      "seed": 22003
+    },
+    {
+      "id": "scale-batch-release-tight-n100",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 100,
+      "seed": 22004
+    }
+  ],
+  "sensitivityBases": [
+    {
+      "id": "sensitivity-base-1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "seed": 23001
+    },
+    {
+      "id": "sensitivity-base-2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 23002
+    },
+    {
+      "id": "sensitivity-base-3",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "seed": 23003
+    },
+    {
+      "id": "sensitivity-base-4",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 23004
+    },
+    {
+      "id": "sensitivity-base-5",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 16,
+      "seed": 23005
+    },
+    {
+      "id": "sensitivity-base-6",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 23006
+    },
+    {
+      "id": "sensitivity-base-7",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 23007
+    },
+    {
+      "id": "sensitivity-base-8",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 16,
+      "seed": 23008
+    }
+  ],
+  "sensitivityVariants": [
+    {
+      "id": "default",
+      "label": "公开标准参数与已披露D&D累加解释",
+      "kind": "research-reference",
+      "tariff": {},
+      "objectiveMode": "joint"
+    },
+    {
+      "id": "freeTimeExtended",
+      "label": "PNC免费6日、D&D免费14日",
+      "kind": "hypothetical-contract",
+      "tariff": {
+        "pncFreeDays": 6,
+        "ddFreeDays": 14
+      },
+      "objectiveMode": "joint"
+    },
+    {
+      "id": "pncHalf",
+      "label": "PNC费率×0.5",
+      "kind": "hypothetical-price",
+      "tariff": {
+        "pncMultiplier": 0.5
+      },
+      "objectiveMode": "joint"
+    },
+    {
+      "id": "ddRetroactive",
+      "label": "D&D最高档追溯重计",
+      "kind": "unverified-interpretation-stress",
+      "tariff": {
+        "ddMode": "retroactive"
+      },
+      "objectiveMode": "joint"
+    },
+    {
+      "id": "pncProgressiveProxy",
+      "label": "将PNC误设为逐档累加的代理",
+      "kind": "deliberately-misspecified-proxy",
+      "tariff": {
+        "pncMode": "progressive"
+      },
+      "objectiveMode": "joint"
+    },
+    {
+      "id": "storageOnly",
+      "label": "只优化仓储目标",
+      "kind": "objective-ablation",
+      "tariff": {},
+      "objectiveMode": "storageOnly"
+    },
+    {
+      "id": "ddOnly",
+      "label": "只优化D&D目标",
+      "kind": "objective-ablation",
+      "tariff": {},
+      "objectiveMode": "ddOnly"
+    }
+  ],
+  "reporting": {
+    "retain": "All declared cases and policy failures remain in raw results. No resampling based on outcome. A completed run may return no feasible incumbent.",
+    "feasibility": "Only a complete schedule passing independently implemented constraint and fee checks counts as feasible. A heuristic failure is not a proof of model infeasibility.",
+    "primaryComparator": "Cheapest complete feasible result among all five baselines in each case; additionally report strongSearch-only paired comparison.",
+    "denominators": "Paired case counts, missing-baseline/optimizer counts, zero denominators and failure rates. Report absolute KRW, total-fee percentage and modeled incremental-fee percentage; sum-weighted denominator. Preserve negative savings and zero ties.",
+    "feeBase": "Modeled incremental cost subtracts a fixed fee base computed as of the day before horizon; not evidence of actual paid/sunk accounting cost.",
+    "timing": "Per policy wall time plus engine runtime where available; model optimality and time-limit status separately. Do not infer same runtime budget.",
+    "sensitivity": "Reuse the same eight base scenarios across variants by design. Report own-tariff costs and reprice all optimized schedules under default reference tariff; neither alternative contracts nor misspecified proxy are asserted official. Compare default-ref objective costs and changed schedule fraction. Single-objective tie-breaking must be disclosed; if unverified, mark ablation as tie-sensitive rather than contribution proof.",
+    "uncertainty": "No business-population confidence interval or claimed win probability. Generator differences and capacity choices are artificial mixture weights.",
+    "nullAdvantage": "If strongSearch eliminates MILP savings, report that result prominently and narrow contribution claims."
+  },
+  "sourceBasis": [
+    "docs/source-audit.md",
+    "docs/reviewer-challenge.md",
+    "data/source_registry.json"
+  ],
+  "dataBoundary": "Public official tariffs and disclosed interpretations; generated orders/capacities. Public gate statistics are not used as container order truth."
+}

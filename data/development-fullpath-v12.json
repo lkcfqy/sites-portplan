@@ -1,0 +1,980 @@
+{
+  "schemaVersion": "portplan-v12-reused-fullpath-development-public-summary",
+  "valid": true,
+  "generatedAt": "2026-10-16T17:35:35.735111+00:00",
+  "dataRole": "old-input-development-only",
+  "scope": "41 already-seen V10 business scenarios, six methods each, exactly one old algorithm seed49011, 246 full-path development episodes. No new samples, unseen validation, confidence interval, prospective default claim or contest ranking guarantee.",
+  "originalComplete": {
+    "path": "artifacts/v12-fullpath-first-development/complete.json",
+    "sha256": "07fdec26975ea5d662ff985e0ae5a0348d6228ae0378b733dafe6a0792851cb8"
+  },
+  "originalDeclaration": {
+    "path": "artifacts/v12-fullpath-first-development/declaration.json",
+    "sha256": "e2c97156b2b4e69809d176559971c512cb7b32df87c37445897698fc01510523"
+  },
+  "independentReview": {
+    "path": "data/development-fullpath-review-v12.json",
+    "sha256": "b12096b71c3e7a302ba2d607944d1982f02943c881252cf3ef2db0ee767e5908"
+  },
+  "sourceConsistency": {
+    "before": true,
+    "after": true
+  },
+  "sourceConsistencyScope": "Original runner before/after recorded source checks are preserved and the independent review binds archived sources. Neither is external authentication of host clocks or processes.",
+  "scenarioCount": 41,
+  "panelScenarioCounts": {
+    "same-distribution": 22,
+    "stress": 19
+  },
+  "methodCount": 6,
+  "methods": [
+    "costPolishV7",
+    "adaptiveV9",
+    "highsV8",
+    "stableHiGHSV10",
+    "commitmentHiGHSV11",
+    "seededHiGHSV12"
+  ],
+  "algorithmSeed": 49011,
+  "repeatCount": 1,
+  "episodeCount": 246,
+  "newHeldOutExperiments": 0,
+  "newOrderGeneration": 0,
+  "ciComputed": false,
+  "parametersChangedAfterDeclaration": false,
+  "selectionRule": "Both V10 panels: all 3 mechanisms x 2 capacities x 3 scales with scenarioRepeat=1 (36), union all five distinct cases from the predeclared 15 old D0 endpoints; retain original index order and deduplicate (41). No filtering by this run outcomes.",
+  "developmentOnly": true,
+  "formalDefaultEligibility": "not_evaluated_by_this_development_run",
+  "championshipPlanComplete": false,
+  "budget": {
+    "hardWallMs": 5000,
+    "dailyCallBudgetMs": 200,
+    "cpuThreads": 1
+  },
+  "summary": {
+    "panels": {
+      "same-distribution": {
+        "scenarioCount": 22,
+        "byMethod": {
+          "costPolishV7": {
+            "recordedEpisodeCount": 22,
+            "completeCount": 17,
+            "knownD0FailureCount": 2,
+            "knownLaterFailureCount": 3,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 20,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 362.3886467727274,
+              "max": 754.7809969999998
+            }
+          },
+          "adaptiveV9": {
+            "recordedEpisodeCount": 22,
+            "completeCount": 17,
+            "knownD0FailureCount": 2,
+            "knownLaterFailureCount": 3,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 20,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 432.4723982272722,
+              "max": 983.6017259999935
+            }
+          },
+          "highsV8": {
+            "recordedEpisodeCount": 22,
+            "completeCount": 14,
+            "knownD0FailureCount": 6,
+            "knownLaterFailureCount": 2,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 570.9578153181822,
+              "max": 1066.0105970000004
+            }
+          },
+          "stableHiGHSV10": {
+            "recordedEpisodeCount": 22,
+            "completeCount": 14,
+            "knownD0FailureCount": 6,
+            "knownLaterFailureCount": 2,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 571.2741302727268,
+              "max": 1078.1996470000013
+            }
+          },
+          "commitmentHiGHSV11": {
+            "recordedEpisodeCount": 22,
+            "completeCount": 14,
+            "knownD0FailureCount": 6,
+            "knownLaterFailureCount": 2,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 601.9530573636362,
+              "max": 1120.691031000002
+            }
+          },
+          "seededHiGHSV12": {
+            "recordedEpisodeCount": 22,
+            "completeCount": 19,
+            "knownD0FailureCount": 1,
+            "knownLaterFailureCount": 2,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 21,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 773.7236674545461,
+              "max": 1289.8349830000006
+            }
+          }
+        }
+      },
+      "stress": {
+        "scenarioCount": 19,
+        "byMethod": {
+          "costPolishV7": {
+            "recordedEpisodeCount": 19,
+            "completeCount": 11,
+            "knownD0FailureCount": 3,
+            "knownLaterFailureCount": 5,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 458.8642157894723,
+              "max": 1120.8809029999975
+            }
+          },
+          "adaptiveV9": {
+            "recordedEpisodeCount": 19,
+            "completeCount": 11,
+            "knownD0FailureCount": 3,
+            "knownLaterFailureCount": 5,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 508.6085176842094,
+              "max": 1210.7695419999945
+            }
+          },
+          "highsV8": {
+            "recordedEpisodeCount": 19,
+            "completeCount": 11,
+            "knownD0FailureCount": 3,
+            "knownLaterFailureCount": 5,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 577.1314901052644,
+              "max": 971.5204349999985
+            }
+          },
+          "stableHiGHSV10": {
+            "recordedEpisodeCount": 19,
+            "completeCount": 11,
+            "knownD0FailureCount": 3,
+            "knownLaterFailureCount": 5,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 604.2719802631595,
+              "max": 1028.8985870000033
+            }
+          },
+          "commitmentHiGHSV11": {
+            "recordedEpisodeCount": 19,
+            "completeCount": 11,
+            "knownD0FailureCount": 3,
+            "knownLaterFailureCount": 5,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 16,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 620.9516530526307,
+              "max": 1072.4365120000002
+            }
+          },
+          "seededHiGHSV12": {
+            "recordedEpisodeCount": 19,
+            "completeCount": 12,
+            "knownD0FailureCount": 2,
+            "knownLaterFailureCount": 5,
+            "unknownHistoryCount": 0,
+            "initialPlanAcceptedCount": 17,
+            "rejectedTerminalCount": 0,
+            "wallTimeMs": {
+              "mean": 716.4170600526306,
+              "max": 1270.6975200000015
+            }
+          }
+        }
+      }
+    },
+    "ciComputed": false,
+    "scope": "Implementation/budget/physical-output development coverage only. No new holdout, new research interval, pooled leaderboard or parameter selection."
+  },
+  "independentCounts": {
+    "episodes": 246,
+    "completeEpisodes": 162,
+    "unknownHistoryEpisodes": 0,
+    "acceptedPlans": 2272,
+    "physicalEvents": 31801
+  },
+  "completedAcrossBothPanels": {
+    "costPolishV7": 28,
+    "adaptiveV9": 28,
+    "highsV8": 25,
+    "stableHiGHSV10": 25,
+    "commitmentHiGHSV11": 25,
+    "seededHiGHSV12": 31
+  },
+  "observedCompletionLossScope": {
+    "candidate": "seededHiGHSV12",
+    "zeroObservedLossAgainstEachOtherMethod": true,
+    "comparisonMethods": [
+      "costPolishV7",
+      "adaptiveV9",
+      "highsV8",
+      "stableHiGHSV10",
+      "commitmentHiGHSV11"
+    ],
+    "meaning": "No baseline-complete/V12-incomplete case in this fixed seen-input single-repeat development subset; not a formal zero-loss gate or evidence for unseen scenarios."
+  },
+  "pairedCompletedComparisons": {
+    "same-distribution": {
+      "costPolishV7": {
+        "baselineMethod": "costPolishV7",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 22,
+        "completedGains": 2,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-same-distribution-aged-backlog-tight-n50-r1",
+          "v10-same-distribution-new-arrivals-tight-n100-r1"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 17,
+        "jointCompleteScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n50-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "baselineIncrementalFeesKRW": 107007000,
+        "v12IncrementalFeesKRW": 94812150,
+        "incrementalSavingsKRWBaselineMinusV12": 12194850,
+        "totalSavingsKRWBaselineMinusV12": 12194850,
+        "baselineRevisions": 1154,
+        "v12Revisions": 2678,
+        "revisionIncreaseV12MinusBaseline": 1524,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "adaptiveV9": {
+        "baselineMethod": "adaptiveV9",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 22,
+        "completedGains": 2,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-same-distribution-aged-backlog-tight-n50-r1",
+          "v10-same-distribution-new-arrivals-tight-n100-r1"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 17,
+        "jointCompleteScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n50-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "baselineIncrementalFeesKRW": 107300750,
+        "v12IncrementalFeesKRW": 94812150,
+        "incrementalSavingsKRWBaselineMinusV12": 12488600,
+        "totalSavingsKRWBaselineMinusV12": 12488600,
+        "baselineRevisions": 1169,
+        "v12Revisions": 2678,
+        "revisionIncreaseV12MinusBaseline": 1509,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "highsV8": {
+        "baselineMethod": "highsV8",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 22,
+        "completedGains": 5,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 14,
+        "jointCompleteScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-tight-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n50-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1"
+        ],
+        "baselineIncrementalFeesKRW": 88835300,
+        "v12IncrementalFeesKRW": 88835300,
+        "incrementalSavingsKRWBaselineMinusV12": 0,
+        "totalSavingsKRWBaselineMinusV12": 0,
+        "baselineRevisions": 4800,
+        "v12Revisions": 1789,
+        "revisionIncreaseV12MinusBaseline": -3011,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n100-r1"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "stableHiGHSV10": {
+        "baselineMethod": "stableHiGHSV10",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 22,
+        "completedGains": 5,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 14,
+        "jointCompleteScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-tight-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n50-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1"
+        ],
+        "baselineIncrementalFeesKRW": 88835300,
+        "v12IncrementalFeesKRW": 88835300,
+        "incrementalSavingsKRWBaselineMinusV12": 0,
+        "totalSavingsKRWBaselineMinusV12": 0,
+        "baselineRevisions": 1115,
+        "v12Revisions": 1789,
+        "revisionIncreaseV12MinusBaseline": 674,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "commitmentHiGHSV11": {
+        "baselineMethod": "commitmentHiGHSV11",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 22,
+        "completedGains": 5,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n100-r3",
+          "v10-same-distribution-new-arrivals-tight-n24-r3",
+          "v10-same-distribution-new-arrivals-tight-n100-r1",
+          "v10-same-distribution-batch-release-tight-n100-r2",
+          "v10-same-distribution-batch-release-tight-n100-r4"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 14,
+        "jointCompleteScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n24-r1",
+          "v10-same-distribution-aged-backlog-balanced-n50-r1",
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-aged-backlog-tight-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n24-r1",
+          "v10-same-distribution-new-arrivals-balanced-n50-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1",
+          "v10-same-distribution-batch-release-balanced-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n100-r1",
+          "v10-same-distribution-batch-release-tight-n24-r1",
+          "v10-same-distribution-batch-release-tight-n50-r1",
+          "v10-same-distribution-batch-release-tight-n100-r1"
+        ],
+        "baselineIncrementalFeesKRW": 88835300,
+        "v12IncrementalFeesKRW": 88835300,
+        "incrementalSavingsKRWBaselineMinusV12": 0,
+        "totalSavingsKRWBaselineMinusV12": 0,
+        "baselineRevisions": 1538,
+        "v12Revisions": 1789,
+        "revisionIncreaseV12MinusBaseline": 251,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-same-distribution-aged-backlog-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-balanced-n100-r1",
+          "v10-same-distribution-new-arrivals-tight-n50-r1",
+          "v10-same-distribution-batch-release-balanced-n24-r1"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      }
+    },
+    "stress": {
+      "costPolishV7": {
+        "baselineMethod": "costPolishV7",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 19,
+        "completedGains": 1,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-stress-batch-release-tight-n100-r1"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 11,
+        "jointCompleteScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-aged-backlog-balanced-n50-r1",
+          "v10-stress-aged-backlog-balanced-n100-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n50-r1",
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "baselineIncrementalFeesKRW": 75643800,
+        "v12IncrementalFeesKRW": 65117800,
+        "incrementalSavingsKRWBaselineMinusV12": 10526000,
+        "totalSavingsKRWBaselineMinusV12": 10526000,
+        "baselineRevisions": 1254,
+        "v12Revisions": 2061,
+        "revisionIncreaseV12MinusBaseline": 807,
+        "feeWorseScenarioIds": [
+          "v10-stress-batch-release-balanced-n24-r1"
+        ],
+        "churnWorseScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "adaptiveV9": {
+        "baselineMethod": "adaptiveV9",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 19,
+        "completedGains": 1,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-stress-batch-release-tight-n100-r1"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 11,
+        "jointCompleteScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-aged-backlog-balanced-n50-r1",
+          "v10-stress-aged-backlog-balanced-n100-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n50-r1",
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "baselineIncrementalFeesKRW": 76374050,
+        "v12IncrementalFeesKRW": 65117800,
+        "incrementalSavingsKRWBaselineMinusV12": 11256250,
+        "totalSavingsKRWBaselineMinusV12": 11256250,
+        "baselineRevisions": 1269,
+        "v12Revisions": 2061,
+        "revisionIncreaseV12MinusBaseline": 792,
+        "feeWorseScenarioIds": [
+          "v10-stress-batch-release-balanced-n24-r1"
+        ],
+        "churnWorseScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "highsV8": {
+        "baselineMethod": "highsV8",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 19,
+        "completedGains": 1,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 11,
+        "jointCompleteScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-aged-backlog-balanced-n50-r1",
+          "v10-stress-aged-backlog-balanced-n100-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n50-r1",
+          "v10-stress-batch-release-tight-n100-r1"
+        ],
+        "baselineIncrementalFeesKRW": 65157450,
+        "v12IncrementalFeesKRW": 65175600,
+        "incrementalSavingsKRWBaselineMinusV12": -18150,
+        "totalSavingsKRWBaselineMinusV12": -18150,
+        "baselineRevisions": 4384,
+        "v12Revisions": 1874,
+        "revisionIncreaseV12MinusBaseline": -2510,
+        "feeWorseScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-tight-n100-r1"
+        ],
+        "churnWorseScenarioIds": [],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "stableHiGHSV10": {
+        "baselineMethod": "stableHiGHSV10",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 19,
+        "completedGains": 1,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 11,
+        "jointCompleteScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-aged-backlog-balanced-n50-r1",
+          "v10-stress-aged-backlog-balanced-n100-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n50-r1",
+          "v10-stress-batch-release-tight-n100-r1"
+        ],
+        "baselineIncrementalFeesKRW": 65175600,
+        "v12IncrementalFeesKRW": 65175600,
+        "incrementalSavingsKRWBaselineMinusV12": 0,
+        "totalSavingsKRWBaselineMinusV12": 0,
+        "baselineRevisions": 1569,
+        "v12Revisions": 1874,
+        "revisionIncreaseV12MinusBaseline": 305,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      },
+      "commitmentHiGHSV11": {
+        "baselineMethod": "commitmentHiGHSV11",
+        "candidateMethod": "seededHiGHSV12",
+        "panelScenarioDenominator": 19,
+        "completedGains": 1,
+        "completedLosses": 0,
+        "completeGainedScenarioIds": [
+          "v10-stress-batch-release-tight-n100-r4"
+        ],
+        "completeLostScenarioIds": [],
+        "jointCompleteScenarioCount": 11,
+        "jointCompleteScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-aged-backlog-balanced-n50-r1",
+          "v10-stress-aged-backlog-balanced-n100-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n50-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1",
+          "v10-stress-batch-release-balanced-n24-r1",
+          "v10-stress-batch-release-balanced-n50-r1",
+          "v10-stress-batch-release-balanced-n100-r1",
+          "v10-stress-batch-release-tight-n50-r1",
+          "v10-stress-batch-release-tight-n100-r1"
+        ],
+        "baselineIncrementalFeesKRW": 65175600,
+        "v12IncrementalFeesKRW": 65175600,
+        "incrementalSavingsKRWBaselineMinusV12": 0,
+        "totalSavingsKRWBaselineMinusV12": 0,
+        "baselineRevisions": 1793,
+        "v12Revisions": 1874,
+        "revisionIncreaseV12MinusBaseline": 81,
+        "feeWorseScenarioIds": [],
+        "churnWorseScenarioIds": [
+          "v10-stress-aged-backlog-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n24-r1",
+          "v10-stress-new-arrivals-balanced-n100-r1"
+        ],
+        "scope": "Conditional on this method-pair and panel completing both full paths; different execution prefixes. Positive fee savings favors V12; positive revision increase is worse for V12. No CI."
+      }
+    }
+  },
+  "negativeFindings": [
+    {
+      "panel": "same-distribution",
+      "baselineMethod": "costPolishV7",
+      "jointCompleteScenarios": 17,
+      "v12IncrementalFeeIncreaseKRW": -12194850,
+      "v12RevisionIncrease": 1524,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "same-distribution",
+      "baselineMethod": "adaptiveV9",
+      "jointCompleteScenarios": 17,
+      "v12IncrementalFeeIncreaseKRW": -12488600,
+      "v12RevisionIncrease": 1509,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "same-distribution",
+      "baselineMethod": "stableHiGHSV10",
+      "jointCompleteScenarios": 14,
+      "v12IncrementalFeeIncreaseKRW": 0,
+      "v12RevisionIncrease": 674,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "same-distribution",
+      "baselineMethod": "commitmentHiGHSV11",
+      "jointCompleteScenarios": 14,
+      "v12IncrementalFeeIncreaseKRW": 0,
+      "v12RevisionIncrease": 251,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "stress",
+      "baselineMethod": "costPolishV7",
+      "jointCompleteScenarios": 11,
+      "v12IncrementalFeeIncreaseKRW": -10526000,
+      "v12RevisionIncrease": 807,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "stress",
+      "baselineMethod": "adaptiveV9",
+      "jointCompleteScenarios": 11,
+      "v12IncrementalFeeIncreaseKRW": -11256250,
+      "v12RevisionIncrease": 792,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "stress",
+      "baselineMethod": "highsV8",
+      "jointCompleteScenarios": 11,
+      "v12IncrementalFeeIncreaseKRW": 18150,
+      "v12RevisionIncrease": -2510,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "stress",
+      "baselineMethod": "stableHiGHSV10",
+      "jointCompleteScenarios": 11,
+      "v12IncrementalFeeIncreaseKRW": 0,
+      "v12RevisionIncrease": 305,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    },
+    {
+      "panel": "stress",
+      "baselineMethod": "commitmentHiGHSV11",
+      "jointCompleteScenarios": 11,
+      "v12IncrementalFeeIncreaseKRW": 0,
+      "v12RevisionIncrease": 81,
+      "interpretation": "Positive fee increase or positive revision increase is an adverse outcome. Negative values indicate improvement in that metric; conditional pair denominators remain distinct."
+    }
+  ],
+  "timingAndSelectionByMethod": {
+    "costPolishV7": {
+      "wholeCallOverrunCount": 42,
+      "knownCallCount": 412,
+      "maxWholeCallWallMs": 316.010716,
+      "nativeSelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0,
+        "commitmentReplacements": 0,
+        "completeCommitmentScores": 0,
+        "incompleteCommitmentScores": 0,
+        "constructorCalls": 0,
+        "constructorEvents": 0,
+        "acceptedConstructorReceipts": 0,
+        "constructorSeededCalls": 0,
+        "retainedConstructorCalls": 0
+      }
+    },
+    "adaptiveV9": {
+      "wholeCallOverrunCount": 43,
+      "knownCallCount": 412,
+      "maxWholeCallWallMs": 316.94607399999995,
+      "nativeSelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0,
+        "commitmentReplacements": 0,
+        "completeCommitmentScores": 0,
+        "incompleteCommitmentScores": 0,
+        "constructorCalls": 0,
+        "constructorEvents": 0,
+        "acceptedConstructorReceipts": 0,
+        "constructorSeededCalls": 0,
+        "retainedConstructorCalls": 0
+      }
+    },
+    "highsV8": {
+      "wholeCallOverrunCount": 8,
+      "knownCallCount": 366,
+      "maxWholeCallWallMs": 226.61566,
+      "nativeSelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0,
+        "commitmentReplacements": 0,
+        "completeCommitmentScores": 0,
+        "incompleteCommitmentScores": 0,
+        "constructorCalls": 0,
+        "constructorEvents": 0,
+        "acceptedConstructorReceipts": 0,
+        "constructorSeededCalls": 0,
+        "retainedConstructorCalls": 0
+      }
+    },
+    "stableHiGHSV10": {
+      "wholeCallOverrunCount": 8,
+      "knownCallCount": 368,
+      "maxWholeCallWallMs": 227.409781,
+      "nativeSelection": {
+        "calls": 368,
+        "cacheAcceptedCalls": 257,
+        "nativeAcceptedCalls": 95,
+        "retainedCacheCalls": 257,
+        "completeNativeProposals": 357,
+        "strictReplacements": 0,
+        "feeTiesRetained": 257,
+        "commitmentReplacements": 0,
+        "completeCommitmentScores": 0,
+        "incompleteCommitmentScores": 0,
+        "constructorCalls": 0,
+        "constructorEvents": 0,
+        "acceptedConstructorReceipts": 0,
+        "constructorSeededCalls": 0,
+        "retainedConstructorCalls": 0
+      }
+    },
+    "commitmentHiGHSV11": {
+      "wholeCallOverrunCount": 9,
+      "knownCallCount": 364,
+      "maxWholeCallWallMs": 226.20147200000002,
+      "nativeSelection": {
+        "calls": 364,
+        "cacheAcceptedCalls": 256,
+        "nativeAcceptedCalls": 112,
+        "retainedCacheCalls": 236,
+        "completeNativeProposals": 354,
+        "strictReplacements": 0,
+        "feeTiesRetained": 236,
+        "commitmentReplacements": 20,
+        "completeCommitmentScores": 256,
+        "incompleteCommitmentScores": 0,
+        "constructorCalls": 0,
+        "constructorEvents": 0,
+        "acceptedConstructorReceipts": 0,
+        "constructorSeededCalls": 0,
+        "retainedConstructorCalls": 0
+      }
+    },
+    "seededHiGHSV12": {
+      "wholeCallOverrunCount": 13,
+      "knownCallCount": 434,
+      "maxWholeCallWallMs": 230.666582,
+      "nativeSelection": {
+        "calls": 434,
+        "cacheAcceptedCalls": 309,
+        "nativeAcceptedCalls": 111,
+        "retainedCacheCalls": 280,
+        "completeNativeProposals": 421,
+        "strictReplacements": 67,
+        "feeTiesRetained": 302,
+        "commitmentReplacements": 25,
+        "completeCommitmentScores": 327,
+        "incompleteCommitmentScores": 0,
+        "constructorCalls": 125,
+        "constructorEvents": 140,
+        "acceptedConstructorReceipts": 140,
+        "constructorSeededCalls": 96,
+        "retainedConstructorCalls": 33
+      }
+    }
+  },
+  "v12BudgetCaveat": {
+    "knownDailyCalls": 434,
+    "recordedWholeCallsOver200ms": 13,
+    "maximumRecordedWholeCallWallMs": 230.666582,
+    "cooperativeDailyTargetMs": 200,
+    "parentHardBudgetMs": 5000,
+    "allRecordedParentWallTimesBelow5000ms": true,
+    "maximumRecordedParentWallMs": 1289.8349830000006,
+    "interpretation": "Timely audited incumbent acceptance and a function returning later than the cooperative 200ms target can coexist. Thirteen V12 calls exceeded that target; these are not five-second parent-budget violations. This is not a hard 200ms return guarantee."
+  },
+  "nativeSelection": {
+    "calls": 1166,
+    "cacheAcceptedCalls": 822,
+    "nativeAcceptedCalls": 318,
+    "retainedCacheCalls": 773,
+    "completeNativeProposals": 1132,
+    "strictReplacements": 67,
+    "feeTiesRetained": 795,
+    "commitmentReplacements": 45,
+    "completeCommitmentScores": 583,
+    "incompleteCommitmentScores": 0,
+    "constructorCalls": 125,
+    "constructorEvents": 140,
+    "acceptedConstructorReceipts": 140,
+    "constructorSeededCalls": 96,
+    "retainedConstructorCalls": 33
+  },
+  "limits": [
+    "All inputs were already seen and partly motivated the implementation; results cannot estimate unbiased generalization.",
+    "One old repeat per method/case provides no independent algorithm-repeat uncertainty estimate; no bootstrap or confidence interval is computed.",
+    "Full policies follow different physical prefixes, so these full paths do not isolate the V11 fixed-prefix mechanism.",
+    "Failed paths keep completed fees null; joint-complete fee and revision comparisons keep their own method-pair and panel denominators.",
+    "Pressure native joint-complete fees are worse by 18150 KRW. V10/V11 joint-complete fees are tied in aggregate while V12 changes more dates.",
+    "The full-path development review is internal independent physical/fees/locks/candidate-deadline reconstruction, not third-party certification, external clock authentication or enterprise savings."
+  ],
+  "losslessArchive": {
+    "manifest": "data/archives-v12/fullpath-development/manifest.json",
+    "archiveRoot": "v12-fullpath-development",
+    "entrypoint": "data/development-fullpath-v12.json",
+    "pathList": "artifacts/v12-fullpath-development-paths.json",
+    "scope": "Exact original run, all raw episodes, copied inputs and frozen runtime sources, independent reviewer sources/review and this public wrapper. No rerun or outcome replacement.",
+    "restoreCommand": "python3 scripts/restore-evidence-v12.py --manifest data/archives-v12/fullpath-development/manifest.json --destination data/evidence-v12-development"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "portplan-clean-recovery-verification-v11",
+  "valid": true,
+  "recordedAtAsiaSeoul": "2026-10-17T01:51:50+09:00",
+  "packagesVerified": 14,
+  "uniqueArchiveFiles": 826,
+  "packageHashesMatched": true,
+  "agentsPreserved": true,
+  "originalSiteIdentityPreserved": true,
+  "dependenciesInstalledWith": "npm ci",
+  "buildPassed": true,
+  "frozenEvidenceRestored": [
+    "V8",
+    "V9",
+    "V10"
+  ],
+  "offlinePublicChecksPassed": 5,
+  "endpointContainerScoresChecked": 144,
+  "syntheticServiceCalls": 6,
+  "newOptimizerCalls": 0,
+  "testedImplementationHashes": {
+    "src/commitment-slack-v11.js": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153",
+    "scripts/highs-planner-v11.mjs": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3",
+    "scripts/check-commitment-v11.mjs": "304b35729bb57367b0c0cf91e21c8d98e0efccab6ded851be5181a6f0cb7d2ca",
+    "scripts/verify-public-evidence-v11.py": "57db24026e2a928765ff702b04fe34186b9714c1ba277ac46c98b98549bd9fd2",
+    "scripts/prepare-public.mjs": "b62a4cf4fe5383411035e8e9b908de5abf63291b03575ceed13bd456dec5144e",
+    "src/research-v10-ui.js": "9ce8bc3e3312ecfc6ae92249c6e432fc13334dfae6d8f6b10b0512ab3414920b",
+    "AGENTS.md": "ce6d9ff3b7515d12e603050cd4dd7c05500f2a895edea9a00c236216a554154d",
+    ".openai/hosting.json": "0f79ff643b336d3b64982fac11afc55982b0843676029c673ccc4068cf572ba9",
+    "package.json": "60c5c30c5e7efb1eacd7e4c8b0c0f18d962a429b7d68465d882df72a7d29036e",
+    "package-lock.json": "6adf7e460d457ed6ef0a6f940c99987ddb569c5e432194de5e4fd4bd2c9f0afe"
+  },
+  "scope": "All fourteen pre-release snapshot ZIPs were merged in a newly created directory with no node_modules, installed with npm ci, built, restored and checked in the same managed Linux execution environment. This checks recovery completeness, not another operating system, real browser interaction, a fresh native optimization run or entrant acceptance. Final publication packaging is separately size/hash checked."
+}

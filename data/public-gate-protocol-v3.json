@@ -1,0 +1,18 @@
+{
+  "version": "public-gate-calendar-holdout-v3",
+  "studyStatus": "Exploratory retrospective validation designed after reading aggregate public-data statistics. Model choices fixed before fitting; this is not a prospective deployment trial.",
+  "source": "YGPA West Container Terminal vehicle gate visits, public 2026 H1 CSV",
+  "sourceSha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+  "target": "Elapsed minutes from entry to exit timestamps, not road travel or warehouse unloading duration",
+  "featuresKnownAtEntry": ["local entry hour", "local entry weekday"],
+  "timezone": "Asia/Seoul inferred from terminal location; not explicit in source CSV",
+  "split": {"trainEnd": "2026-04-30", "validationStart": "2026-05-01", "validationEnd": "2026-05-31", "testStart": "2026-06-01", "testEnd": "2026-06-30"},
+  "candidates": ["global_median", "hour_median", "weekday_hour_median"],
+  "minimumGroupTrainingCount": 100,
+  "smallGroupFallback": "Use global training median; no refitting on validation or test labels",
+  "selection": "Lowest validation MAE; ties prefer the earlier declared candidate",
+  "metrics": ["visit-weighted mean absolute error", "median absolute error", "P90 absolute error", "daily paired MAE difference"],
+  "dailyBootstrap": {"resamples": 1000, "seed": 39001, "unit": "observed test date", "interval": 0.95},
+  "quality": "Discard all-blank rows; retain source records with valid nonnegative entry/exit times. Retain apparent duplicate visits because no stable unmasked identifier is supplied. Missing dates are not zero-volume days.",
+  "reporting": "Retain all candidate metrics including losses. No PNC fee savings or vehicle/container-level independent sampling claim. Source contains no stable identifier to separate repeat vehicles."
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://terms.maersk.com/dnd",
+  "final_url": "https://terms.maersk.com/dnd",
+  "retrieved_at_utc": "2026-10-12T06:27:46.442577+00:00",
+  "http_status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "sha256": "f1f34b7756114d6ec6374e4331bc4e2b5eea1efc6a5fef80f3472b35301ba314",
+  "bytes": 91196,
+  "path": "data/public/maersk_dd_terms.html"
+}

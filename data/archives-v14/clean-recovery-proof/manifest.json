@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-17T07:33:27.337434+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v14-clean-recovery-proof",
+  "fileCount": 27,
+  "uncompressedFileBytes": 2422800,
+  "archiveBytes": 108068,
+  "archiveSha256": "5db6e4425741afa84997d3fb6602f43171fccb8928505d04e3c53cb70f6c571d",
+  "entrypoint": "data/recovery-verification-v14.json",
+  "entrypointSha256": "02310f955256e8c947cd7f89d3819f3bf05dd35baeaedb40f53dc2739c5a3c7f",
+  "files": [
+    {
+      "path": "artifacts/v14-clean-recovery-proof/bound-verifier-dependencies/verify-portplan-v12-clean-recovery.py",
+      "bytes": 22931,
+      "sha256": "d8c796cb14938f214aababbfcaaee33b4868081c906076237293496c2b3acc29"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/bound-verifier-dependencies/verify-portplan-v12-final-packages.py",
+      "bytes": 23861,
+      "sha256": "a52d6c695f356e5b34ee4e1b64b81df4eaa8440c2aa8bd391dc8b2184a843e7b"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/bound-verifier-dependencies/verify-portplan-v13-archives.py",
+      "bytes": 11327,
+      "sha256": "ba43a801666ed8d729418fa616cb31a0288ffcc47fdc28cf2e16e08d1d0ffdb6"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/bound-verifier-dependencies/verify-portplan-v13-final-packages.py",
+      "bytes": 22311,
+      "sha256": "dfd0d3766b61093f5ec3717c334de0e89ff2614fc14c40281586badbb85c5ad6"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/failed-second-logs/helper-second.stderr.log",
+      "bytes": 936,
+      "sha256": "d0678943ea9c127ce69b58c3c2da4c2380a8fa2a2697d7a551937d4ed15c1cb1"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/failed-second/recovery-verification-v14.json",
+      "bytes": 828570,
+      "sha256": "25d08a2a7dbc7c0185c8228889c391fc3c6805c2bb77f9355f985d5f2cee37ad"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/failed-second/tested-download-packages-v14.json",
+      "bytes": 211196,
+      "sha256": "497c414f93d49b37d70ffcdcf5849cedcd62a3b0df924a0aa19bc8bb785f4f03"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/metadata-and-failures/portplan-v14-first-clean-duplicate-cleanup-complete.json",
+      "bytes": 3057,
+      "sha256": "a447fbe3ef77bd6ac6a05422a80d6ce83b4ae537e387ec526f8df74cd4486b69"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/metadata-and-failures/portplan-v14-material-coverage-fixtures-third.json",
+      "bytes": 1040,
+      "sha256": "5b1963f71fda8438a749dcfa078db09d2e22a54f2e8d0ff42cc3768b8eb0599f"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/metadata-and-failures/portplan-v14-recovery-first-preflight-failure.json",
+      "bytes": 2370,
+      "sha256": "8d998a4e9a32e114bff0fdf165320994e104a137ddda626df254325edc95e538"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/metadata-and-failures/portplan-v14-recovery-first-preflight-failure.stderr.log",
+      "bytes": 900,
+      "sha256": "da896b4b6ba2f2ec189af7a8e6a2609f39d4f1181ca27f7631255d7e63f88c69"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/metadata-and-failures/portplan-v14-transport-compat-fixtures-second.json",
+      "bytes": 1668,
+      "sha256": "b1b1d9ba8e171a7e25c56883114b552b76cb5ab6a680f23cba10533303ab434c"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/build.log",
+      "bytes": 4174,
+      "sha256": "f806713fb71139ba05888a50333b85583a94620293b5437b204d8398e3b84911"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/npm-ci.log",
+      "bytes": 28,
+      "sha256": "b379132e2f9bd077bcedc5b715eb9469b0815a2bd704be1eddeb3e8bcebb1c47"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/portable-v14-bootstrap.log",
+      "bytes": 2226,
+      "sha256": "72a4ec7e161d5cbfb7389becebe53db11ffaa6744dc21cdcaa18b384cb8f787b"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/portable-v14-physical.log",
+      "bytes": 23581,
+      "sha256": "57dc1e0e28b6a9c3d02c93ff70da5733a040f86b01f1e64611754329505e7720"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/restore-v14-browser-first.log",
+      "bytes": 365,
+      "sha256": "b1d5456afe2c52d549feba2831fb068ae8676003897641f6e122a6187bdc7bce"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/restore-v14-browser-materials-first.log",
+      "bytes": 383,
+      "sha256": "b7ab735ebd6d73c3468a703b6265273a7874e115d894f95d07a135741fc66e94"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/restore-v14-formal.log",
+      "bytes": 348,
+      "sha256": "7f73a5f8933b70ed83e121e2af914b89d70a6e1ecff949c0cc24a643aeb7f674"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed-logs/restore-v14-preparation-first.log",
+      "bytes": 370,
+      "sha256": "1ea425e2dbd39d8776a7b79e3a09d608e9385c2d2f4ce1efd80d84643b6ccfdc"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed/static-package-verification-v14.json",
+      "bytes": 1209,
+      "sha256": "108c81c6e586b8017f8fe82f13980fce388353ae75b1c54ee7c2ec0bbe7a7af3"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/passed/tested-download-packages-v14.json",
+      "bytes": 211196,
+      "sha256": "497c414f93d49b37d70ffcdcf5849cedcd62a3b0df924a0aa19bc8bb785f4f03"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/scope.json",
+      "bytes": 1530,
+      "sha256": "1482e82d75d1722a559261bc719e551045d6842a462a5b334423ed75121845b1"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/verifier-source/verify-portplan-v14-final-packages-v2.py",
+      "bytes": 37423,
+      "sha256": "3984381a5b59d7d27c6c554c2fb20054afff34d0f0cfb193d633fa6f56292c36"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/verifier-source/verify-portplan-v14-final-packages-v3.py",
+      "bytes": 39153,
+      "sha256": "ccb03df42cf1e88f6590b232604a99655948c39f291727948f67c12e9a64cb94"
+    },
+    {
+      "path": "artifacts/v14-clean-recovery-proof/verifier-source/verify-portplan-v14-final-packages.py",
+      "bytes": 36712,
+      "sha256": "af4af0c58d271ce0e4bac32cd15dd82b53fc8feb88f0d300dd1e999f2757e83e"
+    },
+    {
+      "path": "data/recovery-verification-v14.json",
+      "bytes": 933935,
+      "sha256": "02310f955256e8c947cd7f89d3819f3bf05dd35baeaedb40f53dc2739c5a3c7f"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 108068,
+      "sha256": "5db6e4425741afa84997d3fb6602f43171fccb8928505d04e3c53cb70f6c571d"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

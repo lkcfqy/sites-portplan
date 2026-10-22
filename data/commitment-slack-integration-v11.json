@@ -1,0 +1,4333 @@
+{
+  "schemaVersion": "portplan-commitment-slack-integration-v11",
+  "valid": true,
+  "generatedAt": "2026-10-16T16:49:00.351Z",
+  "dataRole": "seen-v10-archived-endpoint-development",
+  "sourceHashes": {
+    "scripts/check-commitment-v11.mjs": "304b35729bb57367b0c0cf91e21c8d98e0efccab6ded851be5181a6f0cb7d2ca",
+    "src/commitment-slack-v11.js": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153",
+    "scripts/highs-planner-v11.mjs": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3",
+    "src/engine.js": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+    "src/rolling-plan.js": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815",
+    "tests/fixtures/highs-v8-service.py": "89821d41c34961cfc601489fc422006c1e34d8102e203addb007fc1c214df1d5",
+    "data/commitment-slack-review-v11.json": "fb37b8ea5c2cf738ad73548a93f1f65cc541bf7c111be59f76bd88fb023ee27b"
+  },
+  "newOptimizerCalls": 0,
+  "newHeldOutExperiments": 0,
+  "wholePathPolicyReplays": 0,
+  "mockServiceCalls": 6,
+  "endpointScoreCount": 6,
+  "containerScores": 144,
+  "records": [
+    {
+      "caseId": "v10-stress-new-arrivals-tight-n24-r3",
+      "repeatIndex": 1,
+      "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "publicScenarioSha256": "606f7ec8b8e106f9a9cd56dd5209cc90370aaecdf98c043c3448c45dd92a77e5",
+      "independentPython": {
+        "cache": {
+          "mandatoryWarehouse": 2,
+          "capacity": 3,
+          "fees": {
+            "storageCost": 0,
+            "ddCost": 0,
+            "totalCost": 0,
+            "sunkCost": 0,
+            "incrementalCost": 0
+          }
+        },
+        "proposal": {
+          "mandatoryWarehouse": 1,
+          "capacity": 3,
+          "fees": {
+            "storageCost": 0,
+            "ddCost": 0,
+            "totalCost": 0,
+            "sunkCost": 0,
+            "incrementalCost": 0
+          }
+        }
+      },
+      "javascript": {
+        "cache": {
+          "method": "v11-next-day-mandatory-warehouse-lower-bound",
+          "status": "complete",
+          "complete": true,
+          "today": 4,
+          "tomorrow": 5,
+          "shadowMinEventDay": 5,
+          "mandatoryWarehouseTomorrow": 2,
+          "mandatoryWarehouseLoad": 2,
+          "scoreScope": "sum of independent single-container necessary warehouse occupancy after executing today; no joint feasibility or future recovery claim",
+          "usesUnannouncedFutureEvents": false,
+          "publicCapacities": {
+            "truck": [
+              4,
+              4,
+              2,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "warehouse": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "staging": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          "shadowFixedEvents": {
+            "v10-stress-new-arrivals-tight-n24-r3-C012": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C022": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C002": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C008": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C009": {
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C004": {
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C014": {
+              "pickupDay": 2,
+              "unloadDay": 2
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C013": {
+              "pickupDay": 3,
+              "unloadDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C017": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C024": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            }
+          },
+          "candidateDates": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "pickupDay": 12,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "pickupDay": 7,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "pickupDay": 3,
+              "unloadDay": 3,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "pickupDay": 11,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 11
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "pickupDay": 10,
+              "unloadDay": 11,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            }
+          ],
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 80,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 72,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 22,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 14,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 60,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 52,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "dueDay": 11,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 30,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 30,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 2,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 3,
+                "unloadDay": 3
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 3,
+                "unloadDay": 3,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 40,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 56,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 56,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 7,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 32,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            }
+          ],
+          "legalTripCount": 631,
+          "scoringWallMs": 1.7315559999999977,
+          "publicWarehouseCapacityTomorrow": 3,
+          "tomorrowInsideHorizon": true
+        },
+        "proposal": {
+          "method": "v11-next-day-mandatory-warehouse-lower-bound",
+          "status": "complete",
+          "complete": true,
+          "today": 4,
+          "tomorrow": 5,
+          "shadowMinEventDay": 5,
+          "mandatoryWarehouseTomorrow": 1,
+          "mandatoryWarehouseLoad": 1,
+          "scoreScope": "sum of independent single-container necessary warehouse occupancy after executing today; no joint feasibility or future recovery claim",
+          "usesUnannouncedFutureEvents": false,
+          "publicCapacities": {
+            "truck": [
+              4,
+              4,
+              2,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "warehouse": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "staging": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          "shadowFixedEvents": {
+            "v10-stress-new-arrivals-tight-n24-r3-C012": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C022": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C002": {
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C008": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C009": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C004": {
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C014": {
+              "pickupDay": 2,
+              "unloadDay": 2
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C013": {
+              "pickupDay": 3,
+              "unloadDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C005": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C024": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            }
+          },
+          "candidateDates": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "pickupDay": 12,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 7
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "pickupDay": 3,
+              "unloadDay": 3,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "pickupDay": 11,
+              "unloadDay": 11,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 11
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            }
+          ],
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 80,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 72,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 60,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 52,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "dueDay": 11,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 30,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 30,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 2,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 3,
+                "unloadDay": 3
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 3,
+                "unloadDay": 3,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 40,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 65,
+              "occupiesTomorrowCount": 7,
+              "avoidsTomorrowCount": 58,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 56,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 56,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 7,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 32,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            }
+          ],
+          "legalTripCount": 675,
+          "scoringWallMs": 0.7659500000000037,
+          "publicWarehouseCapacityTomorrow": 3,
+          "tomorrowInsideHorizon": true
+        }
+      },
+      "adapter": {
+        "decisionReason": "equal_fee_lower_mandatory_warehouse",
+        "beforeM": 2,
+        "proposalM": 1,
+        "selectedM": 1,
+        "initialFees": 0,
+        "selectedFees": 0,
+        "changedEventCount": 29,
+        "acceptedAtMs": 3.6023989999999984,
+        "callBudgetMs": 2000,
+        "timeScope": "Synthetic response-service integration only; these values are not real native performance measurements."
+      }
+    },
+    {
+      "caseId": "v10-stress-new-arrivals-tight-n24-r3",
+      "repeatIndex": 2,
+      "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "publicScenarioSha256": "606f7ec8b8e106f9a9cd56dd5209cc90370aaecdf98c043c3448c45dd92a77e5",
+      "independentPython": {
+        "cache": {
+          "mandatoryWarehouse": 2,
+          "capacity": 3,
+          "fees": {
+            "storageCost": 0,
+            "ddCost": 0,
+            "totalCost": 0,
+            "sunkCost": 0,
+            "incrementalCost": 0
+          }
+        },
+        "proposal": {
+          "mandatoryWarehouse": 1,
+          "capacity": 3,
+          "fees": {
+            "storageCost": 0,
+            "ddCost": 0,
+            "totalCost": 0,
+            "sunkCost": 0,
+            "incrementalCost": 0
+          }
+        }
+      },
+      "javascript": {
+        "cache": {
+          "method": "v11-next-day-mandatory-warehouse-lower-bound",
+          "status": "complete",
+          "complete": true,
+          "today": 4,
+          "tomorrow": 5,
+          "shadowMinEventDay": 5,
+          "mandatoryWarehouseTomorrow": 2,
+          "mandatoryWarehouseLoad": 2,
+          "scoreScope": "sum of independent single-container necessary warehouse occupancy after executing today; no joint feasibility or future recovery claim",
+          "usesUnannouncedFutureEvents": false,
+          "publicCapacities": {
+            "truck": [
+              4,
+              4,
+              2,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "warehouse": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "staging": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          "shadowFixedEvents": {
+            "v10-stress-new-arrivals-tight-n24-r3-C012": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C022": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C002": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C008": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C009": {
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C004": {
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C014": {
+              "pickupDay": 2,
+              "unloadDay": 2
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C013": {
+              "pickupDay": 3,
+              "unloadDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C017": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C024": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            }
+          },
+          "candidateDates": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "pickupDay": 12,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "pickupDay": 7,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "pickupDay": 3,
+              "unloadDay": 3,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "pickupDay": 11,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 11
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "pickupDay": 10,
+              "unloadDay": 11,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            }
+          ],
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 80,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 72,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 22,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 14,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 60,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 52,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "dueDay": 11,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 30,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 30,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 2,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 3,
+                "unloadDay": 3
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 3,
+                "unloadDay": 3,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 40,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 56,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 56,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 7,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 32,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            }
+          ],
+          "legalTripCount": 631,
+          "scoringWallMs": 0.5206250000000097,
+          "publicWarehouseCapacityTomorrow": 3,
+          "tomorrowInsideHorizon": true
+        },
+        "proposal": {
+          "method": "v11-next-day-mandatory-warehouse-lower-bound",
+          "status": "complete",
+          "complete": true,
+          "today": 4,
+          "tomorrow": 5,
+          "shadowMinEventDay": 5,
+          "mandatoryWarehouseTomorrow": 1,
+          "mandatoryWarehouseLoad": 1,
+          "scoreScope": "sum of independent single-container necessary warehouse occupancy after executing today; no joint feasibility or future recovery claim",
+          "usesUnannouncedFutureEvents": false,
+          "publicCapacities": {
+            "truck": [
+              4,
+              4,
+              2,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "warehouse": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "staging": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          "shadowFixedEvents": {
+            "v10-stress-new-arrivals-tight-n24-r3-C012": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C022": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C002": {
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C008": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C009": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C004": {
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C014": {
+              "pickupDay": 2,
+              "unloadDay": 2
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C013": {
+              "pickupDay": 3,
+              "unloadDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C005": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C024": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            }
+          },
+          "candidateDates": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "pickupDay": 12,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 7
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "pickupDay": 3,
+              "unloadDay": 3,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "pickupDay": 11,
+              "unloadDay": 11,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 11
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            }
+          ],
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 80,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 72,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 60,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 52,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "dueDay": 11,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 30,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 30,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 2,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 3,
+                "unloadDay": 3
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 3,
+                "unloadDay": 3,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 40,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 65,
+              "occupiesTomorrowCount": 7,
+              "avoidsTomorrowCount": 58,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 56,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 56,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 7,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 32,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            }
+          ],
+          "legalTripCount": 675,
+          "scoringWallMs": 0.751207000000008,
+          "publicWarehouseCapacityTomorrow": 3,
+          "tomorrowInsideHorizon": true
+        }
+      },
+      "adapter": {
+        "decisionReason": "equal_fee_lower_mandatory_warehouse",
+        "beforeM": 2,
+        "proposalM": 1,
+        "selectedM": 1,
+        "initialFees": 0,
+        "selectedFees": 0,
+        "changedEventCount": 29,
+        "acceptedAtMs": 3.079690999999997,
+        "callBudgetMs": 2000,
+        "timeScope": "Synthetic response-service integration only; these values are not real native performance measurements."
+      }
+    },
+    {
+      "caseId": "v10-stress-new-arrivals-tight-n24-r3",
+      "repeatIndex": 3,
+      "observationHash": "sha256:bffcb73ec327147267407f0c5d929726a1b13a73d9c2a7e7c8ed6a48afbd5f6f",
+      "publicScenarioSha256": "606f7ec8b8e106f9a9cd56dd5209cc90370aaecdf98c043c3448c45dd92a77e5",
+      "independentPython": {
+        "cache": {
+          "mandatoryWarehouse": 2,
+          "capacity": 3,
+          "fees": {
+            "storageCost": 0,
+            "ddCost": 0,
+            "totalCost": 0,
+            "sunkCost": 0,
+            "incrementalCost": 0
+          }
+        },
+        "proposal": {
+          "mandatoryWarehouse": 1,
+          "capacity": 3,
+          "fees": {
+            "storageCost": 0,
+            "ddCost": 0,
+            "totalCost": 0,
+            "sunkCost": 0,
+            "incrementalCost": 0
+          }
+        }
+      },
+      "javascript": {
+        "cache": {
+          "method": "v11-next-day-mandatory-warehouse-lower-bound",
+          "status": "complete",
+          "complete": true,
+          "today": 4,
+          "tomorrow": 5,
+          "shadowMinEventDay": 5,
+          "mandatoryWarehouseTomorrow": 2,
+          "mandatoryWarehouseLoad": 2,
+          "scoreScope": "sum of independent single-container necessary warehouse occupancy after executing today; no joint feasibility or future recovery claim",
+          "usesUnannouncedFutureEvents": false,
+          "publicCapacities": {
+            "truck": [
+              4,
+              4,
+              2,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "warehouse": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "staging": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          "shadowFixedEvents": {
+            "v10-stress-new-arrivals-tight-n24-r3-C012": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C022": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C002": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C008": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C009": {
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C004": {
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C014": {
+              "pickupDay": 2,
+              "unloadDay": 2
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C013": {
+              "pickupDay": 3,
+              "unloadDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C017": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C024": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            }
+          },
+          "candidateDates": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "pickupDay": 12,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "pickupDay": 7,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "pickupDay": 3,
+              "unloadDay": 3,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "pickupDay": 11,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 11
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "pickupDay": 10,
+              "unloadDay": 11,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            }
+          ],
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 80,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 72,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 22,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 14,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 60,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 52,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "dueDay": 11,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 30,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 30,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 2,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 3,
+                "unloadDay": 3
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 3,
+                "unloadDay": 3,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 40,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 56,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 56,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 7,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 32,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            }
+          ],
+          "legalTripCount": 631,
+          "scoringWallMs": 1.9996250000000089,
+          "publicWarehouseCapacityTomorrow": 3,
+          "tomorrowInsideHorizon": true
+        },
+        "proposal": {
+          "method": "v11-next-day-mandatory-warehouse-lower-bound",
+          "status": "complete",
+          "complete": true,
+          "today": 4,
+          "tomorrow": 5,
+          "shadowMinEventDay": 5,
+          "mandatoryWarehouseTomorrow": 1,
+          "mandatoryWarehouseLoad": 1,
+          "scoreScope": "sum of independent single-container necessary warehouse occupancy after executing today; no joint feasibility or future recovery claim",
+          "usesUnannouncedFutureEvents": false,
+          "publicCapacities": {
+            "truck": [
+              4,
+              4,
+              2,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "warehouse": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "staging": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ]
+          },
+          "shadowFixedEvents": {
+            "v10-stress-new-arrivals-tight-n24-r3-C012": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C022": {
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C002": {
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C008": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C009": {
+              "pickupDay": 1,
+              "unloadDay": 1
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C004": {
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C014": {
+              "pickupDay": 2,
+              "unloadDay": 2
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C013": {
+              "pickupDay": 3,
+              "unloadDay": 3
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C005": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            },
+            "v10-stress-new-arrivals-tight-n24-r3-C024": {
+              "pickupDay": 4,
+              "unloadDay": 4
+            }
+          },
+          "candidateDates": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "pickupDay": 12,
+              "unloadDay": 12,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 7
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 4
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "pickupDay": 1,
+              "unloadDay": 1,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "pickupDay": 5,
+              "unloadDay": 5,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 10
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 3
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "pickupDay": 3,
+              "unloadDay": 3,
+              "returnDay": 6
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "pickupDay": 2,
+              "unloadDay": 2,
+              "returnDay": 5
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "pickupDay": 11,
+              "unloadDay": 11,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "pickupDay": 9,
+              "unloadDay": 9,
+              "returnDay": 13
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "pickupDay": 10,
+              "unloadDay": 10,
+              "returnDay": 11
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "pickupDay": 8,
+              "unloadDay": 8,
+              "returnDay": 9
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "pickupDay": 7,
+              "unloadDay": 7,
+              "returnDay": 12
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "pickupDay": 0,
+              "unloadDay": 0,
+              "returnDay": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "pickupDay": 6,
+              "unloadDay": 6,
+              "returnDay": 8
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "pickupDay": 4,
+              "unloadDay": 4,
+              "returnDay": 7
+            }
+          ],
+          "containers": [
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C001",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C002",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C003",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 80,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 72,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C004",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 4
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C005",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C006",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 60,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 52,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C007",
+              "sizeFt": 40,
+              "unloadDays": 2,
+              "dueDay": 11,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 30,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 30,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C008",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 4,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C009",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 1,
+                "unloadDay": 1
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 1,
+                "unloadDay": 1,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C010",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 8,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 0,
+              "avoidanceWitness": null,
+              "mandatoryWarehouseTomorrow": 1
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C011",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C012",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 2,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 3
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C013",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 5,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 3,
+                "unloadDay": 3
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 3,
+                "unloadDay": 3,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C014",
+              "sizeFt": 20,
+              "unloadDays": 3,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 2,
+                "unloadDay": 2
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 2,
+                "unloadDay": 2,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C015",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 35,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 35,
+              "avoidanceWitness": {
+                "pickupDay": 8,
+                "unloadDay": 8,
+                "returnDay": 9
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C016",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 40,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C017",
+              "sizeFt": 20,
+              "unloadDays": 2,
+              "dueDay": 10,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 65,
+              "occupiesTomorrowCount": 7,
+              "avoidsTomorrowCount": 58,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C018",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C019",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 12,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 56,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 56,
+              "avoidanceWitness": {
+                "pickupDay": 7,
+                "unloadDay": 7,
+                "returnDay": 8
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C020",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 9,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 50,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 50,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C021",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 7,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 40,
+              "occupiesTomorrowCount": 8,
+              "avoidsTomorrowCount": 32,
+              "avoidanceWitness": {
+                "pickupDay": 5,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C022",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 3,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "legalTripCount": 1,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 1,
+              "avoidanceWitness": {
+                "pickupDay": 0,
+                "unloadDay": 0,
+                "returnDay": 1
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C023",
+              "sizeFt": 20,
+              "unloadDays": 1,
+              "dueDay": 8,
+              "stagingWeight": 1,
+              "shadowLocks": {},
+              "legalTripCount": 34,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 34,
+              "avoidanceWitness": {
+                "pickupDay": 6,
+                "unloadDay": 6,
+                "returnDay": 7
+              },
+              "mandatoryWarehouseTomorrow": 0
+            },
+            {
+              "id": "v10-stress-new-arrivals-tight-n24-r3-C024",
+              "sizeFt": 40,
+              "unloadDays": 1,
+              "dueDay": 6,
+              "stagingWeight": 1,
+              "shadowLocks": {
+                "pickupDay": 4,
+                "unloadDay": 4
+              },
+              "legalTripCount": 9,
+              "occupiesTomorrowCount": 0,
+              "avoidsTomorrowCount": 9,
+              "avoidanceWitness": {
+                "pickupDay": 4,
+                "unloadDay": 4,
+                "returnDay": 5
+              },
+              "mandatoryWarehouseTomorrow": 0
+            }
+          ],
+          "legalTripCount": 675,
+          "scoringWallMs": 0.8935900000000032,
+          "publicWarehouseCapacityTomorrow": 3,
+          "tomorrowInsideHorizon": true
+        }
+      },
+      "adapter": {
+        "decisionReason": "equal_fee_lower_mandatory_warehouse",
+        "beforeM": 2,
+        "proposalM": 1,
+        "selectedM": 1,
+        "initialFees": 0,
+        "selectedFees": 0,
+        "changedEventCount": 29,
+        "acceptedAtMs": 2.4955029999999994,
+        "callBudgetMs": 2000,
+        "timeScope": "Synthetic response-service integration only; these values are not real native performance measurements."
+      }
+    }
+  ],
+  "scope": "Compare JavaScript necessary-load scores and per-box domain counts with independent Python on six saved endpoints, then exercise V11 adapter selection using the explicit synthetic response service. No native HiGHS optimization, timing benchmark, prospective validation or whole-path completion claim.",
+  "domainDifference": "The original Python calendar-only relaxation and its separately enumerated single-box public-capacity relaxation are both retained. JavaScript matches the latter on these endpoints; none of the domains enforces joint shared-resource feasibility."
+}

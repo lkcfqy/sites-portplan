@@ -1,0 +1,2 @@
+# External public-code reproduction only. Gate validation uses the standard library.
+numpy==2.3.5

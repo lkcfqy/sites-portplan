@@ -1,0 +1,17 @@
+{
+  "version": "portplan-operations-stress-v2",
+  "createdOn": "2026-10-12",
+  "dataLabel": "Synthetic scenario stress tests; not observed operations or online rolling evaluation",
+  "seeds": [29001, 29002, 29003, 29004, 29005, 29006],
+  "count": 16,
+  "horizonDays": 14,
+  "mechanisms": "odd seeds: aged backlog; even seeds: arrivals over days 0-5",
+  "capacities": {"truck": 6, "warehouse": 4, "staging": 8},
+  "solverTimeLimitSeconds": 1,
+  "operationalVariants": ["next-day-container-default", "same-day-container", "next-day-TEU", "same-day-TEU"],
+  "fixedDisruptions": ["transport-minus-2-on-days-3-5", "unload-plus-1-every-fourth-box", "both"],
+  "planSelection": "Use a complete feasible default MILP plan; if absent, retain the case and report no initial plan, never substitute silently.",
+  "audit": "Independently re-evaluate the unchanged initial dates against disrupted resources and actual processing durations. Never calculate operational savings from an infeasible plan.",
+  "recovery": "Solve again with all realized disruptions known at planning start. This is a hindsight full-information diagnostic, not a feasible online rolling strategy or guaranteed recovery after execution.",
+  "inference": "Paired variants reuse the same inputs intentionally; report counts and ranges, not independent-sample confidence intervals. Retain every case regardless of result."
+}

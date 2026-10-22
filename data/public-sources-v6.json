@@ -1,0 +1,619 @@
+{
+  "schemaVersion": "portplan-real-data-source-investigation-v6-1",
+  "checkedAtUtc": "2026-10-13T05:07:23.346354+00:00",
+  "rawArtifactsModified": false,
+  "solverRuns": 0,
+  "directPortPlanShipmentCoreDatasetFound": false,
+  "exhaustiveWorldwideAbsenceClaim": false,
+  "scope": "Downloaded field/provenance/license audit only; no new solver performance or real port fee savings claims",
+  "sources": [
+    {
+      "id": "amazon-last-mile-practice",
+      "title": "2021 Amazon Last Mile Routing Research Challenge, official training practice subset",
+      "landingUrl": "https://registry.opendata.aws/amazon-last-mile-challenges/",
+      "sourceType": "publisher-described real historical routes; planned package service and windows; actual stop sequences",
+      "license": "CC BY-NC 4.0",
+      "licenseFile": "amazon-last-mile-practice/License.txt",
+      "attribution": "Amazon Last Mile Routing Research Challenge, Amazon and MIT Center for Transportation & Logistics, 2021; original files unchanged",
+      "artifactDownloads": [
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/License.txt",
+          "httpStatus": 200,
+          "bytes": 19342,
+          "sha256": "48f99d700291c586c53ceed67e424e4513ef0a2ba1b61d1472d4113086d820c9",
+          "etag": "\"7bcf11a03aa3e77c7bdd7f38595f376d\"",
+          "lastModified": "Sat, 28 May 2022 04:33:52 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/Readme.txt",
+          "httpStatus": 200,
+          "bytes": 422,
+          "sha256": "1325a6079ad41da79c150dd34bf20b866ce26330e3dac2d28f8753e0f812a54d",
+          "etag": "\"21627a3d923163c0284c34c651bbe97b\"",
+          "lastModified": "Sat, 28 May 2022 04:34:03 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/new_route_data.json",
+          "httpStatus": 200,
+          "bytes": 178703,
+          "sha256": "5b6292cf03ed6abc1a8e37a61405c05e14751dc2820a0856f04fd14563f362a3",
+          "etag": "\"ba4b01870e070426df8f534ba9225e0d\"",
+          "lastModified": "Fri, 03 Jun 2022 02:49:06 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/new_package_data.json",
+          "httpStatus": 200,
+          "bytes": 717877,
+          "sha256": "27fc132c7f9de5498301844e27e0d57eba7898bd2f2a247c51742d5b87400c95",
+          "etag": "\"1b8176db21adf7d138f6057a46fb24db\"",
+          "lastModified": "Fri, 03 Jun 2022 02:49:05 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/new_travel_times.json",
+          "httpStatus": 200,
+          "bytes": 4310705,
+          "sha256": "3a96c295d70f1eb372c89126e77e69f60d7bb1b9d38b2a913777d9341d560ab6",
+          "etag": "\"47331f99098326d2ff57bc47e6a0f6b0\"",
+          "lastModified": "Fri, 03 Jun 2022 02:49:10 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_apply_inputs/readme.md",
+          "httpStatus": 200,
+          "bytes": 154,
+          "sha256": "0f500350643f54601efe351071b85f1f781ec5e1ee30be6425953184fe6da196",
+          "etag": "\"21769f4b152935cda6b372e31eae4755\"",
+          "lastModified": "Fri, 03 Jun 2022 02:49:11 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_score_inputs/new_actual_sequences.json",
+          "httpStatus": 200,
+          "bytes": 21937,
+          "sha256": "174625ccf3e0aed722f1129feee558ee5672372a3757d475072f7e04c300c2db",
+          "etag": "\"76463bb87651206287e51ee5d79c093a\"",
+          "lastModified": "Fri, 03 Jun 2022 02:58:23 GMT"
+        },
+        {
+          "url": "https://amazon-last-mile-challenges.s3.us-west-2.amazonaws.com/almrrc2021/almrrc2021-data-training/model_score_inputs/new_invalid_sequence_scores.json",
+          "httpStatus": 200,
+          "bytes": 884,
+          "sha256": "d401c4a1c8d441962d2add760adf14325fe9d08af5573c0afc287eeab18d199b",
+          "etag": "\"82836f1f35a3acf3bd4dabbf89dd5e51\"",
+          "lastModified": "Fri, 03 Jun 2022 02:58:23 GMT"
+        }
+      ],
+      "originalBytes": 5250024,
+      "profile": "amazon-last-mile-practice/schema-evidence.json",
+      "directPortPlanCoreInput": false,
+      "actualContainerShipmentValidation": false,
+      "keyLimits": [
+        "13 practice routes are part of 6,112 training routes, not held-out routes",
+        "3129 package occurrences, 3125 distinct package IDs",
+        "2919 absent windows encoded as bare NaN and 29 zone_id NaN: original files preserved, not strict JSON",
+        "planned service is not observed unloading duration",
+        "no historical package release, port discharge, warehouse capacity, empty return or port fee"
+      ]
+    },
+    {
+      "id": "california-freight-47-derived",
+      "title": "Robust BET Dispatching Problem with Backhauls and Time Windows under Travel Time Uncertainty",
+      "landingUrl": "https://github.com/pengdongbo/Robust-BET-Dispatching-Dataset/tree/0e608495c1520d1634d57c748f84156453d17869",
+      "commit": "0e608495c1520d1634d57c748f84156453d17869",
+      "sourceType": "author-described generated instance based on real historical one-day freight movements; ORS-estimated matrices",
+      "license": "MIT; root repository license, no separate data exception found",
+      "licenseFile": "california-freight-47-derived/LICENSE",
+      "attribution": "Dongbo Peng, Robust-BET-Dispatching-Dataset, copyright (c) 2024 Dongbo; fixed commit preserved",
+      "artifactDownloads": [
+        {
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/LICENSE",
+          "bytes": 1063,
+          "sha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+          "md5": "ab3ad5d906e3de2c0179b73b17fb166a",
+          "httpStatus": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/README.md",
+          "bytes": 944,
+          "sha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+          "md5": "bdf4153bb1f5853bd6c9874584855b72",
+          "httpStatus": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPBTW1_robust.csv",
+          "bytes": 1305,
+          "sha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+          "md5": "fa2239bbf73c0fd7be725b3a89f895e9",
+          "httpStatus": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_dist.csv",
+          "bytes": 20288,
+          "sha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+          "md5": "b5d234f38027461c9bad6978d2f43d06",
+          "httpStatus": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/pengdongbo/Robust-BET-Dispatching-Dataset/0e608495c1520d1634d57c748f84156453d17869/Robust_BET_Dispatching_Dataset/BETVRPB1_time.csv",
+          "bytes": 17854,
+          "sha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+          "md5": "3632463586c842cba79e28c5aaf93b0e",
+          "httpStatus": 200
+        }
+      ],
+      "originalBytes": 41454,
+      "profile": "california-freight-47-derived/schema-evidence.json",
+      "directPortPlanCoreInput": false,
+      "actualContainerShipmentValidation": false,
+      "preferredExternalConstraintInstance": true,
+      "keyLimits": [
+        "47 customers plus depot; 33 delivery and 14 pickup",
+        "19-customer TRR sample is an exact subset, not independent data",
+        "service/windows provenance not individually established as observed",
+        "Arr is earliest customer window, not historical order release",
+        "no fleet size/capacity, port container type, discharge, matched empty return or tariff"
+      ]
+    },
+    {
+      "id": "delivering-data-15310106",
+      "title": "Delivering Data: A Real-World Dataset for Last-Mile Delivery Optimization",
+      "landingUrl": "https://zenodo.org/records/15310106",
+      "doi": "10.5281/zenodo.15310106",
+      "sourceType": "real 3PL delivery demands, recipient-type-derived service/windows, API-generated matrices",
+      "license": "CC BY 4.0 for dataset, as stated in Zenodo metadata",
+      "articleLicense": "CC BY-NC 4.0 for article XML, as stated in its permissions element",
+      "attribution": "Anna Vrani, Savvas D. Apostolidis, Athanasios Ch. Kapoutsis, Elias B. Kosmatopoulos (2025); DOI10.5281/zenodo.15310106 / 10.1016/j.dib.2025.111762",
+      "metadataFile": "delivering-data-15310106.zenodo.json",
+      "artifactDownloads": [
+        {
+          "file": "data/public/v6-data-sources/delivering-data-15310106.zip",
+          "url": "https://zenodo.org/api/records/15310106/files/data.zip/content",
+          "retrievedAt": "2026-10-13T04:58:27.181128+00:00",
+          "status": 200,
+          "bytes": 2926700,
+          "sha256": "f28906181e925fa1697b069febff350a331ee8cd73d99cd678de661a350a5005",
+          "md5": "0daa54c790e7c562665093de95ff1dec",
+          "contentType": "application/octet-stream,application/octet-stream",
+          "etag": null
+        }
+      ],
+      "originalBytes": 2926700,
+      "publisherMD5": "0daa54c790e7c562665093de95ff1dec",
+      "publisherMD5Matches": true,
+      "profile": "delivering-data-workbook-audit.json",
+      "directPortPlanCoreInput": false,
+      "actualContainerShipmentValidation": false,
+      "keyLimits": [
+        "9 day-indexed instances, 653 request occurrences; no original calendar dates",
+        "service/windows determined from recipient type, not directly observed operations",
+        "36 matrices are estimated, not realized travel histories",
+        "vehicle/fleet capacities not in original ZIP; no port lifecycle or fees"
+      ]
+    },
+    {
+      "id": "port-bulk-ocel-22019684",
+      "title": "IoT-Enriched OCEL Dataset for the Cargo Pickup Process at a Major Chinese Port",
+      "landingUrl": "https://zenodo.org/records/22019684",
+      "doi": "10.5281/zenodo.22019684",
+      "sourceType": "curator-described Chinese port operational event log; bulk/silo cargo rather than container operations; operational collection authenticity not independently established",
+      "license": "CC BY 4.0",
+      "attribution": "Jia Wei, RongJia Song, Chun Ouyang, Weiping Cui (2026), IoT-Enriched OCEL Dataset for the Cargo Pickup Process at a Major Chinese Port, DOI10.5281/zenodo.22019684",
+      "metadataFile": "port-bulk-ocel-22019684/zenodo-metadata.json",
+      "artifactDownloads": [
+        {
+          "url": "https://zenodo.org/api/records/22019684/files/CargoPickup_IoT.sqlite/content",
+          "file": "port-bulk-ocel-22019684/CargoPickup_IoT.sqlite",
+          "httpStatus": 200,
+          "bytes": 7188480,
+          "sha256": "edcb515fddc502db99a2122cf8d69b951d00269644aa46f6d550a43bb017075f",
+          "computedMD5": "dbf640c6245eaef91219a656aee57539",
+          "publisherMD5": "dbf640c6245eaef91219a656aee57539",
+          "publisherMD5Matches": true
+        }
+      ],
+      "originalBytes": 7188480,
+      "profile": "port-bulk-ocel-22019684/sqlite-profile.json",
+      "extraChecks": "port-bulk-ocel-22019684/sqlite-extra-checks.json",
+      "directPortPlanCoreInput": false,
+      "actualContainerShipmentValidation": false,
+      "keyLimits": [
+        "Wheat/Corn/Rice/Potato/Other cargo; no container ID or size",
+        "6989 event rows but 6950 unique event IDs; 39 ID collisions at differing timestamps",
+        "event-object relation repeats must not cause multiplied joins",
+        "no lifecycle start/complete service interval, release/timewindow, daily capacities, empty return or fees",
+        "no timezone; collecting port identity/method not specified in metadata"
+      ]
+    },
+    {
+      "id": "korea-bscc-42",
+      "landingUrl": "https://bscc.kr/user/corporate/view.bscc?idx=42&menuCd=DOM_000000103002000000",
+      "sourceType": "catalogue/sample of container gate events, not retrieved complete dispatch requests",
+      "access": [
+        {
+          "channel": "web indexed page",
+          "status": "readable catalogue/sample"
+        },
+        {
+          "channel": "direct GET through configured network",
+          "httpStatus": 503
+        }
+      ],
+      "originalDataDownloaded": false,
+      "advertisedFile": "컨테인어스.csv",
+      "advertisedSizeKB": 192320.3818359375,
+      "license": "page says free; explicit reuse license not established",
+      "directPortPlanCoreInput": false,
+      "keyLimits": [
+        "gate-event sample lacks customs release, warehouse service/window/capacity",
+        "complete CSV not acquired; no raw row-count or lifecycle join claims"
+      ]
+    },
+    {
+      "id": "korea-bigdata-sea-375",
+      "landingUrl": "https://www.bigdata-sea.kr/datasearch/base/view.do?prodId=PROD_000375",
+      "sourceType": "container gate information listing, original records not acquired",
+      "access": [
+        {
+          "channel": "web fetch",
+          "httpStatus": 502
+        },
+        {
+          "channel": "configured network proxy tunnel",
+          "httpStatus": 403
+        }
+      ],
+      "originalDataDownloaded": false,
+      "license": "not verified",
+      "directPortPlanCoreInput": false,
+      "noAccessBypass": true
+    },
+    {
+      "id": "korea-mof-container-15011649",
+      "landingUrl": "https://www.data.go.kr/data/15011649/fileData.do",
+      "metadataUrl": "https://www.data.go.kr/catalog/15011649/fileData.json",
+      "sourceType": "official catalogue; links to interactive PORT-MIS cargo search rather than a retrieved XLSX",
+      "license": "catalogue says 이용허락범위 제한 없음; unrestricted range",
+      "metadataFile": "korea-container-catalog-15011649.json",
+      "pageFile": "korea-container-page-15011649.html",
+      "originalDataDownloaded": false,
+      "directPortPlanCoreInput": false,
+      "keyLimits": [
+        "catalogue labels XLSX/100 rows but supplied URL is interactive ship/arrival query",
+        "no complete container order resource history downloaded"
+      ]
+    },
+    {
+      "id": "miplib-drayage-25-23",
+      "landingUrl": "https://miplib.zib.de/instance_details_drayage-25-23.html",
+      "reportUrl": "https://repub.eur.nl/pub/20883/ERS-2010-036-LIS.pdf",
+      "sourceType": "real Dutch reefer operational spatial sample with generated timing/service/resource configuration; anonymous MPS",
+      "license": "explicit redistribution license not located on checked official pages",
+      "downloadMetadataFile": "miplib-drayage-25-23.mps.gz.metadata.json",
+      "originalDataDownloaded": true,
+      "originalFileBundled": false,
+      "directPortPlanCoreInput": false,
+      "keyLimits": [
+        "report section3: timings nearly absent; temporal descriptions generated based on planner experience",
+        "homogeneous40trucks, 1h pickup/1h customer service/0.5h return are modeled settings",
+        "MPS 11090 variables/4630 constraints; not original 65-container ledger",
+        "no original discharge/release/lifecycle or PNC fees"
+      ]
+    },
+    {
+      "id": "antwerp-stoop-2024",
+      "landingUrl": "https://link.springer.com/article/10.1007/s00291-024-00762-2",
+      "sourceType": "paper real-carrier test case with nonpublic and request-only data",
+      "readDepth": "publisher Data availability and publicly available institutional accepted manuscript",
+      "originalDataDownloaded": false,
+      "license": "no public source-data license established",
+      "directPortPlanCoreInput": false,
+      "keyLimits": [
+        "publisher explicitly says part confidential, other data available upon reasonable request",
+        "no author contact/login/permission request attempted"
+      ]
+    },
+    {
+      "id": "plos-rmg-2026",
+      "landingUrl": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0357406",
+      "sourceType": "paper describes110 actual container tasks; public simplest code generates synthetic110 tasks",
+      "originalActualDataDownloaded": false,
+      "publicSyntheticPayloadInspected": true,
+      "rawPayloadBundled": false,
+      "repositoryLicense": null,
+      "directPortPlanCoreInput": false,
+      "auditFile": "container-route-evidence.json"
+    },
+    {
+      "id": "dryad-freight-47",
+      "doi": "10.5061/dryad.6hdr7srbv",
+      "landingUrl": "https://datadryad.org/dataset/doi:10.5061/dryad.6hdr7srbv",
+      "sourceType": "official real-case data metadata; original ZIP unavailable through attempted official endpoints",
+      "license": "CC0 1.0 from official dataset metadata",
+      "metadataFile": "dryad-dataset.json",
+      "fileManifest": "dryad-files.json",
+      "originalDataDownloaded": false,
+      "advertisedFile": "Section_3_3_Real_case_dataset_and_results.zip",
+      "advertisedBytes": 28702,
+      "advertisedSHA256": "157b05582281337fdd12c7698d794cf509ddaf7c42282ff4d755430db4b5abf3",
+      "advertisedHashIsLocallyVerified": false,
+      "access": [
+        {
+          "url": "https://datadryad.org/api/v2/files/4147203/download",
+          "httpStatus": 401
+        },
+        {
+          "url": "https://datadryad.org/downloads/file_stream/4147203",
+          "httpStatus": 403
+        }
+      ],
+      "directPortPlanCoreInput": false,
+      "noAccessBypass": true
+    }
+  ],
+  "inventory": [
+    {
+      "path": "DRYAD__manifest.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/License.txt",
+      "bytes": 19342,
+      "sha256": "48f99d700291c586c53ceed67e424e4513ef0a2ba1b61d1472d4113086d820c9",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/Readme.txt",
+      "bytes": 422,
+      "sha256": "1325a6079ad41da79c150dd34bf20b866ce26330e3dac2d28f8753e0f812a54d",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/almrrc2021-data-training__model_apply_inputs__new_package_data.json",
+      "bytes": 717877,
+      "sha256": "27fc132c7f9de5498301844e27e0d57eba7898bd2f2a247c51742d5b87400c95",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/almrrc2021-data-training__model_apply_inputs__new_route_data.json",
+      "bytes": 178703,
+      "sha256": "5b6292cf03ed6abc1a8e37a61405c05e14751dc2820a0856f04fd14563f362a3",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/almrrc2021-data-training__model_apply_inputs__new_travel_times.json",
+      "bytes": 4310705,
+      "sha256": "3a96c295d70f1eb372c89126e77e69f60d7bb1b9d38b2a913777d9341d560ab6",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/almrrc2021-data-training__model_apply_inputs__readme.md",
+      "bytes": 154,
+      "sha256": "0f500350643f54601efe351071b85f1f781ec5e1ee30be6425953184fe6da196",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/almrrc2021-data-training__model_score_inputs__new_actual_sequences.json",
+      "bytes": 21937,
+      "sha256": "174625ccf3e0aed722f1129feee558ee5672372a3757d475072f7e04c300c2db",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/almrrc2021-data-training__model_score_inputs__new_invalid_sequence_scores.json",
+      "bytes": 884,
+      "sha256": "d401c4a1c8d441962d2add760adf14325fe9d08af5573c0afc287eeab18d199b",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/download-manifest.json",
+      "bytes": 3028,
+      "sha256": "35b406e29053c3ac7f48a78890567c298ead9ed6b6780fac331d88a66819b180",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/schema-commit.json",
+      "bytes": 4099,
+      "sha256": "b1278b997978441fe8479140984564bccf4d322e082d1546f96b6bf7e583496e",
+      "derived": false
+    },
+    {
+      "path": "amazon-last-mile-practice/schema-evidence.json",
+      "bytes": 1885,
+      "sha256": "af649ff4cfd9f75fc401344dcdfc853f9ae95a6dc7063878da2b358ea14f23b3",
+      "derived": true
+    },
+    {
+      "path": "california-freight-47-derived/BETVRPB1_dist.csv",
+      "bytes": 20288,
+      "sha256": "965e3f94e85af28d17bf7980cdeee920b53dc0656aa001434d8e929e0f1702d5",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/BETVRPB1_time.csv",
+      "bytes": 17854,
+      "sha256": "8ad75945df9fa2bd12abdd7ae109b9ae1ef5d69737bd628d4631af93dcce52ee",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/BETVRPBTW1_robust.csv",
+      "bytes": 1305,
+      "sha256": "44896ecea2179f6800ea5403090a41c5a80875fc3b0efc8cb27dde19386cb2cc",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/LICENSE",
+      "bytes": 1063,
+      "sha256": "87c4e845f1fdfac4396365ef3bdc9002f37d515114f4524c165137ed18d6e05c",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/README.md",
+      "bytes": 944,
+      "sha256": "0555970cabd42b0f623f86cbcc597e36bdd09977820e5e20f18e266fc8c518c3",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/commit.json",
+      "bytes": 4518,
+      "sha256": "6e17f6f44923ce29b15ff12ba01f74e82595527d4bd3189bdda7bceb97d47ad4",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/manifest.json",
+      "bytes": 1723,
+      "sha256": "19190d2af0ef0647ad50e160351bb54e738c2346a567183a575e72ac42e8518d",
+      "derived": false
+    },
+    {
+      "path": "california-freight-47-derived/schema-evidence.json",
+      "bytes": 2801,
+      "sha256": "7e45053c102b3ed6bff1448a14d0cebfdddeec5e5b365914200a5830c436b308",
+      "derived": true
+    },
+    {
+      "path": "container-route-evidence.json",
+      "bytes": 6202,
+      "sha256": "88eec8fb28a25d688ca38aa0360bcc971f19ee3cf0c6c223b2d7223647f7a04e",
+      "derived": true
+    },
+    {
+      "path": "delivering-data-15310106.zenodo.json",
+      "bytes": 7291,
+      "sha256": "f5d8ad1e185a65a4e1e51ab30519df30c93a80da3fc78118aeefeb7f0ff83b16",
+      "derived": false
+    },
+    {
+      "path": "delivering-data-15310106.zip",
+      "bytes": 2926700,
+      "sha256": "f28906181e925fa1697b069febff350a331ee8cd73d99cd678de661a350a5005",
+      "derived": false
+    },
+    {
+      "path": "delivering-data-15310106.zip.metadata.json",
+      "bytes": 449,
+      "sha256": "c67129f3667e694463c4d1b7f04a0711345de3a0e681a162e31941accdf4b932",
+      "derived": false
+    },
+    {
+      "path": "delivering-data-article.xml",
+      "bytes": 36226,
+      "sha256": "046d029fea981b6df6ca3b0e9d501ad8222c2e7158d2e8c670850a41da961181",
+      "derived": false
+    },
+    {
+      "path": "delivering-data-article.xml.metadata.json",
+      "bytes": 382,
+      "sha256": "35d82a1a45130875c8f6707160fa0af61ecd2fd7df49a5b819ba9feaab2add31",
+      "derived": false
+    },
+    {
+      "path": "delivering-data-workbook-audit.json",
+      "bytes": 20465,
+      "sha256": "bfc2ef754a87c1a984cf035cdf9922b7d5ea02eb53a48199ce15d55568d713c5",
+      "derived": true
+    },
+    {
+      "path": "dryad-dataset.json",
+      "bytes": 3695,
+      "sha256": "d5a7473deea17dc4819c449a3ba2e2d9f509cf5b00dfe40e1d8900e28a506cfd",
+      "derived": false
+    },
+    {
+      "path": "dryad-files.json",
+      "bytes": 2808,
+      "sha256": "f6852c45c0c680f307e7aa6431ff58226bd048448757caeb4b643ccefd95d9f5",
+      "derived": false
+    },
+    {
+      "path": "dryad-page.html",
+      "bytes": 45102,
+      "sha256": "c43854a0a0ab3bbf067bc2c0b423816f2d71066ab50c87c18c25e4c1ef59d374",
+      "derived": false
+    },
+    {
+      "path": "korea-container-catalog-15011649.json",
+      "bytes": 1615,
+      "sha256": "da6af03bec5c191b34b6d5c02fb6a0f0cf7bb8f520a32d747081c94c0787f418",
+      "derived": false
+    },
+    {
+      "path": "korea-container-catalog-15011649.json.metadata.json",
+      "bytes": 420,
+      "sha256": "80f559a31fd8240c0310723b8fb51c3aa8eb10b8903df55bbccd41d68d2b7a29",
+      "derived": false
+    },
+    {
+      "path": "korea-container-page-15011649.html",
+      "bytes": 166346,
+      "sha256": "3375153b98a6b8d37ef76ef02ca84e2693210a61932a0fc240633321c44a545f",
+      "derived": false
+    },
+    {
+      "path": "korea-container-page-15011649.html.metadata.json",
+      "bytes": 414,
+      "sha256": "5e540aeb4b91ba521adea29339bd0866cf1920cea21da700e4b8e61064140831",
+      "derived": false
+    },
+    {
+      "path": "miplib-download.html",
+      "bytes": 54290,
+      "sha256": "7c768711328a9e4c194fc9a02a8fc5646476e26ed8bf676486a99e34893b4a3d",
+      "derived": false
+    },
+    {
+      "path": "miplib-download.html.metadata.json",
+      "bytes": 332,
+      "sha256": "596937a64b2adf0a3db3b14989295be2833854e26a0ed9532ca4f8beb2f7a856",
+      "derived": false
+    },
+    {
+      "path": "miplib-drayage-25-23.mps.gz.metadata.json",
+      "bytes": 607,
+      "sha256": "0135591ba6d13b48b07ee77cc0b51a1adce298c0e027429a73e38fb2928f2238",
+      "derived": false
+    },
+    {
+      "path": "miplib-drayage-page.html",
+      "bytes": 25387,
+      "sha256": "dcf3135229fe7bc430837d7292bfaedf545971bd5f67ca41717a01fcbd95d8c6",
+      "derived": false
+    },
+    {
+      "path": "miplib-drayage-page.html.metadata.json",
+      "bytes": 358,
+      "sha256": "83c5ab386a6aa85b461f887530dbecd9ba471322e30ef07e959db14deb20dead",
+      "derived": false
+    },
+    {
+      "path": "port-bulk-ocel-22019684/CargoPickup_IoT.sqlite",
+      "bytes": 7188480,
+      "sha256": "edcb515fddc502db99a2122cf8d69b951d00269644aa46f6d550a43bb017075f",
+      "derived": false
+    },
+    {
+      "path": "port-bulk-ocel-22019684/sqlite-extra-checks.json",
+      "bytes": 1079,
+      "sha256": "7f2b26b066844ac8a1ad3f5de566e79961c7ea44004b50d564da87b42f5d7361",
+      "derived": true
+    },
+    {
+      "path": "port-bulk-ocel-22019684/sqlite-inspection.json",
+      "bytes": 19540,
+      "sha256": "11b0bbf28fc82a6d805adcae377daa90fc52087b757d0ace40f582e490c91e4c",
+      "derived": true
+    },
+    {
+      "path": "port-bulk-ocel-22019684/sqlite-profile.json",
+      "bytes": 12662,
+      "sha256": "fcddcee00a2d64606e437a80f1a67134f85a430ec111a691ba5f0fbd8aeda138",
+      "derived": true
+    },
+    {
+      "path": "port-bulk-ocel-22019684/zenodo-metadata.json",
+      "bytes": 6888,
+      "sha256": "fba73ff0839d78cb3bfcffce3c21ebecc6f09934fc915ea2970c67766dbed65f",
+      "derived": false
+    }
+  ],
+  "bundledBytes": 15837273,
+  "licensedOriginalBytes": 15406658
+}

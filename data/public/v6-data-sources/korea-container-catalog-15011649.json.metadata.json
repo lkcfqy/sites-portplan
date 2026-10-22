@@ -1,0 +1,11 @@
+{
+  "file": "data/public/v6-data-sources/korea-container-catalog-15011649.json",
+  "url": "https://www.data.go.kr/catalog/15011649/fileData.json",
+  "retrievedAt": "2026-10-13T04:58:31.451456+00:00",
+  "status": 200,
+  "bytes": 1615,
+  "sha256": "da6af03bec5c191b34b6d5c02fb6a0f0cf7bb8f520a32d747081c94c0787f418",
+  "md5": "7b40eca4f036730588d15163f0e31ce8",
+  "contentType": "text/html;charset=UTF-8",
+  "etag": null
+}

@@ -1,0 +1,1115 @@
+{
+  "schemaVersion": "portplan-independent-native-diagnostic-review-v12",
+  "valid": true,
+  "readOnly": true,
+  "importsJavaScript": false,
+  "solverRuns": 0,
+  "inputIndexSha256": "513c511e38503690e8033944b09eb64b4c92fe9a7ec1be9688519a857ff8e6fa",
+  "publishedSummarySha256": "2e284c8aec25ff58df54668a5a52d6d65b893a8393c848d24a445df224ba2ef6",
+  "declarationSha256": "5ee08d9398e517d559b7603f5ff9886bc20c0a15393c68005eab88496717ad2b",
+  "implementationSha256": "14405cebb7a37a37da05e5f37efa957930b458a5215b735f55c5d146f2401cd0",
+  "independentPhysicsReviewerSha256": "f73a3c4af72cc55f835c35d05a44278cda835e849eafe8f2dd476f3e1d42b5ef",
+  "ledgerSha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9",
+  "snapshotCount": 9,
+  "taskCount": 36,
+  "seenD0FailureSnapshots": 5,
+  "seenExecutedPrefixFailureSnapshots": 4,
+  "newHeldOutScenarios": 0,
+  "newGeneratedOrders": 0,
+  "byMethodAndBudget": {
+    "cpsatV12-200ms": {
+      "tasks": 9,
+      "acceptedPlans": 1,
+      "provenOptimal": 1,
+      "statusCounts": {
+        "time_limit": 4,
+        "optimal": 1,
+        "infeasible": 4
+      }
+    },
+    "highsV8-200ms": {
+      "tasks": 9,
+      "acceptedPlans": 0,
+      "provenOptimal": 0,
+      "statusCounts": {
+        "time_limit": 5,
+        "infeasible": 4
+      }
+    },
+    "highsV8-2000ms": {
+      "tasks": 9,
+      "acceptedPlans": 5,
+      "provenOptimal": 5,
+      "statusCounts": {
+        "optimal": 5,
+        "infeasible": 4
+      }
+    },
+    "cpsatV12-2000ms": {
+      "tasks": 9,
+      "acceptedPlans": 1,
+      "provenOptimal": 1,
+      "statusCounts": {
+        "time_limit": 4,
+        "optimal": 1,
+        "infeasible": 4
+      }
+    }
+  },
+  "snapshots": [
+    {
+      "caseId": "v10-same-distribution-aged-backlog-balanced-n100-r3",
+      "day": 0,
+      "snapshotSha256": "1bfae11221ce32a71e026630c4ca55ce2085f3da1813c3a34c4fc4cb8a70bccc",
+      "fixedEventsSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "physicalPrefixEvents": 0,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 1,
+        "acceptedPlans": 0,
+        "executedEvents": 0,
+        "revisions": 0,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 1,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 1,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 0,
+        "mandatoryWarehouseLowerBound": 0,
+        "publicWarehouseCapacity": 20,
+        "contributors": [],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": false,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-same-distribution-new-arrivals-tight-n24-r3",
+      "day": 0,
+      "snapshotSha256": "f34bb5192d8b4c99a0b2070bb3ac7462dc842c54779adb14e4aa5f1a485f0dc9",
+      "fixedEventsSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "physicalPrefixEvents": 0,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 1,
+        "acceptedPlans": 0,
+        "executedEvents": 0,
+        "revisions": 0,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 1,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 0,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 0,
+        "mandatoryWarehouseLowerBound": 0,
+        "publicWarehouseCapacity": 3,
+        "contributors": [],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": false,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-same-distribution-batch-release-tight-n50-r2",
+      "day": 4,
+      "snapshotSha256": "b665a973c75879e2a9ce92a22eb33faad7cf2d6459b27fa099c4fb008182036c",
+      "fixedEventsSha256": "40780f9d722736e73231bc8f1ee6d96daed565599debefba283ce497fc3f3994",
+      "physicalPrefixEvents": 52,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 5,
+        "acceptedPlans": 4,
+        "executedEvents": 52,
+        "revisions": 38,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 5,
+          "cacheAcceptedCalls": 2,
+          "nativeAcceptedCalls": 2,
+          "retainedCacheCalls": 2,
+          "completeNativeProposals": 4,
+          "strictReplacements": 0,
+          "feeTiesRetained": 2
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 4,
+        "mandatoryWarehouseLowerBound": 4,
+        "publicWarehouseCapacity": 3,
+        "contributors": [
+          "v10-same-distribution-batch-release-tight-n50-r2-C021",
+          "v10-same-distribution-batch-release-tight-n50-r2-C037",
+          "v10-same-distribution-batch-release-tight-n50-r2-C039",
+          "v10-same-distribution-batch-release-tight-n50-r2-C046"
+        ],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": true,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r2",
+      "day": 0,
+      "snapshotSha256": "a2492339ea37690e9cabcd4c96cf154fa362a8fca15367296ddbc6111d51a6f1",
+      "fixedEventsSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "physicalPrefixEvents": 0,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 1,
+        "acceptedPlans": 0,
+        "executedEvents": 0,
+        "revisions": 0,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 1,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 1,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 0,
+        "mandatoryWarehouseLowerBound": 0,
+        "publicWarehouseCapacity": 13,
+        "contributors": [],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": false,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r4",
+      "day": 0,
+      "snapshotSha256": "134a05eacfabecedf1eab6b8bfc7ccbdb200156cf3598403c58e3772a2a7a277",
+      "fixedEventsSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "physicalPrefixEvents": 0,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 1,
+        "acceptedPlans": 0,
+        "executedEvents": 0,
+        "revisions": 0,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 1,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 1,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 0,
+        "mandatoryWarehouseLowerBound": 0,
+        "publicWarehouseCapacity": 13,
+        "contributors": [],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": false,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-stress-batch-release-tight-n50-r2",
+      "day": 6,
+      "snapshotSha256": "f1e5b7c9e7a05e010e99989d16998c72bc9aa66ee5d3bcded708d0ab1d1fc946",
+      "fixedEventsSha256": "ae9d97a2e75c4edff7c472391ec6b7e25dd629f513dc0ebcac0e95ad90647b2b",
+      "physicalPrefixEvents": 70,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 7,
+        "acceptedPlans": 6,
+        "executedEvents": 70,
+        "revisions": 108,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 7,
+          "cacheAcceptedCalls": 3,
+          "nativeAcceptedCalls": 3,
+          "retainedCacheCalls": 3,
+          "completeNativeProposals": 6,
+          "strictReplacements": 0,
+          "feeTiesRetained": 3
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 6,
+        "mandatoryWarehouseLowerBound": 4,
+        "publicWarehouseCapacity": 3,
+        "contributors": [
+          "v10-stress-batch-release-tight-n50-r2-C006",
+          "v10-stress-batch-release-tight-n50-r2-C008",
+          "v10-stress-batch-release-tight-n50-r2-C033",
+          "v10-stress-batch-release-tight-n50-r2-C043"
+        ],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": true,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-stress-batch-release-tight-n50-r3",
+      "day": 6,
+      "snapshotSha256": "b7f57d7d513147000000002257a1a38f0e3db0af4dc1567b9a9a57c3a19cfe18",
+      "fixedEventsSha256": "463c9093c70206a0e20f791d113b1fc45785f7ed9e6e990126119b1b3ac33831",
+      "physicalPrefixEvents": 67,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 7,
+        "acceptedPlans": 6,
+        "executedEvents": 67,
+        "revisions": 89,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 7,
+          "cacheAcceptedCalls": 3,
+          "nativeAcceptedCalls": 3,
+          "retainedCacheCalls": 3,
+          "completeNativeProposals": 6,
+          "strictReplacements": 0,
+          "feeTiesRetained": 3
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 6,
+        "mandatoryWarehouseLowerBound": 5,
+        "publicWarehouseCapacity": 3,
+        "contributors": [
+          "v10-stress-batch-release-tight-n50-r3-C002",
+          "v10-stress-batch-release-tight-n50-r3-C024",
+          "v10-stress-batch-release-tight-n50-r3-C028",
+          "v10-stress-batch-release-tight-n50-r3-C035",
+          "v10-stress-batch-release-tight-n50-r3-C045"
+        ],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": true,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-stress-batch-release-tight-n100-r2",
+      "day": 6,
+      "snapshotSha256": "e2c13960c3ebd99d5edbe58c234fa41482b773a3164a243b85b0f6f7c00e9d40",
+      "fixedEventsSha256": "6959ffc35a83ae70e84d0665f3afe11bc8d23b8962c4b1e06b651eef873d4fc1",
+      "physicalPrefixEvents": 133,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 7,
+        "acceptedPlans": 6,
+        "executedEvents": 133,
+        "revisions": 187,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 7,
+          "cacheAcceptedCalls": 3,
+          "nativeAcceptedCalls": 3,
+          "retainedCacheCalls": 3,
+          "completeNativeProposals": 6,
+          "strictReplacements": 0,
+          "feeTiesRetained": 3
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 6,
+        "mandatoryWarehouseLowerBound": 11,
+        "publicWarehouseCapacity": 6,
+        "contributors": [
+          "v10-stress-batch-release-tight-n100-r2-C027",
+          "v10-stress-batch-release-tight-n100-r2-C032",
+          "v10-stress-batch-release-tight-n100-r2-C036",
+          "v10-stress-batch-release-tight-n100-r2-C052",
+          "v10-stress-batch-release-tight-n100-r2-C058",
+          "v10-stress-batch-release-tight-n100-r2-C062",
+          "v10-stress-batch-release-tight-n100-r2-C065",
+          "v10-stress-batch-release-tight-n100-r2-C071",
+          "v10-stress-batch-release-tight-n100-r2-C076",
+          "v10-stress-batch-release-tight-n100-r2-C080",
+          "v10-stress-batch-release-tight-n100-r2-C096"
+        ],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": true,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    },
+    {
+      "caseId": "v10-stress-batch-release-tight-n100-r4",
+      "day": 0,
+      "snapshotSha256": "2233f3e0bf4cb7433ffec8da307ce5e2d3087c752ef4975073f50c4348355a48",
+      "fixedEventsSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "physicalPrefixEvents": 0,
+      "originalPhysicalReview": {
+        "complete": false,
+        "historyAvailable": true,
+        "timelineEntries": 1,
+        "acceptedPlans": 0,
+        "executedEvents": 0,
+        "revisions": 0,
+        "pricedRows": 0,
+        "polishEndpoints": 0,
+        "adaptiveActions": {},
+        "totalCost": null,
+        "incrementalCost": null,
+        "candidateDelivery": {
+          "candidateEvents": 0,
+          "completeCopiedCandidates": 0,
+          "acceptedCandidates": 0,
+          "independentlyInvalidCandidates": 0,
+          "callsWithTimelyIncumbent": 0
+        },
+        "nativeStabilitySelection": {
+          "calls": 1,
+          "cacheAcceptedCalls": 0,
+          "nativeAcceptedCalls": 0,
+          "retainedCacheCalls": 0,
+          "completeNativeProposals": 1,
+          "strictReplacements": 0,
+          "feeTiesRetained": 0
+        }
+      },
+      "prefixNecessaryWarehouse": {
+        "day": 0,
+        "mandatoryWarehouseLowerBound": 0,
+        "publicWarehouseCapacity": 13,
+        "contributors": [],
+        "emptyIndividualTemporalDomains": [],
+        "independentlyProvesThisFixedPrefixInfeasible": false,
+        "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+      }
+    }
+  ],
+  "records": [
+    {
+      "artifactSha256": "853b6a178c814cb622cfa5c71bec0f3e30715cf202794ba094bc5d31bdcb2e42",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69093
+    },
+    {
+      "artifactSha256": "b0ad2e4a945ef217cf6741aedbb9bcae2608ef493f82d4b388b1f65aa1140ad1",
+      "accepted": false,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 42142100.0,
+        "ddCost": 15405000,
+        "totalCost": 57547100.0,
+        "sunkCost": 29993850.0,
+        "incrementalCost": 27553250.0,
+        "objectiveCost": 27553250.0
+      },
+      "nativeRawLowerBound": 26492600,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69102
+    },
+    {
+      "artifactSha256": "edb551936dc5b15057f591452e5fcc45df3925633e27ba9fbf11ac658fd72f38",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 41946450.0,
+        "ddCost": 14540000,
+        "totalCost": 56486450.0,
+        "sunkCost": 29993850.0,
+        "incrementalCost": 26492600.0,
+        "objectiveCost": 26492600.0
+      },
+      "nativeRawLowerBound": 26492600,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69110
+    },
+    {
+      "artifactSha256": "78978dce8a52c49d842780328ce06acabf5f7a90bc62cd003703ee222b1f9b74",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69118
+    },
+    {
+      "artifactSha256": "1688e310c8d4f15796290141a174147187078a452c433912a72a6ee508d8aa41",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 0.0,
+        "ddCost": 0,
+        "totalCost": 0.0,
+        "sunkCost": 0.0,
+        "incrementalCost": 0.0,
+        "objectiveCost": 0.0
+      },
+      "nativeRawLowerBound": 0,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69126
+    },
+    {
+      "artifactSha256": "156060b038c38a1fb90ad525a8ee30114d54ce2b56e47db57fbc5eda62b6267d",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 0.0,
+        "ddCost": 0,
+        "totalCost": 0.0,
+        "sunkCost": 0.0,
+        "incrementalCost": 0.0,
+        "objectiveCost": 0.0
+      },
+      "nativeRawLowerBound": 0,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69134
+    },
+    {
+      "artifactSha256": "e21aa2280250dbd9ccb6f358e12a4826d30478b190bac44d175af1c0469d66dd",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 0.0,
+        "ddCost": 0,
+        "totalCost": 0.0,
+        "sunkCost": 0.0,
+        "incrementalCost": 0.0,
+        "objectiveCost": 0.0
+      },
+      "nativeRawLowerBound": 0,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69147
+    },
+    {
+      "artifactSha256": "c3ade601a516a1b7b2f9c59b5ae30aebdda46ac10bc7fb7ab281b602115f6f8d",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69155
+    },
+    {
+      "artifactSha256": "5b590bc9a72861621f958d77262475b63a0e37f3c1f40aee591da19f9ce3cfeb",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69163
+    },
+    {
+      "artifactSha256": "91f032b202e4626603a1a331e0440de0bc5b8724092ce9c2db57cf6a9f33fe91",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69171
+    },
+    {
+      "artifactSha256": "a8737e367f10b2b0fda5a139201f0438f811c07eba38914dfdb79651f5f9849d",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69179
+    },
+    {
+      "artifactSha256": "dea020399a5a45dcc5db41cf0ee7a717563d88ee265bca5ff596a7d021daeaf8",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69187
+    },
+    {
+      "artifactSha256": "31e5912424f4c8b4bdbc63820918863be5ff2bb5fbf55e76b166c7970caca287",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 1610700.0,
+        "ddCost": 0,
+        "totalCost": 1610700.0,
+        "sunkCost": 254800.0,
+        "incrementalCost": 1355900.0,
+        "objectiveCost": 1355900.0
+      },
+      "nativeRawLowerBound": 1355900,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69195
+    },
+    {
+      "artifactSha256": "3a83d36aab964073264c0e20e2482f485d87422887e6e1817a34467b3ae2d243",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69207
+    },
+    {
+      "artifactSha256": "3b4c013e83f629deab2aff3f1afdf840277db2f55dfb749dabbf78909224db35",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69215
+    },
+    {
+      "artifactSha256": "8da3638bf9597426533a0a5c460cf9a59bcb6c4b45de07d4b9c8f449782bb8c4",
+      "accepted": false,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 1610700.0,
+        "ddCost": 0,
+        "totalCost": 1610700.0,
+        "sunkCost": 254800.0,
+        "incrementalCost": 1355900.0,
+        "objectiveCost": 1355900.0
+      },
+      "nativeRawLowerBound": 1355900,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69223
+    },
+    {
+      "artifactSha256": "4866233cd1a2cf0b11f81d3570bf980a389ee740f83a772be85cba45e4d07de0",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69236
+    },
+    {
+      "artifactSha256": "3d31c211711db091ad54fde256ad954d72e0bf8e7852e730daecff14cbe9ca89",
+      "accepted": false,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 1665300.0,
+        "ddCost": 120000,
+        "totalCost": 1785300.0,
+        "sunkCost": 209300.0,
+        "incrementalCost": 1576000.0,
+        "objectiveCost": 1576000.0
+      },
+      "nativeRawLowerBound": 1393650,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69244
+    },
+    {
+      "artifactSha256": "b4ac108cf160bb0349546624839ef0f45affcefb2b5c1564d0b29f5d40231f3d",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 1592500.0,
+        "ddCost": 15000,
+        "totalCost": 1607500.0,
+        "sunkCost": 209300.0,
+        "incrementalCost": 1398200.0,
+        "objectiveCost": 1398200.0
+      },
+      "nativeRawLowerBound": 1398199.9999999998,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69252
+    },
+    {
+      "artifactSha256": "cc37416aecf0749ba5c9d8ea510dd8cd4e5a5a4cefadc8911ca2b030d75c7001",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69260
+    },
+    {
+      "artifactSha256": "c7b9496e466105198b9a27343c60be61a5e96c0f65d68ea2a0d3eef20af35925",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69279
+    },
+    {
+      "artifactSha256": "2e5c92aec90ac2b4f642862a3c1c48fac4a5238d27ee59b1a944f8e8587c17c7",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69287
+    },
+    {
+      "artifactSha256": "1d682238eea7b984de4045d520412bf5823bc8afc8de2126ed3785678e335f99",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69295
+    },
+    {
+      "artifactSha256": "fd62c29e770b1634c5c93f7b2e2a359826abae771821f3bfccb4b9f7a0c07c8c",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69303
+    },
+    {
+      "artifactSha256": "58a71c35b6f95ff9c30654412b2e13d9a881722b5e6b6d259e5875b38ddf12b5",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69311
+    },
+    {
+      "artifactSha256": "78a0e2935d14114fc9cee043926d874b13aa0487e1524ff03a13a9fe29155154",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69319
+    },
+    {
+      "artifactSha256": "e150629be881f7e847a9b6c6e85a85e4ecd2de8ffad5c1ed14310e7ffe78df39",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69327
+    },
+    {
+      "artifactSha256": "0a52c22666b18a7a106a1bd47dcdda7717be2ae403942d7fd412ab6ebae7fc18",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69335
+    },
+    {
+      "artifactSha256": "92fd8656b5abcca34a4b186dbd665beb586965631aac1baa538cae037f039d32",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69343
+    },
+    {
+      "artifactSha256": "b0ba5d43df91f4f26e44c652fd7a04868f6a2df320d6aff5aae603f44c4ad987",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69351
+    },
+    {
+      "artifactSha256": "bfd81fccc0d5c62d032b4ec633944ba91c67673f06b0f570a0c485ea74bb2445",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69359
+    },
+    {
+      "artifactSha256": "8e3dbab6b1d1844ae97916d6e39dc24d32a77b039cd6ce89e2fdd59f4fe72fbc",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": true,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69367
+    },
+    {
+      "artifactSha256": "fa7ab812881432a61ed3f67932c9c7c41872b4831b17c3c277a59804d473f94a",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--cpsatV12--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69375
+    },
+    {
+      "artifactSha256": "1ec91d87694aeeee054322adf482801ef0a37db50b78785820f82795411802e3",
+      "accepted": false,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 1701700.0,
+        "ddCost": 135000,
+        "totalCost": 1836700.0,
+        "sunkCost": 291200.0,
+        "incrementalCost": 1545500.0,
+        "objectiveCost": 1545500.0
+      },
+      "nativeRawLowerBound": 1383200.0000000002,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--highsV8--200ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69396
+    },
+    {
+      "artifactSha256": "0d8befb07311b853394684f8bd909d5d6124eae23217d7b5bac1bd427762d68c",
+      "accepted": true,
+      "nativeHasIncumbent": true,
+      "rawNativeFees": {
+        "storageCost": 1674400.0,
+        "ddCost": 0,
+        "totalCost": 1674400.0,
+        "sunkCost": 291200.0,
+        "incrementalCost": 1383200.0,
+        "objectiveCost": 1383200.0
+      },
+      "nativeRawLowerBound": 1383200,
+      "reportedNativeOptimal": true,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": false,
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--highsV8--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69414
+    },
+    {
+      "artifactSha256": "fb9cf57c5c9e165f8aa687d297adcaea20b467228d0f34906f7a4d311566a9b6",
+      "accepted": false,
+      "nativeHasIncumbent": false,
+      "rawNativeFees": null,
+      "nativeRawLowerBound": null,
+      "reportedNativeOptimal": false,
+      "reportedNativeInfeasible": false,
+      "wholeCallReturnOverrun": true,
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--cpsatV12--2000ms",
+      "parentExitAndCleanupWithinBudget": true,
+      "nativePid": 69422
+    }
+  ],
+  "currentPrefixNecessaryInfeasibility": [
+    {
+      "day": 4,
+      "mandatoryWarehouseLowerBound": 4,
+      "publicWarehouseCapacity": 3,
+      "contributors": [
+        "v10-same-distribution-batch-release-tight-n50-r2-C021",
+        "v10-same-distribution-batch-release-tight-n50-r2-C037",
+        "v10-same-distribution-batch-release-tight-n50-r2-C039",
+        "v10-same-distribution-batch-release-tight-n50-r2-C046"
+      ],
+      "emptyIndividualTemporalDomains": [],
+      "independentlyProvesThisFixedPrefixInfeasible": true,
+      "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+    },
+    {
+      "day": 6,
+      "mandatoryWarehouseLowerBound": 4,
+      "publicWarehouseCapacity": 3,
+      "contributors": [
+        "v10-stress-batch-release-tight-n50-r2-C006",
+        "v10-stress-batch-release-tight-n50-r2-C008",
+        "v10-stress-batch-release-tight-n50-r2-C033",
+        "v10-stress-batch-release-tight-n50-r2-C043"
+      ],
+      "emptyIndividualTemporalDomains": [],
+      "independentlyProvesThisFixedPrefixInfeasible": true,
+      "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+    },
+    {
+      "day": 6,
+      "mandatoryWarehouseLowerBound": 5,
+      "publicWarehouseCapacity": 3,
+      "contributors": [
+        "v10-stress-batch-release-tight-n50-r3-C002",
+        "v10-stress-batch-release-tight-n50-r3-C024",
+        "v10-stress-batch-release-tight-n50-r3-C028",
+        "v10-stress-batch-release-tight-n50-r3-C035",
+        "v10-stress-batch-release-tight-n50-r3-C045"
+      ],
+      "emptyIndividualTemporalDomains": [],
+      "independentlyProvesThisFixedPrefixInfeasible": true,
+      "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+    },
+    {
+      "day": 6,
+      "mandatoryWarehouseLowerBound": 11,
+      "publicWarehouseCapacity": 6,
+      "contributors": [
+        "v10-stress-batch-release-tight-n100-r2-C027",
+        "v10-stress-batch-release-tight-n100-r2-C032",
+        "v10-stress-batch-release-tight-n100-r2-C036",
+        "v10-stress-batch-release-tight-n100-r2-C052",
+        "v10-stress-batch-release-tight-n100-r2-C058",
+        "v10-stress-batch-release-tight-n100-r2-C062",
+        "v10-stress-batch-release-tight-n100-r2-C065",
+        "v10-stress-batch-release-tight-n100-r2-C071",
+        "v10-stress-batch-release-tight-n100-r2-C076",
+        "v10-stress-batch-release-tight-n100-r2-C080",
+        "v10-stress-batch-release-tight-n100-r2-C096"
+      ],
+      "emptyIndividualTemporalDomains": [],
+      "independentlyProvesThisFixedPrefixInfeasible": true,
+      "scope": "Necessary temporal-domain warehouse occupancy under this exact already-executed prefix only; no counterfactual policy or whole original scenario impossibility claim."
+    }
+  ],
+  "recordedNativeOptimalityProvedIndependently": false,
+  "scope": "Nine already-seen V10 failed snapshots, four methods/budget combinations each, not a fresh sample or policy rollout. Full old prefix, public observations, locks, all raw/accepted complete-date resources and fees, recorded timely acceptance, cold clean exit/group cleanup, native schemas and accepted-versus-raw bound isolation independently reconstructed in Python. CP-SAT and HiGHS reports of optimality/native lower bounds are consistency-checked, not independently solved or third-party certified. Four necessary warehouse contradictions prove only the exact fixed executed prefixes; they do not prove the original unconstrained scenarios or other policies impossible. 2000ms is offline diagnosis, not the 200ms default budget. No CI, pooled ranking, enterprise gain or default replacement claim. Recorded clocks and process-cleanup logs are not externally authenticated.",
+  "supersedesReview": {
+    "path": "data/native-diagnostic-review-v12.json",
+    "sha256": "c7185b4bef9376d10d10c8afd7939cf13a0b29a6eaadfe396fd25ff25f0b7d5b",
+    "implementationSha256": "3e1379caef37eeeae9a944c416a7e1f4d5dc61f4b0ad9f668937f1880b7be462"
+  },
+  "supplementScope": "Additional finite-or-null raw native bounds, no adapter promotion of a merely feasible/UNKNOWN native result to optimal/infeasible, and final schema negative fixtures. Original diagnostic inputs/results and first audit/archive remain unchanged."
+}

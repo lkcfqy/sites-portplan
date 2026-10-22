@@ -1,0 +1,20 @@
+# V9 independent release review
+
+Reviewed first-run index: `83d165a965e421af0ebc0b399f426eab3ae48eddc4a564374a6074f9edad7204`.
+Frozen manifest: `ab99f15a026326fdd2039d94b598c5c2c1290a4176ff43367fb8e792b4e3119d`.
+
+The first frozen run completed all 144 business scenarios, three prescribed repeats and five methods (2,160 records). Both panels reuse the V8 generator and shock catalog with new order seeds. All failures, rejected candidate receipts and adverse comparisons remain in the original evidence.
+
+`scripts/review-v9.py` independently reconstructs inputs, observation causality, physical execution locks, resource usage, tariffs, copied candidate validity, outer acceptance deadlines, selected candidates and completion/fee point estimates. It uses a separate Python ledger, without importing JavaScript or running a solver. The completed review covers 2,160 episodes, 1,098 completed episodes, 16,519 accepted plans and 209,468 physical events; no execution history is unavailable. It checks 8,098 candidate events, including 7,958 complete copied candidates and 5,305 acceptance events. Invalid rejected candidates remain rejected evidence rather than being silently removed.
+
+`scripts/review-bootstrap-v9.py` separately verifies receipt eligibility, matching-repeat pairing, within-scenario aggregation, completion differences, and the predeclared 2,000-draw scenario-cluster bootstrap. Both reviews bind to exactly the same formal index and frozen manifest. Conditional completed-pair intervals do not remove completion-selection bias. Repeated runs of one scenario are not independent business scenarios.
+
+V9 completes 150/216 same-distribution and 84/216 stress episodes, versus original V8's 96/216 and 57/216 on these same inputs. Gains/losses are 54/0 and 29/2. V7 completes 150/216 and 85/216, while native HiGHS completes 156/216 and 119/216. V9 does not establish a stable fee advantage over V7, and costs more than stable retention or native HiGHS on their respective jointly completed sets. It remains an experimental option; the custom demonstration defaults to V7 versus stable retention.
+
+Resource recovery is reviewed separately in `data/resource-review-v9.json`. Four deliberately constructed teaching receipts comprise one one-container, four-day model, two authorization-menu variants and two objectives. Exhaustive Python enumeration covers 16, 16, 4 and 4 leaf states. The successful menu's minimum procurement is KRW 30,000 and its minimum incremental fees plus procurement is KRW 165,500. Procurement-only optimization can return a more expensive fee schedule without violating its stated objective. The other menu is infeasible within the supplied current observation and eligible packages. Larger instances receive feasibility review without an independent minimum claim when they exceed enumeration bounds. A selected-price tampering check is rejected against the original menu. No real quotation, permission or business trial is represented by these teaching receipts.
+
+Reproduction uses `python scripts/restore-evidence-v9.py`, then the two read-only review scripts against `data/evidence-v9/v9-frozen-first/first-run`. Re-running algorithms must use the archived frozen runner and a new output directory. Publishing material and packaging revisions do not replace the archived first source.
+
+Pre-freeze verification passed 445 tests without skips, including constructor/acceptance adversarial checks and resource terminal deadline tests. Four-factory real worker success/interruption wiring passed six checks. Thirty cold teaching fixtures exercised artifact-review integration and are excluded from formal research denominators.
+
+This is an internal independent implementation review, not third-party certification. Recorded monotonic timestamps establish consistency of the recorded trajectory, not external clock authentication. Browser interaction, enterprise validation and entrant defense validation have not been performed. No competition submission or first-place guarantee follows from these results.

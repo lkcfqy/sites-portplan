@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "portplan-v6-lossless-git-transport-1",
+  "artifact": "data/rolling-v6.json",
+  "bytes": 112117733,
+  "sha256": "695f7a62aeccd645bbd1374899fc21afe6caad1549bfbc7fa2d25e1ed62552a4",
+  "parts": [
+    {
+      "file": "part-001.bin",
+      "bytes": 4000000,
+      "sha256": "31fb1f3c8a5ae785146b28312fa93decf000501656893c6e6fd48bcfe8271de1"
+    },
+    {
+      "file": "part-002.bin",
+      "bytes": 4000000,
+      "sha256": "e7575d44408fc6b297c310567924c2da51c04e88d28c5c7c36540fc469f02981"
+    },
+    {
+      "file": "part-003.bin",
+      "bytes": 4000000,
+      "sha256": "655fe45e9b4658ccf4740b3c0b3eb9faea3259947d1299559b1698744c28a4b8"
+    },
+    {
+      "file": "part-004.bin",
+      "bytes": 4000000,
+      "sha256": "18bb50256a3017d0bd5e88b949d6fcad572d28166dada987ac98da1124f7306b"
+    },
+    {
+      "file": "part-005.bin",
+      "bytes": 4000000,
+      "sha256": "94a6f4c1e03ea943b4fd0bde1638749a40868122c45f39d08b87273fffca6d17"
+    },
+    {
+      "file": "part-006.bin",
+      "bytes": 4000000,
+      "sha256": "137a131e029b1e20d9a3c4504c84e5fdaed50dade1de6175b123b8e3934c1238"
+    },
+    {
+      "file": "part-007.bin",
+      "bytes": 4000000,
+      "sha256": "56e08db7c251d3364b264d60f688631bc60e602fd011bf3292c89c2bffc0092a"
+    },
+    {
+      "file": "part-008.bin",
+      "bytes": 4000000,
+      "sha256": "1777c07cd125544f48b2c4c20a8573ac0b718c3476b440eea73cc2b244741635"
+    },
+    {
+      "file": "part-009.bin",
+      "bytes": 4000000,
+      "sha256": "1734fc8c3c5d9cfc30e22480fb154770bcae0b5946119f977df2ef5c2e384581"
+    },
+    {
+      "file": "part-010.bin",
+      "bytes": 4000000,
+      "sha256": "b5ece9106a5b99825aa5f57637d24c566aa0971a48edddddef0bac172ed724ab"
+    },
+    {
+      "file": "part-011.bin",
+      "bytes": 4000000,
+      "sha256": "c03f7c32a6760c07cde6b175b9991e8e8c5eaf9042d805955a35ce3c03358391"
+    },
+    {
+      "file": "part-012.bin",
+      "bytes": 4000000,
+      "sha256": "d28c5e1759d6f063abb6175d7e5807fa8dd4e2482c5664a513f8ff3eb74c9d64"
+    },
+    {
+      "file": "part-013.bin",
+      "bytes": 4000000,
+      "sha256": "652e07eb7613f090a0aa8b817c416cc29d6f57a7c6a7c1544eeef76d1434361b"
+    },
+    {
+      "file": "part-014.bin",
+      "bytes": 4000000,
+      "sha256": "4679f6da4e7464cba42ff55b018ee3fbfa8cf16bafb928d2331172c344179d2f"
+    },
+    {
+      "file": "part-015.bin",
+      "bytes": 4000000,
+      "sha256": "17f64477ad134ec76daa3d1d5668773c0eab1ad574f10805a866fecf01e17584"
+    },
+    {
+      "file": "part-016.bin",
+      "bytes": 4000000,
+      "sha256": "d900eed2521a49418591e17f078af1de5d7994c4f54b56a1263c00d5729cf574"
+    },
+    {
+      "file": "part-017.bin",
+      "bytes": 4000000,
+      "sha256": "29bbc658f5e31d4839c21bf73d0664ca744f8685b424ce8957fff0b7d8202c76"
+    },
+    {
+      "file": "part-018.bin",
+      "bytes": 4000000,
+      "sha256": "534d55ff0a7d709012281f4ad54bf6854ed99ed229a58dec214f7b57ea849a22"
+    },
+    {
+      "file": "part-019.bin",
+      "bytes": 4000000,
+      "sha256": "578d7317913ed849961bf8c5daed62e54604e3a4de25bb6744b5df50e014918f"
+    },
+    {
+      "file": "part-020.bin",
+      "bytes": 4000000,
+      "sha256": "c8395e45ed0f0b7052958a6c47ffa81dbd1c10a47cdaafef66214c85fce7cb15"
+    },
+    {
+      "file": "part-021.bin",
+      "bytes": 4000000,
+      "sha256": "d5a0931bffc9ad48d9bcef128d6f305bde4acd302b8c70c23582093e435e42f2"
+    },
+    {
+      "file": "part-022.bin",
+      "bytes": 4000000,
+      "sha256": "cadd26a51b74b8edeec10bbc94198fcb5f64ae5d00a9d3eb13ffba3fc8f2de88"
+    },
+    {
+      "file": "part-023.bin",
+      "bytes": 4000000,
+      "sha256": "4c6619ff4e73c9063d510e5dfa495817ed146cb1cd34375a742584105c29d288"
+    },
+    {
+      "file": "part-024.bin",
+      "bytes": 4000000,
+      "sha256": "2f79dffd8f098d0c0a95c9c81d626a05e24ce67034b4a10a59e3e2dd23c31e62"
+    },
+    {
+      "file": "part-025.bin",
+      "bytes": 4000000,
+      "sha256": "06ecd481633c2f5b10b10b121757edf91c6aa4ca21c8df9b58b4b9385e7fe9d2"
+    },
+    {
+      "file": "part-026.bin",
+      "bytes": 4000000,
+      "sha256": "6205398cfbd6a81dbeaac41cca8e07af5b76a693a30b47f0e5c4194e6f9ffe18"
+    },
+    {
+      "file": "part-027.bin",
+      "bytes": 4000000,
+      "sha256": "1f6408c4633e6b6798bee892c48a38a6fcfbb3d2332c90044bb1afd7eae8a801"
+    },
+    {
+      "file": "part-028.bin",
+      "bytes": 4000000,
+      "sha256": "bb2be4fb69ab8d5f409d223597848b23d1c199d87d8102f38456196595050580"
+    },
+    {
+      "file": "part-029.bin",
+      "bytes": 117733,
+      "sha256": "ee3405e3e79b0ec8be493df412cc74b6b0694ef7123d3aebb426c9fccf6eb79b"
+    }
+  ],
+  "derivedBrowserView": {
+    "artifact": "data/rolling-v6-view.json",
+    "bytes": 22037228,
+    "sha256": "90278b005fd44d72f9071bbb3b7589f6a4bfc39dbf1e437b7ee3950d36c352d9"
+  },
+  "scope": "Lossless transport only. No experiment rerun or changed result. Website experiment ZIP retains the complete original JSON."
+}

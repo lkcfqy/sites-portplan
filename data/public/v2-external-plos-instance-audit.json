@@ -1,0 +1,439 @@
+{
+  "created_at": "2026-10-12T07:29:23.556980+00:00",
+  "instance": {
+    "title": "Huang et al. 2025 external scheduling constructed case",
+    "classification": "published_constructed_instance_not_real_orders",
+    "paper_doi": "10.1371/journal.pone.0318606",
+    "horizon_minutes": 1440,
+    "terminal_node": 1,
+    "yard_nodes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "yards": [
+      {
+        "node": 2,
+        "earliest_delivery_minute": 0,
+        "latest_delivery_minute": 720,
+        "yard_to_terminal_tasks": 63,
+        "terminal_to_yard_tasks": 50,
+        "provenance": "S1 text files, checked against article Table 2; constructed case, not observed shipments"
+      },
+      {
+        "node": 3,
+        "earliest_delivery_minute": 240,
+        "latest_delivery_minute": 840,
+        "yard_to_terminal_tasks": 51,
+        "terminal_to_yard_tasks": 60,
+        "provenance": "S1 text files, checked against article Table 2; constructed case, not observed shipments"
+      },
+      {
+        "node": 4,
+        "earliest_delivery_minute": 960,
+        "latest_delivery_minute": 1440,
+        "yard_to_terminal_tasks": 43,
+        "terminal_to_yard_tasks": 40,
+        "provenance": "S1 text files, checked against article Table 2; constructed case, not observed shipments"
+      },
+      {
+        "node": 5,
+        "earliest_delivery_minute": 0,
+        "latest_delivery_minute": 360,
+        "yard_to_terminal_tasks": 36,
+        "terminal_to_yard_tasks": 45,
+        "provenance": "S1 text files, checked against article Table 2; constructed case, not observed shipments"
+      },
+      {
+        "node": 6,
+        "earliest_delivery_minute": 720,
+        "latest_delivery_minute": 1080,
+        "yard_to_terminal_tasks": 31,
+        "terminal_to_yard_tasks": 36,
+        "provenance": "S1 text files, checked against article Table 2; constructed case, not observed shipments"
+      },
+      {
+        "node": 7,
+        "earliest_delivery_minute": 720,
+        "latest_delivery_minute": 1440,
+        "yard_to_terminal_tasks": 72,
+        "terminal_to_yard_tasks": 65,
+        "provenance": "S1 text files, checked against article Table 2; constructed case, not observed shipments"
+      }
+    ],
+    "total_directional_tasks": 592,
+    "distance_km": [
+      [
+        0,
+        40,
+        43,
+        30,
+        30,
+        16,
+        21
+      ],
+      [
+        40,
+        0,
+        44,
+        15,
+        46,
+        24,
+        30
+      ],
+      [
+        43,
+        44,
+        0,
+        31,
+        16,
+        42,
+        23
+      ],
+      [
+        30,
+        15,
+        31,
+        0,
+        32,
+        18,
+        16
+      ],
+      [
+        30,
+        46,
+        16,
+        32,
+        0,
+        46,
+        42
+      ],
+      [
+        16,
+        24,
+        42,
+        18,
+        46,
+        0,
+        19
+      ],
+      [
+        21,
+        30,
+        23,
+        16,
+        42,
+        19,
+        0
+      ]
+    ],
+    "appointment_slot_minutes": 120,
+    "capacity_code_and_s2": [
+      41,
+      39,
+      45,
+      42,
+      40,
+      31,
+      37,
+      35,
+      47,
+      41,
+      39,
+      43
+    ],
+    "capacity_article_table3": [
+      41,
+      39,
+      45,
+      42,
+      40,
+      31,
+      37,
+      35,
+      37,
+      41,
+      39,
+      43
+    ],
+    "processing_minutes_code": {
+      "yard": 3,
+      "gate_wait": 5,
+      "terminal": 6
+    },
+    "processing_values_article_table5": {
+      "yard": 3.5,
+      "gate_wait": 5,
+      "terminal": 2.5
+    },
+    "parameter_conflicts_must_resolve": true,
+    "missing_for_portplan": [
+      "real observation dates",
+      "container IDs",
+      "vessel discharge dates/times",
+      "customs release",
+      "container sizes",
+      "carrier and contract",
+      "free time and D&D rates",
+      "PNC storage billing",
+      "warehouse unloading chain and empty-return links per shipment"
+    ],
+    "mapping_status": "No conversion into PortPlan orders; a minute-level routing model is required for a like-for-like benchmark."
+  },
+  "spreadsheet_inventory": [
+    {
+      "sheet": "Sheet1",
+      "declared_dimension": "A21:M79",
+      "row_elements": 11,
+      "nonempty_cells": 41,
+      "cells": [
+        {
+          "cell": "B21",
+          "value": "Fig 5. Results of different pheromone evaporation rates in the IACO algorithm"
+        },
+        {
+          "cell": "A22",
+          "value": "p=0.4"
+        },
+        {
+          "cell": "B22",
+          "value": {
+            "type": "iteration_cost_series",
+            "count": 500,
+            "first": 117397.93333333259,
+            "last": 81294.86666666609
+          }
+        },
+        {
+          "cell": "A23",
+          "value": "p=0.6"
+        },
+        {
+          "cell": "B23",
+          "value": {
+            "type": "iteration_cost_series",
+            "count": 500,
+            "first": 119726.08666666607,
+            "last": 74887.08666666674
+          }
+        },
+        {
+          "cell": "A24",
+          "value": "p=0.8"
+        },
+        {
+          "cell": "B24",
+          "value": {
+            "type": "iteration_cost_series",
+            "count": 500,
+            "first": 118038.09999999907,
+            "last": 83596.53999999969
+          }
+        },
+        {
+          "cell": "B49",
+          "value": "Fig 6. Iterative results of different algorithms"
+        },
+        {
+          "cell": "A50",
+          "value": "Traditional Ant Colony Algorithm"
+        },
+        {
+          "cell": "B50",
+          "value": {
+            "type": "iteration_cost_series",
+            "count": 500,
+            "first": 106167.29999999977,
+            "last": 84101.0733333331
+          }
+        },
+        {
+          "cell": "A51",
+          "value": "Variable Neighborhood Search Algorithm"
+        },
+        {
+          "cell": "B51",
+          "value": {
+            "type": "iteration_cost_series",
+            "count": 500,
+            "first": 112766.48666666594,
+            "last": 77222.68000000005
+          }
+        },
+        {
+          "cell": "A52",
+          "value": "Improved Ant Colony Algorithm"
+        },
+        {
+          "cell": "B52",
+          "value": {
+            "type": "iteration_cost_series",
+            "count": 500,
+            "first": 119726.08666666607,
+            "last": 74887.08666666674
+          }
+        },
+        {
+          "cell": "B77",
+          "value": "Fig 8. Number of vehicles arriving at the terminal during different periods"
+        },
+        {
+          "cell": "A78",
+          "value": "Actual arrival quantity"
+        },
+        {
+          "cell": "B78",
+          "value": "37"
+        },
+        {
+          "cell": "C78",
+          "value": "23"
+        },
+        {
+          "cell": "D78",
+          "value": "30"
+        },
+        {
+          "cell": "E78",
+          "value": "28"
+        },
+        {
+          "cell": "F78",
+          "value": "25"
+        },
+        {
+          "cell": "G78",
+          "value": "23"
+        },
+        {
+          "cell": "H78",
+          "value": "37"
+        },
+        {
+          "cell": "I78",
+          "value": "33"
+        },
+        {
+          "cell": "J78",
+          "value": "35"
+        },
+        {
+          "cell": "K78",
+          "value": "31"
+        },
+        {
+          "cell": "L78",
+          "value": "35"
+        },
+        {
+          "cell": "M78",
+          "value": "37"
+        },
+        {
+          "cell": "A79",
+          "value": "Maximum arrival quantity"
+        },
+        {
+          "cell": "B79",
+          "value": "41"
+        },
+        {
+          "cell": "C79",
+          "value": "39"
+        },
+        {
+          "cell": "D79",
+          "value": "45"
+        },
+        {
+          "cell": "E79",
+          "value": "42"
+        },
+        {
+          "cell": "F79",
+          "value": "40"
+        },
+        {
+          "cell": "G79",
+          "value": "31"
+        },
+        {
+          "cell": "H79",
+          "value": "37"
+        },
+        {
+          "cell": "I79",
+          "value": "35"
+        },
+        {
+          "cell": "J79",
+          "value": "47"
+        },
+        {
+          "cell": "K79",
+          "value": "41"
+        },
+        {
+          "cell": "L79",
+          "value": "39"
+        },
+        {
+          "cell": "M79",
+          "value": "43"
+        }
+      ]
+    },
+    {
+      "sheet": "Sheet2",
+      "declared_dimension": "A1",
+      "row_elements": 0,
+      "nonempty_cells": 0,
+      "cells": []
+    },
+    {
+      "sheet": "Sheet3",
+      "declared_dimension": "A1",
+      "row_elements": 0,
+      "nonempty_cells": 0,
+      "cells": []
+    }
+  ],
+  "source_notes": [
+    "S2 workbook contains result series and figure data, not a shipment ledger.",
+    "S1 demand2 has an unlabeled sentinel value 100 before each six-yard demand row; parse the node-index mapping, not the header alone.",
+    "Published/author-reported values have not been independently reproduced."
+  ],
+  "code_inspection": {
+    "executed": false,
+    "main_py_lines": 823,
+    "functions": [
+      "demand",
+      "get_time_list",
+      "calculate_distance",
+      "initialize_pheromone",
+      "update_pheromone",
+      "construct_initial_path",
+      "update_best_path",
+      "update_interation_best_path",
+      "initialize_particles",
+      "initialize_velocities",
+      "solve_vrptw"
+    ],
+    "random_seed_call_found": false,
+    "imports": [
+      "math",
+      "numpy",
+      "random",
+      "matplotlib",
+      "pandas"
+    ],
+    "readme_packages": [
+      "numpy",
+      "matplotlib"
+    ],
+    "gui_backend": "TkAgg"
+  }
+}

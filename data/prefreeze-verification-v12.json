@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "portplan-prefreeze-verification-v12",
+  "recordedAt": "2026-10-16T17:47:40.996638+00:00",
+  "valid": true,
+  "tests": {
+    "passed": 642,
+    "failed": 0,
+    "skipped": 0,
+    "command": "PORTPLAN_V7_FACTORY_SMOKE=1 PORTPLAN_V8_FACTORY_SMOKE=1 PORTPLAN_V9_FACTORY_SMOKE=1 PORTPLAN_V10_FACTORY_SMOKE=1 PORTPLAN_V12_FACTORY_SMOKE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 node --test --test-concurrency=1 tests/*.test.mjs",
+    "rawLogSha256": "bafe879c555b302d3e3c047592e07ff11c6ae526b634c556287dd28a6f20cb7e"
+  },
+  "build": {
+    "valid": true,
+    "fileCount": 392,
+    "assetBytes": 217899804,
+    "estimatedExpandedTarBytes": 218208256,
+    "expandedLimit": 268435456,
+    "perFileLimit": 26214400
+  },
+  "sourceCoverageRef": "data/public-source-field-coverage-v12.json",
+  "newHeldOutInputsGenerated": false,
+  "scope": "Pre-freeze implementation and packaging verification on this Linux environment. Not actual browser interaction, other-OS validation or prospective performance evidence."
+}

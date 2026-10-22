@@ -1,0 +1,906 @@
+{
+  "schemaVersion": "portplan-published-browser-acceptance-v13",
+  "valid": true,
+  "fixture": false,
+  "actualBrowser": true,
+  "browser": {
+    "executable": "/usr/bin/chromium",
+    "version": "154.0.8037.57",
+    "engine": "Chromium",
+    "automation": "existing Python Playwright, real browser; no fake DOM"
+  },
+  "headless": true,
+  "totalChecks": 49,
+  "passedChecks": 49,
+  "openProductIssues": 0,
+  "unresolvedHarnessIssues": 0,
+  "viewports": [
+    {
+      "width": 390,
+      "height": 1000
+    },
+    {
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "sourceCommit": "dc36de42cb40e3a8db68ae42d00508faa56cf54f",
+  "staticInventorySha256": "a761bb03a0ae6cc31cc726f9510dd3cfbed4fc4a0cdbdc050f21b916e0d15a6b",
+  "evidenceGroups": [
+    {
+      "group": "final-candidate",
+      "path": "artifacts/browser-v12-final/summary.json",
+      "sha256": "f6ba1f917b5037e22f49b1286bfbf601dc2f655a11fc0beca1500a0d5de9a32c",
+      "checks": 49,
+      "staticInventorySha256": "a761bb03a0ae6cc31cc726f9510dd3cfbed4fc4a0cdbdc050f21b916e0d15a6b"
+    }
+  ],
+  "cases": [
+    {
+      "group": "final-candidate",
+      "id": "01-navigation-planner-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "01-navigation-planner-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "02-navigation-research-v12-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "02-navigation-research-v12-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "03-navigation-research-v9-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "03-navigation-research-v9-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "04-navigation-resource-v9-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "04-navigation-resource-v9-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "05-navigation-execution-v8-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "05-navigation-execution-v8-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "06-navigation-research-v8-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "06-navigation-research-v8-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "07-navigation-rates-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "07-navigation-rates-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "08-navigation-experiments-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "08-navigation-experiments-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "09-navigation-sources-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "09-navigation-sources-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "10-navigation-public-validation-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "10-navigation-public-validation-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "11-navigation-research-v7-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "11-navigation-research-v7-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "12-navigation-planner-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "12-navigation-planner-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "13-navigation-research-v12-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "13-navigation-research-v12-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "14-navigation-research-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "14-navigation-research-v9-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "15-navigation-resource-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "15-navigation-resource-v9-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "16-navigation-execution-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "16-navigation-execution-v8-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "17-navigation-research-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "17-navigation-research-v8-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "18-navigation-rates-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "18-navigation-rates-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "19-navigation-experiments-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "19-navigation-experiments-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "20-navigation-sources-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "20-navigation-sources-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "21-navigation-public-validation-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "21-navigation-public-validation-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "22-navigation-research-v7-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "22-navigation-research-v7-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "23-language-execution-v8-1440",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "23-language-execution-v8-1440/korean.png",
+        "23-language-execution-v8-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "24-language-execution-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "24-language-execution-v8-390/korean.png",
+        "24-language-execution-v8-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "25-language-resource-v9-1440",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "25-language-resource-v9-1440/korean.png",
+        "25-language-resource-v9-1440/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "26-language-resource-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "26-language-resource-v9-390/korean.png",
+        "26-language-resource-v9-390/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "27-keyboard-execution-v8",
+      "checklistRow": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "27-keyboard-execution-v8/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "28-keyboard-resource-v9",
+      "checklistRow": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "28-keyboard-resource-v9/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "29-workbench-valid-json-csv-export",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "29-workbench-valid-json-csv-export/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "workbench-schedule",
+          "file": "29-workbench-valid-json-csv-export/01-portplan-optimized-schedule.csv",
+          "bytes": 840,
+          "sha256": "8389d593100dfb15c3550f15d46d30d28f7c8cd1786e1cd75f98099bb2b5290c"
+        },
+        {
+          "label": "workbench-input",
+          "file": "29-workbench-valid-json-csv-export/02-portplan-scenario.json",
+          "bytes": 1865,
+          "sha256": "3edde7c48a4afb2eca717cac8088eb80e31502f7aebdbfc71ec6b1a9c609da36"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "30-workbench-invalid-duplicate-id",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "30-workbench-invalid-duplicate-id/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "31-workbench-invalid-missing-timezone",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "31-workbench-invalid-missing-timezone/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "32-execution-success-export-stale",
+      "checklistRow": 4,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "32-execution-success-export-stale/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "execution-success",
+          "file": "32-execution-success-export-stale/03-portplan-v8-custom-results.json",
+          "bytes": 180858,
+          "sha256": "2a497d25725e9addcd8309b5d33c9228bd9f3d7d87ae97ed3a5ca5120faf69cd"
+        },
+        {
+          "label": "execution-input",
+          "file": "32-execution-success-export-stale/04-portplan-v8-custom-input.json",
+          "bytes": 3152,
+          "sha256": "425abe56fa4a980ff4f3bd97c24f53e3dc7839cb31fe62a8f6a14c8b9736ff06"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "33-execution-failure-teaching",
+      "checklistRow": 4,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "33-execution-failure-teaching/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "execution-failure",
+          "file": "33-execution-failure-teaching/05-portplan-v8-custom-results.json",
+          "bytes": 121065,
+          "sha256": "789675b222260d24b1f28b20b70ec8dbec439d7dc1a68e4528f7f5780b4d0d67"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "34-resource-rescue-procurementOnly",
+      "checklistRow": 7,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "34-resource-rescue-procurementOnly/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "resource-rescue-procurementOnly",
+          "file": "34-resource-rescue-procurementOnly/06-portplan-resource-recovery-v9-result.json",
+          "bytes": 12998,
+          "sha256": "2fb8e8b8dc7ef3af42d90e3659ddf42c6667737f91d6efe0dcbebf1b54ab68fa"
+        },
+        {
+          "label": "resource-input",
+          "file": "34-resource-rescue-procurementOnly/07-portplan-resource-recovery-v9-input.json",
+          "bytes": 2406,
+          "sha256": "adcead1cad9a07ac9e19b4c03e62252f41962f670305a2213b0a78fc084fb3ff"
+        },
+        {
+          "label": "resource-stale-result",
+          "file": "34-resource-rescue-procurementOnly/08-portplan-resource-recovery-v9-result.json",
+          "bytes": 12999,
+          "sha256": "76f4a52ed275f8ef446bd6d7f681ed7b6342552692f6f75f5df3252b7731bae3"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "35-resource-rescue-feesPlusProcurement",
+      "checklistRow": 7,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "35-resource-rescue-feesPlusProcurement/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "resource-rescue-feesPlusProcurement",
+          "file": "35-resource-rescue-feesPlusProcurement/09-portplan-resource-recovery-v9-result.json",
+          "bytes": 13010,
+          "sha256": "56ded045a6da476cd13d11e954a67349df0de6a8aa1bf1e973b999e784320a17"
+        },
+        {
+          "label": "resource-input",
+          "file": "35-resource-rescue-feesPlusProcurement/10-portplan-resource-recovery-v9-input.json",
+          "bytes": 2410,
+          "sha256": "9a8e3774b22a231a883f8311571a7553466153aa65b481b5db941c8a606070b6"
+        },
+        {
+          "label": "resource-stale-result",
+          "file": "35-resource-rescue-feesPlusProcurement/11-portplan-resource-recovery-v9-result.json",
+          "bytes": 13011,
+          "sha256": "8d6e851cdca430df83f4fede2ee18d118d9d6323dfc192bb758b3e1d29a50f82"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "36-resource-impossible",
+      "checklistRow": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "36-resource-impossible/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "resource-impossible",
+          "file": "36-resource-impossible/12-portplan-resource-recovery-v9-result.json",
+          "bytes": 7138,
+          "sha256": "94185fc73f79c38a3e154cea227f2ed9e861b3cc17329e5231b80e9be4093057"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "37-resource-empty",
+      "checklistRow": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "37-resource-empty/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "resource-empty",
+          "file": "37-resource-empty/13-portplan-resource-recovery-v9-result.json",
+          "bytes": 3850,
+          "sha256": "a0f122e06864329f617db4a3dc6a02d6afd7acadc5678d343ee2be96b15eb29d"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "38-resource-invalid-action",
+      "checklistRow": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "38-resource-invalid-action/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "39-controlled-execution-v8-hard-timeout",
+      "checklistRow": 9,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "39-controlled-execution-v8-hard-timeout/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-hard-timeout",
+          "file": "39-controlled-execution-v8-hard-timeout/14-portplan-v8-custom-results.json",
+          "bytes": 4781,
+          "sha256": "9baed817b292d811a9e130e80ddec14c6628baea8dd8df219fdefb46c041f611"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "40-controlled-execution-v8-stop-rerun",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "40-controlled-execution-v8-stop-rerun/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-stop-rerun",
+          "file": "40-controlled-execution-v8-stop-rerun/15-portplan-v8-custom-results.json",
+          "bytes": 4741,
+          "sha256": "52c87c439a7ff9ea46348970467eeea6310b55e4b8e5494daeaa3b51484df222"
+        },
+        {
+          "label": "normal-rerun",
+          "file": "40-controlled-execution-v8-stop-rerun/16-portplan-v8-custom-results.json",
+          "bytes": 129140,
+          "sha256": "5256748de2856324de1c67b091a24752252857e9edb616e0472fa30e683b5d58"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "41-controlled-execution-v8-navigation-cancel",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "41-controlled-execution-v8-navigation-cancel/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-navigation-cancel",
+          "file": "41-controlled-execution-v8-navigation-cancel/17-portplan-v8-custom-results.json",
+          "bytes": 4743,
+          "sha256": "5b7cc5990894c71bcf80c54b81e0c1f0b2f6533badb2d028293d8ef1a438faea"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "42-controlled-resource-v9-hard-timeout",
+      "checklistRow": 9,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "42-controlled-resource-v9-hard-timeout/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-hard-timeout",
+          "file": "42-controlled-resource-v9-hard-timeout/18-portplan-resource-recovery-v9-result.json",
+          "bytes": 3936,
+          "sha256": "dbe0a3cc210eaa1e5f04229126d9d287e4de2e9339d0a7478a9d74e84fea845d"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "43-controlled-resource-v9-stop-rerun",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "43-controlled-resource-v9-stop-rerun/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-stop-rerun",
+          "file": "43-controlled-resource-v9-stop-rerun/19-portplan-resource-recovery-v9-result.json",
+          "bytes": 3897,
+          "sha256": "837810389917b799d38cc9e990924a3bd9302e62ba0543eb1a30f63ce6694043"
+        },
+        {
+          "label": "normal-rerun",
+          "file": "43-controlled-resource-v9-stop-rerun/20-portplan-resource-recovery-v9-result.json",
+          "bytes": 12996,
+          "sha256": "fa0b474312022f4ee75d8e5214d0ca4bff745a8abf79ac8ab3fab3a980528a7b"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "44-controlled-resource-v9-navigation-cancel",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "44-controlled-resource-v9-navigation-cancel/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-navigation-cancel",
+          "file": "44-controlled-resource-v9-navigation-cancel/21-portplan-resource-recovery-v9-result.json",
+          "bytes": 3882,
+          "sha256": "bf87ea300c32570a7f074664189d0313de39ae37998c2e1d7e0ee175db8bc336"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "45-browser-material-downloads",
+      "checklistRow": 10,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "45-browser-material-downloads/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "/downloads/defense-v12.ko.pdf",
+          "file": "45-browser-material-downloads/22-defense-v12.ko.pdf",
+          "bytes": 67120,
+          "sha256": "cec184fd91e9a880cb671bf6ec95613b0967ab5002a36d53aa6fb1dd08482845"
+        },
+        {
+          "label": "/downloads/defense-v12.ko.pptx",
+          "file": "45-browser-material-downloads/23-defense-v12.ko.pptx",
+          "bytes": 72147,
+          "sha256": "0612d6e44ec712aa757d5bf5f984609c9fcad54faec46f0a974e35ab7144f72c"
+        },
+        {
+          "label": "/downloads/report-v12.zh.md",
+          "file": "45-browser-material-downloads/24-report-v12.zh.md",
+          "bytes": 165678,
+          "sha256": "37d0cce170b44644b23d64d852d704f88f5d763f4765477ec819bcde591b742c"
+        },
+        {
+          "label": "/downloads/portplan-source.zip",
+          "file": "45-browser-material-downloads/25-portplan-source.zip",
+          "bytes": 18682849,
+          "sha256": "bc26e205fce71cabee6eae394e137c72b0cd4417432133b1761a5693ce212a2b"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "46-supplement-result-table-execution-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "46-supplement-result-table-execution-v8-390/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "execution-success",
+          "file": "46-supplement-result-table-execution-v8-390/26-portplan-v8-custom-results.json",
+          "bytes": 180791,
+          "sha256": "a4cb692563a42f2edf0493534984f00cecc68502755548a74f89faaacdc03295"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "47-supplement-result-table-resource-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "47-supplement-result-table-resource-v9-390/screen.png"
+      ],
+      "downloads": [
+        {
+          "label": "resource-rescue-feesPlusProcurement",
+          "file": "47-supplement-result-table-resource-v9-390/27-portplan-resource-recovery-v9-result.json",
+          "bytes": 12995,
+          "sha256": "fd4fedfc6dc240726833b5d0bd3ad33b127d11b13df35fe5e9faef2c761b1344"
+        }
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "48-supplement-workbench-stale",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "48-supplement-workbench-stale/screen.png"
+      ]
+    },
+    {
+      "group": "final-candidate",
+      "id": "49-supplement-explicit-invalid-utc-offset",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "screenshots": [
+        "49-supplement-explicit-invalid-utc-offset/screen.png"
+      ]
+    }
+  ],
+  "controlledFaultScope": "Only localhost Worker HTTP response substitution with inert or scheduled-late-error scripts; not a natural solver timeout or formal research result.",
+  "naturalSolverTimeoutCertified": false,
+  "entrantUnderstandingCertified": false,
+  "nativeFormalExperiment": false,
+  "nativeHiGHSRuns": 0,
+  "businessValidationCertified": false,
+  "enterpriseRecordsRequired": false,
+  "scope": "Actual headless Chromium navigation, input, keyboard, layout, real browser GLPK teaching simulations, cancellation, controlled Worker faults and downloads. This is automated product acceptance, not entrant reproduction, third-party approval, native solver research or field outcome.",
+  "currentCandidateRetest": "All 49 unique acceptance checks repeated on the updated status presentation and reviewed V13 development table; original batches retained separately, not counted as extra unique coverage. The bound static inventory identifies the exact tested candidate. Subsequent additions are evidence/status records and transport packages; deployed-byte and real-browser smoke receipts are recorded separately.",
+  "priorAcceptanceEvidenceGroups": [
+    {
+      "group": "first",
+      "path": "artifacts/browser-v12-first/summary.json",
+      "sha256": "696212e2e9d3998abdaf5929970c683706dcdd85c80e845b46f7f467f8d71079",
+      "checks": 45,
+      "staticInventorySha256": "c1acdb7e6df0f5a5c47ad664c084a054b53a0fa8cc71af1d6391613619f8a078"
+    },
+    {
+      "group": "supplement",
+      "path": "artifacts/browser-v12-supplement-first/summary.json",
+      "sha256": "bfad499c663a141ea976d40e3152a308419f00cd1a027ddbd3f9adc642457aaf",
+      "checks": 4,
+      "staticInventorySha256": "c1acdb7e6df0f5a5c47ad664c084a054b53a0fa8cc71af1d6391613619f8a078"
+    }
+  ],
+  "completedAtUTC": "2026-10-17T05:55:33.026489+00:00",
+  "proofArchiveRefs": [
+    "data/archives-v13/browser-first/manifest.json",
+    "data/archives-v13/browser-final/manifest.json"
+  ],
+  "downloadBinaryRetention": "Download receipts, format checks and byte SHA are archived. Downloaded ZIP/PDF/PPT binaries are excluded from proof archives; original PDF/PPT and final complete source packages are retained separately. The intermediate candidate ZIP is not claimed as a losslessly retained blob."
+}

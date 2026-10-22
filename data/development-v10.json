@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "portplan-v10-published-reused-development",
+  "dataRole": "reused-development-not-new-validation",
+  "scenarioCount": 18,
+  "episodeCount": 54,
+  "rawIndexSha256": "93f0d91a99506225e308188121f1cbc672a9c97496f96e58724d5b82440845c5",
+  "archiveManifest": "data/archives-v10/development/manifest.json",
+  "independentReview": "data/development-review-v10.json",
+  "summary": {
+    "same-distribution": {
+      "completeByMethod": {
+        "highsV8": 7,
+        "stableHiGHSV10": 7,
+        "adaptiveV9": 8
+      },
+      "pairedNativeVsV10": {
+        "scenarioCount": 7,
+        "nativeFees": 44696150,
+        "v10Fees": 44696150,
+        "nativeRevisions": 2397,
+        "v10Revisions": 438
+      }
+    },
+    "stress": {
+      "completeByMethod": {
+        "highsV8": 8,
+        "stableHiGHSV10": 8,
+        "adaptiveV9": 7
+      },
+      "pairedNativeVsV10": {
+        "scenarioCount": 8,
+        "nativeFees": 47035500,
+        "v10Fees": 47038200,
+        "nativeRevisions": 3190,
+        "v10Revisions": 1022
+      }
+    }
+  },
+  "scope": "Seen V9 scenarios, one prescribed old repeat seed39011, three methods; no new order generation or research interval."
+}

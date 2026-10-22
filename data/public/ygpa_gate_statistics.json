@@ -1,0 +1,894 @@
+{
+  "id": "ygpa_west_gate_2026h1",
+  "title_zh": "光阳港西部集装箱码头车辆进出公开观测",
+  "title_ko": "여수광양항만공사_광양항 서부컨테이너터미널 차량출입 데이터_20260630",
+  "provider": "Yeosu Gwangyang Port Authority (YGPA)",
+  "catalog_url": "https://www.data.go.kr/data/15059682/fileData.do",
+  "download_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003681505&fileDetailSn=1&insertDataPrcus=N",
+  "raw_sha256": "890bebf3f82d61a4efa2fa0161bf58907b31a89db4e5208646eb7bb9d04a251e",
+  "raw_bytes": 5401590,
+  "raw_encoding": "CP949",
+  "source_grain": "one published vehicle terminal gate visit record; not a container order",
+  "port": "Gwangyang",
+  "terminal": "West Container Terminal",
+  "timezone": {
+    "value": "Asia/Seoul",
+    "status": "inferred_from_Korean_terminal_location_not_explicit_in_CSV"
+  },
+  "use_in_optimizer": false,
+  "permitted_interpretation_zh": "用于了解该码头观测到的车辆场内停留时间及检验数据质量；没有用于生成PNC需求、订单或节省收益。",
+  "prohibited_interpretation_zh": "不可当作PNC订单、昌原运输需求、仓库卸货时长、完整车队容量或真实费用节省验证。",
+  "license_catalog": "이용허락범위 제한 없음 (no usage restrictions stated in catalog)",
+  "rows": {
+    "raw_excluding_header": 226217,
+    "all_fields_blank": 168046,
+    "all_fields_blank_rate": 0.7428531012258142,
+    "nonblank": 58171,
+    "valid_datetime_pairs": 58171,
+    "invalid_nonblank_datetime_pairs": 0,
+    "exact_duplicate_excess_nonblank": 7,
+    "exact_duplicate_groups_nonblank": 7,
+    "exact_duplicate_affected_rows_nonblank": 14,
+    "duplicate_policy": "Retained: identical rows may be separate vehicles after plate masking; no stable visit ID is supplied.",
+    "nulls_among_nonblank_rows": {}
+  },
+  "period": {
+    "first_entry_date": "2026-01-01",
+    "last_entry_date": "2026-06-30",
+    "calendar_days": 181,
+    "dates_with_records": 119,
+    "dates_without_records": [
+      "2026-01-21",
+      "2026-01-22",
+      "2026-01-23",
+      "2026-01-24",
+      "2026-01-25",
+      "2026-01-26",
+      "2026-01-27",
+      "2026-01-28",
+      "2026-01-29",
+      "2026-01-30",
+      "2026-01-31",
+      "2026-02-01",
+      "2026-02-17",
+      "2026-02-21",
+      "2026-02-22",
+      "2026-02-23",
+      "2026-02-24",
+      "2026-02-25",
+      "2026-02-26",
+      "2026-02-27",
+      "2026-02-28",
+      "2026-03-21",
+      "2026-03-22",
+      "2026-03-23",
+      "2026-03-24",
+      "2026-03-25",
+      "2026-03-26",
+      "2026-03-27",
+      "2026-03-28",
+      "2026-03-29",
+      "2026-03-30",
+      "2026-03-31",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-25",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-04-30",
+      "2026-05-21",
+      "2026-05-22",
+      "2026-05-23",
+      "2026-05-24",
+      "2026-05-25",
+      "2026-05-26",
+      "2026-05-27",
+      "2026-05-28",
+      "2026-05-29",
+      "2026-05-30",
+      "2026-05-31",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-28",
+      "2026-06-29"
+    ],
+    "missing_day_policy": "Absence of records is not asserted to mean zero traffic; no imputation."
+  },
+  "elapsed_minutes": {
+    "definition": "exit timestamp minus entry timestamp (minute-resolution timestamps); includes observed time inside the terminal, not road travel or warehouse unloading",
+    "quantile_method": "nearest rank: sorted[ceil(p*n)-1]",
+    "min": 0,
+    "p50": 23,
+    "p90": 59,
+    "p95": 73,
+    "max": 360,
+    "zero_count": 27,
+    "reported_duration_difference_over_1min_count": 0,
+    "histogram": [
+      {
+        "from_minutes_inclusive": 0,
+        "to_minutes_exclusive": 15,
+        "count": 17336
+      },
+      {
+        "from_minutes_inclusive": 15,
+        "to_minutes_exclusive": 30,
+        "count": 19464
+      },
+      {
+        "from_minutes_inclusive": 30,
+        "to_minutes_exclusive": 60,
+        "count": 15722
+      },
+      {
+        "from_minutes_inclusive": 60,
+        "to_minutes_exclusive": 90,
+        "count": 4274
+      },
+      {
+        "from_minutes_inclusive": 90,
+        "to_minutes_exclusive": 120,
+        "count": 814
+      },
+      {
+        "from_minutes_inclusive": 120,
+        "to_minutes_exclusive": 180,
+        "count": 290
+      },
+      {
+        "from_minutes_inclusive": 180,
+        "to_minutes_exclusive": 361,
+        "count": 271
+      }
+    ]
+  },
+  "daily": [
+    {
+      "date": "2026-01-01",
+      "records": 4,
+      "p50_minutes": 14,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-01-02",
+      "records": 912,
+      "p50_minutes": 30,
+      "p90_minutes": 66
+    },
+    {
+      "date": "2026-01-03",
+      "records": 140,
+      "p50_minutes": 22,
+      "p90_minutes": 40
+    },
+    {
+      "date": "2026-01-04",
+      "records": 7,
+      "p50_minutes": 14,
+      "p90_minutes": 20
+    },
+    {
+      "date": "2026-01-05",
+      "records": 733,
+      "p50_minutes": 17,
+      "p90_minutes": 47
+    },
+    {
+      "date": "2026-01-06",
+      "records": 750,
+      "p50_minutes": 22,
+      "p90_minutes": 52
+    },
+    {
+      "date": "2026-01-07",
+      "records": 902,
+      "p50_minutes": 22,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-01-08",
+      "records": 685,
+      "p50_minutes": 21,
+      "p90_minutes": 49
+    },
+    {
+      "date": "2026-01-09",
+      "records": 667,
+      "p50_minutes": 23,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-01-10",
+      "records": 97,
+      "p50_minutes": 19,
+      "p90_minutes": 41
+    },
+    {
+      "date": "2026-01-11",
+      "records": 2,
+      "p50_minutes": 11,
+      "p90_minutes": 119
+    },
+    {
+      "date": "2026-01-12",
+      "records": 734,
+      "p50_minutes": 26,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-01-13",
+      "records": 716,
+      "p50_minutes": 28,
+      "p90_minutes": 76
+    },
+    {
+      "date": "2026-01-14",
+      "records": 842,
+      "p50_minutes": 25,
+      "p90_minutes": 62
+    },
+    {
+      "date": "2026-01-15",
+      "records": 788,
+      "p50_minutes": 29,
+      "p90_minutes": 72
+    },
+    {
+      "date": "2026-01-16",
+      "records": 788,
+      "p50_minutes": 22,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-01-17",
+      "records": 86,
+      "p50_minutes": 21,
+      "p90_minutes": 42
+    },
+    {
+      "date": "2026-01-18",
+      "records": 70,
+      "p50_minutes": 20,
+      "p90_minutes": 45
+    },
+    {
+      "date": "2026-01-19",
+      "records": 688,
+      "p50_minutes": 25,
+      "p90_minutes": 67
+    },
+    {
+      "date": "2026-01-20",
+      "records": 631,
+      "p50_minutes": 25,
+      "p90_minutes": 71
+    },
+    {
+      "date": "2026-02-02",
+      "records": 563,
+      "p50_minutes": 23,
+      "p90_minutes": 48
+    },
+    {
+      "date": "2026-02-03",
+      "records": 770,
+      "p50_minutes": 24,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-02-04",
+      "records": 681,
+      "p50_minutes": 18,
+      "p90_minutes": 42
+    },
+    {
+      "date": "2026-02-05",
+      "records": 736,
+      "p50_minutes": 20,
+      "p90_minutes": 51
+    },
+    {
+      "date": "2026-02-06",
+      "records": 765,
+      "p50_minutes": 22,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-02-07",
+      "records": 102,
+      "p50_minutes": 26,
+      "p90_minutes": 42
+    },
+    {
+      "date": "2026-02-08",
+      "records": 45,
+      "p50_minutes": 25,
+      "p90_minutes": 61
+    },
+    {
+      "date": "2026-02-09",
+      "records": 954,
+      "p50_minutes": 22,
+      "p90_minutes": 50
+    },
+    {
+      "date": "2026-02-10",
+      "records": 834,
+      "p50_minutes": 19,
+      "p90_minutes": 42
+    },
+    {
+      "date": "2026-02-11",
+      "records": 1043,
+      "p50_minutes": 24,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-02-12",
+      "records": 948,
+      "p50_minutes": 26,
+      "p90_minutes": 61
+    },
+    {
+      "date": "2026-02-13",
+      "records": 813,
+      "p50_minutes": 23,
+      "p90_minutes": 64
+    },
+    {
+      "date": "2026-02-14",
+      "records": 192,
+      "p50_minutes": 22,
+      "p90_minutes": 46
+    },
+    {
+      "date": "2026-02-15",
+      "records": 6,
+      "p50_minutes": 10,
+      "p90_minutes": 33
+    },
+    {
+      "date": "2026-02-16",
+      "records": 5,
+      "p50_minutes": 19,
+      "p90_minutes": 25
+    },
+    {
+      "date": "2026-02-18",
+      "records": 67,
+      "p50_minutes": 19,
+      "p90_minutes": 58
+    },
+    {
+      "date": "2026-02-19",
+      "records": 807,
+      "p50_minutes": 22,
+      "p90_minutes": 49
+    },
+    {
+      "date": "2026-02-20",
+      "records": 770,
+      "p50_minutes": 21,
+      "p90_minutes": 47
+    },
+    {
+      "date": "2026-03-01",
+      "records": 3,
+      "p50_minutes": 21,
+      "p90_minutes": 93
+    },
+    {
+      "date": "2026-03-02",
+      "records": 55,
+      "p50_minutes": 24,
+      "p90_minutes": 43
+    },
+    {
+      "date": "2026-03-03",
+      "records": 757,
+      "p50_minutes": 21,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-03-04",
+      "records": 738,
+      "p50_minutes": 26,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-03-05",
+      "records": 676,
+      "p50_minutes": 24,
+      "p90_minutes": 54
+    },
+    {
+      "date": "2026-03-06",
+      "records": 574,
+      "p50_minutes": 21,
+      "p90_minutes": 58
+    },
+    {
+      "date": "2026-03-07",
+      "records": 168,
+      "p50_minutes": 25,
+      "p90_minutes": 46
+    },
+    {
+      "date": "2026-03-08",
+      "records": 1,
+      "p50_minutes": 33,
+      "p90_minutes": 33
+    },
+    {
+      "date": "2026-03-09",
+      "records": 785,
+      "p50_minutes": 24,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-03-10",
+      "records": 834,
+      "p50_minutes": 28,
+      "p90_minutes": 62
+    },
+    {
+      "date": "2026-03-11",
+      "records": 843,
+      "p50_minutes": 21,
+      "p90_minutes": 54
+    },
+    {
+      "date": "2026-03-12",
+      "records": 711,
+      "p50_minutes": 21,
+      "p90_minutes": 58
+    },
+    {
+      "date": "2026-03-13",
+      "records": 656,
+      "p50_minutes": 22,
+      "p90_minutes": 53
+    },
+    {
+      "date": "2026-03-14",
+      "records": 56,
+      "p50_minutes": 21,
+      "p90_minutes": 52
+    },
+    {
+      "date": "2026-03-15",
+      "records": 2,
+      "p50_minutes": 65,
+      "p90_minutes": 69
+    },
+    {
+      "date": "2026-03-16",
+      "records": 670,
+      "p50_minutes": 23,
+      "p90_minutes": 55
+    },
+    {
+      "date": "2026-03-17",
+      "records": 743,
+      "p50_minutes": 23,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-03-18",
+      "records": 913,
+      "p50_minutes": 27,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-03-19",
+      "records": 944,
+      "p50_minutes": 28,
+      "p90_minutes": 59
+    },
+    {
+      "date": "2026-03-20",
+      "records": 854,
+      "p50_minutes": 22,
+      "p90_minutes": 56
+    },
+    {
+      "date": "2026-04-01",
+      "records": 713,
+      "p50_minutes": 20,
+      "p90_minutes": 54
+    },
+    {
+      "date": "2026-04-02",
+      "records": 713,
+      "p50_minutes": 19,
+      "p90_minutes": 45
+    },
+    {
+      "date": "2026-04-03",
+      "records": 739,
+      "p50_minutes": 20,
+      "p90_minutes": 48
+    },
+    {
+      "date": "2026-04-04",
+      "records": 70,
+      "p50_minutes": 19,
+      "p90_minutes": 44
+    },
+    {
+      "date": "2026-04-05",
+      "records": 1,
+      "p50_minutes": 22,
+      "p90_minutes": 22
+    },
+    {
+      "date": "2026-04-06",
+      "records": 511,
+      "p50_minutes": 23,
+      "p90_minutes": 59
+    },
+    {
+      "date": "2026-04-07",
+      "records": 713,
+      "p50_minutes": 21,
+      "p90_minutes": 61
+    },
+    {
+      "date": "2026-04-08",
+      "records": 617,
+      "p50_minutes": 20,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-04-09",
+      "records": 521,
+      "p50_minutes": 22,
+      "p90_minutes": 57
+    },
+    {
+      "date": "2026-04-10",
+      "records": 575,
+      "p50_minutes": 22,
+      "p90_minutes": 56
+    },
+    {
+      "date": "2026-04-11",
+      "records": 33,
+      "p50_minutes": 14,
+      "p90_minutes": 35
+    },
+    {
+      "date": "2026-04-12",
+      "records": 1,
+      "p50_minutes": 12,
+      "p90_minutes": 12
+    },
+    {
+      "date": "2026-04-13",
+      "records": 720,
+      "p50_minutes": 26,
+      "p90_minutes": 65
+    },
+    {
+      "date": "2026-04-14",
+      "records": 736,
+      "p50_minutes": 23,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-04-15",
+      "records": 663,
+      "p50_minutes": 23,
+      "p90_minutes": 58
+    },
+    {
+      "date": "2026-04-16",
+      "records": 744,
+      "p50_minutes": 23,
+      "p90_minutes": 61
+    },
+    {
+      "date": "2026-04-17",
+      "records": 798,
+      "p50_minutes": 23,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-04-18",
+      "records": 99,
+      "p50_minutes": 19,
+      "p90_minutes": 40
+    },
+    {
+      "date": "2026-04-19",
+      "records": 3,
+      "p50_minutes": 7,
+      "p90_minutes": 25
+    },
+    {
+      "date": "2026-04-20",
+      "records": 743,
+      "p50_minutes": 25,
+      "p90_minutes": 68
+    },
+    {
+      "date": "2026-05-01",
+      "records": 31,
+      "p50_minutes": 16,
+      "p90_minutes": 48
+    },
+    {
+      "date": "2026-05-02",
+      "records": 90,
+      "p50_minutes": 21,
+      "p90_minutes": 36
+    },
+    {
+      "date": "2026-05-03",
+      "records": 3,
+      "p50_minutes": 77,
+      "p90_minutes": 98
+    },
+    {
+      "date": "2026-05-04",
+      "records": 680,
+      "p50_minutes": 23,
+      "p90_minutes": 64
+    },
+    {
+      "date": "2026-05-05",
+      "records": 27,
+      "p50_minutes": 14,
+      "p90_minutes": 37
+    },
+    {
+      "date": "2026-05-06",
+      "records": 686,
+      "p50_minutes": 21,
+      "p90_minutes": 56
+    },
+    {
+      "date": "2026-05-07",
+      "records": 644,
+      "p50_minutes": 24,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-05-08",
+      "records": 627,
+      "p50_minutes": 19,
+      "p90_minutes": 55
+    },
+    {
+      "date": "2026-05-09",
+      "records": 95,
+      "p50_minutes": 18,
+      "p90_minutes": 36
+    },
+    {
+      "date": "2026-05-10",
+      "records": 2,
+      "p50_minutes": 7,
+      "p90_minutes": 16
+    },
+    {
+      "date": "2026-05-11",
+      "records": 710,
+      "p50_minutes": 25,
+      "p90_minutes": 61
+    },
+    {
+      "date": "2026-05-12",
+      "records": 714,
+      "p50_minutes": 25,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-05-13",
+      "records": 652,
+      "p50_minutes": 22,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-05-14",
+      "records": 650,
+      "p50_minutes": 28,
+      "p90_minutes": 78
+    },
+    {
+      "date": "2026-05-15",
+      "records": 588,
+      "p50_minutes": 17,
+      "p90_minutes": 47
+    },
+    {
+      "date": "2026-05-16",
+      "records": 48,
+      "p50_minutes": 15,
+      "p90_minutes": 36
+    },
+    {
+      "date": "2026-05-17",
+      "records": 6,
+      "p50_minutes": 19,
+      "p90_minutes": 33
+    },
+    {
+      "date": "2026-05-18",
+      "records": 585,
+      "p50_minutes": 26,
+      "p90_minutes": 80
+    },
+    {
+      "date": "2026-05-19",
+      "records": 634,
+      "p50_minutes": 23,
+      "p90_minutes": 77
+    },
+    {
+      "date": "2026-05-20",
+      "records": 508,
+      "p50_minutes": 29,
+      "p90_minutes": 83
+    },
+    {
+      "date": "2026-06-01",
+      "records": 581,
+      "p50_minutes": 19,
+      "p90_minutes": 61
+    },
+    {
+      "date": "2026-06-02",
+      "records": 694,
+      "p50_minutes": 28,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-06-03",
+      "records": 107,
+      "p50_minutes": 31,
+      "p90_minutes": 53
+    },
+    {
+      "date": "2026-06-04",
+      "records": 728,
+      "p50_minutes": 23,
+      "p90_minutes": 59
+    },
+    {
+      "date": "2026-06-05",
+      "records": 794,
+      "p50_minutes": 26,
+      "p90_minutes": 59
+    },
+    {
+      "date": "2026-06-06",
+      "records": 41,
+      "p50_minutes": 16,
+      "p90_minutes": 29
+    },
+    {
+      "date": "2026-06-07",
+      "records": 1,
+      "p50_minutes": 9,
+      "p90_minutes": 9
+    },
+    {
+      "date": "2026-06-08",
+      "records": 595,
+      "p50_minutes": 21,
+      "p90_minutes": 56
+    },
+    {
+      "date": "2026-06-09",
+      "records": 538,
+      "p50_minutes": 18,
+      "p90_minutes": 51
+    },
+    {
+      "date": "2026-06-10",
+      "records": 687,
+      "p50_minutes": 19,
+      "p90_minutes": 49
+    },
+    {
+      "date": "2026-06-11",
+      "records": 555,
+      "p50_minutes": 19,
+      "p90_minutes": 55
+    },
+    {
+      "date": "2026-06-12",
+      "records": 592,
+      "p50_minutes": 20,
+      "p90_minutes": 60
+    },
+    {
+      "date": "2026-06-13",
+      "records": 83,
+      "p50_minutes": 13,
+      "p90_minutes": 36
+    },
+    {
+      "date": "2026-06-14",
+      "records": 1,
+      "p50_minutes": 16,
+      "p90_minutes": 16
+    },
+    {
+      "date": "2026-06-15",
+      "records": 639,
+      "p50_minutes": 18,
+      "p90_minutes": 56
+    },
+    {
+      "date": "2026-06-16",
+      "records": 639,
+      "p50_minutes": 18,
+      "p90_minutes": 63
+    },
+    {
+      "date": "2026-06-17",
+      "records": 669,
+      "p50_minutes": 22,
+      "p90_minutes": 65
+    },
+    {
+      "date": "2026-06-18",
+      "records": 614,
+      "p50_minutes": 21,
+      "p90_minutes": 64
+    },
+    {
+      "date": "2026-06-19",
+      "records": 551,
+      "p50_minutes": 19,
+      "p90_minutes": 56
+    },
+    {
+      "date": "2026-06-20",
+      "records": 42,
+      "p50_minutes": 17,
+      "p90_minutes": 67
+    },
+    {
+      "date": "2026-06-30",
+      "records": 1,
+      "p50_minutes": 84,
+      "p90_minutes": 84
+    }
+  ],
+  "sample": {
+    "path": "data/public/ygpa_gate_sample_200.csv",
+    "rows": 200,
+    "selection": "200 evenly spaced row positions among valid nonblank rows, inclusive endpoints; deterministic and not a random representative sample",
+    "removed_fields": [
+      "차량번호 (vehicle plate, already masked in source)"
+    ]
+  },
+  "field_provenance": {
+    "entry_gate": "original 진입게이트",
+    "entry_local": "original 진입일시",
+    "exit_gate": "original 진출게이트",
+    "exit_local": "original 진출일시",
+    "reported_work_duration_hh_mm": "original 작업시간; observed format HH:MM",
+    "elapsed_minutes_derived": "derived from exit_local minus entry_local",
+    "source_line": "derived CSV physical record index including header",
+    "container_id": "missing",
+    "discharge_datetime": "missing",
+    "empty_return_datetime": "missing/not identifiable from vehicle entry",
+    "carrier_contract": "missing",
+    "truck_fleet_capacity": "missing",
+    "warehouse_capacity": "missing",
+    "customer_deadline": "missing"
+  }
+}

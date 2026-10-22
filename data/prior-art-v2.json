@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-12T07:24:06.818627+00:00",
+  "scope": "Focused primary-source prior-art check, not an exhaustive systematic review or legal novelty opinion.",
+  "search_terms": [
+    "import drayage scheduling container detention demurrage joint pickup empty return",
+    "storage price schedule free time container",
+    "drop and pickup container drayage empty constraints",
+    "LogisticSolver 2026 대학원 영어 심사기준 인공지능 개인"
+  ],
+  "research": [
+    {
+      "id": "R1",
+      "type": "research",
+      "title": "Optimal devanning time and detention charges for container supply chains",
+      "authors": [
+        "Yoonjea Jeong",
+        "Subrata Saha",
+        "Ilkyeong Moon"
+      ],
+      "year": 2020,
+      "doi": "10.1016/j.tre.2020.102055",
+      "url": "https://snu.elsevierpure.com/en/publications/optimal-devanning-time-and-detention-charges-for-container-supply/",
+      "additional_urls": [],
+      "review_depth": "author-institution abstract and publisher-deposited metadata",
+      "verified_features": [
+        "Optimizes devanning time in a laden/empty container supply chain.",
+        "Compares three late-return/detention decision scenarios and centralized/decentralized policies."
+      ],
+      "comparison_boundary": "Direct precedent for linking unpacking, empty return and detention. Full mathematical model was not reviewed; no claim that this paper lacks a particular tariff.",
+      "metadata_file": "data/public/v2-crossref-j.tre.2020.102055.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R2",
+      "type": "research",
+      "title": "Uncertain demurrage and detention decisions in hinterland container management",
+      "authors": [
+        "Yoonjea Jeong",
+        "Gwang Kim",
+        "Youngchul Shin"
+      ],
+      "year": 2026,
+      "doi": "10.1111/itor.13622",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/itor.13622",
+      "additional_urls": [],
+      "review_depth": "publisher abstract, references and data-availability statement",
+      "verified_features": [
+        "Models demurrage/detention decisions and individual free-time policies under uncertainty.",
+        "Includes early/late retrieval and return scenarios."
+      ],
+      "comparison_boundary": "Online publication 2025-01-31; final issue September 2026, 33(5):3548–3579. Data available on request, not openly downloaded. No new-uncertainty-model claim for PortPlan.",
+      "metadata_file": "data/public/v2-crossref-itor.13622.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R3",
+      "type": "research",
+      "title": "A Branch and Price Algorithm for the Drop-and-Pickup Container Drayage Problem with Empty Container Constraints",
+      "authors": [
+        "Yujian Song",
+        "Yuting Zhang",
+        "Wanli Wang",
+        "Ming Xue"
+      ],
+      "year": 2023,
+      "doi": "10.3390/su15075638",
+      "url": "https://www.mdpi.com/2071-1050/15/7/5638",
+      "additional_urls": [],
+      "review_depth": "publisher-deposited abstract and metadata",
+      "verified_features": [
+        "Drop a container at a customer, leave while packing/unpacking occurs, then collect it.",
+        "Limited empty containers; MILP minimizing travel costs; branch-and-price algorithm."
+      ],
+      "comparison_boundary": "Direct algorithmic precedent. Publisher HTML returned HTTP 429; features verified from the publisher-deposited Crossref abstract, not a full equation audit. Reported savings cannot be compared to PortPlan percentages.",
+      "metadata_file": "data/public/v2-crossref-su15075638.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R4",
+      "type": "research",
+      "title": "Modeling and Optimization of Container Drayage Problem with Empty Container Constraints across Multiple Inland Depots",
+      "authors": [
+        "Xuhui Yu",
+        "Yin Feng",
+        "Cong He",
+        "Chang Liu"
+      ],
+      "year": 2024,
+      "doi": "10.3390/su16125090",
+      "url": "https://www.mdpi.com/2071-1050/16/12/5090",
+      "additional_urls": [],
+      "review_depth": "publisher-deposited abstract and metadata",
+      "verified_features": [
+        "Combines trucking operation modes, empty relocation strategies, empty constraints and multiple inland depots.",
+        "MILP plus improved genetic algorithm; evaluates randomly generated instances."
+      ],
+      "comparison_boundary": "Direct evidence that integrating operating constraints is established. Publisher HTML returned HTTP 429; no inference of missing features from abstract.",
+      "metadata_file": "data/public/v2-crossref-su16125090.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R5",
+      "type": "research",
+      "title": "The Multi-period Multi-trip Container Drayage Problem with Release and Due Dates",
+      "authors": [
+        "M. Bruglieri",
+        "S. Mancini",
+        "R. Peruzzini",
+        "O. Pisacane"
+      ],
+      "year": 2021,
+      "doi": "10.1016/j.cor.2020.105102",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0305054820302197",
+      "additional_urls": [
+        "https://iris.univpm.it/retrieve/2bb0a244-7712-41c4-8ddb-9fba25aa6d62/Container_Drayage_Problem.pdf"
+      ],
+      "review_depth": "publisher-indexed abstract and Crossref metadata",
+      "verified_features": [
+        "Divides horizon into days and permits multiple trips per truck per day.",
+        "Container customers have release and due dates."
+      ],
+      "comparison_boundary": "A daily multi-period scheduling formulation is not novel by itself. Open institutional manuscript located but fetch returned HTTP 403; not a full-model comparison.",
+      "metadata_file": "data/public/v2-crossref-j.cor.2020.105102.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R6",
+      "type": "research",
+      "title": "The multi-trip container drayage problem with synchronization for efficient empty containers re-usage",
+      "authors": [
+        "Stefano Fazi",
+        "Sourabh Kumar Choudhary",
+        "Jing-Xin Dong"
+      ],
+      "year": 2023,
+      "doi": "10.1016/j.ejor.2023.02.041",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221723001947",
+      "additional_urls": [
+        "https://research.tudelft.nl/en/publications/the-multi-trip-container-drayage-problem-with-synchronization-for/",
+        "https://pure.tudelft.nl/ws/portalfiles/portal/177360850/1-s2.0-S0377221723001947-main.pdf"
+      ],
+      "review_depth": "publisher-indexed abstract/highlights and institution metadata",
+      "verified_features": [
+        "Time-window multi-trip drayage with limited inland empty stock, street-turning and extra-depot retrieval.",
+        "Synchronizes trips and empty inventory; column-and-row generation within branch-and-price."
+      ],
+      "comparison_boundary": "A stronger routing/synchronization precedent. Institution exposes a CC BY paper, but this pass inspected the abstract/highlights and metadata only. Published real-world case does not supply PortPlan with real PNC demand.",
+      "metadata_file": "data/public/v2-crossref-j.ejor.2023.02.041.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R7",
+      "type": "research",
+      "title": "Optimization of external container delivery and pickup scheduling based on appointment mechanism",
+      "authors": [
+        "Pengfei Huang",
+        "Hao Wang",
+        "Fangjiao Tan",
+        "Yuyue Jiang",
+        "Jinfen Cai"
+      ],
+      "year": 2025,
+      "doi": "10.1371/journal.pone.0318606",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0318606",
+      "additional_urls": [],
+      "review_depth": "open full text, methods/assumptions/supporting links",
+      "verified_features": [
+        "Joint external delivery/pickup scheduling with soft time windows and appointment feedback.",
+        "Fleet operating-cost model; adaptive ant colony algorithm with particle-swarm parameter tuning.",
+        "Open paper links supporting code and data ZIP files."
+      ],
+      "comparison_boundary": "Full article methods/assumptions and support links inspected; supporting ZIP contents not validated or used. Published cost reductions are not a comparable benchmark without aligning instances, objective and constraints.",
+      "metadata_file": "data/public/v2-crossref-journal.pone.0318606.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00",
+      "supplement_followup": {
+        "audit": "docs/external-benchmark-audit-v2.md",
+        "classification": "constructed_instance_not_real_orders",
+        "raw_files": [
+          "data/public/v2-external-plos-code.zip",
+          "data/public/v2-external-plos-data.zip"
+        ],
+        "result": "Attachments inspected after the initial prior-art pass. 592 aggregate directional tasks; S2 mainly saved cost-iteration/figure results. Capacity and service-time variants disagree; no algorithm run or savings replication."
+      }
+    },
+    {
+      "id": "R8",
+      "type": "research",
+      "title": "Optimal price schedules for storage of inbound containers",
+      "authors": [
+        "Kap Hwan Kim",
+        "Ki Young Kim"
+      ],
+      "year": 2007,
+      "doi": "10.1016/j.trb.2007.02.001",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0191261507000185",
+      "additional_urls": [],
+      "review_depth": "publisher-indexed abstract and Crossref metadata",
+      "verified_features": [
+        "Optimizes the storage price schedule for inbound containers.",
+        "Schedule includes a free-time limit and storage price per unit time."
+      ],
+      "comparison_boundary": "Storage pricing and free-time optimization are longstanding. This is a terminal pricing perspective; the abstract does not establish whether it contains PNC-style retroactive bands.",
+      "metadata_file": "data/public/v2-crossref-j.trb.2007.02.001.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "R9",
+      "type": "research",
+      "title": "Demurrage and detention: from operational challenges towards solutions",
+      "authors": [
+        "Katrien Storms",
+        "Christa Sys",
+        "Thierry Vanelslander",
+        "Ruben Van Deuren"
+      ],
+      "year": 2023,
+      "doi": "10.1186/s41072-023-00132-1",
+      "url": "https://link.springer.com/article/10.1186/s41072-023-00132-1",
+      "additional_urls": [],
+      "review_depth": "open full text, introduction/research approach/definitions/conclusions",
+      "verified_features": [
+        "Reviews D&D terminology and operational challenges using literature, industry discussion and validation.",
+        "Identifies digitalization, additional hinterland free time and negotiation attention as feasible solutions."
+      ],
+      "comparison_boundary": "Industry evidence concerns a maritime supply-chain setting with substantial European/Antwerp input. It does not validate Korean carrier contracts, tariff formulas or PortPlan savings.",
+      "metadata_file": "data/public/v2-crossref-s41072-023-00132-1.json",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    }
+  ],
+  "products": [
+    {
+      "id": "P1",
+      "type": "product",
+      "title": "Portcast Maersk D&D Calculator / Command Center / Freight Audit",
+      "year": null,
+      "doi": null,
+      "url": "https://www.portcast.io/dd-tool/maersk-demurrage-and-detention",
+      "review_depth": "official public product page; no paid product trial",
+      "verified_features": [
+        "Estimates D&D from selected delay days, free days and port/container daily rates.",
+        "Advertises configurable risk thresholds, alerts and contract/invoice checking."
+      ],
+      "comparison_boundary": "Vendor claims, not an independent performance audit. Page does not establish supported Korean contract coverage or optimizer architecture. Do not claim competing products lack joint optimization merely because it is not described here.",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "P2",
+      "type": "product",
+      "title": "Maersk MyFinance D&D tool",
+      "year": 2024,
+      "doi": null,
+      "url": "https://www.maersk.com/news/articles/2023/11/15/simplify-demurrage-and-detention",
+      "review_depth": "official product instructions; no login or shipment lookup",
+      "verified_features": [
+        "B/L lookup shows container-level free days, last free day and D&D details.",
+        "Provides payment and purchase of additional free time through the authenticated portal."
+      ],
+      "comparison_boundary": "Page displays 17 January 2024 despite 2023 URL path. Demonstrates existing fee visibility; generic explanatory examples are not proof of Korean combined-D&D slab arithmetic.",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    },
+    {
+      "id": "P3",
+      "type": "product",
+      "title": "PortPro appointment automation and dual transaction matching",
+      "year": 2026,
+      "doi": null,
+      "url": "https://portpro.io/all-resources/blog/article/automate-dual-transaction",
+      "additional_urls": [
+        "https://portpro.io/all-resources/blog/article/automate-empty-return-appointments"
+      ],
+      "review_depth": "official 2026-01-02 product walkthrough and 2025-07-29 return-booking walkthrough; no product trial",
+      "verified_features": [
+        "Automates empty-return appointment booking after ready-to-return, completed live unload or empty status.",
+        "Allows maximum pickup/drop-off appointment capacity by day/time.",
+        "Matches full pickup and empty return, checks terminal/shift acceptance and container size, and requests dual appointments."
+      ],
+      "comparison_boundary": "Direct commercial precedent for action-oriented joint movement workflows. Supported terminals and Korean availability were not established. No cost-optimality or relative performance claim follows from this walkthrough.",
+      "retrieved_at": "2026-10-12T07:24:06.818627+00:00"
+    }
+  ],
+  "positioning": {
+    "defensible_position": "An auditable application of public Korean tariff rules to resource-constrained pickup, unloading and empty-return planning, with reproducible policy comparisons and explicit contractual uncertainty. This is an application/engineering contribution; novelty of the combination has not been established.",
+    "claims_to_reject": [
+      "First joint pickup-and-empty-return optimizer.",
+      "First method linking unpacking and detention.",
+      "First use of MILP, AI or uncertainty for container drayage.",
+      "Competitors only display fees and never automate decisions.",
+      "First Korea-wide or PNC-deployed product.",
+      "Proven enterprise savings, live PNC orders, or guaranteed competition victory."
+    ],
+    "needed_experiments": [
+      "Evaluate all policies on identical orders, feasibility constraints, horizon and terminal/return accounting.",
+      "Ablate retroactive versus flat/progressive storage treatment using the same scenario and report cost, not only rank.",
+      "Compare joint planning with pickup-only scheduling while completing every empty return.",
+      "Stress clearance delays, unloading capacity and return slots; separate infeasibility from cost increases.",
+      "Sensitivity for 2025/2026 PNC public-rate conflict and unconfirmed Maersk cross-slab arithmetic.",
+      "Keep held-out seeds/instances and an independently implemented cost/feasibility checker.",
+      "Real operational validation requires shipment-level discharge, release, sizes, contract free time, unloading and return records; public gate visits alone cannot supply those fields."
+    ]
+  }
+}

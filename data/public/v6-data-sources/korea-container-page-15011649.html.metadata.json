@@ -1,0 +1,11 @@
+{
+  "file": "data/public/v6-data-sources/korea-container-page-15011649.html",
+  "url": "https://www.data.go.kr/data/15011649/fileData.do",
+  "retrievedAt": "2026-10-13T04:58:32.811976+00:00",
+  "status": 200,
+  "bytes": 166346,
+  "sha256": "3375153b98a6b8d37ef76ef02ca84e2693210a61932a0fc240633321c44a545f",
+  "md5": "7a032e7de89bfdaae637b241092ab721",
+  "contentType": "text/html;charset=UTF-8",
+  "etag": null
+}

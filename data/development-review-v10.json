@@ -1,0 +1,1834 @@
+{
+  "schemaVersion": "portplan-v10-development-independent-review",
+  "valid": true,
+  "readOnly": true,
+  "importsJavaScript": false,
+  "solverRuns": 0,
+  "dataRole": "reused-development-not-new-validation",
+  "originalIndexSha256": "93f0d91a99506225e308188121f1cbc672a9c97496f96e58724d5b82440845c5",
+  "implementationSha256": "f73a3c4af72cc55f835c35d05a44278cda835e849eafe8f2dd476f3e1d42b5ef",
+  "recordCount": 54,
+  "completeCount": 45,
+  "records": [
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-balanced-n24-r1",
+      "method": "highsV8",
+      "artifactSha256": "cc97e9ef3c40756703e94799e1c95279e80f02052abe77f27a1f1d3b74ce5dca",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 9,
+      "acceptedPlans": 9,
+      "executedEvents": 72,
+      "revisions": 60,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 16177450,
+      "incrementalCost": 8862400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-balanced-n24-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "dad5174d744d100e1ae562690c0e1071cd5e748b201749b248d55eef267f292e",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 9,
+      "acceptedPlans": 9,
+      "executedEvents": 72,
+      "revisions": 38,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 16177450,
+      "incrementalCost": 8862400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 9,
+        "cacheAcceptedCalls": 6,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 6,
+        "completeNativeProposals": 9,
+        "strictReplacements": 0,
+        "feeTiesRetained": 6
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-balanced-n24-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "0efe3a49f9133829fd775f63245af16d39095da36b402281d8f817878edcc4d8",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 72,
+      "revisions": 66,
+      "pricedRows": 24,
+      "polishEndpoints": 8,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 7,
+        "rebuild": 2
+      },
+      "totalCost": 16326150,
+      "incrementalCost": 9011100,
+      "candidateDelivery": {
+        "candidateEvents": 29,
+        "completeCopiedCandidates": 28,
+        "acceptedCandidates": 18,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 10
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-balanced-n100-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "8a07c2544fa2501f0e515ca14cfcb035ea52f0e8d00856cf1172b044b5c80778",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 300,
+      "revisions": 161,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 64339050,
+      "incrementalCost": 34031950,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 10,
+        "cacheAcceptedCalls": 7,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 7,
+        "completeNativeProposals": 10,
+        "strictReplacements": 0,
+        "feeTiesRetained": 7
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-balanced-n100-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "c5012f71743a0abbfd6076d6cef5d7a8bd5baf88b91ffbec61ebb8da57617944",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 9,
+      "acceptedPlans": 9,
+      "executedEvents": 300,
+      "revisions": 284,
+      "pricedRows": 100,
+      "polishEndpoints": 8,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 6,
+        "rebuild": 2
+      },
+      "totalCost": 67470350,
+      "incrementalCost": 37163250,
+      "candidateDelivery": {
+        "candidateEvents": 26,
+        "completeCopiedCandidates": 25,
+        "acceptedCandidates": 15,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 9
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-balanced-n100-r1",
+      "method": "highsV8",
+      "artifactSha256": "aa9d4e7e39bce5860a7eca0e9dc0a0928b4d0d83af6adc8a90972e64686a99ff",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 300,
+      "revisions": 249,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 64339050,
+      "incrementalCost": 34031950,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-tight-n50-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "0978ef40b20c4145c91d6dc345a4aedc201516f2e22a0afe5d552a929f251039",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 3,
+      "acceptedPlans": 2,
+      "executedEvents": 30,
+      "revisions": 0,
+      "pricedRows": 0,
+      "polishEndpoints": 2,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 1,
+        "failed": 1
+      },
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 7,
+        "completeCopiedCandidates": 6,
+        "acceptedCandidates": 3,
+        "independentlyInvalidCandidates": 1,
+        "callsWithTimelyIncumbent": 2
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-tight-n50-r1",
+      "method": "highsV8",
+      "artifactSha256": "f03a7804a1c3b3d8e7b0db05ac6accc69fea59ceeaa19c04c9aa46c25e7e5a74",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 4,
+      "acceptedPlans": 3,
+      "executedEvents": 41,
+      "revisions": 39,
+      "pricedRows": 0,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-aged-backlog-tight-n50-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "bb2e49c0336682f706f1e8669d514b5526519cc88dfaa3400586cb5e57d0295b",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 4,
+      "acceptedPlans": 3,
+      "executedEvents": 40,
+      "revisions": 32,
+      "pricedRows": 0,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 4,
+        "cacheAcceptedCalls": 1,
+        "nativeAcceptedCalls": 2,
+        "retainedCacheCalls": 1,
+        "completeNativeProposals": 3,
+        "strictReplacements": 0,
+        "feeTiesRetained": 1
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-balanced-n24-r1",
+      "method": "highsV8",
+      "artifactSha256": "2f4d8225a915dfe17d936b0f2b507eada078bff778e2e6f88bc275a6a184947a",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 222,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-balanced-n24-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "5d042052de529abc2c197ef079c22f8e620df0e2c9c109443ae4ad4d159ae251",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 0,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 13,
+        "nativeAcceptedCalls": 1,
+        "retainedCacheCalls": 13,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 13
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-balanced-n24-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "8ba537a2b80f44b20aa70525f7c297b4dd4ad4ac8c77f549027a2294cd61e692",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 0,
+      "pricedRows": 24,
+      "polishEndpoints": 1,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 13
+      },
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 17,
+        "completeCopiedCandidates": 17,
+        "acceptedCandidates": 15,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-balanced-n100-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "e15001957ec967b6990771af2f994f2c58589d3e937e10c26ff8f860887c15eb",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 105,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 12,
+        "nativeAcceptedCalls": 2,
+        "retainedCacheCalls": 12,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 12
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-balanced-n100-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "e114903bd408d3115e0fec8d9dd9398626345b91ade6f75d44212247c1b87bec",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 0,
+      "pricedRows": 100,
+      "polishEndpoints": 1,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 13
+      },
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 17,
+        "completeCopiedCandidates": 17,
+        "acceptedCandidates": 15,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-balanced-n100-r1",
+      "method": "highsV8",
+      "artifactSha256": "bf7bdd568b88c7d87085289b73f7b0e18c1fa9e987ab35b2d2fce3173c4e325a",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 809,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-tight-n50-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "69c1754f135be9fc26615256e900d77cf112d8204d7b42a70253f10f1d3c9269",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 92,
+      "pricedRows": 50,
+      "polishEndpoints": 2,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 11,
+        "rebuild": 2
+      },
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 22,
+        "completeCopiedCandidates": 22,
+        "acceptedCandidates": 17,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-tight-n50-r1",
+      "method": "highsV8",
+      "artifactSha256": "524caa474097ef3ebe13abb08b00b52a667235fd812cde65fee20ce85fb617b9",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 1,
+      "acceptedPlans": 0,
+      "executedEvents": 0,
+      "revisions": 0,
+      "pricedRows": 0,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-new-arrivals-tight-n50-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "8bd532dc14440f9c27da999a7ffed4d6fd810f741bc6cfdd4a842530f0f895b7",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 1,
+      "acceptedPlans": 0,
+      "executedEvents": 0,
+      "revisions": 0,
+      "pricedRows": 0,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 1,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 1,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-balanced-n24-r1",
+      "method": "highsV8",
+      "artifactSha256": "8c52430c1704d16135b07dff8abdb0a0958c89508060604d40c78d804495a070",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 72,
+      "revisions": 124,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 282100,
+      "incrementalCost": 191100,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-balanced-n24-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "aa5b41a71f76e12779f2457f667ec18a110134eb8322735f7f4084f70db31ac4",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 13,
+      "acceptedPlans": 13,
+      "executedEvents": 72,
+      "revisions": 42,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 282100,
+      "incrementalCost": 191100,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 13,
+        "cacheAcceptedCalls": 10,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 10,
+        "completeNativeProposals": 13,
+        "strictReplacements": 0,
+        "feeTiesRetained": 10
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-balanced-n24-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "4e76961f691c72d0205562a79433a52c8031551f309b47b475ada3be875847ef",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 13,
+      "acceptedPlans": 13,
+      "executedEvents": 72,
+      "revisions": 12,
+      "pricedRows": 24,
+      "polishEndpoints": 3,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 10,
+        "rebuild": 2
+      },
+      "totalCost": 282100,
+      "incrementalCost": 191100,
+      "candidateDelivery": {
+        "candidateEvents": 36,
+        "completeCopiedCandidates": 36,
+        "acceptedCandidates": 31,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 13
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-balanced-n100-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "ea8872ce4c836fa17793737fd31d949b387fd4ee1260b4183dcca761880c208a",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 0,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 1119300,
+      "incrementalCost": 937300,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 13,
+        "nativeAcceptedCalls": 1,
+        "retainedCacheCalls": 13,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 13
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-balanced-n100-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "6aeab757c17c4113f10c0159d0588063b27068e8a426bff8db4e88647bbbf92e",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 0,
+      "pricedRows": 100,
+      "polishEndpoints": 1,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 13
+      },
+      "totalCost": 1119300,
+      "incrementalCost": 937300,
+      "candidateDelivery": {
+        "candidateEvents": 18,
+        "completeCopiedCandidates": 18,
+        "acceptedCandidates": 16,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-balanced-n100-r1",
+      "method": "highsV8",
+      "artifactSha256": "5e511f5a95f9a1670eb439d2843ffb298c68d0a734deb7939764d1c45cf3780f",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 607,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 1119300,
+      "incrementalCost": 937300,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-tight-n50-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "402dc48ef0d3695b5a7a02c699b519d13d7bf11d1c7bfd0f4de2bc00e11a5c86",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 13,
+      "acceptedPlans": 13,
+      "executedEvents": 150,
+      "revisions": 109,
+      "pricedRows": 50,
+      "polishEndpoints": 10,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 9,
+        "rebuild": 2,
+        "polish": 1
+      },
+      "totalCost": 1158400,
+      "incrementalCost": 1076500,
+      "candidateDelivery": {
+        "candidateEvents": 32,
+        "completeCopiedCandidates": 29,
+        "acceptedCandidates": 18,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 13
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-tight-n50-r1",
+      "method": "highsV8",
+      "artifactSha256": "e8a226a30205eac15ba4bc68d0ce053ddd5f1d342321296cb226dfef931280b8",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 326,
+      "pricedRows": 50,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 755300,
+      "incrementalCost": 673400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-same-distribution-batch-release-tight-n50-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "9ea00bd219d9e3ef3bb89bbc6ce27f2f859d7b0c192f34a659a4020c3ce0528b",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 92,
+      "pricedRows": 50,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 755300,
+      "incrementalCost": 673400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 11,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 11,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 11
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-balanced-n24-r1",
+      "method": "highsV8",
+      "artifactSha256": "a7e6aefdbf91db18a7ec3bfe1c53542d70d1b60c60b705b1f7dce09647c8ba7e",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 72,
+      "revisions": 99,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 17329200,
+      "incrementalCost": 9384000,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-balanced-n24-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "0501b21e9812054b814094603f00e9266d49e3500f3b11347897c67d7a114f24",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 72,
+      "revisions": 61,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 17329200,
+      "incrementalCost": 9384000,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 10,
+        "cacheAcceptedCalls": 5,
+        "nativeAcceptedCalls": 5,
+        "retainedCacheCalls": 5,
+        "completeNativeProposals": 10,
+        "strictReplacements": 0,
+        "feeTiesRetained": 5
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-balanced-n24-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "09a5fb8fa716e2f1e109695ecc4f463b9d5fd6e9ccad583dace939c0a20599f2",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 72,
+      "revisions": 65,
+      "pricedRows": 24,
+      "polishEndpoints": 9,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 5,
+        "rebuild": 4
+      },
+      "totalCost": 17349200,
+      "incrementalCost": 9404000,
+      "candidateDelivery": {
+        "candidateEvents": 41,
+        "completeCopiedCandidates": 41,
+        "acceptedCandidates": 26,
+        "independentlyInvalidCandidates": 4,
+        "callsWithTimelyIncumbent": 10
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-balanced-n100-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "ba4564c28c103a9ed2bc639e81b8420031e06c9766f5bae3fdc85bebab17bcde",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 300,
+      "revisions": 215,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 63375700,
+      "incrementalCost": 33960400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 10,
+        "cacheAcceptedCalls": 5,
+        "nativeAcceptedCalls": 5,
+        "retainedCacheCalls": 5,
+        "completeNativeProposals": 10,
+        "strictReplacements": 0,
+        "feeTiesRetained": 5
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-balanced-n100-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "949a32baf05a8fccabe5d640a9348ff3b06da051ebe5a14c4dea13b9933b0c8a",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 300,
+      "revisions": 345,
+      "pricedRows": 100,
+      "polishEndpoints": 7,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 5,
+        "rebuild": 4
+      },
+      "totalCost": 65514100,
+      "incrementalCost": 36098800,
+      "candidateDelivery": {
+        "candidateEvents": 27,
+        "completeCopiedCandidates": 26,
+        "acceptedCandidates": 15,
+        "independentlyInvalidCandidates": 4,
+        "callsWithTimelyIncumbent": 10
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-balanced-n100-r1",
+      "method": "highsV8",
+      "artifactSha256": "cc1cdab3a7061995bd7191e1d4f53f9b18e9108e3e94e5f1342524a7bc775bff",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 10,
+      "acceptedPlans": 10,
+      "executedEvents": 300,
+      "revisions": 318,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 63375700,
+      "incrementalCost": 33960400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-tight-n50-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "5833691cee22941237ba75e3c37dab8d494b51f6e24c4636c103a5c08cc0bae6",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 3,
+      "acceptedPlans": 2,
+      "executedEvents": 29,
+      "revisions": 0,
+      "pricedRows": 0,
+      "polishEndpoints": 2,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 1,
+        "failed": 1
+      },
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 6,
+        "completeCopiedCandidates": 6,
+        "acceptedCandidates": 3,
+        "independentlyInvalidCandidates": 1,
+        "callsWithTimelyIncumbent": 2
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-tight-n50-r1",
+      "method": "highsV8",
+      "artifactSha256": "94507edde64a9530f4d37692efeed3e160c835a4ef7b3fe94b6627979506818c",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 7,
+      "acceptedPlans": 6,
+      "executedEvents": 75,
+      "revisions": 134,
+      "pricedRows": 0,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-aged-backlog-tight-n50-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "00368bd2fe528fab3353aaa8696def975ec2356ab26f906bf62404a346135834",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 7,
+      "acceptedPlans": 6,
+      "executedEvents": 75,
+      "revisions": 74,
+      "pricedRows": 0,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 7,
+        "cacheAcceptedCalls": 3,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 3,
+        "completeNativeProposals": 6,
+        "strictReplacements": 0,
+        "feeTiesRetained": 3
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-balanced-n24-r1",
+      "method": "highsV8",
+      "artifactSha256": "5e2b573bb895d520a354dd15cd15dcdd29c1d44257632988005bb5b65a85c520",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 254,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-balanced-n24-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "3ddf9f5e9900ac369767df8ffa5129912036065a3632400cc56478d4d852eb17",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 80,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 10,
+        "nativeAcceptedCalls": 4,
+        "retainedCacheCalls": 10,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 10
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-balanced-n24-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "218566760d08d6941476a25ab4cbc4198b6fb64424038e58bcf58b4e51ac537b",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 16,
+      "pricedRows": 24,
+      "polishEndpoints": 1,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 11,
+        "rebuild": 2
+      },
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 19,
+        "completeCopiedCandidates": 19,
+        "acceptedCandidates": 15,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-balanced-n100-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "72018e4a9b157cc3a56b0a54edeed54d81ea83aa42190aebb8c70dfc8c13006b",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 161,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 11,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 11,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 11
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-balanced-n100-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "a8b1f056a6249f85b1410529250e9c76c217359ffb105329913969a2679bc4e7",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 32,
+      "pricedRows": 100,
+      "polishEndpoints": 3,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 11,
+        "rebuild": 2
+      },
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 25,
+        "completeCopiedCandidates": 25,
+        "acceptedCandidates": 19,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-balanced-n100-r1",
+      "method": "highsV8",
+      "artifactSha256": "27bc5dc1ba94327b28d6e6550bb1bfa0ba50c53c91bac2b0009421ec6a2bc28b",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 885,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 0,
+      "incrementalCost": 0,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-tight-n50-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "29c512bddcad9301b473627f4de41087c856fe0408c42a960330fc98c8b7e141",
+      "complete": false,
+      "historyAvailable": true,
+      "timelineEntries": 7,
+      "acceptedPlans": 6,
+      "executedEvents": 52,
+      "revisions": 127,
+      "pricedRows": 0,
+      "polishEndpoints": 2,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 3,
+        "rebuild": 2,
+        "failed": 1
+      },
+      "totalCost": null,
+      "incrementalCost": null,
+      "candidateDelivery": {
+        "candidateEvents": 17,
+        "completeCopiedCandidates": 17,
+        "acceptedCandidates": 10,
+        "independentlyInvalidCandidates": 3,
+        "callsWithTimelyIncumbent": 6
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-tight-n50-r1",
+      "method": "highsV8",
+      "artifactSha256": "40af9a512c2d5f75036f1c59367ed872d46a5391a9fc196367051765b15e21c1",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 536,
+      "pricedRows": 50,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 18200,
+      "incrementalCost": 18200,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-new-arrivals-tight-n50-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "1cba38d2af42f379b2551aa6663a74d0f03eadd8d4301217134134cf3fd14e9f",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 233,
+      "pricedRows": 50,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 18200,
+      "incrementalCost": 18200,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 9,
+        "nativeAcceptedCalls": 5,
+        "retainedCacheCalls": 9,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 9
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-balanced-n24-r1",
+      "method": "highsV8",
+      "artifactSha256": "4fa8755630a6cd74e4995f35985c8c49b37745d7e4bcbe7fcb81443823e20935",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 166,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 263900,
+      "incrementalCost": 209300,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-balanced-n24-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "d05ed541d9962767a5a14396d5fcd65be01370598dbe22ca11eac11701c4775c",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 31,
+      "pricedRows": 24,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 273000,
+      "incrementalCost": 218400,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 11,
+        "nativeAcceptedCalls": 3,
+        "retainedCacheCalls": 11,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 11
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-balanced-n24-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "f0b82c47cc708c769ca8ff27397db317d9b2942772ea5608da49c50dc05e2017",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 72,
+      "revisions": 14,
+      "pricedRows": 24,
+      "polishEndpoints": 3,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 11,
+        "rebuild": 2
+      },
+      "totalCost": 263900,
+      "incrementalCost": 209300,
+      "candidateDelivery": {
+        "candidateEvents": 29,
+        "completeCopiedCandidates": 29,
+        "acceptedCandidates": 23,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-balanced-n100-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "b815d9beffb13e6a58a724a45a50cc55f2fb3ae1c846e609b0ab3739f29af248",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 69,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 1461900,
+      "incrementalCost": 1243500,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 12,
+        "nativeAcceptedCalls": 2,
+        "retainedCacheCalls": 12,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 12
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-balanced-n100-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "993abca366d1037bd44335e3c10be51688bbba10160bf1cafc090cf7b41e92de",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 300,
+      "revisions": 63,
+      "pricedRows": 100,
+      "polishEndpoints": 7,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 11,
+        "rebuild": 2
+      },
+      "totalCost": 1476900,
+      "incrementalCost": 1258500,
+      "candidateDelivery": {
+        "candidateEvents": 32,
+        "completeCopiedCandidates": 32,
+        "acceptedCandidates": 23,
+        "independentlyInvalidCandidates": 2,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-balanced-n100-r1",
+      "method": "highsV8",
+      "artifactSha256": "fed79a8d25206ff3161173836f12b1ff8fa4a1b3c6d707c155ee8897211b243f",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 12,
+      "acceptedPlans": 12,
+      "executedEvents": 300,
+      "revisions": 626,
+      "pricedRows": 100,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 1446900,
+      "incrementalCost": 1228500,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-tight-n50-r1",
+      "method": "adaptiveV9",
+      "artifactSha256": "7cd3c17be6520312b06ce49d82d7346febb574a329920377ee811f656dc627c5",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 167,
+      "pricedRows": 50,
+      "polishEndpoints": 11,
+      "adaptiveActions": {
+        "initialize": 1,
+        "retain": 8,
+        "rebuild": 4,
+        "polish": 1
+      },
+      "totalCost": 3174600,
+      "incrementalCost": 3010800,
+      "candidateDelivery": {
+        "candidateEvents": 40,
+        "completeCopiedCandidates": 37,
+        "acceptedCandidates": 23,
+        "independentlyInvalidCandidates": 4,
+        "callsWithTimelyIncumbent": 14
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-tight-n50-r1",
+      "method": "highsV8",
+      "artifactSha256": "81d44d6a41d69ca516881d612caefc4144f971a18f9a366130260642bef8c9e3",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 306,
+      "pricedRows": 50,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 2398900,
+      "incrementalCost": 2235100,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 0,
+        "cacheAcceptedCalls": 0,
+        "nativeAcceptedCalls": 0,
+        "retainedCacheCalls": 0,
+        "completeNativeProposals": 0,
+        "strictReplacements": 0,
+        "feeTiesRetained": 0
+      }
+    },
+    {
+      "scenarioId": "v9-stress-batch-release-tight-n50-r1",
+      "method": "stableHiGHSV10",
+      "artifactSha256": "e18a46c68893cca46b09e78c7ddaaf53332cd0d7bc7e07dc1bcb3dbb8243fba8",
+      "complete": true,
+      "historyAvailable": true,
+      "timelineEntries": 14,
+      "acceptedPlans": 14,
+      "executedEvents": 150,
+      "revisions": 172,
+      "pricedRows": 50,
+      "polishEndpoints": 0,
+      "adaptiveActions": {},
+      "totalCost": 2377500,
+      "incrementalCost": 2213700,
+      "candidateDelivery": {
+        "candidateEvents": 0,
+        "completeCopiedCandidates": 0,
+        "acceptedCandidates": 0,
+        "independentlyInvalidCandidates": 0,
+        "callsWithTimelyIncumbent": 0
+      },
+      "nativeStabilitySelection": {
+        "calls": 14,
+        "cacheAcceptedCalls": 9,
+        "nativeAcceptedCalls": 5,
+        "retainedCacheCalls": 9,
+        "completeNativeProposals": 14,
+        "strictReplacements": 0,
+        "feeTiesRetained": 9
+      }
+    }
+  ],
+  "scope": "Independent causal physical/date/resource/fee, V9/V10 selection, reasons and cumulative native stability counters audit of 54 reused old-V9 development records; not new validation scenarios or formal performance evidence.",
+  "inputIndexSha256": "93f0d91a99506225e308188121f1cbc672a9c97496f96e58724d5b82440845c5",
+  "fixture": false,
+  "development": true,
+  "formal": false,
+  "summary": {
+    "episodes": 54,
+    "completeEpisodes": 45,
+    "historyUnavailable": 0
+  },
+  "nativeStabilitySelection": {
+    "calls": 204,
+    "cacheAcceptedCalls": 148,
+    "nativeAcceptedCalls": 53,
+    "retainedCacheCalls": 148,
+    "completeNativeProposals": 202,
+    "strictReplacements": 0,
+    "feeTiesRetained": 148
+  },
+  "originalIndependentReviewSha256": "56a9524c215201f24f3853f66257b8f3b964dc19730b7ae6259818390ec1db4a"
+}

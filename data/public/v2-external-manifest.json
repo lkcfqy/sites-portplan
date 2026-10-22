@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-10-12T07:29:23.556980+00:00",
+  "citation": "Huang P, Wang H, Tan F, Jiang Y, Cai J (2025). Optimization of external container delivery and pickup scheduling based on appointment mechanism. PLOS ONE 20(2): e0318606.",
+  "doi": "10.1371/journal.pone.0318606",
+  "publication_license": "Creative Commons Attribution, per article XML; original author/source attribution retained",
+  "license_urls": [
+    "http://creativecommons.org/licenses/by/4.0/",
+    "http://creativecommons.org/licenses/by/4.0/"
+  ],
+  "download_metadata": "data/public/v2-external-download-metadata.json",
+  "files": [
+    {
+      "path": "data/public/v2-external-download-metadata.json",
+      "bytes": 2277,
+      "sha256": "e5d3fda319a005249e60658ad00ac4a1f405165246ef391fc8e49f1a6cc4b652"
+    },
+    {
+      "path": "data/public/v2-external-plos-article.xml",
+      "bytes": 139217,
+      "sha256": "084d5c901f26d3c403e15336cdc26aa6009de5073c051d3b8fdfd94229f3ada4"
+    },
+    {
+      "path": "data/public/v2-external-plos-code.zip",
+      "bytes": 17819,
+      "sha256": "df567384f3b7390bebf774c6559c9ca369d489df97edb56cec8fb8cb7d054a6c"
+    },
+    {
+      "path": "data/public/v2-external-plos-data.zip",
+      "bytes": 141081,
+      "sha256": "2ef18612fc0d3e01ace17b8d16c2f29b916d9b2b711e39b32322c9e765fcfb68"
+    },
+    {
+      "path": "data/public/v2-external-plos-instance-audit.json",
+      "bytes": 9685,
+      "sha256": "ff05cc8c6134073fde9d80a5956b442b140069930b8f7009ba1bf6fd299eeddb"
+    }
+  ]
+}

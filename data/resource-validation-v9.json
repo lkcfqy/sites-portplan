@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": "portplan-v9-resource-teaching-validation",
+  "generatedAt": "2026-10-16T13:39:43.999Z",
+  "fixture": true,
+  "scope": "Four intentionally constructed synthetic teaching records, not new formal scenarios, real quotes, permissions or enterprise validation.",
+  "implementationHashes": {
+    "src/resource-recovery-v9.js": "85ab2d8ad47e6a84c233f1bed8206b2ea34a6291c05fe3c807397dd7248c7434",
+    "src/resource-recovery-v9.worker.js": "7c6653313697a102fd17c00bfb0596619cdf9e6f07b2bd8aadd20d3c74b14b9d",
+    "src/engine.js": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474",
+    "src/solver-glpk.js": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08",
+    "scripts/validate-resource-recovery-v9.mjs": "769df2efa46368563fd5f72333ecb958e913ddde94a86375760d62cb5d9be9f6"
+  },
+  "records": [
+    {
+      "name": "rescue-procurementOnly",
+      "fixture": "rescue",
+      "input": {
+        "schemaVersion": "portplan-resource-recovery-v9-local-input",
+        "snapshot": {
+          "id": "v9-resource-teaching-rescue",
+          "horizonStart": "2026-10-16",
+          "horizonDays": 4,
+          "truckCapacity": 2,
+          "warehouseCapacity": 0,
+          "stagingCapacity": 1,
+          "objectiveMode": "joint",
+          "containers": [
+            {
+              "id": "TEACHING-01",
+              "sizeFt": 20,
+              "dischargeDateTime": "2026-10-01T07:00:00+09:00",
+              "releaseDay": 0,
+              "unloadDays": 1,
+              "dueDay": 1,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0
+          },
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "minEventDay": 1,
+        "fixedEvents": {
+          "TEACHING-01": {
+            "pickupDay": 0
+          }
+        },
+        "objectiveMode": "procurementOnly",
+        "timeBudgetMs": 1000,
+        "auditReserveMs": 5,
+        "inputOrigin": "synthetic-fixture",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "normalization": {
+          "supportedDailyModelFieldsOnly": true,
+          "ignoredSnapshotFields": []
+        }
+      },
+      "result": {
+        "modelVersion": "v9-explicit-resource-recovery",
+        "counterfactual": true,
+        "purchaseExecuted": false,
+        "objectiveMode": "procurementOnly",
+        "minEventDay": 1,
+        "wholeCallBudgetMs": 1000,
+        "eligibleActions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "excludedActions": [
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2,
+            "reasons": [
+              "before_earliest_availability"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0,
+            "reasons": [
+              "would_change_past_capacity"
+            ]
+          }
+        ],
+        "informationRule": "Only this supplied current observation, physical past locks and explicit action menu are used. Unknown future outcomes are not modeled.",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "policy": "resourceRecoveryV9",
+        "status": "optimal",
+        "rows": [
+          {
+            "id": "TEACHING-01",
+            "sizeFt": 20,
+            "pickupDay": 0,
+            "unloadDay": 1,
+            "unloadEndDay": 1,
+            "returnDay": 3,
+            "pickupDate": "2026-10-16",
+            "unloadDate": "2026-10-17",
+            "returnDate": "2026-10-19",
+            "dueDay": 1,
+            "late": false,
+            "dataOrigin": "synthetic",
+            "storageDays": 16,
+            "ddDays": 19,
+            "storageCost": 546000,
+            "ddCost": 195000,
+            "totalCost": 741000,
+            "priorStorageCost": 500500,
+            "priorDDCost": 75000,
+            "sunkCost": 575500,
+            "incrementalCost": 165500
+          }
+        ],
+        "storageCost": 546000,
+        "ddCost": 195000,
+        "totalCost": 741000,
+        "sunkCost": 575500,
+        "incrementalCost": 165500,
+        "lateCount": 0,
+        "runtimeMs": 14.504089,
+        "usage": [
+          {
+            "day": 0,
+            "truck": 1,
+            "warehouse": 0,
+            "staging": 1,
+            "truckCapacity": 2,
+            "warehouseCapacity": 0,
+            "stagingCapacity": 1
+          },
+          {
+            "day": 1,
+            "truck": 0,
+            "warehouse": 1,
+            "staging": 1,
+            "truckCapacity": 2,
+            "warehouseCapacity": 1,
+            "stagingCapacity": 1
+          },
+          {
+            "day": 2,
+            "truck": 0,
+            "warehouse": 0,
+            "staging": 1,
+            "truckCapacity": 2,
+            "warehouseCapacity": 0,
+            "stagingCapacity": 1
+          },
+          {
+            "day": 3,
+            "truck": 1,
+            "warehouse": 0,
+            "staging": 0,
+            "truckCapacity": 2,
+            "warehouseCapacity": 0,
+            "stagingCapacity": 1
+          }
+        ],
+        "objectiveCost": 165500,
+        "solver": "GLPK 5.0 via glpk.js 5.0.0",
+        "solverStatus": 5,
+        "modelSize": {
+          "binaries": 8,
+          "constraints": 23,
+          "eligiblePackages": 3
+        },
+        "nativeLimitMs": 987,
+        "objectiveSafeInteger": true,
+        "selectedActions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "procurementCostKRW": 30000,
+        "combinedIncrementalCostKRW": 195500,
+        "combinedTotalCostKRW": 771000,
+        "objectiveCostKRW": 30000,
+        "optimality": "minimum_proven_within_menu",
+        "reason": "A complete audited plan minimizes the declared objective within the supplied snapshot and eligible finite menu.",
+        "audit": {
+          "valid": true,
+          "errors": [],
+          "procurementCostKRW": 30000,
+          "storageCost": 546000,
+          "ddCost": 195000,
+          "totalCost": 741000,
+          "sunkCost": 575500,
+          "incrementalCost": 165500,
+          "usage": [
+            {
+              "day": 0,
+              "truck": 1,
+              "warehouse": 0,
+              "staging": 1,
+              "truckCapacity": 2,
+              "warehouseCapacity": 0,
+              "stagingCapacity": 1
+            },
+            {
+              "day": 1,
+              "truck": 0,
+              "warehouse": 1,
+              "staging": 1,
+              "truckCapacity": 2,
+              "warehouseCapacity": 1,
+              "stagingCapacity": 1
+            },
+            {
+              "day": 2,
+              "truck": 0,
+              "warehouse": 0,
+              "staging": 1,
+              "truckCapacity": 2,
+              "warehouseCapacity": 0,
+              "stagingCapacity": 1
+            },
+            {
+              "day": 3,
+              "truck": 1,
+              "warehouse": 0,
+              "staging": 0,
+              "truckCapacity": 2,
+              "warehouseCapacity": 0,
+              "stagingCapacity": 1
+            }
+          ],
+          "selectedActionIds": [
+            "SYNTHETIC-warehouse-one-day"
+          ],
+          "scope": "current_observation_and_explicit_eligible_menu_only",
+          "optimalityAudited": false
+        },
+        "proof": {
+          "minimumProcurementProven": true,
+          "minimumObjectiveProven": true,
+          "infeasibleWithinMenuProven": false,
+          "scope": "current_observation_and_explicit_eligible_menu_only",
+          "independentFeasibilityAudit": true,
+          "source": "glpk_mip_status_and_safe_integer_objective",
+          "solverStatus": 5,
+          "objectiveSafeInteger": true,
+          "objectiveCostKRW": 30000
+        },
+        "browserRecovery": {
+          "workerWallMs": 14.938395000000003,
+          "parentHardWallMs": 5000,
+          "source": "custom_local_counterfactual_not_frozen_research",
+          "purchaseExecuted": false
+        },
+        "terminalAudit": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "valid": true,
+            "errors": [],
+            "procurementCostKRW": 30000,
+            "storageCost": 546000,
+            "ddCost": 195000,
+            "totalCost": 741000,
+            "sunkCost": 575500,
+            "incrementalCost": 165500,
+            "usage": [
+              {
+                "day": 0,
+                "truck": 1,
+                "warehouse": 0,
+                "staging": 1,
+                "truckCapacity": 2,
+                "warehouseCapacity": 0,
+                "stagingCapacity": 1
+              },
+              {
+                "day": 1,
+                "truck": 0,
+                "warehouse": 1,
+                "staging": 1,
+                "truckCapacity": 2,
+                "warehouseCapacity": 1,
+                "stagingCapacity": 1
+              },
+              {
+                "day": 2,
+                "truck": 0,
+                "warehouse": 0,
+                "staging": 1,
+                "truckCapacity": 2,
+                "warehouseCapacity": 0,
+                "stagingCapacity": 1
+              },
+              {
+                "day": 3,
+                "truck": 1,
+                "warehouse": 0,
+                "staging": 0,
+                "truckCapacity": 2,
+                "warehouseCapacity": 0,
+                "stagingCapacity": 1
+              }
+            ],
+            "selectedActionIds": [
+              "SYNTHETIC-warehouse-one-day"
+            ],
+            "scope": "current_observation_and_explicit_eligible_menu_only",
+            "optimalityAudited": false
+          },
+          "optimalityIndependentlyRecomputed": false,
+          "scope": "Independent parent action-menu, capacity, execution-lock and fee audit; solver optimality proof is retained but not independently re-solved."
+        }
+      }
+    },
+    {
+      "name": "rescue-feesPlusProcurement",
+      "fixture": "rescue",
+      "input": {
+        "schemaVersion": "portplan-resource-recovery-v9-local-input",
+        "snapshot": {
+          "id": "v9-resource-teaching-rescue",
+          "horizonStart": "2026-10-16",
+          "horizonDays": 4,
+          "truckCapacity": 2,
+          "warehouseCapacity": 0,
+          "stagingCapacity": 1,
+          "objectiveMode": "joint",
+          "containers": [
+            {
+              "id": "TEACHING-01",
+              "sizeFt": 20,
+              "dischargeDateTime": "2026-10-01T07:00:00+09:00",
+              "releaseDay": 0,
+              "unloadDays": 1,
+              "dueDay": 1,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0
+          },
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "minEventDay": 1,
+        "fixedEvents": {
+          "TEACHING-01": {
+            "pickupDay": 0
+          }
+        },
+        "objectiveMode": "feesPlusProcurement",
+        "timeBudgetMs": 1000,
+        "auditReserveMs": 5,
+        "inputOrigin": "synthetic-fixture",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "normalization": {
+          "supportedDailyModelFieldsOnly": true,
+          "ignoredSnapshotFields": []
+        }
+      },
+      "result": {
+        "modelVersion": "v9-explicit-resource-recovery",
+        "counterfactual": true,
+        "purchaseExecuted": false,
+        "objectiveMode": "feesPlusProcurement",
+        "minEventDay": 1,
+        "wholeCallBudgetMs": 1000,
+        "eligibleActions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "excludedActions": [
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2,
+            "reasons": [
+              "before_earliest_availability"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0,
+            "reasons": [
+              "would_change_past_capacity"
+            ]
+          }
+        ],
+        "informationRule": "Only this supplied current observation, physical past locks and explicit action menu are used. Unknown future outcomes are not modeled.",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "policy": "resourceRecoveryV9",
+        "status": "optimal",
+        "rows": [
+          {
+            "id": "TEACHING-01",
+            "sizeFt": 20,
+            "pickupDay": 0,
+            "unloadDay": 1,
+            "unloadEndDay": 1,
+            "returnDay": 2,
+            "pickupDate": "2026-10-16",
+            "unloadDate": "2026-10-17",
+            "returnDate": "2026-10-18",
+            "dueDay": 1,
+            "late": false,
+            "dataOrigin": "synthetic",
+            "storageDays": 16,
+            "ddDays": 18,
+            "storageCost": 546000,
+            "ddCost": 165000,
+            "totalCost": 711000,
+            "priorStorageCost": 500500,
+            "priorDDCost": 75000,
+            "sunkCost": 575500,
+            "incrementalCost": 135500
+          }
+        ],
+        "storageCost": 546000,
+        "ddCost": 165000,
+        "totalCost": 711000,
+        "sunkCost": 575500,
+        "incrementalCost": 135500,
+        "lateCount": 0,
+        "runtimeMs": 0.720913000000003,
+        "usage": [
+          {
+            "day": 0,
+            "truck": 1,
+            "warehouse": 0,
+            "staging": 1,
+            "truckCapacity": 2,
+            "warehouseCapacity": 0,
+            "stagingCapacity": 1
+          },
+          {
+            "day": 1,
+            "truck": 0,
+            "warehouse": 1,
+            "staging": 1,
+            "truckCapacity": 2,
+            "warehouseCapacity": 1,
+            "stagingCapacity": 1
+          },
+          {
+            "day": 2,
+            "truck": 1,
+            "warehouse": 0,
+            "staging": 0,
+            "truckCapacity": 2,
+            "warehouseCapacity": 0,
+            "stagingCapacity": 1
+          },
+          {
+            "day": 3,
+            "truck": 0,
+            "warehouse": 0,
+            "staging": 0,
+            "truckCapacity": 2,
+            "warehouseCapacity": 0,
+            "stagingCapacity": 1
+          }
+        ],
+        "objectiveCost": 135500,
+        "solver": "GLPK 5.0 via glpk.js 5.0.0",
+        "solverStatus": 5,
+        "modelSize": {
+          "binaries": 8,
+          "constraints": 23,
+          "eligiblePackages": 3
+        },
+        "nativeLimitMs": 994,
+        "objectiveSafeInteger": true,
+        "selectedActions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "procurementCostKRW": 30000,
+        "combinedIncrementalCostKRW": 165500,
+        "combinedTotalCostKRW": 741000,
+        "objectiveCostKRW": 165500,
+        "optimality": "minimum_proven_within_menu",
+        "reason": "A complete audited plan minimizes the declared objective within the supplied snapshot and eligible finite menu.",
+        "audit": {
+          "valid": true,
+          "errors": [],
+          "procurementCostKRW": 30000,
+          "storageCost": 546000,
+          "ddCost": 165000,
+          "totalCost": 711000,
+          "sunkCost": 575500,
+          "incrementalCost": 135500,
+          "usage": [
+            {
+              "day": 0,
+              "truck": 1,
+              "warehouse": 0,
+              "staging": 1,
+              "truckCapacity": 2,
+              "warehouseCapacity": 0,
+              "stagingCapacity": 1
+            },
+            {
+              "day": 1,
+              "truck": 0,
+              "warehouse": 1,
+              "staging": 1,
+              "truckCapacity": 2,
+              "warehouseCapacity": 1,
+              "stagingCapacity": 1
+            },
+            {
+              "day": 2,
+              "truck": 1,
+              "warehouse": 0,
+              "staging": 0,
+              "truckCapacity": 2,
+              "warehouseCapacity": 0,
+              "stagingCapacity": 1
+            },
+            {
+              "day": 3,
+              "truck": 0,
+              "warehouse": 0,
+              "staging": 0,
+              "truckCapacity": 2,
+              "warehouseCapacity": 0,
+              "stagingCapacity": 1
+            }
+          ],
+          "selectedActionIds": [
+            "SYNTHETIC-warehouse-one-day"
+          ],
+          "scope": "current_observation_and_explicit_eligible_menu_only",
+          "optimalityAudited": false
+        },
+        "proof": {
+          "minimumProcurementProven": false,
+          "minimumObjectiveProven": true,
+          "infeasibleWithinMenuProven": false,
+          "scope": "current_observation_and_explicit_eligible_menu_only",
+          "independentFeasibilityAudit": true,
+          "source": "glpk_mip_status_and_safe_integer_objective",
+          "solverStatus": 5,
+          "objectiveSafeInteger": true,
+          "objectiveCostKRW": 165500
+        },
+        "browserRecovery": {
+          "workerWallMs": 0.7684830000000034,
+          "parentHardWallMs": 5000,
+          "source": "custom_local_counterfactual_not_frozen_research",
+          "purchaseExecuted": false
+        },
+        "terminalAudit": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "valid": true,
+            "errors": [],
+            "procurementCostKRW": 30000,
+            "storageCost": 546000,
+            "ddCost": 165000,
+            "totalCost": 711000,
+            "sunkCost": 575500,
+            "incrementalCost": 135500,
+            "usage": [
+              {
+                "day": 0,
+                "truck": 1,
+                "warehouse": 0,
+                "staging": 1,
+                "truckCapacity": 2,
+                "warehouseCapacity": 0,
+                "stagingCapacity": 1
+              },
+              {
+                "day": 1,
+                "truck": 0,
+                "warehouse": 1,
+                "staging": 1,
+                "truckCapacity": 2,
+                "warehouseCapacity": 1,
+                "stagingCapacity": 1
+              },
+              {
+                "day": 2,
+                "truck": 1,
+                "warehouse": 0,
+                "staging": 0,
+                "truckCapacity": 2,
+                "warehouseCapacity": 0,
+                "stagingCapacity": 1
+              },
+              {
+                "day": 3,
+                "truck": 0,
+                "warehouse": 0,
+                "staging": 0,
+                "truckCapacity": 2,
+                "warehouseCapacity": 0,
+                "stagingCapacity": 1
+              }
+            ],
+            "selectedActionIds": [
+              "SYNTHETIC-warehouse-one-day"
+            ],
+            "scope": "current_observation_and_explicit_eligible_menu_only",
+            "optimalityAudited": false
+          },
+          "optimalityIndependentlyRecomputed": false,
+          "scope": "Independent parent action-menu, capacity, execution-lock and fee audit; solver optimality proof is retained but not independently re-solved."
+        }
+      }
+    },
+    {
+      "name": "impossible-procurementOnly",
+      "fixture": "impossible",
+      "input": {
+        "schemaVersion": "portplan-resource-recovery-v9-local-input",
+        "snapshot": {
+          "id": "v9-resource-teaching-impossible",
+          "horizonStart": "2026-10-16",
+          "horizonDays": 4,
+          "truckCapacity": 2,
+          "warehouseCapacity": 0,
+          "stagingCapacity": 1,
+          "objectiveMode": "joint",
+          "containers": [
+            {
+              "id": "TEACHING-01",
+              "sizeFt": 20,
+              "dischargeDateTime": "2026-10-01T07:00:00+09:00",
+              "releaseDay": 0,
+              "unloadDays": 1,
+              "dueDay": 1,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0
+          },
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "minEventDay": 1,
+        "fixedEvents": {
+          "TEACHING-01": {
+            "pickupDay": 0
+          }
+        },
+        "objectiveMode": "procurementOnly",
+        "timeBudgetMs": 1000,
+        "auditReserveMs": 5,
+        "inputOrigin": "synthetic-fixture",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "normalization": {
+          "supportedDailyModelFieldsOnly": true,
+          "ignoredSnapshotFields": []
+        }
+      },
+      "result": {
+        "modelVersion": "v9-explicit-resource-recovery",
+        "counterfactual": true,
+        "purchaseExecuted": false,
+        "objectiveMode": "procurementOnly",
+        "minEventDay": 1,
+        "wholeCallBudgetMs": 1000,
+        "eligibleActions": [
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "excludedActions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2,
+            "reasons": [
+              "before_earliest_availability"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0,
+            "reasons": [
+              "would_change_past_capacity"
+            ]
+          }
+        ],
+        "informationRule": "Only this supplied current observation, physical past locks and explicit action menu are used. Unknown future outcomes are not modeled.",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "status": "infeasible",
+        "reason": "GLPK proved no feasible plan within this current snapshot and eligible finite action menu.",
+        "rows": [],
+        "selectedActions": [],
+        "procurementCostKRW": null,
+        "storageCost": null,
+        "ddCost": null,
+        "totalCost": null,
+        "sunkCost": null,
+        "incrementalCost": null,
+        "combinedIncrementalCostKRW": null,
+        "combinedTotalCostKRW": null,
+        "objectiveCostKRW": null,
+        "usage": [],
+        "optimality": "proven_infeasible_within_menu",
+        "proof": {
+          "minimumProcurementProven": false,
+          "minimumObjectiveProven": false,
+          "infeasibleWithinMenuProven": true,
+          "scope": "current_observation_and_explicit_eligible_menu_only",
+          "independentFeasibilityAudit": false,
+          "source": "solver_infeasibility"
+        },
+        "runtimeMs": 0.35089200000000176,
+        "solver": "GLPK 5.0 via glpk.js 5.0.0",
+        "solverStatus": 4,
+        "modelSize": {
+          "binaries": 6,
+          "constraints": 23,
+          "eligiblePackages": 1
+        },
+        "nativeLimitMs": 994,
+        "objectiveSafeInteger": true,
+        "browserRecovery": {
+          "workerWallMs": 0.3867359999999991,
+          "parentHardWallMs": 5000,
+          "source": "custom_local_counterfactual_not_frozen_research",
+          "purchaseExecuted": false
+        },
+        "terminalAudit": {
+          "valid": true,
+          "errors": [],
+          "optimalityIndependentlyRecomputed": false,
+          "scope": "Incomplete terminal shape, provenance and null-money checks; infeasibility proof is solver supplied."
+        }
+      }
+    },
+    {
+      "name": "impossible-feesPlusProcurement",
+      "fixture": "impossible",
+      "input": {
+        "schemaVersion": "portplan-resource-recovery-v9-local-input",
+        "snapshot": {
+          "id": "v9-resource-teaching-impossible",
+          "horizonStart": "2026-10-16",
+          "horizonDays": 4,
+          "truckCapacity": 2,
+          "warehouseCapacity": 0,
+          "stagingCapacity": 1,
+          "objectiveMode": "joint",
+          "containers": [
+            {
+              "id": "TEACHING-01",
+              "sizeFt": 20,
+              "dischargeDateTime": "2026-10-01T07:00:00+09:00",
+              "releaseDay": 0,
+              "unloadDays": 1,
+              "dueDay": 1,
+              "dataOrigin": "synthetic"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0
+          },
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "minEventDay": 1,
+        "fixedEvents": {
+          "TEACHING-01": {
+            "pickupDay": 0
+          }
+        },
+        "objectiveMode": "feesPlusProcurement",
+        "timeBudgetMs": 1000,
+        "auditReserveMs": 5,
+        "inputOrigin": "synthetic-fixture",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "normalization": {
+          "supportedDailyModelFieldsOnly": true,
+          "ignoredSnapshotFields": []
+        }
+      },
+      "result": {
+        "modelVersion": "v9-explicit-resource-recovery",
+        "counterfactual": true,
+        "purchaseExecuted": false,
+        "objectiveMode": "feesPlusProcurement",
+        "minEventDay": 1,
+        "wholeCallBudgetMs": 1000,
+        "eligibleActions": [
+          {
+            "id": "SYNTHETIC-after-delivery-deadline",
+            "resource": "warehouse",
+            "days": [
+              2
+            ],
+            "units": 1,
+            "priceKRW": 10000,
+            "authorized": true,
+            "earliestAvailableDay": 1
+          }
+        ],
+        "excludedActions": [
+          {
+            "id": "SYNTHETIC-warehouse-one-day",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 30000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-warehouse-larger-package",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 2,
+            "priceKRW": 50000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-not-authorized",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 1000,
+            "authorized": false,
+            "earliestAvailableDay": 1,
+            "reasons": [
+              "not_authorized"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-arrives-too-late",
+            "resource": "warehouse",
+            "days": [
+              1
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 2,
+            "reasons": [
+              "before_earliest_availability"
+            ]
+          },
+          {
+            "id": "SYNTHETIC-would-change-past",
+            "resource": "warehouse",
+            "days": [
+              0
+            ],
+            "units": 1,
+            "priceKRW": 500,
+            "authorized": true,
+            "earliestAvailableDay": 0,
+            "reasons": [
+              "would_change_past_capacity"
+            ]
+          }
+        ],
+        "informationRule": "Only this supplied current observation, physical past locks and explicit action menu are used. Unknown future outcomes are not modeled.",
+        "scope": "Counterfactual current-observation recovery with an explicit finite resource menu; no purchasing, dispatch or realized-savings claim.",
+        "status": "infeasible",
+        "reason": "GLPK proved no feasible plan within this current snapshot and eligible finite action menu.",
+        "rows": [],
+        "selectedActions": [],
+        "procurementCostKRW": null,
+        "storageCost": null,
+        "ddCost": null,
+        "totalCost": null,
+        "sunkCost": null,
+        "incrementalCost": null,
+        "combinedIncrementalCostKRW": null,
+        "combinedTotalCostKRW": null,
+        "objectiveCostKRW": null,
+        "usage": [],
+        "optimality": "proven_infeasible_within_menu",
+        "proof": {
+          "minimumProcurementProven": false,
+          "minimumObjectiveProven": false,
+          "infeasibleWithinMenuProven": true,
+          "scope": "current_observation_and_explicit_eligible_menu_only",
+          "independentFeasibilityAudit": false,
+          "source": "solver_infeasibility"
+        },
+        "runtimeMs": 0.32350100000000026,
+        "solver": "GLPK 5.0 via glpk.js 5.0.0",
+        "solverStatus": 4,
+        "modelSize": {
+          "binaries": 6,
+          "constraints": 23,
+          "eligiblePackages": 1
+        },
+        "nativeLimitMs": 994,
+        "objectiveSafeInteger": true,
+        "browserRecovery": {
+          "workerWallMs": 0.3628999999999962,
+          "parentHardWallMs": 5000,
+          "source": "custom_local_counterfactual_not_frozen_research",
+          "purchaseExecuted": false
+        },
+        "terminalAudit": {
+          "valid": true,
+          "errors": [],
+          "optimalityIndependentlyRecomputed": false,
+          "scope": "Incomplete terminal shape, provenance and null-money checks; infeasibility proof is solver supplied."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "portplan-conservative-exploratory-v2",
+  "createdOn": "2026-10-12",
+  "studyStatus": "Exploratory experiment designed AFTER observing 16 invalid static plans among 18 fixed disruption checks. Not part of the main 48-case preregistered benchmark; not an independently preregistered discovery claim.",
+  "seeds": [29001, 29002, 29003, 29004, 29005, 29006],
+  "scenarioSource": "makeStressScenario(seed) exported from scripts/robustness-v2.mjs; exact same six root scenarios",
+  "baselineSource": "Saved complete initialPlan from data/robustness-v2.json; no reselection or rerun of original plans",
+  "bufferRule": {
+    "extraUnloadDaysForEVERYContainer": 1,
+    "truckMovementsReservedOnEVERYHorizonDay": 2,
+    "capacityFloor": 0,
+    "otherInputs": "Keep release days, due days, warehouse capacity, staging capacity, return lag, tariff and horizon unchanged. Buffer does not know which boxes or days will be disrupted."
+  },
+  "solverTimeLimitSeconds": 2,
+  "fixedDisruptions": ["transport-minus-2-on-days-3-5", "unload-plus-1-every-fourth-box", "both"],
+  "uncertaintyEnvelope": "Each box's actual unloading duration is between its nominal duration and nominal+1 day; each day's actual truck capacity is at least max(0, nominal-2); all other modeled inputs are unchanged. No guarantee outside this explicit envelope or beyond the static daily model.",
+  "audits": "Independently audit the conservative schedule under full-buffer worst-case durations/capacity, original nominal inputs, and the three fixed root disruptions. Use actual durations in each audit, never trust saved unloadEndDay. Pickup/unload-start/return dates remain fixed in all checks.",
+  "cost": "Recompute nominal complete two-fee cost with original tariff at conservative planned pickup/return dates. Compare to saved original complete feasible plan; report total and incremental absolute/pct additional cost, denominator named. Exclude no case silently. Null or zero denominator produces null percent. Do not compare incomplete schedules.",
+  "reporting": "Retain infeasible and timeout cases; report feasible/optimal counts and paired cost premiums only for complete feasible original and conservative plans. Three disturbances reuse each scenario, so no random failure rate or independent-sample interval. This is a static buffer tradeoff, not online rolling recovery."
+}

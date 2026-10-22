@@ -1,0 +1,964 @@
+{
+  "horizon": {
+    "start": "2026-10-12",
+    "days": 14,
+    "timezone": "Asia/Seoul"
+  },
+  "defaultTariff": {
+    "pncFreeDays": 4,
+    "ddFreeDays": 10,
+    "pncMultiplier": 1,
+    "ddMultiplier": 1,
+    "pncMode": "retroactive",
+    "ddMode": "progressive"
+  },
+  "defaultOperations": {
+    "returnLagDays": 1,
+    "stagingUnit": "container"
+  },
+  "objectiveMode": "joint",
+  "generator": {
+    "version": "makeScenarioV2 unchanged, imported from scripts/benchmark-v2.mjs",
+    "implementationSha256AtProtocolFreeze": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+    "definition": {
+      "version": "v2-lcg-independent-cases",
+      "random": "state=(1664525*state+1013904223) mod 2^32; draw=state/2^32, initial state=seed",
+      "sharedDrawOrder": [
+        "sizeFt:40 if draw<0.45 else20",
+        "unloadDays:1 if draw<0.70;2 if draw<0.95;else3",
+        "mechanism-specific draws",
+        "discharge hour:07 if draw<0.5 else10"
+      ],
+      "aged-backlog": {
+        "dischargeDay": "-(3+floor(draw*14))",
+        "releaseDay": "floor(draw*4)",
+        "dueDay": "min(12,releaseDay+unloadDays-1+3+floor(draw*5))"
+      },
+      "new-arrivals": {
+        "releaseDay": "floor(draw*9)",
+        "dischargeDay": "releaseDay-(draw<0.75?0:1)",
+        "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+      },
+      "batch-release": {
+        "releaseDay": "[0,4,7][floor(draw*3)]",
+        "dischargeDay": "releaseDay-(2+floor(draw*5))",
+        "dueDay": "min(12,releaseDay+unloadDays-1+2+floor(draw*4))"
+      },
+      "capacityProfiles": {
+        "balanced": [
+          "ceil(n/4) truck movements/day",
+          "ceil(n/5) unloading slots/day",
+          "ceil(n/2) staging containers/day"
+        ],
+        "tight": [
+          "ceil(n/6) truck movements/day",
+          "ceil(n/8) unloading slots/day",
+          "ceil(n/4) staging containers/day"
+        ]
+      },
+      "independence": "Unique new seed for every case, no order-list prefix reuse; duplicated generated orders, if any, must be disclosed rather than silently replaced. Generated cases are not independent real-world observations."
+    },
+    "selection": "All3mechanisms x2capacities x3scales(24/50/100)x2repetitions=36 newunique seeds91001..91036; no filtering or old input prefixes."
+  },
+  "shockPatterns": [
+    {
+      "name": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "name": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "name": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "name": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    }
+  ],
+  "shockCapacityRule": "For each declared shock, capacity=max(0, nominal capacity on revealDay - ceil(nominal capacity * reductionNumerator / reductionDenominator)); private duration retained only by simulator. No announcedDuration.",
+  "protocolVersion": "portplan-v7-cost-polishing-and-public-method-adaptation-20261013-01",
+  "createdAt": "2026-10-13T12:14:04.179321+00:00",
+  "stateAtFreeze": "Prospective seed metadata only; seeds91001..91036 have not been generated or inspected. Development used old V5/V6 inputs and handcrafted fixtures. Local prospective fixed protocol, not external preregistration.",
+  "purpose": "Test whether fee-directed exact-lock polishing improves completed-path fee/stability tradeoffs against V6 recovery and a literature-source-adapted classical GRASP on the same known-order date/resource model; preserve all coverage losses and fee increases. Public RCPSP and native grain-port ledger audits are separately scoped and never pooled with these synthetic cases.",
+  "methods": [
+    "dailyReoptV4",
+    "stableRetainV5",
+    "lockedRecoveryV6",
+    "costPolishV7",
+    "graspBaselineV7"
+  ],
+  "primaryCases": [
+    {
+      "id": "v7-aged-backlog-balanced-n24-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "repeat": 1,
+      "seed": 91001,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-balanced-n24-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "repeat": 2,
+      "seed": 91002,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-balanced-n50-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 91003,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-balanced-n50-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 91004,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-balanced-n100-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 1,
+      "seed": 91005,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-balanced-n100-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 2,
+      "seed": 91006,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-tight-n24-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 24,
+      "repeat": 1,
+      "seed": 91007,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-tight-n24-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 24,
+      "repeat": 2,
+      "seed": 91008,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-tight-n50-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 91009,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-tight-n50-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 91010,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-tight-n100-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 1,
+      "seed": 91011,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-aged-backlog-tight-n100-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 2,
+      "seed": 91012,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-balanced-n24-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "repeat": 1,
+      "seed": 91013,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-balanced-n24-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "repeat": 2,
+      "seed": 91014,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-balanced-n50-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 91015,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-balanced-n50-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 91016,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-balanced-n100-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 1,
+      "seed": 91017,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-balanced-n100-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 2,
+      "seed": 91018,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-tight-n24-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 24,
+      "repeat": 1,
+      "seed": 91019,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-tight-n24-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 24,
+      "repeat": 2,
+      "seed": 91020,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-tight-n50-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 91021,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-tight-n50-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 91022,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-tight-n100-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 1,
+      "seed": 91023,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-new-arrivals-tight-n100-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 2,
+      "seed": 91024,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-balanced-n24-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "repeat": 1,
+      "seed": 91025,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-balanced-n24-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "repeat": 2,
+      "seed": 91026,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-balanced-n50-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 1,
+      "seed": 91027,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-balanced-n50-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 50,
+      "repeat": 2,
+      "seed": 91028,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-balanced-n100-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 1,
+      "seed": 91029,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-balanced-n100-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 100,
+      "repeat": 2,
+      "seed": 91030,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-tight-n24-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 24,
+      "repeat": 1,
+      "seed": 91031,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-tight-n24-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 24,
+      "repeat": 2,
+      "seed": 91032,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-tight-n50-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 1,
+      "seed": 91033,
+      "shockPatternIndex": 0,
+      "shockPattern": "truck-early-two-days",
+      "shocks": [
+        {
+          "id": "truck-early",
+          "resource": "truck",
+          "revealDay": 2,
+          "duration": 2,
+          "reductionNumerator": 2,
+          "reductionDenominator": 5
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-tight-n50-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 50,
+      "repeat": 2,
+      "seed": 91034,
+      "shockPatternIndex": 1,
+      "shockPattern": "warehouse-two-days",
+      "shocks": [
+        {
+          "id": "warehouse-shock",
+          "resource": "warehouse",
+          "revealDay": 3,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-tight-n100-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 1,
+      "seed": 91035,
+      "shockPatternIndex": 2,
+      "shockPattern": "staging-two-days",
+      "shocks": [
+        {
+          "id": "staging-shock",
+          "resource": "staging",
+          "revealDay": 4,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 3
+        }
+      ]
+    },
+    {
+      "id": "v7-batch-release-tight-n100-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "tight",
+      "count": 100,
+      "repeat": 2,
+      "seed": 91036,
+      "shockPatternIndex": 3,
+      "shockPattern": "truck-late-two-days",
+      "shocks": [
+        {
+          "id": "truck-late",
+          "resource": "truck",
+          "revealDay": 7,
+          "duration": 2,
+          "reductionNumerator": 1,
+          "reductionDenominator": 2
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "hardWallMs": 5000,
+    "clock": "Parent performance.now() before fork through IPC receipt AND parent terminal fee/resource/physical-ledger validation. Cold imports, all decision calls, child terminal audit and parent terminal audit included; no accepted complete result by5000ms means no timely completed episode. Process exit overhead separately recorded.",
+    "methodOrder": "Rotate5methods byglobal case index modulo5, onecoldchild atatime, primarybefore all36 oldV6developmentcontrols.",
+    "callBudgetCaveat": "V4/V5 use0.2s solver-internal targets; V6,V7 cost and GRASP use200ms cooperative wholecall including construction/audit/model work. These are different per-call semantics, not equal hard call budgets. Only the full episode has a common parent-enforced5000ms clock. All clocks and overrun reported.",
+    "hardDeadlineFailure": "No final episode received: complete:false, full fees:null, rows:[], executionHistoryUnavailable:true, call/revision counts:null. Do not infer that no physical events occurred or promote a static plan into full execution success.",
+    "cpuAllocation": "One benchmark child at a time, no native certificate/test/browser workload during the formal experiment; host/cgroup facts recorded.",
+    "ordersKnownAtStart": true,
+    "unseenFutureCapacity": "nominal forecast in the coordinator; private shock duration and unrevealed events never passed to planner API."
+  },
+  "callBudgets": {
+    "dailyReoptV4": {
+      "timeLimitSeconds": 0.2
+    },
+    "stableRetainV5": {
+      "timeLimitSeconds": 0.2
+    },
+    "lockedRecoveryV6": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true
+    },
+    "costPolishV7": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "constructorShare": 0.4,
+      "auditReserveMs": 5,
+      "maxRestarts": 15,
+      "retainFeasible": true,
+      "maxPasses": 2,
+      "maxPairs": 32,
+      "candidateCap": 12,
+      "maxPairChecks": 384,
+      "maxSingleTargets": 16
+    },
+    "graspBaselineV7": {
+      "timeLimitSeconds": 0.2,
+      "timeBudgetMs": 200,
+      "alpha": 0.25,
+      "resourceImpactWeight": 0.15,
+      "maxRestarts": 127,
+      "maxLocalPasses": 3,
+      "pairCandidateLimit": 12,
+      "maxPairChecks": 256,
+      "auditReserveMs": 5,
+      "retainFeasible": true
+    }
+  },
+  "methodDefinitions": {
+    "dailyReoptV4": "ExistingdailyMILPwith exactexecutionlocks.",
+    "stableRetainV5": "Existingauditedstill-feasibleplanretention elseMILP.",
+    "lockedRecoveryV6": "Existingwholecall200ms lockedconstructor+MILP recovery withfeasiblecacheretention.",
+    "costPolishV7": "SameV6constructor deadline/remainingMILP; onlyiflockedcomplete seedconstructionends early, strictlylower currentjointfee viaauditedsingle/pair relocation withinremainingoriginalconstructor80ms phase. Validcachedplans retained; nofutureview. Same-snapshot nonincrease is not a complete-episode dominance guarantee.",
+    "graspBaselineV7": "ClassicalGRASP literature-inspired adaptation: currentfeasibletrip value-RCL,minmaxfee/resource composite;multistart andlimitedfirst-improvement single/pair search, noMILP. Notoriginalpaperreproduction orSOTA. Max128constructionattempts fixedbeforeprospectivegeneration; revision15->127 followedoldn12developmentprobeunusedbudget only."
+  },
+  "developmentControls": {
+    "inputArchive": "data/rolling-v6.json",
+    "inputArchiveSha256": "695f7a62aeccd645bbd1374899fc21afe6caad1549bfbc7fa2d25e1ed62552a4",
+    "caseIds": [
+      "v6-aged-backlog-balanced-n24-r1",
+      "v6-aged-backlog-balanced-n24-r2",
+      "v6-aged-backlog-balanced-n50-r1",
+      "v6-aged-backlog-balanced-n50-r2",
+      "v6-aged-backlog-balanced-n100-r1",
+      "v6-aged-backlog-balanced-n100-r2",
+      "v6-aged-backlog-tight-n24-r1",
+      "v6-aged-backlog-tight-n24-r2",
+      "v6-aged-backlog-tight-n50-r1",
+      "v6-aged-backlog-tight-n50-r2",
+      "v6-aged-backlog-tight-n100-r1",
+      "v6-aged-backlog-tight-n100-r2",
+      "v6-new-arrivals-balanced-n24-r1",
+      "v6-new-arrivals-balanced-n24-r2",
+      "v6-new-arrivals-balanced-n50-r1",
+      "v6-new-arrivals-balanced-n50-r2",
+      "v6-new-arrivals-balanced-n100-r1",
+      "v6-new-arrivals-balanced-n100-r2",
+      "v6-new-arrivals-tight-n24-r1",
+      "v6-new-arrivals-tight-n24-r2",
+      "v6-new-arrivals-tight-n50-r1",
+      "v6-new-arrivals-tight-n50-r2",
+      "v6-new-arrivals-tight-n100-r1",
+      "v6-new-arrivals-tight-n100-r2",
+      "v6-batch-release-balanced-n24-r1",
+      "v6-batch-release-balanced-n24-r2",
+      "v6-batch-release-balanced-n50-r1",
+      "v6-batch-release-balanced-n50-r2",
+      "v6-batch-release-balanced-n100-r1",
+      "v6-batch-release-balanced-n100-r2",
+      "v6-batch-release-tight-n24-r1",
+      "v6-batch-release-tight-n24-r2",
+      "v6-batch-release-tight-n50-r1",
+      "v6-batch-release-tight-n50-r2",
+      "v6-batch-release-tight-n100-r1",
+      "v6-batch-release-tight-n100-r2"
+    ],
+    "suffix": "--development-control",
+    "bundlePath": "data/development-inputs-v7.json",
+    "interpretation": "ALL36V6oldcases, exactnominal/events andoriginalIDs; developmentonly, notnewholdouts. Compactinputbundle capturedbeforeprimary generation, originalfullarchiveSHA bound; no copiedoldmethodresults ordebug logs."
+  },
+  "analysisRules": [
+    "Retainall36freshcasesx5methods andall36developmentcasesx5methods; allfailures andparentharddeadline states explicit.",
+    "Fees anddate revisionscompareonlyjointlycompletedsamecases; fees:null onincomplete execution; zero-baselines count withnull percentage.",
+    "ReportcostVsLocked/costVsStable/costVsGrasp/graspVsLocked/stableVsDaily plusgains/losses andallnegativecaseIDs.",
+    "Separate initialization coverage from recovery aftera commonhistory; compareonly completeaudited D0plans withmatching information; missing/partial/empty isnot equal.",
+    "Polishcost proof usesfullbeforeDates/afterDates andindependentcurrent-snapshotreprice+locks; no assertionof lowerunknownfuture pathfees.",
+    "GRASPadaptation hasexternalmethodsource butnooriginalpaper replicationorSOTA claim.",
+    "No parameter/seed/case changes afterfirst formal execution; repeat runs go tonew ignoredartifacts, neverreplace firstrecord.",
+    "Public480J30 resourcegapbenchmark usesitsownprotocol/warm100ms clock; nativegrain-port ledger isretrospectivequalityaudit with0solver/0fee. Do notpoolthese withsyntheticcosts orcall themrealPNCfees."
+  ]
+}

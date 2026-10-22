@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "portplan-v10-lossless-tar-chunks",
+  "kind": "reused-development-not-new-validation",
+  "archiveFormat": "tar.gz",
+  "archiveRoot": "v10-development-first",
+  "entrypoint": "complete.json",
+  "entrypointSha256": "93f0d91a99506225e308188121f1cbc672a9c97496f96e58724d5b82440845c5",
+  "archiveBytes": 2618316,
+  "archiveSha256": "12dda714054eee9796599255a5ad40a0a2e875920f8b1b68bb47868287edec80",
+  "fileCount": 67,
+  "uncompressedFileBytes": 56654108,
+  "scenarioCount": 18,
+  "episodeCount": 54,
+  "reviewSha256": "c30e28e44a4dcebf9231be362e09d565012d3082ff24fc63edf07fc8e326f541",
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 2618316,
+      "sha256": "12dda714054eee9796599255a5ad40a0a2e875920f8b1b68bb47868287edec80"
+    }
+  ]
+}

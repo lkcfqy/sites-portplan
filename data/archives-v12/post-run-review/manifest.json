@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-16T18:33:20.396279+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v12-post-run-review",
+  "fileCount": 44,
+  "uncompressedFileBytes": 3249694,
+  "archiveBytes": 771148,
+  "archiveSha256": "90501981ce3323a4c165d3835b60ce297250637b93acb80265a48962a94d16ab",
+  "entrypoint": "data/post-run-verification-v12.json",
+  "entrypointSha256": "602e3f7a27f7d01d4f1470ab93cf441ff8fb8dc314ef4c5a26b8dbc004bcf9b6",
+  "files": [
+    {
+      "path": "artifacts/v12-bootstrap-review-first.log",
+      "bytes": 1424,
+      "sha256": "e80177a58837a4276bcb7142e24807b3bd9ee37f193ce70e97ccc882aef94678"
+    },
+    {
+      "path": "artifacts/v12-formal-archive-first.log",
+      "bytes": 1040,
+      "sha256": "d1607657b4d958f920e9bab3b777696aeb70f3005750e7a9ef1f767dbfbaced0"
+    },
+    {
+      "path": "artifacts/v12-formal-restore-first.log",
+      "bytes": 268,
+      "sha256": "b476f3a3003f81797d2671e7719c3d57df9c6a22d31b47ccdbf6c9cd33246cfe"
+    },
+    {
+      "path": "artifacts/v12-material-check-first.log",
+      "bytes": 1136,
+      "sha256": "ae720b9a2c0c10b559de3042758f19c53c4b6bb0050c8a1ac39867671f9e9b96"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-01.png",
+      "bytes": 62707,
+      "sha256": "43b2c6ced5eb5cc8481d57676db8fd315941fbbae55cca8d4ceb76984eef9f1a"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-07.png",
+      "bytes": 64560,
+      "sha256": "5c5dd9009a6a8e3741a8e40167251ceb8b75878522cdb0af5049f79dd1fff813"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-10.png",
+      "bytes": 110498,
+      "sha256": "76ad7b625ff60bab86df9840865fd6a46bbb08c4f30dbad181d0c9899856ea60"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-12.png",
+      "bytes": 100425,
+      "sha256": "3e0fb0c7f1e771f5993adf0c9fead9d75cbf1e2b1950a4439c2ccf35bf44700c"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-14.png",
+      "bytes": 70470,
+      "sha256": "c0ffd842622b574415ae772c7529c2c3dd8f5bb81c61a140a00ebedbfe8db39c"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-15.png",
+      "bytes": 93229,
+      "sha256": "45f2c80d9489b68811febb972b063c70ca66f87b5dec0a00bc1065f36e807980"
+    },
+    {
+      "path": "artifacts/v12-material-final-visual/page-17.png",
+      "bytes": 84626,
+      "sha256": "6153d4f1f1c47fced82dbbe6cbd987f49f6baf48756c81fead42effdcf9ba2b7"
+    },
+    {
+      "path": "artifacts/v12-material-first-check/build-defense-v12.py",
+      "bytes": 72288,
+      "sha256": "96ad9e43a9d41ae439384e466a14d08264d0bf98db3b7a68ff2b8812935035d1"
+    },
+    {
+      "path": "artifacts/v12-material-first-check/check-only-after-raw-binding.log",
+      "bytes": 1637,
+      "sha256": "752cd24aa1d34a8226ed06a31948c210d0df9b4f2af11820077d6194bc00180d"
+    },
+    {
+      "path": "artifacts/v12-material-first-check/material-check-first.log",
+      "bytes": 1136,
+      "sha256": "ae720b9a2c0c10b559de3042758f19c53c4b6bb0050c8a1ac39867671f9e9b96"
+    },
+    {
+      "path": "artifacts/v12-material-first-check/post-freeze-reader.patch",
+      "bytes": 7785,
+      "sha256": "4711d4a6c6ba45e63b150dbf2512c9a09ba261e7144d0fadd248bde11737be70"
+    },
+    {
+      "path": "artifacts/v12-material-first-check/reader-correction.json",
+      "bytes": 1886,
+      "sha256": "2f12f3023b9b06bcb4c57d8f2cbe4e5e1aabb3230c143d4ad03979a2f7022941"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/data/material-review-v12.json",
+      "bytes": 3120,
+      "sha256": "841a353e38ec8990160d471a79f378be7ecae36a51d96e4127a1fac64a206231"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/data/v12-release.json",
+      "bytes": 3699,
+      "sha256": "c8cc1b0cd3049797bc752673e4704138bf78a9cbdda525ce2cadc0f9ce3c7a9d"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/contribution-log-v12.md",
+      "bytes": 447,
+      "sha256": "881670e74e0a7a87d39fc2f2ea3d015b9c479035ba0bb89610deef2e9243b4a0"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/defense-v12.en.md",
+      "bytes": 12769,
+      "sha256": "e7c6d2ed4920e85eda0e6e9d5d7776a6cc9040dfe6efb68b2311d2088ff4f6a2"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/defense-v12.ko.html",
+      "bytes": 22271,
+      "sha256": "1f9338e0e22e670d251627fdfaacdc9250e30e6b9d4cb2664a4bb66637b124de"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/defense-v12.ko.pdf",
+      "bytes": 66312,
+      "sha256": "4d15dd478b260552869d75e8011a747f6b029acc9a61b1eb25a315850d56c67b"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/defense-v12.ko.pptx",
+      "bytes": 71835,
+      "sha256": "beb74e0c56c10bf75d62561546f218381e3515d84dfd165189671d377d2f956f"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/entrant-defense-v12.blank.md",
+      "bytes": 506,
+      "sha256": "c12cad74b2a5c97afc76fc4e71fa647825d276df255a97dda8bba25fc465b718"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/optional-pilot-v12.blank.md",
+      "bytes": 350,
+      "sha256": "e3e500ff9af729baa88dbc3c686b2a2412f8f3adf8a5f05519c200fceee45248"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/report-v12.zh.md",
+      "bytes": 165654,
+      "sha256": "17e98403d8b2d1be1253c43e4700cfe0a3dfb37637bb6b3e34055b64750cdf1e"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/docs/submission-v12.ko.md",
+      "bytes": 171499,
+      "sha256": "dad225e9b7b7be90ebd496cdff40c485ba09d9e09dbf1340cba940f1114d8f4b"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/scripts/__pycache__/build-defense-v12.cpython-312.pyc",
+      "bytes": 111960,
+      "sha256": "0920c2ae2d123b0946e3d6779fd6e57695fa0e7b9a1910c0e0ae2a8b6bc13ddd"
+    },
+    {
+      "path": "artifacts/v12-material-first-generated/scripts/build-defense-v12.py",
+      "bytes": 77831,
+      "sha256": "036bc41d13269078c4043dabf90b61264195c6d870b942cb18be809c08dbefe3"
+    },
+    {
+      "path": "artifacts/v12-material-generate-final.log",
+      "bytes": 361,
+      "sha256": "b89259c6331c8d2769bb251a8b36ad2bd711d7e7cbdffdc16752f0b403f699b3"
+    },
+    {
+      "path": "artifacts/v12-material-generate-first.log",
+      "bytes": 361,
+      "sha256": "b89259c6331c8d2769bb251a8b36ad2bd711d7e7cbdffdc16752f0b403f699b3"
+    },
+    {
+      "path": "artifacts/v12-postrun-focused-tests.log",
+      "bytes": 587,
+      "sha256": "f6da167e72da191245acc3898661de671738e2b479e31e406c609bf20d4218a4"
+    },
+    {
+      "path": "artifacts/v12-review-first.log",
+      "bytes": 14536,
+      "sha256": "fa95df2a9a8d62df777770067307b7d54a4d09eef08abce33de4b4f8b16f201d"
+    },
+    {
+      "path": "data/freeze-review-v12.json",
+      "bytes": 1124,
+      "sha256": "b262b9c59414af52604801ef991c3695263537e0075d607868d208ca0acc32a0"
+    },
+    {
+      "path": "data/material-review-v12.json",
+      "bytes": 3158,
+      "sha256": "6a12398bbca3c33923b7da68d730defa6a8684a376267a79240cf9ca23e54c73"
+    },
+    {
+      "path": "data/post-run-verification-v12.json",
+      "bytes": 2192,
+      "sha256": "602e3f7a27f7d01d4f1470ab93cf441ff8fb8dc314ef4c5a26b8dbc004bcf9b6"
+    },
+    {
+      "path": "data/transport-review-v12.json",
+      "bytes": 896,
+      "sha256": "1aa22f0432d8fed48cafd85386931196c843e933ba75040cb5b81059c7450c52"
+    },
+    {
+      "path": "data/v12-loss-diagnosis.json",
+      "bytes": 1693855,
+      "sha256": "8e8434181b35ff0c9d2e2eb2b02df5eb0796f4703093f0a82d1634a1a4947a40"
+    },
+    {
+      "path": "docs/v12-loss-diagnosis.zh.md",
+      "bytes": 9451,
+      "sha256": "609ae588d8e0e673420c2059aaec6935d4f1e58c7cd6e291729512574881878c"
+    },
+    {
+      "path": "scripts/build-defense-v12.py",
+      "bytes": 80231,
+      "sha256": "8c9d915b3d7781d1603c5e327808cd6d5fe58d4f9bf14ed63c2cae4cb835f761"
+    },
+    {
+      "path": "scripts/diagnose-v12-losses.py",
+      "bytes": 19107,
+      "sha256": "e590483cb3cdbb9d8416345dcfba1504193e13f9b41ba8de5ee889155bdcc97f"
+    },
+    {
+      "path": "src/research-v12-ui.js",
+      "bytes": 18714,
+      "sha256": "72b95e09e0fcdeead4a1ccf2f92916126f3008556e075110ac02c075187fcc8b"
+    },
+    {
+      "path": "tests/materials-v12.test.mjs",
+      "bytes": 14469,
+      "sha256": "5310d6653914a8e2815352675b28ed1fb851bb31bdf936243292d87a0d3380f8"
+    },
+    {
+      "path": "tests/research-v12-ui.test.mjs",
+      "bytes": 7284,
+      "sha256": "b725441617a957e688d7c0ffba36418277444da41a7b10045040f24fcffa2db8"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 771148,
+      "sha256": "90501981ce3323a4c165d3835b60ce297250637b93acb80265a48962a94d16ab"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://www.pncport.com/resources/homepage/kor/data/2025_PNC_Standard_Tariff.pdf",
+  "final_url": "https://www.pncport.com/resources/homepage/kor/data/2025_PNC_Standard_Tariff.pdf",
+  "retrieved_at_utc": "2026-10-12T06:30:16.381115+00:00",
+  "http_status": 200,
+  "content_type": "application/pdf;charset=UTF-8",
+  "sha256": "dc4739df5a7fc6770d479c480cfd27f2f626082b579de591ae5f628adb038e6c",
+  "bytes": 506094,
+  "path": "data/public/pnc_2025_standard_tariff.pdf"
+}

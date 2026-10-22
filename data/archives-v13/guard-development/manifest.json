@@ -1,0 +1,1319 @@
+{
+  "schemaVersion": "portplan-v12-lossless-tar-chunks",
+  "kind": "development",
+  "createdAt": "2026-10-17T05:50:52.863444+00:00",
+  "archiveFormat": "tar.xz",
+  "compression": "xz-lzma2-preset6",
+  "archiveRoot": "v13-guard-first",
+  "fileCount": 259,
+  "uncompressedFileBytes": 82923633,
+  "archiveBytes": 1680904,
+  "archiveSha256": "689a033fad737c196d08b0deb2bedc109f0c51cce0ee5df0bf45f754628a4b9b",
+  "entrypoint": "artifacts/v13-guard-first-development/complete.json",
+  "entrypointSha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611",
+  "files": [
+    {
+      "path": "artifacts/v13-guard-first-development-run.log",
+      "bytes": 83520,
+      "sha256": "1c024766aab2bef8d67b5b7302e04cbe80f5ed80c49221025c5c22d468c9692d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-01.json",
+      "bytes": 5677,
+      "sha256": "a47b2aa707010a64920d2f78a2e3c964b5b5d3cc3a3dd0248d65fc7aa448138b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-02.json",
+      "bytes": 10528,
+      "sha256": "e609d6b45271e5590315331d68b429c25b6675070cfbb3259436a4cd0d2e0d26"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-03.json",
+      "bytes": 15036,
+      "sha256": "f725bafa1388df319c656d4cf2dc78aeb33a916e4d263f7700892e40de045331"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-04.json",
+      "bytes": 20171,
+      "sha256": "6f06dfdc03ff31bf13d49190ec52b25b7ac92fa3d6b60acedc77370c6f8b8a8c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-05.json",
+      "bytes": 24966,
+      "sha256": "8855a322d248eadfe5f68ee012ff4c2d7e1d7082a3e78e345eb89c3b6c367903"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-06.json",
+      "bytes": 29840,
+      "sha256": "8b970dc8af3cb4fd83c8580dbe23cc78e39d7570e552cffe036a43450650d60a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-07.json",
+      "bytes": 34394,
+      "sha256": "b46d3b0557838477915aaf27f7f799404522f238d36f3e322038af577d068ced"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-08.json",
+      "bytes": 39531,
+      "sha256": "5892f311591c7da8c4a8da5743b086498afe2afc72d387deae7ad73bcf87bc9f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-09.json",
+      "bytes": 44332,
+      "sha256": "15b01f09183b0b904b06ad64b117c4755367806f4f849894192ac8cb43fbb6ef"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-10.json",
+      "bytes": 49213,
+      "sha256": "04cade44c9e7b2b11d21c9abdeb403a8279c52dcf7800bf0e681f475f72318b3"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-11.json",
+      "bytes": 53761,
+      "sha256": "e4650fc33ca1a6d41ee2e67991f87f36f52973a1d700b404023b079772a56d93"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/checkpoint-12.json",
+      "bytes": 58887,
+      "sha256": "7b3dd3dc062442d7c86e6a04c01258e9d9dc9de7e68ec513964c1a2ca7fb12fb"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/complete.json",
+      "bytes": 81327,
+      "sha256": "473ea04992ae86879e255add1647dbd5e2efbf485a43611c204ea0a40f405611"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/declaration.json",
+      "bytes": 186009,
+      "sha256": "1ece032b5e875ece3a08bcd5f2df05d6ec5c911ccf5d51082818fd61f2af4b11"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes.ndjson",
+      "bytes": 38744,
+      "sha256": "373787e7c4dbbf89868133921ebbd3629c2e6b865a6867914fcb5fc5958232b4"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-01.json",
+      "bytes": 964428,
+      "sha256": "4c7ecfc1d9fd44fe8357b83a3e38542c253458f03b97679358b9b9b313f188cf"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-02.json",
+      "bytes": 5822632,
+      "sha256": "255eaf3a0b99db70147bffed4f6b7eb53d40578319058c7c5dcb33cb202ac318"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-03.json",
+      "bytes": 2900449,
+      "sha256": "4e48b7bbacfdb5ffc339ebe997b563d070c6f1f9d7ccab087ddb64c23c53d809"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-04.json",
+      "bytes": 510737,
+      "sha256": "6053648cec81d88b245f2c628630d9b04171785a5ca06136a5130b38f35fdda0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-05.json",
+      "bytes": 510727,
+      "sha256": "2e192ae2ea63655481d1ad2702f2e87246e46548b6f75b2237c1bbc78050635a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-06.json",
+      "bytes": 2900524,
+      "sha256": "ee90a9a4660347c27292bf2ca2a8bfbec6e06c5266014efafb3cce9542dc0f75"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-07.json",
+      "bytes": 5822719,
+      "sha256": "b9033df8a3e3c0f3c615fc670161aee0de3e3f55f2225e964fedd1b8a3e84902"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-08.json",
+      "bytes": 964435,
+      "sha256": "970f717c76302d5e96fea6b68ab8d4948fbd28642637f10468f18e12322f044a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-09.json",
+      "bytes": 964477,
+      "sha256": "e06dfb8a9f4fcc21a8dc010529797b7603b230371767e662821868c83b084972"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-10.json",
+      "bytes": 5822539,
+      "sha256": "549beb369ed28f049b6e1d083c9b45c18579998266e5819682bbf7ecb830f49c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-11.json",
+      "bytes": 2900609,
+      "sha256": "0f8cae7edfa95891f84dbdacdb78f2f23ea27253097570886892d97b23af7065"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/episodes/episode-12.json",
+      "bytes": 510728,
+      "sha256": "17aac3501fcffe4836376c45e4706879e2d28412694dab5959837dc41eb7eda1"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/execution-start.json",
+      "bytes": 18813,
+      "sha256": "b50a4097845da994d5d9dac7bd2b3fd9ae55fb17e6abaa787a91bdf6b245953f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-01.ndjson",
+      "bytes": 311442,
+      "sha256": "a8dfc00a7ff22bfb76396e98392277c8677f9a4ba65d9058bbc3f737701c78fc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-02.ndjson",
+      "bytes": 2382087,
+      "sha256": "5fadf601a9438549db6c6c27432e655e461d2b19df6ba72d82a44adc0cb9d38b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-03.ndjson",
+      "bytes": 1171591,
+      "sha256": "b9d9190b7ee01b5a3e4d21da39b0a919bfca7645d20b1ef63324f34e2250b9a1"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-04.ndjson",
+      "bytes": 162406,
+      "sha256": "f373810c8977b8ae35bf3fe741fc214a890286f0ba437d666f8d1430501a63cb"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-05.ndjson",
+      "bytes": 162393,
+      "sha256": "5bade8716866314244322e3fbd5fb78caa8255617a22caaca67a3428fbeacf8c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-06.ndjson",
+      "bytes": 1171649,
+      "sha256": "05ace94b5314d40c4fe37cef12419d185bc8f09e9f7c7866507feef8be2342a9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-07.ndjson",
+      "bytes": 2382115,
+      "sha256": "3dbc6231c11fe3a202ee5a72964fed3be5c92a1f262b643a659d43e482815270"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-08.ndjson",
+      "bytes": 311430,
+      "sha256": "6771793a19fe1d601e3a12d4b2205be57ee1a342260156430ee47a3ff85e49cc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-09.ndjson",
+      "bytes": 311452,
+      "sha256": "a3b545f3f0c2d173de0f8714433ef3d49af294025801907f8d3c62ffdaf82d26"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-10.ndjson",
+      "bytes": 2381934,
+      "sha256": "e2cce8f749e986496d124b96b95154e279702fff920b5a9b392efaef924fb68c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-11.ndjson",
+      "bytes": 1171710,
+      "sha256": "cb083e0ddd903253ebfa25c7f41324fb3dd18d0528585ee6f1f819c6b162e5d6"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/journal-12.ndjson",
+      "bytes": 162394,
+      "sha256": "0414a41ca2e2770ec934fe63cce866414e432436977f7f5fc0646f2df52c072d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/AGENTS.md",
+      "bytes": 2238,
+      "sha256": "ce6d9ff3b7515d12e603050cd4dd7c05500f2a895edea9a00c236216a554154d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/complete.json",
+      "bytes": 12834930,
+      "sha256": "141ac68b0627e74ffa41f881078d9d73304263240e858d148c64e91562217646"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-same-distribution-new-arrivals-tight-n24-r3--a1--seededHiGHSV12.json",
+      "bytes": 362920,
+      "sha256": "41feea8e8a7cf43ef90d25b5302ea4395f7386b1ffff10522a88e9b7026ac3a4"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-aged-backlog-balanced-n100-r2--a1--seededHiGHSV12.json",
+      "bytes": 1702361,
+      "sha256": "fc3ea901bc3108d33b1e01617491ccc22c310f4edf8556c866e3fd539b787f71"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-aged-backlog-balanced-n100-r2--a2--seededHiGHSV12.json",
+      "bytes": 1702231,
+      "sha256": "4d8e4a69963e8862c6478493e99b751aedaa410877108195f93e188df2b2c744"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-aged-backlog-balanced-n100-r2--a3--seededHiGHSV12.json",
+      "bytes": 1636307,
+      "sha256": "28990332c8a8b0ea9d755b8a89dd921ad5cd28e472a95ef9ecec2f7ba21de249"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-aged-backlog-balanced-n50-r3--a1--seededHiGHSV12.json",
+      "bytes": 989371,
+      "sha256": "4feec52aeec845f8658b690a0ea1c2929c3142bc5c50ab1f7daa24107643bfb0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-aged-backlog-balanced-n50-r3--a2--seededHiGHSV12.json",
+      "bytes": 989415,
+      "sha256": "d3aecc341480df83d97af41ebce9cc0756b0dd2d1668b44c2981d9d322b8937e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n100-r2--a1--seededHiGHSV12.json",
+      "bytes": 1759516,
+      "sha256": "e505f5c28edcc3621638ecd6e14c8b32a4963612a2611e584ee9d52e59ab1974"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n100-r2--a2--seededHiGHSV12.json",
+      "bytes": 1759476,
+      "sha256": "fa44712180ec338726de02f496739e5ab7c25a1584b17fa410d6619fc185b158"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n100-r2--a3--seededHiGHSV12.json",
+      "bytes": 1759485,
+      "sha256": "d0a2501ebf3d6eeae564903f7ae87fdcfe19596bf96261ba1d6fb27f5b31a783"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n100-r3--a1--seededHiGHSV12.json",
+      "bytes": 1754241,
+      "sha256": "87179d33bb863fd2dd0432f429500ff7b6d78d12ce308d4e566088a45f0e4900"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n100-r3--a2--seededHiGHSV12.json",
+      "bytes": 1878135,
+      "sha256": "8e55f646a9577c19cfaba946dd5eba3220081d65641f1d38578e5bc1ee97053b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n100-r3--a3--seededHiGHSV12.json",
+      "bytes": 1767390,
+      "sha256": "c349627fdb4d40dbc948fa3fecc9c6650d7ecc22592e48014e0954f128c5f41e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n50-r3--a1--seededHiGHSV12.json",
+      "bytes": 911662,
+      "sha256": "b3d521ad00524d23d4940d1debdd7cdd6a9be67c756fd4a0749052e7740280b8"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n50-r3--a2--seededHiGHSV12.json",
+      "bytes": 911606,
+      "sha256": "8b04b094b1193ad569af5fadfc3730fc8d80a7dec676574e0ced779a5953a114"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/episodes/v12-stress-batch-release-tight-n50-r3--a3--seededHiGHSV12.json",
+      "bytes": 911556,
+      "sha256": "c649088bc24cbd28c631ccb017622acb6068e6e8a2a23cd659c682a7e922bc49"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/inputs/v12-same-distribution-new-arrivals-tight-n24-r3.json",
+      "bytes": 7797,
+      "sha256": "98d98813dcf97933c7915b2beb62ccb8cad6edc504865a6eb098006a492d7495"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/inputs/v12-stress-aged-backlog-balanced-n100-r2.json",
+      "bytes": 27809,
+      "sha256": "c942d5b86e36997326a43f941c0d97f80c7410c0c8fc9e16a5a4d8cd225e34fe"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/inputs/v12-stress-aged-backlog-balanced-n50-r3.json",
+      "bytes": 14811,
+      "sha256": "081a247c059d27e3b3c7d84595eef7acff32d05f9dc5ef3b164cf093e54fd427"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/inputs/v12-stress-batch-release-tight-n100-r2.json",
+      "bytes": 27620,
+      "sha256": "960649fbbae8037289dd5c15e1a0848b136b8dadb997e262b6f907177fd12cdf"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/inputs/v12-stress-batch-release-tight-n100-r3.json",
+      "bytes": 27935,
+      "sha256": "d2bf5686a33b78ee2bb3748a1307aee2ecfb487c2e0d4b6a8e48d22f9224bc1c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/artifacts/v12-frozen-first/first-run/inputs/v12-stress-batch-release-tight-n50-r3.json",
+      "bytes": 14715,
+      "sha256": "7caccf86862fedca052dcc6cf2f5da6992529b922741e0179b8da5215e675d70"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/data/v12-loss-diagnosis.json",
+      "bytes": 1693855,
+      "sha256": "8e8434181b35ff0c9d2e2eb2b02df5eb0796f4703093f0a82d1634a1a4947a40"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/scripts/benchmark-v12.mjs",
+      "bytes": 49305,
+      "sha256": "f6b8f7a285ce280a113f1a26a02c5672d7b3f12babdcc931528f4b4a6fe5b6fd"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/scripts/highs-planner-v12.mjs",
+      "bytes": 29002,
+      "sha256": "aa7a320e1916f6c157b2eed7ebad7eb2ad06c83bc6cea6743e1e45ca5e3285e4"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/src/commitment-slack-v11.js",
+      "bytes": 8307,
+      "sha256": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/src/engine.js",
+      "bytes": 27539,
+      "sha256": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/original/src/rolling-plan.js",
+      "bytes": 15849,
+      "sha256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/AGENTS.md",
+      "bytes": 2238,
+      "sha256": "ce6d9ff3b7515d12e603050cd4dd7c05500f2a895edea9a00c236216a554154d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/data/protocol-development-v13.json",
+      "bytes": 149829,
+      "sha256": "d93461572dfd6c0171f83495ff10d0c4581b3d491bd2681d21d501215c969c67"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/data/protocol-v12.json",
+      "bytes": 38884,
+      "sha256": "b0b7c0d0ee8f49bda0ff69b6d8f4701d0e360cccc489a28377745a5635e5069a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/data/protocol-v2.json",
+      "bytes": 17300,
+      "sha256": "78df5813a7cffe35ef51461c88649d2461e8676fb489c047e66830190c7a70f8"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/package-lock.json",
+      "bytes": 35839,
+      "sha256": "6adf7e460d457ed6ef0a6f940c99987ddb569c5e432194de5e4fd4bd2c9f0afe"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/package.json",
+      "bytes": 1642,
+      "sha256": "60c5c30c5e7efb1eacd7e4c8b0c0f18d962a429b7d68465d882df72a7d29036e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/requirements-browser-v5.txt",
+      "bytes": 33,
+      "sha256": "85fcdb1ab7e1444cd5a3200037d91b45ceeadb804b9b0e3520dbc26eecb3ea82"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/requirements-cpsat-v12.txt",
+      "bytes": 246,
+      "sha256": "0b1a4922da46157b32560a231b36ccda42e170d9f496c6998ee658c41527d33b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/requirements-materials-v12.txt",
+      "bytes": 191,
+      "sha256": "9edc509efd2bd1b638ab59233f5ab6580da2355cca6955b06267ab91359c3f70"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/requirements-materials-v8.txt",
+      "bytes": 210,
+      "sha256": "590227912f1063e8bb0094edf1d90e421bbadf3dee5774b8fab38b8822d9c1d4"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/requirements-public-v3.txt",
+      "bytes": 98,
+      "sha256": "5ae821db9e51f0eee7fb4f8e6a90e7e7b8a0a978caad3611868c5690a7ecbd83"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/requirements-research-v4.txt",
+      "bytes": 105,
+      "sha256": "a8038247c1d9f17f2fcb22f782123347044814422dfbc869f9a4426cab1dd382"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/__pycache__/certify-v4.cpython-312.pyc",
+      "bytes": 45389,
+      "sha256": "57c532c19473e5a6c1a455bf2a4bd1c18d49a6623cceb41fac5f861487e854ca"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/__pycache__/review-v10.cpython-312.pyc",
+      "bytes": 46160,
+      "sha256": "bd79de78be4ce374fc977bb322f014b464e3049ab43803c8b193db249dc14e2f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/__pycache__/review-v12.cpython-312.pyc",
+      "bytes": 104998,
+      "sha256": "698e34e44b903c381793d5f12ce0e824477bc2533d828bb1e98c4bbcc96cb8e5"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/__pycache__/review-v5.cpython-312.pyc",
+      "bytes": 85669,
+      "sha256": "ea9959ff66bda60f27aadf4b7939a3746e403023419258b9b85193b9884d82e7"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/__pycache__/review-v8.cpython-312.pyc",
+      "bytes": 42859,
+      "sha256": "013d37cc9d7520990a1efe9af7f27c0cd12816237cd8eb32bec35c3f1be3d8d7"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/__pycache__/review-v9.cpython-312.pyc",
+      "bytes": 44462,
+      "sha256": "b3ad3876c2e891a1d18ffb0c3223330efdfb684b1ff33280d60ca8faa36b3739"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/archive-development-v10.py",
+      "bytes": 3078,
+      "sha256": "03dfc18ffcf909196f341e8332d71f3ab41aff89ea37181c115969a9ae239cbc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/archive-development-v12.py",
+      "bytes": 3985,
+      "sha256": "f124a72b46bffbbfcdbfeb2f20591630ec81a9be42ffd695fdc06055f9b05359"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/archive-evidence-v10.py",
+      "bytes": 5245,
+      "sha256": "4e969add43a36174c7ce178c91020612049711358accbe9a6c804e5824b1a00c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/archive-evidence-v12.py",
+      "bytes": 5273,
+      "sha256": "507d49124a23d4bda755e5f00da5146641b491b584d1fe2e86d804f4ba705c88"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/archive-evidence-v8.py",
+      "bytes": 5665,
+      "sha256": "154d0f8afa4e9c4cd5cd7a7f97631e774fdda557ae30506ade12236da388df80"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/archive-evidence-v9.py",
+      "bytes": 5238,
+      "sha256": "d6033e5e5e02d0aef2390844ef8b829d6e2281888c2041ec20fce0af73100508"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/audit-port-ledger-v7.py",
+      "bytes": 11343,
+      "sha256": "14d58040ca8aa603dc4d93faf89c159539609716bb4856473e85d54d8e988826"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/audit-public-orders-v6.py",
+      "bytes": 34473,
+      "sha256": "4a7fc6c0eaadb2611fd7cfeff66ea64f2a1631e6a056ea632aa7643ac2012bef"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v10.mjs",
+      "bytes": 38101,
+      "sha256": "0a85bb81481c868842b387b4d8f9a58130e193ffea546c6712f96e3bc5f74ccb"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v12.mjs",
+      "bytes": 49305,
+      "sha256": "f6b8f7a285ce280a113f1a26a02c5672d7b3f12babdcc931528f4b4a6fe5b6fd"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v2.mjs",
+      "bytes": 19439,
+      "sha256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v4.mjs",
+      "bytes": 16566,
+      "sha256": "b24f9828e2b9b330cd088ac67351d672cc63d6f2e60ac3909e0bbafcc7c6b88e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v5.mjs",
+      "bytes": 11351,
+      "sha256": "deba4bbafc91e648b52b973e344139f3a7055cd8a93b5000b452e50ad959e450"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v8.mjs",
+      "bytes": 26539,
+      "sha256": "d5a73901dd8acd3bf46a383aff058af480214a583ffe650ab62418045fc301e1"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark-v9.mjs",
+      "bytes": 28151,
+      "sha256": "2ae390f975674d3f01a7bf1faafb07c22b5404fbd5324d501894ea840eeb1e89"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/benchmark.mjs",
+      "bytes": 9838,
+      "sha256": "3ef65cb3c83d1b99d19b7e87cafdc2da5a9626e599030d1e33f726cae8c1dd0e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/browser-acceptance-v13.py",
+      "bytes": 31828,
+      "sha256": "f6e9c85231c462d3a06d71c4cec93f500460db12e47e596d86fc2b3b03a466e2"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/browser-qa-v5.py",
+      "bytes": 7300,
+      "sha256": "216558e790e5f543edbac18d6bfa36dcbefbe230380d0d5160b70912ee276b15"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/browser-qa-v6.py",
+      "bytes": 20488,
+      "sha256": "47d415c996d194039e1e628c557826b4700e8787065f40e7f5e4f88150a9a5b8"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/browser-qa-v7.py",
+      "bytes": 34020,
+      "sha256": "7951240964e0f6859a602bf29b2771b460ba28f2bc015f8adaffd0eb00eee381"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v10.py",
+      "bytes": 95541,
+      "sha256": "9581b1b172c27e22ac515f8135d69787e2d8f6326d7662a9d7f53067732fb5ca"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v12.py",
+      "bytes": 80231,
+      "sha256": "8c9d915b3d7781d1603c5e327808cd6d5fe58d4f9bf14ed63c2cae4cb835f761"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v4.py",
+      "bytes": 52164,
+      "sha256": "8d0c1d34713a417b0a97ed4a0109eb275b0b4df654744b05d71bff48924af734"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v5.py",
+      "bytes": 56401,
+      "sha256": "ea45e2f55b21e1c129174e5c38ce99af80a16c6074048c7c414183bb2b3b6352"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v6.py",
+      "bytes": 69760,
+      "sha256": "0753fc600236cbd09fd954f37abd7faeca4e25479f78dd726038c3606fbbdf42"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v7.py",
+      "bytes": 70447,
+      "sha256": "54ee5beafbfe37991222427937d4d74f3dfcf01d233453cb0509d2846089cb82"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v8.py",
+      "bytes": 70649,
+      "sha256": "e3e93b1f2136605825984181a70204cfcee5c8f69da54eb6355ba277f557dfc4"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense-v9.py",
+      "bytes": 83045,
+      "sha256": "5d488293c49c8d7aa16130f8de5a4288e28dcba497556014f0ba5a38bfff0a49"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-defense.mjs",
+      "bytes": 15367,
+      "sha256": "aa2425fe1f27f749ca14085241186a1eeb52d42c9fc506b9521f56e49f5fd105"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-feasibility-v6.mjs",
+      "bytes": 3648,
+      "sha256": "5396dc3b5b3f420c5526c0983956aa26d98db70c9009c854299c59fd76fc9a16"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-view-v6.mjs",
+      "bytes": 4760,
+      "sha256": "4044c6ad642d5ac59443e26af8286ddcace13b4ac341a2925704652a2fcd6f3c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/build-view-v7.mjs",
+      "bytes": 9576,
+      "sha256": "987879df7fa37504ab11f5724833e566a812721c708a8edc2fc718574ac61fcc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/certify-v4.py",
+      "bytes": 33565,
+      "sha256": "26577dc76dc03fdb1ac183e1fcba77495d4609b6b7409ea05df22f067cfc2c78"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/certify-v5.py",
+      "bytes": 3716,
+      "sha256": "45a3eb620cb6fe246a8bf2d2602404e8ed2e56106409cfff606f00563798bc60"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/check-commitment-v11.mjs",
+      "bytes": 7759,
+      "sha256": "304b35729bb57367b0c0cf91e21c8d98e0efccab6ded851be5181a6f0cb7d2ca"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/check-public-source-field-coverage-v12.py",
+      "bytes": 11470,
+      "sha256": "02186b297559f4d9e77d6a69304244461c4aeb7340e1722acc4b87de276cfe84"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/check-site-size.mjs",
+      "bytes": 1338,
+      "sha256": "9917c20ee25a7d549ae6ec89c7f935317cccebf7afbf4b1f4b68fe720fa401af"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/compare-native-v12.mjs",
+      "bytes": 26593,
+      "sha256": "361eef862591661835ef1631a80d18eee895c2aca056eaf041199e5266484040"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/conservative-v2.mjs",
+      "bytes": 9322,
+      "sha256": "9c18a41bef7d15eeed2c89d64c093af66b90abaa8ff6a947f3e94a6d9cc82e03"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/cpsat-planner-v12.mjs",
+      "bytes": 15196,
+      "sha256": "628a70d2ac8050b5b24781a7c910252c9b3f058874132c4b897e04f2586ca463"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/cpsat-service-v12.py",
+      "bytes": 23653,
+      "sha256": "aa87a60de7820123e6c435d530461a9102a9fea16f01ddaa0b86e8df9a0c1c5c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/development-seeded-v12.mjs",
+      "bytes": 8196,
+      "sha256": "be95f6cc3bc100b0b4598164f2ae58d421ee66cbd4b9c680982162ead45e7cea"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/development-v10.mjs",
+      "bytes": 5305,
+      "sha256": "0321a833acf3b52de7dbcb8425e940190cabcb7e88124502014aedb652727d28"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/development-v12.mjs",
+      "bytes": 19990,
+      "sha256": "96fec526d995e4d0ff9bb5ed95135ff747898583355126bd3b62f7b6d7ce15ac"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/diagnose-failures-v6.py",
+      "bytes": 30618,
+      "sha256": "764aa03c880fb20325d35607de5e2b167d27f444064f4ae4822f8d392059d62c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/diagnose-failures-v8.py",
+      "bytes": 24153,
+      "sha256": "7e219005186334ff8dd0b7c0ba94d2cdd13bbd745008b583275f20f0ca0944f5"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/diagnose-v12-losses.py",
+      "bytes": 19107,
+      "sha256": "e590483cb3cdbb9d8416345dcfba1504193e13f9b41ba8de5ee889155bdcc97f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/diagnose-v9-losses.py",
+      "bytes": 27226,
+      "sha256": "4c088a6a740875b25367a2125d8dd37692fc7c02c855a40bcbd8148c01be89aa"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/episode-v10.worker.mjs",
+      "bytes": 8554,
+      "sha256": "0135c6eb12e3ad830ee913ed2753748b35567287665b34bba577de79924e4675"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/episode-v12.worker.mjs",
+      "bytes": 8811,
+      "sha256": "07262016cfa90cc3151807c0663fb5ca86f884509cdc8c80bcfc6892786c516a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/episode-v8.worker.mjs",
+      "bytes": 7844,
+      "sha256": "a558e625c6a8f9fdf704e427681aaf0e880ab3ad2491042bf2e81eede3066712"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/episode-v9.worker.mjs",
+      "bytes": 8211,
+      "sha256": "fa530e159ea7dc849bcecb1b91c1067c299b197bc820213fac39014ff43929b2"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/fetch-public-v7.py",
+      "bytes": 2459,
+      "sha256": "64d2ee4c1765291794525460bcb97dee126b9aecb52cce18db8e4125c07d5db0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/highs-planner-v10.mjs",
+      "bytes": 19600,
+      "sha256": "9272c19c8afe47ae9cafe8efb7fd8d45dca2c25de4001b4e132e5709f5a8f310"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/highs-planner-v11.mjs",
+      "bytes": 22273,
+      "sha256": "0e8be91a1eae8af6b135137f3252fb017166627b8d032a287c724edd877e61c3"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/highs-planner-v12.mjs",
+      "bytes": 29002,
+      "sha256": "aa7a320e1916f6c157b2eed7ebad7eb2ad06c83bc6cea6743e1e45ca5e3285e4"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/highs-planner-v13.mjs",
+      "bytes": 35983,
+      "sha256": "ec8df3da2d6d8dd28d5b6a0147a03f8c6dc113f5af3b2f185936c8d12f98b5bb"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/highs-planner-v8.mjs",
+      "bytes": 14594,
+      "sha256": "cfa0abecc7bf8f305dacfe76936f30b0aa1b877619315070c9245d7f87ed0bad"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/highs-service-v8.py",
+      "bytes": 17941,
+      "sha256": "2e216ce22c820d1aa718b9ba6511ee661dd588504f3f0e6def2b77ce98eedb02"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/interpret-v10-results.py",
+      "bytes": 10838,
+      "sha256": "67406742074542efaa741d8ffdcb6f8c37618459782e6920fcc724ec0bb4f91f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/interpret-v9-results.py",
+      "bytes": 7352,
+      "sha256": "78f125fa54f438ff57164f0039fc6f2eb9344176625999ce45ae89d4789c5b3b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/mechanism-v8.mjs",
+      "bytes": 38341,
+      "sha256": "897bb29706b13133c63451d718ea760a22c904e1b99073e56b0301968b978807"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/prepare-public.mjs",
+      "bytes": 16512,
+      "sha256": "e9ae599d6575aceac83216f748c6786f4b259bfd286b4615a8fde56ad79503e9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/public-gate-validation-v3.py",
+      "bytes": 10072,
+      "sha256": "1171375d52f24528edcbed2444acbe89897e9511a5640bf765ed740af1eddf01"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/public-resource-benchmark-v7.mjs",
+      "bytes": 13361,
+      "sha256": "e2d658451ccf27d3732b6ebab78791558d5be45c7b5856731de93f4020e67360"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/render-defense-v5.py",
+      "bytes": 1928,
+      "sha256": "63c1446a3e679dc44e714b16ef86d8b35271db03ef3903909701a1750d15b09e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/render-defense-v6.py",
+      "bytes": 12176,
+      "sha256": "74468533dfd73bdf02c4526d73e5af51be41db9dc63f2006c2b5bdf62e34becc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/render-defense-v7.py",
+      "bytes": 19695,
+      "sha256": "dda49adc174764481799d978bef36011d41821a1fb41f9d62da8831adcaa7ca9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/replay-commitment-v11.mjs",
+      "bytes": 11270,
+      "sha256": "0036b6ba5877dc83e140326a76b6b528dc57d1ae4db3b524573795a83b31136e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/replay-commitment-v11.planner.mjs",
+      "bytes": 24169,
+      "sha256": "c1423e3af9422265b6b708bed03d424d9a154f283d753a1b342b499744048ffd"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/replay-commitment-v11.worker.mjs",
+      "bytes": 10118,
+      "sha256": "a107d111fd498ad902d0880aec057adbebfb5f7ba2b66f4cc83fce7ed858c150"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/replay-guard-v13.mjs",
+      "bytes": 19575,
+      "sha256": "6d3c54a7cdad2c6d4a1f33a84531371a86f07c5aed5cf6067b695650c133ac4d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/replay-guard-v13.worker.mjs",
+      "bytes": 15981,
+      "sha256": "ae8a3d94e82aa1bba261a9a5c4a1a35ebf0960d98d8322daa10ec0fe55aeb3f7"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/reproduce-public-v3.py",
+      "bytes": 14619,
+      "sha256": "7ca9b8da948a639b5cb6d02ba312fb5835a976837851b72c3a7fc5598c256c74"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/restore-evidence-v10.py",
+      "bytes": 4895,
+      "sha256": "e72f795a5f8980ac813ded4f1e683608eda472e9f96af35aa102ba6d6fcc4b3a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/restore-evidence-v12.py",
+      "bytes": 5070,
+      "sha256": "789016919a5d4f1cb9f7add80c6f5081ac79bc5cdbf106cf90e0bad3d7080b32"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/restore-evidence-v6.py",
+      "bytes": 2540,
+      "sha256": "77fc263f20f9d4d960de9660762ae814462da10302f06dc59d6f31bbcb45ebe8"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/restore-evidence-v7.py",
+      "bytes": 2540,
+      "sha256": "c7c8ba018e78f6db33a2f803e91316b6e9279c8cab374dd2dd5352a98ecb5a0f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/restore-evidence-v8.py",
+      "bytes": 4888,
+      "sha256": "0d7be7587c9ef8613079615c830386ff9cc7fe0260d214a2a9880f4195d6ae0a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/restore-evidence-v9.py",
+      "bytes": 4889,
+      "sha256": "49493824e3da0e98094d97c4da417f48f708869994466bd2bd5560ff27a03ae9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-bootstrap-v10.py",
+      "bytes": 26898,
+      "sha256": "35f17b3575ff096d4cc011cccd0907a87b23b31d2490ff5af1e42f7d27c91e9f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-bootstrap-v12.py",
+      "bytes": 45419,
+      "sha256": "18ab836223f2844e9e061814572d41fc642e7486a1f8e1d50799c3bfdba075a1"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-bootstrap-v8.py",
+      "bytes": 18186,
+      "sha256": "5276118e312ca0074f2249e397295c01ca4c3f3be5a18eab195add7380b42fce"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-bootstrap-v9.py",
+      "bytes": 18151,
+      "sha256": "5ae80d3c8380a34c98644e432d815ea14926f1996b5d7c9d65181fb0695ddf3e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-development-fullpath-v12.py",
+      "bytes": 16128,
+      "sha256": "d836f74d7c55d304b9f9d525025dd4d699c6efb77e2e271b314b1aa4ccf675a5"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-feasibility-v6.py",
+      "bytes": 20940,
+      "sha256": "8867e32980018e6d9eb5302d6a0c98ae1263d0ca5f4fa9d9c6896bffe8837ff6"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-mechanism-v8.py",
+      "bytes": 11329,
+      "sha256": "8d65f926911c4e108601b1ae7691c444bee357c8d968902a9172b0b6f3b4cbbc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-native-diagnostic-v12.py",
+      "bytes": 29004,
+      "sha256": "14405cebb7a37a37da05e5f37efa957930b458a5215b735f55c5d146f2401cd0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-port-ledger-v7.py",
+      "bytes": 19491,
+      "sha256": "cabc437e1c794ec0f29f04cdfe30f92e2ea24fc4a5baa4e2958e598a4a45f163"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-public-gate-v3.py",
+      "bytes": 4190,
+      "sha256": "99cf457cd056de48cfb753ff13e6b59b243bda409873273cd097d18b7b994077"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-public-resource-v7.py",
+      "bytes": 30271,
+      "sha256": "f172b2ca48b240fbd6c6423ef0660aad3fabff872aa7a4a532300b4915e378ea"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-replay-commitment-v11.py",
+      "bytes": 23075,
+      "sha256": "80cc1057e9cd9ae64100b7facac747013b09111d00ee03c012dbbc273e17402f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-replay-guard-v13.py",
+      "bytes": 46670,
+      "sha256": "4d745e403d2d3edea025b9ed17321a87eb605196fa2eabfc722c24f568a53f55"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-resource-recovery-v9.py",
+      "bytes": 20783,
+      "sha256": "fa7ed05ea37a9a358f6763af7d2d6ffe35f8834e915a2c1a79015adbfef3b56d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-rolling-v6.py",
+      "bytes": 39282,
+      "sha256": "a70e9f894331cd1f96fe2961c9830e6f5fb372cb0c823b551bba0a685888626c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-rolling-v7.py",
+      "bytes": 57994,
+      "sha256": "4a9049e36cf130c2a1188423d4de597b1e6f080dfe1d5b9c98b571b07e88ddf6"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v10.py",
+      "bytes": 32545,
+      "sha256": "f73a3c4af72cc55f835c35d05a44278cda835e849eafe8f2dd476f3e1d42b5ef"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v12.py",
+      "bytes": 79203,
+      "sha256": "419b016627166444bdf70fad3675f5cbed58667087db6cce2f4cde03b3b4aff2"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v2.py",
+      "bytes": 15478,
+      "sha256": "b750e8ae06ee6746f7e9b88c31580f9a479d2d3f4b0f058e2a950dba5fca5b8a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v4.py",
+      "bytes": 18892,
+      "sha256": "85d5243fc5a9a93b83e12227dd4b689baef29532e13ac97cb229b131fd052a4e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v5.py",
+      "bytes": 55405,
+      "sha256": "c2a64fc79d829776dfb1d7142192e180637af58d074a4048a3e34083a907abc9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v8.py",
+      "bytes": 30299,
+      "sha256": "d00376834719daa05e4eb3f26f45c482d46d3a90243369d007fccedf4f05d8dd"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/review-v9.py",
+      "bytes": 32427,
+      "sha256": "ac976b2906a331b1cb7224fecf22e4041c4915ea407d54cf2a381f29d2f56683"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/robustness-v2.mjs",
+      "bytes": 9277,
+      "sha256": "50ff6d98a74dfa9511b2f739e71f146a5bdeded7bf32ea80b5581ebc7ce175f5"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/rolling-benchmark-v4.mjs",
+      "bytes": 5151,
+      "sha256": "83d8a86199490d459c1c5fb16418b344e843cced9f20e4ed97c290ba029fccbe"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/rolling-benchmark-v5.mjs",
+      "bytes": 8019,
+      "sha256": "94d942070f719453b6a38482ca1fe06fdc1f33a8d4dd01ec608a81e466148aee"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/rolling-benchmark-v6.mjs",
+      "bytes": 21924,
+      "sha256": "72151442b62470d689c57483e92b9021d2e1b20281c8b6df6ec4de26ca20fa2f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/rolling-benchmark-v7.mjs",
+      "bytes": 30049,
+      "sha256": "6feaee69c7a9b8b104f67517db7a79dfb4e8aede105056553dd39c4cc73fabe3"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/rolling-v6.worker.mjs",
+      "bytes": 6044,
+      "sha256": "16c294d830aa5a1d71ca31f43ab627f4594f80682c032480c94ba350e951dbf5"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/rolling-v7.worker.mjs",
+      "bytes": 10972,
+      "sha256": "0d5adc5e2e86017dd3c252e06bf692a9e4b7dd4e13d35e0694df6f84fcefdaa7"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/validate-resource-recovery-v9.mjs",
+      "bytes": 2184,
+      "sha256": "769df2efa46368563fd5f72333ecb958e913ddde94a86375760d62cb5d9be9f6"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-public-evidence-v11.py",
+      "bytes": 35127,
+      "sha256": "57db24026e2a928765ff702b04fe34186b9714c1ba277ac46c98b98549bd9fd2"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-public-v6.py",
+      "bytes": 2721,
+      "sha256": "b986eccac959d61d5b9d1af2b4765043f053aeff40315d2986b1ad478a3d9ce9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-public-v7.py",
+      "bytes": 2775,
+      "sha256": "68a4a559697d3a159657699282a5a6acdd8d8f9c36a81583bc2245cb2c3f75d7"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-release-v4.py",
+      "bytes": 2430,
+      "sha256": "2a892d0c3adfae361ae8a99a68c006aa560beb5b5dc6e725921a35ab7e97a2b3"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-release-v5.py",
+      "bytes": 2441,
+      "sha256": "5228f5b01cfd3550034366e09a8cff607759c4da8d806c836746cff878e0aa00"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-release-v6.py",
+      "bytes": 5678,
+      "sha256": "739a78934bf5c653f5fbcecbedaee2e584a7ab5a31d68c07e5ca8e9f8cd7c5c9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/scripts/verify-release-v7.py",
+      "bytes": 4068,
+      "sha256": "b70bcb74e6e9a35707cb899c9ec3649c113cfcc4bbc68f2d0ee0f000d2d97a83"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/adaptive-planner-v8.js",
+      "bytes": 21517,
+      "sha256": "130d6dcdf9bf20cacd12130179bf0942a43b8b2708a24c3f558086bb90a9a26b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/adaptive-planner-v9.js",
+      "bytes": 23912,
+      "sha256": "cc6d6e26c3f14f090f1ee78a25210e45e5ca1331cb5c731d4cb568d684ffed8a"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/candidate-delivery-v9.js",
+      "bytes": 7011,
+      "sha256": "6a675ae69756175c7a11a451fabfed2ead21f0ac9d039e5d51156f3ecb6d48ba"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/commitment-slack-v11.js",
+      "bytes": 8307,
+      "sha256": "f610b3649165127d5c5178e9c94d5e810d64024c739012b50d6b19d7a5c58153"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/conservative-plan.js",
+      "bytes": 2543,
+      "sha256": "c60d21eca4c7435df51fa68f30aa6b5ca8dbbbff25940d74d289cb5d7c269ca2"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/continuation-v13-ui.js",
+      "bytes": 8187,
+      "sha256": "02f72ed63f4940f0fb7545f979289d868cd7816aa9843f327549bbe2dd81be70"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/cost-recovery-v7.js",
+      "bytes": 18567,
+      "sha256": "89d5b2598639e4b08683c93e61d268064d2455c9df435b596016a1ecb947e25f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/decision-explanation.js",
+      "bytes": 1706,
+      "sha256": "083f993dc6c26e8102eccc166a762e46f1c54d3ef669b94712b0d44a7dbb1daf"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/engine.js",
+      "bytes": 27539,
+      "sha256": "0caa4f648ae784a4cbf3c70654216b456165f291d4bffbbcb48c18774df8e474"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/event-search-v4.js",
+      "bytes": 8927,
+      "sha256": "a8094943e4b206728d29967167e009c2d9ca3b21a91bd96dbff3fc2f43a6b70b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/evidence-paths-v12.js",
+      "bytes": 709,
+      "sha256": "5e64359b1b19b5ae092874d287b66d7cfd9f001601af3c17bd38135e240e0f55"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/evidence-transport.js",
+      "bytes": 1513,
+      "sha256": "26f356511eb9c30d226f272489b3b4475cb4e7e33de025332f3e5abc810caefe"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/execution-constraints.js",
+      "bytes": 1660,
+      "sha256": "856bc56f2dc9d83c78bf57d304c012ef1a26871fcac034432da94663206bc2e5"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/execution-v8-ui.js",
+      "bytes": 37804,
+      "sha256": "4e7ff5aff3fde3b6cd4a5442e7a9b0252a6d54ffe988a7ab69c347affe312169"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/execution-v8.worker.js",
+      "bytes": 12318,
+      "sha256": "29a05ffd1be693f48a4c29659e16bad908ad8263c79381b3cf0a6bcfe0e8a8f9"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/fast-constructor-v5.js",
+      "bytes": 12000,
+      "sha256": "5738a2911012a2fa6efbeb4a1cd78c8aa2afeaa1cf91dc21dee36eee5f29fe8f"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/feasibility-explanation-v6.js",
+      "bytes": 6211,
+      "sha256": "12a55a4cb65c3d4d6c22db71e43f62b23fb3837675529d9430c1b8c86038042d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/grasp-planner-v7.js",
+      "bytes": 17236,
+      "sha256": "7517f0d100b2e2d5442dc89adeee988290416fcd69b06c32c37c5769776c4a4e"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/locked-recovery-v9.js",
+      "bytes": 15114,
+      "sha256": "cc048ae6eeb823426e96f530b64fabff5e070cb7a01d67a508e5cde763aaa615"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/main.js",
+      "bytes": 89916,
+      "sha256": "2493a846a77b52b70785c2ef8d19381b9068fba5bcbaa03444fc78a921d66323"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/persistence-planner-v6.js",
+      "bytes": 3724,
+      "sha256": "e15f8f6b65c281c84111a2e26350db51da5b482e586db096051777b120169212"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/planner.worker.js",
+      "bytes": 352,
+      "sha256": "b04535230bab39a63dadfe96c760bc5715f5ece9b956896a06737ba15f050570"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/public-fee-validation.js",
+      "bytes": 6549,
+      "sha256": "22b9dfa3e0d9b512b9aa6997efa15d938e0cf4a54dfe9ea6ff54d5a5c2d02c91"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/public-validation-ui.js",
+      "bytes": 23507,
+      "sha256": "0aa7f4a71b60cbbd60c711230f96f8d973b7e6680961398cc13d7e0d9f998279"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/rcpsp-v7.js",
+      "bytes": 12992,
+      "sha256": "7566ae032ca8f8998a8646470b3033e87afc32f05c2f43f3b094da1483a5896b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/recovery-planner-v6.js",
+      "bytes": 22975,
+      "sha256": "560d3d8a136adbcabfe00373ea549d68f107859764feadff607c08bc4acf12bc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v10-ui.js",
+      "bytes": 11570,
+      "sha256": "9ce8bc3e3312ecfc6ae92249c6e432fc13334dfae6d8f6b10b0512ab3414920b"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v12-ui.js",
+      "bytes": 19055,
+      "sha256": "9e78946bb1e351c515d6250f78a080e04948edddabba95a9aeab8eed958c68ff"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v4-ui.js",
+      "bytes": 13606,
+      "sha256": "4d16fc1266f0190a169635d8d98f0bb4c4ec319e08c31deb6117c4b0904411dc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v4.worker.js",
+      "bytes": 340,
+      "sha256": "122cc29b0b13ab411f78bb858b468367cb6582f5fc91c7f82a394d0a9b2cfd2d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v5-ui.js",
+      "bytes": 18349,
+      "sha256": "eba37657b99ce88a909c70e2a1a4eb0cd7ee0187eb70b6756b9eed3f67dac55c"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v5.worker.js",
+      "bytes": 993,
+      "sha256": "e1542e31c768674fcde17882396a8453dcb1fce4b76e19519c44ff17fff0c25d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v6-ui.js",
+      "bytes": 42243,
+      "sha256": "20e116a7bd93eaa2e3e45cb3503bce59f74c17f58560d5c4dbaa213d5f049ee0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v6.worker.js",
+      "bytes": 3205,
+      "sha256": "048d2ea81775d1a995f73e2cb5bc4f943bdadcc893db0d8e32bb50efd9daca79"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v7-ui.js",
+      "bytes": 40215,
+      "sha256": "96b3c293425376b13c5a1ca69d6fba0059d8dab00c633b2b022c43987b57d869"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v7.worker.js",
+      "bytes": 4413,
+      "sha256": "917ec6d891fdfebf00e5c1aaf1d97bac563e43d327dafd6ca98546a97fb91824"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v8-ui.js",
+      "bytes": 8932,
+      "sha256": "58189f108eba5cf2c8ef92b78db5acf9937461b55b1ab19ca575d0a04d8d1eb0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-v9-ui.js",
+      "bytes": 9095,
+      "sha256": "6a77219bc96e2e9f8ec8fc5a84a19686be34faf0b11452dfc09d6adc79e3b1bc"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-view-v6.js",
+      "bytes": 2024,
+      "sha256": "006f3a95857aaf7282333a418383aa5db17b7dc4c9e52e2468ae59259d417ca0"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/research-view-v7.js",
+      "bytes": 2584,
+      "sha256": "573852239461d21836edb092db77fdb91ce64927388b0918500eb483484a3803"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/resource-recovery-v9-ui.js",
+      "bytes": 25668,
+      "sha256": "91fab97d7ab4affa3df8047bae0282ed771a72aa8e7cff0682bbe34cafcf72b8"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/resource-recovery-v9.js",
+      "bytes": 21209,
+      "sha256": "85ab2d8ad47e6a84c233f1bed8206b2ea34a6291c05fe3c807397dd7248c7434"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/resource-recovery-v9.worker.js",
+      "bytes": 13863,
+      "sha256": "7c6653313697a102fd17c00bfb0596619cdf9e6f07b2bd8aadd20d3c74b14b9d"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/rolling-plan.js",
+      "bytes": 15849,
+      "sha256": "cb5695935b83f71d1f0a7318ede6ee771ddafc3514ccbe0bf64159cd5ea84815"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/solver-glpk.js",
+      "bytes": 8432,
+      "sha256": "7a7401cae4009c4e0ec60d2ea68cf73942e5ce8fb3a6e077e5419dc7d910ad08"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/solver-presolver.js",
+      "bytes": 7516,
+      "sha256": "9934643bc8f0463d3340318180fc3e727659ce6b4eef1f695ce46fd55e76fadf"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/stable-planner-v5.js",
+      "bytes": 10207,
+      "sha256": "4dfbb0b2b1c555d80d518053d86a1d3654d7aa4e4efb4d46e37e2f72bf9b0a64"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/source/src/strong-baseline.js",
+      "bytes": 3939,
+      "sha256": "908602276008e2fcfd156adf56cf3dba9d3a410459aa9de5cbd4086033bdebac"
+    },
+    {
+      "path": "artifacts/v13-guard-first-development/verification/screening-supplement.json",
+      "bytes": 1455,
+      "sha256": "361ee53a448eb334d7c6d2cba754ee5e33bcb4f54138f16c3659b83d2bf87d32"
+    },
+    {
+      "path": "artifacts/v13-guard-first-review.log",
+      "bytes": 6671,
+      "sha256": "3aa374448bfc4068de9df5e04a37d21e107ee3592c01218e1570ea757a48769d"
+    },
+    {
+      "path": "artifacts/v13-prefreeze-checks-final.log",
+      "bytes": 5549,
+      "sha256": "6ff3a8a8cb7d0e7d9b655d3cc3c64e059dcdac0458d232654f1dc5158f4949f6"
+    },
+    {
+      "path": "artifacts/v13-protocol-independent-first.json",
+      "bytes": 7784,
+      "sha256": "a3ee96ff027f04a3438c0eb7cb7681ffdf3e0944bdf349df3d7999e38675114d"
+    },
+    {
+      "path": "data/development-guard-review-v13.json",
+      "bytes": 47136,
+      "sha256": "142cb311d5aa2790889d958f90af810bdaf7fac0f916213f03a544082db6beff"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "part-0001.bin",
+      "bytes": 1680904,
+      "sha256": "689a033fad737c196d08b0deb2bedc109f0c51cce0ee5df0bf45f754628a4b9b"
+    }
+  ],
+  "scope": "Exact development/source/failed-attempt transport only; no new samples, optimizer calls, formal validation or revised outcomes."
+}

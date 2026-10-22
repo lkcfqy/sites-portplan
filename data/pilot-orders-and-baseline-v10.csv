@@ -1,0 +1,1 @@
+caseId,containerRef,sizeFt,dischargeDateTime,releaseDay,unloadDays,dueDay,horizonStart,horizonDays,stagingUnit,returnLagDays,minEventDay,executedPickupDay,executedUnloadDay,executedReturnDay,manualPickupDay,manualUnloadDay,manualReturnDay,manualPlanFrozenAt,observationRef,orderSourceRef,contractRef,dataUseScopeRef

@@ -1,0 +1,10 @@
+{
+  "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+  "final_url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+  "retrieved_at_utc": "2026-10-12T06:26:25.376869+00:00",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "sha256": "99203d6e58ac422e64ec06ce2fe7c25f1f7e8b2a4f176c2560ae41ab0f08320e",
+  "bytes": 51043,
+  "path": "data/public/competition_2026.html"
+}

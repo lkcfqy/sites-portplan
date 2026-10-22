@@ -1,0 +1,207 @@
+{
+  "protocolVersion": "portplan-causal-rolling-20261012-v4",
+  "createdAt": "2026-10-12T18:06:10.253455+00:00",
+  "freeze": "Saved before any experiment under this protocol. Local chronology, not external preregistration.",
+  "timeLimitSeconds": 0.2,
+  "generator": "Unchanged makeScenarioV2; new fixed unique seeds 51001..51012.",
+  "decisionTime": "Day start before pickup/unloading-start/return actions. Future shocks unknown; their duration unannounced. All synthetic orders known initially.",
+  "static": "Initial nominal plan kept unchanged; infeasible actual action terminates episode.",
+  "rolling": "Reoptimize each day, using only observed capacities, with all prior executed event dates fixed.",
+  "hindsight": "All actual capacities visible at day0, reference only; not an online method.",
+  "resourceModel": "Original daily engine: unload start is frozen and occupancy lasts its known unloadDays; staging counts overnight pickup<=day<return. No routes, appointments, minute-level or unknown order arrival.",
+  "comparability": "Same time limit per solve, different number of planning calls; not equal total computation. All frozen cases and failures retained.",
+  "cases": [
+    {
+      "id": "rolling-aged-backlog-n12-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 12,
+      "seed": 51001,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 3,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-aged-backlog-n12-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 12,
+      "seed": 51002,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 7,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 2
+        }
+      ]
+    },
+    {
+      "id": "rolling-aged-backlog-n24-r1",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "seed": 51003,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 5,
+          "resource": "warehouse",
+          "reduction": 1,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-aged-backlog-n24-r2",
+      "mechanism": "aged-backlog",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "seed": 51004,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 3,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-new-arrivals-n12-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 12,
+      "seed": 51005,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 7,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 2
+        }
+      ]
+    },
+    {
+      "id": "rolling-new-arrivals-n12-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 12,
+      "seed": 51006,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 5,
+          "resource": "warehouse",
+          "reduction": 1,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-new-arrivals-n24-r1",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "seed": 51007,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 3,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-new-arrivals-n24-r2",
+      "mechanism": "new-arrivals",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "seed": 51008,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 7,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 2
+        }
+      ]
+    },
+    {
+      "id": "rolling-batch-release-n12-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 12,
+      "seed": 51009,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 5,
+          "resource": "warehouse",
+          "reduction": 1,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-batch-release-n12-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 12,
+      "seed": 51010,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 3,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "id": "rolling-batch-release-n24-r1",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "seed": 51011,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 7,
+          "resource": "truck",
+          "reduction": 2,
+          "duration": 2
+        }
+      ]
+    },
+    {
+      "id": "rolling-batch-release-n24-r2",
+      "mechanism": "batch-release",
+      "capacityProfile": "balanced",
+      "count": 24,
+      "seed": 51012,
+      "shocks": [
+        {
+          "id": "capacity-shock",
+          "revealDay": 5,
+          "resource": "warehouse",
+          "reduction": 1,
+          "duration": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "portplan-v10-release-status",
+  "researchVersion": "10.0.0",
+  "status": "research_iteration_complete",
+  "baseCommit": "a0619460114c6a0035b500e736c462a198eebe62",
+  "formalExperimentComplete": true,
+  "independentReviewComplete": true,
+  "independentBootstrapReviewComplete": true,
+  "fullChampionshipPlanComplete": false,
+  "browserInteractionValidation": "not_performed",
+  "developmentRoute": "public_evidence_first",
+  "publicEvidenceResearchComplete": true,
+  "publicEvidenceRoadmapRef": "data/championship-acceptance-v10.json#/publicEvidenceRoute",
+  "externalBusinessValidation": "optional_not_performed",
+  "externalBusinessValidationRequired": false,
+  "developmentPolicyRef": "AGENTS.md",
+  "entrantDefenseValidation": "not_performed",
+  "notes": "首次144场景×3重复×5方法共2160条正式记录与双独立复核完成。V10完成156/216、132/216，原生对照153/216、120/216；同配对改期53667→12117、45972→17625。相对V7共同完成新增两费条件节省9.180%（43场景/129次）、10.883%（32/95），区间均支持正节省；相对原生费用无稳定优势。压力仍损失3次原生已完成执行，未通过默认替换门槛。按AGENTS.md继续公开资料、公开数据与可复现实验路线；企业实单、合同、联系人、访谈、报价及试点为可选增强，未执行不阻塞本路线，也不再反复索要。Browser实际操作、本人资格报名/当届规则及答辩仍未验收，完整冲冠计划尚未完成；公开资料后续里程碑单独记录，不编造完成率或企业收益。",
+  "protocolHash": "fa5c6d49f43f0bf79b1905ae445300396469a985134296e1bfff94bd544414ad",
+  "frozenManifestSha256": "e78d485d24614d4c1a7249f2f46ef8d68e171a7f3fe222d557c557c902f91b6f",
+  "formalExperimentStartedAt": "2026-10-16T14:07:34.240Z",
+  "preFreezeTests": {
+    "passed": 481,
+    "failed": 0,
+    "skipped": 0
+  },
+  "developmentReviewComplete": true,
+  "formalIndexSha256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+  "stableHiGHSV10RecommendedAsDefault": false,
+  "materials": {
+    "koreanSlides": 18,
+    "editablePresentation": true,
+    "artifactReviewComplete": true
+  }
+}

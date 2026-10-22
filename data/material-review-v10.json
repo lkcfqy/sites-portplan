@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "portplan-v10-material-review",
+  "valid": true,
+  "reviewedAtKST": "2026-10-17T01:51:51+09:00",
+  "readOnlyFormalEvidence": true,
+  "solverRuns": 0,
+  "newScenarios": 0,
+  "formalIndexSha256": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+  "evidenceHashes": {
+    "data/v10-results.json": "79a12024d00ab7a47e2834bcf42644901cfa49c1600e463494fb453e7f7ccfc9",
+    "data/evidence-v10/v10-frozen-first/first-run/complete.json": "33d07f60afb4b4248682badc631512a54070cca22fd106c7dd5062d4669bf9c2",
+    "data/protocol-v10.json": "fa5c6d49f43f0bf79b1905ae445300396469a985134296e1bfff94bd544414ad",
+    "data/review-v10.json": "def9cd2920b9976a02d2e495903a3b001369eea4f039d7216325878a81fd634d",
+    "data/bootstrap-review-v10.json": "a55a55cf7d36a14eccbbb4b34162b8413bc4893d8d006d7b875b0ee9a30a3648",
+    "data/v9-results.json": "fe021614be03707bde070e499f7d626170f48add832bffe1ac38de1987399d1c",
+    "data/evidence-v9/v9-frozen-first/first-run/complete.json": "83d165a965e421af0ebc0b399f426eab3ae48eddc4a564374a6074f9edad7204",
+    "data/review-v9.json": "7716e885b7ea673bba6e552b1e6c52f3137cad4157058b8d59696175f10c6c50",
+    "data/championship-acceptance-v10.json": "98075e70e805b941ec8924f2008fc6d5721f4c0c43c9a9c4a76f6b65ed3b39a4",
+    "data/v10-loss-diagnosis.json": "22f148545608fa82af15a360e30fa7a135bfcd3cebb864330ed5a0647eff82c3"
+  },
+  "generatorSha256": "9581b1b172c27e22ac515f8135d69787e2d8f6326d7662a9d7f53067732fb5ca",
+  "slideObjectSha256": "0edac220e09d1b798a9bf4b15f3cc2dceeaf51d0d6285db5ab8b551cb7e80de7",
+  "pdfPageCount": 18,
+  "pptxSlideCount": 18,
+  "sameSourceSlideObjects": true,
+  "sourceTextCoverage": true,
+  "pdfImages": 0,
+  "pptxPictures": 0,
+  "pptxEditableTextShapes": 137,
+  "pptxEditableTables": 13,
+  "pages": [
+    {
+      "page": 1,
+      "title": "같은 요금이라면 유효한 날짜를 그대로 유지할 수 있을까요?",
+      "requiredTextItems": 6,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 2,
+      "title": "반출·적출·반납과 요금을 하나의 날짜 장부로 연결합니다.",
+      "requiredTextItems": 15,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 3,
+      "title": "V9의 한계도 수정하지 않은 이전 결과로 남깁니다.",
+      "requiredTextItems": 12,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 4,
+      "title": "V10: 단 한 번의 native MILP와 엄격한 비용 교체 규칙입니다.",
+      "requiredTextItems": 6,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 5,
+      "title": "날짜 유지의 의미와 보장하지 않는 것을 구분합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 6,
+      "title": "native 기준과 웹 시연을 정확히 구분합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 7,
+      "title": "기존 생성·충격 메커니즘에 새 주문 시드를 사전 고정했습니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 8,
+      "title": "동일 생성분포 · 새 주문 시드 조건부 비용보다 전체 완주를 먼저 봅니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 9,
+      "title": "동일 생성분포 · 새 주문 시드 같은 공동 완주 반복의 요금만 비교합니다.",
+      "requiredTextItems": 33,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 10,
+      "title": "스트레스 · 새 주문 시드 조건부 비용보다 전체 완주를 먼저 봅니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 11,
+      "title": "스트레스 · 새 주문 시드 같은 공동 완주 반복의 요금만 비교합니다.",
+      "requiredTextItems": 33,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 12,
+      "title": "완주 손실·최악 비용 악화를 모든 비교에서 보존합니다.",
+      "requiredTextItems": 58,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 13,
+      "title": "변경 수는 같은 공동 완주 집합에서 별도 단위로 비교합니다.",
+      "requiredTextItems": 58,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 14,
+      "title": "다섯 방법이 모두 완주한 집합에서 요금·변경의 Pareto를 따로 봅니다.",
+      "requiredTextItems": 69,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 15,
+      "title": "원 날짜·요금·선택 근거와 통계를 독립 검산합니다.",
+      "requiredTextItems": 13,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 16,
+      "title": "실제 기능과 연구 기준을 같은 성과로 합치지 않습니다.",
+      "requiredTextItems": 6,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 0
+    },
+    {
+      "page": 17,
+      "title": "공개 자료로 개발을 계속하고 남은 검증은 범위별로 기록합니다.",
+      "requiredTextItems": 15,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    },
+    {
+      "page": 18,
+      "title": "사전 문턱과 전체 원본을 함께 보고 다음 판단을 내립니다.",
+      "requiredTextItems": 18,
+      "sourceTextCovered": true,
+      "pdfTextWithinPage": true,
+      "pptxShapesWithinSlide": true,
+      "editableNativeTableCount": 1
+    }
+  ],
+  "scope": "Saved-artifact text, exact native table cells, vector/editable objects, page counts, PDF text bounds and PPTX shape bounds; renderer rejects table/note overflow before writing. PDF/PPTX share the same source slide objects and bound evidence. No PowerPoint application rendering, browser interaction, external clock certification, field validation or entrant understanding is certified.",
+  "frozenGeneratorSha256": "c679d6ad9b39fc15ce7a0d06fa23ff0285357643d035bc4ca6b762156d0fec7b",
+  "generatorRelationToFrozenSource": "Post-freeze presentation and material-QA changes only: direct native/V7 summaries, precise intervals and saved-output checks. Formal methods, protocol, inputs, receipts and independent reviews remain unchanged.",
+  "koreanReportAdverseIdentifierOccurrences": 232,
+  "koreanReportLostCompletionIdentifierOccurrences": 107,
+  "chineseReportAdverseIdentifierOccurrences": 232,
+  "chineseReportLostCompletionIdentifierOccurrences": 107,
+  "allDeclaredConditionalIntervalsPresent": true,
+  "outputHashes": {
+    "docs/defense-v10.ko.html": "874b3650d76387daef32bf49652ce6365a24acaa603c15e26dad677bc4e17089",
+    "docs/defense-v10.ko.pdf": "b01c0e4572c21ab463eebb51288b717f364d3beece3c008f3c5059a73edd99b8",
+    "docs/submission-v10.ko.md": "2756940ab78a5498bce61f1a4a5df3f21cb118aca072577a49087d7d38e53a35",
+    "docs/defense-v10.en.md": "05831435c1e6f0da6bd95d2fe3fdbd1f04e04fa84746ba6cf5bb61e217b73255",
+    "docs/contribution-log-v10.md": "659d2b4c2703fa55b9336e3d8ce09f009057a3345ac2050ae9d4c62f2ffdadca",
+    "docs/defense-v10.ko.pptx": "f1a0fad4da311d9478111004dd2905b7f822b74820024c8f1549995144208a35",
+    "docs/report-v10.zh.md": "0fc74f56883bfafa765702eff84813e0c80ce2410b6081955e091c27b1bead5c",
+    "docs/field-acceptance-v10.blank.md": "f252c17447f89f44c4e6babf26b25d173991cb83e2e299a0cf3b94225eee8fce",
+    "docs/entrant-defense-v10.blank.md": "020227e8c43a840b88a96047ca6abbf496476ccc1f9c93db2515a998a9a92355"
+  },
+  "contactSheet": {
+    "path": "artifacts/v10-materials-contact-sheet.png",
+    "sha256": "8295a55e6132b8add1a69cd8b36f27f49c7d310f5e363998a6264cc9c1fe6c0c",
+    "scope": "Full 18-page PDF contact sheet for human visual inspection; no PowerPoint application screenshot."
+  }
+}

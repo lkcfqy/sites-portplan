@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "portplan-v15-development-release",
+  "status": "first-seen-cold-cache-development-complete-no-completion-gain",
+  "candidateMethod": "timelyHiGHSV15",
+  "developmentExperimentComplete": true,
+  "independentReviewComplete": true,
+  "formalExperiment": false,
+  "latestFormalStudy": "v14",
+  "fullChampionshipPlanComplete": false,
+  "defaultRecommendationEligible": false,
+  "newBusinessScenarios": 0,
+  "ciComputed": false,
+  "historicalCacheImported": false,
+  "sourceCommit": "b91e3a0a78901816b280d642108649ae51ef073a",
+  "declarationSha256": "3f2f3172c5ba3e3d45265805e5a20cdd60cc2b8d89b5b66193c1b391957d2af4",
+  "enterpriseRecordsRequired": false,
+  "entrantReadiness": "not_verified",
+  "rankGuaranteed": false,
+  "evidence": {
+    "results": {
+      "path": "/data/delivery-v15-first-index.json",
+      "bytes": 224984,
+      "sha256": "b996dcf846c0e00ba3f89da453176af8f4a4302061e8dd2f27b7d4966196eaee"
+    },
+    "review": {
+      "path": "/data/review-delivery-v15.json",
+      "bytes": 194166,
+      "sha256": "588c5e5f9beb549765a746a311a70d5fc22d23d4947cbd45ab349900b0985cf5"
+    },
+    "protocol": {
+      "path": "/data/protocol-development-v15.json",
+      "bytes": 386526,
+      "sha256": "e65a550c749256e04dffa2df20d0d597ee6755914456296cb7264bdf48655b2d"
+    }
+  },
+  "outcome": {
+    "endpointsPerMethod": 12,
+    "completePerMethod": {
+      "seededHiGHSV12": 5,
+      "guardedHiGHSV13": 5,
+      "timelyHiGHSV15": 5
+    },
+    "completionImprovementObserved": false,
+    "matchingJointCompletionPairsPerComparator": 5,
+    "gainsPerComparator": 0,
+    "lossesPerComparator": 0
+  },
+  "scope": "The sole fixed 10ms native return reserve is implemented and the unique 36-branch seen synthetic cold-cache study is independently reviewed. All three methods complete the same 5/12 repeat-specific endpoints, with no gains/losses and identical matched complete fees/revisions. This does not establish a completion improvement, natural-D0 repair, new held-out result, production default, enterprise ROI or competition rank. Latest formal results and every V1–V14 hash remain unchanged."
+}

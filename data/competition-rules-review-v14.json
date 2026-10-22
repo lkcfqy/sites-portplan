@@ -1,0 +1,132 @@
+{
+  "schema": "portplan-v14-competition-rule-recheck",
+  "createdAtUtc": "2026-10-17T06:35:13Z",
+  "investigationWindowUtc": {
+    "start": "2026-10-17T06:34:50Z",
+    "end": "2026-10-17T06:35:13Z"
+  },
+  "method": "Read-only existing project evidence review and web search connector open/search. No login, contact, signup, submission or purchase. Original HTTP bytes were not fetched anew; no current byte hash is claimed.",
+  "projectSourcesRead": [
+    "AGENTS.md",
+    "docs/rules-update-v10.md",
+    "docs/rules-update-v8.md",
+    "docs/competition-research-v4.md"
+  ],
+  "currentEditionConfirmed": {
+    "titleKorean": "2026 스마트물류 문제해결 경진대회",
+    "titleEnglish": "2nd LogisticSolver 2026",
+    "university": "국립창원대학교",
+    "officialPublishingAndInquiryUnit": "국립창원대학교 ANCHOR사업단",
+    "organizerScope": "Current official page is published by ANCHOR. The previously saved official 2026 poster visually shows university, RISE and 경남형스마트물류특성화대학사업단 marks and gives RISE inquiries. This does not independently establish a full legal host/cohost allocation.",
+    "themeZh": "港口、国际、复合等智慧物流产业问题，以技术和数据提出服务、解决方案、政策或策略。",
+    "eligibleStudents": "国立昌原大学在读学生，含研究生",
+    "teamSizeMaximum": 4,
+    "teamMinimumOrSoloAccepted": null,
+    "reportAndDataCodeDueLocal": "2026-11-06 18:00",
+    "timezoneScope": "官方页面无独立时区标签；按韩国当地 KST 理解。若 KST，则 2026-11-06 09:00 UTC。",
+    "firstReviewDate": "2026-11-13",
+    "presentationReviewDate": "2026-11-20",
+    "writtenSubmissionScope": "报告、数据、代码等全部材料",
+    "presentationPagesMaximum": 20,
+    "signupStart": "2026-05-28",
+    "signupEndRule": "满额即按先到先得结束；当前主项目页显示接收中；登录会员后申请",
+    "fee": "免费",
+    "topPrize": "대상：1 队，庆尚南道知事奖",
+    "officialUrl": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n"
+  },
+  "unconfirmed": [
+    "用户本人学籍、实际报名成功、当前剩余名额",
+    "单人队是否接受、团队最低人数",
+    "2026 评分维度、数值权重和具体评分表",
+    "2026 生成式 AI 允许范围、贡献披露要求与代作边界",
+    "2026 完整参赛誓约原件",
+    "报告篇幅、展示文件格式、另行展示材料上传截止、具体演讲与问答时长",
+    "英语或双语现场答辩是否接受"
+  ],
+  "checkedPublicSources": [
+    {
+      "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+      "accessedUtc": "2026-10-17T06:34:50Z",
+      "status": "web connector open succeeded, crawl label today",
+      "supports": "Current title, theme, student/team conditions, dated schedule, deliverables, top prize, inquiry unit and public signup state"
+    },
+    {
+      "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttList.do?bbsId=2178&mi=6583",
+      "status": "web connector open succeeded, crawl label today",
+      "supports": "2026-06-02 department notice remains pinned; not a successful fresh retrieval of its detail page",
+      "accessedDuringUtc": {
+        "after": "2026-10-17T06:34:50Z",
+        "before": "2026-10-17T06:35:13Z",
+        "precision": "bounded by connector/tool clock observations, not an invented per-page exact timestamp"
+      }
+    },
+    {
+      "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=6583&nttSn=1416220",
+      "accessedUtc": "2026-10-17T06:34:50Z",
+      "status": "web connector inaccessible; reordered query retry also inaccessible at 06:35:13 UTC",
+      "supports": "No newly retrieved detail content; prior V10 source remains historical"
+    },
+    {
+      "url": "https://anchor.changwon.ac.kr/main/menu?gc=597CJOU",
+      "status": "web connector open succeeded, crawl label today",
+      "supports": "Current visible announcement first page has no LogisticSolver rule update",
+      "accessedDuringUtc": {
+        "after": "2026-10-17T06:34:50Z",
+        "before": "2026-10-17T06:35:13Z",
+        "precision": "bounded by connector/tool clock observations, not an invented per-page exact timestamp"
+      }
+    },
+    {
+      "url": "https://anchor.changwon.ac.kr/main/menu?gc=968YTYN",
+      "status": "web connector open succeeded, crawl label four days ago",
+      "supports": "No new contest-specific rule text obtained",
+      "accessedDuringUtc": {
+        "after": "2026-10-17T06:34:50Z",
+        "before": "2026-10-17T06:35:13Z",
+        "precision": "bounded by connector/tool clock observations, not an invented per-page exact timestamp"
+      }
+    },
+    {
+      "url": "https://anchor.changwon.ac.kr/main/menu/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+      "accessedUtc": "2026-10-17T06:35:13Z",
+      "status": "web connector duplicate-path open succeeded, crawl label three weeks ago",
+      "supports": "Same schedule/conditions, but cached capacity 10 differs from direct-page capacity 40; neither number denotes verified remaining seats"
+    }
+  ],
+  "searchCoverage": {
+    "queryCount": 12,
+    "terms": [
+      "LogisticSolver 2026 심사 AI",
+      "스마트물류 문제해결 경진대회 2026",
+      "LogisticSolver 2026 평가",
+      "LogisticSolver 2026 AI",
+      "LogisticSolver 2026 심사기준",
+      "스마트물류 문제해결 경진대회 2026 서약",
+      "LogisticSolver 2026 생성형",
+      "LogisticSolver 2026 배점",
+      "LogisticSolver 2026 대리",
+      "1416220",
+      "LogisticSolver 2026 발표 시간",
+      "LogisticSolver 2026 모집 수정"
+    ],
+    "finding": "No more specific 2026 scoring weights, AI rule or presentation duration obtained in this bounded public investigation. This is not evidence that such rules do not exist."
+  },
+  "historicalOnly": {
+    "official2025ExtraCallAttachment": "https://www.changwon.ac.kr/common/nttFileDownload.do?fileKey=80ba177d7105abfe736e49ff43210095",
+    "priorLocalEvidence": "docs/rules-update-v10.md and data/public/v4-competition/",
+    "statement": "Saved 2025 official pledge requires participant creation and forbids false information, plagiarism, proxy writing and proxy presenting. This is historical evidence only, not a verified 2026 AI prohibition or approval.",
+    "historical20MinuteTalkTimingNotAppliedTo2026": true,
+    "savedPosterLocal": "data/public/competition_2026_poster.png",
+    "savedPosterScope": "Previously downloaded local official poster visually inspected during this task; no new poster download claimed."
+  },
+  "operationalConclusion": "Continue authorized R&D, public-data verification and honest AI contribution records. Do not mark entrant eligibility, registration, authorship confirmation or presentation readiness complete without their own evidence. None of these findings requires enterprise orders, private contacts or pausing algorithm development.",
+  "constraintsPreserved": {
+    "projectSourceFilesModified": false,
+    "contactedAnyone": false,
+    "loggedIn": false,
+    "registered": false,
+    "submitted": false,
+    "purchased": false,
+    "requestedEnterpriseData": false
+  }
+}

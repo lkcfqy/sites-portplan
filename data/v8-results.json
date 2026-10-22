@@ -1,0 +1,4127 @@
+{
+  "schemaVersion": "portplan-v8-published-results",
+  "executionState": "complete",
+  "formalIndex": {
+    "path": "data/evidence-v8/v8-frozen-first/first-run/complete.json",
+    "sha256": "e873aae0c65fcf51d7335fb3aa57f5285bdbb12bf9c286fb4018c8b2213205b6"
+  },
+  "protocol": {
+    "schemaVersion": "portplan-protocol-v8",
+    "protocolVersion": "portplan-v8-adaptive-replanning-20261015-01",
+    "state": "Prespecified final method and assessment declaration; prospective generation requires a separate source freeze manifest.",
+    "purpose": "Test the executed-path fee/completion/stability tradeoffs of execution-locked adaptive replanning against V5/V6/V7 and a native HiGHS same-model baseline; keep negative and unknown outcomes.",
+    "generator": {
+      "function": "makeScenarioV2",
+      "module": "scripts/benchmark-v2.mjs",
+      "implementationSHA256": "45c761db2081010ee350137fe5ff0ab16b76a94556ee51af8b8f18ddd542cb17",
+      "ordersKnownAtStart": true,
+      "independence": "Every business scenario has a new unique base seed across both panels. Three repeated algorithm seeds/timing runs share that one business scenario and are not independent business samples. Do not replace infeasible, duplicate, slow or costly cases."
+    },
+    "matrix": {
+      "mechanisms": [
+        "aged-backlog",
+        "new-arrivals",
+        "batch-release"
+      ],
+      "capacityProfiles": [
+        "balanced",
+        "tight"
+      ],
+      "counts": [
+        24,
+        50,
+        100
+      ],
+      "scenariosPerCell": 4
+    },
+    "panels": [
+      {
+        "id": "same-distribution",
+        "scenarioCount": 72,
+        "baseSeed": 181001,
+        "shockPatterns": [
+          {
+            "name": "truck-early-two-days",
+            "shocks": [
+              {
+                "id": "truck-early",
+                "resource": "truck",
+                "revealDay": 2,
+                "duration": 2,
+                "reductionNumerator": 2,
+                "reductionDenominator": 5
+              }
+            ]
+          },
+          {
+            "name": "warehouse-two-days",
+            "shocks": [
+              {
+                "id": "warehouse-shock",
+                "resource": "warehouse",
+                "revealDay": 3,
+                "duration": 2,
+                "reductionNumerator": 1,
+                "reductionDenominator": 2
+              }
+            ]
+          },
+          {
+            "name": "staging-two-days",
+            "shocks": [
+              {
+                "id": "staging-shock",
+                "resource": "staging",
+                "revealDay": 4,
+                "duration": 2,
+                "reductionNumerator": 1,
+                "reductionDenominator": 3
+              }
+            ]
+          },
+          {
+            "name": "truck-late-two-days",
+            "shocks": [
+              {
+                "id": "truck-late",
+                "resource": "truck",
+                "revealDay": 7,
+                "duration": 2,
+                "reductionNumerator": 1,
+                "reductionDenominator": 2
+              }
+            ]
+          }
+        ],
+        "interpretation": "Same generator and four private-duration patterns as V7, new independent generator seeds."
+      },
+      {
+        "id": "stress",
+        "scenarioCount": 72,
+        "baseSeed": 182001,
+        "shockPatterns": [
+          {
+            "name": "repeated-truck-reductions",
+            "shocks": [
+              {
+                "id": "truck-repeat-first",
+                "resource": "truck",
+                "revealDay": 2,
+                "duration": 2,
+                "reductionNumerator": 2,
+                "reductionDenominator": 5
+              },
+              {
+                "id": "truck-repeat-second",
+                "resource": "truck",
+                "revealDay": 6,
+                "duration": 2,
+                "reductionNumerator": 1,
+                "reductionDenominator": 2
+              }
+            ]
+          },
+          {
+            "name": "unannounced-extended-recovery",
+            "shocks": [
+              {
+                "id": "warehouse-unannounced-extended",
+                "resource": "warehouse",
+                "revealDay": 3,
+                "duration": 4,
+                "reductionNumerator": 1,
+                "reductionDenominator": 2
+              }
+            ]
+          },
+          {
+            "name": "sequential-two-resource-reductions",
+            "shocks": [
+              {
+                "id": "truck-sequential",
+                "resource": "truck",
+                "revealDay": 2,
+                "duration": 2,
+                "reductionNumerator": 2,
+                "reductionDenominator": 5
+              },
+              {
+                "id": "warehouse-sequential",
+                "resource": "warehouse",
+                "revealDay": 5,
+                "duration": 2,
+                "reductionNumerator": 1,
+                "reductionDenominator": 2
+              }
+            ]
+          },
+          {
+            "name": "unannounced-gradual-recovery",
+            "shocks": [
+              {
+                "id": "truck-gradual-strong",
+                "resource": "truck",
+                "revealDay": 3,
+                "duration": 1,
+                "reductionNumerator": 3,
+                "reductionDenominator": 5
+              },
+              {
+                "id": "truck-gradual-middle",
+                "resource": "truck",
+                "revealDay": 4,
+                "duration": 1,
+                "reductionNumerator": 2,
+                "reductionDenominator": 5
+              },
+              {
+                "id": "truck-gradual-light",
+                "resource": "truck",
+                "revealDay": 5,
+                "duration": 1,
+                "reductionNumerator": 1,
+                "reductionDenominator": 5
+              }
+            ]
+          }
+        ],
+        "interpretation": "New repeated/unannounced-recovery/sequential-resource/gradual-recovery shock patterns; all initial orders remain known. No planner knows a future event or private duration."
+      }
+    ],
+    "shockCapacityRule": "For each event: capacity=max(0, nominal capacity on revealDay-ceil(nominal*reductionNumerator/reductionDenominator)). Only simulator receives duration. No announcedDuration.",
+    "methods": [
+      "stableRetainV5",
+      "lockedRecoveryV6",
+      "costPolishV7",
+      "adaptiveV8",
+      "highsV8"
+    ],
+    "algorithmRepeats": [
+      {
+        "index": 1,
+        "seed": 29011
+      },
+      {
+        "index": 2,
+        "seed": 29023
+      },
+      {
+        "index": 3,
+        "seed": 29039
+      }
+    ],
+    "budget": {
+      "hardWallMs": 5000,
+      "cpuThreads": 1,
+      "execution": "Cold separate POSIX process group per episode; all methods execute serially, cyclic method order changes by scenario and repeat. Python descendants are group-killed on timeout and after worker exit.",
+      "clock": "Parent time starts before fork; includes imports, planner.ready native startup, all decisions, child terminal dual audit, planner.close cleanup, IPC and parent receipt audit. Only receipts fully validated by 5000ms count as complete.",
+      "callBudgetCaveat": "V5 uses legacy solver-internal seconds; V6/V7/V8 and native HiGHS use cooperative whole-call milliseconds. Native startup occurs before the first decision and is charged to the parent 5000ms, separately reported as startupWallMs. Per-call clocks are not claimed to be identical."
+    },
+    "callBudgets": {
+      "stableRetainV5": {
+        "timeLimitSeconds": 0.2
+      },
+      "lockedRecoveryV6": {
+        "timeLimitSeconds": 0.2,
+        "timeBudgetMs": 200,
+        "constructorShare": 0.4,
+        "auditReserveMs": 5,
+        "maxRestarts": 15,
+        "retainFeasible": true
+      },
+      "costPolishV7": {
+        "timeLimitSeconds": 0.2,
+        "timeBudgetMs": 200,
+        "constructorShare": 0.4,
+        "auditReserveMs": 5,
+        "maxRestarts": 15,
+        "retainFeasible": true,
+        "maxPasses": 2,
+        "maxPairs": 32,
+        "candidateCap": 12,
+        "maxPairChecks": 384,
+        "maxSingleTargets": 16
+      },
+      "adaptiveV8": {
+        "timeLimitSeconds": 0.2,
+        "timeBudgetMs": 200,
+        "constructorShare": 0.4,
+        "auditReserveMs": 5,
+        "maxRestarts": 15,
+        "retainFeasible": true,
+        "maxPasses": 2,
+        "maxPairs": 32,
+        "candidateCap": 12,
+        "maxPairChecks": 384,
+        "maxSingleTargets": 16,
+        "feeToleranceRatio": 0.005,
+        "maxChangedEvents": 6,
+        "lookaheadDays": 2,
+        "pressureGuard": true,
+        "opportunityThresholdKRW": 0
+      },
+      "highsV8": {
+        "timeBudgetMs": 200,
+        "timeLimitSeconds": 0.2,
+        "objectiveMode": "joint",
+        "auditReserveMs": 2,
+        "hardOverrunGraceMs": 250,
+        "initializationTimeoutMs": 10000,
+        "retainCacheFallback": true
+      }
+    },
+    "analysis": {
+      "primaryUnit": "scenario",
+      "repeatAggregation": "Equal scenario weighting: within each pair, average matching jointly completed repeats in each scenario, then aggregate scenario means. Also disclose raw paired episode totals and paired-repeat counts.",
+      "bootstrap": {
+        "seed": 700001,
+        "draws": 2000
+      },
+      "panels": "Always separate. Do not pool same-distribution and stress into a ranking."
+    },
+    "freezePolicy": "Before first prospective generation: review/finish methods, fixed budget and metadata; freeze protocol bytes and source files with SHA256 in a new artifacts directory. Run only if live sources and snapshot match. No automatic holdout generation, source freeze, rerun or replacement.",
+    "analysisRules": [
+      "144 business scenarios (72 per panel) x 3 retained algorithm/timing repeats x 5 methods = 2160 episodes; not 432 independent scenarios.",
+      "Keep all failures, deadline losses, audit rejections, unknown histories, zeros, negative fee savings and completion gains/losses.",
+      "Incomplete episode fees are null. Missing terminal history/counters are null or unavailable, never zero.",
+      "Report adaptive V8 vs V7/V5/V6/HiGHS and HiGHS vs V7. Each pair uses its own matching-repeat jointly completed fee set; never rank methods across different paired denominators.",
+      "Report total and incremental fee numerator/denominator, win/tie/loss, worst losses, revisions and scenario-cluster bootstrap intervals. Bootstrap conditions on the completed pair set and does not remove completion-selection bias.",
+      "A full-path experiment includes differing initial plans. It cannot isolate recovery ability under a shared execution history; that requires a separately declared diagnostic experiment.",
+      "Only synthetic known-order daily atomic truck/warehouse/staging model conclusions are supported. Native HiGHS is a same-model baseline; no guarantee of production savings or first place.",
+      "All full episode histories, observations, date choices, adaptive explanations and terminal audits are append-only standalone files with hashes; only redundant planner debug/cache pricing metadata may be compacted.",
+      "First-run artifacts are never overwritten. Reproductions require a distinct output directory and preserve every repeat.",
+      "Duplicate generated order-list fingerprints, if any, are disclosed without resampling."
+    ]
+  },
+  "summary": {
+    "statisticalUnit": "scenario",
+    "recordedScenarioCount": 144,
+    "panels": {
+      "same-distribution": {
+        "scenarioCount": 72,
+        "byMethod": {
+          "stableRetainV5": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 120,
+            "fullyCompletedScenarioCount": 40,
+            "anyCompletedScenarioCount": 40,
+            "meanScenarioCompletionRate": 0.5555555555555556,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 120,
+              "rolling_failed": 96
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 286.63264250463004,
+              "max": 812.4171210000022
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 3674
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1758
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 411
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 0
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1347
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 51770.428191999985
+              }
+            }
+          },
+          "lockedRecoveryV6": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 156,
+            "fullyCompletedScenarioCount": 52,
+            "anyCompletedScenarioCount": 52,
+            "meanScenarioCompletionRate": 0.7222222222222222,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 156,
+              "rolling_failed": 60
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 299.5362517777772,
+              "max": 873.6516520000296
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 7590
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 2202
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 450
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 450
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1752
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 53260.44546999999
+              }
+            }
+          },
+          "costPolishV7": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 156,
+            "fullyCompletedScenarioCount": 52,
+            "anyCompletedScenarioCount": 52,
+            "meanScenarioCompletionRate": 0.7222222222222222,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 156,
+              "rolling_failed": 60
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 310.13452589351726,
+              "max": 854.9659359999932
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 7335
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 2199
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 450
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 450
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1749
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 55600.23999099998
+              }
+            }
+          },
+          "adaptiveV8": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 80,
+            "fullyCompletedScenarioCount": 25,
+            "anyCompletedScenarioCount": 28,
+            "meanScenarioCompletionRate": 0.37037037037037046,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 80,
+              "rolling_failed": 136
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 246.54396256481482,
+              "max": 475.8502350000199
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 1563
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1320
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 346
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 346
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 974
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 43509.16797
+              }
+            }
+          },
+          "highsV8": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 166,
+            "fullyCompletedScenarioCount": 55,
+            "anyCompletedScenarioCount": 56,
+            "meanScenarioCompletionRate": 0.7685185185185186,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 166,
+              "rolling_failed": 50
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 587.2346126018498,
+              "max": 1280.3768139999884
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 55792
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 2245
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 2245
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 0,
+                "unknownEpisodeCount": 216,
+                "observedSum": 0
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 0,
+                "unknownEpisodeCount": 216,
+                "observedSum": 0
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 63750.77430900001
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "adaptiveVsV7": {
+            "baselineMethod": "costPolishV7",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 76,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.35185185185185186,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.45844907407407404,
+                  -0.24537037037037035
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 107913100,
+                "candidateScenarioMeanSumKRW": 107969400,
+                "scenarioWeightedSavingsKRW": -56300,
+                "weightedSavingsPct": -0.05217160845161523,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 26,
+                  "loss": 2
+                },
+                "baselineEpisodeSumKRW": 273389050,
+                "candidateEpisodeSumKRW": 273448300,
+                "zeroBaselineScenarioCount": 10,
+                "zeroBaselineEpisodeCount": 30,
+                "worstScenarioLossKRW": 53350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                  "v8-same-distribution-batch-release-balanced-n100-r4"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n100-r4::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -5926.785714285715,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -0.14564191886816893,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 62844150,
+                "candidateScenarioMeanSumKRW": 62900450,
+                "scenarioWeightedSavingsKRW": -56300,
+                "weightedSavingsPct": -0.08958669979624197,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 26,
+                  "loss": 2
+                },
+                "baselineEpisodeSumKRW": 162857600,
+                "candidateEpisodeSumKRW": 162916850,
+                "zeroBaselineScenarioCount": 10,
+                "zeroBaselineEpisodeCount": 30,
+                "worstScenarioLossKRW": 53350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                  "v8-same-distribution-batch-release-balanced-n100-r4"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n100-r4::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -5926.785714285715,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -0.26784153698307284,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 80,
+              "baselineObservedSum": 1346,
+              "candidateObservedSum": 1371
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                "pairedRepeatCount": 1,
+                "totalSavingsKRW": -53350,
+                "incrementalSavingsKRW": -53350
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": -2950,
+                "incrementalSavingsKRW": -2950
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "adaptiveVsV5": {
+            "baselineMethod": "stableRetainV5",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 40,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.18518518518518517,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.27314814814814814,
+                  -0.10173611111111172
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 107916050,
+                "candidateScenarioMeanSumKRW": 107969400,
+                "scenarioWeightedSavingsKRW": -53350,
+                "weightedSavingsPct": -0.04943657593101304,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 27,
+                  "loss": 1
+                },
+                "baselineEpisodeSumKRW": 273394950,
+                "candidateEpisodeSumKRW": 273448300,
+                "zeroBaselineScenarioCount": 10,
+                "zeroBaselineEpisodeCount": 30,
+                "worstScenarioLossKRW": 53350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -5716.071428571428,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -0.14145828717229098,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 62847100,
+                "candidateScenarioMeanSumKRW": 62900450,
+                "scenarioWeightedSavingsKRW": -53350,
+                "weightedSavingsPct": -0.08488856287720516,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 27,
+                  "loss": 1
+                },
+                "baselineEpisodeSumKRW": 162863500,
+                "candidateEpisodeSumKRW": 162916850,
+                "zeroBaselineScenarioCount": 10,
+                "zeroBaselineEpisodeCount": 30,
+                "worstScenarioLossKRW": 53350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -5716.071428571428,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -0.25922264523509975,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 80,
+              "baselineObservedSum": 1339,
+              "candidateObservedSum": 1371
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                "pairedRepeatCount": 1,
+                "totalSavingsKRW": -53350,
+                "incrementalSavingsKRW": -53350
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "adaptiveVsV6": {
+            "baselineMethod": "lockedRecoveryV6",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 76,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.35185185185185186,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.45844907407407404,
+                  -0.24537037037037035
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 108203650,
+                "candidateScenarioMeanSumKRW": 107969400,
+                "scenarioWeightedSavingsKRW": 234250,
+                "weightedSavingsPct": 0.21648992432325526,
+                "scenarioWinTieLoss": {
+                  "win": 1,
+                  "tie": 26,
+                  "loss": 1
+                },
+                "baselineEpisodeSumKRW": 274257750,
+                "candidateEpisodeSumKRW": 273448300,
+                "zeroBaselineScenarioCount": 10,
+                "zeroBaselineEpisodeCount": 30,
+                "worstScenarioLossKRW": 53350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -5716.071428571428,
+                    30814.285714285714
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -0.13832502770081917,
+                    0.8726904918712501
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 63134700,
+                "candidateScenarioMeanSumKRW": 62900450,
+                "scenarioWeightedSavingsKRW": 234250,
+                "weightedSavingsPct": 0.3710320948701744,
+                "scenarioWinTieLoss": {
+                  "win": 1,
+                  "tie": 26,
+                  "loss": 1
+                },
+                "baselineEpisodeSumKRW": 163726300,
+                "candidateEpisodeSumKRW": 162916850,
+                "zeroBaselineScenarioCount": 10,
+                "zeroBaselineEpisodeCount": 30,
+                "worstScenarioLossKRW": 53350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -5716.071428571428,
+                    30814.285714285714
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -0.2521900167199324,
+                    1.4314014394487098
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 80,
+              "baselineObservedSum": 1382,
+              "candidateObservedSum": 1371
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 287600,
+                "incrementalSavingsKRW": 287600
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                "pairedRepeatCount": 1,
+                "totalSavingsKRW": -53350,
+                "incrementalSavingsKRW": -53350
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "adaptiveVsHiGHS": {
+            "baselineMethod": "highsV8",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 86,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r1::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r2::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-1",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-aged-backlog-balanced-n100-r4::repeat-3",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n100-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n100-r3::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n100-r3::repeat-3",
+                "v8-same-distribution-batch-release-balanced-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n50-r4::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r1::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r3::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.39814814814814814,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.5138888888888888,
+                  -0.2916666666666667
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 107589950,
+                "candidateScenarioMeanSumKRW": 107969400,
+                "scenarioWeightedSavingsKRW": -379450,
+                "weightedSavingsPct": -0.3526816398743563,
+                "scenarioWinTieLoss": {
+                  "win": 1,
+                  "tie": 19,
+                  "loss": 8
+                },
+                "baselineEpisodeSumKRW": 272649850,
+                "candidateEpisodeSumKRW": 273448300,
+                "zeroBaselineScenarioCount": 12,
+                "zeroBaselineEpisodeCount": 36,
+                "worstScenarioLossKRW": 153350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3",
+                  "v8-same-distribution-batch-release-balanced-n24-r4",
+                  "v8-same-distribution-batch-release-balanced-n50-r3",
+                  "v8-same-distribution-batch-release-balanced-n50-r4",
+                  "v8-same-distribution-batch-release-balanced-n100-r4"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3::repeat-1",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3::repeat-2",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3::repeat-3",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1::repeat-1",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1::repeat-2",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1::repeat-3",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n24-r4::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n24-r4::repeat-2",
+                  "v8-same-distribution-batch-release-balanced-n24-r4::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n50-r3::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n50-r3::repeat-2",
+                  "v8-same-distribution-batch-release-balanced-n50-r3::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n50-r4::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n50-r4::repeat-2",
+                  "v8-same-distribution-batch-release-balanced-n50-r4::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n100-r4::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n100-r4::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -27529.375,
+                    -3213.9285714285734
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -1.0070397417074228,
+                    -0.0854872828395992
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 80,
+                "baselineScenarioMeanSumKRW": 62521000,
+                "candidateScenarioMeanSumKRW": 62900450,
+                "scenarioWeightedSavingsKRW": -379450,
+                "weightedSavingsPct": -0.6069160761983974,
+                "scenarioWinTieLoss": {
+                  "win": 1,
+                  "tie": 19,
+                  "loss": 8
+                },
+                "baselineEpisodeSumKRW": 162118400,
+                "candidateEpisodeSumKRW": 162916850,
+                "zeroBaselineScenarioCount": 12,
+                "zeroBaselineEpisodeCount": 36,
+                "worstScenarioLossKRW": 153350,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3",
+                  "v8-same-distribution-batch-release-balanced-n24-r4",
+                  "v8-same-distribution-batch-release-balanced-n50-r3",
+                  "v8-same-distribution-batch-release-balanced-n50-r4",
+                  "v8-same-distribution-batch-release-balanced-n100-r4"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n50-r2::repeat-3",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3::repeat-1",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3::repeat-2",
+                  "v8-same-distribution-new-arrivals-balanced-n24-r3::repeat-3",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1::repeat-1",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1::repeat-2",
+                  "v8-same-distribution-new-arrivals-tight-n24-r1::repeat-3",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3::repeat-1",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3::repeat-2",
+                  "v8-same-distribution-new-arrivals-tight-n24-r3::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n24-r4::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n24-r4::repeat-2",
+                  "v8-same-distribution-batch-release-balanced-n24-r4::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n50-r3::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n50-r3::repeat-2",
+                  "v8-same-distribution-batch-release-balanced-n50-r3::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n50-r4::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n50-r4::repeat-2",
+                  "v8-same-distribution-batch-release-balanced-n50-r4::repeat-3",
+                  "v8-same-distribution-batch-release-balanced-n100-r4::repeat-1",
+                  "v8-same-distribution-batch-release-balanced-n100-r4::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -27529.375,
+                    -3213.9285714285734
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -1.6744889447112086,
+                    -0.1453342092648243
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 80,
+              "baselineObservedSum": 25827,
+              "candidateObservedSum": 1371
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 7300,
+                "incrementalSavingsKRW": 7300
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                "pairedRepeatCount": 1,
+                "totalSavingsKRW": -153350,
+                "incrementalSavingsKRW": -153350
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -9100,
+                "incrementalSavingsKRW": -9100
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -36400,
+                "incrementalSavingsKRW": -36400
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -9100,
+                "incrementalSavingsKRW": -9100
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -33200,
+                "incrementalSavingsKRW": -33200
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -27300,
+                "incrementalSavingsKRW": -27300
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -85100,
+                "incrementalSavingsKRW": -85100
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": -33200,
+                "incrementalSavingsKRW": -33200
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "highsVsV7": {
+            "baselineMethod": "costPolishV7",
+            "candidateMethod": "highsV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 19,
+              "lostEpisodeCount": 9,
+              "gainedEpisodeIds": [
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-3"
+              ],
+              "lostEpisodeIds": [
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r3::repeat-3",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n100-r4::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-1",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-2",
+                "v8-same-distribution-aged-backlog-tight-n50-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-1",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-2",
+                "v8-same-distribution-new-arrivals-balanced-n24-r1::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n24-r2::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-1",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-2",
+                "v8-same-distribution-new-arrivals-tight-n50-r4::repeat-3",
+                "v8-same-distribution-new-arrivals-tight-n100-r4::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-1",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-2",
+                "v8-same-distribution-batch-release-balanced-n24-r2::repeat-3",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-1",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-2",
+                "v8-same-distribution-batch-release-tight-n24-r4::repeat-3"
+              ],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": 0.04629629629629631,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.027777777777777776,
+                  0.12962962962962965
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 49,
+                "pairedEpisodeCount": 147,
+                "baselineScenarioMeanSumKRW": 474457350,
+                "candidateScenarioMeanSumKRW": 447472050,
+                "scenarioWeightedSavingsKRW": 26985300,
+                "weightedSavingsPct": 5.687613438805406,
+                "scenarioWinTieLoss": {
+                  "win": 26,
+                  "tie": 22,
+                  "loss": 1
+                },
+                "baselineEpisodeSumKRW": 1423372050,
+                "candidateEpisodeSumKRW": 1342416150,
+                "zeroBaselineScenarioCount": 13,
+                "zeroBaselineEpisodeCount": 39,
+                "worstScenarioLossKRW": 7300,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3::repeat-1",
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3::repeat-2",
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 49,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    246646.335034014,
+                    900786.3350340158
+                  ],
+                  "weightedSavingsPct95CI": [
+                    3.552522263786506,
+                    8.203659135898434
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 49,
+                "pairedEpisodeCount": 147,
+                "baselineScenarioMeanSumKRW": 270890550,
+                "candidateScenarioMeanSumKRW": 243905250,
+                "scenarioWeightedSavingsKRW": 26985300,
+                "weightedSavingsPct": 9.961698553161046,
+                "scenarioWinTieLoss": {
+                  "win": 26,
+                  "tie": 22,
+                  "loss": 1
+                },
+                "baselineEpisodeSumKRW": 812671650,
+                "candidateEpisodeSumKRW": 731715750,
+                "zeroBaselineScenarioCount": 13,
+                "zeroBaselineEpisodeCount": 39,
+                "worstScenarioLossKRW": 7300,
+                "negativeScenarioIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-same-distribution-aged-backlog-balanced-n24-r2::repeat-3",
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3::repeat-1",
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3::repeat-2",
+                  "v8-same-distribution-aged-backlog-balanced-n24-r3::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 49,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    246646.33503401343,
+                    900786.3350340134
+                  ],
+                  "weightedSavingsPct95CI": [
+                    6.251695609717424,
+                    13.844063182100145
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 147,
+              "baselineObservedSum": 6300,
+              "candidateObservedSum": 49350
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 110416.66666666791,
+                "incrementalSavingsKRW": 110416.66666666605
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -7300,
+                "incrementalSavingsKRW": -7300
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1943116.666666668,
+                "incrementalSavingsKRW": 1943116.666666668
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 135566.6666666679,
+                "incrementalSavingsKRW": 135566.66666666605
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 769766.6666666679,
+                "incrementalSavingsKRW": 769766.666666666
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1727050,
+                "incrementalSavingsKRW": 1727050
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 3997783.333333336,
+                "incrementalSavingsKRW": 3997783.333333336
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1899600,
+                "incrementalSavingsKRW": 1899600
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 2975650,
+                "incrementalSavingsKRW": 2975650
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 5720900,
+                "incrementalSavingsKRW": 5720900
+              },
+              {
+                "scenarioId": "v8-same-distribution-aged-backlog-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 9100,
+                "incrementalSavingsKRW": 9100
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 36400,
+                "incrementalSavingsKRW": 36400
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 9100,
+                "incrementalSavingsKRW": 9100
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-new-arrivals-tight-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 33200,
+                "incrementalSavingsKRW": 33200
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 27300,
+                "incrementalSavingsKRW": 27300
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 85100,
+                "incrementalSavingsKRW": 85100
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 460400,
+                "incrementalSavingsKRW": 460400
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 31233.333333333256,
+                "incrementalSavingsKRW": 31233.333333333256
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 342600,
+                "incrementalSavingsKRW": 342600
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n24-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 318000,
+                "incrementalSavingsKRW": 318000
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 154700,
+                "incrementalSavingsKRW": 154700
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 359800,
+                "incrementalSavingsKRW": 359800
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 254800,
+                "incrementalSavingsKRW": 254800
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 230200,
+                "incrementalSavingsKRW": 230200
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1893000,
+                "incrementalSavingsKRW": 1893000
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n100-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 733400,
+                "incrementalSavingsKRW": 733400
+              },
+              {
+                "scenarioId": "v8-same-distribution-batch-release-tight-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 2734416.666666667,
+                "incrementalSavingsKRW": 2734416.666666667
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          }
+        }
+      },
+      "stress": {
+        "scenarioCount": 72,
+        "byMethod": {
+          "stableRetainV5": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 66,
+            "fullyCompletedScenarioCount": 22,
+            "anyCompletedScenarioCount": 22,
+            "meanScenarioCompletionRate": 0.3055555555555556,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 66,
+              "rolling_failed": 150
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 308.4899051111171,
+              "max": 1243.4190070000477
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 5740
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1369
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 537
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 0
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 832
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 56989.93731
+              }
+            }
+          },
+          "lockedRecoveryV6": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 92,
+            "fullyCompletedScenarioCount": 30,
+            "anyCompletedScenarioCount": 31,
+            "meanScenarioCompletionRate": 0.42592592592592593,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 92,
+              "rolling_failed": 124
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 373.1229354027803,
+              "max": 1354.4361649999628
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 15175
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1695
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 641
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 641
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1054
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 69896.35924699997
+              }
+            }
+          },
+          "costPolishV7": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 89,
+            "fullyCompletedScenarioCount": 29,
+            "anyCompletedScenarioCount": 30,
+            "meanScenarioCompletionRate": 0.41203703703703703,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 89,
+              "rolling_failed": 127
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 378.3811741481534,
+              "max": 1318.417599999928
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 14034
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1676
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 639
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 639
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1037
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 70850.92528799998
+              }
+            }
+          },
+          "adaptiveV8": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 48,
+            "fullyCompletedScenarioCount": 16,
+            "anyCompletedScenarioCount": 16,
+            "meanScenarioCompletionRate": 0.2222222222222222,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "rolling_failed": 168,
+              "feasible": 48
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 253.78026084722066,
+              "max": 522.5841889999574
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 2659
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1097
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 428
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 428
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 669
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 45128.862967999994
+              }
+            }
+          },
+          "highsV8": {
+            "scenarioCount": 72,
+            "recordedEpisodeCount": 216,
+            "completeEpisodeCount": 116,
+            "fullyCompletedScenarioCount": 38,
+            "anyCompletedScenarioCount": 39,
+            "meanScenarioCompletionRate": 0.5370370370370371,
+            "executionHistoryUnavailableCount": 0,
+            "auditFailureCount": 0,
+            "hardDeadlineCount": 0,
+            "statuses": {
+              "feasible": 116,
+              "rolling_failed": 100
+            },
+            "wallTimeMs": {
+              "observedCount": 216,
+              "mean": 560.6148075092583,
+              "max": 1314.2304979999317
+            },
+            "revisionCount": {
+              "knownEpisodeCount": 216,
+              "unknownEpisodeCount": 0,
+              "observedSum": 53715
+            },
+            "counters": {
+              "decisionCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1910
+              },
+              "solverCalls": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 1910
+              },
+              "constructorCalls": {
+                "knownEpisodeCount": 0,
+                "unknownEpisodeCount": 216,
+                "observedSum": 0
+              },
+              "reusedPlans": {
+                "knownEpisodeCount": 0,
+                "unknownEpisodeCount": 216,
+                "observedSum": 0
+              },
+              "planningWallMs": {
+                "knownEpisodeCount": 216,
+                "unknownEpisodeCount": 0,
+                "observedSum": 58320.778711
+              }
+            }
+          }
+        },
+        "comparisons": {
+          "adaptiveVsV7": {
+            "baselineMethod": "costPolishV7",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 41,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-1",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-2",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-3",
+                "v8-stress-batch-release-tight-n50-r1::repeat-1",
+                "v8-stress-batch-release-tight-n50-r1::repeat-2",
+                "v8-stress-batch-release-tight-n50-r1::repeat-3",
+                "v8-stress-batch-release-tight-n100-r1::repeat-1",
+                "v8-stress-batch-release-tight-n100-r1::repeat-2",
+                "v8-stress-batch-release-tight-n100-r1::repeat-3",
+                "v8-stress-batch-release-tight-n100-r3::repeat-1",
+                "v8-stress-batch-release-tight-n100-r3::repeat-2",
+                "v8-stress-batch-release-tight-n100-r3::repeat-3",
+                "v8-stress-batch-release-tight-n100-r4::repeat-1",
+                "v8-stress-batch-release-tight-n100-r4::repeat-2",
+                "v8-stress-batch-release-tight-n100-r4::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.1898148148148148,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.287037037037037,
+                  -0.10648148148148148
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 32668650,
+                "candidateScenarioMeanSumKRW": 32668650,
+                "scenarioWeightedSavingsKRW": 0,
+                "weightedSavingsPct": 0,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 16,
+                  "loss": 0
+                },
+                "baselineEpisodeSumKRW": 98005950,
+                "candidateEpisodeSumKRW": 98005950,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 0,
+                "negativeScenarioIds": [],
+                "negativeEpisodeIds": [],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    0,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    0,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 20375550,
+                "candidateScenarioMeanSumKRW": 20375550,
+                "scenarioWeightedSavingsKRW": 0,
+                "weightedSavingsPct": 0,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 16,
+                  "loss": 0
+                },
+                "baselineEpisodeSumKRW": 61126650,
+                "candidateEpisodeSumKRW": 61126650,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 0,
+                "negativeScenarioIds": [],
+                "negativeEpisodeIds": [],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    0,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    0,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 48,
+              "baselineObservedSum": 1737,
+              "candidateObservedSum": 1737
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "adaptiveVsV5": {
+            "baselineMethod": "stableRetainV5",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 18,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-stress-batch-release-tight-n50-r1::repeat-1",
+                "v8-stress-batch-release-tight-n50-r1::repeat-2",
+                "v8-stress-batch-release-tight-n50-r1::repeat-3",
+                "v8-stress-batch-release-tight-n50-r3::repeat-1",
+                "v8-stress-batch-release-tight-n50-r3::repeat-2",
+                "v8-stress-batch-release-tight-n50-r3::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.08333333333333333,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.1527777777777778,
+                  -0.027777777777777776
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 32668650,
+                "candidateScenarioMeanSumKRW": 32668650,
+                "scenarioWeightedSavingsKRW": 0,
+                "weightedSavingsPct": 0,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 16,
+                  "loss": 0
+                },
+                "baselineEpisodeSumKRW": 98005950,
+                "candidateEpisodeSumKRW": 98005950,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 0,
+                "negativeScenarioIds": [],
+                "negativeEpisodeIds": [],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    0,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    0,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 20375550,
+                "candidateScenarioMeanSumKRW": 20375550,
+                "scenarioWeightedSavingsKRW": 0,
+                "weightedSavingsPct": 0,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 16,
+                  "loss": 0
+                },
+                "baselineEpisodeSumKRW": 61126650,
+                "candidateEpisodeSumKRW": 61126650,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 0,
+                "negativeScenarioIds": [],
+                "negativeEpisodeIds": [],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    0,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    0,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 48,
+              "baselineObservedSum": 1737,
+              "candidateObservedSum": 1737
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "adaptiveVsV6": {
+            "baselineMethod": "lockedRecoveryV6",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 44,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-1",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-2",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-3",
+                "v8-stress-batch-release-tight-n50-r1::repeat-2",
+                "v8-stress-batch-release-tight-n50-r1::repeat-3",
+                "v8-stress-batch-release-tight-n50-r3::repeat-1",
+                "v8-stress-batch-release-tight-n50-r3::repeat-2",
+                "v8-stress-batch-release-tight-n50-r3::repeat-3",
+                "v8-stress-batch-release-tight-n100-r1::repeat-1",
+                "v8-stress-batch-release-tight-n100-r1::repeat-2",
+                "v8-stress-batch-release-tight-n100-r1::repeat-3",
+                "v8-stress-batch-release-tight-n100-r3::repeat-1",
+                "v8-stress-batch-release-tight-n100-r3::repeat-2",
+                "v8-stress-batch-release-tight-n100-r3::repeat-3",
+                "v8-stress-batch-release-tight-n100-r4::repeat-1",
+                "v8-stress-batch-release-tight-n100-r4::repeat-2",
+                "v8-stress-batch-release-tight-n100-r4::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.2037037037037037,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.3009259259259259,
+                  -0.1111111111111111
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 32668650,
+                "candidateScenarioMeanSumKRW": 32668650,
+                "scenarioWeightedSavingsKRW": 0,
+                "weightedSavingsPct": 0,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 16,
+                  "loss": 0
+                },
+                "baselineEpisodeSumKRW": 98005950,
+                "candidateEpisodeSumKRW": 98005950,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 0,
+                "negativeScenarioIds": [],
+                "negativeEpisodeIds": [],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    0,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    0,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 20375550,
+                "candidateScenarioMeanSumKRW": 20375550,
+                "scenarioWeightedSavingsKRW": 0,
+                "weightedSavingsPct": 0,
+                "scenarioWinTieLoss": {
+                  "win": 0,
+                  "tie": 16,
+                  "loss": 0
+                },
+                "baselineEpisodeSumKRW": 61126650,
+                "candidateEpisodeSumKRW": 61126650,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 0,
+                "negativeScenarioIds": [],
+                "negativeEpisodeIds": [],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    0,
+                    0
+                  ],
+                  "weightedSavingsPct95CI": [
+                    0,
+                    0
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 48,
+              "baselineObservedSum": 1737,
+              "candidateObservedSum": 1737
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "adaptiveVsHiGHS": {
+            "baselineMethod": "highsV8",
+            "candidateMethod": "adaptiveV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 0,
+              "lostEpisodeCount": 68,
+              "gainedEpisodeIds": [],
+              "lostEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n24-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r3::repeat-3",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n50-r4::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r1::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r3::repeat-3",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-1",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-2",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-3",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-1",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-2",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-3",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-1",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-2",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-3",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-1",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-2",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-3",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-1",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-2",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-1",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-2",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-2",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-3",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-1",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-2",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-3",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-1",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-2",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-3",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-1",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-2",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-3",
+                "v8-stress-batch-release-tight-n50-r1::repeat-1",
+                "v8-stress-batch-release-tight-n50-r1::repeat-2",
+                "v8-stress-batch-release-tight-n50-r1::repeat-3",
+                "v8-stress-batch-release-tight-n50-r3::repeat-1",
+                "v8-stress-batch-release-tight-n50-r3::repeat-2",
+                "v8-stress-batch-release-tight-n50-r3::repeat-3",
+                "v8-stress-batch-release-tight-n50-r4::repeat-1",
+                "v8-stress-batch-release-tight-n50-r4::repeat-2",
+                "v8-stress-batch-release-tight-n50-r4::repeat-3",
+                "v8-stress-batch-release-tight-n100-r1::repeat-1",
+                "v8-stress-batch-release-tight-n100-r1::repeat-2",
+                "v8-stress-batch-release-tight-n100-r1::repeat-3",
+                "v8-stress-batch-release-tight-n100-r3::repeat-1",
+                "v8-stress-batch-release-tight-n100-r3::repeat-2",
+                "v8-stress-batch-release-tight-n100-r3::repeat-3",
+                "v8-stress-batch-release-tight-n100-r4::repeat-1",
+                "v8-stress-batch-release-tight-n100-r4::repeat-2",
+                "v8-stress-batch-release-tight-n100-r4::repeat-3"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": -0.31481481481481477,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  -0.42592592592592593,
+                  -0.21747685185185248
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 32854550,
+                "candidateScenarioMeanSumKRW": 32668650,
+                "scenarioWeightedSavingsKRW": 185900,
+                "weightedSavingsPct": 0.5658272598468097,
+                "scenarioWinTieLoss": {
+                  "win": 2,
+                  "tie": 9,
+                  "loss": 5
+                },
+                "baselineEpisodeSumKRW": 98563650,
+                "candidateEpisodeSumKRW": 98005950,
+                "zeroBaselineScenarioCount": 5,
+                "zeroBaselineEpisodeCount": 15,
+                "worstScenarioLossKRW": 40000,
+                "negativeScenarioIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r4",
+                  "v8-stress-new-arrivals-balanced-n24-r1",
+                  "v8-stress-batch-release-balanced-n50-r2",
+                  "v8-stress-batch-release-balanced-n50-r3",
+                  "v8-stress-batch-release-balanced-n100-r1"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r4::repeat-1",
+                  "v8-stress-aged-backlog-balanced-n24-r4::repeat-2",
+                  "v8-stress-aged-backlog-balanced-n24-r4::repeat-3",
+                  "v8-stress-new-arrivals-balanced-n24-r1::repeat-1",
+                  "v8-stress-new-arrivals-balanced-n24-r1::repeat-2",
+                  "v8-stress-new-arrivals-balanced-n24-r1::repeat-3",
+                  "v8-stress-batch-release-balanced-n50-r2::repeat-1",
+                  "v8-stress-batch-release-balanced-n50-r2::repeat-2",
+                  "v8-stress-batch-release-balanced-n50-r2::repeat-3",
+                  "v8-stress-batch-release-balanced-n50-r3::repeat-1",
+                  "v8-stress-batch-release-balanced-n50-r3::repeat-2",
+                  "v8-stress-batch-release-balanced-n50-r3::repeat-3",
+                  "v8-stress-batch-release-balanced-n100-r1::repeat-1",
+                  "v8-stress-batch-release-balanced-n100-r1::repeat-2",
+                  "v8-stress-batch-release-balanced-n100-r1::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -11368.75,
+                    46232.03124999996
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -1.0964814703001515,
+                    1.7705298974891603
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 16,
+                "pairedEpisodeCount": 48,
+                "baselineScenarioMeanSumKRW": 20561450,
+                "candidateScenarioMeanSumKRW": 20375550,
+                "scenarioWeightedSavingsKRW": 185900,
+                "weightedSavingsPct": 0.9041191161129201,
+                "scenarioWinTieLoss": {
+                  "win": 2,
+                  "tie": 9,
+                  "loss": 5
+                },
+                "baselineEpisodeSumKRW": 61684350,
+                "candidateEpisodeSumKRW": 61126650,
+                "zeroBaselineScenarioCount": 5,
+                "zeroBaselineEpisodeCount": 15,
+                "worstScenarioLossKRW": 40000,
+                "negativeScenarioIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r4",
+                  "v8-stress-new-arrivals-balanced-n24-r1",
+                  "v8-stress-batch-release-balanced-n50-r2",
+                  "v8-stress-batch-release-balanced-n50-r3",
+                  "v8-stress-batch-release-balanced-n100-r1"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r4::repeat-1",
+                  "v8-stress-aged-backlog-balanced-n24-r4::repeat-2",
+                  "v8-stress-aged-backlog-balanced-n24-r4::repeat-3",
+                  "v8-stress-new-arrivals-balanced-n24-r1::repeat-1",
+                  "v8-stress-new-arrivals-balanced-n24-r1::repeat-2",
+                  "v8-stress-new-arrivals-balanced-n24-r1::repeat-3",
+                  "v8-stress-batch-release-balanced-n50-r2::repeat-1",
+                  "v8-stress-batch-release-balanced-n50-r2::repeat-2",
+                  "v8-stress-batch-release-balanced-n50-r2::repeat-3",
+                  "v8-stress-batch-release-balanced-n50-r3::repeat-1",
+                  "v8-stress-batch-release-balanced-n50-r3::repeat-2",
+                  "v8-stress-batch-release-balanced-n50-r3::repeat-3",
+                  "v8-stress-batch-release-balanced-n100-r1::repeat-1",
+                  "v8-stress-batch-release-balanced-n100-r1::repeat-2",
+                  "v8-stress-batch-release-balanced-n100-r1::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 16,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    -11368.75,
+                    46232.03124999996
+                  ],
+                  "weightedSavingsPct95CI": [
+                    -1.3607139681167078,
+                    2.920508372403995
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 48,
+              "baselineObservedSum": 18825,
+              "candidateObservedSum": 1737
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 235000,
+                "incrementalSavingsKRW": 235000
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -40000,
+                "incrementalSavingsKRW": -40000
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -27300,
+                "incrementalSavingsKRW": -27300
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 66400,
+                "incrementalSavingsKRW": 66400
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -9100,
+                "incrementalSavingsKRW": -9100
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -30000,
+                "incrementalSavingsKRW": -30000
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -9100,
+                "incrementalSavingsKRW": -9100
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          },
+          "highsVsV7": {
+            "baselineMethod": "costPolishV7",
+            "candidateMethod": "highsV8",
+            "scenarioCount": 72,
+            "episodePairCount": 216,
+            "completion": {
+              "gainedEpisodeCount": 34,
+              "lostEpisodeCount": 7,
+              "gainedEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-1",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-2",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-3",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-1",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-2",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-3",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-1",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-2",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-3",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-1",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-2",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-3",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-1",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-2",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-1",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-2",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-3",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-1",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-2",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-3",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-1",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-2",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-3",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-1",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-2",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-3",
+                "v8-stress-batch-release-tight-n50-r3::repeat-1",
+                "v8-stress-batch-release-tight-n50-r3::repeat-2",
+                "v8-stress-batch-release-tight-n50-r3::repeat-3",
+                "v8-stress-batch-release-tight-n50-r4::repeat-1",
+                "v8-stress-batch-release-tight-n50-r4::repeat-2",
+                "v8-stress-batch-release-tight-n50-r4::repeat-3"
+              ],
+              "lostEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r2::repeat-3",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-1",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-2",
+                "v8-stress-aged-backlog-balanced-n100-r4::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r4::repeat-1"
+              ],
+              "gainedFromKnownFailureEpisodeIds": [
+                "v8-stress-aged-backlog-balanced-n50-r2::repeat-1",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-1",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-2",
+                "v8-stress-new-arrivals-balanced-n24-r4::repeat-3",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-1",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-2",
+                "v8-stress-new-arrivals-balanced-n50-r3::repeat-3",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-1",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-2",
+                "v8-stress-new-arrivals-balanced-n50-r4::repeat-3",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-1",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-2",
+                "v8-stress-new-arrivals-balanced-n100-r2::repeat-3",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-1",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-2",
+                "v8-stress-new-arrivals-balanced-n100-r3::repeat-3",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-1",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-2",
+                "v8-stress-new-arrivals-tight-n50-r3::repeat-3",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-1",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-2",
+                "v8-stress-new-arrivals-tight-n100-r1::repeat-3",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-1",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-2",
+                "v8-stress-batch-release-balanced-n24-r2::repeat-3",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-1",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-2",
+                "v8-stress-batch-release-balanced-n100-r2::repeat-3",
+                "v8-stress-batch-release-tight-n50-r3::repeat-1",
+                "v8-stress-batch-release-tight-n50-r3::repeat-2",
+                "v8-stress-batch-release-tight-n50-r3::repeat-3",
+                "v8-stress-batch-release-tight-n50-r4::repeat-1",
+                "v8-stress-batch-release-tight-n50-r4::repeat-2",
+                "v8-stress-batch-release-tight-n50-r4::repeat-3"
+              ],
+              "gainedFromUnknownHistoryEpisodeIds": [],
+              "meanScenarioRateGain": 0.125,
+              "uncertainty": {
+                "unit": "scenario completion-rate difference",
+                "meanScenarioRateGain95CI": [
+                  0.03240740740740741,
+                  0.2222222222222222
+                ]
+              },
+              "interpretation": "Timely complete audited receipts; an unavailable history is not proof of physical execution failure."
+            },
+            "fees": {
+              "total": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 82,
+                "baselineScenarioMeanSumKRW": 313077416.6666666,
+                "candidateScenarioMeanSumKRW": 292943550,
+                "scenarioWeightedSavingsKRW": 20133866.666666627,
+                "weightedSavingsPct": 6.430954644072314,
+                "scenarioWinTieLoss": {
+                  "win": 16,
+                  "tie": 10,
+                  "loss": 2
+                },
+                "baselineEpisodeSumKRW": 903469800,
+                "candidateEpisodeSumKRW": 843868550,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 235000,
+                "negativeScenarioIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r2",
+                  "v8-stress-batch-release-balanced-n24-r4"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r1::repeat-1",
+                  "v8-stress-aged-backlog-balanced-n24-r2::repeat-1",
+                  "v8-stress-aged-backlog-balanced-n24-r2::repeat-2",
+                  "v8-stress-aged-backlog-balanced-n24-r2::repeat-3",
+                  "v8-stress-batch-release-balanced-n24-r4::repeat-1",
+                  "v8-stress-batch-release-balanced-n24-r4::repeat-2",
+                  "v8-stress-batch-release-balanced-n24-r4::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    319063.61607142823,
+                    1151571.6964285725
+                  ],
+                  "weightedSavingsPct95CI": [
+                    3.6938729406323163,
+                    11.173824270207131
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              },
+              "incremental": {
+                "pairedScenarioCount": 28,
+                "pairedEpisodeCount": 82,
+                "baselineScenarioMeanSumKRW": 189035416.6666667,
+                "candidateScenarioMeanSumKRW": 168901550,
+                "scenarioWeightedSavingsKRW": 20133866.666666687,
+                "weightedSavingsPct": 10.650843647023825,
+                "scenarioWinTieLoss": {
+                  "win": 16,
+                  "tie": 10,
+                  "loss": 2
+                },
+                "baselineEpisodeSumKRW": 548499650,
+                "candidateEpisodeSumKRW": 488898400,
+                "zeroBaselineScenarioCount": 4,
+                "zeroBaselineEpisodeCount": 12,
+                "worstScenarioLossKRW": 235000,
+                "negativeScenarioIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r2",
+                  "v8-stress-batch-release-balanced-n24-r4"
+                ],
+                "negativeEpisodeIds": [
+                  "v8-stress-aged-backlog-balanced-n24-r1::repeat-1",
+                  "v8-stress-aged-backlog-balanced-n24-r2::repeat-1",
+                  "v8-stress-aged-backlog-balanced-n24-r2::repeat-2",
+                  "v8-stress-aged-backlog-balanced-n24-r2::repeat-3",
+                  "v8-stress-batch-release-balanced-n24-r4::repeat-1",
+                  "v8-stress-batch-release-balanced-n24-r4::repeat-2",
+                  "v8-stress-batch-release-balanced-n24-r4::repeat-3"
+                ],
+                "uncertainty": {
+                  "unit": "scenario",
+                  "scenarioCount": 28,
+                  "draws": 2000,
+                  "meanSavings95CI": [
+                    319063.61607142823,
+                    1151571.6964285714
+                  ],
+                  "weightedSavingsPct95CI": [
+                    6.382715583864681,
+                    17.12034168510926
+                  ],
+                  "interpretation": "Percentile scenario-cluster bootstrap; conditional fee sample is the pairwise jointly completed set, not a missing-at-random estimate."
+                }
+              }
+            },
+            "revisions": {
+              "pairedEpisodeCount": 82,
+              "baselineObservedSum": 9394,
+              "candidateObservedSum": 29876
+            },
+            "pairedScenarios": [
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 25916.666666666046,
+                "incrementalSavingsKRW": 25916.666666666977
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -235000,
+                "incrementalSavingsKRW": -235000
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 40000,
+                "incrementalSavingsKRW": 40000
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1952866.666666668,
+                "incrementalSavingsKRW": 1952866.666666668
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n50-r2",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 800350,
+                "incrementalSavingsKRW": 800350
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1673300,
+                "incrementalSavingsKRW": 1673300
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 638900,
+                "incrementalSavingsKRW": 638900
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 4273183.333333336,
+                "incrementalSavingsKRW": 4273183.333333336
+              },
+              {
+                "scenarioId": "v8-stress-aged-backlog-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 2499000,
+                "incrementalSavingsKRW": 2499000
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 27300,
+                "incrementalSavingsKRW": 27300
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-new-arrivals-tight-n50-r4",
+                "pairedRepeatCount": 2,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n24-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": -66400,
+                "incrementalSavingsKRW": -66400
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r2",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 9100,
+                "incrementalSavingsKRW": 9100
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 30000,
+                "incrementalSavingsKRW": 30000
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n50-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 9100,
+                "incrementalSavingsKRW": 9100
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-balanced-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 0,
+                "incrementalSavingsKRW": 0
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-tight-n50-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1460400,
+                "incrementalSavingsKRW": 1460400
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-tight-n100-r1",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 1099600,
+                "incrementalSavingsKRW": 1099600
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-tight-n100-r3",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 2361850,
+                "incrementalSavingsKRW": 2361850
+              },
+              {
+                "scenarioId": "v8-stress-batch-release-tight-n100-r4",
+                "pairedRepeatCount": 3,
+                "totalSavingsKRW": 3534400,
+                "incrementalSavingsKRW": 3534400
+              }
+            ],
+            "interpretation": "Each scenario has equal weight after averaging matching jointly completed repeats. Each comparison has its own eligibility set; do not rank methods across denominators."
+          }
+        }
+      }
+    },
+    "interpretation": "Panels remain separate. All three repeats are retained; repeated seeds/timing runs do not increase the number of business scenarios. No pooled leaderboard.",
+    "inferentialState": "complete-scenario-cluster-bootstrap"
+  },
+  "scenarioCount": 144,
+  "episodeCount": 2160,
+  "frozenManifestSha256": "cde6f155769f57b6c5acbb7acafa65709fc41eb6f00d1fc8c122b8c6a6070daf",
+  "firstRunStartedAt": "2026-10-15T08:30:41.092Z",
+  "firstRunCompletedAt": "2026-10-15T08:43:58.259Z",
+  "evidenceRole": "prospective-first-run; all outcomes retained; repeats are not independent business cases"
+}

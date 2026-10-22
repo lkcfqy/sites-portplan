@@ -1,0 +1,743 @@
+{
+  "schemaVersion": "portplan-native-diagnostic-v12-summary",
+  "executionState": "complete",
+  "completedAt": "2026-10-16T17:33:38.348Z",
+  "dataRole": "seen-v10-failed-snapshot-diagnostic",
+  "declarationSha256": "5ee08d9398e517d559b7603f5ff9886bc20c0a15393c68005eab88496717ad2b",
+  "scenarioCount": 9,
+  "snapshotCount": 9,
+  "taskCount": 36,
+  "newGeneratedOrders": 0,
+  "newHeldOutScenarios": 0,
+  "parentHardWallMs": 5000,
+  "independentPythonReviewComplete": false,
+  "byMethodAndBudget": {
+    "cpsatV12-200ms": {
+      "tasks": 9,
+      "acceptedPlans": 1,
+      "provenOptimal": 1,
+      "statusCounts": {
+        "time_limit": 4,
+        "optimal": 1,
+        "infeasible": 4
+      }
+    },
+    "highsV8-200ms": {
+      "tasks": 9,
+      "acceptedPlans": 0,
+      "provenOptimal": 0,
+      "statusCounts": {
+        "time_limit": 5,
+        "infeasible": 4
+      }
+    },
+    "cpsatV12-2000ms": {
+      "tasks": 9,
+      "acceptedPlans": 1,
+      "provenOptimal": 1,
+      "statusCounts": {
+        "time_limit": 4,
+        "optimal": 1,
+        "infeasible": 4
+      }
+    },
+    "highsV8-2000ms": {
+      "tasks": 9,
+      "acceptedPlans": 5,
+      "provenOptimal": 5,
+      "statusCounts": {
+        "optimal": 5,
+        "infeasible": 4
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--cpsatV12--200ms",
+      "caseId": "v10-same-distribution-aged-backlog-balanced-n100-r3",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/001.json",
+        "sha256": "853b6a178c814cb622cfa5c71bec0f3e30715cf202794ba094bc5d31bdcb2e42"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 413.286939,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--highsV8--200ms",
+      "caseId": "v10-same-distribution-aged-backlog-balanced-n100-r3",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/002.json",
+        "sha256": "b0ad2e4a945ef217cf6741aedbb9bcae2608ef493f82d4b388b1f65aa1140ad1"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": 26492600,
+      "provenOptimal": false,
+      "parentWallMs": 546.2510629999999,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--highsV8--2000ms",
+      "caseId": "v10-same-distribution-aged-backlog-balanced-n100-r3",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/003.json",
+        "sha256": "edb551936dc5b15057f591452e5fcc45df3925633e27ba9fbf11ac658fd72f38"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 26492600,
+      "lowerBound": 26492600,
+      "nativeRawLowerBound": 26492600,
+      "provenOptimal": true,
+      "parentWallMs": 497.063807,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-aged-backlog-balanced-n100-r3--failure-d0--cpsatV12--2000ms",
+      "caseId": "v10-same-distribution-aged-backlog-balanced-n100-r3",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/004.json",
+        "sha256": "78978dce8a52c49d842780328ce06acabf5f7a90bc62cd003703ee222b1f9b74"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 2201.3028959999997,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--highsV8--2000ms",
+      "caseId": "v10-same-distribution-new-arrivals-tight-n24-r3",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/005.json",
+        "sha256": "1688e310c8d4f15796290141a174147187078a452c433912a72a6ee508d8aa41"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 0,
+      "lowerBound": 0,
+      "nativeRawLowerBound": 0,
+      "provenOptimal": true,
+      "parentWallMs": 591.2016630000003,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--cpsatV12--2000ms",
+      "caseId": "v10-same-distribution-new-arrivals-tight-n24-r3",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/006.json",
+        "sha256": "156060b038c38a1fb90ad525a8ee30114d54ce2b56e47db57fbc5eda62b6267d"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 0,
+      "lowerBound": 0,
+      "nativeRawLowerBound": 0,
+      "provenOptimal": true,
+      "parentWallMs": 334.99852699999974,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--cpsatV12--200ms",
+      "caseId": "v10-same-distribution-new-arrivals-tight-n24-r3",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/007.json",
+        "sha256": "e21aa2280250dbd9ccb6f358e12a4826d30478b190bac44d175af1c0469d66dd"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 0,
+      "lowerBound": 0,
+      "nativeRawLowerBound": 0,
+      "provenOptimal": true,
+      "parentWallMs": 339.5054140000002,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-new-arrivals-tight-n24-r3--failure-d0--highsV8--200ms",
+      "caseId": "v10-same-distribution-new-arrivals-tight-n24-r3",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/008.json",
+        "sha256": "c3ade601a516a1b7b2f9c59b5ae30aebdda46ac10bc7fb7ab281b602115f6f8d"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 482.44733199999973,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--cpsatV12--200ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n50-r2",
+      "day": 4,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/009.json",
+        "sha256": "5b590bc9a72861621f958d77262475b63a0e37f3c1f40aee591da19f9ce3cfeb"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 223.56177500000013,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--highsV8--200ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n50-r2",
+      "day": 4,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/010.json",
+        "sha256": "91f032b202e4626603a1a331e0440de0bc5b8724092ce9c2db57cf6a9f33fe91"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 316.3404780000001,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--highsV8--2000ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n50-r2",
+      "day": 4,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/011.json",
+        "sha256": "a8737e367f10b2b0fda5a139201f0438f811c07eba38914dfdb79651f5f9849d"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 279.8902480000006,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n50-r2--failure-d4--cpsatV12--2000ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n50-r2",
+      "day": 4,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/012.json",
+        "sha256": "dea020399a5a45dcc5db41cf0ee7a717563d88ee265bca5ff596a7d021daeaf8"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 218.15643199999977,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--highsV8--2000ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r2",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/013.json",
+        "sha256": "31e5912424f4c8b4bdbc63820918863be5ff2bb5fbf55e76b166c7970caca287"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 1355900,
+      "lowerBound": 1355900,
+      "nativeRawLowerBound": 1355900,
+      "provenOptimal": true,
+      "parentWallMs": 474.5300499999994,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--cpsatV12--2000ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r2",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/014.json",
+        "sha256": "3a83d36aab964073264c0e20e2482f485d87422887e6e1817a34467b3ae2d243"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 2198.973589,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--cpsatV12--200ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r2",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/015.json",
+        "sha256": "3b4c013e83f629deab2aff3f1afdf840277db2f55dfb749dabbf78909224db35"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 392.0169130000013,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r2--failure-d0--highsV8--200ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r2",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/016.json",
+        "sha256": "8da3638bf9597426533a0a5c460cf9a59bcb6c4b45de07d4b9c8f449782bb8c4"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": 1355900,
+      "provenOptimal": false,
+      "parentWallMs": 468.3163449999993,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--cpsatV12--200ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/017.json",
+        "sha256": "4866233cd1a2cf0b11f81d3570bf980a389ee740f83a772be85cba45e4d07de0"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 389.7218320000011,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--highsV8--200ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/018.json",
+        "sha256": "3d31c211711db091ad54fde256ad954d72e0bf8e7852e730daecff14cbe9ca89"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": 1393650,
+      "provenOptimal": false,
+      "parentWallMs": 471.2742569999991,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--highsV8--2000ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/019.json",
+        "sha256": "b4ac108cf160bb0349546624839ef0f45affcefb2b5c1564d0b29f5d40231f3d"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 1398200,
+      "lowerBound": 1398199.9999999998,
+      "nativeRawLowerBound": 1398199.9999999998,
+      "provenOptimal": true,
+      "parentWallMs": 700.0881499999996,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-same-distribution-batch-release-tight-n100-r4--failure-d0--cpsatV12--2000ms",
+      "caseId": "v10-same-distribution-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/020.json",
+        "sha256": "cc37416aecf0749ba5c9d8ea510dd8cd4e5a5a4cefadc8911ca2b030d75c7001"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 2227.9865360000003,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--highsV8--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r2",
+      "day": 6,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/021.json",
+        "sha256": "c7b9496e466105198b9a27343c60be61a5e96c0f65d68ea2a0d3eef20af35925"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 295.31584799999837,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--cpsatV12--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r2",
+      "day": 6,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/022.json",
+        "sha256": "2e5c92aec90ac2b4f642862a3c1c48fac4a5238d27ee59b1a944f8e8587c17c7"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 223.44304999999986,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--cpsatV12--200ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r2",
+      "day": 6,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/023.json",
+        "sha256": "1d682238eea7b984de4045d520412bf5823bc8afc8de2126ed3785678e335f99"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 288.3468069999999,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r2--failure-d6--highsV8--200ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r2",
+      "day": 6,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/024.json",
+        "sha256": "fd62c29e770b1634c5c93f7b2e2a359826abae771821f3bfccb4b9f7a0c07c8c"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 308.7343090000013,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--cpsatV12--200ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r3",
+      "day": 6,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/025.json",
+        "sha256": "58a71c35b6f95ff9c30654412b2e13d9a881722b5e6b6d259e5875b38ddf12b5"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 212.14489299999877,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--highsV8--200ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r3",
+      "day": 6,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/026.json",
+        "sha256": "78a0e2935d14114fc9cee043926d874b13aa0487e1524ff03a13a9fe29155154"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 269.7779589999991,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--highsV8--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r3",
+      "day": 6,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/027.json",
+        "sha256": "e150629be881f7e847a9b6c6e85a85e4ecd2de8ffad5c1ed14310e7ffe78df39"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 284.1093389999987,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n50-r3--failure-d6--cpsatV12--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n50-r3",
+      "day": 6,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/028.json",
+        "sha256": "0a52c22666b18a7a106a1bd47dcdda7717be2ae403942d7fd412ab6ebae7fc18"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 219.54309100000137,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--highsV8--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r2",
+      "day": 6,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/029.json",
+        "sha256": "92fd8656b5abcca34a4b186dbd665beb586965631aac1baa538cae037f039d32"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 283.56302099999994,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--cpsatV12--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r2",
+      "day": 6,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/030.json",
+        "sha256": "b0ba5d43df91f4f26e44c652fd7a04868f6a2df320d6aff5aae603f44c4ad987"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 254.95865700000104,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--cpsatV12--200ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r2",
+      "day": 6,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/031.json",
+        "sha256": "bfd81fccc0d5c62d032b4ec633944ba91c67673f06b0f570a0c485ea74bb2445"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 262.30941899999743,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r2--failure-d6--highsV8--200ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r2",
+      "day": 6,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/032.json",
+        "sha256": "8e3dbab6b1d1844ae97916d6e39dc24d32a77b039cd6ce89e2fdd59f4fe72fbc"
+      },
+      "status": "infeasible",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 293.2432379999991,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--cpsatV12--200ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/033.json",
+        "sha256": "fa7ab812881432a61ed3f67932c9c7c41872b4831b17c3c277a59804d473f94a"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 401.57258400000137,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--highsV8--200ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 200,
+      "artifact": {
+        "path": "records/034.json",
+        "sha256": "1ec91d87694aeeee054322adf482801ef0a37db50b78785820f82795411802e3"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": 1383200.0000000002,
+      "provenOptimal": false,
+      "parentWallMs": 471.1299250000011,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--highsV8--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "highsV8",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/035.json",
+        "sha256": "0d8befb07311b853394684f8bd909d5d6124eae23217d7b5bac1bd427762d68c"
+      },
+      "status": "optimal",
+      "acceptedPlanWithinBudget": true,
+      "objectiveCost": 1383200,
+      "lowerBound": 1383200,
+      "nativeRawLowerBound": 1383200,
+      "provenOptimal": true,
+      "parentWallMs": 495.07478900000206,
+      "hardDeadlineReached": false
+    },
+    {
+      "id": "v10-stress-batch-release-tight-n100-r4--failure-d0--cpsatV12--2000ms",
+      "caseId": "v10-stress-batch-release-tight-n100-r4",
+      "day": 0,
+      "method": "cpsatV12",
+      "dailyBudgetMs": 2000,
+      "artifact": {
+        "path": "records/036.json",
+        "sha256": "fb9cf57c5c9e165f8aa687d297adcaea20b467228d0f34906f7a4d311566a9b6"
+      },
+      "status": "time_limit",
+      "acceptedPlanWithinBudget": false,
+      "objectiveCost": null,
+      "lowerBound": null,
+      "nativeRawLowerBound": null,
+      "provenOptimal": false,
+      "parentWallMs": 2204.5491600000023,
+      "hardDeadlineReached": false
+    }
+  ],
+  "scope": "Seen-input deterministic single-snapshot comparison with exact archived physical prefix. The 2000ms tier is offline diagnosis, not a real-time leaderboard, full episode outcome, or new formal performance sample.",
+  "independentReviewScope": "Not yet performed by this runner; native and parent JavaScript audits are internal checks only.",
+  "rawEvidenceDirectory": "artifacts/native-diagnostic-v12-first"
+}

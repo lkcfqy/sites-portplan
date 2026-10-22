@@ -1,0 +1,3791 @@
+{
+  "schemaVersion": "portplan-published-browser-acceptance-v14",
+  "valid": true,
+  "fixture": false,
+  "actualBrowser": true,
+  "browser": {
+    "executable": "/usr/bin/chromium",
+    "version": "154.0.8037.57",
+    "engine": "Chromium",
+    "automation": "existing Python Playwright, real browser; no fake DOM"
+  },
+  "headless": true,
+  "totalChecks": 53,
+  "passedChecks": 53,
+  "openProductIssues": 0,
+  "unresolvedHarnessIssues": 0,
+  "viewports": [
+    {
+      "width": 390,
+      "height": 1000
+    },
+    {
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "sourceCommit": "4fb34ca7f220e36c20fffa1b56b2aaffe33847c1",
+  "staticInventorySha256": "a57ea774c976360cf12a13bad5a9500bfe28b846c2514ca8cbb1083bd2f6607f",
+  "evidenceGroups": [
+    {
+      "group": "first-full-51",
+      "path": "artifacts/browser-v14-first/summary.json",
+      "sha256": "38b90c74c131c0cbfe10df8a721161164fee7dffbf1038d8391e326ee4a2de9e",
+      "checks": 51,
+      "staticInventorySha256": "a57ea774c976360cf12a13bad5a9500bfe28b846c2514ca8cbb1083bd2f6607f"
+    },
+    {
+      "group": "new-v14-material-downloads",
+      "path": "artifacts/browser-v14-materials-first/summary.json",
+      "sha256": "573b49f08206b3c06184500af94f50cf5c0669e5c542df405bdb253c717d169e",
+      "checks": 2,
+      "staticInventorySha256": "a57ea774c976360cf12a13bad5a9500bfe28b846c2514ca8cbb1083bd2f6607f"
+    }
+  ],
+  "cases": [
+    {
+      "id": "01-navigation-planner-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation planner; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.7238551899936283,
+      "screenshots": [
+        "01-navigation-planner-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "02-navigation-research-v14-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v14; check unique visible panel, active state, title, no page horizontal overflow",
+        "Wait for actual V14 ready state; download the four raw SHA-bound documents, derive both gates and expand every adverse-ID list; no expected winner"
+      ],
+      "downloads": [
+        {
+          "label": "v14-release",
+          "file": "02-navigation-research-v14-1440/01-v14-release.json",
+          "bytes": 2213,
+          "sha256": "545428e33cc3502666515c2a7bfd7bf42328e5193527b8e0896a9d235f6354a2"
+        },
+        {
+          "label": "v14-results",
+          "file": "02-navigation-research-v14-1440/02-v14-results.json",
+          "bytes": 875579,
+          "sha256": "18d794150d2928a53cd4661ce2b32c90bf59e18e10299e6817f8e4fd0ee84ce8"
+        },
+        {
+          "label": "v14-review",
+          "file": "02-navigation-research-v14-1440/03-review-v14.json",
+          "bytes": 8816318,
+          "sha256": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f"
+        },
+        {
+          "label": "v14-statistics",
+          "file": "02-navigation-research-v14-1440/04-bootstrap-review-v14.json",
+          "bytes": 156799,
+          "sha256": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48"
+        },
+        {
+          "label": "v14-protocol",
+          "file": "02-navigation-research-v14-1440/05-protocol-v14.json",
+          "bytes": 55794,
+          "sha256": "7711db53e044231b018a2381b7bdc5a87319f00d3f4848f26803ed1b820bada4"
+        }
+      ],
+      "v14ActualEvidence": {
+        "candidateMethod": "guardedHiGHSV13",
+        "scenarios": 144,
+        "episodes": 3024,
+        "rawEvidenceSha256": {
+          "results": "18d794150d2928a53cd4661ce2b32c90bf59e18e10299e6817f8e4fd0ee84ce8",
+          "review": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f",
+          "statistics": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48",
+          "protocol": "7711db53e044231b018a2381b7bdc5a87319f00d3f4848f26803ed1b820bada4"
+        },
+        "panels": [
+          {
+            "panel": "same-distribution",
+            "defaultGatePassed": true,
+            "completeEpisodesByMethod": {
+              "costPolishV7": 137,
+              "adaptiveV9": 137,
+              "highsV8": 150,
+              "stableHiGHSV10": 150,
+              "commitmentHiGHSV11": 153,
+              "seededHiGHSV12": 171,
+              "guardedHiGHSV13": 171
+            },
+            "comparisons": 14,
+            "adverseFieldLengths": {
+              "v13VsV12": {
+                "completionLosses": 0,
+                "completionGains": 0,
+                "totalFeeNegativeScenarios": 21,
+                "totalFeeNegativeEpisodes": 62,
+                "incrementalFeeNegativeScenarios": 21,
+                "incrementalFeeNegativeEpisodes": 62
+              },
+              "v13VsV11": {
+                "completionLosses": 0,
+                "completionGains": 18,
+                "totalFeeNegativeScenarios": 18,
+                "totalFeeNegativeEpisodes": 53,
+                "incrementalFeeNegativeScenarios": 18,
+                "incrementalFeeNegativeEpisodes": 53
+              },
+              "v13VsV10": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 19,
+                "totalFeeNegativeEpisodes": 56,
+                "incrementalFeeNegativeScenarios": 19,
+                "incrementalFeeNegativeEpisodes": 56
+              },
+              "v13VsV9": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 14,
+                "totalFeeNegativeEpisodes": 41,
+                "incrementalFeeNegativeScenarios": 14,
+                "incrementalFeeNegativeEpisodes": 41
+              },
+              "v13VsHiGHS": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 65,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 65
+              },
+              "v13VsV7": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 14,
+                "totalFeeNegativeEpisodes": 41,
+                "incrementalFeeNegativeScenarios": 14,
+                "incrementalFeeNegativeEpisodes": 41
+              },
+              "v12VsV11": {
+                "completionLosses": 0,
+                "completionGains": 18,
+                "totalFeeNegativeScenarios": 0,
+                "totalFeeNegativeEpisodes": 0,
+                "incrementalFeeNegativeScenarios": 0,
+                "incrementalFeeNegativeEpisodes": 0
+              },
+              "v12VsV10": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 6,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 6
+              },
+              "v12VsV9": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 1,
+                "totalFeeNegativeEpisodes": 3,
+                "incrementalFeeNegativeScenarios": 1,
+                "incrementalFeeNegativeEpisodes": 3
+              },
+              "v12VsHiGHS": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 9,
+                "totalFeeNegativeEpisodes": 27,
+                "incrementalFeeNegativeScenarios": 9,
+                "incrementalFeeNegativeEpisodes": 27
+              },
+              "v12VsV7": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 1,
+                "totalFeeNegativeEpisodes": 3,
+                "incrementalFeeNegativeScenarios": 1,
+                "incrementalFeeNegativeEpisodes": 3
+              },
+              "v11VsV10": {
+                "completionLosses": 0,
+                "completionGains": 3,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 6,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 6
+              },
+              "v10VsHiGHS": {
+                "completionLosses": 3,
+                "completionGains": 3,
+                "totalFeeNegativeScenarios": 9,
+                "totalFeeNegativeEpisodes": 27,
+                "incrementalFeeNegativeScenarios": 9,
+                "incrementalFeeNegativeEpisodes": 27
+              },
+              "highsVsV7": {
+                "completionLosses": 15,
+                "completionGains": 28,
+                "totalFeeNegativeScenarios": 0,
+                "totalFeeNegativeEpisodes": 0,
+                "incrementalFeeNegativeScenarios": 0,
+                "incrementalFeeNegativeEpisodes": 0
+              }
+            }
+          },
+          {
+            "panel": "stress",
+            "defaultGatePassed": false,
+            "completeEpisodesByMethod": {
+              "costPolishV7": 87,
+              "adaptiveV9": 86,
+              "highsV8": 116,
+              "stableHiGHSV10": 117,
+              "commitmentHiGHSV11": 118,
+              "seededHiGHSV12": 126,
+              "guardedHiGHSV13": 124
+            },
+            "comparisons": 14,
+            "adverseFieldLengths": {
+              "v13VsV12": {
+                "completionLosses": 5,
+                "completionGains": 3,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 66,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 66
+              },
+              "v13VsV11": {
+                "completionLosses": 4,
+                "completionGains": 10,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 64,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 64
+              },
+              "v13VsV10": {
+                "completionLosses": 4,
+                "completionGains": 11,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 66,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 66
+              },
+              "v13VsV9": {
+                "completionLosses": 0,
+                "completionGains": 38,
+                "totalFeeNegativeScenarios": 17,
+                "totalFeeNegativeEpisodes": 50,
+                "incrementalFeeNegativeScenarios": 17,
+                "incrementalFeeNegativeEpisodes": 50
+              },
+              "v13VsHiGHS": {
+                "completionLosses": 4,
+                "completionGains": 12,
+                "totalFeeNegativeScenarios": 25,
+                "totalFeeNegativeEpisodes": 74,
+                "incrementalFeeNegativeScenarios": 25,
+                "incrementalFeeNegativeEpisodes": 74
+              },
+              "v13VsV7": {
+                "completionLosses": 0,
+                "completionGains": 37,
+                "totalFeeNegativeScenarios": 17,
+                "totalFeeNegativeEpisodes": 51,
+                "incrementalFeeNegativeScenarios": 17,
+                "incrementalFeeNegativeEpisodes": 51
+              },
+              "v12VsV11": {
+                "completionLosses": 0,
+                "completionGains": 8,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 4,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 4
+              },
+              "v12VsV10": {
+                "completionLosses": 0,
+                "completionGains": 9,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 6,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 6
+              },
+              "v12VsV9": {
+                "completionLosses": 3,
+                "completionGains": 43,
+                "totalFeeNegativeScenarios": 3,
+                "totalFeeNegativeEpisodes": 9,
+                "incrementalFeeNegativeScenarios": 3,
+                "incrementalFeeNegativeEpisodes": 9
+              },
+              "v12VsHiGHS": {
+                "completionLosses": 3,
+                "completionGains": 13,
+                "totalFeeNegativeScenarios": 10,
+                "totalFeeNegativeEpisodes": 29,
+                "incrementalFeeNegativeScenarios": 10,
+                "incrementalFeeNegativeEpisodes": 29
+              },
+              "v12VsV7": {
+                "completionLosses": 3,
+                "completionGains": 42,
+                "totalFeeNegativeScenarios": 3,
+                "totalFeeNegativeEpisodes": 10,
+                "incrementalFeeNegativeScenarios": 3,
+                "incrementalFeeNegativeEpisodes": 10
+              },
+              "v11VsV10": {
+                "completionLosses": 0,
+                "completionGains": 1,
+                "totalFeeNegativeScenarios": 1,
+                "totalFeeNegativeEpisodes": 3,
+                "incrementalFeeNegativeScenarios": 1,
+                "incrementalFeeNegativeEpisodes": 3
+              },
+              "v10VsHiGHS": {
+                "completionLosses": 8,
+                "completionGains": 9,
+                "totalFeeNegativeScenarios": 9,
+                "totalFeeNegativeEpisodes": 27,
+                "incrementalFeeNegativeScenarios": 9,
+                "incrementalFeeNegativeEpisodes": 27
+              },
+              "highsVsV7": {
+                "completionLosses": 7,
+                "completionGains": 36,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 7,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 7
+              }
+            }
+          }
+        ],
+        "expectedWinnerAssumed": false
+      },
+      "screenshots": [
+        "02-navigation-research-v14-1440/v14-adverse-expanded.png",
+        "02-navigation-research-v14-1440/screen.png"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [
+            {
+              "tag": "TABLE",
+              "cls": "data-table",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "THEAD",
+              "cls": "",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 335.75,
+              "right": 1476.609375
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 172.21875,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TBODY",
+              "cls": "",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 335.75,
+              "right": 1476.609375
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 172.21875,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 335.75,
+              "right": 1476.609375
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 172.21875,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 1364.828125,
+              "right": 1648.828125
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 335.75,
+              "right": 1476.609375
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 172.21875,
+              "right": 1648.828125
+            }
+          ],
+          "scrollableTables": 2
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.6211966529954225,
+      "actualURL": "http://127.0.0.1:4173/#research-v14",
+      "pageErrors": []
+    },
+    {
+      "id": "03-navigation-research-v12-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v12; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6410766979970504,
+      "screenshots": [
+        "03-navigation-research-v12-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v12",
+      "pageErrors": []
+    },
+    {
+      "id": "04-navigation-research-v9-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v9; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5870479449949926,
+      "screenshots": [
+        "04-navigation-research-v9-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "05-navigation-resource-v9-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation resource-v9; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6067648580064997,
+      "screenshots": [
+        "05-navigation-resource-v9-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "06-navigation-execution-v8-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation execution-v8; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6583752440055832,
+      "screenshots": [
+        "06-navigation-execution-v8-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "07-navigation-research-v8-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v8; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5685952560015721,
+      "screenshots": [
+        "07-navigation-research-v8-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "08-navigation-rates-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation rates; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5964419699885184,
+      "screenshots": [
+        "08-navigation-rates-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#rates",
+      "pageErrors": []
+    },
+    {
+      "id": "09-navigation-experiments-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation experiments; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6166997520049335,
+      "screenshots": [
+        "09-navigation-experiments-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#experiments",
+      "pageErrors": []
+    },
+    {
+      "id": "10-navigation-sources-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation sources; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.61465311399661,
+      "screenshots": [
+        "10-navigation-sources-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#sources",
+      "pageErrors": []
+    },
+    {
+      "id": "11-navigation-public-validation-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation public-validation; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5862551759928465,
+      "screenshots": [
+        "11-navigation-public-validation-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#public-validation",
+      "pageErrors": []
+    },
+    {
+      "id": "12-navigation-research-v7-1440",
+      "checklistRow": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v7; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.0830180830089375,
+      "screenshots": [
+        "12-navigation-research-v7-1440/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v7",
+      "pageErrors": []
+    },
+    {
+      "id": "13-navigation-planner-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation planner; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 450
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 415
+            },
+            {
+              "tag": "rect",
+              "cls": {},
+              "width": 12,
+              "right": 413
+            },
+            {
+              "tag": "circle",
+              "cls": {},
+              "width": 4,
+              "right": 409
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8.00665283203125,
+              "right": 411.00665283203125
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 78.703125,
+              "right": 446.34375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 539
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 504
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 501.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 532.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 628
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 593
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.33331298828125,
+              "right": 591
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 613.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 717
+            }
+          ],
+          "scrollableTables": 1
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5935200109961443,
+      "screenshots": [
+        "13-navigation-planner-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "14-navigation-research-v14-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v14; check unique visible panel, active state, title, no page horizontal overflow",
+        "Wait for actual V14 ready state; download the four raw SHA-bound documents, derive both gates and expand every adverse-ID list; no expected winner"
+      ],
+      "downloads": [
+        {
+          "label": "v14-release",
+          "file": "14-navigation-research-v14-390/06-v14-release.json",
+          "bytes": 2213,
+          "sha256": "545428e33cc3502666515c2a7bfd7bf42328e5193527b8e0896a9d235f6354a2"
+        },
+        {
+          "label": "v14-results",
+          "file": "14-navigation-research-v14-390/07-v14-results.json",
+          "bytes": 875579,
+          "sha256": "18d794150d2928a53cd4661ce2b32c90bf59e18e10299e6817f8e4fd0ee84ce8"
+        },
+        {
+          "label": "v14-review",
+          "file": "14-navigation-research-v14-390/08-review-v14.json",
+          "bytes": 8816318,
+          "sha256": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f"
+        },
+        {
+          "label": "v14-statistics",
+          "file": "14-navigation-research-v14-390/09-bootstrap-review-v14.json",
+          "bytes": 156799,
+          "sha256": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48"
+        },
+        {
+          "label": "v14-protocol",
+          "file": "14-navigation-research-v14-390/10-protocol-v14.json",
+          "bytes": 55794,
+          "sha256": "7711db53e044231b018a2381b7bdc5a87319f00d3f4848f26803ed1b820bada4"
+        }
+      ],
+      "v14ActualEvidence": {
+        "candidateMethod": "guardedHiGHSV13",
+        "scenarios": 144,
+        "episodes": 3024,
+        "rawEvidenceSha256": {
+          "results": "18d794150d2928a53cd4661ce2b32c90bf59e18e10299e6817f8e4fd0ee84ce8",
+          "review": "4aef29303ef9872a5bf4bb85b0a7731fb3acb34e090a68981a975d7111e0ab8f",
+          "statistics": "95d2021efb5d8d20e31eea18b3b2cb5a15732b557b6c391f8eff7d30fefd8a48",
+          "protocol": "7711db53e044231b018a2381b7bdc5a87319f00d3f4848f26803ed1b820bada4"
+        },
+        "panels": [
+          {
+            "panel": "same-distribution",
+            "defaultGatePassed": true,
+            "completeEpisodesByMethod": {
+              "costPolishV7": 137,
+              "adaptiveV9": 137,
+              "highsV8": 150,
+              "stableHiGHSV10": 150,
+              "commitmentHiGHSV11": 153,
+              "seededHiGHSV12": 171,
+              "guardedHiGHSV13": 171
+            },
+            "comparisons": 14,
+            "adverseFieldLengths": {
+              "v13VsV12": {
+                "completionLosses": 0,
+                "completionGains": 0,
+                "totalFeeNegativeScenarios": 21,
+                "totalFeeNegativeEpisodes": 62,
+                "incrementalFeeNegativeScenarios": 21,
+                "incrementalFeeNegativeEpisodes": 62
+              },
+              "v13VsV11": {
+                "completionLosses": 0,
+                "completionGains": 18,
+                "totalFeeNegativeScenarios": 18,
+                "totalFeeNegativeEpisodes": 53,
+                "incrementalFeeNegativeScenarios": 18,
+                "incrementalFeeNegativeEpisodes": 53
+              },
+              "v13VsV10": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 19,
+                "totalFeeNegativeEpisodes": 56,
+                "incrementalFeeNegativeScenarios": 19,
+                "incrementalFeeNegativeEpisodes": 56
+              },
+              "v13VsV9": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 14,
+                "totalFeeNegativeEpisodes": 41,
+                "incrementalFeeNegativeScenarios": 14,
+                "incrementalFeeNegativeEpisodes": 41
+              },
+              "v13VsHiGHS": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 65,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 65
+              },
+              "v13VsV7": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 14,
+                "totalFeeNegativeEpisodes": 41,
+                "incrementalFeeNegativeScenarios": 14,
+                "incrementalFeeNegativeEpisodes": 41
+              },
+              "v12VsV11": {
+                "completionLosses": 0,
+                "completionGains": 18,
+                "totalFeeNegativeScenarios": 0,
+                "totalFeeNegativeEpisodes": 0,
+                "incrementalFeeNegativeScenarios": 0,
+                "incrementalFeeNegativeEpisodes": 0
+              },
+              "v12VsV10": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 6,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 6
+              },
+              "v12VsV9": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 1,
+                "totalFeeNegativeEpisodes": 3,
+                "incrementalFeeNegativeScenarios": 1,
+                "incrementalFeeNegativeEpisodes": 3
+              },
+              "v12VsHiGHS": {
+                "completionLosses": 0,
+                "completionGains": 21,
+                "totalFeeNegativeScenarios": 9,
+                "totalFeeNegativeEpisodes": 27,
+                "incrementalFeeNegativeScenarios": 9,
+                "incrementalFeeNegativeEpisodes": 27
+              },
+              "v12VsV7": {
+                "completionLosses": 0,
+                "completionGains": 34,
+                "totalFeeNegativeScenarios": 1,
+                "totalFeeNegativeEpisodes": 3,
+                "incrementalFeeNegativeScenarios": 1,
+                "incrementalFeeNegativeEpisodes": 3
+              },
+              "v11VsV10": {
+                "completionLosses": 0,
+                "completionGains": 3,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 6,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 6
+              },
+              "v10VsHiGHS": {
+                "completionLosses": 3,
+                "completionGains": 3,
+                "totalFeeNegativeScenarios": 9,
+                "totalFeeNegativeEpisodes": 27,
+                "incrementalFeeNegativeScenarios": 9,
+                "incrementalFeeNegativeEpisodes": 27
+              },
+              "highsVsV7": {
+                "completionLosses": 15,
+                "completionGains": 28,
+                "totalFeeNegativeScenarios": 0,
+                "totalFeeNegativeEpisodes": 0,
+                "incrementalFeeNegativeScenarios": 0,
+                "incrementalFeeNegativeEpisodes": 0
+              }
+            }
+          },
+          {
+            "panel": "stress",
+            "defaultGatePassed": false,
+            "completeEpisodesByMethod": {
+              "costPolishV7": 87,
+              "adaptiveV9": 86,
+              "highsV8": 116,
+              "stableHiGHSV10": 117,
+              "commitmentHiGHSV11": 118,
+              "seededHiGHSV12": 126,
+              "guardedHiGHSV13": 124
+            },
+            "comparisons": 14,
+            "adverseFieldLengths": {
+              "v13VsV12": {
+                "completionLosses": 5,
+                "completionGains": 3,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 66,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 66
+              },
+              "v13VsV11": {
+                "completionLosses": 4,
+                "completionGains": 10,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 64,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 64
+              },
+              "v13VsV10": {
+                "completionLosses": 4,
+                "completionGains": 11,
+                "totalFeeNegativeScenarios": 22,
+                "totalFeeNegativeEpisodes": 66,
+                "incrementalFeeNegativeScenarios": 22,
+                "incrementalFeeNegativeEpisodes": 66
+              },
+              "v13VsV9": {
+                "completionLosses": 0,
+                "completionGains": 38,
+                "totalFeeNegativeScenarios": 17,
+                "totalFeeNegativeEpisodes": 50,
+                "incrementalFeeNegativeScenarios": 17,
+                "incrementalFeeNegativeEpisodes": 50
+              },
+              "v13VsHiGHS": {
+                "completionLosses": 4,
+                "completionGains": 12,
+                "totalFeeNegativeScenarios": 25,
+                "totalFeeNegativeEpisodes": 74,
+                "incrementalFeeNegativeScenarios": 25,
+                "incrementalFeeNegativeEpisodes": 74
+              },
+              "v13VsV7": {
+                "completionLosses": 0,
+                "completionGains": 37,
+                "totalFeeNegativeScenarios": 17,
+                "totalFeeNegativeEpisodes": 51,
+                "incrementalFeeNegativeScenarios": 17,
+                "incrementalFeeNegativeEpisodes": 51
+              },
+              "v12VsV11": {
+                "completionLosses": 0,
+                "completionGains": 8,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 4,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 4
+              },
+              "v12VsV10": {
+                "completionLosses": 0,
+                "completionGains": 9,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 6,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 6
+              },
+              "v12VsV9": {
+                "completionLosses": 3,
+                "completionGains": 43,
+                "totalFeeNegativeScenarios": 3,
+                "totalFeeNegativeEpisodes": 9,
+                "incrementalFeeNegativeScenarios": 3,
+                "incrementalFeeNegativeEpisodes": 9
+              },
+              "v12VsHiGHS": {
+                "completionLosses": 3,
+                "completionGains": 13,
+                "totalFeeNegativeScenarios": 10,
+                "totalFeeNegativeEpisodes": 29,
+                "incrementalFeeNegativeScenarios": 10,
+                "incrementalFeeNegativeEpisodes": 29
+              },
+              "v12VsV7": {
+                "completionLosses": 3,
+                "completionGains": 42,
+                "totalFeeNegativeScenarios": 3,
+                "totalFeeNegativeEpisodes": 10,
+                "incrementalFeeNegativeScenarios": 3,
+                "incrementalFeeNegativeEpisodes": 10
+              },
+              "v11VsV10": {
+                "completionLosses": 0,
+                "completionGains": 1,
+                "totalFeeNegativeScenarios": 1,
+                "totalFeeNegativeEpisodes": 3,
+                "incrementalFeeNegativeScenarios": 1,
+                "incrementalFeeNegativeEpisodes": 3
+              },
+              "v10VsHiGHS": {
+                "completionLosses": 8,
+                "completionGains": 9,
+                "totalFeeNegativeScenarios": 9,
+                "totalFeeNegativeEpisodes": 27,
+                "incrementalFeeNegativeScenarios": 9,
+                "incrementalFeeNegativeEpisodes": 27
+              },
+              "highsVsV7": {
+                "completionLosses": 7,
+                "completionGains": 36,
+                "totalFeeNegativeScenarios": 2,
+                "totalFeeNegativeEpisodes": 7,
+                "incrementalFeeNegativeScenarios": 2,
+                "incrementalFeeNegativeEpisodes": 7
+              }
+            }
+          }
+        ],
+        "expectedWinnerAssumed": false
+      },
+      "screenshots": [
+        "14-navigation-research-v14-390/v14-adverse-expanded.png",
+        "14-navigation-research-v14-390/screen.png"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 450
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 415
+            },
+            {
+              "tag": "rect",
+              "cls": {},
+              "width": 12,
+              "right": 413
+            },
+            {
+              "tag": "circle",
+              "cls": {},
+              "width": 4,
+              "right": 409
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8.00665283203125,
+              "right": 411.00665283203125
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 78.703125,
+              "right": 446.34375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 539
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 504
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 501.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 532.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 628
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 593
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.33331298828125,
+              "right": 591
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 613.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 717
+            }
+          ],
+          "scrollableTables": 6
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.0526962849980919,
+      "actualURL": "http://127.0.0.1:4173/#research-v14",
+      "pageErrors": []
+    },
+    {
+      "id": "15-navigation-research-v12-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v12; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 450
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 415
+            },
+            {
+              "tag": "rect",
+              "cls": {},
+              "width": 12,
+              "right": 413
+            },
+            {
+              "tag": "circle",
+              "cls": {},
+              "width": 4,
+              "right": 409
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8.00665283203125,
+              "right": 411.00665283203125
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 78.703125,
+              "right": 446.34375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 539
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 504
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 501.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 532.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 628
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 593
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.33331298828125,
+              "right": 591
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 613.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 717
+            }
+          ],
+          "scrollableTables": 4
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6144873150042258,
+      "screenshots": [
+        "15-navigation-research-v12-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v12",
+      "pageErrors": []
+    },
+    {
+      "id": "16-navigation-research-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v9; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 450
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 415
+            },
+            {
+              "tag": "rect",
+              "cls": {},
+              "width": 12,
+              "right": 413
+            },
+            {
+              "tag": "circle",
+              "cls": {},
+              "width": 4,
+              "right": 409
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8.00665283203125,
+              "right": 411.00665283203125
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 78.703125,
+              "right": 446.34375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 539
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 504
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 501.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 532.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 628
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 593
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.33331298828125,
+              "right": 591
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 613.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 717
+            }
+          ],
+          "scrollableTables": 7
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5784378529933747,
+      "screenshots": [
+        "16-navigation-research-v9-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "17-navigation-resource-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation resource-v9; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 471
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 436
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 433.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 464.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 560
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 525
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.333343505859375,
+              "right": 523
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 545.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 649
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 614
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10.6666259765625,
+              "right": 611.3333129882812
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 5.3333740234375,
+              "right": 608.6666870117188
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 624
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 738
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 703
+            }
+          ],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6043630630010739,
+      "screenshots": [
+        "17-navigation-resource-v9-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "18-navigation-execution-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation execution-v8; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 505
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 470
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.333343505859375,
+              "right": 468
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 484.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 594
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 559
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 12,
+              "right": 557
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 573.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 683
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 648
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10,
+              "right": 645.3333129882812
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 658
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 772
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 737
+            }
+          ],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5648444449907402,
+      "screenshots": [
+        "18-navigation-execution-v8-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "19-navigation-research-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v8; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 395.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 505
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 470
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 12,
+              "right": 468
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 484.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 594
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 559
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10,
+              "right": 556.3333129882812
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 569
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 683
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 648
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10.6666259765625,
+              "right": 645.3333129882812
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 68.203125,
+              "right": 674.09375
+            },
+            {
+              "tag": "TABLE",
+              "cls": "data-table",
+              "width": 544.53125,
+              "right": 562.53125
+            }
+          ],
+          "scrollableTables": 5
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5532334780000383,
+      "screenshots": [
+        "19-navigation-research-v8-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "20-navigation-rates-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation rates; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 395.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 505
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 470
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10,
+              "right": 467.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 480
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 594
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 559
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10.6666259765625,
+              "right": 556.3333129882812
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 68.203125,
+              "right": 585.09375
+            },
+            {
+              "tag": "TABLE",
+              "cls": "data-table",
+              "width": 434.234375,
+              "right": 452.234375
+            },
+            {
+              "tag": "THEAD",
+              "cls": "",
+              "width": 434.234375,
+              "right": 452.234375
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 434.234375,
+              "right": 452.234375
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 89.59375,
+              "right": 452.234375
+            },
+            {
+              "tag": "TBODY",
+              "cls": "",
+              "width": 434.234375,
+              "right": 452.234375
+            }
+          ],
+          "scrollableTables": 1
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5594701719965087,
+      "screenshots": [
+        "20-navigation-rates-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#rates",
+      "pageErrors": []
+    },
+    {
+      "id": "21-navigation-experiments-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation experiments; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 505
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 470
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10.66668701171875,
+              "right": 467.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 68.203125,
+              "right": 496.09375
+            },
+            {
+              "tag": "TABLE",
+              "cls": "data-table",
+              "width": 467.625,
+              "right": 485.625
+            },
+            {
+              "tag": "THEAD",
+              "cls": "",
+              "width": 467.625,
+              "right": 485.625
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 467.625,
+              "right": 485.625
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 73.015625,
+              "right": 394.609375
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 91.015625,
+              "right": 485.625
+            },
+            {
+              "tag": "TBODY",
+              "cls": "",
+              "width": 467.625,
+              "right": 485.625
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 467.625,
+              "right": 485.625
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 73.015625,
+              "right": 394.609375
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 91.015625,
+              "right": 485.625
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 467.625,
+              "right": 485.625
+            }
+          ],
+          "scrollableTables": 3
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5914448050025385,
+      "screenshots": [
+        "21-navigation-experiments-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#experiments",
+      "pageErrors": []
+    },
+    {
+      "id": "22-navigation-sources-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation sources; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 68.203125,
+              "right": 407.09375
+            }
+          ],
+          "scrollableTables": 0
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6157623420003802,
+      "screenshots": [
+        "22-navigation-sources-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#sources",
+      "pageErrors": []
+    },
+    {
+      "id": "23-navigation-public-validation-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation public-validation; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "TABLE",
+              "cls": "data-table",
+              "width": 829,
+              "right": 847
+            },
+            {
+              "tag": "THEAD",
+              "cls": "",
+              "width": 829,
+              "right": 847
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 829,
+              "right": 847
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 244.75,
+              "right": 498.59375
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 81.953125,
+              "right": 580.546875
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 81.953125,
+              "right": 662.5
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 88,
+              "right": 750.5
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 96.5,
+              "right": 847
+            },
+            {
+              "tag": "TBODY",
+              "cls": "",
+              "width": 829,
+              "right": 847
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 829,
+              "right": 847
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 244.75,
+              "right": 498.59375
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 81.953125,
+              "right": 580.546875
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 81.953125,
+              "right": 662.5
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 88,
+              "right": 750.5
+            },
+            {
+              "tag": "SPAN",
+              "cls": "pill neutral",
+              "width": 60,
+              "right": 736.5
+            }
+          ],
+          "scrollableTables": 1
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5974933649995364,
+      "screenshots": [
+        "23-navigation-public-validation-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#public-validation",
+      "pageErrors": []
+    },
+    {
+      "id": "24-navigation-research-v7-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Click actual navigation research-v7; check unique visible panel, active state, title, no page horizontal overflow"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "TABLE",
+              "cls": "data-table",
+              "width": 660,
+              "right": 678
+            },
+            {
+              "tag": "THEAD",
+              "cls": "",
+              "width": 660,
+              "right": 678
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 660,
+              "right": 678
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 105,
+              "right": 468
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 105,
+              "right": 573
+            },
+            {
+              "tag": "TH",
+              "cls": "",
+              "width": 105,
+              "right": 678
+            },
+            {
+              "tag": "TBODY",
+              "cls": "",
+              "width": 660,
+              "right": 678
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 660,
+              "right": 678
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 105,
+              "right": 468
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 105,
+              "right": 573
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 105,
+              "right": 678
+            },
+            {
+              "tag": "TR",
+              "cls": "",
+              "width": 660,
+              "right": 678
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 105,
+              "right": 468
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 105,
+              "right": 573
+            },
+            {
+              "tag": "TD",
+              "cls": "",
+              "width": 105,
+              "right": 678
+            }
+          ],
+          "scrollableTables": 8
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.0644843930058414,
+      "screenshots": [
+        "24-navigation-research-v7-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v7",
+      "pageErrors": []
+    },
+    {
+      "id": "25-language-execution-v8-1440",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Switch actual supported content zh→ko→zh; check editor labels, title and narrow layout"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "screenshots": [
+        "25-language-execution-v8-1440/korean.png",
+        "25-language-execution-v8-1440/screen.png"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6702726660005283,
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "26-language-execution-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Switch actual supported content zh→ko→zh; check editor labels, title and narrow layout"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 505
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 470
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.333343505859375,
+              "right": 468
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 484.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 594
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 559
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 12,
+              "right": 557
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 573.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 683
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 648
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10,
+              "right": 645.3333129882812
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 658
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 772
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 737
+            }
+          ],
+          "scrollableTables": 0
+        }
+      ],
+      "screenshots": [
+        "26-language-execution-v8-390/korean.png",
+        "26-language-execution-v8-390/screen.png"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5720850489888107,
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "27-language-resource-v9-1440",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Switch actual supported content zh→ko→zh; check editor labels, title and narrow layout"
+      ],
+      "layout": [
+        {
+          "width": 1440,
+          "body": 1440,
+          "html": 1440,
+          "overflow": [],
+          "scrollableTables": 0
+        }
+      ],
+      "screenshots": [
+        "27-language-resource-v9-1440/korean.png",
+        "27-language-resource-v9-1440/screen.png"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5612762920063687,
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "28-language-resource-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Switch actual supported content zh→ko→zh; check editor labels, title and narrow layout"
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 471
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 436
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 433.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 464.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 560
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 525
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.333343505859375,
+              "right": 523
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 545.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 649
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 614
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10.6666259765625,
+              "right": 611.3333129882812
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 5.3333740234375,
+              "right": 608.6666870117188
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 624
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 738
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 703
+            }
+          ],
+          "scrollableTables": 0
+        }
+      ],
+      "screenshots": [
+        "28-language-resource-v9-390/korean.png",
+        "28-language-resource-v9-390/screen.png"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5422645790094975,
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "29-keyboard-execution-v8",
+      "checklistRow": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Use Tab to JSON editor, select, primary run, enabled stop; actual keyboard activation with controlled inert Worker"
+      ],
+      "keyboardFocus": [
+        {
+          "tag": "TEXTAREA",
+          "name": "订单与名义容量 · JSON",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "SELECT",
+          "name": "策略 A",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BUTTON",
+          "name": "运行滚动模拟",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "rgba(23, 78, 67, 0.063) 0px 2px 3px 0px"
+        },
+        {
+          "tag": "BUTTON",
+          "name": "中文",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "none"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5457392329990398,
+      "screenshots": [
+        "29-keyboard-execution-v8/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "30-keyboard-resource-v9",
+      "checklistRow": 3,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Use Tab to JSON editor, select, primary run, enabled stop; actual keyboard activation with controlled inert Worker"
+      ],
+      "keyboardFocus": [
+        {
+          "tag": "TEXTAREA",
+          "name": "当前已观察订单与容量 · JSON",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "SELECT",
+          "name": "本次优化目标",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BUTTON",
+          "name": "计算补救建议",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "rgba(23, 78, 67, 0.063) 0px 2px 3px 0px"
+        },
+        {
+          "tag": "BUTTON",
+          "name": "中文",
+          "focusVisible": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "boxShadow": "none"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5483959830016829,
+      "screenshots": [
+        "30-keyboard-resource-v9/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "31-workbench-valid-json-csv-export",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Import tiny synthetic JSON, run workbench, export CSV and full scenario; no real business input"
+      ],
+      "downloads": [
+        {
+          "label": "workbench-schedule",
+          "file": "31-workbench-valid-json-csv-export/11-portplan-optimized-schedule.csv",
+          "bytes": 840,
+          "sha256": "8389d593100dfb15c3550f15d46d30d28f7c8cd1786e1cd75f98099bb2b5290c"
+        },
+        {
+          "label": "workbench-input",
+          "file": "31-workbench-valid-json-csv-export/12-portplan-scenario.json",
+          "bytes": 1865,
+          "sha256": "3dd6a29c90cce325bf78075e4ad101d1560793855057b25ff1e2667e85fa4779"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 2.282116993999807,
+      "screenshots": [
+        "31-workbench-valid-json-csv-export/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "32-workbench-invalid-duplicate-id",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Import deliberately invalid synthetic JSON: duplicate-id"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.43192770099267364,
+      "screenshots": [
+        "32-workbench-invalid-duplicate-id/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "33-workbench-invalid-missing-timezone",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Import deliberately invalid synthetic JSON: missing-timezone"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.44710307799687143,
+      "screenshots": [
+        "33-workbench-invalid-missing-timezone/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "34-execution-success-export-stale",
+      "checklistRow": 4,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Run both real browser strategies on ten-container success fixture; verify exported complete actions, fees, terminal audits"
+      ],
+      "downloads": [
+        {
+          "label": "execution-success",
+          "file": "34-execution-success-export-stale/13-portplan-v8-custom-results.json",
+          "bytes": 180745,
+          "sha256": "f7a35b44081b34028f76a957a73f1a2e7bd09aedf4fcc4c09f97cdc4521e7794"
+        },
+        {
+          "label": "execution-input",
+          "file": "34-execution-success-export-stale/14-portplan-v8-custom-input.json",
+          "bytes": 3152,
+          "sha256": "425abe56fa4a980ff4f3bd97c24f53e3dc7839cb31fe62a8f6a14c8b9736ff06"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.9454909240012057,
+      "screenshots": [
+        "34-execution-success-export-stale/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "35-execution-failure-teaching",
+      "checklistRow": 4,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Run announced warehouse-closure teaching fixture; failed full-path amounts remain null"
+      ],
+      "downloads": [
+        {
+          "label": "execution-failure",
+          "file": "35-execution-failure-teaching/15-portplan-v8-custom-results.json",
+          "bytes": 121061,
+          "sha256": "80ed94ceca772420b9805251b270cc77a450ea887c595550d61e40f4d94ae68d"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.8709354189923033,
+      "screenshots": [
+        "35-execution-failure-teaching/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "36-resource-rescue-procurementOnly",
+      "checklistRow": 7,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Check default real menu empty, load synthetic rescue, solve procurementOnly, export original inputs/result and exclusion facts"
+      ],
+      "downloads": [
+        {
+          "label": "resource-rescue-procurementOnly",
+          "file": "36-resource-rescue-procurementOnly/16-portplan-resource-recovery-v9-result.json",
+          "bytes": 12957,
+          "sha256": "e62e3cc80efe025df267f80d712a3aa3dff7fcc2a47d3e24d5c434a3942b5360"
+        },
+        {
+          "label": "resource-input",
+          "file": "36-resource-rescue-procurementOnly/17-portplan-resource-recovery-v9-input.json",
+          "bytes": 2406,
+          "sha256": "adcead1cad9a07ac9e19b4c03e62252f41962f670305a2213b0a78fc084fb3ff"
+        },
+        {
+          "label": "resource-stale-result",
+          "file": "36-resource-rescue-procurementOnly/18-portplan-resource-recovery-v9-result.json",
+          "bytes": 12958,
+          "sha256": "08e94b3b4877462ed8c92c2bf2549ae973b0dad645e90ea2ae6298bf68530541"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.7733046619978268,
+      "screenshots": [
+        "36-resource-rescue-procurementOnly/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "37-resource-rescue-feesPlusProcurement",
+      "checklistRow": 7,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Check default real menu empty, load synthetic rescue, solve feesPlusProcurement, export original inputs/result and exclusion facts"
+      ],
+      "downloads": [
+        {
+          "label": "resource-rescue-feesPlusProcurement",
+          "file": "37-resource-rescue-feesPlusProcurement/19-portplan-resource-recovery-v9-result.json",
+          "bytes": 12997,
+          "sha256": "4f2a8c3c93ea6bf7b3f4256fb3484e27daa9bee8c7e2c5a6abb179920f6550e4"
+        },
+        {
+          "label": "resource-input",
+          "file": "37-resource-rescue-feesPlusProcurement/20-portplan-resource-recovery-v9-input.json",
+          "bytes": 2410,
+          "sha256": "9a8e3774b22a231a883f8311571a7553466153aa65b481b5db941c8a606070b6"
+        },
+        {
+          "label": "resource-stale-result",
+          "file": "37-resource-rescue-feesPlusProcurement/21-portplan-resource-recovery-v9-result.json",
+          "bytes": 12998,
+          "sha256": "a425d59577a9e665f8d41212e96024bc9ed86bd64730073912f980a9971cdef9"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.7815676519967383,
+      "screenshots": [
+        "37-resource-rescue-feesPlusProcurement/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "38-resource-impossible",
+      "checklistRow": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Exercise explicit resource impossible without adding real/menu resources"
+      ],
+      "downloads": [
+        {
+          "label": "resource-impossible",
+          "file": "38-resource-impossible/22-portplan-resource-recovery-v9-result.json",
+          "bytes": 7123,
+          "sha256": "1c8cb70fb6c3627074bc04248bebfb4ef95f3b088910f8ce839af8deb3ff6176"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.6262393229990266,
+      "screenshots": [
+        "38-resource-impossible/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "39-resource-empty",
+      "checklistRow": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Exercise explicit resource empty without adding real/menu resources"
+      ],
+      "downloads": [
+        {
+          "label": "resource-empty",
+          "file": "39-resource-empty/23-portplan-resource-recovery-v9-result.json",
+          "bytes": 3823,
+          "sha256": "2634251a04348aea1a9474718e418781ba0a9d7971ca370826bdbe46273fe034"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.7262955899932422,
+      "screenshots": [
+        "39-resource-empty/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "40-resource-invalid-action",
+      "checklistRow": 8,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Exercise explicit resource invalid-action without adding real/menu resources"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.5050955990009243,
+      "screenshots": [
+        "40-resource-invalid-action/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "41-controlled-execution-v8-hard-timeout",
+      "checklistRow": 9,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Controlled HTTP Worker fault injection: hard-timeout; this is not natural solver timing or a formal experiment"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-hard-timeout",
+          "file": "41-controlled-execution-v8-hard-timeout/24-portplan-v8-custom-results.json",
+          "bytes": 4781,
+          "sha256": "aafb19a22677139c5112e1bf37031f207042331062a82263d54d4d9fa3674192"
+        }
+      ],
+      "realWorkerObservations": [
+        {
+          "url": "http://127.0.0.1:4173/assets/execution-v8.worker-DFQsC4Cn.js",
+          "createdAt": 482.90000000596046,
+          "terminated": true,
+          "terminatedAt": 5483.30000000447
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 5.837889948001248,
+      "screenshots": [
+        "41-controlled-execution-v8-hard-timeout/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "42-controlled-execution-v8-stop-rerun",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Controlled HTTP Worker fault injection: stop-rerun; this is not natural solver timing or a formal experiment"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-stop-rerun",
+          "file": "42-controlled-execution-v8-stop-rerun/25-portplan-v8-custom-results.json",
+          "bytes": 4757,
+          "sha256": "1c45f95f55bc0725e8f24d934dba747aaa7361e97504ce3ae8fc2461a797d467"
+        },
+        {
+          "label": "normal-rerun",
+          "file": "42-controlled-execution-v8-stop-rerun/26-portplan-v8-custom-results.json",
+          "bytes": 129184,
+          "sha256": "dea0a26678cb45c0f0db7f29a528aa5235fd121f81b58b584bc2fc4bd1a266bc"
+        }
+      ],
+      "realWorkerObservations": [
+        {
+          "url": "http://127.0.0.1:4173/assets/execution-v8.worker-DFQsC4Cn.js",
+          "createdAt": 503.80000000447035,
+          "terminated": true,
+          "terminatedAt": 535
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.729839149993495,
+      "screenshots": [
+        "42-controlled-execution-v8-stop-rerun/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "43-controlled-execution-v8-navigation-cancel",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Controlled HTTP Worker fault injection: navigation-cancel; this is not natural solver timing or a formal experiment"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-navigation-cancel",
+          "file": "43-controlled-execution-v8-navigation-cancel/27-portplan-v8-custom-results.json",
+          "bytes": 4756,
+          "sha256": "0948299e03b95d7c156f9bb07a8663f0f2d5a4a3c0c7121f47981f0f91f4d1a5"
+        }
+      ],
+      "realWorkerObservations": [
+        {
+          "url": "http://127.0.0.1:4173/assets/execution-v8.worker-DFQsC4Cn.js",
+          "createdAt": 461.8999999985099,
+          "terminated": true,
+          "terminatedAt": 493.29999999701977
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.484485829991172,
+      "screenshots": [
+        "43-controlled-execution-v8-navigation-cancel/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "44-controlled-resource-v9-hard-timeout",
+      "checklistRow": 9,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Controlled HTTP Worker fault injection: hard-timeout; this is not natural solver timing or a formal experiment"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-hard-timeout",
+          "file": "44-controlled-resource-v9-hard-timeout/28-portplan-resource-recovery-v9-result.json",
+          "bytes": 3936,
+          "sha256": "779741bd64353f52bb3bf50be09e9b5df32c7506bf0add3e737030f43d78b7d9"
+        }
+      ],
+      "realWorkerObservations": [
+        {
+          "url": "http://127.0.0.1:4173/assets/resource-recovery-v9.worker-DDREvuIM.js",
+          "createdAt": 503.6000000014901,
+          "terminated": true,
+          "terminatedAt": 5504.10000000149
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 5.8875471579958685,
+      "screenshots": [
+        "44-controlled-resource-v9-hard-timeout/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "45-controlled-resource-v9-stop-rerun",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Controlled HTTP Worker fault injection: stop-rerun; this is not natural solver timing or a formal experiment"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-stop-rerun",
+          "file": "45-controlled-resource-v9-stop-rerun/29-portplan-resource-recovery-v9-result.json",
+          "bytes": 3884,
+          "sha256": "d1ccc6dde8308b9f16dbf0f0d3491187348e9900d26c9bbd8d0f38b85427a8e8"
+        },
+        {
+          "label": "normal-rerun",
+          "file": "45-controlled-resource-v9-stop-rerun/30-portplan-resource-recovery-v9-result.json",
+          "bytes": 12984,
+          "sha256": "13a72c11784b91ce6bf760db8243ea70cfbf3495ae04876a8fa9863f740025ff"
+        }
+      ],
+      "realWorkerObservations": [
+        {
+          "url": "http://127.0.0.1:4173/assets/resource-recovery-v9.worker-DDREvuIM.js",
+          "createdAt": 515.3999999985099,
+          "terminated": true,
+          "terminatedAt": 562.7999999970198
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.6866612269950565,
+      "screenshots": [
+        "45-controlled-resource-v9-stop-rerun/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "46-controlled-resource-v9-navigation-cancel",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Controlled HTTP Worker fault injection: navigation-cancel; this is not natural solver timing or a formal experiment"
+      ],
+      "downloads": [
+        {
+          "label": "controlled-navigation-cancel",
+          "file": "46-controlled-resource-v9-navigation-cancel/31-portplan-resource-recovery-v9-result.json",
+          "bytes": 3898,
+          "sha256": "83723d935d74da5f220fc2d49a5ed900e70c3cc7909d459dfb425026723a9fb4"
+        }
+      ],
+      "realWorkerObservations": [
+        {
+          "url": "http://127.0.0.1:4173/assets/resource-recovery-v9.worker-DDREvuIM.js",
+          "createdAt": 452.70000000298023,
+          "terminated": true,
+          "terminatedAt": 484.1000000014901
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.491287694996572,
+      "screenshots": [
+        "46-controlled-resource-v9-navigation-cancel/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "47-browser-material-downloads",
+      "checklistRow": 10,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Use actual rendered V12 links to download Korean PDF, editable PPT and source ZIP; compare exact local dist bytes/SHA"
+      ],
+      "downloads": [
+        {
+          "label": "/downloads/defense-v12.ko.pdf",
+          "file": "47-browser-material-downloads/32-defense-v12.ko.pdf",
+          "bytes": 67120,
+          "sha256": "cec184fd91e9a880cb671bf6ec95613b0967ab5002a36d53aa6fb1dd08482845"
+        },
+        {
+          "label": "/downloads/defense-v12.ko.pptx",
+          "file": "47-browser-material-downloads/33-defense-v12.ko.pptx",
+          "bytes": 72147,
+          "sha256": "0612d6e44ec712aa757d5bf5f984609c9fcad54faec46f0a974e35ab7144f72c"
+        },
+        {
+          "label": "/downloads/report-v12.zh.md",
+          "file": "47-browser-material-downloads/34-report-v12.zh.md",
+          "bytes": 165678,
+          "sha256": "37d0cce170b44644b23d64d852d704f88f5d763f4765477ec819bcde591b742c"
+        },
+        {
+          "label": "/downloads/portplan-source.zip",
+          "file": "47-browser-material-downloads/35-portplan-source.zip",
+          "bytes": 19494343,
+          "sha256": "c6bb1ad9564da0ba0e1526d5f1d0ea606c7e2fb323a705fd8f18f8bb4dd503d3"
+        }
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.7748126100050285,
+      "screenshots": [
+        "47-browser-material-downloads/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#research-v12",
+      "pageErrors": []
+    },
+    {
+      "id": "48-supplement-result-table-execution-v8-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Run actual teaching success at390px; check Korean result, body containment and real table horizontal scrolling"
+      ],
+      "downloads": [
+        {
+          "label": "execution-success",
+          "file": "48-supplement-result-table-execution-v8-390/36-portplan-v8-custom-results.json",
+          "bytes": 180756,
+          "sha256": "513b32c5f3126c275344cfeca8d092d337db9fb4a402037939bfb8fd7fd2b8c7"
+        }
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 416
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 505
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 470
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.333343505859375,
+              "right": 468
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 484.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 594
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 559
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 12,
+              "right": 557
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 45.015625,
+              "right": 573.5
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 683
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 648
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10,
+              "right": 645.3333129882812
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 658
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 772
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 737
+            }
+          ],
+          "scrollableTables": 3
+        }
+      ],
+      "resultTableScroll": {
+        "clientWidth": 314,
+        "scrollWidth": 525,
+        "scrollLeft": 211,
+        "overflowX": "auto"
+      },
+      "status": "passed",
+      "elapsedSeconds": 1.4411454149958445,
+      "screenshots": [
+        "48-supplement-result-table-execution-v8-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#execution-v8",
+      "pageErrors": []
+    },
+    {
+      "id": "49-supplement-result-table-resource-v9-390",
+      "checklistRow": 2,
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Run actual teaching success at390px; check Korean result, body containment and real table horizontal scrolling"
+      ],
+      "downloads": [
+        {
+          "label": "resource-rescue-feesPlusProcurement",
+          "file": "49-supplement-result-table-resource-v9-390/37-portplan-resource-recovery-v9-result.json",
+          "bytes": 13009,
+          "sha256": "8b93cb6313172e331e1ac4c7ccd996b26490bc0c41689d1a99b6d89c6d9c80bb"
+        }
+      ],
+      "layout": [
+        {
+          "width": 390,
+          "body": 390,
+          "html": 390,
+          "overflow": [
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 471
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 436
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 8,
+              "right": 433.3333435058594
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 72.90625,
+              "right": 464.453125
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 560
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 525
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 11.333343505859375,
+              "right": 523
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 57.1875,
+              "right": 545.59375
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 649
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 614
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 10.6666259765625,
+              "right": 611.3333129882812
+            },
+            {
+              "tag": "path",
+              "cls": {},
+              "width": 5.3333740234375,
+              "right": 608.6666870117188
+            },
+            {
+              "tag": "SPAN",
+              "cls": "",
+              "width": 36.015625,
+              "right": 624
+            },
+            {
+              "tag": "BUTTON",
+              "cls": "nav-button",
+              "width": 86,
+              "right": 738
+            },
+            {
+              "tag": "svg",
+              "cls": {},
+              "width": 16,
+              "right": 703
+            }
+          ],
+          "scrollableTables": 2
+        }
+      ],
+      "resultTableScroll": {
+        "clientWidth": 314,
+        "scrollWidth": 600,
+        "scrollLeft": 286,
+        "overflowX": "auto"
+      },
+      "status": "passed",
+      "elapsedSeconds": 0.7653824550070567,
+      "screenshots": [
+        "49-supplement-result-table-resource-v9-390/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#resource-v9",
+      "pageErrors": []
+    },
+    {
+      "id": "50-supplement-workbench-stale",
+      "checklistRow": 6,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Run tiny imported workbench; change actual truck setting; old schedule/export invalidated"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 1.2836105070018675,
+      "screenshots": [
+        "50-supplement-workbench-stale/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "51-supplement-explicit-invalid-utc-offset",
+      "checklistRow": 5,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "CSV import with explicit but impossible +15:00 UTC offset must fail"
+      ],
+      "status": "passed",
+      "elapsedSeconds": 0.44791777900536545,
+      "screenshots": [
+        "51-supplement-explicit-invalid-utc-offset/screen.png"
+      ],
+      "actualURL": "http://127.0.0.1:4173/#planner",
+      "pageErrors": []
+    },
+    {
+      "id": "v14-material-downloads-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "steps": [
+        "Open actual V14 page and wait for original-SHA-bound formal ready state",
+        "Click actual rendered /downloads/defense-v14.ko.pdf and compare every downloaded byte with docs/defense-v14.ko.pdf",
+        "Click actual rendered /downloads/defense-v14.ko.pptx and compare every downloaded byte with docs/defense-v14.ko.pptx",
+        "Click actual rendered /downloads/report-v14.zh.md and compare every downloaded byte with docs/report-v14.zh.md",
+        "Click actual rendered /downloads/submission-v14.ko.md and compare every downloaded byte with docs/submission-v14.ko.md"
+      ],
+      "downloads": [
+        {
+          "href": "/downloads/defense-v14.ko.pdf",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/defense-v14.ko.pdf",
+          "filename": "defense-v14.ko.pdf",
+          "file": "v14-material-downloads-1440/01-defense-v14.ko.pdf",
+          "bytes": 67186,
+          "sha256": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+          "originalPath": "docs/defense-v14.ko.pdf",
+          "originalSha256": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+          "exactBytesEqual": true
+        },
+        {
+          "href": "/downloads/defense-v14.ko.pptx",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/defense-v14.ko.pptx",
+          "filename": "defense-v14.ko.pptx",
+          "file": "v14-material-downloads-1440/02-defense-v14.ko.pptx",
+          "bytes": 71855,
+          "sha256": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+          "originalPath": "docs/defense-v14.ko.pptx",
+          "originalSha256": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+          "exactBytesEqual": true
+        },
+        {
+          "href": "/downloads/report-v14.zh.md",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/report-v14.zh.md",
+          "filename": "report-v14.zh.md",
+          "file": "v14-material-downloads-1440/03-report-v14.zh.md",
+          "bytes": 413499,
+          "sha256": "a21d7421282130c5c388fc523613799f49bd9929b1a34588172ad162a243fef8",
+          "originalPath": "docs/report-v14.zh.md",
+          "originalSha256": "a21d7421282130c5c388fc523613799f49bd9929b1a34588172ad162a243fef8",
+          "exactBytesEqual": true
+        },
+        {
+          "href": "/downloads/submission-v14.ko.md",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/submission-v14.ko.md",
+          "filename": "submission-v14.ko.md",
+          "file": "v14-material-downloads-1440/04-submission-v14.ko.md",
+          "bytes": 413897,
+          "sha256": "9cafb88439bda86146918a7b4c32f883c69121acb8fc33e345217379b9389c57",
+          "originalPath": "docs/submission-v14.ko.md",
+          "originalSha256": "9cafb88439bda86146918a7b4c32f883c69121acb8fc33e345217379b9389c57",
+          "exactBytesEqual": true
+        }
+      ],
+      "layout": {
+        "viewport": 1440,
+        "body": 1440,
+        "html": 1440
+      },
+      "status": "passed",
+      "actualURL": "http://127.0.0.1:4173/#research-v14",
+      "pageErrors": [],
+      "screenshot": "v14-material-downloads-1440/screen.png"
+    },
+    {
+      "id": "v14-material-downloads-390",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "steps": [
+        "Open actual V14 page and wait for original-SHA-bound formal ready state",
+        "Click actual rendered /downloads/defense-v14.ko.pdf and compare every downloaded byte with docs/defense-v14.ko.pdf",
+        "Click actual rendered /downloads/defense-v14.ko.pptx and compare every downloaded byte with docs/defense-v14.ko.pptx",
+        "Click actual rendered /downloads/report-v14.zh.md and compare every downloaded byte with docs/report-v14.zh.md",
+        "Click actual rendered /downloads/submission-v14.ko.md and compare every downloaded byte with docs/submission-v14.ko.md"
+      ],
+      "downloads": [
+        {
+          "href": "/downloads/defense-v14.ko.pdf",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/defense-v14.ko.pdf",
+          "filename": "defense-v14.ko.pdf",
+          "file": "v14-material-downloads-390/01-defense-v14.ko.pdf",
+          "bytes": 67186,
+          "sha256": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+          "originalPath": "docs/defense-v14.ko.pdf",
+          "originalSha256": "481195bd2451f65f341ed59f1f9d7b1d4d96a9b88e9d7deb1b90048bb0e9562e",
+          "exactBytesEqual": true
+        },
+        {
+          "href": "/downloads/defense-v14.ko.pptx",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/defense-v14.ko.pptx",
+          "filename": "defense-v14.ko.pptx",
+          "file": "v14-material-downloads-390/02-defense-v14.ko.pptx",
+          "bytes": 71855,
+          "sha256": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+          "originalPath": "docs/defense-v14.ko.pptx",
+          "originalSha256": "32f69938dbd6d01a29d179b28497ef13503ce48d3862943650ee92862e98c6bc",
+          "exactBytesEqual": true
+        },
+        {
+          "href": "/downloads/report-v14.zh.md",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/report-v14.zh.md",
+          "filename": "report-v14.zh.md",
+          "file": "v14-material-downloads-390/03-report-v14.zh.md",
+          "bytes": 413499,
+          "sha256": "a21d7421282130c5c388fc523613799f49bd9929b1a34588172ad162a243fef8",
+          "originalPath": "docs/report-v14.zh.md",
+          "originalSha256": "a21d7421282130c5c388fc523613799f49bd9929b1a34588172ad162a243fef8",
+          "exactBytesEqual": true
+        },
+        {
+          "href": "/downloads/submission-v14.ko.md",
+          "actualDownloadURL": "http://127.0.0.1:4173/downloads/submission-v14.ko.md",
+          "filename": "submission-v14.ko.md",
+          "file": "v14-material-downloads-390/04-submission-v14.ko.md",
+          "bytes": 413897,
+          "sha256": "9cafb88439bda86146918a7b4c32f883c69121acb8fc33e345217379b9389c57",
+          "originalPath": "docs/submission-v14.ko.md",
+          "originalSha256": "9cafb88439bda86146918a7b4c32f883c69121acb8fc33e345217379b9389c57",
+          "exactBytesEqual": true
+        }
+      ],
+      "layout": {
+        "viewport": 390,
+        "body": 390,
+        "html": 390
+      },
+      "status": "passed",
+      "actualURL": "http://127.0.0.1:4173/#research-v14",
+      "pageErrors": [],
+      "screenshot": "v14-material-downloads-390/screen.png"
+    }
+  ],
+  "controlledFaultScope": "Only localhost Worker HTTP response substitution with inert or scheduled-late-error scripts; not a natural solver timeout or formal research result.",
+  "naturalSolverTimeoutCertified": false,
+  "entrantUnderstandingCertified": false,
+  "nativeFormalExperiment": false,
+  "nativeHiGHSRuns": 0,
+  "businessValidationCertified": false,
+  "enterpriseRecordsRequired": false,
+  "scope": "51 unique first Chromium cases cover V14 saved natural-D0 evidence, all 14 comparisons/adverse identifiers, mobile and historical workbench/execution/resource teaching interactions. Two independent new desktop/mobile cases click V14 PDF, editable PPT and Chinese/Korean reports, eight actual downloads matched to material original bytes. No rerun of the 51 cases; native methods and entrant readiness are separate.",
+  "completedAtUTC": "2026-10-17T07:22:53.034513+00:00",
+  "proofArchiveRefs": [
+    "data/archives-v14/browser-first/manifest.json",
+    "data/archives-v14/browser-materials-first/manifest.json"
+  ],
+  "downloadBinaryRetention": "Exact selected screenshots, events, harness, static inventory, case records and download receipts are archived. Downloaded blobs (including duplicate JSON, ZIP, PDF, PPT and reports) are excluded; current original materials and final source packages are retained separately. No portable lossless claim is made for the intermediate candidate ZIP blob.",
+  "finalCandidateHandling": "The bound inventory identifies the actual tested candidate. Later changes are evidence/status/recovery records and transport packages; root separately checks identical runtime HTML/JS/CSS and final deployed file bytes."
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "portplan-v10-official-rule-readonly-check",
+  "method": "Read-only urllib HTTPS through inherited network settings. No login, application, message or submission. Not browser acceptance.",
+  "records": [
+    {
+      "url": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+      "requestedAtUTC": "2026-10-16T13:56:52.213357+00:00",
+      "finalURL": "https://anchor.changwon.ac.kr/main/menu?gc=Program&do=sinform&spod=s1&program_id=VKoDUNlZwONq&psin_id=VKoDUNlMqh4n",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 51043,
+      "sha256": "99203d6e58ac422e64ec06ce2fe7c25f1f7e8b2a4f176c2560ae41ab0f08320e",
+      "path": "data/public/v10-rules/competition-2026-current.html",
+      "retrievedAtUTC": "2026-10-16T13:56:54.844133+00:00",
+      "retrievedAtAsiaSeoul": "2026-10-16T22:56:54.844133+09:00"
+    },
+    {
+      "url": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=6583&nttSn=1416220",
+      "requestedAtUTC": "2026-10-16T13:56:54.844293+00:00",
+      "finalURL": "https://www.changwon.ac.kr/ie/na/ntt/selectNttInfo.do?mi=6583&nttSn=1416220",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 64077,
+      "sha256": "93a32e6388c5f8a910567dfb7cebb8bdded59a9fd763f198c0ec20fe32152960",
+      "path": "data/public/v10-rules/department-notice-current.html",
+      "retrievedAtUTC": "2026-10-16T13:56:58.917051+00:00",
+      "retrievedAtAsiaSeoul": "2026-10-16T22:56:58.917051+09:00"
+    }
+  ]
+}
